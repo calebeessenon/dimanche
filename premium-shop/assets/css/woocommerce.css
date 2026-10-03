@@ -3670,3 +3670,66 @@ ul.woocommerce-order-overview li strong {
 	border: 0;
 	border-radius: var(--ps-radius-card);
 }
+
+/* 18 Firewood data -------------------------------------------------- */
+.ps-unit-price {
+	display: block;
+	font-size: .78rem;
+	font-weight: 400;
+	color: var(--ps-text-muted);
+}
+
+.ps-unit-price .amount {
+	font-weight: 600;
+	color: var(--ps-text);
+}
+
+.ps-unit-price-wrap {
+	margin: -10px 0 18px;
+}
+
+.woocommerce-variation-price .ps-unit-price-wrap {
+	margin: 4px 0 0;
+}
+
+.ps-fw-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 6px 0 2px;
+	padding: 0;
+	list-style: none;
+}
+
+.ps-fw-chips li {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 3px 9px;
+	border-radius: 999px;
+	background: var(--ps-soft);
+	font-size: .72rem;
+	font-weight: 600;
+	color: var(--ps-text);
+}
+
+.ps-fw-chips .ps-icon {
+	color: var(--ps-accent);
+}
+
+.single-product .summary .ps-fw-chips {
+	margin: 0 0 16px;
+}
+
+.single-product .summary .ps-fw-chips li {
+	padding: 6px 12px;
+	font-size: .82rem;
+	background: var(--ps-surface);
+	border: 1px solid var(--ps-border);
+}
+
+.ps-wood-sheet__note {
+	margin-top: 10px;
+	font-size: .8rem;
+	color: var(--ps-text-muted);
+}

@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '1.0.0' );
+define( 'PREMIUM_SHOP_VERSION', '1.1.0' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 
@@ -30,6 +30,9 @@ $premium_shop_includes = array(
 	'inc/accessibility.php',
 	'inc/seo.php',
 	'inc/admin/onboarding.php',
+	'inc/firewood/presets.php',
+	'inc/firewood/faq.php',
+	'inc/firewood/calculator.php',
 );
 
 if ( class_exists( 'WooCommerce' ) ) {
@@ -44,6 +47,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 			'inc/woocommerce/account.php',
 			'inc/woocommerce/ajax.php',
 			'inc/woocommerce/admin-fields.php',
+			'inc/firewood/product-data.php',
+			'inc/firewood/price-tool.php',
+			'inc/firewood/delivery.php',
+			'inc/firewood/demo-catalog.php',
 		)
 	);
 }

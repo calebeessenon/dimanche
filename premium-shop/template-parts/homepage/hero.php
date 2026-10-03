@@ -14,7 +14,9 @@ defined( 'ABSPATH' ) || exit;
 $premium_shop_layout   = premium_shop_option( 'hero_layout' );
 $premium_shop_image_id = absint( premium_shop_option( 'hero_image' ) );
 
-if ( ! $premium_shop_image_id && premium_shop_is_wc() ) {
+$premium_shop_bundled = ( ! $premium_shop_image_id && 'firewood' === premium_shop_preset() ) ? PREMIUM_SHOP_URI . '/assets/images/firewood/hero.jpg' : '';
+
+if ( ! $premium_shop_image_id && ! $premium_shop_bundled && premium_shop_is_wc() ) {
 	$premium_shop_featured = wc_get_featured_product_ids();
 	foreach ( array_slice( $premium_shop_featured, 0, 5 ) as $premium_shop_fid ) {
 		$premium_shop_thumb = get_post_thumbnail_id( $premium_shop_fid );
@@ -116,6 +118,8 @@ $premium_shop_title    = premium_shop_text( 'hero_title' );
 							)
 						);
 						?>
+					<?php elseif ( $premium_shop_bundled ) : ?>
+						<img class="ps-hero__img" src="<?php echo esc_url( $premium_shop_bundled ); ?>" width="1050" height="1200" alt="" fetchpriority="high" decoding="async" />
 					<?php else : ?>
 						<?php get_template_part( 'template-parts/components/hero-art' ); ?>
 					<?php endif; ?>

@@ -116,6 +116,7 @@ function premium_shop_setup_status() {
 		'menus'       => has_nav_menu( 'primary' ),
 		'languages'   => ! array_diff( array( 'de_DE', 'fr_FR', 'es_ES' ), $installed ),
 		'images'      => premium_shop_is_wc() && 'custom' === get_option( 'woocommerce_thumbnail_cropping' ),
+		'firewood'    => premium_shop_is_wc() && function_exists( 'wc_get_product_id_by_sku' ) && (bool) wc_get_product_id_by_sku( 'FW-BEECH' ),
 	);
 }
 
@@ -143,6 +144,10 @@ function premium_shop_setup_page() {
 		'languages' => array(
 			'title' => __( 'Install languages DE / FR / ES', 'premium-shop' ),
 			'desc'  => __( 'Downloads the WordPress and WooCommerce translations and sets German as the site language.', 'premium-shop' ),
+		),
+		'firewood'  => array(
+			'title' => __( 'Create the sample firewood catalogue', 'premium-shop' ),
+			'desc'  => __( 'Categories with images, attributes "Log length" and "Quantity", a "Freight" shipping class and 8 ready products (beech, oak, birch, ash, hardwood mix in 25/33/50 cm and 1–6 RM, kindling, briquettes, box) with automatic prices, data sheets and descriptions. Created as drafts: check prices, add your photos, publish.', 'premium-shop' ),
 		),
 		'images'    => array(
 			'title' => __( 'Optimize product images', 'premium-shop' ),
@@ -179,11 +184,14 @@ function premium_shop_setup_page() {
 						<td><?php echo ! empty( $status[ $key ] ) ? '✅' : '⬜'; ?></td>
 						<td><strong><?php echo esc_html( $step['title'] ); ?></strong><br><span class="description"><?php echo esc_html( $step['desc'] ); ?></span></td>
 						<td style="text-align:right">
-							<?php if ( 'images' !== $key || $status['woocommerce'] ) : ?>
+							<?php if ( ! in_array( $key, array( 'images', 'firewood' ), true ) || $status['woocommerce'] ) : ?>
 								<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 									<input type="hidden" name="action" value="premium_shop_setup" />
 									<input type="hidden" name="step" value="<?php echo esc_attr( $key ); ?>" />
 									<?php wp_nonce_field( 'premium_shop_setup_' . $key ); ?>
+									<?php if ( 'firewood' === $key ) : ?>
+										<label style="display:block;margin-bottom:6px"><input type="checkbox" name="publish" value="1" /> <?php esc_html_e( 'Publish immediately', 'premium-shop' ); ?></label>
+									<?php endif; ?>
 									<?php if ( 'languages' === $key ) : ?>
 										<label style="display:block;margin-bottom:6px"><input type="checkbox" name="set_german" value="1" checked /> <?php esc_html_e( 'Set German as site language', 'premium-shop' ); ?></label>
 									<?php endif; ?>
@@ -237,6 +245,12 @@ function premium_shop_run_setup_step() {
 		case 'languages':
 			if ( current_user_can( 'install_languages' ) ) {
 				premium_shop_setup_languages( ! empty( $_POST['set_german'] ) );
+			}
+			break;
+		case 'firewood':
+			if ( premium_shop_is_wc() && current_user_can( 'manage_woocommerce' ) && function_exists( 'premium_shop_fw_create_catalogue' ) ) {
+				premium_shop_fw_create_catalogue( ! empty( $_POST['publish'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Checked above.
+				set_theme_mod( 'ps_preset', 'firewood' );
 			}
 			break;
 		case 'images':

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 10:03+0000\n"
-"PO-Revision-Date: 2026-10-03 10:03+0000\n"
+"POT-Creation-Date: 2026-10-03 10:50+0000\n"
+"PO-Revision-Date: 2026-10-03 10:50+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -52,7 +52,7 @@ msgstr "Kundenlieblinge"
 msgid "Just arrived"
 msgstr "Gerade eingetroffen"
 
-#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:508
+#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:554
 msgid "Limited time"
 msgstr "Nur für kurze Zeit"
 
@@ -60,107 +60,119 @@ msgstr "Nur für kurze Zeit"
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: inc/admin/onboarding.php:136
+#: inc/admin/onboarding.php:137
 msgid "Create pages"
 msgstr "Seiten erstellen"
 
-#: inc/admin/onboarding.php:137
+#: inc/admin/onboarding.php:138
 msgid "About us, Contact, Wishlist, Shipping & payment — plus drafts of the legal pages (Legal notice, Terms & conditions, Right of withdrawal) to complete."
 msgstr "Über uns, Kontakt, Wunschliste, Versand & Zahlung – sowie Entwürfe der Rechtstexte (Impressum, AGB, Widerrufsbelehrung) zum Vervollständigen."
 
-#: inc/admin/onboarding.php:140
+#: inc/admin/onboarding.php:141
 msgid "Create menus"
 msgstr "Menüs erstellen"
 
-#: inc/admin/onboarding.php:141
+#: inc/admin/onboarding.php:142
 msgid "Main menu with categories mega menu, footer menus and legal menu."
 msgstr "Hauptmenü mit Kategorien-Megamenü, Footer-Menüs und Rechtliches-Menü."
 
-#: inc/admin/onboarding.php:144
+#: inc/admin/onboarding.php:145
 msgid "Install languages DE / FR / ES"
 msgstr "Sprachen DE / FR / ES installieren"
 
-#: inc/admin/onboarding.php:145
+#: inc/admin/onboarding.php:146
 msgid "Downloads the WordPress and WooCommerce translations and sets German as the site language."
 msgstr "Lädt die Übersetzungen von WordPress und WooCommerce herunter und setzt Deutsch als Website-Sprache."
 
-#: inc/admin/onboarding.php:148
+#: inc/admin/onboarding.php:149
+msgid "Create the sample firewood catalogue"
+msgstr "Brennholz-Musterkatalog anlegen"
+
+#: inc/admin/onboarding.php:150
+msgid "Categories with images, attributes \"Log length\" and \"Quantity\", a \"Freight\" shipping class and 8 ready products (beech, oak, birch, ash, hardwood mix in 25/33/50 cm and 1–6 RM, kindling, briquettes, box) with automatic prices, data sheets and descriptions. Created as drafts: check prices, add your photos, publish."
+msgstr "Kategorien mit Bildern, Eigenschaften „Scheitlänge“ und „Menge“, Versandklasse „Spedition“ und 8 fertige Produkte (Buche, Eiche, Birke, Esche, Hartholz-Mix in 25/33/50 cm und 1–6 RM, Anzündholz, Briketts, Box) mit automatischen Preisen, Datenblättern und Beschreibungen. Als Entwürfe angelegt: Preise prüfen, eigene Fotos hinzufügen, veröffentlichen."
+
+#: inc/admin/onboarding.php:153
 msgid "Optimize product images"
 msgstr "Produktbilder optimieren"
 
-#: inc/admin/onboarding.php:149
+#: inc/admin/onboarding.php:154
 msgid "Portrait 4:5 product thumbnails (600 px) — the ideal format for this design."
 msgstr "Produkt-Vorschaubilder im Hochformat 4:5 (600 px) – das ideale Format für dieses Design."
 
-#: inc/admin/onboarding.php:154
+#: inc/admin/onboarding.php:159
 msgid "Premium Shop — setup assistant"
 msgstr "Premium Shop – Einrichtungsassistent"
 
-#: inc/admin/onboarding.php:155
+#: inc/admin/onboarding.php:160
 msgid "Each step is optional and can be run again at any time. Existing pages and menus are never overwritten."
 msgstr "Jeder Schritt ist optional und kann jederzeit erneut ausgeführt werden. Bestehende Seiten und Menüs werden nie überschrieben."
 
-#: inc/admin/onboarding.php:158
+#: inc/admin/onboarding.php:163
 msgid "Done!"
 msgstr "Erledigt!"
 
-#: inc/admin/onboarding.php:164
+#: inc/admin/onboarding.php:169
 msgid "WooCommerce is not active. Install and activate it to use the shop features."
 msgstr "WooCommerce ist nicht aktiv. Installieren und aktivieren Sie es, um die Shop-Funktionen zu nutzen."
 
-#: inc/admin/onboarding.php:165
+#: inc/admin/onboarding.php:170
 msgid "Install WooCommerce"
 msgstr "WooCommerce installieren"
 
-#: inc/admin/onboarding.php:174
+#: inc/admin/onboarding.php:179
 msgid "Logo & favicon"
 msgstr "Logo & Favicon"
 
-#: inc/admin/onboarding.php:174
+#: inc/admin/onboarding.php:179
 msgid "Upload your logo and site icon."
 msgstr "Laden Sie Ihr Logo und Website-Icon hoch."
 
-#: inc/admin/onboarding.php:175
+#: inc/admin/onboarding.php:180
 msgid "Open"
 msgstr "Öffnen"
 
-#: inc/admin/onboarding.php:188
+#: inc/admin/onboarding.php:193
+msgid "Publish immediately"
+msgstr "Sofort veröffentlichen"
+
+#: inc/admin/onboarding.php:196
 msgid "Set German as site language"
 msgstr "Deutsch als Website-Sprache festlegen"
 
-#: inc/admin/onboarding.php:190
+#: inc/admin/onboarding.php:198
 msgid "Run"
 msgstr "Ausführen"
 
-#: inc/admin/onboarding.php:198
+#: inc/admin/onboarding.php:206
 msgid "Design, texts & homepage"
 msgstr "Design, Texte & Startseite"
 
-#: inc/admin/onboarding.php:198
+#: inc/admin/onboarding.php:206
 msgid "Colors, fonts, hero, sections, announcement bar, contact details, social networks."
 msgstr "Farben, Schriften, Hero, Sektionen, Hinweisleiste, Kontaktdaten, soziale Netzwerke."
 
-#: inc/admin/onboarding.php:199
+#: inc/admin/onboarding.php:207
 msgid "Customize"
 msgstr "Anpassen"
 
-#: inc/admin/onboarding.php:204
+#: inc/admin/onboarding.php:212
 msgid "Products, payments & shipping"
 msgstr "Produkte, Zahlung & Versand"
 
-#: inc/admin/onboarding.php:204
+#: inc/admin/onboarding.php:212
 msgid "Add categories and products, then configure payments and shipping zones in WooCommerce."
 msgstr "Legen Sie Kategorien und Produkte an und konfigurieren Sie anschließend Zahlungsarten und Versandzonen in WooCommerce."
 
-#: inc/admin/onboarding.php:206
+#: inc/admin/onboarding.php:214
 msgid "Add product"
 msgstr "Produkt hinzufügen"
 
-#: inc/admin/onboarding.php:207
+#: inc/admin/onboarding.php:215
 msgid "Payments"
 msgstr "Zahlungen"
 
-#: inc/admin/onboarding.php:208
+#: inc/admin/onboarding.php:216
 msgid "Shipping"
 msgstr "Versand"
 
@@ -168,23 +180,23 @@ msgstr "Versand"
 msgid "Shop setup"
 msgstr "Shop-Einrichtung"
 
-#: inc/admin/onboarding.php:282 inc/customizer/config.php:526
+#: inc/admin/onboarding.php:296 inc/customizer/config.php:572
 msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
 msgstr "Sorgfältig ausgewählte Produkte, ehrliche Beratung und schnelle Lieferung. Wir sind vor und nach Ihrem Kauf für Sie da."
 
-#: inc/admin/onboarding.php:282
+#: inc/admin/onboarding.php:296
 msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
 msgstr "Erzählen Sie hier Ihre Geschichte: wer Sie sind, was Sie antreibt und warum Ihre Kunden Ihnen vertrauen können."
 
-#: inc/admin/onboarding.php:287
+#: inc/admin/onboarding.php:301
 msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
 msgstr "Wir freuen uns auf Ihre Nachricht. Unser Kundenservice antwortet Ihnen so schnell wie möglich."
 
-#: inc/admin/onboarding.php:298
+#: inc/admin/onboarding.php:312
 msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
 msgstr "Beschreiben Sie hier Ihre Lieferländer, Lieferzeiten, Versandkosten und akzeptierten Zahlungsarten."
 
-#: inc/admin/onboarding.php:303 inc/admin/onboarding.php:308 inc/admin/onboarding.php:313
+#: inc/admin/onboarding.php:317 inc/admin/onboarding.php:322 inc/admin/onboarding.php:327
 msgid "Please complete this page with your legally required company information before publishing."
 msgstr "Bitte vervollständigen Sie diese Seite vor der Veröffentlichung mit Ihren gesetzlich vorgeschriebenen Unternehmensangaben."
 
@@ -225,359 +237,363 @@ msgstr "Nach oben"
 msgid "Move down"
 msgstr "Nach unten"
 
-#: inc/customizer/config.php:102
+#: inc/customizer/config.php:105
+msgid "Typography & buttons"
+msgstr "Typografie & Buttons"
+
+#: inc/customizer/config.php:110
 msgid "Heading font"
 msgstr "Schrift für Überschriften"
 
-#: inc/customizer/config.php:106 inc/customizer/config.php:117
+#: inc/customizer/config.php:114 inc/customizer/config.php:125
 msgid "System serif (no download)"
 msgstr "System-Serifenschrift (kein Download)"
 
-#: inc/customizer/config.php:107 inc/customizer/config.php:116
+#: inc/customizer/config.php:115 inc/customizer/config.php:124
 msgid "System sans-serif (no download)"
 msgstr "System-Groteskschrift (kein Download)"
 
-#: inc/customizer/config.php:113
+#: inc/customizer/config.php:121
 msgid "Body font"
 msgstr "Schrift für Fließtext"
 
-#: inc/customizer/config.php:120
+#: inc/customizer/config.php:128
 msgid "Base font size (px)"
 msgstr "Basis-Schriftgröße (px)"
 
-#: inc/customizer/config.php:124
+#: inc/customizer/config.php:132
 msgid "Heading weight"
 msgstr "Stärke der Überschriften"
 
-#: inc/customizer/config.php:126
+#: inc/customizer/config.php:134
 msgid "Light"
 msgstr "Leicht"
 
-#: inc/customizer/config.php:127
+#: inc/customizer/config.php:135
 msgid "Regular"
 msgstr "Normal"
 
-#: inc/customizer/config.php:128
+#: inc/customizer/config.php:136
 msgid "Medium"
 msgstr "Mittel"
 
-#: inc/customizer/config.php:129
+#: inc/customizer/config.php:137
 msgid "Semi-bold"
 msgstr "Halbfett"
 
-#: inc/customizer/config.php:135
+#: inc/customizer/config.php:143
 msgid "Button shape"
 msgstr "Button-Form"
 
-#: inc/customizer/config.php:137
+#: inc/customizer/config.php:145
 msgid "Square"
 msgstr "Eckig"
 
-#: inc/customizer/config.php:138
+#: inc/customizer/config.php:146
 msgid "Soft corners"
 msgstr "Leicht abgerundet"
 
-#: inc/customizer/config.php:139
+#: inc/customizer/config.php:147
 msgid "Pill"
 msgstr "Pillenform"
 
-#: inc/customizer/config.php:142
+#: inc/customizer/config.php:150
 msgid "Uppercase buttons"
 msgstr "Buttons in Großbuchstaben"
 
-#: inc/customizer/config.php:143
+#: inc/customizer/config.php:151
 msgid "Card corner radius (px)"
 msgstr "Eckenradius der Karten (px)"
 
-#: inc/customizer/config.php:144
+#: inc/customizer/config.php:152
 msgid "Scroll-reveal animations"
 msgstr "Einblend-Animationen beim Scrollen"
 
-#: inc/customizer/config.php:144
+#: inc/customizer/config.php:152
 msgid "Automatically disabled for visitors who prefer reduced motion."
 msgstr "Automatisch deaktiviert für Besucher, die reduzierte Bewegung bevorzugen."
 
-#: inc/customizer/config.php:150
+#: inc/customizer/config.php:158
 msgid "Header & announcement bar"
 msgstr "Header & Hinweisleiste"
 
-#: inc/customizer/config.php:152
+#: inc/customizer/config.php:160
 msgid "Logo height (px)"
 msgstr "Logo-Höhe (px)"
 
-#: inc/customizer/config.php:156
+#: inc/customizer/config.php:164
 msgid "Header layout"
 msgstr "Header-Layout"
 
-#: inc/customizer/config.php:158
+#: inc/customizer/config.php:166
 msgid "Logo left, menu centered"
 msgstr "Logo links, Menü zentriert"
 
-#: inc/customizer/config.php:159
+#: inc/customizer/config.php:167
 msgid "Logo centered, menu below"
 msgstr "Logo zentriert, Menü darunter"
 
-#: inc/customizer/config.php:162
+#: inc/customizer/config.php:170
 msgid "Sticky header"
 msgstr "Fixierter Header"
 
-#: inc/customizer/config.php:163
+#: inc/customizer/config.php:171
 msgid "Show search"
 msgstr "Suche anzeigen"
 
-#: inc/customizer/config.php:164
+#: inc/customizer/config.php:172
 msgid "Show account icon"
 msgstr "Konto-Symbol anzeigen"
 
-#: inc/customizer/config.php:165
+#: inc/customizer/config.php:173
 msgid "Show wishlist icon"
 msgstr "Wunschlisten-Symbol anzeigen"
 
-#: inc/customizer/config.php:166
+#: inc/customizer/config.php:174
 msgid "Show language switcher"
 msgstr "Sprachumschalter anzeigen"
 
-#: inc/customizer/config.php:167
+#: inc/customizer/config.php:175
 msgid "Categories mega menu"
 msgstr "Kategorien-Megamenü"
 
-#: inc/customizer/config.php:167
+#: inc/customizer/config.php:175
 msgid "Applies to menu items with the CSS class \"mega-categories\" (added automatically by the setup assistant)."
 msgstr "Gilt für Menüpunkte mit der CSS-Klasse „mega-categories“ (wird vom Einrichtungsassistenten automatisch gesetzt)."
 
-#: inc/customizer/config.php:168
+#: inc/customizer/config.php:176
 msgid "Distraction-free checkout header"
 msgstr "Ablenkungsfreier Kassen-Header"
 
-#: inc/customizer/config.php:169
+#: inc/customizer/config.php:177
 msgid "Show announcement bar"
 msgstr "Hinweisleiste anzeigen"
 
-#: inc/customizer/config.php:170
+#: inc/customizer/config.php:178
 msgid "Announcement messages (one per line, they rotate)"
 msgstr "Hinweistexte (einer pro Zeile, sie wechseln automatisch)"
 
-#: inc/customizer/config.php:171
+#: inc/customizer/config.php:179
 msgid "Announcement link (optional)"
 msgstr "Link der Hinweisleiste (optional)"
 
-#: inc/customizer/config.php:172
+#: inc/customizer/config.php:180
 msgid "Visitors can close the bar"
 msgstr "Besucher können die Leiste schließen"
 
-#: inc/customizer/config.php:178
+#: inc/customizer/config.php:186
 msgid "Homepage — sections & order"
 msgstr "Startseite – Sektionen & Reihenfolge"
 
-#: inc/customizer/config.php:183
+#: inc/customizer/config.php:191
 msgid "Sections"
 msgstr "Sektionen"
 
-#: inc/customizer/config.php:184
+#: inc/customizer/config.php:192
 msgid "Drag to reorder, untick to hide."
 msgstr "Zum Sortieren ziehen, Häkchen entfernen zum Ausblenden."
 
-#: inc/customizer/config.php:186
+#: inc/customizer/config.php:194
 msgid "Products per section"
 msgstr "Produkte pro Sektion"
 
-#: inc/customizer/config.php:187
+#: inc/customizer/config.php:195
 msgid "Categories shown"
 msgstr "Angezeigte Kategorien"
 
-#: inc/customizer/config.php:188
+#: inc/customizer/config.php:196
 msgid "Category IDs to show (optional)"
 msgstr "Anzuzeigende Kategorie-IDs (optional)"
 
-#: inc/customizer/config.php:188
+#: inc/customizer/config.php:196
 msgid "Comma-separated IDs, in the desired order. Empty = main categories with products."
 msgstr "Kommagetrennte IDs in der gewünschten Reihenfolge. Leer = Hauptkategorien mit Produkten."
 
-#: inc/customizer/config.php:189
+#: inc/customizer/config.php:197
 msgid "Categories — title"
 msgstr "Kategorien – Titel"
 
-#: inc/customizer/config.php:190
+#: inc/customizer/config.php:198
 msgid "Popular products — title"
 msgstr "Beliebte Produkte – Titel"
 
-#: inc/customizer/config.php:191
+#: inc/customizer/config.php:199
 msgid "New arrivals — title"
 msgstr "Neuheiten – Titel"
 
-#: inc/customizer/config.php:192
+#: inc/customizer/config.php:200
 msgid "Offers — title"
 msgstr "Angebote – Titel"
 
-#: inc/customizer/config.php:193
+#: inc/customizer/config.php:201
 msgid "Bestsellers — title"
 msgstr "Bestseller – Titel"
 
-#: inc/customizer/config.php:194
+#: inc/customizer/config.php:202
 msgid "Testimonials — title"
 msgstr "Kundenstimmen – Titel"
 
-#: inc/customizer/config.php:195
+#: inc/customizer/config.php:203
 msgid "Brands — title"
 msgstr "Marken – Titel"
 
-#: inc/customizer/config.php:201
+#: inc/customizer/config.php:209
 msgid "Homepage — hero"
 msgstr "Startseite – Hero"
 
-#: inc/customizer/config.php:206
+#: inc/customizer/config.php:214
 msgid "Layout"
 msgstr "Layout"
 
-#: inc/customizer/config.php:208
+#: inc/customizer/config.php:216
 msgid "Editorial split (text + arched image)"
 msgstr "Editorial geteilt (Text + Bild im Bogen)"
 
-#: inc/customizer/config.php:209
+#: inc/customizer/config.php:217
 msgid "Full-width image"
 msgstr "Bild in voller Breite"
 
-#: inc/customizer/config.php:212
+#: inc/customizer/config.php:220
 msgid "Hero image"
 msgstr "Hero-Bild"
 
-#: inc/customizer/config.php:212
+#: inc/customizer/config.php:220
 msgid "Recommended: 1400 × 1600 px (split) or 2400 × 1200 px (full width). Without image, a featured product image or an abstract artwork is used."
 msgstr "Empfohlen: 1400 × 1600 px (geteilt) oder 2400 × 1200 px (volle Breite). Ohne Bild wird ein hervorgehobenes Produktbild oder eine abstrakte Grafik verwendet."
 
-#: inc/customizer/config.php:213 inc/customizer/config.php:230
+#: inc/customizer/config.php:221 inc/customizer/config.php:238
 msgid "Small line above the title"
 msgstr "Kleine Zeile über dem Titel"
 
-#: inc/customizer/config.php:214 inc/customizer/config.php:231 inc/customizer/config.php:299
+#: inc/customizer/config.php:222 inc/customizer/config.php:239 inc/customizer/config.php:307
 msgid "Title"
 msgstr "Titel"
 
-#: inc/customizer/config.php:215
+#: inc/customizer/config.php:223
 msgid "Subtitle"
 msgstr "Untertitel"
 
-#: inc/customizer/config.php:216
+#: inc/customizer/config.php:224
 msgid "Main button text"
 msgstr "Text des Haupt-Buttons"
 
-#: inc/customizer/config.php:217
+#: inc/customizer/config.php:225
 msgid "Main button link (empty = shop)"
 msgstr "Link des Haupt-Buttons (leer = Shop)"
 
-#: inc/customizer/config.php:218
+#: inc/customizer/config.php:226
 msgid "Second button text"
 msgstr "Text des zweiten Buttons"
 
-#: inc/customizer/config.php:219
+#: inc/customizer/config.php:227
 msgid "Second button link (empty = offers)"
 msgstr "Link des zweiten Buttons (leer = Angebote)"
 
-#: inc/customizer/config.php:220
+#: inc/customizer/config.php:228
 msgid "Image overlay darkness (%) — full-width layout"
 msgstr "Abdunklung des Bildes (%) – Layout volle Breite"
 
-#: inc/customizer/config.php:221
+#: inc/customizer/config.php:229
 msgid "Show shipping & returns badges"
 msgstr "Versand- & Rückgabe-Hinweise anzeigen"
-
-#: inc/customizer/config.php:227
-msgid "Homepage — campaign banner"
-msgstr "Startseite – Aktionsbanner"
-
-#: inc/customizer/config.php:229
-msgid "Image"
-msgstr "Bild"
 
 #: inc/customizer/config.php:23
 msgid "Hero"
 msgstr "Hero"
 
-#: inc/customizer/config.php:233
+#: inc/customizer/config.php:235
+msgid "Homepage — campaign banner"
+msgstr "Startseite – Aktionsbanner"
+
+#: inc/customizer/config.php:237
+msgid "Image"
+msgstr "Bild"
+
+#: inc/customizer/config.php:241
 msgid "Button text"
 msgstr "Button-Text"
 
-#: inc/customizer/config.php:234
+#: inc/customizer/config.php:242
 msgid "Button link (empty = offers)"
 msgstr "Button-Link (leer = Angebote)"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:243
+#: inc/customizer/config.php:251
 msgid "Benefit %d — icon"
 msgstr "Vorteil %d – Symbol"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:245
+#: inc/customizer/config.php:253
 msgid "Benefit %d — title"
 msgstr "Vorteil %d – Titel"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:247
+#: inc/customizer/config.php:255
 msgid "Benefit %d — text"
 msgstr "Vorteil %d – Text"
 
-#: inc/customizer/config.php:250
+#: inc/customizer/config.php:258
 msgid "Homepage — benefits"
 msgstr "Startseite – Vorteile"
-
-#: inc/customizer/config.php:259
-msgid "Source"
-msgstr "Quelle"
 
 #: inc/customizer/config.php:26
 msgid "Campaign banner"
 msgstr "Aktionsbanner"
 
-#: inc/customizer/config.php:261
+#: inc/customizer/config.php:267
+msgid "Source"
+msgstr "Quelle"
+
+#: inc/customizer/config.php:269
 msgid "Latest 4- and 5-star WooCommerce reviews"
 msgstr "Neueste 4- und 5-Sterne-Bewertungen aus WooCommerce"
 
-#: inc/customizer/config.php:262
+#: inc/customizer/config.php:270
 msgid "Testimonials entered below"
 msgstr "Unten eingegebene Kundenstimmen"
 
-#: inc/customizer/config.php:263
+#: inc/customizer/config.php:271
 msgid "Testimonials below, completed by reviews"
 msgstr "Kundenstimmen unten, ergänzt durch Bewertungen"
 
-#: inc/customizer/config.php:265
+#: inc/customizer/config.php:273
 msgid "Only genuine customer feedback should be published. The section is hidden when there is nothing to show."
 msgstr "Veröffentlichen Sie nur echtes Kundenfeedback. Die Sektion wird ausgeblendet, wenn nichts anzuzeigen ist."
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:270
+#: inc/customizer/config.php:278
 msgid "Testimonial %d — quote"
 msgstr "Kundenstimme %d – Zitat"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:272
+#: inc/customizer/config.php:280
 msgid "Testimonial %d — name"
 msgstr "Kundenstimme %d – Name"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:274
+#: inc/customizer/config.php:282
 msgid "Testimonial %d — city or product"
 msgstr "Kundenstimme %d – Ort oder Produkt"
 
-#: inc/customizer/config.php:277
+#: inc/customizer/config.php:285
 msgid "Homepage — testimonials"
 msgstr "Startseite – Kundenstimmen"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:285
+#: inc/customizer/config.php:293
 msgid "Brand %d — logo"
 msgstr "Marke %d – Logo"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:287
+#: inc/customizer/config.php:295
 msgid "Brand %d — link"
 msgstr "Marke %d – Link"
 
-#: inc/customizer/config.php:290
+#: inc/customizer/config.php:298
 msgid "Homepage — brands"
 msgstr "Startseite – Marken"
 
-#: inc/customizer/config.php:291
+#: inc/customizer/config.php:299
 msgid "Upload partner logos. Without logos, WooCommerce brands (Products → Brands) are listed automatically."
 msgstr "Laden Sie Partnerlogos hoch. Ohne Logos werden die WooCommerce-Marken (Produkte → Marken) automatisch angezeigt."
 
@@ -585,425 +601,529 @@ msgstr "Laden Sie Partnerlogos hoch. Ohne Logos werden die WooCommerce-Marken (P
 msgid "Benefits"
 msgstr "Vorteile"
 
-#: inc/customizer/config.php:301
+#: inc/customizer/config.php:309
 msgid "Form shortcode (MailPoet, Brevo, Mailchimp…)"
 msgstr "Formular-Shortcode (MailPoet, Brevo, Mailchimp …)"
 
-#: inc/customizer/config.php:301
+#: inc/customizer/config.php:309
 msgid "Optional. Without shortcode, the built-in double opt-in form is used (subscribers: Tools → Newsletter)."
 msgstr "Optional. Ohne Shortcode wird das integrierte Double-Opt-in-Formular verwendet (Abonnenten: Werkzeuge → Newsletter)."
-
-#: inc/customizer/config.php:302
-msgid "Also show the form in the footer"
-msgstr "Formular auch im Footer anzeigen"
-
-#: inc/customizer/config.php:308
-msgid "Shop & product cards"
-msgstr "Shop & Produktkarten"
 
 #: inc/customizer/config.php:31
 msgid "Testimonials"
 msgstr "Kundenstimmen"
 
-#: inc/customizer/config.php:313
+#: inc/customizer/config.php:310
+msgid "Also show the form in the footer"
+msgstr "Formular auch im Footer anzeigen"
+
+#: inc/customizer/config.php:316
+msgid "Shop & product cards"
+msgstr "Shop & Produktkarten"
+
+#: inc/customizer/config.php:321
 msgid "Products per row (desktop)"
 msgstr "Produkte pro Reihe (Desktop)"
 
-#: inc/customizer/config.php:319
+#: inc/customizer/config.php:327
 msgid "Products per page"
 msgstr "Produkte pro Seite"
 
-#: inc/customizer/config.php:320
+#: inc/customizer/config.php:328
 msgid "Show filters"
 msgstr "Filter anzeigen"
 
-#: inc/customizer/config.php:321
+#: inc/customizer/config.php:329
 msgid "Instant (AJAX) filtering"
 msgstr "Sofortiges Filtern (AJAX)"
 
-#: inc/customizer/config.php:325
+#: inc/customizer/config.php:333
 msgid "Default view"
 msgstr "Standardansicht"
 
-#: inc/customizer/config.php:327
+#: inc/customizer/config.php:335
 msgid "Grid"
 msgstr "Raster"
 
-#: inc/customizer/config.php:328
+#: inc/customizer/config.php:336
 msgid "List"
 msgstr "Liste"
 
-#: inc/customizer/config.php:331
+#: inc/customizer/config.php:339
 msgid "Show second image on hover"
 msgstr "Zweites Bild beim Überfahren anzeigen"
-
-#: inc/customizer/config.php:334
-msgid "Show category"
-msgstr "Kategorie anzeigen"
-
-#: inc/customizer/config.php:335
-msgid "Show stock status"
-msgstr "Lagerstatus anzeigen"
-
-#: inc/customizer/config.php:336
-msgid "\"New\" badge duration (days, 0 = off)"
-msgstr "Dauer des „Neu“-Badges (Tage, 0 = aus)"
 
 #: inc/customizer/config.php:34
 msgid "Page content (editor)"
 msgstr "Seiteninhalt (Editor)"
 
 #: inc/customizer/config.php:342
+msgid "Show category"
+msgstr "Kategorie anzeigen"
+
+#: inc/customizer/config.php:343
+msgid "Show stock status"
+msgstr "Lagerstatus anzeigen"
+
+#: inc/customizer/config.php:344
+msgid "\"New\" badge duration (days, 0 = off)"
+msgstr "Dauer des „Neu“-Badges (Tage, 0 = aus)"
+
+#: inc/customizer/config.php:35
+msgid "Firewood calculator"
+msgstr "Brennholzrechner"
+
+#: inc/customizer/config.php:350
 msgid "Product page"
 msgstr "Produktseite"
 
-#: inc/customizer/config.php:344
+#: inc/customizer/config.php:352
 msgid "\"Buy now\" button"
 msgstr "„Jetzt kaufen“-Button"
 
-#: inc/customizer/config.php:345
+#: inc/customizer/config.php:353
 msgid "Sticky add-to-cart bar on mobile"
 msgstr "Fixierte Warenkorb-Leiste auf Mobilgeräten"
 
-#: inc/customizer/config.php:346
+#: inc/customizer/config.php:354
 msgid "Show delivery, returns, warranty & payment box"
 msgstr "Box mit Lieferung, Rückgabe, Garantie & Zahlung anzeigen"
 
-#: inc/customizer/config.php:347
+#: inc/customizer/config.php:355
 msgid "Delivery time"
 msgstr "Lieferzeit"
 
-#: inc/customizer/config.php:348
+#: inc/customizer/config.php:356
 msgid "Return period (days)"
 msgstr "Rückgabefrist (Tage)"
 
-#: inc/customizer/config.php:349
+#: inc/customizer/config.php:357
 msgid "Warranty"
 msgstr "Garantie"
 
-#: inc/customizer/config.php:351
+#: inc/customizer/config.php:359
 msgid "\"Shipping & returns\" tab content"
 msgstr "Inhalt des Tabs „Versand & Rückgabe“"
 
-#: inc/customizer/config.php:351
+#: inc/customizer/config.php:359
 msgid "Basic HTML allowed. Empty = automatic text built from the values above."
 msgstr "Einfaches HTML erlaubt. Leer = automatischer Text aus den obigen Werten."
 
-#: inc/customizer/config.php:357
+#: inc/customizer/config.php:36
+msgid "Delivery check (postcode)"
+msgstr "Lieferprüfung (PLZ)"
+
+#: inc/customizer/config.php:365
 msgid "Cart & shipping"
 msgstr "Warenkorb & Versand"
 
-#: inc/customizer/config.php:359
+#: inc/customizer/config.php:367
 msgid "Free shipping from (amount, 0 = off)"
 msgstr "Kostenloser Versand ab (Betrag, 0 = aus)"
 
-#: inc/customizer/config.php:359
+#: inc/customizer/config.php:367
 msgid "Used for the progress bar in the cart and the default announcement. Configure the real \"Free shipping\" method in WooCommerce → Settings → Shipping."
 msgstr "Wird für den Fortschrittsbalken im Warenkorb und die Standard-Hinweisleiste genutzt. Die eigentliche Versandart „Kostenloser Versand“ richten Sie unter WooCommerce → Einstellungen → Versand ein."
 
-#: inc/customizer/config.php:360
+#: inc/customizer/config.php:368
 msgid "Open the side cart after adding a product"
 msgstr "Seitlichen Warenkorb nach dem Hinzufügen öffnen"
 
-#: inc/customizer/config.php:361
+#: inc/customizer/config.php:369
 msgid "Show \"You may also like\" in the cart"
 msgstr "„Das könnte Ihnen auch gefallen“ im Warenkorb anzeigen"
 
-#: inc/customizer/config.php:367
+#: inc/customizer/config.php:375
 msgid "Company & contact"
 msgstr "Unternehmen & Kontakt"
 
-#: inc/customizer/config.php:369
+#: inc/customizer/config.php:377
 msgid "Company name"
 msgstr "Firmenname"
 
-#: inc/customizer/config.php:370
+#: inc/customizer/config.php:378
 msgid "Short description (footer)"
 msgstr "Kurzbeschreibung (Footer)"
 
-#: inc/customizer/config.php:371
+#: inc/customizer/config.php:379
 msgid "Address"
 msgstr "Adresse"
 
-#: inc/customizer/config.php:372
+#: inc/customizer/config.php:380
 msgid "Phone"
 msgstr "Telefon"
 
-#: inc/customizer/config.php:374
+#: inc/customizer/config.php:382
 msgid "Opening hours"
 msgstr "Öffnungszeiten"
 
-#: inc/customizer/config.php:375
+#: inc/customizer/config.php:383
 msgid "WhatsApp number (international format)"
 msgstr "WhatsApp-Nummer (internationales Format)"
 
-#: inc/customizer/config.php:395
+#: inc/customizer/config.php:403
 msgid "Footer"
 msgstr "Footer"
 
-#: inc/customizer/config.php:397
+#: inc/customizer/config.php:405
 msgid "Copyright text"
 msgstr "Copyright-Text"
 
-#: inc/customizer/config.php:397
+#: inc/customizer/config.php:405
 msgid "Use {year} and {company}. Empty = automatic."
 msgstr "Verwenden Sie {year} und {company}. Leer = automatisch."
 
-#: inc/customizer/config.php:398
+#: inc/customizer/config.php:406
 msgid "Payment methods shown"
 msgstr "Angezeigte Zahlungsarten"
 
-#: inc/customizer/config.php:398
+#: inc/customizer/config.php:406
 msgid "Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
 msgstr "Kommagetrennt: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
 
-#: inc/customizer/config.php:399
+#: inc/customizer/config.php:407
 msgid "\"Back to top\" button"
 msgstr "„Nach oben“-Button"
 
-#: inc/customizer/config.php:405
+#: inc/customizer/config.php:413
+msgid "Firewood shop"
+msgstr "Brennholz-Shop"
+
+#: inc/customizer/config.php:414
+msgid "Settings for selling firewood: style preset, unit prices, delivery check by postcode, calculator and FAQ. Product data (wood species, log length, moisture, volume, price per unit) is entered in each product, tab \"Firewood\"."
+msgstr "Einstellungen für den Brennholzverkauf: Stilvorlage, Grundpreise, Lieferprüfung per PLZ, Rechner und FAQ. Produktdaten (Holzart, Scheitlänge, Feuchte, Volumen, Einheitspreis) tragen Sie im jeweiligen Produkt im Tab „Brennholz“ ein."
+
+#: inc/customizer/config.php:419
+msgid "Style preset"
+msgstr "Stilvorlage"
+
+#: inc/customizer/config.php:420
+msgid "Sets colors, homepage sections and default texts. Your own changes always take priority."
+msgstr "Legt Farben, Startseiten-Sektionen und Standardtexte fest. Ihre eigenen Änderungen haben immer Vorrang."
+
+#: inc/customizer/config.php:422
+msgid "Firewood & stove wood (warm, natural)"
+msgstr "Brennholz & Kaminholz (warm, natürlich)"
+
+#: inc/customizer/config.php:423
+msgid "General shop \"Maison\" (editorial)"
+msgstr "Allgemeiner Shop „Maison“ (editorial)"
+
+#: inc/customizer/config.php:426
+msgid "Show the unit price (e.g. price per stacked m³)"
+msgstr "Grundpreis anzeigen (z. B. Preis pro RM)"
+
+#: inc/customizer/config.php:426
+msgid "Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume."
+msgstr "In Deutschland für nach Volumen verkaufte Waren Pflicht (PAngV). Wird automatisch aus dem Produktvolumen berechnet."
+
+#: inc/customizer/config.php:427
+msgid "Show key data (length, moisture, drying) on product cards"
+msgstr "Eckdaten (Länge, Feuchte, Trocknung) auf Produktkarten zeigen"
+
+#: inc/customizer/config.php:428
+msgid "Postcode delivery check (product page, cart, homepage)"
+msgstr "Lieferprüfung per PLZ (Produktseite, Warenkorb, Startseite)"
+
+#: inc/customizer/config.php:428
+msgid "Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone."
+msgstr "Nutzt Ihre WooCommerce-Versandzonen: Tragen Sie in jeder Zone die Postleitzahlen ein (z. B. 10*, 12345, 80000...89999)."
+
+#: inc/customizer/config.php:429
+msgid "Message when delivery is possible"
+msgstr "Meldung, wenn Lieferung möglich ist"
+
+#: inc/customizer/config.php:430
+msgid "Message when the postcode is not served"
+msgstr "Meldung, wenn die PLZ nicht beliefert wird"
+
+#: inc/customizer/config.php:431
+msgid "Delivery information (shown under the check)"
+msgstr "Lieferhinweise (unter der Prüfung angezeigt)"
+
+#: inc/customizer/config.php:432
+msgid "Ask at checkout whether the unloading point is accessible for a truck"
+msgstr "An der Kasse fragen, ob die Abladestelle für einen LKW erreichbar ist"
+
+#: inc/customizer/config.php:433
+msgid "Show the firewood calculator on product pages"
+msgstr "Brennholzrechner auf Produktseiten anzeigen"
+
+#: inc/customizer/config.php:434
+msgid "FAQ (one question per line: Question :: Answer)"
+msgstr "FAQ (eine Frage pro Zeile: Frage :: Antwort)"
+
+#: inc/customizer/config.php:434
+msgid "Empty = built-in firewood FAQ, translated automatically."
+msgstr "Leer = integrierte Brennholz-FAQ, automatisch übersetzt."
+
+#: inc/customizer/config.php:435
+msgid "FAQ — title"
+msgstr "FAQ – Titel"
+
+#: inc/customizer/config.php:436
+msgid "Calculator — title"
+msgstr "Rechner – Titel"
+
+#: inc/customizer/config.php:442
 msgid "Languages"
 msgstr "Sprachen"
 
-#: inc/customizer/config.php:406
+#: inc/customizer/config.php:443
 msgid "With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant."
 msgstr "Ist WPML, Polylang oder TranslatePress aktiv, verwaltet das Plugin die Sprachen und der Umschalter nutzt es automatisch. Andernfalls ändert der integrierte Umschalter die Oberflächensprache (Texte von Theme, WordPress und WooCommerce). Installieren Sie die Sprachpakete unter Einstellungen → Allgemein oder mit dem Einrichtungsassistenten."
 
-#: inc/customizer/config.php:411
+#: inc/customizer/config.php:448
 msgid "Mode"
 msgstr "Modus"
 
-#: inc/customizer/config.php:413
+#: inc/customizer/config.php:450
 msgid "Automatic (plugin if available, otherwise built-in)"
 msgstr "Automatisch (Plugin falls vorhanden, sonst integriert)"
 
-#: inc/customizer/config.php:414
+#: inc/customizer/config.php:451
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: inc/customizer/config.php:420
+#: inc/customizer/config.php:457
 msgid "Default language (first visit)"
 msgstr "Standardsprache (erster Besuch)"
 
-#: inc/customizer/config.php:423
+#: inc/customizer/config.php:460
 msgid "Languages offered (codes, in order)"
 msgstr "Angebotene Sprachen (Codes, in Reihenfolge)"
 
-#: inc/customizer/config.php:423
+#: inc/customizer/config.php:460
 msgid "Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it"
 msgstr "Verfügbare Codes: de, fr, es, en, it, pt, nl, pl. Beispiel: de,fr,es,en,it"
 
-#: inc/customizer/config.php:45
+#: inc/customizer/config.php:48
 msgid "Truck"
 msgstr "Lieferwagen"
 
-#: inc/customizer/config.php:46
+#: inc/customizer/config.php:49
 msgid "Shield"
 msgstr "Schild"
 
-#: inc/customizer/config.php:47
+#: inc/customizer/config.php:50
 msgid "Return arrow"
 msgstr "Rückgabe-Pfeil"
 
-#: inc/customizer/config.php:48
+#: inc/customizer/config.php:51
 msgid "Headset"
 msgstr "Headset"
 
-#: inc/customizer/config.php:489
-msgid "Secure payment with SSL encryption"
-msgstr "Sichere Zahlung mit SSL-Verschlüsselung"
-
-#: inc/customizer/config.php:49
+#: inc/customizer/config.php:52
 msgid "Gift"
 msgstr "Geschenk"
 
+#: inc/customizer/config.php:53
+msgid "Leaf"
+msgstr "Blatt"
+
+#: inc/customizer/config.php:535
+msgid "Secure payment with SSL encryption"
+msgstr "Sichere Zahlung mit SSL-Verschlüsselung"
+
 #. translators:%d: number of days.
-#: inc/customizer/config.php:492
+#: inc/customizer/config.php:538
 msgid "%d days to change your mind"
 msgstr "%d Tage Bedenkzeit"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:492
+#: inc/customizer/config.php:538
 msgid "Simple returns"
 msgstr "Einfache Rückgabe"
 
-#: inc/customizer/config.php:496
-msgid "Shop by category"
-msgstr "Nach Kategorie shoppen"
-
-#: inc/customizer/config.php:50
-msgid "Leaf"
-msgstr "Blatt"
-
-#: inc/customizer/config.php:501
-msgid "What our customers say"
-msgstr "Das sagen unsere Kunden"
-
-#: inc/customizer/config.php:502
-msgid "Our brands"
-msgstr "Unsere Marken"
-
-#: inc/customizer/config.php:503
-msgid "The new collection"
-msgstr "Die neue Kollektion"
-
-#: inc/customizer/config.php:504
-msgid "Timeless pieces, carefully selected for you"
-msgstr "Zeitlose Stücke, sorgfältig für Sie ausgewählt"
-
-#: inc/customizer/config.php:505
-msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
-msgstr "Entdecken Sie hochwertige Produkte, faire Preise und einen Service, der an jedes Detail denkt – schnell zu Ihnen nach Hause geliefert."
-
-#: inc/customizer/config.php:506
-msgid "Shop now"
-msgstr "Jetzt einkaufen"
-
-#: inc/customizer/config.php:507
-msgid "Discover offers"
-msgstr "Angebote entdecken"
-
-#: inc/customizer/config.php:509
-msgid "The season’s offers"
-msgstr "Die Angebote der Saison"
-
-#: inc/customizer/config.php:51
+#: inc/customizer/config.php:54
 msgid "Star"
 msgstr "Stern"
 
-#: inc/customizer/config.php:510
+#: inc/customizer/config.php:542
+msgid "Shop by category"
+msgstr "Nach Kategorie shoppen"
+
+#: inc/customizer/config.php:547
+msgid "What our customers say"
+msgstr "Das sagen unsere Kunden"
+
+#: inc/customizer/config.php:548
+msgid "Our brands"
+msgstr "Unsere Marken"
+
+#: inc/customizer/config.php:549
+msgid "The new collection"
+msgstr "Die neue Kollektion"
+
+#: inc/customizer/config.php:55
+msgid "Clock"
+msgstr "Uhr"
+
+#: inc/customizer/config.php:550
+msgid "Timeless pieces, carefully selected for you"
+msgstr "Zeitlose Stücke, sorgfältig für Sie ausgewählt"
+
+#: inc/customizer/config.php:551
+msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
+msgstr "Entdecken Sie hochwertige Produkte, faire Preise und einen Service, der an jedes Detail denkt – schnell zu Ihnen nach Hause geliefert."
+
+#: inc/customizer/config.php:552
+msgid "Shop now"
+msgstr "Jetzt einkaufen"
+
+#: inc/customizer/config.php:553
+msgid "Discover offers"
+msgstr "Angebote entdecken"
+
+#: inc/customizer/config.php:555
+msgid "The season’s offers"
+msgstr "Die Angebote der Saison"
+
+#: inc/customizer/config.php:556
 msgid "Selected favourites at reduced prices — only while stocks last."
 msgstr "Ausgewählte Lieblingsstücke zu reduzierten Preisen – nur solange der Vorrat reicht."
 
-#: inc/customizer/config.php:511
+#: inc/customizer/config.php:557 inc/firewood/presets.php:89
 msgid "View offers"
 msgstr "Angebote ansehen"
 
-#: inc/customizer/config.php:512
+#: inc/customizer/config.php:558
 msgid "Fast shipping"
 msgstr "Schneller Versand"
 
+#: inc/customizer/config.php:56
+msgid "Lock"
+msgstr "Schloss"
+
 #. translators:%s: amount.
-#: inc/customizer/config.php:514
+#: inc/customizer/config.php:560
 msgid "Free from %s"
 msgstr "Kostenlos ab %s"
 
 #. translators:%s: amount.
-#: inc/customizer/config.php:514
+#: inc/customizer/config.php:560
 msgid "Dispatched within 24 hours"
 msgstr "Versand innerhalb von 24 Stunden"
 
-#: inc/customizer/config.php:516
+#: inc/customizer/config.php:562
 msgid "Encrypted & trusted methods"
 msgstr "Verschlüsselt & vertrauenswürdig"
 
-#: inc/customizer/config.php:517
+#: inc/customizer/config.php:563
 msgid "Easy returns"
 msgstr "Einfache Rückgabe"
 
-#: inc/customizer/config.php:52
-msgid "Clock"
-msgstr "Uhr"
-
-#: inc/customizer/config.php:520
+#: inc/customizer/config.php:566
 msgid "Personal help, quick answers"
 msgstr "Persönliche Hilfe, schnelle Antworten"
 
-#: inc/customizer/config.php:521
+#: inc/customizer/config.php:567
 msgid "Stay in the loop"
 msgstr "Bleiben Sie auf dem Laufenden"
 
-#: inc/customizer/config.php:522
+#: inc/customizer/config.php:568
 msgid "New arrivals, exclusive offers and inspiration — straight to your inbox. Unsubscribe at any time."
 msgstr "Neuheiten, exklusive Angebote und Inspiration – direkt in Ihr Postfach. Jederzeit abbestellbar."
 
-#: inc/customizer/config.php:523
+#: inc/customizer/config.php:569
 msgid "Delivery in 2–4 business days"
 msgstr "Lieferung in 2–4 Werktagen"
 
-#: inc/customizer/config.php:524
-msgid "2-year warranty"
-msgstr "2 Jahre Garantie"
-
-#: inc/customizer/config.php:525
-msgid "Secure, encrypted payment"
-msgstr "Sichere, verschlüsselte Zahlung"
-
-#: inc/customizer/config.php:53
-msgid "Lock"
-msgstr "Schloss"
-
-#: inc/customizer/config.php:54
+#: inc/customizer/config.php:57
 msgid "Box"
 msgstr "Paket"
 
-#: inc/customizer/config.php:70
+#: inc/customizer/config.php:570
+msgid "2-year warranty"
+msgstr "2 Jahre Garantie"
+
+#: inc/customizer/config.php:571
+msgid "Secure, encrypted payment"
+msgstr "Sichere, verschlüsselte Zahlung"
+
+#: inc/customizer/config.php:58
+msgid "Flame"
+msgstr "Flamme"
+
+#: inc/customizer/config.php:59
+msgid "Logs"
+msgstr "Holzscheite"
+
+#: inc/customizer/config.php:60
+msgid "Moisture drop"
+msgstr "Feuchtigkeitstropfen"
+
+#: inc/customizer/config.php:61
+msgid "Ruler"
+msgstr "Lineal"
+
+#: inc/customizer/config.php:62
+msgid "Tree"
+msgstr "Baum"
+
+#: inc/customizer/config.php:78
 msgid "Leave empty to use the built-in text, translated automatically. Multilingual syntax: [:de]Text[:fr]Texte[:es]Texto[:en]Text"
 msgstr "Leer lassen, um den integrierten, automatisch übersetzten Text zu verwenden. Mehrsprachige Syntax: [:de]Text[:fr]Texte[:es]Texto[:en]Text"
 
-#: inc/customizer/config.php:76
+#: inc/customizer/config.php:84
 msgid "Colors"
 msgstr "Farben"
 
-#: inc/customizer/config.php:78
+#: inc/customizer/config.php:86
 msgid "Primary (buttons, header text)"
 msgstr "Primärfarbe (Buttons, Header-Text)"
 
-#: inc/customizer/config.php:79
+#: inc/customizer/config.php:87
 msgid "Accent (highlights, hover)"
 msgstr "Akzentfarbe (Hervorhebungen, Hover)"
 
-#: inc/customizer/config.php:80
+#: inc/customizer/config.php:88
 msgid "Page background"
 msgstr "Seitenhintergrund"
 
-#: inc/customizer/config.php:81
+#: inc/customizer/config.php:89
 msgid "Cards & panels"
 msgstr "Karten & Panels"
 
-#: inc/customizer/config.php:82
+#: inc/customizer/config.php:90
 msgid "Soft sections background"
 msgstr "Hintergrund heller Sektionen"
 
-#: inc/customizer/config.php:83 inc/customizer/config.php:232 inc/customizer/config.php:300
+#: inc/customizer/config.php:91 inc/customizer/config.php:240 inc/customizer/config.php:308
 msgid "Text"
 msgstr "Text"
 
-#: inc/customizer/config.php:84
+#: inc/customizer/config.php:92
 msgid "Secondary text"
 msgstr "Sekundärtext"
 
-#: inc/customizer/config.php:85
+#: inc/customizer/config.php:93
 msgid "Borders"
 msgstr "Rahmen"
 
-#: inc/customizer/config.php:86
+#: inc/customizer/config.php:94
 msgid "Sale / discount"
 msgstr "Sale / Rabatt"
 
-#: inc/customizer/config.php:87
+#: inc/customizer/config.php:95
 msgid "In stock / success"
 msgstr "Auf Lager / Erfolg"
 
-#: inc/customizer/config.php:88
+#: inc/customizer/config.php:96
 msgid "Footer background"
 msgstr "Footer-Hintergrund"
 
-#: inc/customizer/config.php:89
+#: inc/customizer/config.php:97
 msgid "Footer text"
 msgstr "Footer-Text"
 
-#: inc/customizer/config.php:90
+#: inc/customizer/config.php:98
 msgid "Announcement bar background"
 msgstr "Hintergrund der Hinweisleiste"
 
-#: inc/customizer/config.php:91
+#: inc/customizer/config.php:99
 msgid "Announcement bar text"
 msgstr "Text der Hinweisleiste"
-
-#: inc/customizer/config.php:97
-msgid "Typography & buttons"
-msgstr "Typografie & Buttons"
 
 #: inc/customizer/customizer.php:21
 msgid "Premium Shop — Theme options"
@@ -1049,6 +1169,665 @@ msgstr "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
 msgid "Results updated"
 msgstr "Ergebnisse aktualisiert"
 
+#: inc/firewood/calculator.php:111
+msgid "Checking…"
+msgstr "Wird geprüft …"
+
+#: inc/firewood/calculator.php:112 inc/firewood/delivery.php:88
+msgid "Please enter a valid postcode."
+msgstr "Bitte geben Sie eine gültige Postleitzahl ein."
+
+#. translators:1: loose m³, 2: solid m³.
+#: inc/firewood/calculator.php:115
+msgid "≈ %1$s loose m³ · %2$s solid m³"
+msgstr "≈ %1$s SRM · %2$s FM"
+
+#: inc/firewood/calculator.php:23 inc/firewood/product-data.php:54
+msgid "Beech"
+msgstr "Buche"
+
+#: inc/firewood/calculator.php:24 inc/firewood/product-data.php:55
+msgid "Oak"
+msgstr "Eiche"
+
+#: inc/firewood/calculator.php:25 inc/firewood/product-data.php:57
+msgid "Birch"
+msgstr "Birke"
+
+#: inc/firewood/calculator.php:26 inc/firewood/product-data.php:59
+msgid "Mixed hardwood"
+msgstr "Hartholz-Mix"
+
+#: inc/firewood/calculator.php:61
+msgid "Calculate your needs"
+msgstr "Bedarfsrechner"
+
+#: inc/firewood/delivery.php:165
+msgid "Yes, accessible for a truck"
+msgstr "Ja, mit dem LKW erreichbar"
+
+#: inc/firewood/delivery.php:166
+msgid "No — please contact me"
+msgstr "Nein – bitte kontaktieren Sie mich"
+
+#: inc/firewood/delivery.php:167
+msgid "I am not sure"
+msgstr "Ich bin nicht sicher"
+
+#: inc/firewood/delivery.php:190 inc/firewood/delivery.php:213
+msgid "Is the unloading point accessible for a truck?"
+msgstr "Ist die Abladestelle für einen LKW erreichbar?"
+
+#: inc/firewood/delivery.php:216
+msgid "Please choose"
+msgstr "Bitte wählen"
+
+#: inc/firewood/delivery.php:261 inc/firewood/delivery.php:279
+msgid "Truck access"
+msgstr "LKW-Zufahrt"
+
+#. translators:%s: amount.
+#: inc/firewood/delivery.php:44 inc/firewood/delivery.php:49
+msgid "free"
+msgstr "kostenlos"
+
+#. translators:%s: amount.
+#: inc/firewood/delivery.php:49
+msgid "free from %s"
+msgstr "kostenlos ab %s"
+
+#: inc/firewood/delivery.php:51
+msgid "pick-up"
+msgstr "Abholung"
+
+#: inc/firewood/demo-catalog.php:53 inc/firewood/product-data.php:517
+msgid "Firewood"
+msgstr "Kaminholz"
+
+#: inc/firewood/demo-catalog.php:54
+msgid "Kindling"
+msgstr "Anzündholz"
+
+#: inc/firewood/demo-catalog.php:55
+msgid "Wood briquettes"
+msgstr "Holzbriketts"
+
+#: inc/firewood/demo-catalog.php:56
+msgid "Firewood boxes"
+msgstr "Kaminholz-Boxen"
+
+#: inc/firewood/demo-catalog.php:57
+msgid "Kiln-dried split logs for stoves, fireplaces and boilers."
+msgstr "Kammergetrocknete Holzscheite für Öfen, Kamine und Heizkessel."
+
+#: inc/firewood/demo-catalog.php:58
+msgid "Dry kindling to light your fire quickly and cleanly."
+msgstr "Trockenes Anzündholz, um Ihr Feuer schnell und sauber zu entfachen."
+
+#: inc/firewood/demo-catalog.php:59
+msgid "Compressed wood briquettes with a long burning time."
+msgstr "Gepresste Holzbriketts mit langer Brenndauer."
+
+#: inc/firewood/demo-catalog.php:60
+msgid "Handy boxes of firewood — ideal for apartments and small storage spaces."
+msgstr "Praktische Kaminholz-Boxen – ideal für Wohnungen und kleine Lagerflächen."
+
+#: inc/firewood/demo-catalog.php:61
+msgid "Beech firewood, kiln-dried"
+msgstr "Buche Kaminholz, kammergetrocknet"
+
+#: inc/firewood/demo-catalog.php:62
+msgid "Oak firewood, kiln-dried"
+msgstr "Eiche Kaminholz, kammergetrocknet"
+
+#: inc/firewood/demo-catalog.php:63
+msgid "Birch firewood, kiln-dried"
+msgstr "Birke Kaminholz, kammergetrocknet"
+
+#: inc/firewood/demo-catalog.php:64
+msgid "Ash firewood, kiln-dried"
+msgstr "Esche Kaminholz, kammergetrocknet"
+
+#: inc/firewood/demo-catalog.php:65
+msgid "Hardwood mix, kiln-dried"
+msgstr "Hartholz-Mix, kammergetrocknet"
+
+#: inc/firewood/demo-catalog.php:66
+msgid "Kindling, 10 kg sack"
+msgstr "Anzündholz, 10-kg-Sack"
+
+#: inc/firewood/demo-catalog.php:67
+msgid "Beech wood briquettes, 10 kg pack"
+msgstr "Buchenholz-Briketts, 10-kg-Paket"
+
+#: inc/firewood/demo-catalog.php:68
+msgid "Beech firewood box, approx. 30 litres"
+msgstr "Buche Kaminholz-Box, ca. 30 Liter"
+
+#: inc/firewood/demo-catalog.php:69 inc/firewood/demo-catalog.php:230 inc/firewood/product-data.php:436
+msgid "Log length"
+msgstr "Scheitlänge"
+
+#: inc/firewood/demo-catalog.php:71 inc/firewood/demo-catalog.php:195
+msgid "Freight"
+msgstr "Spedition"
+
+#: inc/firewood/demo-catalog.php:72 inc/firewood/demo-catalog.php:195
+msgid "Delivery by truck (pallets, crates, loose)."
+msgstr "Lieferung per LKW (Paletten, Gitterboxen, lose)."
+
+#: inc/firewood/faq.php:32
+msgid "What is the difference between RM, SRM and FM?"
+msgstr "Was ist der Unterschied zwischen RM, SRM und FM?"
+
+#: inc/firewood/faq.php:32
+msgid "A stacked cubic metre (RM) is 1 m³ of neatly stacked logs including the gaps. A loose cubic metre (SRM) is 1 m³ of loosely tipped logs. A solid cubic metre (FM) is 1 m³ of pure wood without gaps. Rule of thumb: 1 FM ≈ 1.4 RM ≈ 2 SRM."
+msgstr "Ein Raummeter (RM) ist 1 m³ ordentlich geschichtetes Holz inklusive Zwischenräumen. Ein Schüttraummeter (SRM) ist 1 m³ lose geschüttetes Holz. Ein Festmeter (FM) ist 1 m³ reine Holzmasse ohne Zwischenräume. Faustregel: 1 FM ≈ 1,4 RM ≈ 2 SRM."
+
+#: inc/firewood/faq.php:33
+msgid "How dry is your firewood?"
+msgstr "Wie trocken ist Ihr Brennholz?"
+
+#: inc/firewood/faq.php:33
+msgid "Our kiln-dried firewood has a residual moisture below 20% and can be burned immediately. Dry wood burns cleaner, gives more heat and protects your stove and chimney."
+msgstr "Unser kammergetrocknetes Brennholz hat eine Restfeuchte unter 20 % und kann sofort verheizt werden. Trockenes Holz verbrennt sauberer, liefert mehr Wärme und schont Ofen und Schornstein."
+
+#: inc/firewood/faq.php:34
+msgid "Which log length do I need?"
+msgstr "Welche Scheitlänge brauche ich?"
+
+#: inc/firewood/faq.php:34
+msgid "Most stoves take 25 or 33 cm logs. Measure the width of your combustion chamber and choose logs about 5 cm shorter. 50 cm logs suit large fireplaces and boilers."
+msgstr "Die meisten Öfen nehmen 25 oder 33 cm lange Scheite. Messen Sie die Breite Ihres Brennraums und wählen Sie Scheite, die etwa 5 cm kürzer sind. 50-cm-Scheite eignen sich für große Kamine und Heizkessel."
+
+#: inc/firewood/faq.php:35
+msgid "How is the firewood delivered?"
+msgstr "Wie wird das Brennholz geliefert?"
+
+#: inc/firewood/faq.php:35
+msgid "We deliver by truck to the kerbside — on pallets, in crates or loose depending on the product. Please make sure the unloading point is accessible for a truck. We contact you to arrange the delivery date."
+msgstr "Wir liefern per LKW frei Bordsteinkante – je nach Produkt auf Paletten, in Gitterboxen oder lose. Bitte stellen Sie sicher, dass die Abladestelle für einen LKW erreichbar ist. Wir melden uns, um den Liefertermin abzustimmen."
+
+#: inc/firewood/faq.php:36
+msgid "How should I store firewood?"
+msgstr "Wie lagere ich Brennholz richtig?"
+
+#: inc/firewood/faq.php:36
+msgid "Store your wood dry, raised off the ground and well ventilated, ideally under a roof and protected from rain. Indoors, keep only the amount you need for a few days next to the stove."
+msgstr "Lagern Sie Ihr Holz trocken, vom Boden erhöht und gut belüftet, idealerweise überdacht und vor Regen geschützt. Im Haus nur den Bedarf für wenige Tage neben dem Ofen aufbewahren."
+
+#: inc/firewood/faq.php:37
+msgid "Which wood species should I choose?"
+msgstr "Welche Holzart soll ich wählen?"
+
+#: inc/firewood/faq.php:37
+msgid "Beech and oak give long-lasting embers and a high heat output, birch lights easily and burns with a beautiful flame, and hardwood mixes are ideal for everyday heating."
+msgstr "Buche und Eiche sorgen für lang anhaltende Glut und hohe Heizleistung, Birke entzündet sich leicht und brennt mit schönem Flammenbild, und Hartholz-Mischungen sind ideal zum täglichen Heizen."
+
+#: inc/firewood/presets.php:100
+msgid "Firewood from sustainable regional forestry — carefully dried, split and delivered to your door."
+msgstr "Brennholz aus nachhaltiger, regionaler Forstwirtschaft – sorgfältig getrocknet, gespalten und bis vor Ihre Tür geliefert."
+
+#: inc/firewood/presets.php:101
+msgid "Delivery within 3–10 business days"
+msgstr "Lieferung innerhalb von 3–10 Werktagen"
+
+#: inc/firewood/presets.php:102
+msgid "Moisture guarantee: below 20%"
+msgstr "Feuchte-Garantie: unter 20 %"
+
+#: inc/firewood/presets.php:103
+msgid "Frequently asked questions"
+msgstr "Häufige Fragen"
+
+#: inc/firewood/presets.php:104
+msgid "How much firewood do I need?"
+msgstr "Wie viel Brennholz brauche ich?"
+
+#: inc/firewood/presets.php:105
+msgid "Good news — we deliver to your area!"
+msgstr "Gute Nachricht – wir liefern zu Ihnen!"
+
+#: inc/firewood/presets.php:106
+msgid "Unfortunately we do not deliver to this postcode yet. Contact us — we will gladly find a solution."
+msgstr "Leider liefern wir (noch) nicht in dieses PLZ-Gebiet. Kontaktieren Sie uns – wir finden gerne eine Lösung."
+
+#: inc/firewood/presets.php:107
+msgid "Delivery by truck to the kerbside. Please make sure the unloading point is accessible for a truck. We will call you to arrange the delivery date."
+msgstr "Lieferung per LKW frei Bordsteinkante. Bitte stellen Sie sicher, dass die Abladestelle für einen LKW erreichbar ist. Wir rufen Sie an, um den Liefertermin abzustimmen."
+
+#: inc/firewood/presets.php:73
+msgid "Kiln-dried firewood — residual moisture below 20%"
+msgstr "Kammergetrocknetes Kaminholz – Restfeuchte unter 20 %"
+
+#: inc/firewood/presets.php:74
+msgid "Delivery by truck — check your postcode now"
+msgstr "Lieferung per LKW – jetzt Postleitzahl prüfen"
+
+#: inc/firewood/presets.php:75
+msgid "Fair prices per stacked cubic metre"
+msgstr "Faire Preise pro Raummeter"
+
+#: inc/firewood/presets.php:78
+msgid "Firewood from regional forests"
+msgstr "Brennholz aus regionalen Wäldern"
+
+#: inc/firewood/presets.php:79
+msgid "Dry firewood, delivered to your door"
+msgstr "Trockenes Kaminholz, bis vor Ihre Tür geliefert"
+
+#: inc/firewood/presets.php:80
+msgid "Kiln-dried beech, oak and birch with less than 20% residual moisture — split, ready for your stove and delivered by truck."
+msgstr "Kammergetrocknete Buche, Eiche und Birke mit unter 20 % Restfeuchte – gespalten, ofenfertig und per LKW geliefert."
+
+#: inc/firewood/presets.php:82
+msgid "Calculate my needs"
+msgstr "Bedarf berechnen"
+
+#: inc/firewood/presets.php:83
+msgid "Our firewood"
+msgstr "Unser Brennholz"
+
+#: inc/firewood/presets.php:84
+msgid "Most ordered"
+msgstr "Am häufigsten bestellt"
+
+#: inc/firewood/presets.php:85
+msgid "Current offers"
+msgstr "Aktuelle Angebote"
+
+#: inc/firewood/presets.php:86
+msgid "Stock up early"
+msgstr "Rechtzeitig vorsorgen"
+
+#: inc/firewood/presets.php:87
+msgid "Pre-season prices"
+msgstr "Vorsaison-Preise"
+
+#: inc/firewood/presets.php:88
+msgid "Order now, store your wood dry and enjoy a warm home when the cold season starts."
+msgstr "Jetzt bestellen, trocken einlagern und zu Beginn der kalten Jahreszeit ein warmes Zuhause genießen."
+
+#: inc/firewood/presets.php:90 inc/firewood/product-data.php:74
+msgid "Kiln-dried"
+msgstr "Kammergetrocknet"
+
+#: inc/firewood/presets.php:91
+msgid "Residual moisture below 20%"
+msgstr "Restfeuchte unter 20 %"
+
+#: inc/firewood/presets.php:92
+msgid "Delivered to your door"
+msgstr "Bis vor Ihre Tür"
+
+#: inc/firewood/presets.php:93
+msgid "By truck, on pallets or loose"
+msgstr "Per LKW, auf Paletten oder lose"
+
+#: inc/firewood/presets.php:94
+msgid "Honest quantities"
+msgstr "Ehrliche Mengen"
+
+#: inc/firewood/presets.php:95
+msgid "Clear price per stacked cubic metre"
+msgstr "Klarer Preis pro Raummeter"
+
+#: inc/firewood/presets.php:96
+msgid "Personal advice"
+msgstr "Persönliche Beratung"
+
+#: inc/firewood/presets.php:97
+msgid "We help you choose the right wood"
+msgstr "Wir helfen Ihnen bei der Holzwahl"
+
+#: inc/firewood/presets.php:98
+msgid "Season & price news"
+msgstr "Saison- & Preis-News"
+
+#: inc/firewood/presets.php:99
+msgid "Be the first to know about pre-season prices and delivery dates. Unsubscribe at any time."
+msgstr "Erfahren Sie als Erste von Vorsaison-Preisen und Lieferterminen. Jederzeit abbestellbar."
+
+#: inc/firewood/price-tool.php:100
+msgid "Product"
+msgstr "Produkt"
+
+#: inc/firewood/price-tool.php:102 inc/firewood/product-data.php:449 inc/firewood/product-data.php:554
+msgid "Sales unit"
+msgstr "Verkaufseinheit"
+
+#: inc/firewood/price-tool.php:103 inc/firewood/product-data.php:557
+msgid "Price per unit"
+msgstr "Preis pro Einheit"
+
+#: inc/firewood/price-tool.php:104
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: inc/firewood/price-tool.php:105
+msgid "Current prices"
+msgstr "Aktuelle Preise"
+
+#: inc/firewood/price-tool.php:125
+msgid "Change all prices per unit by"
+msgstr "Alle Einheitspreise ändern um"
+
+#: inc/firewood/price-tool.php:128
+msgid "(e.g. 5 = +5%, -3 = −3%; leave empty to keep the values above)"
+msgstr "(z. B. 5 = +5 %, -3 = −3 %; leer lassen, um die Werte oben zu übernehmen)"
+
+#: inc/firewood/price-tool.php:131
+msgid "Round prices per unit to whole amounts"
+msgstr "Einheitspreise auf ganze Beträge runden"
+
+#: inc/firewood/price-tool.php:133
+msgid "Save & recalculate all prices"
+msgstr "Speichern & alle Preise neu berechnen"
+
+#: inc/firewood/price-tool.php:20 inc/firewood/price-tool.php:21 inc/firewood/price-tool.php:76
+msgid "Firewood prices"
+msgstr "Brennholz-Preise"
+
+#: inc/firewood/price-tool.php:77
+msgid "Set the price per unit once — the prices of all quantities (variations) are calculated automatically, including quantity discounts. Ideal for seasonal price changes."
+msgstr "Legen Sie den Einheitspreis einmal fest – die Preise aller Mengen (Varianten) werden automatisch berechnet, inklusive Mengenrabatt. Ideal für saisonale Preisänderungen."
+
+#. translators:%d: number of prices.
+#: inc/firewood/price-tool.php:83
+msgid "%d price updated."
+msgid_plural "%d prices updated."
+msgstr[0] "%d Preis aktualisiert."
+msgstr[1] "%d Preise aktualisiert."
+
+#: inc/firewood/price-tool.php:90
+msgid "No firewood products yet. Fill the \"Firewood\" tab of your products, or create the sample catalogue in Appearance → Shop setup."
+msgstr "Noch keine Brennholz-Produkte. Füllen Sie den Tab „Brennholz“ Ihrer Produkte aus oder legen Sie den Musterkatalog unter Design → Shop-Einrichtung an."
+
+#. translators:1: price, 2: unit (e.g. stacked m³).
+#: inc/firewood/product-data.php:293
+msgid "from %1$s / %2$s"
+msgstr "ab %1$s / %2$s"
+
+#. translators:1: price, 2: unit (e.g. stacked m³).
+#: inc/firewood/product-data.php:295
+msgid "%1$s / %2$s"
+msgstr "%1$s / %2$s"
+
+#: inc/firewood/product-data.php:297
+msgid "Unit price:"
+msgstr "Grundpreis:"
+
+#. translators:%s: residual moisture in percent.
+#: inc/firewood/product-data.php:323
+msgid "< %s %% moisture"
+msgstr "< %s %% Restfeuchte"
+
+#: inc/firewood/product-data.php:38
+msgid "Kilogram (kg)"
+msgstr "Kilogramm (kg)"
+
+#: inc/firewood/product-data.php:39
+msgid "litre"
+msgstr "Liter"
+
+#: inc/firewood/product-data.php:39
+msgid "Litre (box volume)"
+msgstr "Liter (Boxvolumen)"
+
+#: inc/firewood/product-data.php:40
+msgid "piece"
+msgstr "Stück"
+
+#: inc/firewood/product-data.php:40
+msgid "Piece"
+msgstr "Stück"
+
+#. translators:%s: percent.
+#: inc/firewood/product-data.php:441
+msgid "Residual moisture"
+msgstr "Restfeuchte"
+
+#. translators:%s: percent.
+#: inc/firewood/product-data.php:441
+msgid "below %s %%"
+msgstr "unter %s %%"
+
+#: inc/firewood/product-data.php:445 inc/firewood/product-data.php:546
+msgid "Drying"
+msgstr "Trocknung"
+
+#. translators:1: kWh, 2: unit.
+#: inc/firewood/product-data.php:458
+msgid "Energy content (approx.)"
+msgstr "Heizwert (ca.)"
+
+#. translators:1: kWh, 2: unit.
+#: inc/firewood/product-data.php:458
+msgid "%1$s kWh per %2$s"
+msgstr "%1$s kWh pro %2$s"
+
+#: inc/firewood/product-data.php:462 inc/firewood/product-data.php:547
+msgid "Origin"
+msgstr "Herkunft"
+
+#: inc/firewood/product-data.php:466 inc/firewood/product-data.php:548
+msgid "Certification"
+msgstr "Zertifizierung"
+
+#: inc/firewood/product-data.php:482 inc/firewood/product-data.php:496
+msgid "Wood data sheet"
+msgstr "Holz-Datenblatt"
+
+#: inc/firewood/product-data.php:502
+msgid "Energy values are indicative and depend on moisture and storage."
+msgstr "Heizwerte sind Richtwerte und hängen von Feuchte und Lagerung ab."
+
+#: inc/firewood/product-data.php:536
+msgid "— Not firewood —"
+msgstr "— Kein Brennholz —"
+
+#: inc/firewood/product-data.php:541
+msgid "Wood data"
+msgstr "Holzdaten"
+
+#: inc/firewood/product-data.php:541
+msgid "Shown as chips, data sheet and used for the automatic description."
+msgstr "Wird als Merkmale, Datenblatt und für die automatische Beschreibung verwendet."
+
+#: inc/firewood/product-data.php:544
+msgid "Log length (cm)"
+msgstr "Scheitlänge (cm)"
+
+#: inc/firewood/product-data.php:544
+msgid "e.g. 25, 33, 50 or \"25/33\"."
+msgstr "z. B. 25, 33, 50 oder „25/33“."
+
+#: inc/firewood/product-data.php:545
+msgid "Residual moisture below (%)"
+msgstr "Restfeuchte unter (%)"
+
+#: inc/firewood/product-data.php:547
+msgid "e.g. Black Forest, Germany"
+msgstr "z. B. Schwarzwald, Deutschland"
+
+#: inc/firewood/product-data.php:552
+msgid "Unit & automatic prices"
+msgstr "Einheit & automatische Preise"
+
+#: inc/firewood/product-data.php:555
+msgid "Units per product"
+msgstr "Einheiten pro Produkt"
+
+#: inc/firewood/product-data.php:555 inc/firewood/product-data.php:556
+msgid "automatic"
+msgstr "automatisch"
+
+#: inc/firewood/product-data.php:555
+msgid "Simple products only (e.g. 1.8 for a pallet of 1.8 RM). Variations read it from their attribute (\"2 RM\", \"1,8 SRM\") or from their own field."
+msgstr "Nur einfache Produkte (z. B. 1,8 für eine Palette mit 1,8 RM). Varianten lesen den Wert aus ihrer Eigenschaft („2 RM“, „1,8 SRM“) oder aus ihrem eigenen Feld."
+
+#: inc/firewood/product-data.php:556
+msgid "Energy content (kWh per unit)"
+msgstr "Heizwert (kWh pro Einheit)"
+
+#: inc/firewood/product-data.php:558
+msgid "Calculate prices automatically"
+msgstr "Preise automatisch berechnen"
+
+#: inc/firewood/product-data.php:558
+msgid "On save, the regular price of the product / every variation = price per unit × units (− quantity discount). Sale prices are kept."
+msgstr "Beim Speichern gilt für den regulären Preis des Produkts bzw. jeder Variante: Einheitspreis × Einheiten (− Mengenrabatt). Angebotspreise bleiben erhalten."
+
+#: inc/firewood/product-data.php:559
+msgid "Quantity discount 1: from (units)"
+msgstr "Mengenrabatt 1: ab (Einheiten)"
+
+#: inc/firewood/product-data.php:56
+msgid "Ash"
+msgstr "Esche"
+
+#: inc/firewood/product-data.php:560
+msgid "Quantity discount 1 (%)"
+msgstr "Mengenrabatt 1 (%)"
+
+#: inc/firewood/product-data.php:561
+msgid "Quantity discount 2: from (units)"
+msgstr "Mengenrabatt 2: ab (Einheiten)"
+
+#: inc/firewood/product-data.php:562
+msgid "Quantity discount 2 (%)"
+msgstr "Mengenrabatt 2 (%)"
+
+#: inc/firewood/product-data.php:564
+msgid "Empty description? A description and a short description are written automatically from these data when you save (you can edit them afterwards)."
+msgstr "Keine Beschreibung? Beim Speichern werden Beschreibung und Kurzbeschreibung automatisch aus diesen Daten erstellt (Sie können sie danach bearbeiten)."
+
+#: inc/firewood/product-data.php:58
+msgid "Hornbeam"
+msgstr "Hainbuche"
+
+#: inc/firewood/product-data.php:60
+msgid "Alder"
+msgstr "Erle"
+
+#: inc/firewood/product-data.php:61
+msgid "Pine"
+msgstr "Kiefer"
+
+#: inc/firewood/product-data.php:62
+msgid "Spruce"
+msgstr "Fichte"
+
+#: inc/firewood/product-data.php:629
+msgid "Units in this variation"
+msgstr "Einheiten in dieser Variante"
+
+#: inc/firewood/product-data.php:630
+msgid "automatic from the attribute"
+msgstr "automatisch aus der Eigenschaft"
+
+#: inc/firewood/product-data.php:634
+msgid "Leave empty: read from the attribute name (e.g. \"2 RM\" = 2)."
+msgstr "Leer lassen: wird aus dem Eigenschaftsnamen gelesen (z. B. „2 RM“ = 2)."
+
+#: inc/firewood/product-data.php:75
+msgid "Air-dried"
+msgstr "Luftgetrocknet"
+
+#: inc/firewood/product-data.php:76
+msgid "Freshly cut (for self-drying)"
+msgstr "Frisch geschlagen (zum Selbsttrocknen)"
+
+#. translators:1: wood species, 2: drying method, 3: log length.
+#: inc/firewood/product-data.php:791
+msgid "%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace."
+msgstr "%1$s-Kaminholz, %2$s und auf %3$s Scheitlänge gespalten – fertig für Ihren Ofen oder Kamin."
+
+#. translators:%s: percent.
+#: inc/firewood/product-data.php:800
+msgid "Residual moisture below %s%%: dry wood burns cleanly, gives more heat and protects your stove and chimney."
+msgstr "Restfeuchte unter %s %%: Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
+
+#. translators:%s: percent.
+#: inc/firewood/product-data.php:801
+msgid "Dry wood burns cleanly, gives more heat and protects your stove and chimney."
+msgstr "Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
+
+#. translators:%s: origin.
+#: inc/firewood/product-data.php:806
+msgid "Origin: %s."
+msgstr "Herkunft: %s."
+
+#. translators:%s: certificate.
+#: inc/firewood/product-data.php:810
+msgid "Certified: %s."
+msgstr "Zertifiziert: %s."
+
+#: inc/firewood/product-data.php:812
+msgid "Tip: store your wood dry and well ventilated, ideally under a roof."
+msgstr "Tipp: Lagern Sie Ihr Holz trocken und gut belüftet, idealerweise überdacht."
+
+#: inc/firewood/product-data.php:878
+msgid "kiln-dried"
+msgstr "kammergetrocknet"
+
+#: inc/firewood/product-data.php:879
+msgid "naturally air-dried"
+msgstr "natürlich luftgetrocknet"
+
+#: inc/firewood/product-data.php:880
+msgid "freshly cut"
+msgstr "frisch geschlagen"
+
+#: inc/firewood/product-data.php:881
+msgid "carefully dried"
+msgstr "sorgfältig getrocknet"
+
+#: inc/firewood/product-data.php:882 inc/firewood/product-data.php:794
+msgid "stove length"
+msgstr "Ofenlänge"
+
+#: inc/firewood/product-data.php:883
+msgid "Beech is the classic: long, even embers and a cosy, calm flame."
+msgstr "Buche ist der Klassiker: lange, gleichmäßige Glut und ein gemütliches, ruhiges Flammenbild."
+
+#: inc/firewood/product-data.php:884
+msgid "Oak burns slowly and produces long-lasting embers — ideal for long evenings."
+msgstr "Eiche brennt langsam und bildet lang anhaltende Glut – ideal für lange Abende."
+
+#: inc/firewood/product-data.php:885
+msgid "Ash offers a high heat output and burns calmly with a beautiful flame."
+msgstr "Esche liefert eine hohe Heizleistung und brennt ruhig mit schönem Flammenbild."
+
+#: inc/firewood/product-data.php:886
+msgid "Birch lights easily, burns with a bright flame and hardly sparks."
+msgstr "Birke entzündet sich leicht, brennt mit heller Flamme und funkt kaum."
+
+#: inc/firewood/product-data.php:887
+msgid "Hornbeam has one of the highest energy contents of all native woods."
+msgstr "Hainbuche hat einen der höchsten Heizwerte aller heimischen Hölzer."
+
+#: inc/firewood/product-data.php:888
+msgid "A balanced mix of hardwoods for reliable everyday heating."
+msgstr "Eine ausgewogene Hartholz-Mischung für zuverlässiges Heizen im Alltag."
+
+#: inc/firewood/product-data.php:889
+msgid "Alder burns evenly with little sparking and a pleasant smell."
+msgstr "Erle brennt gleichmäßig, funkt kaum und duftet angenehm."
+
+#: inc/firewood/product-data.php:890
+msgid "Pine lights quickly — perfect for getting the fire started."
+msgstr "Kiefer entzündet sich schnell – perfekt zum Anfeuern."
+
+#: inc/firewood/product-data.php:891
+msgid "Spruce lights quickly — perfect for getting the fire started."
+msgstr "Fichte entzündet sich schnell – perfekt zum Anfeuern."
+
+#. translators:%s: lowest price.
+#: inc/firewood/product-data.php:912
+msgid "from %s"
+msgstr "ab %s"
+
 #: inc/newsletter.php:102
 msgid "You are already subscribed. Thank you!"
 msgstr "Sie sind bereits angemeldet. Vielen Dank!"
@@ -1071,7 +1850,7 @@ msgstr "Falls Sie dies nicht angefordert haben, ignorieren Sie diese E-Mail einf
 msgid "Best regards,"
 msgstr "Mit freundlichen Grüßen"
 
-#: inc/newsletter.php:23 inc/newsletter.php:25 inc/customizer/config.php:33 inc/customizer/config.php:297
+#: inc/newsletter.php:23 inc/newsletter.php:25 inc/customizer/config.php:33 inc/customizer/config.php:305
 msgid "Newsletter"
 msgstr "Newsletter"
 
@@ -1095,11 +1874,11 @@ msgstr "Newsletter-Abonnenten"
 msgid "No subscribers yet."
 msgstr "Noch keine Abonnenten."
 
-#: inc/newsletter.php:272 inc/customizer/config.php:373
+#: inc/newsletter.php:272 inc/customizer/config.php:381
 msgid "Email"
 msgstr "E-Mail"
 
-#: inc/newsletter.php:273
+#: inc/newsletter.php:273 inc/firewood/price-tool.php:101
 msgid "Status"
 msgstr "Status"
 
@@ -1123,7 +1902,7 @@ msgstr "Bestätigung ausstehend"
 msgid "Export confirmed subscribers (CSV)"
 msgstr "Bestätigte Abonnenten exportieren (CSV)"
 
-#: inc/newsletter.php:315 inc/admin/onboarding.php:66 inc/admin/onboarding.php:225
+#: inc/newsletter.php:315 inc/admin/onboarding.php:66 inc/admin/onboarding.php:233 inc/firewood/price-tool.php:145
 msgid "You are not allowed to do this."
 msgstr "Dazu sind Sie nicht berechtigt."
 
@@ -1151,15 +1930,15 @@ msgstr "Zu viele Versuche. Bitte versuchen Sie es später erneut."
 msgid "The login details are incorrect."
 msgstr "Die Anmeldedaten sind nicht korrekt."
 
-#: inc/setup.php:43 inc/admin/onboarding.php:394
+#: inc/setup.php:43 inc/admin/onboarding.php:408
 msgid "Footer — Shop"
 msgstr "Footer – Shop"
 
-#: inc/setup.php:44 inc/admin/onboarding.php:403
+#: inc/setup.php:44 inc/admin/onboarding.php:417
 msgid "Footer — Customer service"
 msgstr "Footer – Kundenservice"
 
-#: inc/setup.php:45 inc/admin/onboarding.php:412
+#: inc/setup.php:45 inc/admin/onboarding.php:426
 msgid "Footer — Legal"
 msgstr "Footer – Rechtliches"
 
@@ -1187,15 +1966,15 @@ msgstr "Footer – zusätzliche Spalte"
 msgid "Optional widgets displayed as an additional footer column."
 msgstr "Optionale Widgets als zusätzliche Footer-Spalte."
 
-#: inc/template-tags.php:106 inc/template-tags.php:417 inc/admin/onboarding.php:388 inc/admin/onboarding.php:399
+#: inc/template-tags.php:106 inc/template-tags.php:417 inc/admin/onboarding.php:402 inc/admin/onboarding.php:413
 msgid "Offers"
 msgstr "Angebote"
 
-#: inc/template-tags.php:115 inc/admin/onboarding.php:281
+#: inc/template-tags.php:115 inc/admin/onboarding.php:295
 msgid "About us"
 msgstr "Über uns"
 
-#: inc/template-tags.php:189 inc/customizer/config.php:381
+#: inc/template-tags.php:189 inc/customizer/config.php:389
 msgid "Social networks"
 msgstr "Soziale Netzwerke"
 
@@ -1242,11 +2021,11 @@ msgstr "Vorherige Seite"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: inc/template-tags.php:415 inc/admin/onboarding.php:397 inc/customizer/config.php:27 inc/customizer/config.php:498
+#: inc/template-tags.php:415 inc/admin/onboarding.php:411 inc/customizer/config.php:27 inc/customizer/config.php:544
 msgid "New arrivals"
 msgstr "Neuheiten"
 
-#: inc/template-tags.php:416 inc/admin/onboarding.php:398 inc/customizer/config.php:29 inc/customizer/config.php:500
+#: inc/template-tags.php:416 inc/admin/onboarding.php:412 inc/customizer/config.php:29 inc/customizer/config.php:546
 msgid "Bestsellers"
 msgstr "Bestseller"
 
@@ -1254,23 +2033,23 @@ msgstr "Bestseller"
 msgid "Track my orders"
 msgstr "Meine Bestellungen verfolgen"
 
-#: inc/template-tags.php:442 inc/admin/onboarding.php:297
+#: inc/template-tags.php:442 inc/admin/onboarding.php:311
 msgid "Shipping & payment"
 msgstr "Versand & Zahlung"
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:446 inc/customizer/config.php:37
 msgid "FAQ"
 msgstr "FAQ"
 
-#: inc/template-tags.php:454 inc/admin/onboarding.php:302
+#: inc/template-tags.php:454 inc/admin/onboarding.php:316
 msgid "Legal notice"
 msgstr "Impressum"
 
-#: inc/template-tags.php:455 inc/admin/onboarding.php:307
+#: inc/template-tags.php:455 inc/admin/onboarding.php:321
 msgid "Terms & conditions"
 msgstr "AGB"
 
-#: inc/template-tags.php:456 inc/admin/onboarding.php:312
+#: inc/template-tags.php:456 inc/admin/onboarding.php:326
 msgid "Right of withdrawal"
 msgstr "Widerrufsbelehrung"
 
@@ -1283,7 +2062,7 @@ msgstr "Datenschutzerklärung"
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. Alle Rechte vorbehalten."
 
-#: inc/template-tags.php:83 inc/template-tags.php:312 inc/admin/onboarding.php:385
+#: inc/template-tags.php:83 inc/template-tags.php:312 inc/admin/onboarding.php:399
 msgid "Home"
 msgstr "Startseite"
 
@@ -1353,7 +2132,7 @@ msgstr "Vielen Dank!"
 msgid "Your order has been received. You will receive a confirmation by email shortly."
 msgstr "Ihre Bestellung ist eingegangen. Sie erhalten in Kürze eine Bestätigung per E-Mail."
 
-#: inc/woocommerce/cart-checkout.php:191 inc/customizer/config.php:25 inc/customizer/config.php:497
+#: inc/woocommerce/cart-checkout.php:191 inc/customizer/config.php:25 inc/customizer/config.php:543
 msgid "Popular products"
 msgstr "Beliebte Produkte"
 
@@ -1640,6 +2419,97 @@ msgstr "Zurück"
 msgid "Next"
 msgstr "Weiter"
 
+#: template-parts/components/delivery-check.php:23
+msgid "Do we deliver to you? Enter your postcode"
+msgstr "Liefern wir zu Ihnen? Geben Sie Ihre PLZ ein"
+
+#: template-parts/components/delivery-check.php:27
+msgid "Country"
+msgstr "Land"
+
+#: template-parts/components/delivery-check.php:36
+msgid "Postcode"
+msgstr "PLZ"
+
+#: template-parts/components/delivery-check.php:37
+msgid "Check"
+msgstr "Prüfen"
+
+#: template-parts/components/firewood-calculator.php:19
+msgid "Annual need"
+msgstr "Jahresbedarf"
+
+#: template-parts/components/firewood-calculator.php:22 inc/firewood/product-data.php:432 inc/firewood/product-data.php:543
+msgid "Wood species"
+msgstr "Holzart"
+
+#: template-parts/components/firewood-calculator.php:30
+msgid "Stove output (kW)"
+msgstr "Ofenleistung (kW)"
+
+#: template-parts/components/firewood-calculator.php:34
+msgid "Hours of use per day"
+msgstr "Heizstunden pro Tag"
+
+#: template-parts/components/firewood-calculator.php:38
+msgid "Heating days per season"
+msgstr "Heiztage pro Saison"
+
+#: template-parts/components/firewood-calculator.php:43 inc/firewood/calculator.php:113
+msgid "stacked m³ per season"
+msgstr "RM pro Saison"
+
+#: template-parts/components/firewood-calculator.php:46
+msgid "Indicative values for air-dry wood (< 20% moisture) and a stove efficiency of about 78%. Actual consumption depends on insulation, stove and habits."
+msgstr "Richtwerte für lufttrockenes Holz (< 20 % Restfeuchte) und einen Ofenwirkungsgrad von ca. 78 %. Der tatsächliche Verbrauch hängt von Dämmung, Ofen und Heizgewohnheiten ab."
+
+#: template-parts/components/firewood-calculator.php:48 inc/firewood/presets.php:81
+msgid "Order firewood"
+msgstr "Brennholz bestellen"
+
+#: template-parts/components/firewood-calculator.php:53
+msgid "Unit converter"
+msgstr "Einheiten-Umrechner"
+
+#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:231
+msgid "Quantity"
+msgstr "Menge"
+
+#: template-parts/components/firewood-calculator.php:60
+msgid "Unit"
+msgstr "Einheit"
+
+#: template-parts/components/firewood-calculator.php:62 inc/firewood/product-data.php:35
+msgid "Stacked cubic metre (RM)"
+msgstr "Raummeter (RM)"
+
+#: template-parts/components/firewood-calculator.php:63 inc/firewood/product-data.php:36
+msgid "Loose cubic metre (SRM)"
+msgstr "Schüttraummeter (SRM)"
+
+#: template-parts/components/firewood-calculator.php:64 inc/firewood/product-data.php:37
+msgid "Solid cubic metre (FM)"
+msgstr "Festmeter (FM)"
+
+#. translators:1: loose m³, 2: solid m³.
+#: template-parts/components/firewood-calculator.php:69 inc/firewood/calculator.php:116 inc/firewood/product-data.php:35
+msgid "stacked m³"
+msgstr "RM"
+
+#. translators:1: loose m³, 2: solid m³.
+#: template-parts/components/firewood-calculator.php:70 inc/firewood/calculator.php:117 inc/firewood/product-data.php:36
+msgid "loose m³"
+msgstr "SRM"
+
+#. translators:1: loose m³, 2: solid m³.
+#: template-parts/components/firewood-calculator.php:71 inc/firewood/calculator.php:118 inc/firewood/product-data.php:37
+msgid "solid m³"
+msgstr "FM"
+
+#: template-parts/components/firewood-calculator.php:73
+msgid "Rule of thumb for split logs (33 cm): 1 solid m³ ≈ 1.4 stacked m³ ≈ 2 loose m³."
+msgstr "Faustregel für gespaltenes Holz (33 cm): 1 FM ≈ 1,4 RM ≈ 2 SRM."
+
 #: template-parts/components/newsletter-form.php:29
 msgid "Leave this field empty"
 msgstr "Dieses Feld leer lassen"
@@ -1710,15 +2580,15 @@ msgstr "Rechtliches"
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:386
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:400
 msgid "Shop"
 msgstr "Shop"
 
-#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:519
+#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:565
 msgid "Customer service"
 msgstr "Kundenservice"
 
-#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:450 inc/admin/onboarding.php:286
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:450 inc/admin/onboarding.php:300
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -1750,7 +2620,7 @@ msgstr "Menü"
 msgid "Close menu"
 msgstr "Menü schließen"
 
-#: template-parts/header/mobile-menu.php:26 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:383
+#: template-parts/header/mobile-menu.php:26 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:397
 msgid "Main menu"
 msgstr "Hauptmenü"
 
@@ -1762,7 +2632,7 @@ msgstr "Mein Konto"
 msgid "Sign in / Register"
 msgstr "Anmelden / Registrieren"
 
-#: template-parts/header/mobile-menu.php:44 template-parts/header/site-header.php:53 inc/admin/onboarding.php:291 inc/customizer/config.php:333
+#: template-parts/header/mobile-menu.php:44 template-parts/header/site-header.php:53 inc/admin/onboarding.php:305 inc/customizer/config.php:341
 msgid "Wishlist"
 msgstr "Wunschliste"
 
@@ -1802,11 +2672,19 @@ msgstr "Unsere Versprechen"
 msgid "Upload partner logos in Premium Shop → Homepage — brands, or create brands in Products → Brands. (This hint is only visible in the Customizer.)"
 msgstr "Laden Sie Partnerlogos unter Premium Shop → Startseite – Marken hoch oder legen Sie Marken unter Produkte → Marken an. (Dieser Hinweis ist nur im Customizer sichtbar.)"
 
+#: template-parts/homepage/calculator.php:15
+msgid "Plan ahead"
+msgstr "Vorausplanen"
+
+#: template-parts/homepage/calculator.php:17
+msgid "Estimate your firewood needs for the season in a few seconds and convert between stacked, loose and solid cubic metres."
+msgstr "Ermitteln Sie in Sekunden Ihren Brennholzbedarf für die Saison und rechnen Sie zwischen Raummeter, Schüttraummeter und Festmeter um."
+
 #: template-parts/homepage/categories.php:43
 msgid "Explore"
 msgstr "Entdecken"
 
-#: template-parts/homepage/categories.php:47 inc/template-tags.php:414 inc/admin/onboarding.php:396
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:414 inc/admin/onboarding.php:410
 msgid "All products"
 msgstr "Alle Produkte"
 
@@ -1817,18 +2695,34 @@ msgid_plural "%d products"
 msgstr[0] "%d Produkt"
 msgstr[1] "%d Produkte"
 
+#: template-parts/homepage/delivery.php:18
+msgid "Delivery area"
+msgstr "Liefergebiet"
+
+#: template-parts/homepage/delivery.php:19
+msgid "Do we deliver to you?"
+msgstr "Liefern wir zu Ihnen?"
+
+#: template-parts/homepage/delivery.php:20
+msgid "Enter your postcode to see delivery options and costs instantly."
+msgstr "Geben Sie Ihre Postleitzahl ein und sehen Sie sofort Liefermöglichkeiten und Kosten."
+
+#: template-parts/homepage/faq.php:20
+msgid "Good to know"
+msgstr "Gut zu wissen"
+
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:84 inc/woocommerce/single-product.php:159 inc/customizer/config.php:483
+#: template-parts/homepage/hero.php:86 inc/woocommerce/single-product.php:159 inc/customizer/config.php:529
 msgid "Free shipping from %s"
 msgstr "Kostenloser Versand ab %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:92 inc/woocommerce/cart-checkout.php:141 inc/woocommerce/single-product.php:167 inc/customizer/config.php:487
+#: template-parts/homepage/hero.php:94 inc/woocommerce/cart-checkout.php:141 inc/woocommerce/single-product.php:167 inc/customizer/config.php:533
 msgid "%d-day free returns"
 msgstr "%d Tage kostenlose Rückgabe"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:96 inc/customizer/config.php:350 inc/customizer/config.php:515
+#: template-parts/homepage/hero.php:98 inc/customizer/config.php:358 inc/customizer/config.php:561
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
@@ -1849,7 +2743,7 @@ msgstr "Diese Sektion erscheint automatisch, sobald Sie Produktbewertungen mit 4
 msgid "Rated %d out of 5"
 msgstr "Mit %d von 5 bewertet"
 
-#: template-parts/products/quick-view-modal.php:14 inc/customizer/config.php:332
+#: template-parts/products/quick-view-modal.php:14 inc/customizer/config.php:340
 msgid "Quick view"
 msgstr "Schnellansicht"
 

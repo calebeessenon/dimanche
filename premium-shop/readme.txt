@@ -5,7 +5,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 10.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,21 @@ A premium, conversion-focused WooCommerce theme. German-first, fully translated 
 Premium Shop is a complete WooCommerce theme with an editorial art direction ("Maison"):
 warm ivory backgrounds, deep ink, a cognac accent, Fraunces headings and Inter body text
 (both self-hosted — no request to Google, GDPR-friendly).
+
+Firewood shop module (Brennholz / Kaminholz):
+
+* "Firewood" product tab: wood species, log length, residual moisture, drying,
+  sales unit (RM / SRM / FM / kg / litre), origin, certification.
+* Automatic prices: price per unit × volume read from the variation ("2 RM"),
+  with two quantity discounts. Products → Firewood prices changes all prices at once.
+* Unit price (Grundpreis, PAngV) on cards, product pages and variations.
+* Automatic descriptions, key-data chips and a wood data sheet tab.
+* Postcode delivery check based on WooCommerce shipping zones; the postcode
+  pre-fills the checkout. Checkout question "Accessible for a truck?".
+* Needs calculator (kW × hours × days) and RM/SRM/FM converter, FAQ with
+  FAQPage structured data. Shortcodes: [ps_delivery_check], [ps_firewood_calculator], [ps_faq].
+* One-click sample catalogue (5 species × 3 lengths × 4 quantities, kindling,
+  briquettes, box) and CSV import support (Products → Import).
 
 Features:
 
@@ -64,6 +79,9 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.1.0 =
+* Firewood shop module and "Firewood" style preset (default).
 
 = 1.0.0 =
 * Initial release.

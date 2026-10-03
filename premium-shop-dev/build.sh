@@ -15,7 +15,7 @@ echo "→ Minifying CSS & JS"
 for f in main woocommerce editor customizer-controls; do
 	npx esbuild "$THEME/assets/css/$f.css" --minify --log-level=warning --outfile="$THEME/assets/css/$f.min.css"
 done
-for f in theme shop product customizer-controls customizer-preview; do
+for f in theme shop product firewood customizer-controls customizer-preview; do
 	npx esbuild "$THEME/assets/js/$f.js" --minify --target=es2017 --log-level=warning --outfile="$THEME/assets/js/$f.min.js"
 done
 

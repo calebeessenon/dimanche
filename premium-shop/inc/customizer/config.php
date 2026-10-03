@@ -32,6 +32,9 @@ function premium_shop_home_section_labels() {
 		'brands'       => __( 'Brands', 'premium-shop' ),
 		'newsletter'   => __( 'Newsletter', 'premium-shop' ),
 		'content'      => __( 'Page content (editor)', 'premium-shop' ),
+		'calculator'   => __( 'Firewood calculator', 'premium-shop' ),
+		'delivery'     => __( 'Delivery check (postcode)', 'premium-shop' ),
+		'faq'          => __( 'FAQ', 'premium-shop' ),
 	);
 }
 
@@ -52,6 +55,11 @@ function premium_shop_benefit_icon_choices() {
 		'clock'   => __( 'Clock', 'premium-shop' ),
 		'lock'    => __( 'Lock', 'premium-shop' ),
 		'box'     => __( 'Box', 'premium-shop' ),
+		'flame'   => __( 'Flame', 'premium-shop' ),
+		'logs'    => __( 'Logs', 'premium-shop' ),
+		'droplet' => __( 'Moisture drop', 'premium-shop' ),
+		'ruler'   => __( 'Ruler', 'premium-shop' ),
+		'tree'    => __( 'Tree', 'premium-shop' ),
 	);
 }
 
@@ -401,6 +409,35 @@ function premium_shop_customizer_config() {
 	);
 
 	/* ------------------------------------------------------------------ */
+	$sections['ps_firewood'] = array(
+		'title'       => __( 'Firewood shop', 'premium-shop' ),
+		'description' => __( 'Settings for selling firewood: style preset, unit prices, delivery check by postcode, calculator and FAQ. Product data (wood species, log length, moisture, volume, price per unit) is entered in each product, tab "Firewood".', 'premium-shop' ),
+		'fields'      => array(
+			'preset'              => array(
+				'type'        => 'select',
+				'default'     => 'firewood',
+				'label'       => __( 'Style preset', 'premium-shop' ),
+				'description' => __( 'Sets colors, homepage sections and default texts. Your own changes always take priority.', 'premium-shop' ),
+				'choices'     => array(
+					'firewood' => __( 'Firewood & stove wood (warm, natural)', 'premium-shop' ),
+					'maison'   => __( 'General shop "Maison" (editorial)', 'premium-shop' ),
+				),
+			),
+			'fw_unit_price'       => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show the unit price (e.g. price per stacked m³)', 'premium-shop' ), 'description' => __( 'Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume.', 'premium-shop' ) ),
+			'fw_specs_on_cards'   => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show key data (length, moisture, drying) on product cards', 'premium-shop' ) ),
+			'fw_delivery_check'   => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Postcode delivery check (product page, cart, homepage)', 'premium-shop' ), 'description' => __( 'Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone.', 'premium-shop' ) ),
+			'fw_delivery_ok'      => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Message when delivery is possible', 'premium-shop' ), 'description' => $text_hint ),
+			'fw_delivery_no'      => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Message when the postcode is not served', 'premium-shop' ) ),
+			'fw_delivery_info'    => array( 'type' => 'textarea', 'default' => '', 'translatable' => true, 'label' => __( 'Delivery information (shown under the check)', 'premium-shop' ) ),
+			'fw_truck_field'      => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Ask at checkout whether the unloading point is accessible for a truck', 'premium-shop' ) ),
+			'fw_calc_product'     => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show the firewood calculator on product pages', 'premium-shop' ) ),
+			'fw_faq'              => array( 'type' => 'textarea', 'default' => '', 'translatable' => true, 'label' => __( 'FAQ (one question per line: Question :: Answer)', 'premium-shop' ), 'description' => __( 'Empty = built-in firewood FAQ, translated automatically.', 'premium-shop' ) ),
+			'title_faq'           => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'FAQ — title', 'premium-shop' ) ),
+			'title_calculator'    => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Calculator — title', 'premium-shop' ) ),
+		),
+	);
+
+	/* ------------------------------------------------------------------ */
 	$sections['ps_language'] = array(
 		'title'       => __( 'Languages', 'premium-shop' ),
 		'description' => __( 'With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant.', 'premium-shop' ),
@@ -423,6 +460,15 @@ function premium_shop_customizer_config() {
 			'languages_enabled'  => array( 'type' => 'text', 'default' => 'de,fr,es,en', 'label' => __( 'Languages offered (codes, in order)', 'premium-shop' ), 'description' => __( 'Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it', 'premium-shop' ) ),
 		),
 	);
+
+	// Style preset: adapt the defaults (the visitor's own settings still win).
+	foreach ( premium_shop_preset_overrides() as $key => $value ) {
+		foreach ( $sections as $id => $section ) {
+			if ( isset( $section['fields'][ $key ] ) ) {
+				$sections[ $id ]['fields'][ $key ]['default'] = $value;
+			}
+		}
+	}
 
 	$config = apply_filters( 'premium_shop_customizer_config', $sections );
 
@@ -527,6 +573,10 @@ function premium_shop_text_fallbacks() {
 		'contact_hours'        => '',
 		'footer_copyright'     => '',
 	);
+
+	if ( 'firewood' === premium_shop_preset() ) {
+		$fallbacks = array_merge( $fallbacks, premium_shop_firewood_fallbacks() );
+	}
 
 	return apply_filters( 'premium_shop_text_fallbacks', $fallbacks );
 }

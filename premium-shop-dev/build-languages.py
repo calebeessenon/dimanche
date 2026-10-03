@@ -5,6 +5,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 spec = importlib.util.spec_from_file_location('mp', os.path.join(HERE, 'make-pot.py'))
 mp = importlib.util.module_from_spec(spec); spec.loader.exec_module(mp)
 from translations import T, TC
+from translations_firewood import T as T_FW
+T = T + T_FW
 
 LANGS = {'de_DE': 1, 'fr_FR': 2, 'es_ES': 3}
 PLURAL = {'de_DE': 'nplurals=2; plural=(n != 1);', 'fr_FR': 'nplurals=2; plural=(n > 1);', 'es_ES': 'nplurals=2; plural=(n != 1);'}

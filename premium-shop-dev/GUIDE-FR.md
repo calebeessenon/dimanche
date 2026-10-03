@@ -208,3 +208,67 @@ complétez *Impressum*, *AGB*, *Widerrufsbelehrung* et la *Datenschutzerklärung
 de prix (TVA, frais de port, « Grundpreis ») utilisez une extension spécialisée comme
 **Germanized** ou **German Market**, compatibles avec ce thème (hooks WooCommerce standard).
 Les témoignages affichés proviennent uniquement de vrais avis clients (aucun avis fictif).
+
+---
+
+## 11. Module « Bois de chauffage » (Brennholz) — ce qui est automatisé
+
+Le thème est préréglé pour une boutique de bois de chauffage (modèle de style **Brennholz**, activé
+par défaut) : palette vert forêt + cuivre braise sur fond crème, textes d'accueil, avantages,
+FAQ et sections adaptés, traduits en DE/FR/ES/EN. Vous pouvez revenir au style « Maison » dans
+*Personnaliser → Premium Shop → Boutique de bois de chauffage → Modèle de style*.
+
+### Démarrage en 1 clic
+**Apparence → Configuration de la boutique → « Créer le catalogue d'exemple bois de chauffage »** crée, en allemand :
+- 4 catégories avec images : *Kaminholz*, *Anzündholz*, *Holzbriketts*, *Kaminholz-Boxen* ;
+- les attributs **Scheitlänge** (25/33/50 cm) et **Menge** (1, 2, 3, 6 RM) ;
+- la classe de livraison **Spedition** ;
+- 8 produits : Buche, Eiche, Birke, Esche, Hartholz-Mix (12 variations chacun, prix calculés),
+  Anzündholz 10 kg, Holzbriketts 10 kg, Kaminholz-Box 30 l — avec fiche technique et description.
+
+Les produits sont créés **en brouillon** : vérifiez les prix, remplacez les illustrations par vos
+photos, puis publiez (cochez « Publier immédiatement » si vous préférez).
+
+### Fiche produit : onglet « Brennholz »
+Dans chaque produit : essence, longueur des bûches, humidité résiduelle, séchage, unité de vente
+(RM, SRM, FM, kg, litre), origine, certification, **prix par unité** et 2 remises quantité.
+
+| Vous saisissez | Le thème fait automatiquement |
+|---|---|
+| Prix par RM (ex. 159 €) + « Calculer les prix automatiquement » | Le prix de **chaque variation** = prix/RM × quantité lue dans l'attribut (« 2 RM », « 1,8 SRM »…) − remise |
+| Remises : dès 3 RM −5 %, dès 6 RM −10 % | Appliquées aux variations concernées |
+| Rien dans la description | **Description + description courte** rédigées dans la langue principale (modifiables) |
+| Essence, longueur, humidité, séchage | **Pastilles** sur les cartes et la fiche, **onglet « Holz-Datenblatt »**, pouvoir calorifique estimé |
+| Unité + quantité | **Prix de base (Grundpreis)** obligatoire en Allemagne : « Grundpreis: ab 143,10 € / RM » |
+| Produit variable | Prix affiché « ab 159,00 € » au lieu d'une longue fourchette |
+
+### Changer tous les prix en une fois
+**Produits → Brennholz-Preise** : tableau de tous vos produits bois ; modifiez les prix par RM ou
+appliquez « +5 % » à tout le catalogue → toutes les variations sont recalculées (testé : 60 prix en un clic).
+
+### Import Excel / CSV
+`dist/brennholz-produkte-vorlage.csv` : modèle prêt pour **Produits → Importer** (WooCommerce).
+Remplissez-le dans Excel/LibreOffice (une ligne par produit, une ligne par variation) : les prix et
+descriptions sont calculés à l'import. Colonnes spéciales : `Meta: _ps_species` (beech, oak, ash,
+birch, hornbeam, mixed, alder, pine, spruce), `Meta: _ps_unit` (rm, srm, fm, kg, liter, piece),
+`Meta: _ps_drying` (kiln, air, fresh), `Meta: _ps_price_per_unit`, `Meta: _ps_auto_prices` (yes)…
+
+### Livraison par code postal
+1. **WooCommerce → Réglages → Expédition** : créez une zone par secteur de livraison, avec ses
+   codes postaux (`72*`, `70000...71999`, `10115`) et un tarif (ex. « Lieferung per Spedition – 49 € »).
+2. Le module **« Liefern wir zu Ihnen? »** (accueil, fiche produit, panier) répond automatiquement au
+   client : zone desservie, tarifs, délai — et mémorise le code postal pour la commande.
+3. À la commande, le client indique si le lieu de déchargement est **accessible à un camion**
+   (visible dans la commande et les e-mails).
+
+### Calculateur et FAQ
+- **Calculateur de besoin** (puissance du poêle × heures × jours ÷ pouvoir calorifique de l'essence)
+  + **convertisseur RM / SRM / FM** : sur l'accueil et en onglet sur les fiches produit.
+- **FAQ bois** (RM/SRM/FM, humidité, longueur, livraison, stockage, essences) avec données structurées
+  FAQPage pour Google. Personnalisable : une ligne par question, format `Question :: Réponse`.
+- Codes courts utilisables dans n'importe quelle page : `[ps_delivery_check]`, `[ps_firewood_calculator]`, `[ps_faq]`.
+
+### Ce que vous devez encore faire vous-même
+- Vos **photos** (les illustrations fournies ne sont que des visuels provisoires) ;
+- vos **prix**, vos **zones de livraison** et leurs tarifs ;
+- vos textes légaux (Impressum, AGB, Widerrufsbelehrung, Datenschutz).
