@@ -1,3 +1,4 @@
 node_modules/
 strings.json
 ids.txt
+__pycache__/
