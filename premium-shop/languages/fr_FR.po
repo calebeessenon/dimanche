@@ -1,0 +1,1878 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Premium Shop 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-03 10:03+0000\n"
+"PO-Revision-Date: 2026-10-03 10:03+0000\n"
+"Last-Translator: Premium Shop Studio\n"
+"Language-Team: Premium Shop Studio\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: premium-shop\n"
+
+#: 404.php:15
+msgid "This page could not be found"
+msgstr "Cette page est introuvable"
+
+#: 404.php:16
+msgid "The page may have moved or no longer exists. Try a search or discover our products."
+msgstr "La page a peut-être été déplacée ou n’existe plus. Lancez une recherche ou découvrez nos produits."
+
+#: 404.php:20 template-parts/content/content-none.php:15
+msgid "Go to the shop"
+msgstr "Aller à la boutique"
+
+#: 404.php:20
+msgid "Back to the homepage"
+msgstr "Retour à l’accueil"
+
+#: 404.php:35 front-page.php:17
+msgid "Most loved"
+msgstr "Les plus aimés"
+
+#. translators:%s: number of comments.
+#: comments.php:20
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s commentaire"
+msgstr[1] "%s commentaires"
+
+#: comments.php:38
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: front-page.php:14
+msgid "Customer favourites"
+msgstr "Coups de cœur clients"
+
+#: front-page.php:15
+msgid "Just arrived"
+msgstr "Tout juste arrivés"
+
+#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:508
+msgid "Limited time"
+msgstr "Durée limitée"
+
+#: header.php:20
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: inc/admin/onboarding.php:136
+msgid "Create pages"
+msgstr "Créer les pages"
+
+#: inc/admin/onboarding.php:137
+msgid "About us, Contact, Wishlist, Shipping & payment — plus drafts of the legal pages (Legal notice, Terms & conditions, Right of withdrawal) to complete."
+msgstr "À propos, Contact, Liste d’envies, Livraison & paiement — ainsi que des brouillons des pages légales (Mentions légales, CGV, Droit de rétractation) à compléter."
+
+#: inc/admin/onboarding.php:140
+msgid "Create menus"
+msgstr "Créer les menus"
+
+#: inc/admin/onboarding.php:141
+msgid "Main menu with categories mega menu, footer menus and legal menu."
+msgstr "Menu principal avec méga-menu des catégories, menus de pied de page et menu légal."
+
+#: inc/admin/onboarding.php:144
+msgid "Install languages DE / FR / ES"
+msgstr "Installer les langues DE / FR / ES"
+
+#: inc/admin/onboarding.php:145
+msgid "Downloads the WordPress and WooCommerce translations and sets German as the site language."
+msgstr "Télécharge les traductions de WordPress et WooCommerce et définit l’allemand comme langue du site."
+
+#: inc/admin/onboarding.php:148
+msgid "Optimize product images"
+msgstr "Optimiser les images produits"
+
+#: inc/admin/onboarding.php:149
+msgid "Portrait 4:5 product thumbnails (600 px) — the ideal format for this design."
+msgstr "Miniatures produits au format portrait 4:5 (600 px) — le format idéal pour ce design."
+
+#: inc/admin/onboarding.php:154
+msgid "Premium Shop — setup assistant"
+msgstr "Premium Shop — assistant de configuration"
+
+#: inc/admin/onboarding.php:155
+msgid "Each step is optional and can be run again at any time. Existing pages and menus are never overwritten."
+msgstr "Chaque étape est facultative et peut être relancée à tout moment. Les pages et menus existants ne sont jamais écrasés."
+
+#: inc/admin/onboarding.php:158
+msgid "Done!"
+msgstr "Terminé !"
+
+#: inc/admin/onboarding.php:164
+msgid "WooCommerce is not active. Install and activate it to use the shop features."
+msgstr "WooCommerce n’est pas actif. Installez-le et activez-le pour utiliser les fonctions de boutique."
+
+#: inc/admin/onboarding.php:165
+msgid "Install WooCommerce"
+msgstr "Installer WooCommerce"
+
+#: inc/admin/onboarding.php:174
+msgid "Logo & favicon"
+msgstr "Logo & favicon"
+
+#: inc/admin/onboarding.php:174
+msgid "Upload your logo and site icon."
+msgstr "Téléversez votre logo et l’icône du site."
+
+#: inc/admin/onboarding.php:175
+msgid "Open"
+msgstr "Ouvrir"
+
+#: inc/admin/onboarding.php:188
+msgid "Set German as site language"
+msgstr "Définir l’allemand comme langue du site"
+
+#: inc/admin/onboarding.php:190
+msgid "Run"
+msgstr "Lancer"
+
+#: inc/admin/onboarding.php:198
+msgid "Design, texts & homepage"
+msgstr "Design, textes & page d’accueil"
+
+#: inc/admin/onboarding.php:198
+msgid "Colors, fonts, hero, sections, announcement bar, contact details, social networks."
+msgstr "Couleurs, polices, hero, sections, bandeau d’annonce, coordonnées, réseaux sociaux."
+
+#: inc/admin/onboarding.php:199
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: inc/admin/onboarding.php:204
+msgid "Products, payments & shipping"
+msgstr "Produits, paiements & livraison"
+
+#: inc/admin/onboarding.php:204
+msgid "Add categories and products, then configure payments and shipping zones in WooCommerce."
+msgstr "Ajoutez des catégories et des produits, puis configurez les paiements et zones de livraison dans WooCommerce."
+
+#: inc/admin/onboarding.php:206
+msgid "Add product"
+msgstr "Ajouter un produit"
+
+#: inc/admin/onboarding.php:207
+msgid "Payments"
+msgstr "Paiements"
+
+#: inc/admin/onboarding.php:208
+msgid "Shipping"
+msgstr "Livraison"
+
+#: inc/admin/onboarding.php:27 inc/admin/onboarding.php:28
+msgid "Shop setup"
+msgstr "Configuration de la boutique"
+
+#: inc/admin/onboarding.php:282 inc/customizer/config.php:526
+msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
+msgstr "Des produits soigneusement sélectionnés, des conseils honnêtes et une livraison rapide. Nous sommes là pour vous avant et après votre achat."
+
+#: inc/admin/onboarding.php:282
+msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
+msgstr "Racontez ici votre histoire : qui vous êtes, ce qui vous anime et pourquoi vos clients peuvent vous faire confiance."
+
+#: inc/admin/onboarding.php:287
+msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
+msgstr "Nous serons ravis de vous lire. Notre service client vous répondra dans les meilleurs délais."
+
+#: inc/admin/onboarding.php:298
+msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
+msgstr "Décrivez ici vos pays de livraison, délais, frais de port et moyens de paiement acceptés."
+
+#: inc/admin/onboarding.php:303 inc/admin/onboarding.php:308 inc/admin/onboarding.php:313
+msgid "Please complete this page with your legally required company information before publishing."
+msgstr "Veuillez compléter cette page avec les informations légales obligatoires de votre entreprise avant de la publier."
+
+#: inc/admin/onboarding.php:50
+msgid "Welcome to Premium Shop!"
+msgstr "Bienvenue dans Premium Shop !"
+
+#: inc/admin/onboarding.php:51
+msgid "Set up pages, menus, languages and image settings in one click."
+msgstr "Configurez pages, menus, langues et réglages d’images en un clic."
+
+#: inc/admin/onboarding.php:53
+msgid "Open the setup assistant"
+msgstr "Ouvrir l’assistant de configuration"
+
+#: inc/admin/onboarding.php:54
+msgid "Dismiss"
+msgstr "Ignorer"
+
+#: inc/class-premium-shop-walker-nav.php:155
+msgid "Discover our offers"
+msgstr "Découvrez nos offres"
+
+#: inc/class-premium-shop-walker-nav.php:156
+msgid "Shop the sale"
+msgstr "Voir les promotions"
+
+#. translators:%s: menu item title.
+#: inc/class-premium-shop-walker-nav.php:79
+msgid "Show submenu for %s"
+msgstr "Afficher le sous-menu de %s"
+
+#: inc/customizer/class-premium-shop-sortable-control.php:49
+msgid "Move up"
+msgstr "Monter"
+
+#: inc/customizer/class-premium-shop-sortable-control.php:50
+msgid "Move down"
+msgstr "Descendre"
+
+#: inc/customizer/config.php:102
+msgid "Heading font"
+msgstr "Police des titres"
+
+#: inc/customizer/config.php:106 inc/customizer/config.php:117
+msgid "System serif (no download)"
+msgstr "Serif système (sans téléchargement)"
+
+#: inc/customizer/config.php:107 inc/customizer/config.php:116
+msgid "System sans-serif (no download)"
+msgstr "Sans-serif système (sans téléchargement)"
+
+#: inc/customizer/config.php:113
+msgid "Body font"
+msgstr "Police du texte"
+
+#: inc/customizer/config.php:120
+msgid "Base font size (px)"
+msgstr "Taille de police de base (px)"
+
+#: inc/customizer/config.php:124
+msgid "Heading weight"
+msgstr "Graisse des titres"
+
+#: inc/customizer/config.php:126
+msgid "Light"
+msgstr "Léger"
+
+#: inc/customizer/config.php:127
+msgid "Regular"
+msgstr "Normal"
+
+#: inc/customizer/config.php:128
+msgid "Medium"
+msgstr "Moyen"
+
+#: inc/customizer/config.php:129
+msgid "Semi-bold"
+msgstr "Demi-gras"
+
+#: inc/customizer/config.php:135
+msgid "Button shape"
+msgstr "Forme des boutons"
+
+#: inc/customizer/config.php:137
+msgid "Square"
+msgstr "Carré"
+
+#: inc/customizer/config.php:138
+msgid "Soft corners"
+msgstr "Coins adoucis"
+
+#: inc/customizer/config.php:139
+msgid "Pill"
+msgstr "Pilule"
+
+#: inc/customizer/config.php:142
+msgid "Uppercase buttons"
+msgstr "Boutons en majuscules"
+
+#: inc/customizer/config.php:143
+msgid "Card corner radius (px)"
+msgstr "Rayon des coins des cartes (px)"
+
+#: inc/customizer/config.php:144
+msgid "Scroll-reveal animations"
+msgstr "Animations d’apparition au défilement"
+
+#: inc/customizer/config.php:144
+msgid "Automatically disabled for visitors who prefer reduced motion."
+msgstr "Désactivées automatiquement pour les visiteurs qui préfèrent réduire les animations."
+
+#: inc/customizer/config.php:150
+msgid "Header & announcement bar"
+msgstr "En-tête & bandeau d’annonce"
+
+#: inc/customizer/config.php:152
+msgid "Logo height (px)"
+msgstr "Hauteur du logo (px)"
+
+#: inc/customizer/config.php:156
+msgid "Header layout"
+msgstr "Disposition de l’en-tête"
+
+#: inc/customizer/config.php:158
+msgid "Logo left, menu centered"
+msgstr "Logo à gauche, menu centré"
+
+#: inc/customizer/config.php:159
+msgid "Logo centered, menu below"
+msgstr "Logo centré, menu en dessous"
+
+#: inc/customizer/config.php:162
+msgid "Sticky header"
+msgstr "En-tête fixe"
+
+#: inc/customizer/config.php:163
+msgid "Show search"
+msgstr "Afficher la recherche"
+
+#: inc/customizer/config.php:164
+msgid "Show account icon"
+msgstr "Afficher l’icône du compte"
+
+#: inc/customizer/config.php:165
+msgid "Show wishlist icon"
+msgstr "Afficher l’icône de la liste d’envies"
+
+#: inc/customizer/config.php:166
+msgid "Show language switcher"
+msgstr "Afficher le sélecteur de langue"
+
+#: inc/customizer/config.php:167
+msgid "Categories mega menu"
+msgstr "Méga-menu des catégories"
+
+#: inc/customizer/config.php:167
+msgid "Applies to menu items with the CSS class \"mega-categories\" (added automatically by the setup assistant)."
+msgstr "S’applique aux éléments de menu ayant la classe CSS « mega-categories » (ajoutée automatiquement par l’assistant)."
+
+#: inc/customizer/config.php:168
+msgid "Distraction-free checkout header"
+msgstr "En-tête épuré pendant la commande"
+
+#: inc/customizer/config.php:169
+msgid "Show announcement bar"
+msgstr "Afficher le bandeau d’annonce"
+
+#: inc/customizer/config.php:170
+msgid "Announcement messages (one per line, they rotate)"
+msgstr "Messages d’annonce (un par ligne, ils défilent)"
+
+#: inc/customizer/config.php:171
+msgid "Announcement link (optional)"
+msgstr "Lien du bandeau (facultatif)"
+
+#: inc/customizer/config.php:172
+msgid "Visitors can close the bar"
+msgstr "Les visiteurs peuvent fermer le bandeau"
+
+#: inc/customizer/config.php:178
+msgid "Homepage — sections & order"
+msgstr "Page d’accueil — sections & ordre"
+
+#: inc/customizer/config.php:183
+msgid "Sections"
+msgstr "Sections"
+
+#: inc/customizer/config.php:184
+msgid "Drag to reorder, untick to hide."
+msgstr "Glissez pour réordonner, décochez pour masquer."
+
+#: inc/customizer/config.php:186
+msgid "Products per section"
+msgstr "Produits par section"
+
+#: inc/customizer/config.php:187
+msgid "Categories shown"
+msgstr "Catégories affichées"
+
+#: inc/customizer/config.php:188
+msgid "Category IDs to show (optional)"
+msgstr "ID des catégories à afficher (facultatif)"
+
+#: inc/customizer/config.php:188
+msgid "Comma-separated IDs, in the desired order. Empty = main categories with products."
+msgstr "ID séparés par des virgules, dans l’ordre souhaité. Vide = catégories principales avec produits."
+
+#: inc/customizer/config.php:189
+msgid "Categories — title"
+msgstr "Catégories — titre"
+
+#: inc/customizer/config.php:190
+msgid "Popular products — title"
+msgstr "Produits populaires — titre"
+
+#: inc/customizer/config.php:191
+msgid "New arrivals — title"
+msgstr "Nouveautés — titre"
+
+#: inc/customizer/config.php:192
+msgid "Offers — title"
+msgstr "Promotions — titre"
+
+#: inc/customizer/config.php:193
+msgid "Bestsellers — title"
+msgstr "Meilleures ventes — titre"
+
+#: inc/customizer/config.php:194
+msgid "Testimonials — title"
+msgstr "Témoignages — titre"
+
+#: inc/customizer/config.php:195
+msgid "Brands — title"
+msgstr "Marques — titre"
+
+#: inc/customizer/config.php:201
+msgid "Homepage — hero"
+msgstr "Page d’accueil — hero"
+
+#: inc/customizer/config.php:206
+msgid "Layout"
+msgstr "Disposition"
+
+#: inc/customizer/config.php:208
+msgid "Editorial split (text + arched image)"
+msgstr "Éditorial partagé (texte + image en arche)"
+
+#: inc/customizer/config.php:209
+msgid "Full-width image"
+msgstr "Image pleine largeur"
+
+#: inc/customizer/config.php:212
+msgid "Hero image"
+msgstr "Image du hero"
+
+#: inc/customizer/config.php:212
+msgid "Recommended: 1400 × 1600 px (split) or 2400 × 1200 px (full width). Without image, a featured product image or an abstract artwork is used."
+msgstr "Recommandé : 1400 × 1600 px (partagé) ou 2400 × 1200 px (pleine largeur). Sans image, une image de produit mis en avant ou une illustration abstraite est utilisée."
+
+#: inc/customizer/config.php:213 inc/customizer/config.php:230
+msgid "Small line above the title"
+msgstr "Petite ligne au-dessus du titre"
+
+#: inc/customizer/config.php:214 inc/customizer/config.php:231 inc/customizer/config.php:299
+msgid "Title"
+msgstr "Titre"
+
+#: inc/customizer/config.php:215
+msgid "Subtitle"
+msgstr "Sous-titre"
+
+#: inc/customizer/config.php:216
+msgid "Main button text"
+msgstr "Texte du bouton principal"
+
+#: inc/customizer/config.php:217
+msgid "Main button link (empty = shop)"
+msgstr "Lien du bouton principal (vide = boutique)"
+
+#: inc/customizer/config.php:218
+msgid "Second button text"
+msgstr "Texte du second bouton"
+
+#: inc/customizer/config.php:219
+msgid "Second button link (empty = offers)"
+msgstr "Lien du second bouton (vide = promotions)"
+
+#: inc/customizer/config.php:220
+msgid "Image overlay darkness (%) — full-width layout"
+msgstr "Assombrissement de l’image (%) — disposition pleine largeur"
+
+#: inc/customizer/config.php:221
+msgid "Show shipping & returns badges"
+msgstr "Afficher les badges livraison & retours"
+
+#: inc/customizer/config.php:227
+msgid "Homepage — campaign banner"
+msgstr "Page d’accueil — bannière de campagne"
+
+#: inc/customizer/config.php:229
+msgid "Image"
+msgstr "Image"
+
+#: inc/customizer/config.php:23
+msgid "Hero"
+msgstr "Hero"
+
+#: inc/customizer/config.php:233
+msgid "Button text"
+msgstr "Texte du bouton"
+
+#: inc/customizer/config.php:234
+msgid "Button link (empty = offers)"
+msgstr "Lien du bouton (vide = promotions)"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:243
+msgid "Benefit %d — icon"
+msgstr "Avantage %d — icône"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:245
+msgid "Benefit %d — title"
+msgstr "Avantage %d — titre"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:247
+msgid "Benefit %d — text"
+msgstr "Avantage %d — texte"
+
+#: inc/customizer/config.php:250
+msgid "Homepage — benefits"
+msgstr "Page d’accueil — avantages"
+
+#: inc/customizer/config.php:259
+msgid "Source"
+msgstr "Source"
+
+#: inc/customizer/config.php:26
+msgid "Campaign banner"
+msgstr "Bannière de campagne"
+
+#: inc/customizer/config.php:261
+msgid "Latest 4- and 5-star WooCommerce reviews"
+msgstr "Derniers avis WooCommerce 4 et 5 étoiles"
+
+#: inc/customizer/config.php:262
+msgid "Testimonials entered below"
+msgstr "Témoignages saisis ci-dessous"
+
+#: inc/customizer/config.php:263
+msgid "Testimonials below, completed by reviews"
+msgstr "Témoignages ci-dessous, complétés par les avis"
+
+#: inc/customizer/config.php:265
+msgid "Only genuine customer feedback should be published. The section is hidden when there is nothing to show."
+msgstr "Seuls de vrais avis clients doivent être publiés. La section est masquée lorsqu’il n’y a rien à afficher."
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:270
+msgid "Testimonial %d — quote"
+msgstr "Témoignage %d — citation"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:272
+msgid "Testimonial %d — name"
+msgstr "Témoignage %d — nom"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:274
+msgid "Testimonial %d — city or product"
+msgstr "Témoignage %d — ville ou produit"
+
+#: inc/customizer/config.php:277
+msgid "Homepage — testimonials"
+msgstr "Page d’accueil — témoignages"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:285
+msgid "Brand %d — logo"
+msgstr "Marque %d — logo"
+
+#. translators:%d: item number.
+#: inc/customizer/config.php:287
+msgid "Brand %d — link"
+msgstr "Marque %d — lien"
+
+#: inc/customizer/config.php:290
+msgid "Homepage — brands"
+msgstr "Page d’accueil — marques"
+
+#: inc/customizer/config.php:291
+msgid "Upload partner logos. Without logos, WooCommerce brands (Products → Brands) are listed automatically."
+msgstr "Téléversez les logos de vos partenaires. Sans logo, les marques WooCommerce (Produits → Marques) sont listées automatiquement."
+
+#: inc/customizer/config.php:30
+msgid "Benefits"
+msgstr "Avantages"
+
+#: inc/customizer/config.php:301
+msgid "Form shortcode (MailPoet, Brevo, Mailchimp…)"
+msgstr "Shortcode du formulaire (MailPoet, Brevo, Mailchimp…)"
+
+#: inc/customizer/config.php:301
+msgid "Optional. Without shortcode, the built-in double opt-in form is used (subscribers: Tools → Newsletter)."
+msgstr "Facultatif. Sans shortcode, le formulaire intégré à double opt-in est utilisé (abonnés : Outils → Newsletter)."
+
+#: inc/customizer/config.php:302
+msgid "Also show the form in the footer"
+msgstr "Afficher aussi le formulaire dans le pied de page"
+
+#: inc/customizer/config.php:308
+msgid "Shop & product cards"
+msgstr "Boutique & cartes produits"
+
+#: inc/customizer/config.php:31
+msgid "Testimonials"
+msgstr "Témoignages"
+
+#: inc/customizer/config.php:313
+msgid "Products per row (desktop)"
+msgstr "Produits par ligne (ordinateur)"
+
+#: inc/customizer/config.php:319
+msgid "Products per page"
+msgstr "Produits par page"
+
+#: inc/customizer/config.php:320
+msgid "Show filters"
+msgstr "Afficher les filtres"
+
+#: inc/customizer/config.php:321
+msgid "Instant (AJAX) filtering"
+msgstr "Filtrage instantané (AJAX)"
+
+#: inc/customizer/config.php:325
+msgid "Default view"
+msgstr "Vue par défaut"
+
+#: inc/customizer/config.php:327
+msgid "Grid"
+msgstr "Grille"
+
+#: inc/customizer/config.php:328
+msgid "List"
+msgstr "Liste"
+
+#: inc/customizer/config.php:331
+msgid "Show second image on hover"
+msgstr "Afficher une seconde image au survol"
+
+#: inc/customizer/config.php:334
+msgid "Show category"
+msgstr "Afficher la catégorie"
+
+#: inc/customizer/config.php:335
+msgid "Show stock status"
+msgstr "Afficher l’état du stock"
+
+#: inc/customizer/config.php:336
+msgid "\"New\" badge duration (days, 0 = off)"
+msgstr "Durée du badge « Nouveau » (jours, 0 = désactivé)"
+
+#: inc/customizer/config.php:34
+msgid "Page content (editor)"
+msgstr "Contenu de la page (éditeur)"
+
+#: inc/customizer/config.php:342
+msgid "Product page"
+msgstr "Page produit"
+
+#: inc/customizer/config.php:344
+msgid "\"Buy now\" button"
+msgstr "Bouton « Acheter maintenant »"
+
+#: inc/customizer/config.php:345
+msgid "Sticky add-to-cart bar on mobile"
+msgstr "Barre d’ajout au panier fixe sur mobile"
+
+#: inc/customizer/config.php:346
+msgid "Show delivery, returns, warranty & payment box"
+msgstr "Afficher l’encadré livraison, retours, garantie & paiement"
+
+#: inc/customizer/config.php:347
+msgid "Delivery time"
+msgstr "Délai de livraison"
+
+#: inc/customizer/config.php:348
+msgid "Return period (days)"
+msgstr "Délai de retour (jours)"
+
+#: inc/customizer/config.php:349
+msgid "Warranty"
+msgstr "Garantie"
+
+#: inc/customizer/config.php:351
+msgid "\"Shipping & returns\" tab content"
+msgstr "Contenu de l’onglet « Livraison & retours »"
+
+#: inc/customizer/config.php:351
+msgid "Basic HTML allowed. Empty = automatic text built from the values above."
+msgstr "HTML simple autorisé. Vide = texte automatique construit à partir des valeurs ci-dessus."
+
+#: inc/customizer/config.php:357
+msgid "Cart & shipping"
+msgstr "Panier & livraison"
+
+#: inc/customizer/config.php:359
+msgid "Free shipping from (amount, 0 = off)"
+msgstr "Livraison gratuite dès (montant, 0 = désactivé)"
+
+#: inc/customizer/config.php:359
+msgid "Used for the progress bar in the cart and the default announcement. Configure the real \"Free shipping\" method in WooCommerce → Settings → Shipping."
+msgstr "Utilisé pour la barre de progression du panier et l’annonce par défaut. Configurez la vraie méthode « Livraison gratuite » dans WooCommerce → Réglages → Expédition."
+
+#: inc/customizer/config.php:360
+msgid "Open the side cart after adding a product"
+msgstr "Ouvrir le panier latéral après un ajout"
+
+#: inc/customizer/config.php:361
+msgid "Show \"You may also like\" in the cart"
+msgstr "Afficher « Vous aimerez aussi » dans le panier"
+
+#: inc/customizer/config.php:367
+msgid "Company & contact"
+msgstr "Entreprise & contact"
+
+#: inc/customizer/config.php:369
+msgid "Company name"
+msgstr "Nom de l’entreprise"
+
+#: inc/customizer/config.php:370
+msgid "Short description (footer)"
+msgstr "Courte description (pied de page)"
+
+#: inc/customizer/config.php:371
+msgid "Address"
+msgstr "Adresse"
+
+#: inc/customizer/config.php:372
+msgid "Phone"
+msgstr "Téléphone"
+
+#: inc/customizer/config.php:374
+msgid "Opening hours"
+msgstr "Horaires d’ouverture"
+
+#: inc/customizer/config.php:375
+msgid "WhatsApp number (international format)"
+msgstr "Numéro WhatsApp (format international)"
+
+#: inc/customizer/config.php:395
+msgid "Footer"
+msgstr "Pied de page"
+
+#: inc/customizer/config.php:397
+msgid "Copyright text"
+msgstr "Texte du copyright"
+
+#: inc/customizer/config.php:397
+msgid "Use {year} and {company}. Empty = automatic."
+msgstr "Utilisez {year} et {company}. Vide = automatique."
+
+#: inc/customizer/config.php:398
+msgid "Payment methods shown"
+msgstr "Moyens de paiement affichés"
+
+#: inc/customizer/config.php:398
+msgid "Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
+msgstr "Séparés par des virgules : visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
+
+#: inc/customizer/config.php:399
+msgid "\"Back to top\" button"
+msgstr "Bouton « Retour en haut »"
+
+#: inc/customizer/config.php:405
+msgid "Languages"
+msgstr "Langues"
+
+#: inc/customizer/config.php:406
+msgid "With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant."
+msgstr "Si WPML, Polylang ou TranslatePress est actif, l’extension gère les langues et le sélecteur l’utilise automatiquement. Sinon, le sélecteur intégré change la langue de l’interface (textes du thème, de WordPress et de WooCommerce). Installez les paquets de langue dans Réglages → Général ou avec l’assistant de configuration."
+
+#: inc/customizer/config.php:411
+msgid "Mode"
+msgstr "Mode"
+
+#: inc/customizer/config.php:413
+msgid "Automatic (plugin if available, otherwise built-in)"
+msgstr "Automatique (extension si disponible, sinon intégré)"
+
+#: inc/customizer/config.php:414
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: inc/customizer/config.php:420
+msgid "Default language (first visit)"
+msgstr "Langue par défaut (première visite)"
+
+#: inc/customizer/config.php:423
+msgid "Languages offered (codes, in order)"
+msgstr "Langues proposées (codes, dans l’ordre)"
+
+#: inc/customizer/config.php:423
+msgid "Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it"
+msgstr "Codes disponibles : de, fr, es, en, it, pt, nl, pl. Exemple : de,fr,es,en,it"
+
+#: inc/customizer/config.php:45
+msgid "Truck"
+msgstr "Camion"
+
+#: inc/customizer/config.php:46
+msgid "Shield"
+msgstr "Bouclier"
+
+#: inc/customizer/config.php:47
+msgid "Return arrow"
+msgstr "Flèche de retour"
+
+#: inc/customizer/config.php:48
+msgid "Headset"
+msgstr "Casque"
+
+#: inc/customizer/config.php:489
+msgid "Secure payment with SSL encryption"
+msgstr "Paiement sécurisé avec chiffrement SSL"
+
+#: inc/customizer/config.php:49
+msgid "Gift"
+msgstr "Cadeau"
+
+#. translators:%d: number of days.
+#: inc/customizer/config.php:492
+msgid "%d days to change your mind"
+msgstr "%d jours pour changer d’avis"
+
+#. translators:%d: number of days.
+#: inc/customizer/config.php:492
+msgid "Simple returns"
+msgstr "Retours simples"
+
+#: inc/customizer/config.php:496
+msgid "Shop by category"
+msgstr "Acheter par catégorie"
+
+#: inc/customizer/config.php:50
+msgid "Leaf"
+msgstr "Feuille"
+
+#: inc/customizer/config.php:501
+msgid "What our customers say"
+msgstr "Ce que disent nos clients"
+
+#: inc/customizer/config.php:502
+msgid "Our brands"
+msgstr "Nos marques"
+
+#: inc/customizer/config.php:503
+msgid "The new collection"
+msgstr "La nouvelle collection"
+
+#: inc/customizer/config.php:504
+msgid "Timeless pieces, carefully selected for you"
+msgstr "Des pièces intemporelles, soigneusement choisies pour vous"
+
+#: inc/customizer/config.php:505
+msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
+msgstr "Découvrez des produits de qualité, des prix justes et un service attentif à chaque détail — livrés rapidement chez vous."
+
+#: inc/customizer/config.php:506
+msgid "Shop now"
+msgstr "Acheter maintenant"
+
+#: inc/customizer/config.php:507
+msgid "Discover offers"
+msgstr "Découvrir les offres"
+
+#: inc/customizer/config.php:509
+msgid "The season’s offers"
+msgstr "Les offres de la saison"
+
+#: inc/customizer/config.php:51
+msgid "Star"
+msgstr "Étoile"
+
+#: inc/customizer/config.php:510
+msgid "Selected favourites at reduced prices — only while stocks last."
+msgstr "Une sélection de favoris à prix réduits — dans la limite des stocks disponibles."
+
+#: inc/customizer/config.php:511
+msgid "View offers"
+msgstr "Voir les offres"
+
+#: inc/customizer/config.php:512
+msgid "Fast shipping"
+msgstr "Livraison rapide"
+
+#. translators:%s: amount.
+#: inc/customizer/config.php:514
+msgid "Free from %s"
+msgstr "Gratuite dès %s"
+
+#. translators:%s: amount.
+#: inc/customizer/config.php:514
+msgid "Dispatched within 24 hours"
+msgstr "Expédié sous 24 heures"
+
+#: inc/customizer/config.php:516
+msgid "Encrypted & trusted methods"
+msgstr "Méthodes chiffrées et fiables"
+
+#: inc/customizer/config.php:517
+msgid "Easy returns"
+msgstr "Retours faciles"
+
+#: inc/customizer/config.php:52
+msgid "Clock"
+msgstr "Horloge"
+
+#: inc/customizer/config.php:520
+msgid "Personal help, quick answers"
+msgstr "Aide personnalisée, réponses rapides"
+
+#: inc/customizer/config.php:521
+msgid "Stay in the loop"
+msgstr "Restez informé"
+
+#: inc/customizer/config.php:522
+msgid "New arrivals, exclusive offers and inspiration — straight to your inbox. Unsubscribe at any time."
+msgstr "Nouveautés, offres exclusives et inspiration — directement dans votre boîte mail. Désinscription à tout moment."
+
+#: inc/customizer/config.php:523
+msgid "Delivery in 2–4 business days"
+msgstr "Livraison en 2 à 4 jours ouvrés"
+
+#: inc/customizer/config.php:524
+msgid "2-year warranty"
+msgstr "Garantie 2 ans"
+
+#: inc/customizer/config.php:525
+msgid "Secure, encrypted payment"
+msgstr "Paiement sécurisé et chiffré"
+
+#: inc/customizer/config.php:53
+msgid "Lock"
+msgstr "Cadenas"
+
+#: inc/customizer/config.php:54
+msgid "Box"
+msgstr "Colis"
+
+#: inc/customizer/config.php:70
+msgid "Leave empty to use the built-in text, translated automatically. Multilingual syntax: [:de]Text[:fr]Texte[:es]Texto[:en]Text"
+msgstr "Laissez vide pour utiliser le texte intégré, traduit automatiquement. Syntaxe multilingue : [:de]Text[:fr]Texte[:es]Texto[:en]Text"
+
+#: inc/customizer/config.php:76
+msgid "Colors"
+msgstr "Couleurs"
+
+#: inc/customizer/config.php:78
+msgid "Primary (buttons, header text)"
+msgstr "Principale (boutons, texte de l’en-tête)"
+
+#: inc/customizer/config.php:79
+msgid "Accent (highlights, hover)"
+msgstr "Accent (mises en avant, survol)"
+
+#: inc/customizer/config.php:80
+msgid "Page background"
+msgstr "Fond de page"
+
+#: inc/customizer/config.php:81
+msgid "Cards & panels"
+msgstr "Cartes & panneaux"
+
+#: inc/customizer/config.php:82
+msgid "Soft sections background"
+msgstr "Fond des sections douces"
+
+#: inc/customizer/config.php:83 inc/customizer/config.php:232 inc/customizer/config.php:300
+msgid "Text"
+msgstr "Texte"
+
+#: inc/customizer/config.php:84
+msgid "Secondary text"
+msgstr "Texte secondaire"
+
+#: inc/customizer/config.php:85
+msgid "Borders"
+msgstr "Bordures"
+
+#: inc/customizer/config.php:86
+msgid "Sale / discount"
+msgstr "Promotion / réduction"
+
+#: inc/customizer/config.php:87
+msgid "In stock / success"
+msgstr "En stock / succès"
+
+#: inc/customizer/config.php:88
+msgid "Footer background"
+msgstr "Fond du pied de page"
+
+#: inc/customizer/config.php:89
+msgid "Footer text"
+msgstr "Texte du pied de page"
+
+#: inc/customizer/config.php:90
+msgid "Announcement bar background"
+msgstr "Fond du bandeau d’annonce"
+
+#: inc/customizer/config.php:91
+msgid "Announcement bar text"
+msgstr "Texte du bandeau d’annonce"
+
+#: inc/customizer/config.php:97
+msgid "Typography & buttons"
+msgstr "Typographie & boutons"
+
+#: inc/customizer/customizer.php:21
+msgid "Premium Shop — Theme options"
+msgstr "Premium Shop — Options du thème"
+
+#: inc/customizer/customizer.php:22
+msgid "Logo and favicon: Site Identity. Menus: Menus. Everything else about the design and content of the shop is here."
+msgstr "Logo et favicon : Identité du site. Menus : Menus. Tout le reste du design et du contenu de la boutique se trouve ici."
+
+#: inc/enqueue.php:80
+msgid "Searching…"
+msgstr "Recherche…"
+
+#: inc/enqueue.php:81
+msgid "No products found."
+msgstr "Aucun produit trouvé."
+
+#: inc/enqueue.php:82
+msgid "View all results"
+msgstr "Voir tous les résultats"
+
+#: inc/enqueue.php:85
+msgid "Added to your cart"
+msgstr "Ajouté à votre panier"
+
+#: inc/enqueue.php:86
+msgid "Added to your wishlist"
+msgstr "Ajouté à votre liste d’envies"
+
+#: inc/enqueue.php:87
+msgid "Removed from your wishlist"
+msgstr "Retiré de votre liste d’envies"
+
+#: inc/enqueue.php:88
+msgid "Your wishlist is empty."
+msgstr "Votre liste d’envies est vide."
+
+#: inc/enqueue.php:90 inc/newsletter.php:119
+msgid "Something went wrong. Please try again."
+msgstr "Une erreur est survenue. Veuillez réessayer."
+
+#: inc/enqueue.php:91
+msgid "Results updated"
+msgstr "Résultats mis à jour"
+
+#: inc/newsletter.php:102
+msgid "You are already subscribed. Thank you!"
+msgstr "Vous êtes déjà inscrit. Merci !"
+
+#. translators:%s: site name.
+#: inc/newsletter.php:151
+msgid "Please confirm your subscription to %s"
+msgstr "Veuillez confirmer votre inscription à %s"
+
+#. translators:%s: site name.
+#: inc/newsletter.php:154
+msgid "Hello, thank you for your interest in the %s newsletter. Please confirm your subscription by clicking the link below:"
+msgstr "Bonjour, merci de votre intérêt pour la newsletter de %s. Veuillez confirmer votre inscription en cliquant sur le lien ci-dessous :"
+
+#: inc/newsletter.php:158
+msgid "If you did not request this, simply ignore this email — you will not be subscribed."
+msgstr "Si vous n’êtes pas à l’origine de cette demande, ignorez simplement cet e-mail — vous ne serez pas inscrit."
+
+#: inc/newsletter.php:159
+msgid "Best regards,"
+msgstr "Bien cordialement,"
+
+#: inc/newsletter.php:23 inc/newsletter.php:25 inc/customizer/config.php:33 inc/customizer/config.php:297
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: inc/newsletter.php:24
+msgid "Subscriber"
+msgstr "Abonné"
+
+#: inc/newsletter.php:244
+msgid "Thank you! Your subscription is confirmed."
+msgstr "Merci ! Votre inscription est confirmée."
+
+#: inc/newsletter.php:245
+msgid "This confirmation link is invalid or has already been used."
+msgstr "Ce lien de confirmation est invalide ou a déjà été utilisé."
+
+#: inc/newsletter.php:26
+msgid "Newsletter subscribers"
+msgstr "Abonnés à la newsletter"
+
+#: inc/newsletter.php:27
+msgid "No subscribers yet."
+msgstr "Aucun abonné pour le moment."
+
+#: inc/newsletter.php:272 inc/customizer/config.php:373
+msgid "Email"
+msgstr "E-mail"
+
+#: inc/newsletter.php:273
+msgid "Status"
+msgstr "Statut"
+
+#: inc/newsletter.php:274 inc/template-tags.php:143
+msgid "Language"
+msgstr "Langue"
+
+#: inc/newsletter.php:275
+msgid "Date"
+msgstr "Date"
+
+#: inc/newsletter.php:288
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#: inc/newsletter.php:288
+msgid "Awaiting confirmation"
+msgstr "En attente de confirmation"
+
+#: inc/newsletter.php:306
+msgid "Export confirmed subscribers (CSV)"
+msgstr "Exporter les abonnés confirmés (CSV)"
+
+#: inc/newsletter.php:315 inc/admin/onboarding.php:66 inc/admin/onboarding.php:225
+msgid "You are not allowed to do this."
+msgstr "Vous n’êtes pas autorisé à effectuer cette action."
+
+#: inc/newsletter.php:61
+msgid "Your session has expired. Please reload the page and try again."
+msgstr "Votre session a expiré. Veuillez recharger la page et réessayer."
+
+#: inc/newsletter.php:66 inc/newsletter.php:129
+msgid "Almost done! Please check your inbox to confirm your subscription."
+msgstr "Presque terminé ! Consultez votre boîte mail pour confirmer votre inscription."
+
+#: inc/newsletter.php:75
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse e-mail valide."
+
+#: inc/newsletter.php:78
+msgid "Please accept the privacy conditions."
+msgstr "Veuillez accepter les conditions de confidentialité."
+
+#: inc/newsletter.php:86
+msgid "Too many attempts. Please try again later."
+msgstr "Trop de tentatives. Veuillez réessayer plus tard."
+
+#: inc/security.php:54
+msgid "The login details are incorrect."
+msgstr "Les identifiants sont incorrects."
+
+#: inc/setup.php:43 inc/admin/onboarding.php:394
+msgid "Footer — Shop"
+msgstr "Pied de page — Boutique"
+
+#: inc/setup.php:44 inc/admin/onboarding.php:403
+msgid "Footer — Customer service"
+msgstr "Pied de page — Service client"
+
+#: inc/setup.php:45 inc/admin/onboarding.php:412
+msgid "Footer — Legal"
+msgstr "Pied de page — Légal"
+
+#: inc/setup.php:74
+msgid "Shop sidebar (below the filters)"
+msgstr "Barre latérale boutique (sous les filtres)"
+
+#: inc/setup.php:75
+msgid "Optional widgets displayed under the built-in shop filters."
+msgstr "Widgets facultatifs affichés sous les filtres intégrés."
+
+#: inc/setup.php:85
+msgid "Blog sidebar"
+msgstr "Barre latérale du blog"
+
+#: inc/setup.php:86
+msgid "Widgets displayed next to blog posts."
+msgstr "Widgets affichés à côté des articles."
+
+#: inc/setup.php:96
+msgid "Footer — extra column"
+msgstr "Pied de page — colonne supplémentaire"
+
+#: inc/setup.php:97
+msgid "Optional widgets displayed as an additional footer column."
+msgstr "Widgets facultatifs affichés dans une colonne supplémentaire du pied de page."
+
+#: inc/template-tags.php:106 inc/template-tags.php:417 inc/admin/onboarding.php:388 inc/admin/onboarding.php:399
+msgid "Offers"
+msgstr "Promotions"
+
+#: inc/template-tags.php:115 inc/admin/onboarding.php:281
+msgid "About us"
+msgstr "À propos"
+
+#: inc/template-tags.php:189 inc/customizer/config.php:381
+msgid "Social networks"
+msgstr "Réseaux sociaux"
+
+#. translators:%s: social network name.
+#: inc/template-tags.php:197
+msgid "%s (opens in a new tab)"
+msgstr "%s (s’ouvre dans un nouvel onglet)"
+
+#: inc/template-tags.php:224
+msgid "Invoice"
+msgstr "Facture"
+
+#: inc/template-tags.php:234
+msgid "Accepted payment methods"
+msgstr "Moyens de paiement acceptés"
+
+#: inc/template-tags.php:255
+msgid "View all"
+msgstr "Tout voir"
+
+#: inc/template-tags.php:295 inc/template-tags.php:300 inc/template-tags.php:311 inc/woocommerce/setup.php:83
+msgid "Breadcrumb"
+msgstr "Fil d’Ariane"
+
+#. translators:%s: search query.
+#: inc/template-tags.php:326
+msgid "Search results for “%s”"
+msgstr "Résultats de recherche pour « %s »"
+
+#: inc/template-tags.php:329
+msgid "Page not found"
+msgstr "Page introuvable"
+
+#. translators:%s: author name.
+#: inc/template-tags.php:349
+msgid "by %s"
+msgstr "par %s"
+
+#: inc/template-tags.php:360 inc/woocommerce/setup.php:128
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: inc/template-tags.php:361 inc/woocommerce/setup.php:129
+msgid "Next page"
+msgstr "Page suivante"
+
+#: inc/template-tags.php:415 inc/admin/onboarding.php:397 inc/customizer/config.php:27 inc/customizer/config.php:498
+msgid "New arrivals"
+msgstr "Nouveautés"
+
+#: inc/template-tags.php:416 inc/admin/onboarding.php:398 inc/customizer/config.php:29 inc/customizer/config.php:500
+msgid "Bestsellers"
+msgstr "Meilleures ventes"
+
+#: inc/template-tags.php:437
+msgid "Track my orders"
+msgstr "Suivre mes commandes"
+
+#: inc/template-tags.php:442 inc/admin/onboarding.php:297
+msgid "Shipping & payment"
+msgstr "Livraison & paiement"
+
+#: inc/template-tags.php:446
+msgid "FAQ"
+msgstr "FAQ"
+
+#: inc/template-tags.php:454 inc/admin/onboarding.php:302
+msgid "Legal notice"
+msgstr "Mentions légales"
+
+#: inc/template-tags.php:455 inc/admin/onboarding.php:307
+msgid "Terms & conditions"
+msgstr "Conditions générales de vente"
+
+#: inc/template-tags.php:456 inc/admin/onboarding.php:312
+msgid "Right of withdrawal"
+msgstr "Droit de rétractation"
+
+#: inc/template-tags.php:466
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+#. translators:1: year, 2: company name.
+#: inc/template-tags.php:485
+msgid "© %1$s %2$s. All rights reserved."
+msgstr "© %1$s %2$s. Tous droits réservés."
+
+#: inc/template-tags.php:83 inc/template-tags.php:312 inc/admin/onboarding.php:385
+msgid "Home"
+msgstr "Accueil"
+
+#. translators:%s: customer name.
+#: inc/woocommerce/account.php:102
+msgid "Hello %s"
+msgstr "Bonjour %s"
+
+#. translators:%d: number of orders.
+#: inc/woocommerce/account.php:59
+msgid "%d order"
+msgid_plural "%d orders"
+msgstr[0] "%d commande"
+msgstr[1] "%d commandes"
+
+#: inc/woocommerce/account.php:81
+msgid "Overview"
+msgstr "Vue d’ensemble"
+
+#: inc/woocommerce/admin-fields.php:17
+msgid "Product video"
+msgstr "Vidéo du produit"
+
+#: inc/woocommerce/admin-fields.php:20
+msgid "YouTube or Vimeo link, or a video file URL (MP4). Shown as a \"Watch the video\" button on the product gallery."
+msgstr "Lien YouTube ou Vimeo, ou URL d’un fichier vidéo (MP4). Affiché sous forme de bouton « Voir la vidéo » sur la galerie produit."
+
+#: inc/woocommerce/admin-fields.php:70 inc/woocommerce/admin-fields.php:87
+msgid "Swatch color (optional)"
+msgstr "Couleur de la pastille (facultatif)"
+
+#: inc/woocommerce/admin-fields.php:72 inc/woocommerce/admin-fields.php:90
+msgid "Use as color swatch in shop filters"
+msgstr "Utiliser comme pastille de couleur dans les filtres"
+
+#: inc/woocommerce/ajax.php:152
+msgid "This product is not available."
+msgstr "Ce produit n’est pas disponible."
+
+#: inc/woocommerce/cart-checkout.php:138
+msgid "SSL-encrypted payment"
+msgstr "Paiement chiffré SSL"
+
+#: inc/woocommerce/cart-checkout.php:143
+msgid "Personal customer service"
+msgstr "Service client personnalisé"
+
+#: inc/woocommerce/cart-checkout.php:156
+msgid "Have a coupon?"
+msgstr "Vous avez un code promo ?"
+
+#: inc/woocommerce/cart-checkout.php:156
+msgid "Enter your code"
+msgstr "Saisissez votre code"
+
+#. translators:%s: customer first name.
+#: inc/woocommerce/cart-checkout.php:172
+msgid "Thank you, %s!"
+msgstr "Merci, %s !"
+
+#. translators:%s: customer first name.
+#: inc/woocommerce/cart-checkout.php:172
+msgid "Thank you!"
+msgstr "Merci !"
+
+#: inc/woocommerce/cart-checkout.php:174
+msgid "Your order has been received. You will receive a confirmation by email shortly."
+msgstr "Votre commande a bien été reçue. Vous recevrez une confirmation par e-mail sous peu."
+
+#: inc/woocommerce/cart-checkout.php:191 inc/customizer/config.php:25 inc/customizer/config.php:497
+msgid "Popular products"
+msgstr "Produits populaires"
+
+#: inc/woocommerce/cart-checkout.php:28
+msgid "Checkout"
+msgstr "Commande"
+
+#: inc/woocommerce/cart-checkout.php:29
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: inc/woocommerce/cart-checkout.php:32
+msgid "Order progress"
+msgstr "Progression de la commande"
+
+#: inc/woocommerce/cart-checkout.php:95
+msgid "You may also like"
+msgstr "Vous aimerez aussi"
+
+#: inc/woocommerce/product-card.php:113
+msgid "Currently unavailable"
+msgstr "Actuellement indisponible"
+
+#: inc/woocommerce/product-card.php:118
+msgid "Available on backorder"
+msgstr "Disponible sur commande"
+
+#. translators:%d: quantity left.
+#: inc/woocommerce/product-card.php:127
+msgid "Only %d left"
+msgid_plural "Only %d left"
+msgstr[0] "Plus que %d en stock"
+msgstr[1] "Plus que %d en stock"
+
+#: inc/woocommerce/product-card.php:131
+msgid "In stock"
+msgstr "En stock"
+
+#. translators:%s: product name.
+#: inc/woocommerce/product-card.php:185
+msgid "Add %s to wishlist"
+msgstr "Ajouter %s à la liste d’envies"
+
+#. translators:%s: product name.
+#: inc/woocommerce/product-card.php:195
+msgid "Quick view: %s"
+msgstr "Aperçu rapide : %s"
+
+#. translators:%s: product name.
+#: inc/woocommerce/product-card.php:240
+msgid "Add “%s” to your cart"
+msgstr "Ajouter « %s » au panier"
+
+#. translators:%s: product name.
+#: inc/woocommerce/product-card.php:242
+msgid "View options for “%s”"
+msgstr "Voir les options de « %s »"
+
+#: inc/woocommerce/product-card.php:83
+msgid "Sold out"
+msgstr "Épuisé"
+
+#: inc/woocommerce/product-card.php:86
+msgid "Sale"
+msgstr "Promo"
+
+#: inc/woocommerce/product-card.php:90
+msgid "New"
+msgstr "Nouveau"
+
+#. translators:%s: remaining amount.
+#: inc/woocommerce/setup.php:176
+msgid "Only %s left until free shipping"
+msgstr "Plus que %s pour la livraison gratuite"
+
+#: inc/woocommerce/setup.php:180
+msgid "Congratulations! Your order ships for free."
+msgstr "Félicitations ! Votre commande est livrée gratuitement."
+
+#: inc/woocommerce/setup.php:185
+msgid "Progress towards free shipping"
+msgstr "Progression vers la livraison gratuite"
+
+#: inc/woocommerce/setup.php:85
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/woocommerce/shop-filters.php:186 inc/woocommerce/shop-filters.php:188
+msgid "Search in the shop"
+msgstr "Rechercher dans la boutique"
+
+#: inc/woocommerce/shop-filters.php:195
+msgid "Availability"
+msgstr "Disponibilité"
+
+#: inc/woocommerce/shop-filters.php:199 inc/woocommerce/shop-filters.php:512
+msgid "In stock only"
+msgstr "En stock uniquement"
+
+#: inc/woocommerce/shop-filters.php:203 inc/woocommerce/shop-filters.php:514
+msgid "Offers only"
+msgstr "Promotions uniquement"
+
+#: inc/woocommerce/shop-filters.php:213
+msgid "Apply filters"
+msgstr "Appliquer les filtres"
+
+#: inc/woocommerce/shop-filters.php:215 inc/woocommerce/shop-filters.php:577
+msgid "Reset all"
+msgstr "Tout réinitialiser"
+
+#: inc/woocommerce/shop-filters.php:303
+msgid "Price"
+msgstr "Prix"
+
+#: inc/woocommerce/shop-filters.php:307
+msgid "Minimum price"
+msgstr "Prix minimum"
+
+#: inc/woocommerce/shop-filters.php:308
+msgid "Maximum price"
+msgstr "Prix maximum"
+
+#: inc/woocommerce/shop-filters.php:312
+msgid "From"
+msgstr "De"
+
+#: inc/woocommerce/shop-filters.php:319
+msgid "To"
+msgstr "À"
+
+#: inc/woocommerce/shop-filters.php:356 inc/customizer/config.php:32
+msgid "Brands"
+msgstr "Marques"
+
+#: inc/woocommerce/shop-filters.php:444
+msgid "Rating"
+msgstr "Note"
+
+#: inc/woocommerce/shop-filters.php:448
+msgid "All ratings"
+msgstr "Toutes les notes"
+
+#. translators:%d: number of stars.
+#: inc/woocommerce/shop-filters.php:457 inc/woocommerce/shop-filters.php:518
+msgid "%d stars & up"
+msgstr "%d étoiles et plus"
+
+#. translators:%s: price.
+#: inc/woocommerce/shop-filters.php:507
+msgid "From %s"
+msgstr "À partir de %s"
+
+#. translators:%s: price.
+#: inc/woocommerce/shop-filters.php:510
+msgid "Up to %s"
+msgstr "Jusqu’à %s"
+
+#: inc/woocommerce/shop-filters.php:554
+msgid "Display"
+msgstr "Affichage"
+
+#: inc/woocommerce/shop-filters.php:557
+msgid "Grid view"
+msgstr "Vue en grille"
+
+#: inc/woocommerce/shop-filters.php:561
+msgid "List view"
+msgstr "Vue en liste"
+
+#: inc/woocommerce/shop-filters.php:567
+msgid "Active filters"
+msgstr "Filtres actifs"
+
+#: inc/woocommerce/shop-filters.php:573
+msgid "Remove filter"
+msgstr "Retirer le filtre"
+
+#: inc/woocommerce/single-product.php:134
+msgid "Item no.:"
+msgstr "Réf. :"
+
+#: inc/woocommerce/single-product.php:162
+msgid "Instant access"
+msgstr "Accès immédiat"
+
+#: inc/woocommerce/single-product.php:162
+msgid "Available right after payment"
+msgstr "Disponible dès le paiement"
+
+#. translators:%d: number of days.
+#: inc/woocommerce/single-product.php:167
+msgid "Simple and hassle-free"
+msgstr "Simple et sans tracas"
+
+#: inc/woocommerce/single-product.php:221
+msgid "Buy now"
+msgstr "Acheter maintenant"
+
+#: inc/woocommerce/single-product.php:253 inc/woocommerce/single-product.php:269
+msgid "Shipping & returns"
+msgstr "Livraison & retours"
+
+#: inc/woocommerce/single-product.php:26
+msgid "Add to wishlist"
+msgstr "Ajouter à la liste d’envies"
+
+#: inc/woocommerce/single-product.php:283
+msgid "Delivery"
+msgstr "Livraison"
+
+#. translators:%s: amount.
+#: inc/woocommerce/single-product.php:289
+msgid "Free shipping from %s."
+msgstr "Livraison gratuite dès %s."
+
+#: inc/woocommerce/single-product.php:297
+msgid "Returns"
+msgstr "Retours"
+
+#. translators:%d: number of days.
+#: inc/woocommerce/single-product.php:301
+msgid "You can return your order within %d days of delivery."
+msgstr "Vous pouvez retourner votre commande dans les %d jours suivant la livraison."
+
+#: inc/woocommerce/single-product.php:308
+msgid "Payment"
+msgstr "Paiement"
+
+#: inc/woocommerce/single-product.php:313
+msgid "All shipping & payment information"
+msgstr "Toutes les informations livraison & paiement"
+
+#: inc/woocommerce/single-product.php:354
+msgid "Add to cart"
+msgstr "Ajouter au panier"
+
+#: inc/woocommerce/single-product.php:48
+msgid "Watch the video"
+msgstr "Voir la vidéo"
+
+#: index.php:15
+msgid "Journal"
+msgstr "Journal"
+
+#: page-templates/template-wishlist.php:33 inc/enqueue.php:89
+msgid "Loading…"
+msgstr "Chargement…"
+
+#: page-templates/template-wishlist.php:38
+msgid "Your wishlist is empty"
+msgstr "Votre liste d’envies est vide"
+
+#: page-templates/template-wishlist.php:39
+msgid "Tap the heart on any product to save it here for later."
+msgstr "Touchez le cœur d’un produit pour l’enregistrer ici pour plus tard."
+
+#: page-templates/template-wishlist.php:40
+msgid "Discover products"
+msgstr "Découvrir les produits"
+
+#: page.php:42 single.php:41 inc/template-tags.php:362
+msgid "Page"
+msgstr "Page"
+
+#: search.php:41 inc/enqueue.php:83
+msgid "Products"
+msgstr "Produits"
+
+#: search.php:48
+msgid "Pages & articles"
+msgstr "Pages & articles"
+
+#: sidebar.php:14
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: single.php:53
+msgid "Previous"
+msgstr "Précédent"
+
+#: single.php:54
+msgid "Next"
+msgstr "Suivant"
+
+#: template-parts/components/newsletter-form.php:29
+msgid "Leave this field empty"
+msgstr "Laissez ce champ vide"
+
+#: template-parts/components/newsletter-form.php:33
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: template-parts/components/newsletter-form.php:34
+msgid "Your email address"
+msgstr "Votre adresse e-mail"
+
+#: template-parts/components/newsletter-form.php:36
+msgid "Subscribe"
+msgstr "S’inscrire"
+
+#. translators:%s: privacy policy link.
+#: template-parts/components/newsletter-form.php:47
+msgid "I agree to receive the newsletter and accept the %s. I can unsubscribe at any time."
+msgstr "J’accepte de recevoir la newsletter et la %s. Je peux me désinscrire à tout moment."
+
+#. translators:%s: privacy policy link.
+#: template-parts/components/newsletter-form.php:48
+msgid "privacy policy"
+msgstr "politique de confidentialité"
+
+#: template-parts/components/newsletter-form.php:51
+msgid "I agree to receive the newsletter. I can unsubscribe at any time."
+msgstr "J’accepte de recevoir la newsletter. Je peux me désinscrire à tout moment."
+
+#: template-parts/components/search-form.php:23
+msgid "Search products"
+msgstr "Rechercher des produits"
+
+#: template-parts/components/search-form.php:23 template-parts/components/search-form.php:49 template-parts/header/search-overlay.php:19 template-parts/header/site-header.php:29
+msgid "Search"
+msgstr "Recherche"
+
+#: template-parts/components/search-form.php:33
+msgid "What are you looking for?"
+msgstr "Que recherchez-vous ?"
+
+#: template-parts/components/search-form.php:53
+msgid "Suggestions"
+msgstr "Suggestions"
+
+#: template-parts/content/content-none.php:12
+msgid "Nothing found"
+msgstr "Aucun résultat"
+
+#: template-parts/content/content-none.php:13
+msgid "No results match your search. Try other keywords."
+msgstr "Aucun résultat ne correspond à votre recherche. Essayez d’autres mots-clés."
+
+#: template-parts/content/content-none.php:13
+msgid "There is no content here yet."
+msgstr "Il n’y a pas encore de contenu ici."
+
+#: template-parts/content/content.php:21 inc/accessibility.php:37
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: template-parts/footer/footer-checkout.php:16 template-parts/footer/site-footer.php:86 template-parts/footer/site-footer.php:94
+msgid "Legal"
+msgstr "Mentions légales"
+
+#: template-parts/footer/site-footer.php:109
+msgid "Back to top"
+msgstr "Retour en haut"
+
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:386
+msgid "Shop"
+msgstr "Boutique"
+
+#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:519
+msgid "Customer service"
+msgstr "Service client"
+
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:450 inc/admin/onboarding.php:286
+msgid "Contact"
+msgstr "Contact"
+
+#: template-parts/footer/site-footer.php:63
+msgid "Add your contact details in the Customizer"
+msgstr "Ajoutez vos coordonnées dans l’outil de personnalisation"
+
+#: template-parts/header/cart-drawer.php:20
+msgid "Your cart"
+msgstr "Votre panier"
+
+#: template-parts/header/cart-drawer.php:25
+msgid "Close cart"
+msgstr "Fermer le panier"
+
+#: template-parts/header/header-checkout.php:14
+msgid "Back to cart"
+msgstr "Retour au panier"
+
+#: template-parts/header/header-checkout.php:21
+msgid "Secure checkout"
+msgstr "Paiement sécurisé"
+
+#: template-parts/header/mobile-menu.php:14
+msgid "Menu"
+msgstr "Menu"
+
+#: template-parts/header/mobile-menu.php:17
+msgid "Close menu"
+msgstr "Fermer le menu"
+
+#: template-parts/header/mobile-menu.php:26 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:383
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: template-parts/header/mobile-menu.php:34 template-parts/header/site-header.php:42 inc/template-tags.php:436 inc/woocommerce/account.php:100
+msgid "My account"
+msgstr "Mon compte"
+
+#: template-parts/header/mobile-menu.php:34
+msgid "Sign in / Register"
+msgstr "Connexion / Inscription"
+
+#: template-parts/header/mobile-menu.php:44 template-parts/header/site-header.php:53 inc/admin/onboarding.php:291 inc/customizer/config.php:333
+msgid "Wishlist"
+msgstr "Liste d’envies"
+
+#: template-parts/header/promo-bar.php:23
+msgid "Announcements"
+msgstr "Annonces"
+
+#: template-parts/header/promo-bar.php:37
+msgid "Close announcement"
+msgstr "Fermer l’annonce"
+
+#: template-parts/header/search-overlay.php:22
+msgid "Close search"
+msgstr "Fermer la recherche"
+
+#: template-parts/header/search-overlay.php:43
+msgid "Popular categories"
+msgstr "Catégories populaires"
+
+#: template-parts/header/site-header.php:14
+msgid "Open menu"
+msgstr "Ouvrir le menu"
+
+#: template-parts/header/site-header.php:42
+msgid "Sign in"
+msgstr "Se connecter"
+
+#: template-parts/header/site-header.php:61 inc/template-tags.php:438 inc/woocommerce/cart-checkout.php:27
+msgid "Cart"
+msgstr "Panier"
+
+#: template-parts/homepage/benefits.php:26
+msgid "Our promises"
+msgstr "Nos engagements"
+
+#: template-parts/homepage/brands.php:46
+msgid "Upload partner logos in Premium Shop → Homepage — brands, or create brands in Products → Brands. (This hint is only visible in the Customizer.)"
+msgstr "Téléversez des logos de partenaires dans Premium Shop → Page d’accueil — marques, ou créez des marques dans Produits → Marques. (Ce message n’est visible que dans l’outil de personnalisation.)"
+
+#: template-parts/homepage/categories.php:43
+msgid "Explore"
+msgstr "Explorer"
+
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:414 inc/admin/onboarding.php:396
+msgid "All products"
+msgstr "Tous les produits"
+
+#. translators:%d: number of products.
+#: template-parts/homepage/categories.php:80
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] "%d produit"
+msgstr[1] "%d produits"
+
+#. translators:%s: amount.
+#: template-parts/homepage/hero.php:84 inc/woocommerce/single-product.php:159 inc/customizer/config.php:483
+msgid "Free shipping from %s"
+msgstr "Livraison gratuite dès %s"
+
+#. translators:%d: number of days.
+#: template-parts/homepage/hero.php:92 inc/woocommerce/cart-checkout.php:141 inc/woocommerce/single-product.php:167 inc/customizer/config.php:487
+msgid "%d-day free returns"
+msgstr "Retours gratuits sous %d jours"
+
+#. translators:%s: amount.
+#: template-parts/homepage/hero.php:96 inc/customizer/config.php:350 inc/customizer/config.php:515
+msgid "Secure payment"
+msgstr "Paiement sécurisé"
+
+#: template-parts/homepage/testimonials.php:105
+msgid "Verified purchase"
+msgstr "Achat vérifié"
+
+#: template-parts/homepage/testimonials.php:79
+msgid "Reviews"
+msgstr "Avis"
+
+#: template-parts/homepage/testimonials.php:88
+msgid "This section appears automatically as soon as you receive 4- or 5-star product reviews, or when you enter testimonials in Premium Shop → Homepage — testimonials. (This hint is only visible in the Customizer.)"
+msgstr "Cette section apparaît automatiquement dès que vous recevez des avis produits de 4 ou 5 étoiles, ou lorsque vous saisissez des témoignages dans Premium Shop → Page d’accueil — témoignages. (Ce message n’est visible que dans l’outil de personnalisation.)"
+
+#. translators:%d: rating.
+#: template-parts/homepage/testimonials.php:95
+msgid "Rated %d out of 5"
+msgstr "Noté %d sur 5"
+
+#: template-parts/products/quick-view-modal.php:14 inc/customizer/config.php:332
+msgid "Quick view"
+msgstr "Aperçu rapide"
+
+#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:92
+msgid "Close"
+msgstr "Fermer"
+
+#: template-parts/products/quick-view.php:93
+msgid "View details"
+msgstr "Voir les détails"
+
+#: template-parts/products/quick-view.php:93 inc/woocommerce/single-product.php:354
+msgid "Choose options"
+msgstr "Choisir les options"
+
+#: woocommerce/archive-product.php:63 inc/enqueue.php:84 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:259
+msgid "Categories"
+msgstr "Catégories"
+
+#: woocommerce/archive-product.php:79 inc/woocommerce/shop-filters.php:544
+msgid "Filters"
+msgstr "Filtres"
+
+#: woocommerce/archive-product.php:82
+msgid "Close filters"
+msgstr "Fermer les filtres"

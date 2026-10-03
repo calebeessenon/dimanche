@@ -1,0 +1,210 @@
+# Premium Shop — Guide complet (FR)
+
+Thème WordPress WooCommerce premium, multilingue (🇩🇪 allemand par défaut, 🇫🇷 🇪🇸 🇬🇧),
+prêt à l'emploi. Ce guide couvre l'architecture, la direction artistique, l'installation,
+la personnalisation, le multilingue et la maintenance.
+
+---
+
+## 1. Installation (5 minutes)
+
+1. **WordPress → Apparence → Thèmes → Ajouter → Téléverser un thème** → `premium-shop.zip` → *Installer* → *Activer*.
+2. **Extensions → Ajouter** → installer et activer **WooCommerce**.
+3. **Apparence → Configuration de la boutique** (assistant intégré) — chaque étape en un clic :
+   - **Créer les pages** : *Über uns*, *Kontakt*, *Wunschliste*, *Versand & Zahlung* (publiées) +
+     *Impressum*, *AGB*, *Widerrufsbelehrung* (en brouillon : à compléter par vos textes juridiques avant publication).
+   - **Créer les menus** : menu principal avec méga-menu des catégories, menus du pied de page, menu légal.
+   - **Installer les langues DE / FR / ES** : télécharge les traductions WordPress + WooCommerce et règle le site en allemand.
+   - **Optimiser les images produits** : vignettes portrait 4:5 (600 px).
+4. **Apparence → Personnaliser → Premium Shop — Options du thème** : logo, couleurs, textes, etc.
+
+Ensuite, travail courant **sans code** :
+créer une catégorie → ajouter un produit → photos → prix → stock → variations → (traduire) → publier.
+WooCommerce reste le système central ; le thème n'impose aucun système propriétaire.
+
+> Le thème fonctionne aussi sans WooCommerce (blog/pages), mais les fonctions boutique nécessitent WooCommerce.
+
+---
+
+## 2. Direction artistique « Maison »
+
+| Élément | Choix |
+|---|---|
+| Ambiance | Éditoriale, chaleureuse, luxueuse mais sobre — inspirée des grandes maisons de concept-store |
+| Fond | Ivoire chaud `#fbf9f5`, sections douces sable `#f2ede5`, cartes blanches |
+| Texte / primaire | Encre profonde `#16181d` / `#1b1d22` |
+| Accent | Cognac `#8f602b` (contraste WCAG AA garanti, y compris texte blanc sur bouton) |
+| Promotion / succès | Rouge `#b3261e` / vert sapin `#2e6b4f` |
+| Titres | **Fraunces** (serif variable, élégant) — auto-hébergée |
+| Texte | **Inter** (sans-serif variable, très lisible) — auto-hébergée |
+| Boutons | Identité forte : remplissage cognac qui « monte » au survol + flèche qui glisse |
+| Signature visuelle | Hero avec image en **arche**, orbes flottants, grille « bento » des catégories, bandeau d'annonce rotatif |
+| Animations | Apparitions douces au défilement, micro-interactions ; désactivées si l'utilisateur préfère réduire les animations |
+
+Les polices sont **hébergées dans le thème** (aucune requête à Google Fonts → conforme RGPD/DSGVO,
+point important en Allemagne). Tout le design est piloté par des **variables CSS** générées depuis le Customizer.
+
+---
+
+## 3. Architecture
+
+```
+premium-shop/
+├── style.css                  En-tête du thème (métadonnées)
+├── functions.php              Amorçage : charge les modules de /inc
+├── theme.json                 Palette & tailles pour l'éditeur de blocs
+├── wpml-config.xml            Textes du Customizer traduisibles avec WPML
+├── screenshot.png             Aperçu 1200×900
+├── header.php / footer.php    Squelette (promo, header, tiroirs, footer)
+├── front-page.php             Accueil : sections dans l'ordre choisi
+├── index.php, archive.php, search.php, single.php, page.php, 404.php
+├── comments.php, sidebar.php, searchform.php
+├── page-templates/            Pleine largeur, Liste d'envies
+├── assets/
+│   ├── css/  main.css · woocommerce.css · editor.css (+ .min.css)
+│   ├── js/   theme.js · shop.js · product.js · customizer-*.js (+ .min.js)
+│   ├── fonts/ Inter & Fraunces (WOFF2 variables, licence OFL)
+│   └── images/ placeholder.svg
+├── inc/
+│   ├── helpers.php            Options, textes traduisibles, utilitaires
+│   ├── i18n.php               Multilingue (WPML/Polylang/TranslatePress + mode intégré)
+│   ├── icons.php              Jeu d'icônes SVG inline
+│   ├── setup.php              Supports du thème, menus, tailles d'images, zones de widgets
+│   ├── enqueue.php            Chargement conditionnel & différé des assets
+│   ├── template-tags.php      Logo, menus, sélecteur de langue, fil d'Ariane, footer…
+│   ├── class-premium-shop-walker-nav.php  Menus accessibles + méga-menu catégories
+│   ├── newsletter.php         Newsletter double opt-in (RGPD) + export CSV
+│   ├── security.php · accessibility.php · seo.php
+│   ├── customizer/            config.php (déclaratif) · customizer.php · dynamic-css.php · contrôle « sortable »
+│   ├── admin/onboarding.php   Assistant de configuration
+│   └── woocommerce/           setup · product-card · shop-filters · single-product
+│                              cart-checkout · account · ajax · admin-fields
+├── template-parts/
+│   ├── header/  promo-bar · site-header · mobile-menu · search-overlay · cart-drawer · header-checkout
+│   ├── footer/  site-footer · footer-checkout
+│   ├── homepage/ hero · categories · products · campaign · benefits · testimonials · brands · newsletter · content
+│   ├── products/ quick-view · quick-view-modal
+│   ├── components/ search-form · newsletter-form · hero-art
+│   └── content/  content · content-search · content-none
+├── woocommerce/               Seulement 2 surcharges : archive-product.php, content-product.php
+└── languages/                 premium-shop.pot + de_DE / fr_FR / es_ES (.po, .mo, .l10n.php)
+```
+
+**Principes** : WooCommerce est intégré par **hooks** (actions/filtres) plutôt que par surcharge de
+templates (seulement 2 templates surchargés, en conservant tous les hooks d'origine) → les mises à
+jour WooCommerce restent sans risque. Chaque option du Customizer est déclarée **une seule fois**
+dans `inc/customizer/config.php` (contrôle, valeur par défaut et nettoyage générés automatiquement).
+
+---
+
+## 4. Ce qui est personnalisable sans code
+
+**Apparence → Personnaliser** :
+- *Identité du site* : logo, favicon (icône du site), nom.
+- *Menus* : menu principal, footer Boutique, footer Service client, footer Légal.
+- **Premium Shop — Options du thème** :
+  - **Couleurs** (14 réglages, aperçu en direct) ;
+  - **Typographie & boutons** : polices, taille, graisse, forme des boutons (carré / doux / pilule), majuscules, arrondi des cartes, animations ;
+  - **En-tête & bandeau** : hauteur du logo, disposition (logo à gauche / centré), en-tête fixe, icônes, méga-menu, checkout épuré, messages du bandeau (un par ligne → rotation), lien ;
+  - **Accueil — sections & ordre** : glisser-déposer, afficher/masquer, nombre de produits/catégories, titres ;
+  - **Hero**, **Bannière de campagne**, **Avantages**, **Témoignages**, **Marques**, **Newsletter** ;
+  - **Boutique & cartes produits** : colonnes, produits par page, filtres, AJAX, vue par défaut, 2e image, aperçu rapide, liste d'envies, badges ;
+  - **Page produit** : « Acheter maintenant », barre mobile, encadré de réassurance, délai de livraison, retours, garantie, onglet « Livraison & retours » ;
+  - **Panier & livraison** : seuil de livraison gratuite (barre de progression), panier latéral, recommandations ;
+  - **Entreprise & contact**, **Réseaux sociaux**, **Pied de page** (copyright, moyens de paiement), **Langues**.
+
+Les champs texte vides affichent un texte par défaut **traduit automatiquement** dans la langue du visiteur.
+
+---
+
+## 5. Multilingue
+
+### Langue par défaut : allemand
+Au premier passage, le visiteur voit le site en **allemand**. Le sélecteur **DE | FR | ES | EN** est dans l'en-tête (et dans le menu mobile).
+
+### Trois modes, détectés automatiquement
+| Situation | Comportement |
+|---|---|
+| **WPML**, **Polylang** ou **TranslatePress** actif | L'extension gère langues, URL (`/fr/`, `/es/`…) et traduction des produits ; le sélecteur du thème l'utilise. **Recommandé en production** (SEO multilingue, hreflang). |
+| Aucune extension | **Mode intégré léger** : `?lang=fr` + cookie ; l'interface (thème + WordPress + WooCommerce) change de langue. Les contenus (produits) restent dans leur langue de saisie. |
+| Désactivé | Customizer → Langues → Mode : Désactivé. |
+
+### Traduire vos propres textes (hero, bannières…)
+- Avec WPML/Polylang : *Traduction de chaînes* → groupe « Premium Shop ».
+- Sans extension : syntaxe dans le champ : `[:de]Jetzt entdecken[:fr]Découvrir[:es]Descubrir[:en]Discover`.
+
+### Ajouter une langue (italien, portugais, néerlandais…)
+1. Customizer → Premium Shop → **Langues** → « Langues proposées » : `de,fr,es,en,it`.
+2. Réglages → Général : installer l'italien (ou bouton de l'assistant).
+3. Traduire le thème : extension **Loco Translate**, ou créer `languages/it_IT.po/.mo` à partir de `premium-shop.pot`.
+Aucune modification d'architecture n'est nécessaire (registre extensible via le filtre `premium_shop_language_registry`).
+
+### Pour les développeurs
+Toutes les chaînes utilisent `__()`, `_e()`, `_x()`, `_n()`, `esc_html__()`, `esc_attr__()`… avec le domaine `premium-shop`.
+
+---
+
+## 6. Fonctionnalités WooCommerce
+
+- Produits simples, variables, virtuels, téléchargeables, groupés, externes ; promotions ; stocks ; attributs ; variations ; coupons ; avis ; commandes ; e-mails WooCommerce (non modifiés).
+- **Compatible HPOS** : uniquement les API CRUD de WooCommerce (aucun accès direct aux tables de commandes).
+- Panier et commande **classiques (shortcodes) et en blocs** pris en charge.
+- **Carte produit** : 2e image au survol, badges −X % / Nouveau / Épuisé, aperçu rapide, liste d'envies, catégorie, étoiles, prix barré, stock (« Plus que 2 »), ajout au panier AJAX.
+- **Boutique** : filtres instantanés (catégories, prix avec double curseur, disponibilité, promotions, attributs avec pastilles couleur, marques, note, recherche), puces de filtres actifs, tri, pagination, grille/liste, tiroir de filtres mobile ; URLs propres et partageables ; fonctionne aussi sans JavaScript.
+- **Page produit** : galerie avec zoom, visionneuse, miniatures ; **vidéo** (champ « Vidéo du produit » : YouTube, Vimeo ou MP4, chargée à la demande) ; référence ; « Acheter maintenant » → directement au paiement ; réassurance ; onglet **Versand & Rückgabe** ; barre d'achat fixe sur mobile.
+- **Pastilles de couleur** : Produits → Attributs → (termes) → « Couleur de la pastille ».
+- **Panier** : barre « Plus que X € pour la livraison gratuite », « Das könnte Ihnen auch gefallen » (ventes croisées, sinon meilleures ventes).
+- **Commande** : étapes Panier → Commande → Confirmation, en-tête épuré « Paiement sécurisé », réassurance.
+- **Compte client** : salutation, navigation avec icônes, tuiles du tableau de bord.
+- **Recherche instantanée** : produits (image, prix, catégorie), catégories, navigation clavier, dans la langue active.
+
+---
+
+## 7. Performance, SEO, sécurité, accessibilité
+
+- **Performance** : aucune bibliothèque lourde ; JS vanilla (~16 Ko min.), chargé en `defer` et **conditionnellement** (shop.js seulement sur la boutique, product.js seulement sur les fiches) ; CSS/JS minifiés ; polices WOFF2 préchargées ; images `lazy`, image du hero en `fetchpriority=high` ; requêtes AJAX via le routeur rapide `wc-ajax`.
+- **SEO** : HTML sémantique, un seul H1 par page, hiérarchie H2/H3, textes ALT de secours, fil d'Ariane (Yoast/Rank Math si activés), données structurées WooCommerce intactes, `noindex` des pages filtrées (si aucune extension SEO ne gère), compatibilité Yoast SEO et Rank Math (le thème ne les remplace pas).
+- **Sécurité** : échappement systématique (`esc_html`, `esc_attr`, `esc_url`, `wp_kses`), nettoyage de toutes les entrées, **nonces** et vérification des **droits** sur toutes les actions (assistant, newsletter, export, champs produit), honeypot + limitation de débit pour la newsletter, jetons hachés pour le double opt-in, protection CSV.
+- **Accessibilité** : lien d'évitement, navigation clavier complète (menus, tiroirs avec piège de focus, Échap), focus visible, ARIA (`aria-expanded`, `aria-current`, `aria-live`…), contrastes WCAG AA (vérifiés avec axe-core), `prefers-reduced-motion` respecté.
+
+---
+
+## 8. Tests réalisés
+
+Sur WordPress 6.5 + WooCommerce 9.1 avec données de démonstration :
+- aucune erreur/avertissement PHP sur toutes les pages publiques et d'administration ;
+- aucune erreur JavaScript ;
+- **aucun débordement horizontal** aux largeurs 320, 375, 390, 414, 768, 1024, 1280, 1440, 1920 px sur 10 pages ;
+- scénarios : filtres AJAX + historique du navigateur, tri, recherche instantanée, aperçu rapide → panier, ajout AJAX → panier latéral, liste d'envies, « Acheter maintenant » → paiement, changement de langue DE/FR/ES/EN (cookie), Customizer (tri des sections, couleurs en direct), newsletter double opt-in, vidéo produit ;
+- audit axe-core WCAG 2 AA.
+
+---
+
+## 9. Développement & reconstruction
+
+Les outils de build sont dans `premium-shop-dev/` (non inclus dans le zip du thème) :
+
+```bash
+cd premium-shop-dev
+bash build.sh        # traductions (.pot/.po/.mo/.l10n.php) + minification + lint PHP + dist/premium-shop.zip
+```
+
+- `make-pot.py` : extrait les chaînes ; `translations.py` : traductions DE/FR/ES ; `build-languages.py` : génère les fichiers de langue.
+- En mode `SCRIPT_DEBUG`, WordPress charge les fichiers non minifiés.
+- Pour des modifications profondes, créez un **thème enfant** (les templates et fonctions sont filtrables : `premium_shop_*`).
+
+### Filtres utiles
+`premium_shop_language_registry`, `premium_shop_languages`, `premium_shop_home_sections`,
+`premium_shop_product_badges`, `premium_shop_product_trust_items`, `premium_shop_text_fallbacks`,
+`premium_shop_customizer_config`, `premium_shop_dynamic_css`, `premium_shop_live_search_args`,
+`premium_shop_free_shipping_threshold`, `premium_shop_fallback_menu_items`.
+
+---
+
+## 10. Points d'attention juridiques (Allemagne)
+
+Le thème fournit la structure ; le contenu juridique reste sous votre responsabilité :
+complétez *Impressum*, *AGB*, *Widerrufsbelehrung* et la *Datenschutzerklärung*, et pour les mentions
+de prix (TVA, frais de port, « Grundpreis ») utilisez une extension spécialisée comme
+**Germanized** ou **German Market**, compatibles avec ce thème (hooks WooCommerce standard).
+Les témoignages affichés proviennent uniquement de vrais avis clients (aucun avis fictif).
