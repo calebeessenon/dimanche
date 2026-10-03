@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 11:29+0000\n"
-"PO-Revision-Date: 2026-10-03 11:29+0000\n"
+"POT-Creation-Date: 2026-10-03 19:40+0000\n"
+"PO-Revision-Date: 2026-10-03 19:40+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -1903,7 +1903,7 @@ msgstr "Bestätigung ausstehend"
 msgid "Export confirmed subscribers (CSV)"
 msgstr "Bestätigte Abonnenten exportieren (CSV)"
 
-#: inc/newsletter.php:315 inc/admin/onboarding.php:66 inc/admin/onboarding.php:233 inc/firewood/price-tool.php:145
+#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/admin/onboarding.php:66 inc/admin/onboarding.php:233
 msgid "You are not allowed to do this."
 msgstr "Dazu sind Sie nicht berechtigt."
 
@@ -2152,6 +2152,21 @@ msgstr "Bestellfortschritt"
 #: inc/woocommerce/cart-checkout.php:95
 msgid "You may also like"
 msgstr "Das könnte Ihnen auch gefallen"
+
+#. translators:%d: number of images.
+#: inc/woocommerce/import-images.php:127
+msgid "%d image could not be downloaded during the import."
+msgid_plural "%d images could not be downloaded during the import."
+msgstr[0] "%d Bild konnte beim Import nicht heruntergeladen werden."
+msgstr[1] "%d Bilder konnten beim Import nicht heruntergeladen werden."
+
+#: inc/woocommerce/import-images.php:130
+msgid "The products were imported without these images. Add them in the product, or make the image addresses reachable and import again with \"Update existing products\"."
+msgstr "Die Produkte wurden ohne diese Bilder importiert. Fügen Sie sie im Produkt hinzu oder machen Sie die Bildadressen erreichbar und importieren Sie erneut mit „Vorhandene Produkte aktualisieren“."
+
+#: inc/woocommerce/import-images.php:136
+msgid "Hide this list"
+msgstr "Diese Liste ausblenden"
 
 #: inc/woocommerce/product-card.php:113
 msgid "Currently unavailable"

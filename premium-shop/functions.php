@@ -47,6 +47,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			'inc/woocommerce/account.php',
 			'inc/woocommerce/ajax.php',
 			'inc/woocommerce/admin-fields.php',
+			'inc/woocommerce/import-images.php',
 			'inc/firewood/product-data.php',
 			'inc/firewood/price-tool.php',
 			'inc/firewood/delivery.php',

@@ -253,6 +253,15 @@ descriptions sont calculés à l'import. Colonnes spéciales : `Meta: _ps_specie
 birch, hornbeam, mixed, alder, pine, spruce), `Meta: _ps_unit` (rm, srm, fm, kg, liter, piece),
 `Meta: _ps_drying` (kiln, air, fresh), `Meta: _ps_price_per_unit`, `Meta: _ps_auto_prices` (yes)…
 
+**Images introuvables :** si une adresse d'image de la colonne Images ne peut pas être téléchargée,
+le produit est quand même importé (sans cette image) et la liste des images manquantes s'affiche
+en haut de **Produits**. WooCommerce seul rejetterait toute la ligne.
+
+**Reprendre l'export d'une autre boutique WooCommerce :**
+`python3 premium-shop-dev/clean-import.py export.csv propre.csv [--no-images] [--sku-prefix WH]`
+convertit les colonnes en anglais, supprime les anciens ID, crée des références (WH-0001…), complète
+les descriptions courtes vides et lit dans les noms l'essence, la longueur, les stères et les kg.
+
 ### Livraison par code postal
 1. **WooCommerce → Réglages → Expédition** : créez une zone par secteur de livraison, avec ses
    codes postaux (`72*`, `70000...71999`, `10115`) et un tarif (ex. « Lieferung per Spedition – 49 € »).
