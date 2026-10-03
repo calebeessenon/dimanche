@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-03 10:50+0000\n"
-"PO-Revision-Date: 2026-10-03 10:50+0000\n"
+"POT-Creation-Date: 2026-10-03 11:29+0000\n"
+"PO-Revision-Date: 2026-10-03 11:29+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -1739,92 +1739,93 @@ msgid "Freshly cut (for self-drying)"
 msgstr "Frisch geschlagen (zum Selbsttrocknen)"
 
 #. translators:1: wood species, 2: drying method, 3: log length.
-#: inc/firewood/product-data.php:791
+#: inc/firewood/product-data.php:793
 msgid "%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace."
 msgstr "%1$s-Kaminholz, %2$s und auf %3$s Scheitlänge gespalten – fertig für Ihren Ofen oder Kamin."
 
+#. translators:1: wood species, 2: drying method.
+#: inc/firewood/product-data.php:801
+msgid "%1$s firewood, %2$s and split — ready for your stove or fireplace."
+msgstr "%1$s-Kaminholz, %2$s und gespalten – fertig für Ihren Ofen oder Kamin."
+
 #. translators:%s: percent.
-#: inc/firewood/product-data.php:800
+#: inc/firewood/product-data.php:810
 msgid "Residual moisture below %s%%: dry wood burns cleanly, gives more heat and protects your stove and chimney."
 msgstr "Restfeuchte unter %s %%: Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
 
 #. translators:%s: percent.
-#: inc/firewood/product-data.php:801
+#: inc/firewood/product-data.php:811
 msgid "Dry wood burns cleanly, gives more heat and protects your stove and chimney."
 msgstr "Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
 
 #. translators:%s: origin.
-#: inc/firewood/product-data.php:806
+#: inc/firewood/product-data.php:816
 msgid "Origin: %s."
 msgstr "Herkunft: %s."
 
 #. translators:%s: certificate.
-#: inc/firewood/product-data.php:810
+#: inc/firewood/product-data.php:820
 msgid "Certified: %s."
 msgstr "Zertifiziert: %s."
 
-#: inc/firewood/product-data.php:812
+#: inc/firewood/product-data.php:822
 msgid "Tip: store your wood dry and well ventilated, ideally under a roof."
 msgstr "Tipp: Lagern Sie Ihr Holz trocken und gut belüftet, idealerweise überdacht."
 
-#: inc/firewood/product-data.php:878
+#: inc/firewood/product-data.php:888
 msgid "kiln-dried"
 msgstr "kammergetrocknet"
 
-#: inc/firewood/product-data.php:879
+#: inc/firewood/product-data.php:889
 msgid "naturally air-dried"
 msgstr "natürlich luftgetrocknet"
 
-#: inc/firewood/product-data.php:880
+#: inc/firewood/product-data.php:890
 msgid "freshly cut"
 msgstr "frisch geschlagen"
 
-#: inc/firewood/product-data.php:881
+#: inc/firewood/product-data.php:891
 msgid "carefully dried"
 msgstr "sorgfältig getrocknet"
 
-#: inc/firewood/product-data.php:882 inc/firewood/product-data.php:794
-msgid "stove length"
-msgstr "Ofenlänge"
-
-#: inc/firewood/product-data.php:883
+#: inc/firewood/product-data.php:892
 msgid "Beech is the classic: long, even embers and a cosy, calm flame."
 msgstr "Buche ist der Klassiker: lange, gleichmäßige Glut und ein gemütliches, ruhiges Flammenbild."
 
-#: inc/firewood/product-data.php:884
+#: inc/firewood/product-data.php:893
 msgid "Oak burns slowly and produces long-lasting embers — ideal for long evenings."
 msgstr "Eiche brennt langsam und bildet lang anhaltende Glut – ideal für lange Abende."
 
-#: inc/firewood/product-data.php:885
+#: inc/firewood/product-data.php:894
 msgid "Ash offers a high heat output and burns calmly with a beautiful flame."
 msgstr "Esche liefert eine hohe Heizleistung und brennt ruhig mit schönem Flammenbild."
 
-#: inc/firewood/product-data.php:886
+#: inc/firewood/product-data.php:895
 msgid "Birch lights easily, burns with a bright flame and hardly sparks."
 msgstr "Birke entzündet sich leicht, brennt mit heller Flamme und funkt kaum."
 
-#: inc/firewood/product-data.php:887
+#: inc/firewood/product-data.php:896
 msgid "Hornbeam has one of the highest energy contents of all native woods."
 msgstr "Hainbuche hat einen der höchsten Heizwerte aller heimischen Hölzer."
 
-#: inc/firewood/product-data.php:888
+#: inc/firewood/product-data.php:897
 msgid "A balanced mix of hardwoods for reliable everyday heating."
 msgstr "Eine ausgewogene Hartholz-Mischung für zuverlässiges Heizen im Alltag."
 
-#: inc/firewood/product-data.php:889
+#: inc/firewood/product-data.php:898
 msgid "Alder burns evenly with little sparking and a pleasant smell."
 msgstr "Erle brennt gleichmäßig, funkt kaum und duftet angenehm."
 
-#: inc/firewood/product-data.php:890
+#: inc/firewood/product-data.php:899
 msgid "Pine lights quickly — perfect for getting the fire started."
 msgstr "Kiefer entzündet sich schnell – perfekt zum Anfeuern."
 
-#: inc/firewood/product-data.php:891
+#: inc/firewood/product-data.php:900
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "Fichte entzündet sich schnell – perfekt zum Anfeuern."
 
 #. translators:%s: lowest price.
-#: inc/firewood/product-data.php:912
+#: inc/firewood/product-data.php:921
 msgid "from %s"
 msgstr "ab %s"
 

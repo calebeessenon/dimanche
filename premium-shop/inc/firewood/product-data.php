@@ -786,13 +786,23 @@ function premium_shop_fw_auto_texts( $product ) {
 		'fresh' => 'freshly cut',
 	);
 
-	$intro = sprintf(
-		/* translators: 1: wood species, 2: drying method, 3: log length. */
-		$t( '%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace.' ),
-		$name,
-		$t( isset( $dry_txt[ $drying ] ) ? $dry_txt[ $drying ] : 'carefully dried' ),
-		'' !== $length ? premium_shop_fw_length_label( $length ) : $t( 'stove length' )
-	);
+	$dried = $t( isset( $dry_txt[ $drying ] ) ? $dry_txt[ $drying ] : 'carefully dried' );
+	if ( '' !== $length ) {
+		$intro = sprintf(
+			/* translators: 1: wood species, 2: drying method, 3: log length. */
+			$t( '%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace.' ),
+			$name,
+			$dried,
+			premium_shop_fw_length_label( $length )
+		);
+	} else {
+		$intro = sprintf(
+			/* translators: 1: wood species, 2: drying method. */
+			$t( '%1$s firewood, %2$s and split — ready for your stove or fireplace.' ),
+			$name,
+			$dried
+		);
+	}
 
 	$paragraphs   = array( $intro, $t( premium_shop_fw_species_sentence( $species_key ) ) );
 	$paragraphs[] = '' !== $moist
@@ -879,7 +889,6 @@ function premium_shop_fw_i18n_catalog() {
 		__( 'naturally air-dried', 'premium-shop' ),
 		__( 'freshly cut', 'premium-shop' ),
 		__( 'carefully dried', 'premium-shop' ),
-		__( 'stove length', 'premium-shop' ),
 		__( 'Beech is the classic: long, even embers and a cosy, calm flame.', 'premium-shop' ),
 		__( 'Oak burns slowly and produces long-lasting embers — ideal for long evenings.', 'premium-shop' ),
 		__( 'Ash offers a high heat output and burns calmly with a beautiful flame.', 'premium-shop' ),
@@ -918,25 +927,65 @@ add_filter( 'woocommerce_variable_price_html', 'premium_shop_fw_from_price', 20,
  * descriptions and automatic prices just like products saved in the editor.
  * Columns "Meta: _ps_species", "Meta: _ps_price_per_unit"… fill the data.
  *
- * @param WC_Product $object Imported product or variation.
+ * Everything is set on the object *before* WooCommerce saves it, so the
+ * import does not cost a single extra save (light on shared hosting).
+ *
+ * @param WC_Product $object Product or variation about to be saved.
+ * @return WC_Product
  */
-function premium_shop_fw_after_import( $object ) {
+function premium_shop_fw_before_import_save( $object ) {
+	static $parents = array();
+
 	if ( ! $object instanceof WC_Product ) {
-		return;
+		return $object;
 	}
 
 	if ( $object->is_type( 'variation' ) ) {
-		premium_shop_fw_recalculate( $object->get_parent_id() );
-		return;
+		$parent_id = $object->get_parent_id();
+		if ( ! $parent_id ) {
+			return $object;
+		}
+		if ( ! array_key_exists( $parent_id, $parents ) ) {
+			$parent                = wc_get_product( $parent_id );
+			$parents[ $parent_id ] = ( $parent && 'yes' === $parent->get_meta( '_ps_auto_prices' ) ) ? $parent : null;
+		}
+		if ( $parents[ $parent_id ] ) {
+			$price = premium_shop_fw_price_for( $parents[ $parent_id ], premium_shop_fw_qty( $object ) );
+			if ( $price > 0 ) {
+				$object->set_regular_price( (string) $price );
+			}
+		}
+		return $object;
 	}
 
 	if ( premium_shop_fw_is_firewood( $object ) ) {
-		$before = $object->get_description() . $object->get_short_description();
 		premium_shop_fw_auto_texts( $object );
-		if ( $object->get_description() . $object->get_short_description() !== $before ) {
-			$object->save();
+
+		if ( ! $object->is_type( 'variable' ) && 'yes' === $object->get_meta( '_ps_auto_prices' ) ) {
+			$price = premium_shop_fw_price_for( $object, premium_shop_fw_qty( $object ) );
+			if ( $price > 0 ) {
+				$object->set_regular_price( (string) $price );
+			}
 		}
 	}
-	premium_shop_fw_recalculate( $object->get_id() );
+
+	return $object;
 }
-add_action( 'woocommerce_product_import_inserted_product_object', 'premium_shop_fw_after_import' );
+add_filter( 'woocommerce_product_import_pre_insert_product_object', 'premium_shop_fw_before_import_save' );
+
+/**
+ * Lighter import batches: 10 rows and max. 10 seconds per request instead of
+ * 30 rows / 20 seconds. Avoids "503 Service Unavailable" on shared hosting.
+ */
+add_filter(
+	'woocommerce_product_import_batch_size',
+	static function () {
+		return (int) apply_filters( 'premium_shop_import_batch_size', 10 );
+	}
+);
+add_filter(
+	'woocommerce_product_importer_default_time_limit',
+	static function () {
+		return (int) apply_filters( 'premium_shop_import_time_limit', 10 );
+	}
+);

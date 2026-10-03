@@ -4,6 +4,7 @@
 T = [
 ("%1$s / %2$s", "%1$s / %2$s", "%1$s / %2$s", "%1$s / %2$s"),
 ("%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace.", "%1$s-Kaminholz, %2$s und auf %3$s Scheitlänge gespalten – fertig für Ihren Ofen oder Kamin.", "Bois de chauffage en %1$s, %2$s et fendu en bûches de %3$s — prêt pour votre poêle ou cheminée.", "Leña de %1$s, %2$s y partida a una longitud de %3$s, lista para tu estufa o chimenea."),
+("%1$s firewood, %2$s and split — ready for your stove or fireplace.", "%1$s-Kaminholz, %2$s und gespalten – fertig für Ihren Ofen oder Kamin.", "Bois de chauffage en %1$s, %2$s et fendu — prêt pour votre poêle ou cheminée.", "Leña de %1$s, %2$s y partida, lista para tu estufa o chimenea."),
 ("%1$s kWh per %2$s", "%1$s kWh pro %2$s", "%1$s kWh par %2$s", "%1$s kWh por %2$s"),
 ("%d price updated.", ["%d Preis aktualisiert.", "%d Preise aktualisiert."], ["%d prix mis à jour.", "%d prix mis à jour."], ["%d precio actualizado.", "%d precios actualizados."]),
 ("(e.g. 5 = +5%, -3 = −3%; leave empty to keep the values above)", "(z. B. 5 = +5 %, -3 = −3 %; leer lassen, um die Werte oben zu übernehmen)", "(ex. 5 = +5 %, -3 = −3 % ; laisser vide pour garder les valeurs ci-dessus)", "(p. ej. 5 = +5 %, -3 = −3 %; déjalo vacío para mantener los valores de arriba)"),
@@ -217,7 +218,6 @@ T = [
 ("solid m³", "FM", "m³ plein", "m³ macizo"),
 ("stacked m³", "RM", "stère", "m³ apilado"),
 ("stacked m³ per season", "RM pro Saison", "stères par saison", "m³ apilados por temporada"),
-("stove length", "Ofenlänge", "longueur poêle", "medida para estufa"),
 ("— Not firewood —", "— Kein Brennholz —", "— Pas du bois de chauffage —", "— No es leña —"),
 ("≈ %1$s loose m³ · %2$s solid m³", "≈ %1$s SRM · %2$s FM", "≈ %1$s m³ vrac · %2$s m³ plein", "≈ %1$s m³ a granel · %2$s m³ macizo"),
 ]
