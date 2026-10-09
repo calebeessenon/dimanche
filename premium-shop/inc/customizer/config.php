@@ -336,6 +336,15 @@ function premium_shop_customizer_config() {
 					'list' => __( 'List', 'premium-shop' ),
 				),
 			),
+			'card_button'         => array(
+				'type'    => 'select',
+				'default' => 'visible',
+				'label'   => __( 'Add-to-cart button on cards', 'premium-shop' ),
+				'choices' => array(
+					'visible' => __( 'Always visible, under the price', 'premium-shop' ),
+					'hover'   => __( 'On the image, when hovering', 'premium-shop' ),
+				),
+			),
 			'card_hover_image'    => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show second image on hover', 'premium-shop' ) ),
 			'card_quick_view'     => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Quick view', 'premium-shop' ) ),
 			'card_wishlist'       => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Wishlist', 'premium-shop' ) ),

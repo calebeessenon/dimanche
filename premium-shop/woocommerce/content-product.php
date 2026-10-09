@@ -23,6 +23,7 @@ $premium_shop_heading = wc_get_loop_prop( 'ps_heading' );
 $premium_shop_heading = in_array( $premium_shop_heading, array( 'h2', 'h3' ), true ) ? $premium_shop_heading : 'h2';
 $premium_shop_link    = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
 $premium_shop_cat     = premium_shop_option( 'card_category' ) ? premium_shop_card_category( $product ) : '';
+$premium_shop_button  = 'hover' === premium_shop_option( 'card_button' ) ? 'hover' : 'visible';
 ?>
 <li <?php wc_product_class( 'ps-card', $product ); ?>>
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
@@ -48,9 +49,11 @@ $premium_shop_cat     = premium_shop_option( 'card_category' ) ? premium_shop_ca
 
 		<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 
-		<div class="ps-card__cta">
-			<?php woocommerce_template_loop_add_to_cart(); ?>
-		</div>
+		<?php if ( 'hover' === $premium_shop_button ) : ?>
+			<div class="ps-card__cta">
+				<?php woocommerce_template_loop_add_to_cart(); ?>
+			</div>
+		<?php endif; ?>
 	</div>
 
 	<div class="ps-card__body">
@@ -86,6 +89,12 @@ $premium_shop_cat     = premium_shop_option( 'card_category' ) ? premium_shop_ca
 		<div class="ps-card__excerpt">
 			<?php echo wp_kses_post( wp_trim_words( $product->get_short_description(), 22 ) ); ?>
 		</div>
+
+		<?php if ( 'visible' === $premium_shop_button ) : ?>
+			<div class="ps-card__cta ps-card__cta--static">
+				<?php woocommerce_template_loop_add_to_cart(); ?>
+			</div>
+		<?php endif; ?>
 	</div>
 
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
