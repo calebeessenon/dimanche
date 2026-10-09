@@ -2,8 +2,9 @@
 /**
  * Quick view content (loaded via AJAX into the modal).
  *
- * Simple products can be added to the cart directly; other types link to
- * the product page to choose options.
+ * Simple and variable products can be added to the cart directly (variable
+ * products with WooCommerce's own variation form); other types link to the
+ * product page.
  *
  * @package Premium_Shop
  *
@@ -14,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 /** @var WC_Product $premium_shop_product */
 $premium_shop_product = $args['product'];
+$premium_shop_qv_variable = $premium_shop_product->is_type( 'variable' ) && $premium_shop_product->is_purchasable() && $premium_shop_product->is_in_stock();
 $premium_shop_gallery = array_slice( array_filter( array_merge( array( $premium_shop_product->get_image_id() ), $premium_shop_product->get_gallery_image_ids() ) ), 0, 5 );
 ?>
 <div class="ps-qv">
@@ -88,9 +90,13 @@ $premium_shop_gallery = array_slice( array_filter( array_merge( array( $premium_
 						<span><?php echo esc_html( $premium_shop_product->single_add_to_cart_text() ); ?></span>
 					</button>
 				</form>
+			<?php elseif ( $premium_shop_qv_variable ) : ?>
+				<div class="ps-qv__variations" data-ps-qv-variations>
+					<?php woocommerce_variable_add_to_cart(); ?>
+				</div>
 			<?php endif; ?>
 			<a class="ps-btn ps-btn--ghost" href="<?php echo esc_url( $premium_shop_product->get_permalink() ); ?>">
-				<?php echo $premium_shop_product->is_type( 'simple' ) ? esc_html__( 'View details', 'premium-shop' ) : esc_html__( 'Choose options', 'premium-shop' ); ?>
+				<?php echo $premium_shop_product->is_type( 'simple' ) || $premium_shop_qv_variable ? esc_html__( 'View details', 'premium-shop' ) : esc_html__( 'Choose options', 'premium-shop' ); ?>
 				<?php premium_shop_icon( 'arrow', array( 'size' => 18 ) ); ?>
 			</a>
 		</div>

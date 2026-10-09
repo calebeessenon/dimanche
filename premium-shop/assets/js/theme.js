@@ -525,6 +525,37 @@
 		});
 	}
 
+	/*
+	 * Block cart & checkout change the cart through the Store API, which does not
+	 * refresh WooCommerce fragments: watch the block cart store and refresh the
+	 * header count, side cart and free-shipping bar when quantities, items or
+	 * discounts change.
+	 */
+	function watchBlockCart() {
+		if (!doc.querySelector('.wp-block-woocommerce-cart, .wp-block-woocommerce-checkout') || !S.wcAjax) { return; }
+		var data = window.wp && window.wp.data;
+		var store;
+		try { store = data && data.select('wc/store/cart'); } catch (e) { store = null; }
+		if (!store || !store.getCartTotals || !store.getCartData) { return; }
+		var last = null;
+		var refresh = debounce(function () {
+			fetch(wcAjaxUrl('get_refreshed_fragments'), { method: 'POST', credentials: 'same-origin' })
+				.then(function (r) { return r.json(); })
+				.then(function (res) { applyFragments(res && res.fragments); })
+				.catch(function () {});
+		}, 400);
+		data.subscribe(function () {
+			var s = data.select('wc/store/cart');
+			var totals = s.getCartTotals();
+			var cart = s.getCartData();
+			if (!totals || !cart) { return; }
+			var key = [cart.itemsCount, totals.total_items, totals.total_discount].join('|');
+			if (last === null) { last = key; return; }
+			if (key !== last) { last = key; refresh(); }
+		});
+	}
+	window.addEventListener('load', watchBlockCart);
+
 	/**
 	 * Add to cart through WooCommerce's own AJAX endpoint.
 	 *
@@ -663,6 +694,55 @@
 				ajaxAddToCart(btn.getAttribute('data-ps-qv-add'), qty ? qty.value : 1, btn);
 			});
 		}
+		initQuickViewVariations(ctx);
+	}
+
+	/**
+	 * Variable products in the quick view: WooCommerce's variation form, posted
+	 * in the background to the product page (the same server-side handling as on
+	 * the product page, so "any" attributes and add-on plugins keep working),
+	 * then the cart fragments are refreshed.
+	 */
+	function initQuickViewVariations(ctx) {
+		var vform = $('[data-ps-qv-variations] form.variations_form', ctx);
+		if (!vform) { return; }
+		if (window.jQuery && window.jQuery.fn.wc_variation_form) {
+			window.jQuery(vform).wc_variation_form();
+		}
+		vform.addEventListener('submit', function (e) {
+			// "Buy now" keeps its normal behaviour (straight to the checkout).
+			if (e.submitter && e.submitter.name === 'ps_buy_now') { return; }
+			e.preventDefault();
+			var btn = $('.single_add_to_cart_button', vform);
+			var vid = $('input[name="variation_id"]', vform);
+			if (!btn || btn.classList.contains('disabled') || !vid || !parseInt(vid.value, 10)) { return; }
+			btn.classList.add('loading');
+			btn.disabled = true;
+			var data = new FormData(vform);
+			if (!data.has('add-to-cart')) { data.append('add-to-cart', vform.getAttribute('data-product_id') || ''); }
+			fetch(vform.getAttribute('action') || window.location.href, { method: 'POST', credentials: 'same-origin', body: data })
+				.then(function (r) { return r.text(); })
+				.then(function (html) {
+					var page = new DOMParser().parseFromString(html, 'text/html');
+					var err = page.querySelector('.woocommerce-error li, .woocommerce-error, .wc-block-components-notice-banner.is-error');
+					if (err) { throw new Error(err.textContent.replace(/\s+/g, ' ').trim()); }
+					return fetch(wcAjaxUrl('get_refreshed_fragments'), { method: 'POST', credentials: 'same-origin' });
+				})
+				.then(function (r) { return r.json(); })
+				.then(function (res) {
+					applyFragments(res && res.fragments);
+					if (window.jQuery) {
+						window.jQuery(doc.body).trigger('added_to_cart', [res.fragments, res.cart_hash, window.jQuery(btn)]);
+					} else if (!openCartDrawer()) {
+						toast(I18N.addedCart || '✓');
+					}
+				})
+				.catch(function (error) { toast((error && error.message && error.message !== 'Failed to fetch') ? error.message : (I18N.error || 'Error')); })
+				.then(function () {
+					btn.classList.remove('loading');
+					btn.disabled = false;
+				});
+		});
 	}
 
 	doc.addEventListener('click', function (e) {

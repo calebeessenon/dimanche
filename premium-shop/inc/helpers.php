@@ -120,7 +120,59 @@ function premium_shop_pick_language_block( $value ) {
  * @return float
  */
 function premium_shop_free_shipping_threshold() {
-	return (float) apply_filters( 'premium_shop_free_shipping_threshold', (float) premium_shop_option( 'free_shipping_threshold' ) );
+	$threshold = (float) premium_shop_option( 'free_shipping_threshold' );
+	if ( $threshold <= 0 ) {
+		$threshold = premium_shop_wc_free_shipping_min_amount();
+	}
+	return (float) apply_filters( 'premium_shop_free_shipping_threshold', $threshold );
+}
+
+/**
+ * Minimum amount of the enabled WooCommerce "Free shipping" method (setting
+ * "requires a minimum order amount") in the customer's shipping zone, or in the
+ * store's zone before an address is known. 0 when there is none.
+ *
+ * @return float
+ */
+function premium_shop_wc_free_shipping_min_amount() {
+	static $cache = array();
+
+	if ( ! class_exists( 'WC_Shipping_Zones' ) || ! did_action( 'woocommerce_init' ) ) {
+		return 0.0;
+	}
+
+	$customer = function_exists( 'WC' ) && WC()->customer ? WC()->customer : null;
+	$country  = $customer && $customer->get_shipping_country() ? $customer->get_shipping_country() : WC()->countries->get_base_country();
+	$state    = $customer && $customer->get_shipping_country() ? $customer->get_shipping_state() : WC()->countries->get_base_state();
+	$postcode = $customer && $customer->get_shipping_country() ? $customer->get_shipping_postcode() : WC()->countries->get_base_postcode();
+	$key      = $country . '|' . $state . '|' . $postcode;
+
+	if ( isset( $cache[ $key ] ) ) {
+		return $cache[ $key ];
+	}
+
+	$zone = WC_Shipping_Zones::get_zone_matching_package(
+		array(
+			'destination' => array(
+				'country'  => $country,
+				'state'    => $state,
+				'postcode' => $postcode,
+			),
+		)
+	);
+
+	$amount = 0.0;
+	foreach ( $zone->get_shipping_methods( true ) as $method ) {
+		if ( 'free_shipping' === $method->id && in_array( $method->get_option( 'requires' ), array( 'min_amount', 'either' ), true ) ) {
+			$min = (float) $method->get_option( 'min_amount' );
+			if ( $min > 0 && ( 0.0 === $amount || $min < $amount ) ) {
+				$amount = $min;
+			}
+		}
+	}
+
+	$cache[ $key ] = $amount;
+	return $amount;
 }
 
 /**

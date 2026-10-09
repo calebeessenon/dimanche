@@ -50,6 +50,10 @@ function premium_shop_enqueue_assets() {
 		wp_enqueue_style( 'premium-shop-woocommerce', premium_shop_asset( 'css/woocommerce', 'css' ), array( 'premium-shop' ), $version );
 		// Keep the header cart count and the side cart in sync on every page.
 		wp_enqueue_script( 'wc-cart-fragments' );
+		// Quick view: variation form of variable products (WooCommerce's own script).
+		if ( premium_shop_option( 'card_quick_view' ) && ! is_cart() && ! is_checkout() ) {
+			wp_enqueue_script( 'wc-add-to-cart-variation' );
+		}
 	}
 
 	wp_enqueue_script(

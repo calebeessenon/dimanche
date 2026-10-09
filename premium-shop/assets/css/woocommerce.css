@@ -3685,14 +3685,14 @@ ul.woocommerce-order-overview li strong {
 	justify-content: space-between;
 }
 
-.product_list_widget li {
+.product_list_widget:not(.woocommerce-mini-cart) li {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 4px 12px;
 }
 
-.product_list_widget img {
+.product_list_widget:not(.woocommerce-mini-cart) img {
 	width: 56px;
 	height: 68px;
 	object-fit: cover;
@@ -3766,4 +3766,321 @@ ul.woocommerce-order-overview li strong {
 	margin-top: 10px;
 	font-size: .8rem;
 	color: var(--ps-text-muted);
+}
+
+
+/* ==========================================================================
+   WooCommerce elements styled by WooCommerce's own stylesheet, which the
+   theme replaces: store notice, highlights, bank details, category tiles,
+   widgets, loading overlay, WooCommerce blocks inside pages.
+   ========================================================================== */
+
+/* Store notice (WooCommerce → Settings → Customizer → Store notice). */
+.woocommerce-store-notice,
+p.demo_store {
+	position: relative;
+	z-index: 60;
+	display: none; /* shown by WooCommerce's script unless dismissed */
+	margin: 0;
+	padding: 10px max(var(--ps-gutter), 16px);
+	background: var(--ps-accent);
+	color: var(--ps-on-accent);
+	font-size: .88rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.woocommerce-store-notice a,
+p.demo_store a {
+	margin-left: 10px;
+	color: inherit;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.woocommerce-store-notice__dismiss-link {
+	white-space: nowrap;
+}
+
+/* <mark> in order texts ("Order #12 was placed on … and is currently …") and category counts. */
+.woocommerce mark,
+.woocommerce-MyAccount-content mark,
+.woocommerce-order mark,
+.product-category mark,
+.woocommerce-order-details mark {
+	padding: 0;
+	background: none;
+	color: inherit;
+	font-weight: 600;
+}
+
+/* Bank details (direct bank transfer) on the thank-you page and in the account. */
+.woocommerce-bacs-bank-details {
+	margin: 28px 0;
+	padding: clamp(18px, 3vw, 28px);
+	border: 1px solid var(--ps-border);
+	border-radius: var(--ps-radius-card);
+	background: var(--ps-surface);
+}
+
+.woocommerce-bacs-bank-details .wc-bacs-bank-details-heading {
+	margin-top: 0;
+}
+
+.woocommerce-bacs-bank-details .wc-bacs-bank-details-account-name {
+	margin: 18px 0 8px;
+	font-size: 1rem;
+}
+
+.wc-bacs-bank-details {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 10px 24px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wc-bacs-bank-details li {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	font-size: .78rem;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: var(--ps-text-muted);
+}
+
+.wc-bacs-bank-details li strong {
+	font-size: 1rem;
+	letter-spacing: 0;
+	text-transform: none;
+	color: var(--ps-text);
+	word-break: break-all;
+}
+
+/* Product attributes of an order line (e.g. "Länge: 33 cm"). */
+.wc-item-meta {
+	margin: 6px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: .82rem;
+	color: var(--ps-text-muted);
+}
+
+.wc-item-meta li,
+.wc-item-meta p {
+	display: inline;
+	margin: 0;
+}
+
+.wc-item-meta li + li::before {
+	content: " · ";
+}
+
+/* Category tiles (shop page "Show categories", [product_categories]). */
+ul.products li.product-category {
+	position: relative;
+	margin: 0;
+}
+
+ul.products li.product-category > a {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+ul.products li.product-category img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: var(--ps-radius-card);
+	background: var(--ps-soft);
+	transition: transform .6s var(--ps-ease-out);
+}
+
+ul.products li.product-category > a:hover img {
+	transform: scale(1.02);
+}
+
+ul.products li.product-category .woocommerce-loop-category__title {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 0;
+	font-family: var(--ps-font-body);
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: 0;
+}
+
+ul.products li.product-category .count {
+	flex: none;
+	padding: 2px 9px;
+	border-radius: 999px;
+	background: var(--ps-soft);
+	font-size: .75rem;
+	font-weight: 600;
+	color: var(--ps-text-muted);
+}
+
+/* WooCommerce widgets. */
+.woocommerce-product-search {
+	display: flex;
+	gap: 8px;
+}
+
+.woocommerce-product-search .search-field {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.woocommerce-product-search button {
+	flex: none;
+	min-height: 44px;
+	padding: .6em 1.1em;
+	border: 1px solid var(--ps-primary);
+	border-radius: var(--ps-radius-btn);
+	background: var(--ps-primary);
+	color: var(--ps-on-primary);
+	font: 600 .9rem var(--ps-font-body);
+	cursor: pointer;
+}
+
+.widget_rating_filter ul li a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Loading overlay (WooCommerce blockUI) — spinner instead of a white flash. */
+.blockUI.blockOverlay {
+	position: relative;
+	background: color-mix(in srgb, var(--ps-bg) 70%, transparent) !important;
+	opacity: 1 !important;
+}
+
+.blockUI.blockOverlay::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 28px;
+	height: 28px;
+	margin: -14px 0 0 -14px;
+	border: 2px solid var(--ps-border-strong);
+	border-top-color: var(--ps-primary);
+	border-radius: 50%;
+	animation: ps-spin .8s linear infinite;
+}
+
+/* Small helper texts. */
+#account_display_name_description,
+.woocommerce-variation-description,
+.woocommerce-password-hint {
+	display: block;
+	margin-top: 6px;
+	font-size: .84rem;
+	font-style: normal;
+	color: var(--ps-text-muted);
+}
+
+/* Quick view: variation form of variable products. */
+.ps-qv__variations {
+	width: 100%;
+}
+
+.ps-qv__variations table.variations {
+	width: 100%;
+	margin: 0 0 12px;
+	border: 0;
+}
+
+.ps-qv__variations table.variations th,
+.ps-qv__variations table.variations td {
+	display: block;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+
+.ps-qv__variations table.variations th label {
+	display: block;
+	margin: 10px 0 6px;
+	font-size: .84rem;
+	font-weight: 600;
+}
+
+.ps-qv__variations table.variations select {
+	width: 100%;
+}
+
+.ps-qv__variations .reset_variations {
+	display: inline-block;
+	margin-top: 6px;
+	font-size: .82rem;
+}
+
+.ps-qv__variations .single_variation_wrap {
+	display: grid;
+	gap: 12px;
+}
+
+.ps-qv__variations .woocommerce-variation-add-to-cart {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.ps-qv__variations .single_add_to_cart_button {
+	flex: 1 1 180px;
+}
+
+.ps-qv__variations .ps-buy-now {
+	flex: 1 1 100%;
+}
+
+/* WooCommerce blocks and shortcodes inside a page: wide like the shop, and
+   product titles in the theme's card style instead of article headings. */
+.ps-entry-content > .wp-block-woocommerce-product-collection,
+.ps-entry-content > .wp-block-woocommerce-product-new,
+.ps-entry-content > .wp-block-woocommerce-product-on-sale,
+.ps-entry-content > .wp-block-woocommerce-product-best-sellers,
+.ps-entry-content > .wp-block-woocommerce-product-category,
+.ps-entry-content > .woocommerce:has(ul.products) {
+	max-width: min(1200px, 92vw);
+	margin-inline: calc(50% - min(600px, 46vw));
+}
+
+.wc-block-product .wp-block-post-title,
+.wc-block-grid__product-title,
+.wp-block-woocommerce-product-template .wp-block-post-title {
+	margin: 8px 0 4px;
+	font-family: var(--ps-font-body);
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.35;
+	letter-spacing: 0;
+	overflow-wrap: normal;
+	word-break: normal;
+	hyphens: auto;
+}
+
+.wc-block-product .wp-block-post-title a,
+.wp-block-woocommerce-product-template .wp-block-post-title a,
+.ps-entry-content ul.products .ps-card__title a,
+.ps-entry-content ul.products li.product-category > a {
+	color: var(--ps-text);
+	text-decoration: none;
+}
+
+.wc-block-components-product-image img,
+.wc-block-grid__product-image img {
+	border-radius: var(--ps-radius-card);
 }

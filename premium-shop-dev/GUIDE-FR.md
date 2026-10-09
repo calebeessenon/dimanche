@@ -281,3 +281,15 @@ les descriptions courtes vides et lit dans les noms l'essence, la longueur, les 
 - Vos **photos** (les illustrations fournies ne sont que des visuels provisoires) ;
 - vos **prix**, vos **zones de livraison** et leurs tarifs ;
 - vos textes légaux (Impressum, AGB, Widerrufsbelehrung, Datenschutz).
+
+
+## 12. Audit 1.2.0 (WordPress 7.1 + WooCommerce 11.2)
+
+Testé sur un site neuf WordPress 7.1.3 + WooCommerce 11.2.0 (et en non-régression sur WordPress 6.5 + WooCommerce 9.1) :
+produits simple / variable / groupé / externe / virtuel-téléchargeable, promo, stock faible, rupture, précommande,
+vente à l'unité, avis, galerie + zoom + lightbox, panier et caisse **classiques et en blocs**, coupon, TVA, 3 modes
+de livraison, 3 paiements, page de remerciement, compte client (commandes, téléchargements, adresses, mot de passe
+oublié, inscription), widgets WooCommerce, blocs WooCommerce dans une page, mode « bientôt disponible »,
+Customizer et aperçu en direct, outils PHPCS (sécurité, i18n, PHP 7.4+) et Theme Check.
+
+Corrections : voir readme.txt → Changelog 1.2.0.

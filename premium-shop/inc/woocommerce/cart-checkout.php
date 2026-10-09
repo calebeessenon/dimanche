@@ -60,6 +60,23 @@ function premium_shop_checkout_steps() {
 }
 
 /**
+ * Keep only products a customer can buy now (published, visible, in stock).
+ *
+ * @param int[] $ids Product IDs.
+ * @return int[]
+ */
+function premium_shop_recommendable_ids( $ids ) {
+	$keep = array();
+	foreach ( $ids as $id ) {
+		$product = wc_get_product( $id );
+		if ( $product && $product->is_visible() && $product->is_in_stock() && $product->is_purchasable() ) {
+			$keep[] = (int) $id;
+		}
+	}
+	return $keep;
+}
+
+/**
  * Recommended products for the cart ("You may also like").
  *
  * Cross-sells of the cart items first, completed by bestsellers.
@@ -74,12 +91,12 @@ function premium_shop_cart_recommendations() {
 		$in_cart[] = (int) $item['product_id'];
 	}
 
-	$ids = array_diff( array_map( 'absint', WC()->cart->get_cross_sells() ), $in_cart );
-	$ids = array_slice( array_values( $ids ), 0, 4 );
+	$ids = premium_shop_recommendable_ids( array_diff( array_map( 'absint', WC()->cart->get_cross_sells() ), $in_cart ) );
+	$ids = array_slice( $ids, 0, 4 );
 
 	if ( count( $ids ) < 4 ) {
-		$fill = premium_shop_product_query( 'bestsellers', 4 - count( $ids ), array_merge( $in_cart, $ids ) );
-		$ids  = array_merge( $ids, wp_list_pluck( $fill->posts, 'ID' ) );
+		$fill = premium_shop_product_query( 'bestsellers', 12, array_merge( $in_cart, $ids ) );
+		$ids  = array_slice( array_merge( $ids, premium_shop_recommendable_ids( wp_list_pluck( $fill->posts, 'ID' ) ) ), 0, 4 );
 	}
 
 	if ( ! $ids ) {
@@ -114,6 +131,11 @@ add_action( 'woocommerce_after_cart', 'premium_shop_cart_recommendations' );
  * @return string
  */
 function premium_shop_cart_block_recommendations( $content, $block ) {
+	// The theme section replaces the block's own cross-sells (no duplicate suggestions).
+	if ( 'woocommerce/cart-cross-sells-block' === $block['blockName'] && premium_shop_option( 'cart_recommendations' ) ) {
+		return '';
+	}
+
 	if ( 'woocommerce/cart' !== $block['blockName'] || is_admin() || ! WC()->cart || WC()->cart->is_empty() ) {
 		return $content;
 	}

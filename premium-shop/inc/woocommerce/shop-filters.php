@@ -20,8 +20,9 @@ defined( 'ABSPATH' ) || exit;
 function premium_shop_normalize_filter_params() {
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only catalog filters.
 	foreach ( $_GET as $key => $value ) {
-		if ( is_array( $value ) && ( 0 === strpos( $key, 'filter_' ) || in_array( $key, array( 'ps_brand', 'rating_filter' ), true ) ) ) {
-			$clean        = array_filter( array_map( 'sanitize_title', wp_unslash( $value ) ) );
+		if ( is_array( $value ) && ( 0 === strpos( (string) $key, 'filter_' ) || in_array( $key, array( 'ps_brand', 'rating_filter' ), true ) ) ) {
+			// Keep scalar values only: a crafted URL (filter_x[a][]=1) must not reach sanitize_title() with an array.
+			$clean        = array_filter( array_map( 'sanitize_title', array_filter( wp_unslash( $value ), 'is_scalar' ) ) );
 			$_GET[ $key ] = implode( ',', $clean );
 			if ( '' === $_GET[ $key ] ) {
 				unset( $_GET[ $key ] );

@@ -111,11 +111,12 @@ function premium_shop_firewood_fallbacks() {
 /**
  * Keep the hero's second button pointing to the calculator on firewood shops.
  *
- * @param string $value Option value.
- * @return string
+ * @param mixed $value Option value (the Customizer may pass an internal
+ *                     "undefined" marker object while previewing).
+ * @return mixed
  */
 function premium_shop_firewood_hero_button2( $value ) {
-	if ( '' === (string) $value && 'firewood' === premium_shop_preset() && in_array( 'calculator', premium_shop_home_sections(), true ) ) {
+	if ( ( null === $value || '' === $value || false === $value ) &&'firewood' === premium_shop_preset() && in_array( 'calculator', premium_shop_home_sections(), true ) ) {
 		return '#ps-calculator';
 	}
 	return $value;

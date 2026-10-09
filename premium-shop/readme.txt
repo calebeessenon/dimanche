@@ -1,11 +1,11 @@
 === Premium Shop ===
 Contributors: premiumshopstudio
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
-WC tested up to: 10.2
-Stable tag: 1.1.0
+WC tested up to: 11.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,18 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.2.0 =
+* Quick view: variable products can be added to the cart (variation form).
+* Fix: crafted filter URLs (nested arrays) no longer cause an error 500.
+* Block cart: no duplicate recommendations; out-of-stock products are no longer recommended.
+* Free-shipping bar: uses the WooCommerce "Free shipping" minimum amount automatically.
+* Styles for the store notice, bank details, order highlights, category tiles,
+  WooCommerce widgets, loading overlay and WooCommerce blocks inside pages.
+* WordPress default widgets go to the blog sidebar on new sites (not under the shop filters).
+* Privacy: no emoji images loaded from s.w.org.
+* WooCommerce "Products per row" control removed (the theme setting is used).
+* Tested with WordPress 7.1 and WooCommerce 11.2.
 
 = 1.1.0 =
 * Firewood shop module and "Firewood" style preset (default).

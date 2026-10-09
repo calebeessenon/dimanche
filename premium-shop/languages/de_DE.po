@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 15:47+0000\n"
-"PO-Revision-Date: 2026-10-09 15:47+0000\n"
+"POT-Creation-Date: 2026-10-09 17:41+0000\n"
+"PO-Revision-Date: 2026-10-09 17:41+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -730,12 +730,12 @@ msgid "Cart & shipping"
 msgstr "Warenkorb & Versand"
 
 #: inc/customizer/config.php:376
-msgid "Free shipping from (amount, 0 = off)"
-msgstr "Kostenloser Versand ab (Betrag, 0 = aus)"
+msgid "Free shipping from (amount, 0 = automatic)"
+msgstr "Kostenloser Versand ab (Betrag, 0 = automatisch)"
 
 #: inc/customizer/config.php:376
-msgid "Used for the progress bar in the cart and the default announcement. Configure the real \"Free shipping\" method in WooCommerce → Settings → Shipping."
-msgstr "Wird für den Fortschrittsbalken im Warenkorb und die Standard-Hinweisleiste genutzt. Die eigentliche Versandart „Kostenloser Versand“ richten Sie unter WooCommerce → Einstellungen → Versand ein."
+msgid "Used for the progress bar in the cart and the default announcement. With 0, the minimum amount of the \"Free shipping\" method from WooCommerce → Settings → Shipping is used (no bar when there is none)."
+msgstr "Für den Fortschrittsbalken im Warenkorb und die Standard-Ankündigung. Bei 0 wird der Mindestbestellwert der Versandart „Kostenloser Versand“ aus WooCommerce → Einstellungen → Versand verwendet (kein Balken, wenn es keine gibt)."
 
 #: inc/customizer/config.php:377
 msgid "Open the side cart after adding a product"
@@ -1145,39 +1145,39 @@ msgstr "Premium Shop – Theme-Optionen"
 msgid "Logo and favicon: Site Identity. Menus: Menus. Everything else about the design and content of the shop is here."
 msgstr "Logo und Favicon: Website-Informationen. Menüs: Menüs. Alles andere zu Design und Inhalten des Shops finden Sie hier."
 
-#: inc/enqueue.php:80
+#: inc/enqueue.php:84
 msgid "Searching…"
 msgstr "Suche läuft …"
 
-#: inc/enqueue.php:81
+#: inc/enqueue.php:85
 msgid "No products found."
 msgstr "Keine Produkte gefunden."
 
-#: inc/enqueue.php:82
+#: inc/enqueue.php:86
 msgid "View all results"
 msgstr "Alle Ergebnisse anzeigen"
 
-#: inc/enqueue.php:85
+#: inc/enqueue.php:89
 msgid "Added to your cart"
 msgstr "Zum Warenkorb hinzugefügt"
 
-#: inc/enqueue.php:86
+#: inc/enqueue.php:90
 msgid "Added to your wishlist"
 msgstr "Zur Wunschliste hinzugefügt"
 
-#: inc/enqueue.php:87
+#: inc/enqueue.php:91
 msgid "Removed from your wishlist"
 msgstr "Von der Wunschliste entfernt"
 
-#: inc/enqueue.php:88
+#: inc/enqueue.php:92
 msgid "Your wishlist is empty."
 msgstr "Ihre Wunschliste ist leer."
 
-#: inc/enqueue.php:90 inc/newsletter.php:119
+#: inc/enqueue.php:94 inc/newsletter.php:119
 msgid "Something went wrong. Please try again."
 msgstr "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
 
-#: inc/enqueue.php:91
+#: inc/enqueue.php:95
 msgid "Results updated"
 msgstr "Ergebnisse aktualisiert"
 
@@ -1939,9 +1939,13 @@ msgstr "Bitte akzeptieren Sie die Datenschutzbestimmungen."
 msgid "Too many attempts. Please try again later."
 msgstr "Zu viele Versuche. Bitte versuchen Sie es später erneut."
 
-#: inc/security.php:54
+#: inc/security.php:67
 msgid "The login details are incorrect."
 msgstr "Die Anmeldedaten sind nicht korrekt."
+
+#: inc/setup.php:100
+msgid "Optional widgets displayed as an additional footer column."
+msgstr "Optionale Widgets als zusätzliche Footer-Spalte."
 
 #: inc/setup.php:43 inc/admin/onboarding.php:408
 msgid "Footer — Shop"
@@ -1955,29 +1959,25 @@ msgstr "Footer – Kundenservice"
 msgid "Footer — Legal"
 msgstr "Footer – Rechtliches"
 
-#: inc/setup.php:74
-msgid "Shop sidebar (below the filters)"
-msgstr "Shop-Seitenleiste (unter den Filtern)"
-
-#: inc/setup.php:75
-msgid "Optional widgets displayed under the built-in shop filters."
-msgstr "Optionale Widgets unter den integrierten Shop-Filtern."
-
-#: inc/setup.php:85
+#: inc/setup.php:77
 msgid "Blog sidebar"
 msgstr "Blog-Seitenleiste"
 
-#: inc/setup.php:86
+#: inc/setup.php:78
 msgid "Widgets displayed next to blog posts."
 msgstr "Widgets neben Blogbeiträgen."
 
-#: inc/setup.php:96
+#: inc/setup.php:88
+msgid "Shop sidebar (below the filters)"
+msgstr "Shop-Seitenleiste (unter den Filtern)"
+
+#: inc/setup.php:89
+msgid "Optional widgets displayed under the built-in shop filters."
+msgstr "Optionale Widgets unter den integrierten Shop-Filtern."
+
+#: inc/setup.php:99
 msgid "Footer — extra column"
 msgstr "Footer – zusätzliche Spalte"
-
-#: inc/setup.php:97
-msgid "Optional widgets displayed as an additional footer column."
-msgstr "Optionale Widgets als zusätzliche Footer-Spalte."
 
 #: inc/template-tags.php:106 inc/template-tags.php:417 inc/admin/onboarding.php:402 inc/admin/onboarding.php:413
 msgid "Offers"
@@ -2026,11 +2026,11 @@ msgstr "Seite nicht gefunden"
 msgid "by %s"
 msgstr "von %s"
 
-#: inc/template-tags.php:360 inc/woocommerce/setup.php:128
+#: inc/template-tags.php:360 inc/woocommerce/setup.php:139
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
-#: inc/template-tags.php:361 inc/woocommerce/setup.php:129
+#: inc/template-tags.php:361 inc/woocommerce/setup.php:140
 msgid "Next page"
 msgstr "Nächste Seite"
 
@@ -2115,37 +2115,41 @@ msgstr "Als Farbmuster in den Shop-Filtern verwenden"
 msgid "This product is not available."
 msgstr "Dieses Produkt ist nicht verfügbar."
 
-#: inc/woocommerce/cart-checkout.php:138
+#: inc/woocommerce/cart-checkout.php:112
+msgid "You may also like"
+msgstr "Das könnte Ihnen auch gefallen"
+
+#: inc/woocommerce/cart-checkout.php:160
 msgid "SSL-encrypted payment"
 msgstr "SSL-verschlüsselte Zahlung"
 
-#: inc/woocommerce/cart-checkout.php:143
+#: inc/woocommerce/cart-checkout.php:165
 msgid "Personal customer service"
 msgstr "Persönlicher Kundenservice"
 
-#: inc/woocommerce/cart-checkout.php:156
+#: inc/woocommerce/cart-checkout.php:178
 msgid "Have a coupon?"
 msgstr "Haben Sie einen Gutschein?"
 
-#: inc/woocommerce/cart-checkout.php:156
+#: inc/woocommerce/cart-checkout.php:178
 msgid "Enter your code"
 msgstr "Code eingeben"
 
 #. translators:%s: customer first name.
-#: inc/woocommerce/cart-checkout.php:172
+#: inc/woocommerce/cart-checkout.php:194
 msgid "Thank you, %s!"
 msgstr "Vielen Dank, %s!"
 
 #. translators:%s: customer first name.
-#: inc/woocommerce/cart-checkout.php:172
+#: inc/woocommerce/cart-checkout.php:194
 msgid "Thank you!"
 msgstr "Vielen Dank!"
 
-#: inc/woocommerce/cart-checkout.php:174
+#: inc/woocommerce/cart-checkout.php:196
 msgid "Your order has been received. You will receive a confirmation by email shortly."
 msgstr "Ihre Bestellung ist eingegangen. Sie erhalten in Kürze eine Bestätigung per E-Mail."
 
-#: inc/woocommerce/cart-checkout.php:191 inc/customizer/config.php:25 inc/customizer/config.php:552
+#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:552
 msgid "Popular products"
 msgstr "Beliebte Produkte"
 
@@ -2160,10 +2164,6 @@ msgstr "Bestätigung"
 #: inc/woocommerce/cart-checkout.php:32
 msgid "Order progress"
 msgstr "Bestellfortschritt"
-
-#: inc/woocommerce/cart-checkout.php:95
-msgid "You may also like"
-msgstr "Das könnte Ihnen auch gefallen"
 
 #. translators:%d: number of images.
 #: inc/woocommerce/import-images.php:127
@@ -2215,7 +2215,7 @@ msgid "Add “%s” to your cart"
 msgstr "„%s“ in den Warenkorb legen"
 
 #. translators:%s: product name.
-#: inc/woocommerce/product-card.php:242
+#: inc/woocommerce/product-card.php:243
 msgid "View options for “%s”"
 msgstr "Optionen für „%s“ ansehen"
 
@@ -2232,15 +2232,15 @@ msgid "New"
 msgstr "Neu"
 
 #. translators:%s: remaining amount.
-#: inc/woocommerce/setup.php:176
+#: inc/woocommerce/setup.php:187
 msgid "Only %s left until free shipping"
 msgstr "Nur noch %s bis zum kostenlosen Versand"
 
-#: inc/woocommerce/setup.php:180
+#: inc/woocommerce/setup.php:191
 msgid "Congratulations! Your order ships for free."
 msgstr "Glückwunsch! Ihre Bestellung wird kostenlos versendet."
 
-#: inc/woocommerce/setup.php:185
+#: inc/woocommerce/setup.php:196
 msgid "Progress towards free shipping"
 msgstr "Fortschritt bis zum kostenlosen Versand"
 
@@ -2249,94 +2249,94 @@ msgctxt "breadcrumb"
 msgid "Home"
 msgstr "Startseite"
 
-#: inc/woocommerce/shop-filters.php:186 inc/woocommerce/shop-filters.php:188
+#: inc/woocommerce/shop-filters.php:187 inc/woocommerce/shop-filters.php:189
 msgid "Search in the shop"
 msgstr "Im Shop suchen"
 
-#: inc/woocommerce/shop-filters.php:195
+#: inc/woocommerce/shop-filters.php:196
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
-#: inc/woocommerce/shop-filters.php:199 inc/woocommerce/shop-filters.php:512
+#: inc/woocommerce/shop-filters.php:200 inc/woocommerce/shop-filters.php:513
 msgid "In stock only"
 msgstr "Nur vorrätige Artikel"
 
-#: inc/woocommerce/shop-filters.php:203 inc/woocommerce/shop-filters.php:514
+#: inc/woocommerce/shop-filters.php:204 inc/woocommerce/shop-filters.php:515
 msgid "Offers only"
 msgstr "Nur Angebote"
 
-#: inc/woocommerce/shop-filters.php:213
+#: inc/woocommerce/shop-filters.php:214
 msgid "Apply filters"
 msgstr "Filter anwenden"
 
-#: inc/woocommerce/shop-filters.php:215 inc/woocommerce/shop-filters.php:577
+#: inc/woocommerce/shop-filters.php:216 inc/woocommerce/shop-filters.php:578
 msgid "Reset all"
 msgstr "Alle zurücksetzen"
 
-#: inc/woocommerce/shop-filters.php:303
+#: inc/woocommerce/shop-filters.php:304
 msgid "Price"
 msgstr "Preis"
 
-#: inc/woocommerce/shop-filters.php:307
+#: inc/woocommerce/shop-filters.php:308
 msgid "Minimum price"
 msgstr "Mindestpreis"
 
-#: inc/woocommerce/shop-filters.php:308
+#: inc/woocommerce/shop-filters.php:309
 msgid "Maximum price"
 msgstr "Höchstpreis"
 
-#: inc/woocommerce/shop-filters.php:312
+#: inc/woocommerce/shop-filters.php:313
 msgid "From"
 msgstr "Von"
 
-#: inc/woocommerce/shop-filters.php:319
+#: inc/woocommerce/shop-filters.php:320
 msgid "To"
 msgstr "Bis"
 
-#: inc/woocommerce/shop-filters.php:356 inc/customizer/config.php:32
+#: inc/woocommerce/shop-filters.php:357 inc/customizer/config.php:32
 msgid "Brands"
 msgstr "Marken"
 
-#: inc/woocommerce/shop-filters.php:444
+#: inc/woocommerce/shop-filters.php:445
 msgid "Rating"
 msgstr "Bewertung"
 
-#: inc/woocommerce/shop-filters.php:448
+#: inc/woocommerce/shop-filters.php:449
 msgid "All ratings"
 msgstr "Alle Bewertungen"
 
 #. translators:%d: number of stars.
-#: inc/woocommerce/shop-filters.php:457 inc/woocommerce/shop-filters.php:518
+#: inc/woocommerce/shop-filters.php:458 inc/woocommerce/shop-filters.php:519
 msgid "%d stars & up"
 msgstr "%d Sterne & mehr"
 
 #. translators:%s: price.
-#: inc/woocommerce/shop-filters.php:507
+#: inc/woocommerce/shop-filters.php:508
 msgid "From %s"
 msgstr "Ab %s"
 
 #. translators:%s: price.
-#: inc/woocommerce/shop-filters.php:510
+#: inc/woocommerce/shop-filters.php:511
 msgid "Up to %s"
 msgstr "Bis %s"
 
-#: inc/woocommerce/shop-filters.php:554
+#: inc/woocommerce/shop-filters.php:555
 msgid "Display"
 msgstr "Ansicht"
 
-#: inc/woocommerce/shop-filters.php:557
+#: inc/woocommerce/shop-filters.php:558
 msgid "Grid view"
 msgstr "Rasteransicht"
 
-#: inc/woocommerce/shop-filters.php:561
+#: inc/woocommerce/shop-filters.php:562
 msgid "List view"
 msgstr "Listenansicht"
 
-#: inc/woocommerce/shop-filters.php:567
+#: inc/woocommerce/shop-filters.php:568
 msgid "Active filters"
 msgstr "Aktive Filter"
 
-#: inc/woocommerce/shop-filters.php:573
+#: inc/woocommerce/shop-filters.php:574
 msgid "Remove filter"
 msgstr "Filter entfernen"
 
@@ -2407,7 +2407,7 @@ msgstr "Video ansehen"
 msgid "Journal"
 msgstr "Journal"
 
-#: page-templates/template-wishlist.php:33 inc/enqueue.php:89
+#: page-templates/template-wishlist.php:33 inc/enqueue.php:93
 msgid "Loading…"
 msgstr "Wird geladen …"
 
@@ -2427,7 +2427,7 @@ msgstr "Produkte entdecken"
 msgid "Page"
 msgstr "Seite"
 
-#: search.php:41 inc/enqueue.php:83
+#: search.php:41 inc/enqueue.php:87
 msgid "Products"
 msgstr "Produkte"
 
@@ -2745,7 +2745,7 @@ msgid "Free shipping from %s"
 msgstr "Kostenloser Versand ab %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:94 inc/woocommerce/cart-checkout.php:141 inc/woocommerce/single-product.php:167 inc/customizer/config.php:542
+#: template-parts/homepage/hero.php:94 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:542
 msgid "%d-day free returns"
 msgstr "%d Tage kostenlose Rückgabe"
 
@@ -2775,23 +2775,23 @@ msgstr "Mit %d von 5 bewertet"
 msgid "Quick view"
 msgstr "Schnellansicht"
 
-#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:92
+#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:96
 msgid "Close"
 msgstr "Schließen"
 
-#: template-parts/products/quick-view.php:93
+#: template-parts/products/quick-view.php:99
 msgid "View details"
 msgstr "Details ansehen"
 
-#: template-parts/products/quick-view.php:93 inc/woocommerce/single-product.php:354
+#: template-parts/products/quick-view.php:99 inc/woocommerce/single-product.php:354
 msgid "Choose options"
 msgstr "Optionen wählen"
 
-#: woocommerce/archive-product.php:63 inc/enqueue.php:84 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:259
+#: woocommerce/archive-product.php:63 inc/enqueue.php:88 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
 msgid "Categories"
 msgstr "Kategorien"
 
-#: woocommerce/archive-product.php:79 inc/woocommerce/shop-filters.php:544
+#: woocommerce/archive-product.php:79 inc/woocommerce/shop-filters.php:545
 msgid "Filters"
 msgstr "Filter"
 

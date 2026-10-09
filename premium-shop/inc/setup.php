@@ -66,13 +66,16 @@ function premium_shop_widgets_init() {
 		'after_title'   => '</h2>',
 	);
 
+	// The blog sidebar is registered first: on a new site WordPress puts its
+	// default widgets (search, recent posts, recent comments) in the first area,
+	// where they belong — not under the shop filters.
 	register_sidebar(
 		array_merge(
 			$common,
 			array(
-				'id'          => 'shop-sidebar',
-				'name'        => esc_html__( 'Shop sidebar (below the filters)', 'premium-shop' ),
-				'description' => esc_html__( 'Optional widgets displayed under the built-in shop filters.', 'premium-shop' ),
+				'id'          => 'blog-sidebar',
+				'name'        => esc_html__( 'Blog sidebar', 'premium-shop' ),
+				'description' => esc_html__( 'Widgets displayed next to blog posts.', 'premium-shop' ),
 			)
 		)
 	);
@@ -81,9 +84,9 @@ function premium_shop_widgets_init() {
 		array_merge(
 			$common,
 			array(
-				'id'          => 'blog-sidebar',
-				'name'        => esc_html__( 'Blog sidebar', 'premium-shop' ),
-				'description' => esc_html__( 'Widgets displayed next to blog posts.', 'premium-shop' ),
+				'id'          => 'shop-sidebar',
+				'name'        => esc_html__( 'Shop sidebar (below the filters)', 'premium-shop' ),
+				'description' => esc_html__( 'Optional widgets displayed under the built-in shop filters.', 'premium-shop' ),
 			)
 		)
 	);

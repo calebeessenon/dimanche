@@ -123,7 +123,7 @@ function premium_shop_ajax_search() {
 		),
 		home_url( '/' )
 	);
-	if ( 'builtin' === premium_shop_language_mode() && $lang && $lang !== premium_shop_default_language() ) {
+	if ( 'builtin' === premium_shop_language_mode() && $lang && premium_shop_default_language() !== $lang ) {
 		$all_url = add_query_arg( 'lang', $lang, $all_url );
 	}
 

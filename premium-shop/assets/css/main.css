@@ -3327,7 +3327,8 @@ body.single-product .ps-back-top {
 	margin-top: 1.8em;
 }
 
-.ps-entry-content a {
+/* Text links only: buttons inside the content keep their own colours. */
+.ps-entry-content a:where(:not(.button, .ps-btn, .wp-element-button, .wp-block-button__link)) {
 	color: var(--ps-accent);
 }
 
@@ -3464,6 +3465,36 @@ body.single-product .ps-back-top {
 
 .ps-widget a {
 	text-decoration: none;
+}
+
+/* Block widgets (heading + content in a group): same look as classic widget titles. */
+.ps-widget :is(h2, h3, h4).wp-block-heading,
+.ps-widget .wp-block-group > :is(h2, h3, h4):first-child,
+.ps-widget .wp-block-search__label {
+	margin: 0 0 12px;
+	font-family: var(--ps-font-body);
+	font-size: .78rem;
+	font-weight: 600;
+	letter-spacing: .14em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	color: var(--ps-text-muted);
+}
+
+.ps-widget .wp-block-search__inside-wrapper {
+	gap: 8px;
+}
+
+.ps-widget .wp-block-search__button {
+	min-height: 44px;
+	margin: 0;
+}
+
+.ps-widget .wp-block-latest-posts,
+.ps-widget .wp-block-latest-comments {
+	margin: 0;
+	padding: 0;
+	font-size: .92rem;
 }
 
 .ps-pagination,

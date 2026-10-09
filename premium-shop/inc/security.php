@@ -10,9 +10,22 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Do not advertise the WordPress version.
-remove_action( 'wp_head', 'wp_generator' );
-add_filter( 'the_generator', '__return_empty_string' );
+/**
+ * Privacy (GDPR): WordPress replaces emoji characters with images loaded from
+ * s.w.org when the browser has no emoji font, which sends the visitor's IP
+ * address to a third party. All current browsers display emoji natively.
+ * Return false from the "premium_shop_disable_emoji" filter to keep the script.
+ */
+function premium_shop_disable_emoji() {
+	if ( ! apply_filters( 'premium_shop_disable_emoji', true ) ) {
+		return;
+	}
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
+	add_filter( 'emoji_svg_url', '__return_false' );
+}
+add_action( 'init', 'premium_shop_disable_emoji' );
 
 /**
  * Safe external links in content: add rel="noopener" to target="_blank".

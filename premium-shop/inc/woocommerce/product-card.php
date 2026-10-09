@@ -235,11 +235,13 @@ function premium_shop_card_category( $product ) {
  */
 function premium_shop_loop_add_to_cart_args( $args, $product ) {
 	$args['class'] .= ' ps-card__cart';
-	/* translators: %s: product name. */
-	$args['attributes']['aria-label'] = $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' )
-		? sprintf( __( 'Add “%s” to your cart', 'premium-shop' ), $product->get_name() )
+	if ( $product->is_purchasable() && $product->is_in_stock() && $product->is_type( 'simple' ) ) {
 		/* translators: %s: product name. */
-		: sprintf( __( 'View options for “%s”', 'premium-shop' ), $product->get_name() );
+		$args['attributes']['aria-label'] = sprintf( __( 'Add “%s” to your cart', 'premium-shop' ), $product->get_name() );
+	} else {
+		/* translators: %s: product name. */
+		$args['attributes']['aria-label'] = sprintf( __( 'View options for “%s”', 'premium-shop' ), $product->get_name() );
+	}
 	return $args;
 }
 add_filter( 'woocommerce_loop_add_to_cart_args', 'premium_shop_loop_add_to_cart_args', 10, 2 );

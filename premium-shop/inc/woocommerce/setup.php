@@ -105,6 +105,17 @@ add_filter(
 );
 
 /**
+ * Columns are set in "Premium Shop → Shop": remove WooCommerce's own
+ * "Products per row" control, which would have no effect.
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer.
+ */
+function premium_shop_wc_customizer_controls( $wp_customize ) {
+	$wp_customize->remove_control( 'woocommerce_catalog_columns' );
+}
+add_action( 'customize_register', 'premium_shop_wc_customizer_controls', 20 );
+
+/**
  * Related & up-sell products: 4 items.
  *
  * @param array $args Args.
