@@ -208,24 +208,49 @@ function premium_shop_legal_install() {
 		$created[] = (int) $id;
 	}
 
-	// Footer "Legal" menu, when one is assigned (otherwise the footer lists the pages by itself).
-	$locations = get_nav_menu_locations();
-	if ( $created && ! empty( $locations['footer_legal'] ) && wp_get_nav_menu_object( $locations['footer_legal'] ) ) {
-		$linked = array_map( 'intval', wp_list_pluck( (array) wp_get_nav_menu_items( $locations['footer_legal'] ), 'object_id' ) );
-		foreach ( $created as $id ) {
-			if ( ! in_array( $id, $linked, true ) ) {
-				wp_update_nav_menu_item(
-					$locations['footer_legal'],
-					0,
-					array(
-						'menu-item-object-id' => $id,
-						'menu-item-object'    => 'page',
-						'menu-item-type'      => 'post_type',
-						'menu-item-status'    => 'publish',
-					)
-				);
-			}
-		}
-	}
+	premium_shop_legal_menu_sync();
 }
 add_action( 'premium_shop_upgrade_1_5', 'premium_shop_legal_install' );
+
+/**
+ * Make sure every published legal page (legal notice, terms, withdrawal,
+ * terms of use, privacy policy) is linked in the footer "Legal" menu when a
+ * menu is assigned to it (without a menu the footer lists them by itself).
+ */
+function premium_shop_legal_menu_sync() {
+	$locations = get_nav_menu_locations();
+	if ( empty( $locations['footer_legal'] ) || ! wp_get_nav_menu_object( $locations['footer_legal'] ) ) {
+		return;
+	}
+	$menu_id = (int) $locations['footer_legal'];
+
+	$pages = array();
+	foreach ( array( 'impressum', 'agb', 'widerrufsbelehrung', 'nutzungsbedingungen' ) as $slug ) {
+		$page = get_page_by_path( $slug, OBJECT, 'page' );
+		if ( $page && 'publish' === $page->post_status ) {
+			$pages[] = (int) $page->ID;
+		}
+	}
+	$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
+	if ( $privacy && 'publish' === get_post_status( $privacy ) ) {
+		$pages[] = $privacy;
+	}
+
+	$linked = array_map( 'intval', wp_list_pluck( (array) wp_get_nav_menu_items( $menu_id, array( 'post_status' => 'any' ) ), 'object_id' ) );
+	foreach ( array_unique( $pages ) as $id ) {
+		if ( in_array( $id, $linked, true ) ) {
+			continue;
+		}
+		wp_update_nav_menu_item(
+			$menu_id,
+			0,
+			array(
+				'menu-item-object-id' => $id,
+				'menu-item-object'    => 'page',
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+			)
+		);
+	}
+}
+add_action( 'premium_shop_upgrade_1_6_1', 'premium_shop_legal_menu_sync' );

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,13 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.6.1 =
+* Contact e-mail on the shop's own domain (info@ + site domain): replaces the
+  address of another domain filled in by 1.4.1, in the settings, the contact page,
+  the footer and the legal pages.
+* Footer "Legal" menu: published legal pages (terms of use, privacy policy, legal
+  notice, terms, withdrawal) are added automatically when missing.
 
 = 1.6.0 =
 * Instant add to cart: the button, the flying photo, the cart counter and the
