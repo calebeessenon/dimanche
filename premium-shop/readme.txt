@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.4.1
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.5.0 =
+* Privacy policy and terms of use in German, French, English and Spanish, filled
+  with the shop's contact details (Swiss FADP / EU GDPR, online shop data, cookies
+  actually used). Created on update: WordPress' default privacy draft is replaced,
+  a privacy policy you published yourself is kept. Linked in the footer.
+* Pages can now be translated too: "Translations" box under the page editor
+  (title and text per language), shown with the language switcher.
 
 = 1.4.1 =
 * Shop contact details (address, phone, e-mail) filled in when empty: contact page,

@@ -364,3 +364,17 @@ de la barre latérale de la boutique.
   moyens de paiement actifs). Codes courts réutilisables :
   `[ps_features]`, `[ps_delivery_steps]`, `[ps_shipping_info]`,
   `[ps_payment_methods]`, `[ps_photo_collage]`, `[ps_cta]`.
+
+## 16. Version 1.5.0 — pages légales et pages traduisibles
+
+- **Datenschutzerklärung** (politique de confidentialité) et
+  **Nutzungsbedingungen** (CGU) créées automatiquement en DE (texte principal),
+  avec FR / EN / ES pour le sélecteur de langue. Elles reprennent vos
+  coordonnées (Personnaliser → Premium Shop → Contact) et apparaissent en bas
+  de chaque page.
+- La page de confidentialité par défaut de WordPress (brouillon) est remplacée ;
+  une page de confidentialité que vous avez déjà publiée n'est jamais modifiée.
+- **Toutes les pages sont traduisibles** : sous l'éditeur de page, boîte
+  « Traductions » (titre + texte par langue).
+- À faire vérifier par un juriste avant publication définitive (notamment le
+  for juridique et les prestataires réellement utilisés).

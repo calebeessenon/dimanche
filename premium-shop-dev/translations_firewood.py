@@ -348,4 +348,7 @@ T = [
 ('Your order #%1$s has been received. A confirmation is on its way to %2$s.', 'Ihre Bestellung #%1$s ist eingegangen. Eine Bestätigung ist unterwegs an %2$s.', 'Votre commande n°%1$s a bien été reçue. Une confirmation est en route vers %2$s.', 'Hemos recibido su pedido n.º %1$s. Le enviamos una confirmación a %2$s.'),
 ('Your order is prepared and the delivery date is planned with you.', 'Ihre Bestellung wird vorbereitet und der Liefertermin mit Ihnen abgestimmt.', 'Votre commande est préparée et la date de livraison convenue avec vous.', 'Su pedido se prepara y la fecha de entrega se acuerda con usted.'),
 ('Your payment could not be completed', 'Ihre Zahlung konnte nicht abgeschlossen werden', 'Votre paiement n’a pas pu aboutir', 'No se ha podido completar su pago'),
+('HTML and blocks are allowed.', 'HTML und Blöcke sind erlaubt.', 'Le HTML et les blocs sont autorisés.', 'Se permiten HTML y bloques.'),
+('Terms of use', 'Nutzungsbedingungen', 'Conditions générales d’utilisation', 'Condiciones de uso'),
+('Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main text.', 'Text für Besucher, die oben auf der Seite diese Sprache gewählt haben. Lassen Sie ein Feld leer, um den Haupttext anzuzeigen.', 'Texte affiché aux visiteurs ayant choisi cette langue en haut de la page. Laissez un champ vide pour afficher le texte principal.', 'Texto que verán los visitantes que eligieron este idioma en la parte superior de la página. Deje un campo vacío para mostrar el texto principal.'),
 ]

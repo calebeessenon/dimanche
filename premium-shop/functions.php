@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '1.4.1' );
+define( 'PREMIUM_SHOP_VERSION', '1.5.0' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 
@@ -36,6 +36,7 @@ $premium_shop_includes = array(
 	'inc/contact.php',
 	'inc/page-hero.php',
 	'inc/content-sections.php',
+	'inc/legal.php',
 	'inc/upgrade.php',
 );
 

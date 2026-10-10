@@ -58,6 +58,15 @@ function premium_shop_pt_language() {
 }
 
 /**
+ * Post types whose title and content can be translated (products, pages).
+ *
+ * @return string[]
+ */
+function premium_shop_pt_post_types() {
+	return (array) apply_filters( 'premium_shop_translatable_post_types', array( 'product', 'page' ) );
+}
+
+/**
  * Translated text of a product.
  *
  * @param int    $product_id Product ID.
@@ -143,7 +152,7 @@ add_filter( 'woocommerce_product_get_description', 'premium_shop_pt_desc', 10, 2
  * @return string
  */
 function premium_shop_pt_the_title( $title, $post_id = null ) {
-	if ( ! $post_id || 'product' !== get_post_type( $post_id ) ) {
+	if ( ! $post_id || ! in_array( get_post_type( $post_id ), premium_shop_pt_post_types(), true ) ) {
 		return $title;
 	}
 	$translated = premium_shop_pt_get( (int) $post_id, 'name' );
@@ -159,7 +168,7 @@ add_filter( 'the_title', 'premium_shop_pt_the_title', 10, 2 );
  * @return string
  */
 function premium_shop_pt_single_title( $title, $post = null ) {
-	if ( $post instanceof WP_Post && 'product' === $post->post_type ) {
+	if ( $post instanceof WP_Post && in_array( $post->post_type, premium_shop_pt_post_types(), true ) ) {
 		$translated = premium_shop_pt_get( $post->ID, 'name' );
 		return '' !== $translated ? $translated : $title;
 	}
@@ -175,7 +184,7 @@ add_filter( 'single_post_title', 'premium_shop_pt_single_title', 10, 2 );
  */
 function premium_shop_pt_content( $content ) {
 	$post = get_post();
-	if ( ! $post || 'product' !== $post->post_type || ! in_the_loop() ) {
+	if ( ! $post || ! in_array( $post->post_type, premium_shop_pt_post_types(), true ) || ! in_the_loop() ) {
 		return $content;
 	}
 	$translated = premium_shop_pt_get( $post->ID, 'desc' );
@@ -522,3 +531,83 @@ function premium_shop_pt_after_import_once() {
 		add_action( 'shutdown', 'premium_shop_pt_after_import' );
 	}
 }
+
+/**
+ * Page translations: a box under the page editor (title and text per language).
+ */
+function premium_shop_pt_page_box() {
+	add_meta_box( 'premium-shop-page-translations', __( 'Translations', 'premium-shop' ), 'premium_shop_pt_page_box_html', 'page', 'normal', 'low' );
+}
+add_action( 'add_meta_boxes', 'premium_shop_pt_page_box' );
+
+/**
+ * Page translations box.
+ *
+ * @param WP_Post $post Page.
+ */
+function premium_shop_pt_page_box_html( $post ) {
+	wp_nonce_field( 'premium_shop_page_translations', 'premium_shop_page_translations_nonce' );
+	$default = function_exists( 'premium_shop_default_language' ) ? premium_shop_default_language() : '';
+	echo '<p class="description">' . esc_html__( 'Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main text.', 'premium-shop' ) . ' ' . esc_html__( 'HTML and blocks are allowed.', 'premium-shop' ) . '</p>';
+	foreach ( premium_shop_builtin_languages_list() as $code => $label ) {
+		if ( $code === $default ) {
+			continue;
+		}
+		$title = (string) get_post_meta( $post->ID, '_ps_name_' . $code, true );
+		$text  = (string) get_post_meta( $post->ID, '_ps_desc_' . $code, true );
+		printf(
+			'<details style="margin:10px 0"%5$s><summary style="cursor:pointer;font-weight:600">%1$s</summary><p><label>%2$s<br><input type="text" class="widefat" name="ps_pt_page[%3$s][name]" value="%4$s"></label></p>',
+			esc_html( $label ),
+			esc_html__( 'Title', 'premium-shop' ),
+			esc_attr( $code ),
+			esc_attr( $title ),
+			'' !== $title ? ' open' : ''
+		);
+		printf(
+			'<p><label>%1$s<br><textarea class="widefat code" rows="10" name="ps_pt_page[%2$s][desc]">%3$s</textarea></label></p></details>',
+			esc_html__( 'Text', 'premium-shop' ),
+			esc_attr( $code ),
+			esc_textarea( $text )
+		);
+	}
+}
+
+/**
+ * Languages offered by the built-in switcher.
+ *
+ * @return array code => label.
+ */
+function premium_shop_builtin_languages_list() {
+	return array(
+		'de' => 'Deutsch',
+		'fr' => 'Français',
+		'en' => 'English',
+		'es' => 'Español',
+	);
+}
+
+/**
+ * Save the page translations.
+ *
+ * @param int $post_id Page ID.
+ */
+function premium_shop_pt_page_save( $post_id ) {
+	if ( ! isset( $_POST['premium_shop_page_translations_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['premium_shop_page_translations_nonce'] ) ), 'premium_shop_page_translations' ) ) {
+		return;
+	}
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( 'edit_page', $post_id ) ) {
+		return;
+	}
+	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized per field below.
+	$data = isset( $_POST['ps_pt_page'] ) && is_array( $_POST['ps_pt_page'] ) ? wp_unslash( $_POST['ps_pt_page'] ) : array();
+	foreach ( array_keys( premium_shop_builtin_languages_list() ) as $code ) {
+		if ( ! isset( $data[ $code ] ) || ! is_array( $data[ $code ] ) ) {
+			continue;
+		}
+		$name = isset( $data[ $code ]['name'] ) ? sanitize_text_field( $data[ $code ]['name'] ) : '';
+		$desc = isset( $data[ $code ]['desc'] ) ? wp_kses_post( $data[ $code ]['desc'] ) : '';
+		'' !== $name ? update_post_meta( $post_id, '_ps_name_' . $code, $name ) : delete_post_meta( $post_id, '_ps_name_' . $code );
+		'' !== $desc ? update_post_meta( $post_id, '_ps_desc_' . $code, wp_slash( $desc ) ) : delete_post_meta( $post_id, '_ps_desc_' . $code );
+	}
+}
+add_action( 'save_post_page', 'premium_shop_pt_page_save' );

@@ -502,6 +502,7 @@ function premium_shop_footer_fallback_links( $location ) {
 			array( array( 'impressum', 'imprint', 'mentions-legales', 'aviso-legal' ), __( 'Legal notice', 'premium-shop' ) ),
 			array( array( 'agb', 'terms', 'cgv', 'terminos' ), __( 'Terms & conditions', 'premium-shop' ) ),
 			array( array( 'widerrufsbelehrung', 'widerruf', 'right-of-withdrawal', 'retractation' ), __( 'Right of withdrawal', 'premium-shop' ) ),
+			array( array( 'nutzungsbedingungen', 'cgu', 'terms-of-use', 'condiciones-de-uso' ), __( 'Terms of use', 'premium-shop' ) ),
 		);
 		foreach ( $candidates as $candidate ) {
 			$url = premium_shop_page_url_by_slugs( $candidate[0] );

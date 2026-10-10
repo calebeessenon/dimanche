@@ -33,6 +33,10 @@ function premium_shop_maybe_upgrade() {
 		premium_shop_fill_contact_details();
 	}
 
+	if ( '' === $done || version_compare( $done, '1.5.0', '<' ) ) {
+		do_action( 'premium_shop_upgrade_1_5' );
+	}
+
 	update_option( 'premium_shop_version', PREMIUM_SHOP_VERSION, false );
 }
 add_action( 'admin_init', 'premium_shop_maybe_upgrade' );

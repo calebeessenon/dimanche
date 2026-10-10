@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 14:20+0000\n"
-"PO-Revision-Date: 2026-10-10 14:20+0000\n"
+"POT-Creation-Date: 2026-10-10 14:29+0000\n"
+"PO-Revision-Date: 2026-10-10 14:29+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -758,10 +758,6 @@ msgstr ""
 msgid "Small line above the title"
 msgstr ""
 
-#: inc/customizer/config.php:223 inc/customizer/config.php:240 inc/customizer/config.php:308
-msgid "Title"
-msgstr ""
-
 #: inc/customizer/config.php:224
 msgid "Subtitle"
 msgstr ""
@@ -1380,10 +1376,6 @@ msgstr ""
 
 #: inc/customizer/config.php:90
 msgid "Soft sections background"
-msgstr ""
-
-#: inc/customizer/config.php:91 inc/customizer/config.php:241 inc/customizer/config.php:309
-msgid "Text"
 msgstr ""
 
 #: inc/customizer/config.php:92
@@ -2398,12 +2390,16 @@ msgstr ""
 msgid "Right of withdrawal"
 msgstr ""
 
-#: inc/template-tags.php:514
+#: inc/template-tags.php:505
+msgid "Terms of use"
+msgstr ""
+
+#: inc/template-tags.php:515
 msgid "Privacy policy"
 msgstr ""
 
 #. translators:1: year, 2: company name.
-#: inc/template-tags.php:533
+#: inc/template-tags.php:534
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
@@ -2702,41 +2698,57 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:380
+#: inc/woocommerce/product-translations.php:389 inc/woocommerce/product-translations.php:539
 msgid "Translations"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:398
+#: inc/woocommerce/product-translations.php:407
 msgid "A translation plugin (WPML, Polylang, TranslatePress) is active or the language switcher is turned off: translate your products with the plugin."
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:400
+#: inc/woocommerce/product-translations.php:409
 msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main product text."
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:408
+#: inc/woocommerce/product-translations.php:417
 msgid "Product name"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:415
+#: inc/woocommerce/product-translations.php:424
 msgid "Short description"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:423
+#: inc/woocommerce/product-translations.php:432
 msgid "Description"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:427
+#: inc/woocommerce/product-translations.php:436
 msgid "HTML allowed (paragraphs, lists, tables…)."
 msgstr ""
 
 #. translators:%s: language name.
-#: inc/woocommerce/product-translations.php:472
+#: inc/woocommerce/product-translations.php:481
 msgid "Name — %s"
 msgstr ""
 
-#: inc/woocommerce/product-translations.php:482
+#: inc/woocommerce/product-translations.php:491
 msgid "Name shown to visitors who chose this language. Leave empty to show the main name."
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:551
+msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main text."
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:551
+msgid "HTML and blocks are allowed."
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:561 inc/customizer/config.php:223 inc/customizer/config.php:240 inc/customizer/config.php:308
+msgid "Title"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:568 inc/customizer/config.php:91 inc/customizer/config.php:241 inc/customizer/config.php:309
+msgid "Text"
 msgstr ""
 
 #. translators:%s: remaining amount.

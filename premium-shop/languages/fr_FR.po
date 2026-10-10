@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 14:20+0000\n"
-"PO-Revision-Date: 2026-10-10 14:20+0000\n"
+"POT-Creation-Date: 2026-10-10 14:29+0000\n"
+"PO-Revision-Date: 2026-10-10 14:29+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -759,10 +759,6 @@ msgstr "Recommandé : 1400 × 1600 px (partagé) ou 2400 × 1200 px (pleine larg
 msgid "Small line above the title"
 msgstr "Petite ligne au-dessus du titre"
 
-#: inc/customizer/config.php:223 inc/customizer/config.php:240 inc/customizer/config.php:308
-msgid "Title"
-msgstr "Titre"
-
 #: inc/customizer/config.php:224
 msgid "Subtitle"
 msgstr "Sous-titre"
@@ -1382,10 +1378,6 @@ msgstr "Cartes & panneaux"
 #: inc/customizer/config.php:90
 msgid "Soft sections background"
 msgstr "Fond des sections douces"
-
-#: inc/customizer/config.php:91 inc/customizer/config.php:241 inc/customizer/config.php:309
-msgid "Text"
-msgstr "Texte"
 
 #: inc/customizer/config.php:92
 msgid "Secondary text"
@@ -2399,12 +2391,16 @@ msgstr "Conditions générales de vente"
 msgid "Right of withdrawal"
 msgstr "Droit de rétractation"
 
-#: inc/template-tags.php:514
+#: inc/template-tags.php:505
+msgid "Terms of use"
+msgstr "Conditions générales d’utilisation"
+
+#: inc/template-tags.php:515
 msgid "Privacy policy"
 msgstr "Politique de confidentialité"
 
 #. translators:1: year, 2: company name.
-#: inc/template-tags.php:533
+#: inc/template-tags.php:534
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. Tous droits réservés."
 
@@ -2703,42 +2699,58 @@ msgstr "Promo"
 msgid "New"
 msgstr "Nouveau"
 
-#: inc/woocommerce/product-translations.php:380
+#: inc/woocommerce/product-translations.php:389 inc/woocommerce/product-translations.php:539
 msgid "Translations"
 msgstr "Traductions"
 
-#: inc/woocommerce/product-translations.php:398
+#: inc/woocommerce/product-translations.php:407
 msgid "A translation plugin (WPML, Polylang, TranslatePress) is active or the language switcher is turned off: translate your products with the plugin."
 msgstr "Une extension de traduction (WPML, Polylang, TranslatePress) est active ou le sélecteur de langue est désactivé : traduisez vos produits avec l’extension."
 
-#: inc/woocommerce/product-translations.php:400
+#: inc/woocommerce/product-translations.php:409
 msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main product text."
 msgstr "Texte affiché aux visiteurs ayant choisi cette langue en haut de la page. Laissez un champ vide pour afficher le texte principal du produit."
 
-#: inc/woocommerce/product-translations.php:408
+#: inc/woocommerce/product-translations.php:417
 msgid "Product name"
 msgstr "Nom du produit"
 
-#: inc/woocommerce/product-translations.php:415
+#: inc/woocommerce/product-translations.php:424
 msgid "Short description"
 msgstr "Description courte"
 
-#: inc/woocommerce/product-translations.php:423
+#: inc/woocommerce/product-translations.php:432
 msgid "Description"
 msgstr "Description"
 
-#: inc/woocommerce/product-translations.php:427
+#: inc/woocommerce/product-translations.php:436
 msgid "HTML allowed (paragraphs, lists, tables…)."
 msgstr "HTML autorisé (paragraphes, listes, tableaux…)."
 
 #. translators:%s: language name.
-#: inc/woocommerce/product-translations.php:472
+#: inc/woocommerce/product-translations.php:481
 msgid "Name — %s"
 msgstr "Nom — %s"
 
-#: inc/woocommerce/product-translations.php:482
+#: inc/woocommerce/product-translations.php:491
 msgid "Name shown to visitors who chose this language. Leave empty to show the main name."
 msgstr "Nom affiché aux visiteurs ayant choisi cette langue. Laissez vide pour afficher le nom principal."
+
+#: inc/woocommerce/product-translations.php:551
+msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main text."
+msgstr "Texte affiché aux visiteurs ayant choisi cette langue en haut de la page. Laissez un champ vide pour afficher le texte principal."
+
+#: inc/woocommerce/product-translations.php:551
+msgid "HTML and blocks are allowed."
+msgstr "Le HTML et les blocs sont autorisés."
+
+#: inc/woocommerce/product-translations.php:561 inc/customizer/config.php:223 inc/customizer/config.php:240 inc/customizer/config.php:308
+msgid "Title"
+msgstr "Titre"
+
+#: inc/woocommerce/product-translations.php:568 inc/customizer/config.php:91 inc/customizer/config.php:241 inc/customizer/config.php:309
+msgid "Text"
+msgstr "Texte"
 
 #. translators:%s: remaining amount.
 #: inc/woocommerce/setup.php:187
