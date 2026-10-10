@@ -215,6 +215,33 @@ function premium_shop_import_prepare_product( $object ) {
 add_filter( 'woocommerce_product_import_pre_insert_product_object', 'premium_shop_import_prepare_product', 5 );
 
 /**
+ * Clean URLs for names such as "Palette 1,7 m³": "m3" instead of "m%c2%b3".
+ *
+ * Runs before WordPress' own sanitize_title_with_dashes (priority 10).
+ *
+ * @param string $title     Title being sanitized.
+ * @param string $raw_title Raw title.
+ * @param string $context   Context.
+ * @return string
+ */
+function premium_shop_slug_superscripts( $title, $raw_title = '', $context = 'display' ) {
+	if ( 'save' !== $context ) {
+		return $title;
+	}
+	return strtr(
+		$title,
+		array(
+			'²' => '2',
+			'³' => '3',
+			'¹' => '1',
+			'½' => '1-2',
+			'¼' => '1-4',
+		)
+	);
+}
+add_filter( 'sanitize_title', 'premium_shop_slug_superscripts', 9, 3 );
+
+/**
  * Read firewood data from a product name (French or German) and description.
  *
  * Examples: "Palette bois de chauffage (Chêne) - 33 cm - 3 stères",

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:56+0000\n"
-"PO-Revision-Date: 2026-10-10 12:56+0000\n"
+"POT-Creation-Date: 2026-10-10 13:41+0000\n"
+"PO-Revision-Date: 2026-10-10 13:41+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: es_ES\n"
@@ -2025,7 +2025,7 @@ msgstr "Pendiente de confirmación"
 msgid "Export confirmed subscribers (CSV)"
 msgstr "Exportar suscriptores confirmados (CSV)"
 
-#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:340 inc/admin/onboarding.php:66
+#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:367 inc/admin/onboarding.php:66
 msgid "You are not allowed to do this."
 msgstr "No tienes permiso para hacer esto."
 
@@ -2296,69 +2296,69 @@ msgid "Hide this list"
 msgstr "Ocultar esta lista"
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:324
+#: inc/woocommerce/import-mapping.php:351
 msgid "%d product comes from an incomplete import (“Import placeholder for …”): it has no name and no price, so it cannot be bought."
 msgid_plural "%d products come from an incomplete import (“Import placeholder for …”): they have no name and no price, so they cannot be bought."
 msgstr[0] "%d producto procede de una importación incompleta («Import placeholder for …»): no tiene nombre ni precio, así que no se puede comprar."
 msgstr[1] "%d productos proceden de una importación incompleta («Import placeholder for …»): no tienen nombre ni precio, así que no se pueden comprar."
 
-#: inc/woocommerce/import-mapping.php:327
+#: inc/woocommerce/import-mapping.php:354
 msgid "Move them to the trash, then import your file again (Products → Import). Or import the same file again with “Update existing products” checked: they get their name, prices and categories back."
 msgstr "Muévalos a la papelera e importe de nuevo su archivo (Productos → Importar). O importe de nuevo el mismo archivo marcando «Actualizar productos existentes»: recuperarán su nombre, precios y categorías."
 
-#: inc/woocommerce/import-mapping.php:328
+#: inc/woocommerce/import-mapping.php:355
 msgid "Move these products to the trash?"
 msgstr "¿Mover estos productos a la papelera?"
 
-#: inc/woocommerce/import-mapping.php:328
+#: inc/woocommerce/import-mapping.php:355
 msgid "Move them to the trash"
 msgstr "Moverlos a la papelera"
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:367
+#: inc/woocommerce/import-mapping.php:394
 msgid "%d product moved to the trash."
 msgid_plural "%d products moved to the trash."
 msgstr[0] "%d producto movido a la papelera."
 msgstr[1] "%d productos movidos a la papelera."
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:427
+#: inc/woocommerce/import-mapping.php:454
 msgid "%d published product has no price: WooCommerce shows no “Add to cart” button for it."
 msgid_plural "%d published products have no price: WooCommerce shows no “Add to cart” button for them."
 msgstr[0] "%d producto publicado no tiene precio: WooCommerce no muestra el botón «Añadir al carrito»."
 msgstr[1] "%d productos publicados no tienen precio: WooCommerce no muestra el botón «Añadir al carrito»."
 
-#: inc/woocommerce/import-mapping.php:430
+#: inc/woocommerce/import-mapping.php:457
 msgid "Enter a regular price (General tab, or in each variation for variable products). After a CSV import, check that the price column was assigned to “Regular price” in the mapping step."
 msgstr "Introduzca un precio normal (pestaña General, o en cada variación para productos variables). Tras una importación CSV, compruebe que la columna del precio se asignó a «Precio normal» en el paso de asignación."
 
 #. translators:%d: number of products not listed.
-#: inc/woocommerce/import-mapping.php:440
+#: inc/woocommerce/import-mapping.php:467
 msgid "… and %d more."
 msgid_plural "… and %d more."
 msgstr[0] "… y %d más."
 msgstr[1] "… y %d más."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:461
+#: inc/woocommerce/import-mapping.php:488
 msgid "Delimiter detected: %s. It has been set in the advanced options."
 msgstr "Separador detectado: %s. Se ha configurado en las opciones avanzadas."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:462
+#: inc/woocommerce/import-mapping.php:489
 msgid "The file is not UTF-8 (probably saved by Excel): the encoding has been set to Windows-1252."
 msgstr "El archivo no está en UTF-8 (probablemente guardado con Excel): la codificación se ha ajustado a Windows-1252."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:463
+#: inc/woocommerce/import-mapping.php:490
 msgid "This file is separated by tabs, which the WooCommerce importer cannot read. Save it again as CSV (comma or semicolon) and choose it again."
 msgstr "Este archivo está separado por tabulaciones, que el importador de WooCommerce no puede leer. Guárdelo de nuevo como CSV (coma o punto y coma) y vuelva a elegirlo."
 
-#: inc/woocommerce/import-mapping.php:465
+#: inc/woocommerce/import-mapping.php:492
 msgid "semicolon (;)"
 msgstr "punto y coma (;)"
 
-#: inc/woocommerce/import-mapping.php:466
+#: inc/woocommerce/import-mapping.php:493
 msgid "vertical bar (|)"
 msgstr "barra vertical (|)"
 

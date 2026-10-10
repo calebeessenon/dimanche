@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:56+0000\n"
-"PO-Revision-Date: 2026-10-10 12:56+0000\n"
+"POT-Creation-Date: 2026-10-10 13:41+0000\n"
+"PO-Revision-Date: 2026-10-10 13:41+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -2024,7 +2024,7 @@ msgstr ""
 msgid "Export confirmed subscribers (CSV)"
 msgstr ""
 
-#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:340 inc/admin/onboarding.php:66
+#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:367 inc/admin/onboarding.php:66
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -2295,69 +2295,69 @@ msgid "Hide this list"
 msgstr ""
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:324
+#: inc/woocommerce/import-mapping.php:351
 msgid "%d product comes from an incomplete import (“Import placeholder for …”): it has no name and no price, so it cannot be bought."
 msgid_plural "%d products come from an incomplete import (“Import placeholder for …”): they have no name and no price, so they cannot be bought."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/woocommerce/import-mapping.php:327
+#: inc/woocommerce/import-mapping.php:354
 msgid "Move them to the trash, then import your file again (Products → Import). Or import the same file again with “Update existing products” checked: they get their name, prices and categories back."
 msgstr ""
 
-#: inc/woocommerce/import-mapping.php:328
+#: inc/woocommerce/import-mapping.php:355
 msgid "Move these products to the trash?"
 msgstr ""
 
-#: inc/woocommerce/import-mapping.php:328
+#: inc/woocommerce/import-mapping.php:355
 msgid "Move them to the trash"
 msgstr ""
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:367
+#: inc/woocommerce/import-mapping.php:394
 msgid "%d product moved to the trash."
 msgid_plural "%d products moved to the trash."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:427
+#: inc/woocommerce/import-mapping.php:454
 msgid "%d published product has no price: WooCommerce shows no “Add to cart” button for it."
 msgid_plural "%d published products have no price: WooCommerce shows no “Add to cart” button for them."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/woocommerce/import-mapping.php:430
+#: inc/woocommerce/import-mapping.php:457
 msgid "Enter a regular price (General tab, or in each variation for variable products). After a CSV import, check that the price column was assigned to “Regular price” in the mapping step."
 msgstr ""
 
 #. translators:%d: number of products not listed.
-#: inc/woocommerce/import-mapping.php:440
+#: inc/woocommerce/import-mapping.php:467
 msgid "… and %d more."
 msgid_plural "… and %d more."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:461
+#: inc/woocommerce/import-mapping.php:488
 msgid "Delimiter detected: %s. It has been set in the advanced options."
 msgstr ""
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:462
+#: inc/woocommerce/import-mapping.php:489
 msgid "The file is not UTF-8 (probably saved by Excel): the encoding has been set to Windows-1252."
 msgstr ""
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:463
+#: inc/woocommerce/import-mapping.php:490
 msgid "This file is separated by tabs, which the WooCommerce importer cannot read. Save it again as CSV (comma or semicolon) and choose it again."
 msgstr ""
 
-#: inc/woocommerce/import-mapping.php:465
+#: inc/woocommerce/import-mapping.php:492
 msgid "semicolon (;)"
 msgstr ""
 
-#: inc/woocommerce/import-mapping.php:466
+#: inc/woocommerce/import-mapping.php:493
 msgid "vertical bar (|)"
 msgstr ""
 
