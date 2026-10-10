@@ -354,4 +354,8 @@ T = [
 ('Discover our products', 'Entdecken Sie unsere Produkte', 'Découvrez nos produits', 'Descubra nuestros productos'),
 ('View all products', 'Alle Produkte ansehen', 'Voir tous les produits', 'Ver todos los productos'),
 ('View product', 'Produkt ansehen', 'Voir le produit', 'Ver producto'),
+('incl. VAT', 'inkl. MwSt.', 'TTC', 'IVA incluido'),
+('excl. VAT', 'zzgl. MwSt.', 'HT', 'IVA no incluido'),
+('plus shipping', 'zzgl. Versand', 'hors frais de livraison', 'más gastos de envío'),
+('incl. VAT, plus shipping', 'inkl. MwSt., zzgl. Versand', 'TTC, hors frais de livraison', 'IVA incluido, más gastos de envío'),
 ]

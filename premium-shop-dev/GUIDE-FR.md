@@ -390,3 +390,14 @@ de la barre latérale de la boutique.
   (photo, prix, bouton) qui défile doucement et s'arrête au survol.
 - Désactivable avec l'option « Illustrated page headers » (Personnaliser →
   Général).
+
+## 18. Version 1.7.0 — tout le site dans la langue du visiteur
+
+- Menus, titres de pages (en-tête, onglet du navigateur, fil d'Ariane), titres
+  de widgets, catégories, suffixe de prix WooCommerce : traduits
+  automatiquement quand le texte vient du thème ou de l'assistant.
+- Pages créées par l'assistant (Kontakt, Sendungsverfolgung, Über uns,
+  Versand & Zahlung…) : titre + texte en FR / EN / ES.
+- Vos propres textes : boîte « Traductions » sous l'éditeur de page / de
+  produit, ou syntaxe `[:de]Angebote[:fr]Promotions[:en]Offers[:es]Ofertas`
+  dans un intitulé de menu, un texte du Personnaliser ou une notice.

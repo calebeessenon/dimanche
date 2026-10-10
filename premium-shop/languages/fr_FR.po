@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 17:06+0000\n"
-"PO-Revision-Date: 2026-10-10 17:06+0000\n"
+"POT-Creation-Date: 2026-10-10 17:26+0000\n"
+"PO-Revision-Date: 2026-10-10 17:26+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -180,11 +180,11 @@ msgstr "Livraison"
 msgid "Shop setup"
 msgstr "Configuration de la boutique"
 
-#: inc/admin/onboarding.php:310 inc/admin/onboarding.php:315 inc/admin/onboarding.php:320
+#: inc/admin/onboarding.php:357 inc/admin/onboarding.php:362 inc/admin/onboarding.php:367
 msgid "Please complete this page with your legally required company information before publishing."
 msgstr "Veuillez compléter cette page avec les informations légales obligatoires de votre entreprise avant de la publier."
 
-#: inc/admin/onboarding.php:368
+#: inc/admin/onboarding.php:382
 msgid "Where is my order? Enter your order number and e-mail address to see its status, the planned delivery date and the tracking number."
 msgstr "Où est ma commande ? Saisissez votre numéro de commande et votre adresse e-mail pour voir son statut, la date de livraison prévue et le numéro de suivi."
 
@@ -365,7 +365,7 @@ msgstr "Livraison gratuite"
 msgid "From %s order value"
 msgstr "À partir de %s d’achat"
 
-#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:367
+#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:381
 msgid "Order tracking"
 msgstr "Suivi de commande"
 
@@ -2101,6 +2101,22 @@ msgstr "Le pin s’allume vite — parfait pour démarrer le feu."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "L’épicéa s’allume vite — parfait pour démarrer le feu."
 
+#: inc/i18n-content.php:292
+msgid "incl. VAT"
+msgstr "TTC"
+
+#: inc/i18n-content.php:293
+msgid "excl. VAT"
+msgstr "HT"
+
+#: inc/i18n-content.php:294
+msgid "plus shipping"
+msgstr "hors frais de livraison"
+
+#: inc/i18n-content.php:295
+msgid "incl. VAT, plus shipping"
+msgstr "TTC, hors frais de livraison"
+
 #: inc/newsletter.php:102
 msgid "You are already subscribed. Thank you!"
 msgstr "Vous êtes déjà inscrit. Merci !"
@@ -2283,15 +2299,15 @@ msgstr "Les identifiants sont incorrects."
 msgid "Optional widgets displayed as an additional footer column."
 msgstr "Widgets facultatifs affichés dans une colonne supplémentaire du pied de page."
 
-#: inc/setup.php:43 inc/admin/onboarding.php:498
+#: inc/setup.php:43 inc/admin/onboarding.php:512
 msgid "Footer — Shop"
 msgstr "Pied de page — Boutique"
 
-#: inc/setup.php:44 inc/admin/onboarding.php:507
+#: inc/setup.php:44 inc/admin/onboarding.php:521
 msgid "Footer — Customer service"
 msgstr "Pied de page — Service client"
 
-#: inc/setup.php:45 inc/admin/onboarding.php:517
+#: inc/setup.php:45 inc/admin/onboarding.php:531
 msgid "Footer — Legal"
 msgstr "Pied de page — Légal"
 
@@ -2315,11 +2331,11 @@ msgstr "Widgets facultatifs affichés sous les filtres intégrés."
 msgid "Footer — extra column"
 msgstr "Pied de page — colonne supplémentaire"
 
-#: inc/template-tags.php:106 inc/template-tags.php:465 inc/admin/onboarding.php:492 inc/admin/onboarding.php:503
+#: inc/template-tags.php:106 inc/template-tags.php:465 inc/admin/onboarding.php:506 inc/admin/onboarding.php:517
 msgid "Offers"
 msgstr "Promotions"
 
-#: inc/template-tags.php:115 inc/admin/onboarding.php:286
+#: inc/template-tags.php:115 inc/admin/onboarding.php:333
 msgid "About us"
 msgstr "À propos"
 
@@ -2375,11 +2391,11 @@ msgstr "Page précédente"
 msgid "Next page"
 msgstr "Page suivante"
 
-#: inc/template-tags.php:463 inc/admin/onboarding.php:501 inc/customizer/config.php:27 inc/customizer/config.php:554
+#: inc/template-tags.php:463 inc/admin/onboarding.php:515 inc/customizer/config.php:27 inc/customizer/config.php:554
 msgid "New arrivals"
 msgstr "Nouveautés"
 
-#: inc/template-tags.php:464 inc/admin/onboarding.php:502 inc/customizer/config.php:29 inc/customizer/config.php:556
+#: inc/template-tags.php:464 inc/admin/onboarding.php:516 inc/customizer/config.php:29 inc/customizer/config.php:556
 msgid "Bestsellers"
 msgstr "Meilleures ventes"
 
@@ -2387,7 +2403,7 @@ msgstr "Meilleures ventes"
 msgid "Track my orders"
 msgstr "Suivre mes commandes"
 
-#: inc/template-tags.php:490 inc/admin/onboarding.php:304
+#: inc/template-tags.php:490 inc/admin/onboarding.php:351
 msgid "Shipping & payment"
 msgstr "Livraison & paiement"
 
@@ -2395,15 +2411,15 @@ msgstr "Livraison & paiement"
 msgid "FAQ"
 msgstr "FAQ"
 
-#: inc/template-tags.php:502 inc/admin/onboarding.php:309
+#: inc/template-tags.php:502 inc/admin/onboarding.php:356
 msgid "Legal notice"
 msgstr "Mentions légales"
 
-#: inc/template-tags.php:503 inc/admin/onboarding.php:314
+#: inc/template-tags.php:503 inc/admin/onboarding.php:361
 msgid "Terms & conditions"
 msgstr "Conditions générales de vente"
 
-#: inc/template-tags.php:504 inc/admin/onboarding.php:319
+#: inc/template-tags.php:504 inc/admin/onboarding.php:366
 msgid "Right of withdrawal"
 msgstr "Droit de rétractation"
 
@@ -2420,7 +2436,7 @@ msgstr "Politique de confidentialité"
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. Tous droits réservés."
 
-#: inc/template-tags.php:83 inc/template-tags.php:360 inc/admin/onboarding.php:489
+#: inc/template-tags.php:83 inc/template-tags.php:360 inc/admin/onboarding.php:503
 msgid "Home"
 msgstr "Accueil"
 
@@ -2932,7 +2948,7 @@ msgstr "Voir la vidéo"
 msgid "Journal"
 msgstr "Journal"
 
-#: page-templates/template-contact.php:35 inc/admin/onboarding.php:292 inc/admin/onboarding.php:398
+#: page-templates/template-contact.php:35 inc/admin/onboarding.php:339 inc/admin/onboarding.php:412
 msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
 msgstr "Nous serons ravis de vous lire. Notre service client vous répondra dans les meilleurs délais."
 
@@ -3145,7 +3161,7 @@ msgstr "Mentions légales"
 msgid "Back to top"
 msgstr "Retour en haut"
 
-#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:490
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:504
 msgid "Shop"
 msgstr "Boutique"
 
@@ -3153,7 +3169,7 @@ msgstr "Boutique"
 msgid "Customer service"
 msgstr "Service client"
 
-#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:498 inc/admin/onboarding.php:291
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:498 inc/admin/onboarding.php:338
 msgid "Contact"
 msgstr "Contact"
 
@@ -3185,7 +3201,7 @@ msgstr "Menu"
 msgid "Close menu"
 msgstr "Fermer le menu"
 
-#: template-parts/header/mobile-menu.php:28 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:487
+#: template-parts/header/mobile-menu.php:28 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:501
 msgid "Main menu"
 msgstr "Menu principal"
 
@@ -3197,7 +3213,7 @@ msgstr "Mon compte"
 msgid "Sign in / Register"
 msgstr "Connexion / Inscription"
 
-#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:297 inc/customizer/config.php:351
+#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:344 inc/customizer/config.php:351
 msgid "Wishlist"
 msgstr "Liste d’envies"
 
@@ -3249,7 +3265,7 @@ msgstr "Estimez en quelques secondes votre besoin en bois pour la saison et conv
 msgid "Explore"
 msgstr "Explorer"
 
-#: template-parts/homepage/categories.php:47 inc/template-tags.php:462 inc/admin/onboarding.php:500
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:462 inc/admin/onboarding.php:514
 msgid "All products"
 msgstr "Tous les produits"
 

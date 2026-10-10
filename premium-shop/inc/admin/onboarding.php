@@ -281,7 +281,54 @@ function premium_shop_setup_pages() {
 		return premium_shop_translate_in( $text, $locale );
 	};
 
-	$pages = array(
+	$pages = premium_shop_setup_pages_data( $t );
+
+	$ids = array();
+
+	foreach ( array_filter( $pages ) as $slug => $page ) {
+		$existing = get_page_by_path( $slug, OBJECT, 'page' );
+		if ( $existing ) {
+			$ids[ $slug ] = $existing->ID;
+			continue;
+		}
+
+		$id = wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => $page['status'],
+				'post_title'   => $page['title'],
+				'post_name'    => $slug,
+				'post_content' => $page['content'],
+			)
+		);
+
+		if ( $id && ! is_wp_error( $id ) ) {
+			if ( ! empty( $page['template'] ) ) {
+				update_post_meta( $id, '_wp_page_template', $page['template'] );
+			}
+			$ids[ $slug ] = $id;
+		}
+	}
+
+	if ( ! empty( $ids['sendungsverfolgung'] ) ) {
+		update_option( 'premium_shop_tracking_page', (int) $ids['sendungsverfolgung'], false );
+	}
+
+	if ( function_exists( 'premium_shop_seed_page_translations' ) ) {
+		premium_shop_seed_page_translations();
+	}
+
+	return $ids;
+}
+
+/**
+ * Default pages (title, content, status, template) in one language.
+ *
+ * @param callable $t Translator for that language.
+ * @return array slug => page data.
+ */
+function premium_shop_setup_pages_data( $t ) {
+	return array(
 		'ueber-uns'           => array(
 			'title'   => $t( 'About us' ),
 			'content' => premium_shop_about_page_content( $t ),
@@ -321,39 +368,6 @@ function premium_shop_setup_pages() {
 			'status'  => 'draft',
 		),
 	);
-
-	$ids = array();
-
-	foreach ( array_filter( $pages ) as $slug => $page ) {
-		$existing = get_page_by_path( $slug, OBJECT, 'page' );
-		if ( $existing ) {
-			$ids[ $slug ] = $existing->ID;
-			continue;
-		}
-
-		$id = wp_insert_post(
-			array(
-				'post_type'    => 'page',
-				'post_status'  => $page['status'],
-				'post_title'   => $page['title'],
-				'post_name'    => $slug,
-				'post_content' => $page['content'],
-			)
-		);
-
-		if ( $id && ! is_wp_error( $id ) ) {
-			if ( ! empty( $page['template'] ) ) {
-				update_post_meta( $id, '_wp_page_template', $page['template'] );
-			}
-			$ids[ $slug ] = $id;
-		}
-	}
-
-	if ( ! empty( $ids['sendungsverfolgung'] ) ) {
-		update_option( 'premium_shop_tracking_page', (int) $ids['sendungsverfolgung'], false );
-	}
-
-	return $ids;
 }
 
 /**
