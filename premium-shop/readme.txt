@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,12 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.5.1 =
+* Fix: in French, English and Spanish (built-in language switcher), the quick view,
+  live search and AJAX add to cart failed ("Something went wrong"): the language
+  parameter re-encoded WooCommerce's AJAX endpoint placeholder.
+* Quick view: if it cannot load, the product page opens instead of an error.
 
 = 1.5.0 =
 * Privacy policy and terms of use in German, French, English and Spanish, filled

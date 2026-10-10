@@ -377,8 +377,11 @@ function premium_shop_language_url( $code ) {
 add_filter(
 	'woocommerce_ajax_get_endpoint',
 	static function ( $url ) {
-		if ( premium_shop_builtin_applies() && premium_shop_builtin_language() !== premium_shop_default_language() ) {
-			$url = add_query_arg( 'lang', premium_shop_builtin_language(), $url );
+		if ( premium_shop_builtin_applies() && premium_shop_builtin_language() !== premium_shop_default_language() && false === strpos( $url, 'lang=' ) ) {
+			// Appended as is: add_query_arg() would re-encode WooCommerce's
+			// "%%endpoint%%" placeholder ("%25%25endpoint%25%25") and every AJAX
+			// call (quick view, search, add to cart) would then fail.
+			$url .= ( false === strpos( $url, '?' ) ? '?' : '&' ) . 'lang=' . rawurlencode( premium_shop_builtin_language() );
 		}
 		return $url;
 	}

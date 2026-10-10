@@ -38,7 +38,7 @@
 	}
 	function wcAjaxUrl(endpoint, params) {
 		if (!S.wcAjax) { return ''; }
-		var url = S.wcAjax.replace('%%endpoint%%', endpoint);
+		var url = S.wcAjax.replace('%%endpoint%%', endpoint).replace('%25%25endpoint%25%25', endpoint);
 		Object.keys(params || {}).forEach(function (k) {
 			url += (url.indexOf('?') > -1 ? '&' : '?') + encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
 		});
@@ -973,6 +973,10 @@
 				if (title) { title.setAttribute('tabindex', '-1'); title.focus({ preventScroll: true }); }
 			})
 			.catch(function () {
+				// Never a dead end: open the product page instead.
+				var card = btn.closest('.ps-card, li.product, .product');
+				var link = card ? $('a[href]:not([href="#"]):not([data-ps-quick-view])', card) : null;
+				if (link) { window.location.href = link.href; return; }
 				modalContent.classList.remove('is-loading');
 				modalContent.innerHTML = '<p class="ps-live-results__empty">' + escapeHtml(I18N.error || '') + '</p>';
 			});
