@@ -20,6 +20,11 @@ defined( 'ABSPATH' ) || exit;
  * @return string
  */
 function premium_shop_i18n_target() {
+	// E-mails and invoices switched to the customer's language.
+	if ( ! empty( $GLOBALS['premium_shop_switched_language'] ) ) {
+		$switched = $GLOBALS['premium_shop_switched_language'];
+		return $switched === premium_shop_default_language() ? '' : $switched;
+	}
 	static $lang = null;
 	if ( null !== $lang ) {
 		return $lang;

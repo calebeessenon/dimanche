@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '1.7.2' );
+define( 'PREMIUM_SHOP_VERSION', '1.8.0' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 
@@ -56,6 +56,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			'inc/woocommerce/import-images.php',
 			'inc/woocommerce/import-mapping.php',
 			'inc/woocommerce/order-tracking.php',
+			'inc/woocommerce/order-language.php',
 			'inc/woocommerce/product-translations.php',
 			'inc/firewood/product-data.php',
 			'inc/firewood/price-tool.php',

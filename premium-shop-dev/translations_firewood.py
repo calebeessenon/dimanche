@@ -358,4 +358,12 @@ T = [
 ('excl. VAT', 'zzgl. MwSt.', 'HT', 'IVA no incluido'),
 ('plus shipping', 'zzgl. Versand', 'hors frais de livraison', 'más gastos de envío'),
 ('incl. VAT, plus shipping', 'inkl. MwSt., zzgl. Versand', 'TTC, hors frais de livraison', 'IVA incluido, más gastos de envío'),
+('Customer language (e-mails, invoice)', 'Kundensprache (E-Mails, Rechnung)', 'Langue du client (e-mails, facture)', 'Idioma del cliente (correos, factura)'),
+('Shop language', 'Shopsprache', 'Langue de la boutique', 'Idioma de la tienda'),
+('VAT', 'MwSt.', 'TVA', 'IVA'),
+('Freight forwarding', 'Spedition', 'Transporteur', 'Agencia de transporte'),
+('Pickup', 'Abholung', 'Retrait sur place', 'Recogida en tienda'),
+('Delivery by truck', 'Lieferung per LKW', 'Livraison par camion', 'Entrega en camión'),
+('Prepayment', 'Vorkasse', 'Paiement anticipé', 'Pago por adelantado'),
+('Invoice', 'Rechnung', 'Facture', 'Factura'),
 ]

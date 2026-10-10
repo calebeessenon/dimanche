@@ -245,8 +245,9 @@ function premium_shop_builtin_bootstrap() {
 
 	add_filter(
 		'locale',
-		static function () use ( $locale ) {
-			return $locale;
+		static function ( $current ) use ( $locale ) {
+			// switch_to_locale() (e-mails, invoices in the customer's language) wins.
+			return function_exists( 'is_locale_switched' ) && is_locale_switched() ? $current : $locale;
 		},
 		99
 	);

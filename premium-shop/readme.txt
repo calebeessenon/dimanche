@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.7.2
+Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,17 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.8.0 =
+* Order language: the visitor's language is saved on the order (classic and block
+  checkout) and on the customer account. Every customer e-mail (received,
+  processing, completed, refund, note, invoice, account…) — subject and content —
+  is sent in that language, also when triggered later from the dashboard. Shop
+  e-mails (new order…) stay in the shop language.
+* PDF Invoices & Packing Slips for WooCommerce: documents in the order language.
+* Order screen: "Customer language" field to see or change it.
+* Shipping method, tax and payment names typed in the shop language are shown in
+  the customer's language (catalogue or "[:de]..[:fr].." versions).
 
 = 1.7.2 =
 * Updates apply on the first visit after uploading the theme (no need to open the

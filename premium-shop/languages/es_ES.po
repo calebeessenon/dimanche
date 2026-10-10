@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 17:42+0000\n"
-"PO-Revision-Date: 2026-10-10 17:42+0000\n"
+"POT-Creation-Date: 2026-10-10 18:37+0000\n"
+"PO-Revision-Date: 2026-10-10 18:37+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: es_ES\n"
@@ -2101,19 +2101,19 @@ msgstr "El pino prende rápido, perfecto para encender el fuego."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "El abeto prende rápido, perfecto para encender el fuego."
 
-#: inc/i18n-content.php:292
+#: inc/i18n-content.php:297
 msgid "incl. VAT"
 msgstr "IVA incluido"
 
-#: inc/i18n-content.php:293
+#: inc/i18n-content.php:298
 msgid "excl. VAT"
 msgstr "IVA no incluido"
 
-#: inc/i18n-content.php:294
+#: inc/i18n-content.php:299
 msgid "plus shipping"
 msgstr "más gastos de envío"
 
-#: inc/i18n-content.php:295
+#: inc/i18n-content.php:300
 msgid "incl. VAT, plus shipping"
 msgstr "IVA incluido, más gastos de envío"
 
@@ -2353,7 +2353,7 @@ msgstr "Redes sociales"
 msgid "%s (opens in a new tab)"
 msgstr "%s (se abre en una nueva pestaña)"
 
-#: inc/template-tags.php:279
+#: inc/template-tags.php:279 inc/woocommerce/order-language.php:381
 msgid "Invoice"
 msgstr "Factura"
 
@@ -2602,6 +2602,34 @@ msgstr "punto y coma (;)"
 #: inc/woocommerce/import-mapping.php:493
 msgid "vertical bar (|)"
 msgstr "barra vertical (|)"
+
+#: inc/woocommerce/order-language.php:301
+msgid "Customer language (e-mails, invoice)"
+msgstr "Idioma del cliente (correos, factura)"
+
+#: inc/woocommerce/order-language.php:303
+msgid "Shop language"
+msgstr "Idioma de la tienda"
+
+#: inc/woocommerce/order-language.php:376
+msgid "VAT"
+msgstr "IVA"
+
+#: inc/woocommerce/order-language.php:377
+msgid "Freight forwarding"
+msgstr "Agencia de transporte"
+
+#: inc/woocommerce/order-language.php:378
+msgid "Pickup"
+msgstr "Recogida en tienda"
+
+#: inc/woocommerce/order-language.php:379
+msgid "Delivery by truck"
+msgstr "Entrega en camión"
+
+#: inc/woocommerce/order-language.php:380
+msgid "Prepayment"
+msgstr "Pago por adelantado"
 
 #: inc/woocommerce/order-tracking.php:105
 msgid "Delivery & tracking"

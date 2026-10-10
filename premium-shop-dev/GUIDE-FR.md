@@ -401,3 +401,17 @@ de la barre latérale de la boutique.
 - Vos propres textes : boîte « Traductions » sous l'éditeur de page / de
   produit, ou syntaxe `[:de]Angebote[:fr]Promotions[:en]Offers[:es]Ofertas`
   dans un intitulé de menu, un texte du Personnaliser ou une notice.
+
+## 19. Version 1.8.0 — e-mails et factures dans la langue du client
+
+- La langue du visiteur est enregistrée sur la commande (et sur son compte).
+- Tous les e-mails au client (commande reçue, en cours, terminée,
+  remboursement, note, facture, compte…) partent dans SA langue, objet et
+  contenu, même quand vous changez le statut depuis le tableau de bord en
+  allemand. Vos e-mails « nouvelle commande » restent en allemand.
+- Factures PDF (« PDF Invoices & Packing Slips for WooCommerce ») : dans la
+  langue de la commande.
+- Fiche commande → champ « Kundensprache » pour voir ou changer la langue.
+- Noms de modes de livraison / taxes / paiement saisis en allemand
+  (« Spedition », « MwSt. », « Vorkasse »…) : traduits automatiquement ; pour
+  un nom personnalisé, écrivez « [:de]Spedition[:fr]Transporteur[:en]Freight[:es]Transporte ».
