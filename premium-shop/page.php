@@ -65,6 +65,11 @@ while ( have_posts() ) :
 		<?php endif; ?>
 	</article>
 	<?php
+	if ( ! ( premium_shop_is_wc() && ( is_checkout() || is_wc_endpoint_url( 'order-received' ) ) ) ) {
+		premium_shop_page_showcase( premium_shop_is_wc() && is_cart() ? 'cart' : 'page' );
+	}
+	?>
+	<?php
 endwhile;
 
 get_footer();

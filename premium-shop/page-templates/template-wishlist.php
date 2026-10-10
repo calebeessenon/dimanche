@@ -47,6 +47,7 @@ while ( have_posts() ) :
 			<?php endif; ?>
 		</div>
 	</article>
+	<?php premium_shop_page_showcase(); ?>
 	<?php
 endwhile;
 

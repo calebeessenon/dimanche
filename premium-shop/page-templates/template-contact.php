@@ -52,6 +52,7 @@ while ( have_posts() ) :
 			</div>
 		</div>
 	</article>
+	<?php premium_shop_page_showcase(); ?>
 	<?php
 endwhile;
 

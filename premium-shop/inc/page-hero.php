@@ -271,18 +271,24 @@ function premium_shop_page_hero_chips() {
  * @param array $override Values replacing the automatic ones (title, subtitle…).
  */
 function premium_shop_page_hero( $override = array() ) {
-	$hero   = array_merge( premium_shop_page_hero_context(), $override );
-	$seed   = (int) get_queried_object_id();
-	$photos = 'photos' === $hero['art'] ? premium_shop_hero_photos( 3, $seed ) : array();
-	$class  = 'ps-phero ps-phero--' . sanitize_html_class( $hero['variant'] );
+	$hero  = array_merge( premium_shop_page_hero_context(), $override );
+	$class = 'ps-phero ps-phero--banner ps-phero--' . sanitize_html_class( $hero['variant'] );
 	if ( in_array( $hero['variant'], array( 'cart', 'checkout' ), true ) ) {
 		$class .= ' ps-phero--compact';
 	}
-	if ( 'photos' === $hero['art'] && ! $photos ) {
+	if ( 'truck' !== $hero['art'] ) {
 		$class .= ' ps-phero--no-art';
 	}
+	// A page with a featured image uses it as the banner background.
+	$style = '';
+	if ( 'page' === $hero['variant'] && has_post_thumbnail() ) {
+		$bg = wp_get_attachment_image_url( (int) get_post_thumbnail_id(), 'full' );
+		if ( $bg ) {
+			$style = '--ps-hero-bg:url(' . esc_url( $bg ) . ')';
+		}
+	}
 	?>
-	<header class="<?php echo esc_attr( $class ); ?>">
+	<header class="<?php echo esc_attr( $class ); ?>"<?php echo $style ? ' style="' . esc_attr( $style ) . '"' : ''; ?>>
 		<div class="ps-phero__glow" aria-hidden="true"></div>
 		<div class="ps-phero__embers" aria-hidden="true">
 			<?php
@@ -326,15 +332,6 @@ function premium_shop_page_hero( $override = array() ) {
 			<?php if ( 'truck' === $hero['art'] ) : ?>
 				<div class="ps-phero__art ps-phero__art--truck" aria-hidden="true">
 					<?php get_template_part( 'template-parts/components/truck-art' ); ?>
-				</div>
-			<?php elseif ( $photos ) : ?>
-				<div class="ps-phero__art ps-phero__photos ps-phero__photos--<?php echo count( $photos ); ?>" aria-hidden="true">
-					<?php foreach ( $photos as $i => $photo ) : ?>
-						<figure class="ps-phero__photo ps-phero__photo--<?php echo (int) $i + 1; ?>">
-							<img src="<?php echo esc_url( $photo['src'] ); ?>" alt="" loading="<?php echo 0 === $i ? 'eager' : 'lazy'; ?>" decoding="async">
-						</figure>
-					<?php endforeach; ?>
-					<span class="ps-phero__ring" aria-hidden="true"></span>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -476,3 +473,165 @@ add_action( 'save_post_product', 'premium_shop_flush_category_images' );
 add_action( 'edited_product_cat', 'premium_shop_flush_category_images' );
 add_action( 'created_product_cat', 'premium_shop_flush_category_images' );
 add_action( 'woocommerce_product_import_inserted_product_object', 'premium_shop_flush_category_images' );
+
+/**
+ * Products shown in the bottom-of-page carousel (cached for an hour).
+ *
+ * @return int[]
+ */
+function premium_shop_showcase_product_ids() {
+	$ids = get_transient( 'premium_shop_showcase_ids' );
+	if ( is_array( $ids ) ) {
+		return array_map( 'absint', $ids );
+	}
+	$ids = array();
+	if ( premium_shop_is_wc() ) {
+		$hidden = array_filter(
+			array(
+				get_term_by( 'slug', 'exclude-from-catalog', 'product_visibility' ),
+				get_term_by( 'slug', 'outofstock', 'product_visibility' ),
+			)
+		);
+		$query  = array(
+			'post_type'        => 'product',
+			'post_status'      => 'publish',
+			'posts_per_page'   => 12,
+			'fields'           => 'ids',
+			'no_found_rows'    => true,
+			'suppress_filters' => false,
+			'meta_key'         => 'total_sales', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'orderby'          => array(
+				'meta_value_num' => 'DESC',
+				'date'           => 'DESC',
+			),
+			// Only products with a photo look good in the carousel.
+			'meta_query'       => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				array(
+					'key'     => '_thumbnail_id',
+					'compare' => 'EXISTS',
+				),
+			),
+		);
+		if ( $hidden ) {
+			$query['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+				array(
+					'taxonomy' => 'product_visibility',
+					'field'    => 'term_taxonomy_id',
+					'terms'    => wp_list_pluck( $hidden, 'term_taxonomy_id' ),
+					'operator' => 'NOT IN',
+				),
+			);
+		}
+		$ids = array_map( 'absint', get_posts( $query ) );
+	}
+	set_transient( 'premium_shop_showcase_ids', $ids, HOUR_IN_SECONDS );
+	return $ids;
+}
+add_action(
+	'save_post_product',
+	static function () {
+		delete_transient( 'premium_shop_showcase_ids' );
+	}
+);
+
+/**
+ * Bottom of the page: a scrolling band of reassurance messages and a
+ * carousel of products moving gently from right to left (pauses on hover).
+ *
+ * @param string $variant Page variant (no carousel on the checkout).
+ */
+function premium_shop_page_showcase( $variant = 'page' ) {
+	if ( ! premium_shop_page_hero_enabled() || ! apply_filters( 'premium_shop_page_showcase', true, $variant ) ) {
+		return;
+	}
+
+	$chips = premium_shop_page_hero_chips();
+	$ids   = in_array( $variant, array( 'checkout' ), true ) ? array() : premium_shop_showcase_product_ids();
+	if ( count( $ids ) < 4 ) {
+		$ids = array();
+	}
+	?>
+	<section class="ps-showcase" aria-label="<?php esc_attr_e( 'Discover our products', 'premium-shop' ); ?>">
+		<?php if ( $chips ) : ?>
+			<div class="ps-ticker" aria-hidden="true">
+				<div class="ps-ticker__track">
+					<?php for ( $round = 0; $round < 4; $round++ ) : ?>
+						<?php foreach ( $chips as $chip ) : ?>
+							<span class="ps-ticker__item"><?php premium_shop_icon( $chip[0], array( 'size' => 18 ) ); ?><?php echo esc_html( $chip[1] ); ?></span>
+							<span class="ps-ticker__dot"></span>
+						<?php endforeach; ?>
+					<?php endfor; ?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $ids ) : ?>
+			<div class="ps-showcase__inner">
+				<div class="ps-container ps-showcase__head" data-reveal>
+					<div>
+						<p class="ps-eyebrow"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
+						<h2 class="ps-showcase__title"><?php esc_html_e( 'Discover our products', 'premium-shop' ); ?></h2>
+					</div>
+					<a class="ps-btn ps-btn--ghost" href="<?php echo esc_url( premium_shop_shop_url() ); ?>"><?php esc_html_e( 'View all products', 'premium-shop' ); ?> <?php premium_shop_icon( 'arrow', array( 'size' => 16 ) ); ?></a>
+				</div>
+				<div class="ps-marquee" data-ps-marquee>
+					<div class="ps-marquee__track">
+						<?php
+						for ( $round = 0; $round < 2; $round++ ) {
+							foreach ( $ids as $id ) {
+								$product = wc_get_product( $id );
+								if ( ! $product ) {
+									continue;
+								}
+								premium_shop_showcase_card( $product, 1 === $round );
+							}
+						}
+						?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+	</section>
+	<?php
+}
+
+/**
+ * One product card of the carousel.
+ *
+ * @param WC_Product $product Product.
+ * @param bool       $clone   Second copy used for the seamless loop (hidden from assistive technologies).
+ */
+function premium_shop_showcase_card( $product, $clone = false ) {
+	$link    = $product->get_permalink();
+	$tab     = $clone ? ' tabindex="-1"' : '';
+	$can_add = $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually();
+	?>
+	<article class="ps-mcard"<?php echo $clone ? ' aria-hidden="true"' : ''; ?>>
+		<a class="ps-mcard__media" href="<?php echo esc_url( $link ); ?>"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<?php
+			echo wp_kses_post(
+				$product->get_image(
+					'woocommerce_thumbnail',
+					array(
+						'loading' => 'lazy',
+						'class'   => 'ps-mcard__img',
+					)
+				)
+			);
+			?>
+			<?php if ( $product->is_on_sale() ) : ?>
+				<span class="ps-mcard__badge"><?php esc_html_e( 'Sale', 'premium-shop' ); ?></span>
+			<?php endif; ?>
+		</a>
+		<div class="ps-mcard__body">
+			<a class="ps-mcard__name" href="<?php echo esc_url( $link ); ?>"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $product->get_name() ); ?></a>
+			<span class="ps-mcard__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
+			<?php if ( $can_add ) : ?>
+				<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo (int) $product->get_id(); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" class="ps-btn ps-btn--accent ps-mcard__btn button add_to_cart_button ajax_add_to_cart" rel="nofollow"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php premium_shop_icon( 'bag', array( 'size' => 16 ) ); ?><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
+			<?php else : ?>
+				<a href="<?php echo esc_url( $link ); ?>" class="ps-btn ps-btn--ghost ps-mcard__btn"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><span><?php esc_html_e( 'View product', 'premium-shop' ); ?></span></a>
+			<?php endif; ?>
+		</div>
+	</article>
+	<?php
+}

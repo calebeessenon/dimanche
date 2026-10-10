@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 16:39+0000\n"
-"PO-Revision-Date: 2026-10-10 16:39+0000\n"
+"POT-Creation-Date: 2026-10-10 16:59+0000\n"
+"PO-Revision-Date: 2026-10-10 16:59+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: es_ES\n"
@@ -351,167 +351,167 @@ msgstr "Otro"
 msgid "Thank you! Your message has been sent. We will get back to you as soon as possible."
 msgstr "¡Gracias! Su mensaje se ha enviado. Le responderemos lo antes posible."
 
-#: inc/content-sections.php:114 inc/customizer/config.php:365
+#: inc/content-sections.php:113 inc/customizer/config.php:365
 msgid "Delivery time"
 msgstr "Plazo de entrega"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:118
+#: inc/content-sections.php:117
 msgid "Free shipping"
 msgstr "Envío gratuito"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:118
+#: inc/content-sections.php:117
 msgid "From %s order value"
 msgstr "A partir de %s de compra"
 
-#: inc/content-sections.php:121 inc/page-hero.php:213 inc/admin/onboarding.php:367
+#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:367
 msgid "Order tracking"
 msgstr "Seguimiento del pedido"
 
-#: inc/content-sections.php:121
+#: inc/content-sections.php:120
 msgid "Status, delivery date and tracking number online."
 msgstr "Estado, fecha de entrega y número de seguimiento en línea."
 
 #. translators:%s: amount.
-#: inc/content-sections.php:137 inc/firewood/product-data.php:921
+#: inc/content-sections.php:136 inc/firewood/product-data.php:921
 msgid "from %s"
 msgstr "desde %s"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:139 inc/firewood/delivery.php:44 inc/firewood/delivery.php:49
+#: inc/content-sections.php:138 inc/firewood/delivery.php:44 inc/firewood/delivery.php:49
 msgid "free"
 msgstr "gratis"
 
-#: inc/content-sections.php:151
+#: inc/content-sections.php:150
 msgid "Shipping methods"
 msgstr "Métodos de envío"
 
-#: inc/content-sections.php:200
+#: inc/content-sections.php:199
 msgid "Ready for cosy warmth?"
 msgstr "¿Listo para un calor acogedor?"
 
-#: inc/content-sections.php:200
+#: inc/content-sections.php:199
 msgid "Ready to discover our products?"
 msgstr "¿Listo para descubrir nuestros productos?"
 
-#: inc/content-sections.php:201
+#: inc/content-sections.php:200
 msgid "Order online in a few clicks, or ask us for advice."
 msgstr "Pida en línea en pocos clics o pídanos consejo."
 
-#: inc/content-sections.php:203 inc/page-hero.php:314
+#: inc/content-sections.php:202 inc/page-hero.php:320
 msgid "Discover the shop"
 msgstr "Descubrir la tienda"
 
-#: inc/content-sections.php:205
+#: inc/content-sections.php:204
 msgid "Contact us"
 msgstr "Contáctenos"
 
-#: inc/content-sections.php:232 inc/customizer/config.php:582
+#: inc/content-sections.php:231 inc/customizer/config.php:582
 msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
 msgstr "Productos cuidadosamente seleccionados, asesoramiento honesto y entrega rápida. Estamos a tu lado antes y después de tu compra."
 
-#: inc/content-sections.php:234
+#: inc/content-sections.php:233
 msgid "Our story"
 msgstr "Nuestra historia"
 
-#: inc/content-sections.php:235
+#: inc/content-sections.php:234
 msgid "Warmth, simply delivered: we supply firewood, wood briquettes and pellets of reliable quality, carefully dried and delivered to your door."
 msgstr "El calor, simplemente entregado: suministramos leña, briquetas y pellets de calidad fiable, cuidadosamente secados y entregados en su puerta."
 
-#: inc/content-sections.php:235
+#: inc/content-sections.php:234
 msgid "We select every product with care and deliver it quickly to your door."
 msgstr "Seleccionamos cada producto con cuidado y lo entregamos rápido en su puerta."
 
-#: inc/content-sections.php:236
+#: inc/content-sections.php:235
 msgid "We believe in honest advice, transparent prices and a service that does not stop after the purchase. Write to us or call us: a real person answers."
 msgstr "Creemos en el asesoramiento honesto, los precios transparentes y un servicio que no termina tras la compra. Escríbanos o llámenos: le responde una persona."
 
-#: inc/content-sections.php:238
+#: inc/content-sections.php:237
 msgid "Why shop with us?"
 msgstr "¿Por qué comprar con nosotros?"
 
-#: inc/content-sections.php:260
+#: inc/content-sections.php:259
 msgid "From your order to delivery at your door: here is everything you need to know about shipping and payment."
 msgstr "Desde su pedido hasta la entrega en su puerta: aquí tiene todo lo que necesita saber sobre envío y pago."
 
-#: inc/content-sections.php:261
+#: inc/content-sections.php:260
 msgid "How it works"
 msgstr "Cómo funciona"
 
-#: inc/content-sections.php:263 inc/woocommerce/order-tracking.php:305 inc/woocommerce/order-tracking.php:309 inc/woocommerce/single-product.php:283
+#: inc/content-sections.php:262 inc/woocommerce/order-tracking.php:305 inc/woocommerce/order-tracking.php:309 inc/woocommerce/single-product.php:283
 msgid "Delivery"
 msgstr "Entrega"
 
-#: inc/content-sections.php:265 inc/woocommerce/single-product.php:308
+#: inc/content-sections.php:264 inc/woocommerce/single-product.php:308
 msgid "Payment"
 msgstr "Pago"
 
-#: inc/content-sections.php:318
+#: inc/content-sections.php:317
 msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
 msgstr "Cuenta aquí tu historia: quién eres, qué te mueve y por qué tus clientes pueden confiar en ti."
 
-#: inc/content-sections.php:319
+#: inc/content-sections.php:318
 msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
 msgstr "Describe aquí tus países de envío, plazos de entrega, gastos de envío y métodos de pago aceptados."
 
-#: inc/content-sections.php:80
+#: inc/content-sections.php:79
 msgid "Dry, ready to burn"
 msgstr "Seca y lista para arder"
 
-#: inc/content-sections.php:80
+#: inc/content-sections.php:79
 msgid "Kiln-dried wood with low residual moisture: more heat, less smoke."
 msgstr "Leña secada en horno con baja humedad residual: más calor, menos humo."
 
-#: inc/content-sections.php:80
+#: inc/content-sections.php:79
 msgid "Carefully selected"
 msgstr "Cuidadosamente seleccionados"
 
-#: inc/content-sections.php:80
+#: inc/content-sections.php:79
 msgid "Products we know and recommend."
 msgstr "Productos que conocemos y recomendamos."
 
-#: inc/content-sections.php:81 inc/firewood/presets.php:92
+#: inc/content-sections.php:80 inc/firewood/presets.php:92
 msgid "Delivered to your door"
 msgstr "Entregado en tu puerta"
 
-#: inc/content-sections.php:82
+#: inc/content-sections.php:81
 msgid "Fair prices"
 msgstr "Precios justos"
 
-#: inc/content-sections.php:82
+#: inc/content-sections.php:81
 msgid "Clear prices including VAT, no hidden costs."
 msgstr "Precios claros con IVA incluido, sin costes ocultos."
 
-#: inc/content-sections.php:83 inc/page-hero.php:255 inc/firewood/presets.php:96
+#: inc/content-sections.php:82 inc/page-hero.php:255 inc/firewood/presets.php:96
 msgid "Personal advice"
 msgstr "Asesoramiento personal"
 
-#: inc/content-sections.php:83
+#: inc/content-sections.php:82
 msgid "Not sure what to choose? We help you find the right product."
 msgstr "¿No sabe qué elegir? Le ayudamos a encontrar el producto adecuado."
 
-#: inc/content-sections.php:96
+#: inc/content-sections.php:95
 msgid "You order"
 msgstr "Usted pide"
 
-#: inc/content-sections.php:96
+#: inc/content-sections.php:95
 msgid "Online, in a few clicks. You receive a confirmation by e-mail."
 msgstr "En línea, en pocos clics. Recibirá una confirmación por correo."
 
-#: inc/content-sections.php:97
+#: inc/content-sections.php:96
 msgid "We prepare"
 msgstr "Preparamos"
 
-#: inc/content-sections.php:97
+#: inc/content-sections.php:96
 msgid "Your order is prepared and the delivery date is planned with you."
 msgstr "Su pedido se prepara y la fecha de entrega se acuerda con usted."
 
-#: inc/content-sections.php:98
+#: inc/content-sections.php:97
 msgid "We deliver"
 msgstr "Entregamos"
 
-#: inc/content-sections.php:98
+#: inc/content-sections.php:97
 msgid "Delivery to your door. Follow it at any time on the order tracking page."
 msgstr "Entrega hasta su puerta. Sígala en todo momento en la página de seguimiento."
 
@@ -2241,23 +2241,39 @@ msgstr "Los productos que le encantan, guardados para después."
 msgid "Dry wood, ready to burn"
 msgstr "Leña seca, lista para arder"
 
-#: inc/page-hero.php:377
+#: inc/page-hero.php:374
 msgid "Your payment could not be completed"
 msgstr "No se ha podido completar su pago"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:380 inc/woocommerce/cart-checkout.php:194
+#: inc/page-hero.php:377 inc/woocommerce/cart-checkout.php:194
 msgid "Thank you, %s!"
 msgstr "¡Gracias, %s!"
 
-#: inc/page-hero.php:382
+#: inc/page-hero.php:379
 msgid "Thank you for your order!"
 msgstr "¡Gracias por su pedido!"
 
 #. translators:1: order number, 2: e-mail address.
-#: inc/page-hero.php:390
+#: inc/page-hero.php:387
 msgid "Your order #%1$s has been received. A confirmation is on its way to %2$s."
 msgstr "Hemos recibido su pedido n.º %1$s. Le enviamos una confirmación a %2$s."
+
+#: inc/page-hero.php:554 inc/page-hero.php:573
+msgid "Discover our products"
+msgstr "Descubra nuestros productos"
+
+#: inc/page-hero.php:575
+msgid "View all products"
+msgstr "Ver todos los productos"
+
+#: inc/page-hero.php:623 inc/woocommerce/product-card.php:86
+msgid "Sale"
+msgstr "Oferta"
+
+#: inc/page-hero.php:632
+msgid "View product"
+msgstr "Ver producto"
 
 #: inc/security.php:67
 msgid "The login details are incorrect."
@@ -2690,10 +2706,6 @@ msgstr "Ver opciones de «%s»"
 #: inc/woocommerce/product-card.php:83
 msgid "Sold out"
 msgstr "Agotado"
-
-#: inc/woocommerce/product-card.php:86
-msgid "Sale"
-msgstr "Oferta"
 
 #: inc/woocommerce/product-card.php:90
 msgid "New"
@@ -3248,7 +3260,7 @@ msgid_plural "%d products"
 msgstr[0] "%d producto"
 msgstr[1] "%d productos"
 
-#: template-parts/homepage/delivery.php:18 inc/content-sections.php:151
+#: template-parts/homepage/delivery.php:18 inc/content-sections.php:150
 msgid "Delivery area"
 msgstr "Zona de entrega"
 

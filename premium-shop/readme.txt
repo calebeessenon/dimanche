@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.5.1
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,19 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.6.0 =
+* Instant add to cart: the button, the flying photo, the cart counter and the
+  message react on click while the server confirms in the background (undone
+  with a message if it fails). Simple products on the product page now use one
+  quick request instead of a full page load.
+* Page headers redesigned: text first on a warm fireside background (generated,
+  lightweight), glass chips; a page's featured image replaces the background.
+  No more stacked photos before the content.
+* Bottom of pages: a scrolling band of reassurance messages and a carousel of
+  products (photo, price, add to cart) moving slowly, pausing on hover.
+* Photos in content sections are shown in a horizontal row with a soft float.
+* Richer buttons: gradient depth, coloured shadow, light sweep on hover.
 
 = 1.5.1 =
 * Fix: in French, English and Spanish (built-in language switcher), the quick view,

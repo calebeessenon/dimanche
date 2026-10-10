@@ -28,13 +28,12 @@ function premium_shop_photo_collage_shortcode() {
 	}
 	ob_start();
 	?>
-	<div class="ps-collage ps-phero__photos ps-phero__photos--<?php echo count( $photos ); ?>" data-reveal>
+	<div class="ps-photo-row" data-reveal>
 		<?php foreach ( $photos as $i => $photo ) : ?>
-			<figure class="ps-phero__photo ps-phero__photo--<?php echo (int) $i + 1; ?>">
+			<figure class="ps-photo-row__item" style="--i:<?php echo (int) $i; ?>">
 				<img src="<?php echo esc_url( $photo['src'] ); ?>" alt="<?php echo esc_attr( $photo['alt'] ); ?>" loading="lazy" decoding="async">
 			</figure>
 		<?php endforeach; ?>
-		<span class="ps-phero__ring" aria-hidden="true"></span>
 	</div>
 	<?php
 	return (string) ob_get_clean();

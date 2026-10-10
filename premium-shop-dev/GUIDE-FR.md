@@ -378,3 +378,15 @@ de la barre latérale de la boutique.
   « Traductions » (titre + texte par langue).
 - À faire vérifier par un juriste avant publication définitive (notamment le
   for juridique et les prestataires réellement utilisés).
+
+## 17. Version 1.6.0 — ajout au panier instantané et nouveau design des pages
+
+- **Ajout au panier instantané** : la réaction (bouton ✓, photo qui vole,
+  compteur, message) est immédiate ; le serveur confirme en arrière-plan.
+- **En-têtes de page** : le texte en haut, sur un fond « coin du feu »
+  (image générée, légère). Pour une page, l'**image mise en avant** remplace
+  ce fond.
+- **Bas de page** : bandeau défilant d'informations + carrousel de produits
+  (photo, prix, bouton) qui défile doucement et s'arrête au survol.
+- Désactivable avec l'option « Illustrated page headers » (Personnaliser →
+  Général).
