@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '1.3.2' );
+define( 'PREMIUM_SHOP_VERSION', '1.4.0' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 
@@ -34,6 +34,8 @@ $premium_shop_includes = array(
 	'inc/firewood/faq.php',
 	'inc/firewood/calculator.php',
 	'inc/contact.php',
+	'inc/page-hero.php',
+	'inc/content-sections.php',
 	'inc/upgrade.php',
 );
 

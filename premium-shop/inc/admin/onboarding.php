@@ -284,7 +284,7 @@ function premium_shop_setup_pages() {
 	$pages = array(
 		'ueber-uns'           => array(
 			'title'   => $t( 'About us' ),
-			'content' => '<!-- wp:paragraph {"fontSize":"large"} --><p class="has-large-font-size">' . esc_html( $t( 'Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase.' ) ) . '</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>' . esc_html( $t( 'Tell your story here: who you are, what drives you and why your customers can trust you.' ) ) . '</p><!-- /wp:paragraph -->',
+			'content' => premium_shop_about_page_content( $t ),
 			'status'  => 'publish',
 		),
 		'kontakt'             => array(
@@ -302,7 +302,7 @@ function premium_shop_setup_pages() {
 		'sendungsverfolgung'  => premium_shop_is_wc() ? premium_shop_tracking_page_data( $t ) : null,
 		'versand-und-zahlung' => array(
 			'title'   => $t( 'Shipping & payment' ),
-			'content' => '<!-- wp:paragraph --><p>' . esc_html( $t( 'Describe your shipping countries, delivery times, shipping costs and accepted payment methods here.' ) ) . '</p><!-- /wp:paragraph -->',
+			'content' => premium_shop_shipping_page_content( $t ),
 			'status'  => 'publish',
 		),
 		'impressum'           => array(

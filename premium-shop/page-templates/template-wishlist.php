@@ -17,12 +17,16 @@ while ( have_posts() ) :
 	the_post();
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'ps-page ps-wishlist-page' ); ?>>
-		<header class="ps-page-header">
-			<div class="ps-container">
-				<?php premium_shop_breadcrumbs(); ?>
-				<h1 class="ps-page-header__title"><?php the_title(); ?></h1>
-			</div>
-		</header>
+		<?php if ( premium_shop_page_hero_enabled() ) : ?>
+			<?php premium_shop_page_hero(); ?>
+		<?php else : ?>
+			<header class="ps-page-header">
+				<div class="ps-container">
+					<?php premium_shop_breadcrumbs(); ?>
+					<h1 class="ps-page-header__title"><?php the_title(); ?></h1>
+				</div>
+			</header>
+		<?php endif; ?>
 		<div class="ps-container">
 			<?php if ( trim( get_the_content() ) ) : ?>
 				<div class="ps-entry-content entry-content"><?php the_content(); ?></div>

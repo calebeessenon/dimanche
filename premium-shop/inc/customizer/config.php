@@ -150,6 +150,7 @@ function premium_shop_customizer_config() {
 			'buttons_uppercase' => array( 'type' => 'checkbox', 'default' => false, 'label' => __( 'Uppercase buttons', 'premium-shop' ) ),
 			'card_radius'       => array( 'type' => 'number', 'default' => 14, 'min' => 0, 'max' => 32, 'label' => __( 'Card corner radius (px)', 'premium-shop' ), 'transport' => 'postMessage' ),
 			'animations'        => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Scroll-reveal animations', 'premium-shop' ), 'description' => __( 'Automatically disabled for visitors who prefer reduced motion.', 'premium-shop' ) ),
+			'page_hero'         => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Illustrated page headers', 'premium-shop' ), 'description' => __( 'Pages, cart, checkout, account and order tracking get a lively header with photos of your products.', 'premium-shop' ) ),
 		),
 	);
 
@@ -374,7 +375,7 @@ function premium_shop_customizer_config() {
 		'title'  => __( 'Cart & shipping', 'premium-shop' ),
 		'fields' => array(
 			'free_shipping_threshold' => array( 'type' => 'number', 'default' => 50, 'min' => 0, 'max' => 100000, 'label' => __( 'Free shipping from (amount, 0 = automatic)', 'premium-shop' ), 'description' => __( 'Used for the progress bar in the cart and the default announcement. With 0, the minimum amount of the "Free shipping" method from WooCommerce → Settings → Shipping is used (no bar when there is none).', 'premium-shop' ) ),
-			'cart_drawer'             => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Open the side cart after adding a product', 'premium-shop' ) ),
+			'cart_drawer'             => array( 'type' => 'checkbox', 'default' => false, 'label' => __( 'Open the side cart after adding a product', 'premium-shop' ), 'description' => __( 'Unchecked: the visitor stays on the page, the product flies to the cart icon and a message confirms it.', 'premium-shop' ) ),
 			'cart_recommendations'    => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show "You may also like" in the cart', 'premium-shop' ) ),
 		),
 	);

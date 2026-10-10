@@ -343,3 +343,24 @@ de la barre latérale de la boutique.
   l'encodage Windows-1252, et les règle tout seul dans les options avancées.
 - Les prix écrits « 189,00 », « 1 250,50 » ou « 1'250.50 » sont lus
   correctement (sans le thème, WooCommerce lit « 189,00 » comme 18 900).
+
+## 15. Version 1.4.0 — un site vivant
+
+- **Ajout au panier sans quitter la page** (boutique, fiche produit, aperçu
+  rapide) : la photo du produit s'envole vers l'icône du panier, le bouton
+  affiche « Hinzugefügt ✓ » et un message propose « Zum Warenkorb ».
+  Pour rouvrir le panier latéral automatiquement : Personnaliser → Premium
+  Shop → Boutique → « Open the side cart after adding a product ».
+- **En-têtes de pages illustrés** avec les photos de VOS produits (pages,
+  panier, caisse, compte, contact, liste d'envies), braises animées,
+  pastilles de réassurance. Désactivable : Personnaliser → Général.
+- **Suivi de commande** : camion de livraison animé. **Page Merci** :
+  coche animée + confettis.
+- **Accueil** : sans image choisie, collage flottant de vos produits.
+- **Catégories sans image** : photo d'un de leurs produits automatiquement.
+- **Pages « Über uns » et « Versand & Zahlung »** : si elles contenaient
+  encore le texte d'exemple, elles sont remplies automatiquement
+  (histoire, atouts, étapes de livraison, zones et modes d'expédition,
+  moyens de paiement actifs). Codes courts réutilisables :
+  `[ps_features]`, `[ps_delivery_steps]`, `[ps_shipping_info]`,
+  `[ps_payment_methods]`, `[ps_photo_collage]`, `[ps_cta]`.

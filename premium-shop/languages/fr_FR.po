@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 13:41+0000\n"
-"PO-Revision-Date: 2026-10-10 13:41+0000\n"
+"POT-Creation-Date: 2026-10-10 14:16+0000\n"
+"PO-Revision-Date: 2026-10-10 14:16+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -52,7 +52,7 @@ msgstr "Coups de cœur clients"
 msgid "Just arrived"
 msgstr "Tout juste arrivés"
 
-#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:563
+#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:564
 msgid "Limited time"
 msgstr "Durée limitée"
 
@@ -180,25 +180,9 @@ msgstr "Livraison"
 msgid "Shop setup"
 msgstr "Configuration de la boutique"
 
-#: inc/admin/onboarding.php:287 inc/customizer/config.php:581
-msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
-msgstr "Des produits soigneusement sélectionnés, des conseils honnêtes et une livraison rapide. Nous sommes là pour vous avant et après votre achat."
-
-#: inc/admin/onboarding.php:287
-msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
-msgstr "Racontez ici votre histoire : qui vous êtes, ce qui vous anime et pourquoi vos clients peuvent vous faire confiance."
-
-#: inc/admin/onboarding.php:305
-msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
-msgstr "Décrivez ici vos pays de livraison, délais, frais de port et moyens de paiement acceptés."
-
 #: inc/admin/onboarding.php:310 inc/admin/onboarding.php:315 inc/admin/onboarding.php:320
 msgid "Please complete this page with your legally required company information before publishing."
 msgstr "Veuillez compléter cette page avec les informations légales obligatoires de votre entreprise avant de la publier."
-
-#: inc/admin/onboarding.php:367
-msgid "Order tracking"
-msgstr "Suivi de commande"
 
 #: inc/admin/onboarding.php:368
 msgid "Where is my order? Enter your order number and e-mail address to see its status, the planned delivery date and the tracking number."
@@ -286,7 +270,7 @@ msgstr "Vous avez envoyé plusieurs messages en peu de temps. Veuillez réessaye
 msgid "The form has expired. Please reload the page and try again."
 msgstr "Le formulaire a expiré. Veuillez recharger la page et réessayer."
 
-#: inc/contact.php:194 inc/enqueue.php:94 inc/newsletter.php:119
+#: inc/contact.php:194 inc/enqueue.php:97 inc/newsletter.php:119
 msgid "Something went wrong. Please try again."
 msgstr "Une erreur est survenue. Veuillez réessayer."
 
@@ -327,11 +311,11 @@ msgstr "L’e-mail n’a pas pu être envoyé — répondez depuis ici."
 msgid "Reply by e-mail"
 msgstr "Répondre par e-mail"
 
-#: inc/contact.php:431 inc/customizer/config.php:388
+#: inc/contact.php:431 inc/customizer/config.php:389
 msgid "Address"
 msgstr "Adresse"
 
-#: inc/contact.php:437 inc/newsletter.php:272 inc/customizer/config.php:390
+#: inc/contact.php:437 inc/newsletter.php:272 inc/customizer/config.php:391
 msgid "Email"
 msgstr "E-mail"
 
@@ -339,7 +323,7 @@ msgstr "E-mail"
 msgid "Write to us on WhatsApp"
 msgstr "Écrivez-nous sur WhatsApp"
 
-#: inc/contact.php:443 inc/customizer/config.php:391
+#: inc/contact.php:443 inc/customizer/config.php:392
 msgid "Opening hours"
 msgstr "Horaires d’ouverture"
 
@@ -366,6 +350,170 @@ msgstr "Autre"
 #: inc/contact.php:91 inc/contact.php:216
 msgid "Thank you! Your message has been sent. We will get back to you as soon as possible."
 msgstr "Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais."
+
+#: inc/content-sections.php:114 inc/customizer/config.php:365
+msgid "Delivery time"
+msgstr "Délai de livraison"
+
+#. translators:%s: amount.
+#: inc/content-sections.php:118
+msgid "Free shipping"
+msgstr "Livraison gratuite"
+
+#. translators:%s: amount.
+#: inc/content-sections.php:118
+msgid "From %s order value"
+msgstr "À partir de %s d’achat"
+
+#: inc/content-sections.php:121 inc/page-hero.php:213 inc/admin/onboarding.php:367
+msgid "Order tracking"
+msgstr "Suivi de commande"
+
+#: inc/content-sections.php:121
+msgid "Status, delivery date and tracking number online."
+msgstr "Statut, date de livraison et numéro de suivi en ligne."
+
+#. translators:%s: amount.
+#: inc/content-sections.php:137 inc/firewood/product-data.php:921
+msgid "from %s"
+msgstr "à partir de %s"
+
+#. translators:%s: amount.
+#: inc/content-sections.php:139 inc/firewood/delivery.php:44 inc/firewood/delivery.php:49
+msgid "free"
+msgstr "gratuit"
+
+#: inc/content-sections.php:151
+msgid "Shipping methods"
+msgstr "Modes de livraison"
+
+#: inc/content-sections.php:200
+msgid "Ready for cosy warmth?"
+msgstr "Prêt pour une douce chaleur ?"
+
+#: inc/content-sections.php:200
+msgid "Ready to discover our products?"
+msgstr "Prêt à découvrir nos produits ?"
+
+#: inc/content-sections.php:201
+msgid "Order online in a few clicks, or ask us for advice."
+msgstr "Commandez en ligne en quelques clics, ou demandez-nous conseil."
+
+#: inc/content-sections.php:203 inc/page-hero.php:314
+msgid "Discover the shop"
+msgstr "Découvrir la boutique"
+
+#: inc/content-sections.php:205
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: inc/content-sections.php:232 inc/customizer/config.php:582
+msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
+msgstr "Des produits soigneusement sélectionnés, des conseils honnêtes et une livraison rapide. Nous sommes là pour vous avant et après votre achat."
+
+#: inc/content-sections.php:234
+msgid "Our story"
+msgstr "Notre histoire"
+
+#: inc/content-sections.php:235
+msgid "Warmth, simply delivered: we supply firewood, wood briquettes and pellets of reliable quality, carefully dried and delivered to your door."
+msgstr "La chaleur, tout simplement livrée : nous fournissons bois de chauffage, briquettes et pellets d’une qualité fiable, soigneusement séchés et livrés à votre porte."
+
+#: inc/content-sections.php:235
+msgid "We select every product with care and deliver it quickly to your door."
+msgstr "Nous sélectionnons chaque produit avec soin et le livrons rapidement à votre porte."
+
+#: inc/content-sections.php:236
+msgid "We believe in honest advice, transparent prices and a service that does not stop after the purchase. Write to us or call us: a real person answers."
+msgstr "Nous croyons au conseil honnête, aux prix transparents et à un service qui ne s’arrête pas après l’achat. Écrivez-nous ou appelez-nous : une vraie personne vous répond."
+
+#: inc/content-sections.php:238
+msgid "Why shop with us?"
+msgstr "Pourquoi acheter chez nous ?"
+
+#: inc/content-sections.php:260
+msgid "From your order to delivery at your door: here is everything you need to know about shipping and payment."
+msgstr "De votre commande à la livraison à votre porte : voici tout ce qu’il faut savoir sur la livraison et le paiement."
+
+#: inc/content-sections.php:261
+msgid "How it works"
+msgstr "Comment ça marche"
+
+#: inc/content-sections.php:263 inc/woocommerce/order-tracking.php:305 inc/woocommerce/order-tracking.php:309 inc/woocommerce/single-product.php:283
+msgid "Delivery"
+msgstr "Livraison"
+
+#: inc/content-sections.php:265 inc/woocommerce/single-product.php:308
+msgid "Payment"
+msgstr "Paiement"
+
+#: inc/content-sections.php:318
+msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
+msgstr "Racontez ici votre histoire : qui vous êtes, ce qui vous anime et pourquoi vos clients peuvent vous faire confiance."
+
+#: inc/content-sections.php:319
+msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
+msgstr "Décrivez ici vos pays de livraison, délais, frais de port et moyens de paiement acceptés."
+
+#: inc/content-sections.php:80
+msgid "Dry, ready to burn"
+msgstr "Sec et prêt à brûler"
+
+#: inc/content-sections.php:80
+msgid "Kiln-dried wood with low residual moisture: more heat, less smoke."
+msgstr "Bois séché en séchoir, faible humidité résiduelle : plus de chaleur, moins de fumée."
+
+#: inc/content-sections.php:80
+msgid "Carefully selected"
+msgstr "Soigneusement sélectionnés"
+
+#: inc/content-sections.php:80
+msgid "Products we know and recommend."
+msgstr "Des produits que nous connaissons et recommandons."
+
+#: inc/content-sections.php:81 inc/firewood/presets.php:92
+msgid "Delivered to your door"
+msgstr "Livré devant chez vous"
+
+#: inc/content-sections.php:82
+msgid "Fair prices"
+msgstr "Des prix justes"
+
+#: inc/content-sections.php:82
+msgid "Clear prices including VAT, no hidden costs."
+msgstr "Des prix clairs TVA incluse, sans frais cachés."
+
+#: inc/content-sections.php:83 inc/page-hero.php:255 inc/firewood/presets.php:96
+msgid "Personal advice"
+msgstr "Conseils personnalisés"
+
+#: inc/content-sections.php:83
+msgid "Not sure what to choose? We help you find the right product."
+msgstr "Vous hésitez ? Nous vous aidons à trouver le bon produit."
+
+#: inc/content-sections.php:96
+msgid "You order"
+msgstr "Vous commandez"
+
+#: inc/content-sections.php:96
+msgid "Online, in a few clicks. You receive a confirmation by e-mail."
+msgstr "En ligne, en quelques clics. Vous recevez une confirmation par e-mail."
+
+#: inc/content-sections.php:97
+msgid "We prepare"
+msgstr "Nous préparons"
+
+#: inc/content-sections.php:97
+msgid "Your order is prepared and the delivery date is planned with you."
+msgstr "Votre commande est préparée et la date de livraison convenue avec vous."
+
+#: inc/content-sections.php:98
+msgid "We deliver"
+msgstr "Nous livrons"
+
+#: inc/content-sections.php:98
+msgid "Delivery to your door. Follow it at any time on the order tracking page."
+msgstr "Livraison jusqu’à votre porte. Suivez-la à tout moment sur la page de suivi de commande."
 
 #: inc/customizer/class-premium-shop-sortable-control.php:49
 msgid "Move up"
@@ -451,226 +599,234 @@ msgstr "Animations d’apparition au défilement"
 msgid "Automatically disabled for visitors who prefer reduced motion."
 msgstr "Désactivées automatiquement pour les visiteurs qui préfèrent réduire les animations."
 
-#: inc/customizer/config.php:158
+#: inc/customizer/config.php:153
+msgid "Illustrated page headers"
+msgstr "En-têtes de page illustrés"
+
+#: inc/customizer/config.php:153
+msgid "Pages, cart, checkout, account and order tracking get a lively header with photos of your products."
+msgstr "Les pages, le panier, la caisse, le compte et le suivi de commande reçoivent un en-tête vivant avec des photos de vos produits."
+
+#: inc/customizer/config.php:159
 msgid "Header & announcement bar"
 msgstr "En-tête & bandeau d’annonce"
 
-#: inc/customizer/config.php:160
+#: inc/customizer/config.php:161
 msgid "Logo height (px)"
 msgstr "Hauteur du logo (px)"
 
-#: inc/customizer/config.php:164
+#: inc/customizer/config.php:165
 msgid "Header layout"
 msgstr "Disposition de l’en-tête"
 
-#: inc/customizer/config.php:166
+#: inc/customizer/config.php:167
 msgid "Logo left, menu centered"
 msgstr "Logo à gauche, menu centré"
 
-#: inc/customizer/config.php:167
+#: inc/customizer/config.php:168
 msgid "Logo centered, menu below"
 msgstr "Logo centré, menu en dessous"
 
-#: inc/customizer/config.php:170
+#: inc/customizer/config.php:171
 msgid "Sticky header"
 msgstr "En-tête fixe"
 
-#: inc/customizer/config.php:171
+#: inc/customizer/config.php:172
 msgid "Show search"
 msgstr "Afficher la recherche"
 
-#: inc/customizer/config.php:172
+#: inc/customizer/config.php:173
 msgid "Show account icon"
 msgstr "Afficher l’icône du compte"
 
-#: inc/customizer/config.php:173
+#: inc/customizer/config.php:174
 msgid "Show wishlist icon"
 msgstr "Afficher l’icône de la liste d’envies"
 
-#: inc/customizer/config.php:174
+#: inc/customizer/config.php:175
 msgid "Show language switcher"
 msgstr "Afficher le sélecteur de langue"
 
-#: inc/customizer/config.php:175
+#: inc/customizer/config.php:176
 msgid "Categories mega menu"
 msgstr "Méga-menu des catégories"
 
-#: inc/customizer/config.php:175
+#: inc/customizer/config.php:176
 msgid "Applies to menu items with the CSS class \"mega-categories\" (added automatically by the setup assistant)."
 msgstr "S’applique aux éléments de menu ayant la classe CSS « mega-categories » (ajoutée automatiquement par l’assistant)."
 
-#: inc/customizer/config.php:176
+#: inc/customizer/config.php:177
 msgid "Distraction-free checkout header"
 msgstr "En-tête épuré pendant la commande"
 
-#: inc/customizer/config.php:177
+#: inc/customizer/config.php:178
 msgid "Show announcement bar"
 msgstr "Afficher le bandeau d’annonce"
 
-#: inc/customizer/config.php:178
+#: inc/customizer/config.php:179
 msgid "Announcement messages (one per line, they rotate)"
 msgstr "Messages d’annonce (un par ligne, ils défilent)"
 
-#: inc/customizer/config.php:179
+#: inc/customizer/config.php:180
 msgid "Announcement link (optional)"
 msgstr "Lien du bandeau (facultatif)"
 
-#: inc/customizer/config.php:180
+#: inc/customizer/config.php:181
 msgid "Visitors can close the bar"
 msgstr "Les visiteurs peuvent fermer le bandeau"
 
-#: inc/customizer/config.php:186
+#: inc/customizer/config.php:187
 msgid "Homepage — sections & order"
 msgstr "Page d’accueil — sections & ordre"
 
-#: inc/customizer/config.php:191
+#: inc/customizer/config.php:192
 msgid "Sections"
 msgstr "Sections"
 
-#: inc/customizer/config.php:192
+#: inc/customizer/config.php:193
 msgid "Drag to reorder, untick to hide."
 msgstr "Glissez pour réordonner, décochez pour masquer."
 
-#: inc/customizer/config.php:194
+#: inc/customizer/config.php:195
 msgid "Products per section"
 msgstr "Produits par section"
 
-#: inc/customizer/config.php:195
+#: inc/customizer/config.php:196
 msgid "Categories shown"
 msgstr "Catégories affichées"
 
-#: inc/customizer/config.php:196
+#: inc/customizer/config.php:197
 msgid "Category IDs to show (optional)"
 msgstr "ID des catégories à afficher (facultatif)"
 
-#: inc/customizer/config.php:196
+#: inc/customizer/config.php:197
 msgid "Comma-separated IDs, in the desired order. Empty = main categories with products."
 msgstr "ID séparés par des virgules, dans l’ordre souhaité. Vide = catégories principales avec produits."
 
-#: inc/customizer/config.php:197
+#: inc/customizer/config.php:198
 msgid "Categories — title"
 msgstr "Catégories — titre"
 
-#: inc/customizer/config.php:198
+#: inc/customizer/config.php:199
 msgid "Popular products — title"
 msgstr "Produits populaires — titre"
 
-#: inc/customizer/config.php:199
+#: inc/customizer/config.php:200
 msgid "New arrivals — title"
 msgstr "Nouveautés — titre"
 
-#: inc/customizer/config.php:200
+#: inc/customizer/config.php:201
 msgid "Offers — title"
 msgstr "Promotions — titre"
 
-#: inc/customizer/config.php:201
+#: inc/customizer/config.php:202
 msgid "Bestsellers — title"
 msgstr "Meilleures ventes — titre"
 
-#: inc/customizer/config.php:202
+#: inc/customizer/config.php:203
 msgid "Testimonials — title"
 msgstr "Témoignages — titre"
 
-#: inc/customizer/config.php:203
+#: inc/customizer/config.php:204
 msgid "Brands — title"
 msgstr "Marques — titre"
 
-#: inc/customizer/config.php:209
+#: inc/customizer/config.php:210
 msgid "Homepage — hero"
 msgstr "Page d’accueil — hero"
 
-#: inc/customizer/config.php:214
+#: inc/customizer/config.php:215
 msgid "Layout"
 msgstr "Disposition"
 
-#: inc/customizer/config.php:216
+#: inc/customizer/config.php:217
 msgid "Editorial split (text + arched image)"
 msgstr "Éditorial partagé (texte + image en arche)"
 
-#: inc/customizer/config.php:217
+#: inc/customizer/config.php:218
 msgid "Full-width image"
 msgstr "Image pleine largeur"
 
-#: inc/customizer/config.php:220
+#: inc/customizer/config.php:221
 msgid "Hero image"
 msgstr "Image du hero"
 
-#: inc/customizer/config.php:220
+#: inc/customizer/config.php:221
 msgid "Recommended: 1400 × 1600 px (split) or 2400 × 1200 px (full width). Without image, a featured product image or an abstract artwork is used."
 msgstr "Recommandé : 1400 × 1600 px (partagé) ou 2400 × 1200 px (pleine largeur). Sans image, une image de produit mis en avant ou une illustration abstraite est utilisée."
 
-#: inc/customizer/config.php:221 inc/customizer/config.php:238
+#: inc/customizer/config.php:222 inc/customizer/config.php:239
 msgid "Small line above the title"
 msgstr "Petite ligne au-dessus du titre"
 
-#: inc/customizer/config.php:222 inc/customizer/config.php:239 inc/customizer/config.php:307
+#: inc/customizer/config.php:223 inc/customizer/config.php:240 inc/customizer/config.php:308
 msgid "Title"
 msgstr "Titre"
 
-#: inc/customizer/config.php:223
+#: inc/customizer/config.php:224
 msgid "Subtitle"
 msgstr "Sous-titre"
 
-#: inc/customizer/config.php:224
+#: inc/customizer/config.php:225
 msgid "Main button text"
 msgstr "Texte du bouton principal"
 
-#: inc/customizer/config.php:225
+#: inc/customizer/config.php:226
 msgid "Main button link (empty = shop)"
 msgstr "Lien du bouton principal (vide = boutique)"
 
-#: inc/customizer/config.php:226
+#: inc/customizer/config.php:227
 msgid "Second button text"
 msgstr "Texte du second bouton"
 
-#: inc/customizer/config.php:227
+#: inc/customizer/config.php:228
 msgid "Second button link (empty = offers)"
 msgstr "Lien du second bouton (vide = promotions)"
 
-#: inc/customizer/config.php:228
+#: inc/customizer/config.php:229
 msgid "Image overlay darkness (%) — full-width layout"
 msgstr "Assombrissement de l’image (%) — disposition pleine largeur"
-
-#: inc/customizer/config.php:229
-msgid "Show shipping & returns badges"
-msgstr "Afficher les badges livraison & retours"
 
 #: inc/customizer/config.php:23
 msgid "Hero"
 msgstr "Hero"
 
-#: inc/customizer/config.php:235
+#: inc/customizer/config.php:230
+msgid "Show shipping & returns badges"
+msgstr "Afficher les badges livraison & retours"
+
+#: inc/customizer/config.php:236
 msgid "Homepage — campaign banner"
 msgstr "Page d’accueil — bannière de campagne"
 
-#: inc/customizer/config.php:237
+#: inc/customizer/config.php:238
 msgid "Image"
 msgstr "Image"
 
-#: inc/customizer/config.php:241
+#: inc/customizer/config.php:242
 msgid "Button text"
 msgstr "Texte du bouton"
 
-#: inc/customizer/config.php:242
+#: inc/customizer/config.php:243
 msgid "Button link (empty = offers)"
 msgstr "Lien du bouton (vide = promotions)"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:251
+#: inc/customizer/config.php:252
 msgid "Benefit %d — icon"
 msgstr "Avantage %d — icône"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:253
+#: inc/customizer/config.php:254
 msgid "Benefit %d — title"
 msgstr "Avantage %d — titre"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:255
+#: inc/customizer/config.php:256
 msgid "Benefit %d — text"
 msgstr "Avantage %d — texte"
 
-#: inc/customizer/config.php:258
+#: inc/customizer/config.php:259
 msgid "Homepage — benefits"
 msgstr "Page d’accueil — avantages"
 
@@ -678,112 +834,112 @@ msgstr "Page d’accueil — avantages"
 msgid "Campaign banner"
 msgstr "Bannière de campagne"
 
-#: inc/customizer/config.php:267
+#: inc/customizer/config.php:268
 msgid "Source"
 msgstr "Source"
 
-#: inc/customizer/config.php:269
+#: inc/customizer/config.php:270
 msgid "Latest 4- and 5-star WooCommerce reviews"
 msgstr "Derniers avis WooCommerce 4 et 5 étoiles"
 
-#: inc/customizer/config.php:270
+#: inc/customizer/config.php:271
 msgid "Testimonials entered below"
 msgstr "Témoignages saisis ci-dessous"
 
-#: inc/customizer/config.php:271
+#: inc/customizer/config.php:272
 msgid "Testimonials below, completed by reviews"
 msgstr "Témoignages ci-dessous, complétés par les avis"
 
-#: inc/customizer/config.php:273
+#: inc/customizer/config.php:274
 msgid "Only genuine customer feedback should be published. The section is hidden when there is nothing to show."
 msgstr "Seuls de vrais avis clients doivent être publiés. La section est masquée lorsqu’il n’y a rien à afficher."
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:278
+#: inc/customizer/config.php:279
 msgid "Testimonial %d — quote"
 msgstr "Témoignage %d — citation"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:280
+#: inc/customizer/config.php:281
 msgid "Testimonial %d — name"
 msgstr "Témoignage %d — nom"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:282
+#: inc/customizer/config.php:283
 msgid "Testimonial %d — city or product"
 msgstr "Témoignage %d — ville ou produit"
 
-#: inc/customizer/config.php:285
+#: inc/customizer/config.php:286
 msgid "Homepage — testimonials"
 msgstr "Page d’accueil — témoignages"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:293
+#: inc/customizer/config.php:294
 msgid "Brand %d — logo"
 msgstr "Marque %d — logo"
 
 #. translators:%d: item number.
-#: inc/customizer/config.php:295
+#: inc/customizer/config.php:296
 msgid "Brand %d — link"
 msgstr "Marque %d — lien"
 
-#: inc/customizer/config.php:298
+#: inc/customizer/config.php:299
 msgid "Homepage — brands"
 msgstr "Page d’accueil — marques"
-
-#: inc/customizer/config.php:299
-msgid "Upload partner logos. Without logos, WooCommerce brands (Products → Brands) are listed automatically."
-msgstr "Téléversez les logos de vos partenaires. Sans logo, les marques WooCommerce (Produits → Marques) sont listées automatiquement."
 
 #: inc/customizer/config.php:30
 msgid "Benefits"
 msgstr "Avantages"
 
-#: inc/customizer/config.php:309
-msgid "Form shortcode (MailPoet, Brevo, Mailchimp…)"
-msgstr "Shortcode du formulaire (MailPoet, Brevo, Mailchimp…)"
-
-#: inc/customizer/config.php:309
-msgid "Optional. Without shortcode, the built-in double opt-in form is used (subscribers: Tools → Newsletter)."
-msgstr "Facultatif. Sans shortcode, le formulaire intégré à double opt-in est utilisé (abonnés : Outils → Newsletter)."
+#: inc/customizer/config.php:300
+msgid "Upload partner logos. Without logos, WooCommerce brands (Products → Brands) are listed automatically."
+msgstr "Téléversez les logos de vos partenaires. Sans logo, les marques WooCommerce (Produits → Marques) sont listées automatiquement."
 
 #: inc/customizer/config.php:31
 msgid "Testimonials"
 msgstr "Témoignages"
 
 #: inc/customizer/config.php:310
+msgid "Form shortcode (MailPoet, Brevo, Mailchimp…)"
+msgstr "Shortcode du formulaire (MailPoet, Brevo, Mailchimp…)"
+
+#: inc/customizer/config.php:310
+msgid "Optional. Without shortcode, the built-in double opt-in form is used (subscribers: Tools → Newsletter)."
+msgstr "Facultatif. Sans shortcode, le formulaire intégré à double opt-in est utilisé (abonnés : Outils → Newsletter)."
+
+#: inc/customizer/config.php:311
 msgid "Also show the form in the footer"
 msgstr "Afficher aussi le formulaire dans le pied de page"
 
-#: inc/customizer/config.php:316
+#: inc/customizer/config.php:317
 msgid "Shop & product cards"
 msgstr "Boutique & cartes produits"
 
-#: inc/customizer/config.php:321
+#: inc/customizer/config.php:322
 msgid "Products per row (desktop)"
 msgstr "Produits par ligne (ordinateur)"
 
-#: inc/customizer/config.php:327
+#: inc/customizer/config.php:328
 msgid "Products per page"
 msgstr "Produits par page"
 
-#: inc/customizer/config.php:328
+#: inc/customizer/config.php:329
 msgid "Show filters"
 msgstr "Afficher les filtres"
 
-#: inc/customizer/config.php:329
+#: inc/customizer/config.php:330
 msgid "Instant (AJAX) filtering"
 msgstr "Filtrage instantané (AJAX)"
 
-#: inc/customizer/config.php:333
+#: inc/customizer/config.php:334
 msgid "Default view"
 msgstr "Vue par défaut"
 
-#: inc/customizer/config.php:335
+#: inc/customizer/config.php:336
 msgid "Grid"
 msgstr "Grille"
 
-#: inc/customizer/config.php:336
+#: inc/customizer/config.php:337
 msgid "List"
 msgstr "Liste"
 
@@ -791,19 +947,19 @@ msgstr "Liste"
 msgid "Page content (editor)"
 msgstr "Contenu de la page (éditeur)"
 
-#: inc/customizer/config.php:342
+#: inc/customizer/config.php:343
 msgid "Add-to-cart button on cards"
 msgstr "Bouton « Ajouter au panier » sur les cartes"
 
-#: inc/customizer/config.php:344
+#: inc/customizer/config.php:345
 msgid "Always visible, under the price"
 msgstr "Toujours visible, sous le prix"
 
-#: inc/customizer/config.php:345
+#: inc/customizer/config.php:346
 msgid "On the image, when hovering"
 msgstr "Sur l’image, au survol de la souris"
 
-#: inc/customizer/config.php:348
+#: inc/customizer/config.php:349
 msgid "Show second image on hover"
 msgstr "Afficher une seconde image au survol"
 
@@ -811,227 +967,227 @@ msgstr "Afficher une seconde image au survol"
 msgid "Firewood calculator"
 msgstr "Calculateur de bois"
 
-#: inc/customizer/config.php:351
+#: inc/customizer/config.php:352
 msgid "Show category"
 msgstr "Afficher la catégorie"
 
-#: inc/customizer/config.php:352
+#: inc/customizer/config.php:353
 msgid "Show stock status"
 msgstr "Afficher l’état du stock"
 
-#: inc/customizer/config.php:353
+#: inc/customizer/config.php:354
 msgid "\"New\" badge duration (days, 0 = off)"
 msgstr "Durée du badge « Nouveau » (jours, 0 = désactivé)"
-
-#: inc/customizer/config.php:359
-msgid "Product page"
-msgstr "Page produit"
 
 #: inc/customizer/config.php:36
 msgid "Delivery check (postcode)"
 msgstr "Vérification de livraison (code postal)"
 
-#: inc/customizer/config.php:361
+#: inc/customizer/config.php:360
+msgid "Product page"
+msgstr "Page produit"
+
+#: inc/customizer/config.php:362
 msgid "\"Buy now\" button"
 msgstr "Bouton « Acheter maintenant »"
 
-#: inc/customizer/config.php:362
+#: inc/customizer/config.php:363
 msgid "Sticky add-to-cart bar on mobile"
 msgstr "Barre d’ajout au panier fixe sur mobile"
 
-#: inc/customizer/config.php:363
+#: inc/customizer/config.php:364
 msgid "Show delivery, returns, warranty & payment box"
 msgstr "Afficher l’encadré livraison, retours, garantie & paiement"
 
-#: inc/customizer/config.php:364
-msgid "Delivery time"
-msgstr "Délai de livraison"
-
-#: inc/customizer/config.php:365
+#: inc/customizer/config.php:366
 msgid "Return period (days)"
 msgstr "Délai de retour (jours)"
 
-#: inc/customizer/config.php:366
+#: inc/customizer/config.php:367
 msgid "Warranty"
 msgstr "Garantie"
 
-#: inc/customizer/config.php:368
+#: inc/customizer/config.php:369
 msgid "\"Shipping & returns\" tab content"
 msgstr "Contenu de l’onglet « Livraison & retours »"
 
-#: inc/customizer/config.php:368
+#: inc/customizer/config.php:369
 msgid "Basic HTML allowed. Empty = automatic text built from the values above."
 msgstr "HTML simple autorisé. Vide = texte automatique construit à partir des valeurs ci-dessus."
 
-#: inc/customizer/config.php:374
+#: inc/customizer/config.php:375
 msgid "Cart & shipping"
 msgstr "Panier & livraison"
 
-#: inc/customizer/config.php:376
+#: inc/customizer/config.php:377
 msgid "Free shipping from (amount, 0 = automatic)"
 msgstr "Livraison gratuite dès (montant, 0 = automatique)"
 
-#: inc/customizer/config.php:376
+#: inc/customizer/config.php:377
 msgid "Used for the progress bar in the cart and the default announcement. With 0, the minimum amount of the \"Free shipping\" method from WooCommerce → Settings → Shipping is used (no bar when there is none)."
 msgstr "Utilisé pour la barre de progression du panier et l’annonce par défaut. Avec 0, le montant minimum du mode « Livraison gratuite » de WooCommerce → Réglages → Expédition est utilisé (pas de barre s’il n’y en a pas)."
 
-#: inc/customizer/config.php:377
+#: inc/customizer/config.php:378
 msgid "Open the side cart after adding a product"
 msgstr "Ouvrir le panier latéral après un ajout"
 
 #: inc/customizer/config.php:378
+msgid "Unchecked: the visitor stays on the page, the product flies to the cart icon and a message confirms it."
+msgstr "Décoché : le visiteur reste sur la page, le produit s’envole vers l’icône du panier et un message le confirme."
+
+#: inc/customizer/config.php:379
 msgid "Show \"You may also like\" in the cart"
 msgstr "Afficher « Vous aimerez aussi » dans le panier"
 
-#: inc/customizer/config.php:384
+#: inc/customizer/config.php:385
 msgid "Company & contact"
 msgstr "Entreprise & contact"
 
-#: inc/customizer/config.php:386
+#: inc/customizer/config.php:387
 msgid "Company name"
 msgstr "Nom de l’entreprise"
 
-#: inc/customizer/config.php:387
+#: inc/customizer/config.php:388
 msgid "Short description (footer)"
 msgstr "Courte description (pied de page)"
 
-#: inc/customizer/config.php:392
+#: inc/customizer/config.php:393
 msgid "WhatsApp number (international format)"
 msgstr "Numéro WhatsApp (format international)"
 
-#: inc/customizer/config.php:412
+#: inc/customizer/config.php:413
 msgid "Footer"
 msgstr "Pied de page"
 
-#: inc/customizer/config.php:414
+#: inc/customizer/config.php:415
 msgid "Copyright text"
 msgstr "Texte du copyright"
 
-#: inc/customizer/config.php:414
+#: inc/customizer/config.php:415
 msgid "Use {year} and {company}. Empty = automatic."
 msgstr "Utilisez {year} et {company}. Vide = automatique."
 
-#: inc/customizer/config.php:415
+#: inc/customizer/config.php:416
 msgid "Payment methods shown"
 msgstr "Moyens de paiement affichés"
 
-#: inc/customizer/config.php:415
+#: inc/customizer/config.php:416
 msgid "Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
 msgstr "Séparés par des virgules : visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice"
 
-#: inc/customizer/config.php:416
+#: inc/customizer/config.php:417
 msgid "\"Back to top\" button"
 msgstr "Bouton « Retour en haut »"
 
-#: inc/customizer/config.php:422
+#: inc/customizer/config.php:423
 msgid "Firewood shop"
 msgstr "Boutique de bois de chauffage"
 
-#: inc/customizer/config.php:423
+#: inc/customizer/config.php:424
 msgid "Settings for selling firewood: style preset, unit prices, delivery check by postcode, calculator and FAQ. Product data (wood species, log length, moisture, volume, price per unit) is entered in each product, tab \"Firewood\"."
 msgstr "Réglages pour la vente de bois : modèle de style, prix unitaires, vérification de livraison par code postal, calculateur et FAQ. Les données produit (essence, longueur, humidité, volume, prix unitaire) se saisissent dans chaque produit, onglet « Bois de chauffage »."
 
-#: inc/customizer/config.php:428
+#: inc/customizer/config.php:429
 msgid "Style preset"
 msgstr "Modèle de style"
 
-#: inc/customizer/config.php:429
+#: inc/customizer/config.php:430
 msgid "Sets colors, homepage sections and default texts. Your own changes always take priority."
 msgstr "Définit les couleurs, les sections de l’accueil et les textes par défaut. Vos propres modifications restent prioritaires."
 
-#: inc/customizer/config.php:431
+#: inc/customizer/config.php:432
 msgid "Firewood & stove wood (warm, natural)"
 msgstr "Bois de chauffage (chaleureux, naturel)"
 
-#: inc/customizer/config.php:432
+#: inc/customizer/config.php:433
 msgid "General shop \"Maison\" (editorial)"
 msgstr "Boutique généraliste « Maison » (éditorial)"
 
-#: inc/customizer/config.php:435
+#: inc/customizer/config.php:436
 msgid "Show the unit price (e.g. price per stacked m³)"
 msgstr "Afficher le prix unitaire (ex. prix au stère)"
 
-#: inc/customizer/config.php:435
+#: inc/customizer/config.php:436
 msgid "Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume."
 msgstr "Obligatoire en Allemagne pour les produits vendus au volume (PAngV). Calculé automatiquement à partir du volume du produit."
 
-#: inc/customizer/config.php:436
+#: inc/customizer/config.php:437
 msgid "Show key data (length, moisture, drying) on product cards"
 msgstr "Afficher les données clés (longueur, humidité, séchage) sur les cartes produits"
 
-#: inc/customizer/config.php:437
+#: inc/customizer/config.php:438
 msgid "Postcode delivery check (product page, cart, homepage)"
 msgstr "Vérification de livraison par code postal (fiche produit, panier, accueil)"
 
-#: inc/customizer/config.php:437
+#: inc/customizer/config.php:438
 msgid "Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone."
 msgstr "Utilise vos zones d’expédition WooCommerce : ajoutez les codes postaux à chaque zone (ex. 10*, 12345, 80000...89999)."
 
-#: inc/customizer/config.php:438
+#: inc/customizer/config.php:439
 msgid "Message when delivery is possible"
 msgstr "Message si la livraison est possible"
 
-#: inc/customizer/config.php:439
+#: inc/customizer/config.php:440
 msgid "Message when the postcode is not served"
 msgstr "Message si le code postal n’est pas desservi"
 
-#: inc/customizer/config.php:440
+#: inc/customizer/config.php:441
 msgid "Delivery information (shown under the check)"
 msgstr "Informations de livraison (affichées sous la vérification)"
 
-#: inc/customizer/config.php:441
+#: inc/customizer/config.php:442
 msgid "Ask at checkout whether the unloading point is accessible for a truck"
 msgstr "Demander lors de la commande si le lieu de déchargement est accessible à un camion"
 
-#: inc/customizer/config.php:442
+#: inc/customizer/config.php:443
 msgid "Show the firewood calculator on product pages"
 msgstr "Afficher le calculateur de bois sur les fiches produits"
 
-#: inc/customizer/config.php:443
+#: inc/customizer/config.php:444
 msgid "FAQ (one question per line: Question :: Answer)"
 msgstr "FAQ (une question par ligne : Question :: Réponse)"
 
-#: inc/customizer/config.php:443
+#: inc/customizer/config.php:444
 msgid "Empty = built-in firewood FAQ, translated automatically."
 msgstr "Vide = FAQ bois de chauffage intégrée, traduite automatiquement."
 
-#: inc/customizer/config.php:444
+#: inc/customizer/config.php:445
 msgid "FAQ — title"
 msgstr "FAQ — titre"
 
-#: inc/customizer/config.php:445
+#: inc/customizer/config.php:446
 msgid "Calculator — title"
 msgstr "Calculateur — titre"
 
-#: inc/customizer/config.php:451
+#: inc/customizer/config.php:452
 msgid "Languages"
 msgstr "Langues"
 
-#: inc/customizer/config.php:452
+#: inc/customizer/config.php:453
 msgid "With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant."
 msgstr "Si WPML, Polylang ou TranslatePress est actif, l’extension gère les langues et le sélecteur l’utilise automatiquement. Sinon, le sélecteur intégré change la langue de l’interface (textes du thème, de WordPress et de WooCommerce). Installez les paquets de langue dans Réglages → Général ou avec l’assistant de configuration."
 
-#: inc/customizer/config.php:457
+#: inc/customizer/config.php:458
 msgid "Mode"
 msgstr "Mode"
 
-#: inc/customizer/config.php:459
+#: inc/customizer/config.php:460
 msgid "Automatic (plugin if available, otherwise built-in)"
 msgstr "Automatique (extension si disponible, sinon intégré)"
 
-#: inc/customizer/config.php:460
+#: inc/customizer/config.php:461
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: inc/customizer/config.php:466
+#: inc/customizer/config.php:467
 msgid "Default language (first visit)"
 msgstr "Langue par défaut (première visite)"
 
-#: inc/customizer/config.php:469
+#: inc/customizer/config.php:470
 msgid "Languages offered (codes, in order)"
 msgstr "Langues proposées (codes, dans l’ordre)"
 
-#: inc/customizer/config.php:469
+#: inc/customizer/config.php:470
 msgid "Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it"
 msgstr "Codes disponibles : de, fr, es, en, it, pt, nl, pl. Exemple : de,fr,es,en,it"
 
@@ -1063,17 +1219,17 @@ msgstr "Feuille"
 msgid "Star"
 msgstr "Étoile"
 
-#: inc/customizer/config.php:544
+#: inc/customizer/config.php:545
 msgid "Secure payment with SSL encryption"
 msgstr "Paiement sécurisé avec chiffrement SSL"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:547
+#: inc/customizer/config.php:548
 msgid "%d days to change your mind"
 msgstr "%d jours pour changer d’avis"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:547
+#: inc/customizer/config.php:548
 msgid "Simple returns"
 msgstr "Retours simples"
 
@@ -1081,105 +1237,105 @@ msgstr "Retours simples"
 msgid "Clock"
 msgstr "Horloge"
 
-#: inc/customizer/config.php:551
+#: inc/customizer/config.php:552
 msgid "Shop by category"
 msgstr "Acheter par catégorie"
 
-#: inc/customizer/config.php:556
+#: inc/customizer/config.php:557
 msgid "What our customers say"
 msgstr "Ce que disent nos clients"
 
-#: inc/customizer/config.php:557
+#: inc/customizer/config.php:558
 msgid "Our brands"
 msgstr "Nos marques"
 
-#: inc/customizer/config.php:558
+#: inc/customizer/config.php:559
 msgid "The new collection"
 msgstr "La nouvelle collection"
-
-#: inc/customizer/config.php:559
-msgid "Timeless pieces, carefully selected for you"
-msgstr "Des pièces intemporelles, soigneusement choisies pour vous"
 
 #: inc/customizer/config.php:56
 msgid "Lock"
 msgstr "Cadenas"
 
 #: inc/customizer/config.php:560
+msgid "Timeless pieces, carefully selected for you"
+msgstr "Des pièces intemporelles, soigneusement choisies pour vous"
+
+#: inc/customizer/config.php:561
 msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
 msgstr "Découvrez des produits de qualité, des prix justes et un service attentif à chaque détail — livrés rapidement chez vous."
 
-#: inc/customizer/config.php:561
+#: inc/customizer/config.php:562
 msgid "Shop now"
 msgstr "Acheter maintenant"
 
-#: inc/customizer/config.php:562
+#: inc/customizer/config.php:563
 msgid "Discover offers"
 msgstr "Découvrir les offres"
 
-#: inc/customizer/config.php:564
+#: inc/customizer/config.php:565
 msgid "The season’s offers"
 msgstr "Les offres de la saison"
 
-#: inc/customizer/config.php:565
+#: inc/customizer/config.php:566
 msgid "Selected favourites at reduced prices — only while stocks last."
 msgstr "Une sélection de favoris à prix réduits — dans la limite des stocks disponibles."
 
-#: inc/customizer/config.php:566 inc/firewood/presets.php:89
+#: inc/customizer/config.php:567 inc/firewood/presets.php:89
 msgid "View offers"
 msgstr "Voir les offres"
 
-#: inc/customizer/config.php:567
+#: inc/customizer/config.php:568
 msgid "Fast shipping"
 msgstr "Livraison rapide"
-
-#. translators:%s: amount.
-#: inc/customizer/config.php:569
-msgid "Free from %s"
-msgstr "Gratuite dès %s"
-
-#. translators:%s: amount.
-#: inc/customizer/config.php:569
-msgid "Dispatched within 24 hours"
-msgstr "Expédié sous 24 heures"
 
 #: inc/customizer/config.php:57
 msgid "Box"
 msgstr "Colis"
 
-#: inc/customizer/config.php:571
+#. translators:%s: amount.
+#: inc/customizer/config.php:570
+msgid "Free from %s"
+msgstr "Gratuite dès %s"
+
+#. translators:%s: amount.
+#: inc/customizer/config.php:570
+msgid "Dispatched within 24 hours"
+msgstr "Expédié sous 24 heures"
+
+#: inc/customizer/config.php:572
 msgid "Encrypted & trusted methods"
 msgstr "Méthodes chiffrées et fiables"
 
-#: inc/customizer/config.php:572
+#: inc/customizer/config.php:573
 msgid "Easy returns"
 msgstr "Retours faciles"
 
-#: inc/customizer/config.php:575
+#: inc/customizer/config.php:576
 msgid "Personal help, quick answers"
 msgstr "Aide personnalisée, réponses rapides"
 
-#: inc/customizer/config.php:576
+#: inc/customizer/config.php:577
 msgid "Stay in the loop"
 msgstr "Restez informé"
 
-#: inc/customizer/config.php:577
+#: inc/customizer/config.php:578
 msgid "New arrivals, exclusive offers and inspiration — straight to your inbox. Unsubscribe at any time."
 msgstr "Nouveautés, offres exclusives et inspiration — directement dans votre boîte mail. Désinscription à tout moment."
 
-#: inc/customizer/config.php:578
+#: inc/customizer/config.php:579
 msgid "Delivery in 2–4 business days"
 msgstr "Livraison en 2 à 4 jours ouvrés"
-
-#: inc/customizer/config.php:579
-msgid "2-year warranty"
-msgstr "Garantie 2 ans"
 
 #: inc/customizer/config.php:58
 msgid "Flame"
 msgstr "Flamme"
 
 #: inc/customizer/config.php:580
+msgid "2-year warranty"
+msgstr "Garantie 2 ans"
+
+#: inc/customizer/config.php:581
 msgid "Secure, encrypted payment"
 msgstr "Paiement sécurisé et chiffré"
 
@@ -1227,7 +1383,7 @@ msgstr "Cartes & panneaux"
 msgid "Soft sections background"
 msgstr "Fond des sections douces"
 
-#: inc/customizer/config.php:91 inc/customizer/config.php:240 inc/customizer/config.php:308
+#: inc/customizer/config.php:91 inc/customizer/config.php:241 inc/customizer/config.php:309
 msgid "Text"
 msgstr "Texte"
 
@@ -1271,35 +1427,43 @@ msgstr "Premium Shop — Options du thème"
 msgid "Logo and favicon: Site Identity. Menus: Menus. Everything else about the design and content of the shop is here."
 msgstr "Logo et favicon : Identité du site. Menus : Menus. Tout le reste du design et du contenu de la boutique se trouve ici."
 
-#: inc/enqueue.php:84
+#: inc/enqueue.php:85
 msgid "Searching…"
 msgstr "Recherche…"
 
-#: inc/enqueue.php:85
+#: inc/enqueue.php:86
 msgid "No products found."
 msgstr "Aucun produit trouvé."
 
-#: inc/enqueue.php:86
+#: inc/enqueue.php:87
 msgid "View all results"
 msgstr "Voir tous les résultats"
 
-#: inc/enqueue.php:89
+#: inc/enqueue.php:90
 msgid "Added to your cart"
 msgstr "Ajouté à votre panier"
 
-#: inc/enqueue.php:90
+#: inc/enqueue.php:91
+msgid "Added"
+msgstr "Ajouté"
+
+#: inc/enqueue.php:92
+msgid "View cart"
+msgstr "Voir le panier"
+
+#: inc/enqueue.php:93
 msgid "Added to your wishlist"
 msgstr "Ajouté à votre liste d’envies"
 
-#: inc/enqueue.php:91
+#: inc/enqueue.php:94
 msgid "Removed from your wishlist"
 msgstr "Retiré de votre liste d’envies"
 
-#: inc/enqueue.php:92
+#: inc/enqueue.php:95
 msgid "Your wishlist is empty."
 msgstr "Votre liste d’envies est vide."
 
-#: inc/enqueue.php:95
+#: inc/enqueue.php:98
 msgid "Results updated"
 msgstr "Résultats mis à jour"
 
@@ -1359,11 +1523,6 @@ msgstr "Veuillez choisir"
 #: inc/firewood/delivery.php:261 inc/firewood/delivery.php:279
 msgid "Truck access"
 msgstr "Accès camion"
-
-#. translators:%s: amount.
-#: inc/firewood/delivery.php:44 inc/firewood/delivery.php:49
-msgid "free"
-msgstr "gratuit"
 
 #. translators:%s: amount.
 #: inc/firewood/delivery.php:49
@@ -1590,10 +1749,6 @@ msgstr "Séché au séchoir"
 msgid "Residual moisture below 20%"
 msgstr "Humidité résiduelle inférieure à 20 %"
 
-#: inc/firewood/presets.php:92
-msgid "Delivered to your door"
-msgstr "Livré devant chez vous"
-
 #: inc/firewood/presets.php:93
 msgid "By truck, on pallets or loose"
 msgstr "Par camion, sur palettes ou en vrac"
@@ -1605,10 +1760,6 @@ msgstr "Des quantités honnêtes"
 #: inc/firewood/presets.php:95
 msgid "Clear price per stacked cubic metre"
 msgstr "Prix clair au stère"
-
-#: inc/firewood/presets.php:96
-msgid "Personal advice"
-msgstr "Conseils personnalisés"
 
 #: inc/firewood/presets.php:97
 msgid "We help you choose the right wood"
@@ -1958,11 +2109,6 @@ msgstr "Le pin s’allume vite — parfait pour démarrer le feu."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "L’épicéa s’allume vite — parfait pour démarrer le feu."
 
-#. translators:%s: lowest price.
-#: inc/firewood/product-data.php:921
-msgid "from %s"
-msgstr "à partir de %s"
-
 #: inc/newsletter.php:102
 msgid "You are already subscribed. Thank you!"
 msgstr "Vous êtes déjà inscrit. Merci !"
@@ -1985,7 +2131,7 @@ msgstr "Si vous n’êtes pas à l’origine de cette demande, ignorez simplemen
 msgid "Best regards,"
 msgstr "Bien cordialement,"
 
-#: inc/newsletter.php:23 inc/newsletter.php:25 inc/customizer/config.php:33 inc/customizer/config.php:305
+#: inc/newsletter.php:23 inc/newsletter.php:25 inc/customizer/config.php:33 inc/customizer/config.php:306
 msgid "Newsletter"
 msgstr "Newsletter"
 
@@ -2049,6 +2195,78 @@ msgstr "Veuillez accepter les conditions de confidentialité."
 msgid "Too many attempts. Please try again later."
 msgstr "Trop de tentatives. Veuillez réessayer plus tard."
 
+#: inc/page-hero.php:179
+msgid "Almost there: check your selection, and the warmth is on its way."
+msgstr "Vous y êtes presque : vérifiez votre sélection, et la chaleur est en route."
+
+#: inc/page-hero.php:179
+msgid "Your cart is still empty. Let yourself be inspired by our products."
+msgstr "Votre panier est encore vide. Laissez-vous inspirer par nos produits."
+
+#: inc/page-hero.php:190
+msgid "Just a few details and your order is on its way."
+msgstr "Encore quelques informations et votre commande est en route."
+
+#: inc/page-hero.php:201
+msgid "Customer account"
+msgstr "Compte client"
+
+#. translators:%s: customer first name.
+#: inc/page-hero.php:203
+msgid "Hello, %s"
+msgstr "Bonjour %s"
+
+#. translators:%s: customer first name.
+#: inc/page-hero.php:204
+msgid "Good to see you again. Here you will find your orders, addresses and account details."
+msgstr "Ravi de vous revoir. Retrouvez ici vos commandes, adresses et informations de compte."
+
+#: inc/page-hero.php:204
+msgid "Sign in to follow your orders, order again in one click and save your addresses."
+msgstr "Connectez-vous pour suivre vos commandes, recommander en un clic et enregistrer vos adresses."
+
+#: inc/page-hero.php:214
+msgid "Where is my wood? Follow your delivery step by step."
+msgstr "Où est mon bois ? Suivez votre livraison étape par étape."
+
+#: inc/page-hero.php:224
+msgid "We are here for you"
+msgstr "Nous sommes là pour vous"
+
+#: inc/page-hero.php:225
+msgid "A question about our products, a delivery or an order? Write to us, we answer quickly."
+msgstr "Une question sur nos produits, une livraison ou une commande ? Écrivez-nous, nous répondons rapidement."
+
+#: inc/page-hero.php:234
+msgid "Your favourites"
+msgstr "Vos favoris"
+
+#: inc/page-hero.php:235
+msgid "The products you love, kept for later."
+msgstr "Les produits que vous aimez, gardés pour plus tard."
+
+#: inc/page-hero.php:257
+msgid "Dry wood, ready to burn"
+msgstr "Bois sec, prêt à brûler"
+
+#: inc/page-hero.php:377
+msgid "Your payment could not be completed"
+msgstr "Votre paiement n’a pas pu aboutir"
+
+#. translators:%s: customer first name.
+#: inc/page-hero.php:380 inc/woocommerce/cart-checkout.php:194
+msgid "Thank you, %s!"
+msgstr "Merci, %s !"
+
+#: inc/page-hero.php:382
+msgid "Thank you for your order!"
+msgstr "Merci pour votre commande !"
+
+#. translators:1: order number, 2: e-mail address.
+#: inc/page-hero.php:390
+msgid "Your order #%1$s has been received. A confirmation is on its way to %2$s."
+msgstr "Votre commande n°%1$s a bien été reçue. Une confirmation est en route vers %2$s."
+
 #: inc/security.php:67
 msgid "The login details are incorrect."
 msgstr "Les identifiants sont incorrects."
@@ -2102,7 +2320,7 @@ msgstr "À propos"
 msgid "Language: %s"
 msgstr "Langue : %s"
 
-#: inc/template-tags.php:237 inc/customizer/config.php:398
+#: inc/template-tags.php:237 inc/customizer/config.php:399
 msgid "Social networks"
 msgstr "Réseaux sociaux"
 
@@ -2149,11 +2367,11 @@ msgstr "Page précédente"
 msgid "Next page"
 msgstr "Page suivante"
 
-#: inc/template-tags.php:463 inc/admin/onboarding.php:501 inc/customizer/config.php:27 inc/customizer/config.php:553
+#: inc/template-tags.php:463 inc/admin/onboarding.php:501 inc/customizer/config.php:27 inc/customizer/config.php:554
 msgid "New arrivals"
 msgstr "Nouveautés"
 
-#: inc/template-tags.php:464 inc/admin/onboarding.php:502 inc/customizer/config.php:29 inc/customizer/config.php:555
+#: inc/template-tags.php:464 inc/admin/onboarding.php:502 inc/customizer/config.php:29 inc/customizer/config.php:556
 msgid "Bestsellers"
 msgstr "Meilleures ventes"
 
@@ -2252,11 +2470,6 @@ msgstr "Saisissez votre code"
 
 #. translators:%s: customer first name.
 #: inc/woocommerce/cart-checkout.php:194
-msgid "Thank you, %s!"
-msgstr "Merci, %s !"
-
-#. translators:%s: customer first name.
-#: inc/woocommerce/cart-checkout.php:194
 msgid "Thank you!"
 msgstr "Merci !"
 
@@ -2264,7 +2477,7 @@ msgstr "Merci !"
 msgid "Your order has been received. You will receive a confirmation by email shortly."
 msgstr "Votre commande a bien été reçue. Vous recevrez une confirmation par e-mail sous peu."
 
-#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:552
+#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:553
 msgid "Popular products"
 msgstr "Produits populaires"
 
@@ -2362,68 +2575,72 @@ msgstr "point-virgule (;)"
 msgid "vertical bar (|)"
 msgstr "barre verticale (|)"
 
-#: inc/woocommerce/order-tracking.php:106 inc/woocommerce/order-tracking.php:235 inc/woocommerce/order-tracking.php:278
+#: inc/woocommerce/order-tracking.php:105
+msgid "Delivery & tracking"
+msgstr "Livraison & suivi"
+
+#: inc/woocommerce/order-tracking.php:123 inc/woocommerce/order-tracking.php:252 inc/woocommerce/order-tracking.php:295
 msgid "Planned delivery date"
 msgstr "Date de livraison prévue"
 
-#: inc/woocommerce/order-tracking.php:110
+#: inc/woocommerce/order-tracking.php:127
 msgid "Carrier"
 msgstr "Transporteur"
 
-#: inc/woocommerce/order-tracking.php:112
+#: inc/woocommerce/order-tracking.php:129
 msgid "— None —"
 msgstr "— Aucun —"
 
-#: inc/woocommerce/order-tracking.php:119 inc/woocommerce/order-tracking.php:243 inc/woocommerce/order-tracking.php:281
+#: inc/woocommerce/order-tracking.php:136 inc/woocommerce/order-tracking.php:260 inc/woocommerce/order-tracking.php:298
 msgid "Tracking number"
 msgstr "Numéro de suivi"
 
-#: inc/woocommerce/order-tracking.php:123
+#: inc/woocommerce/order-tracking.php:140
 msgid "Tracking link (only for “Other carrier”)"
 msgstr "Lien de suivi (uniquement pour « Autre transporteur »)"
 
-#: inc/woocommerce/order-tracking.php:127
+#: inc/woocommerce/order-tracking.php:144
 msgid "Note for the customer (e.g. delivery time window)"
 msgstr "Note pour le client (ex. créneau de livraison)"
 
-#: inc/woocommerce/order-tracking.php:130
+#: inc/woocommerce/order-tracking.php:147
 msgid "Shown to the customer on the order tracking page, in their account and in the order e-mails."
 msgstr "Affiché au client sur la page de suivi de commande, dans son compte et dans les e-mails de commande."
 
-#: inc/woocommerce/order-tracking.php:184
+#: inc/woocommerce/order-tracking.php:201
 msgid "Order received"
 msgstr "Commande reçue"
 
-#: inc/woocommerce/order-tracking.php:185
+#: inc/woocommerce/order-tracking.php:202
 msgid "Waiting for payment"
 msgstr "En attente de paiement"
 
-#: inc/woocommerce/order-tracking.php:185
+#: inc/woocommerce/order-tracking.php:202
 msgid "In preparation"
 msgstr "En préparation"
 
-#: inc/woocommerce/order-tracking.php:186
+#: inc/woocommerce/order-tracking.php:203
 msgid "Delivery scheduled"
 msgstr "Livraison planifiée"
 
-#: inc/woocommerce/order-tracking.php:186
+#: inc/woocommerce/order-tracking.php:203
 msgid "On its way"
 msgstr "En route"
 
-#: inc/woocommerce/order-tracking.php:187
+#: inc/woocommerce/order-tracking.php:204
 msgid "Delivered"
 msgstr "Livrée"
 
-#: inc/woocommerce/order-tracking.php:211
+#: inc/woocommerce/order-tracking.php:228
 msgid "Order status"
 msgstr "Statut de la commande"
 
 #. translators:%s: order status, e.g. Cancelled.
-#: inc/woocommerce/order-tracking.php:216
+#: inc/woocommerce/order-tracking.php:233
 msgid "This order is %s. Please contact us if you have any questions."
 msgstr "Cette commande est %s. Contactez-nous si vous avez des questions."
 
-#: inc/woocommerce/order-tracking.php:247 inc/woocommerce/order-tracking.php:294
+#: inc/woocommerce/order-tracking.php:264 inc/woocommerce/order-tracking.php:311
 msgid "Track my parcel"
 msgstr "Suivre mon colis"
 
@@ -2431,17 +2648,9 @@ msgstr "Suivre mon colis"
 msgid "Our own delivery"
 msgstr "Notre propre livraison"
 
-#: inc/woocommerce/order-tracking.php:288 inc/woocommerce/order-tracking.php:292 inc/woocommerce/single-product.php:283
-msgid "Delivery"
-msgstr "Livraison"
-
 #: inc/woocommerce/order-tracking.php:34
 msgid "Other carrier"
 msgstr "Autre transporteur"
-
-#: inc/woocommerce/order-tracking.php:88
-msgid "Delivery & tracking"
-msgstr "Livraison & suivi"
 
 #: inc/woocommerce/product-card.php:113
 msgid "Currently unavailable"
@@ -2683,10 +2892,6 @@ msgstr "Retours"
 msgid "You can return your order within %d days of delivery."
 msgstr "Vous pouvez retourner votre commande dans les %d jours suivant la livraison."
 
-#: inc/woocommerce/single-product.php:308
-msgid "Payment"
-msgstr "Paiement"
-
 #: inc/woocommerce/single-product.php:313
 msgid "All shipping & payment information"
 msgstr "Toutes les informations livraison & paiement"
@@ -2703,39 +2908,39 @@ msgstr "Voir la vidéo"
 msgid "Journal"
 msgstr "Journal"
 
-#: page-templates/template-contact.php:31 inc/admin/onboarding.php:292 inc/admin/onboarding.php:398
+#: page-templates/template-contact.php:35 inc/admin/onboarding.php:292 inc/admin/onboarding.php:398
 msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
 msgstr "Nous serons ravis de vous lire. Notre service client vous répondra dans les meilleurs délais."
 
-#: page-templates/template-contact.php:39
+#: page-templates/template-contact.php:43
 msgid "Where is my order? Track it here"
 msgstr "Où est ma commande ? Suivez-la ici"
 
-#: page-templates/template-contact.php:46
+#: page-templates/template-contact.php:50
 msgid "Send us a message"
 msgstr "Envoyez-nous un message"
 
-#: page-templates/template-wishlist.php:33 inc/enqueue.php:93
+#: page-templates/template-wishlist.php:37 inc/enqueue.php:96
 msgid "Loading…"
 msgstr "Chargement…"
 
-#: page-templates/template-wishlist.php:38
+#: page-templates/template-wishlist.php:42
 msgid "Your wishlist is empty"
 msgstr "Votre liste d’envies est vide"
 
-#: page-templates/template-wishlist.php:39
+#: page-templates/template-wishlist.php:43
 msgid "Tap the heart on any product to save it here for later."
 msgstr "Touchez le cœur d’un produit pour l’enregistrer ici pour plus tard."
 
-#: page-templates/template-wishlist.php:40
+#: page-templates/template-wishlist.php:44
 msgid "Discover products"
 msgstr "Découvrir les produits"
 
-#: page.php:42 single.php:41 inc/template-tags.php:410
+#: page.php:54 single.php:41 inc/template-tags.php:410
 msgid "Page"
 msgstr "Page"
 
-#: search.php:41 inc/enqueue.php:87
+#: search.php:41 inc/enqueue.php:88
 msgid "Products"
 msgstr "Produits"
 
@@ -2920,7 +3125,7 @@ msgstr "Retour en haut"
 msgid "Shop"
 msgstr "Boutique"
 
-#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:574
+#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:575
 msgid "Customer service"
 msgstr "Service client"
 
@@ -2932,7 +3137,7 @@ msgstr "Contact"
 msgid "Add your contact details in the Customizer"
 msgstr "Ajoutez vos coordonnées dans l’outil de personnalisation"
 
-#: template-parts/header/cart-drawer.php:20
+#: template-parts/header/cart-drawer.php:20 inc/page-hero.php:178
 msgid "Your cart"
 msgstr "Votre panier"
 
@@ -2944,7 +3149,7 @@ msgstr "Fermer le panier"
 msgid "Back to cart"
 msgstr "Retour au panier"
 
-#: template-parts/header/header-checkout.php:21
+#: template-parts/header/header-checkout.php:21 inc/page-hero.php:189
 msgid "Secure checkout"
 msgstr "Paiement sécurisé"
 
@@ -2968,7 +3173,7 @@ msgstr "Mon compte"
 msgid "Sign in / Register"
 msgstr "Connexion / Inscription"
 
-#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:297 inc/customizer/config.php:350
+#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:297 inc/customizer/config.php:351
 msgid "Wishlist"
 msgstr "Liste d’envies"
 
@@ -3031,7 +3236,7 @@ msgid_plural "%d products"
 msgstr[0] "%d produit"
 msgstr[1] "%d produits"
 
-#: template-parts/homepage/delivery.php:18
+#: template-parts/homepage/delivery.php:18 inc/content-sections.php:151
 msgid "Delivery area"
 msgstr "Zone de livraison"
 
@@ -3048,17 +3253,17 @@ msgid "Good to know"
 msgstr "Bon à savoir"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:86 inc/woocommerce/single-product.php:159 inc/customizer/config.php:538
+#: template-parts/homepage/hero.php:86 inc/woocommerce/single-product.php:159 inc/customizer/config.php:539
 msgid "Free shipping from %s"
 msgstr "Livraison gratuite dès %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:94 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:542
+#: template-parts/homepage/hero.php:94 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:543
 msgid "%d-day free returns"
 msgstr "Retours gratuits sous %d jours"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:98 inc/customizer/config.php:367 inc/customizer/config.php:570
+#: template-parts/homepage/hero.php:98 inc/customizer/config.php:368 inc/customizer/config.php:571
 msgid "Secure payment"
 msgstr "Paiement sécurisé"
 
@@ -3079,11 +3284,11 @@ msgstr "Cette section apparaît automatiquement dès que vous recevez des avis p
 msgid "Rated %d out of 5"
 msgstr "Noté %d sur 5"
 
-#: template-parts/products/quick-view-modal.php:14 inc/customizer/config.php:349
+#: template-parts/products/quick-view-modal.php:14 inc/customizer/config.php:350
 msgid "Quick view"
 msgstr "Aperçu rapide"
 
-#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:96
+#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:99
 msgid "Close"
 msgstr "Fermer"
 
@@ -3095,7 +3300,7 @@ msgstr "Voir les détails"
 msgid "Choose options"
 msgstr "Choisir les options"
 
-#: woocommerce/archive-product.php:63 inc/enqueue.php:88 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
+#: woocommerce/archive-product.php:63 inc/enqueue.php:89 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
 msgid "Categories"
 msgstr "Catégories"
 

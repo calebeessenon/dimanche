@@ -15,7 +15,11 @@ while ( have_posts() ) :
 	the_post();
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( $premium_shop_wc_page ? 'ps-wc-page' : 'ps-page' ); ?>>
-		<?php if ( $premium_shop_wc_page && ( is_cart() || is_checkout() ) ) : ?>
+		<?php if ( premium_shop_page_hero_enabled() && premium_shop_is_wc() && is_wc_endpoint_url( 'order-received' ) ) : ?>
+			<?php premium_shop_thanks_hero(); ?>
+		<?php elseif ( premium_shop_page_hero_enabled() ) : ?>
+			<?php premium_shop_page_hero(); ?>
+		<?php elseif ( $premium_shop_wc_page && ( is_cart() || is_checkout() ) ) : ?>
 			<div class="ps-container ps-wc-page__head">
 				<?php premium_shop_checkout_steps(); ?>
 				<h1 class="ps-wc-page__title"><?php the_title(); ?></h1>
@@ -29,7 +33,15 @@ while ( have_posts() ) :
 			</header>
 			<?php if ( has_post_thumbnail() && ! $premium_shop_wc_page ) : ?>
 				<div class="ps-container ps-page__cover">
-					<?php the_post_thumbnail( 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+					<?php
+					the_post_thumbnail(
+						'large',
+						array(
+							'loading'       => 'eager',
+							'fetchpriority' => 'high',
+						)
+					);
+					?>
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>

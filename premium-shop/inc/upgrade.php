@@ -21,6 +21,14 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_1_3' );
 	}
 
+	if ( '' === $done || version_compare( $done, '1.4.0', '<' ) ) {
+		// Adding to the cart now keeps the visitor on the page (side cart opt-in).
+		remove_theme_mod( 'ps_cart_drawer' );
+		delete_transient( 'premium_shop_hero_pool' );
+		delete_transient( 'premium_shop_cat_thumbs' );
+		do_action( 'premium_shop_upgrade_1_4' );
+	}
+
 	update_option( 'premium_shop_version', PREMIUM_SHOP_VERSION, false );
 }
 add_action( 'admin_init', 'premium_shop_maybe_upgrade' );

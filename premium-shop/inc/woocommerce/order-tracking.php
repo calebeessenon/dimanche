@@ -51,6 +51,23 @@ function premium_shop_order_tracking_url() {
 }
 
 /**
+ * Whether a page is the order tracking page.
+ *
+ * @param int $page_id Page ID.
+ * @return bool
+ */
+function premium_shop_is_tracking_page( $page_id ) {
+	$page_id = (int) $page_id;
+	if ( ! $page_id || 'page' !== get_post_type( $page_id ) ) {
+		return false;
+	}
+	if ( (int) get_option( 'premium_shop_tracking_page' ) === $page_id || 'sendungsverfolgung' === get_post_field( 'post_name', $page_id ) ) {
+		return true;
+	}
+	return has_shortcode( (string) get_post_field( 'post_content', $page_id ), 'woocommerce_order_tracking' );
+}
+
+/**
  * Delivery data of an order.
  *
  * @param WC_Order $order Order.

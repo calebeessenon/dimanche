@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.3.2
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,23 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.4.0 =
+* Add to cart without leaving the page, everywhere (shop, product page, quick view,
+  sticky bar): the product photo flies to the cart icon, the button confirms
+  ("Added ✓"), a message with a thumbnail offers "View cart". The side cart no
+  longer opens by itself (option in Customizer → Shop).
+* Illustrated page headers (Customizer → General): warm gradient, rising embers,
+  floating photos of your own products, tagline and reassurance chips on pages,
+  cart, checkout (photos of the products in the cart), account, contact, wishlist.
+* Order tracking page: animated delivery truck. Order received: animated check and
+  confetti.
+* Home page without a chosen hero image: floating photos of your products.
+* Product categories without an image show a photo of one of their products.
+* New sections (shortcodes): [ps_features], [ps_delivery_steps], [ps_shipping_info]
+  (delivery time, zones and methods from WooCommerce), [ps_payment_methods]
+  (enabled gateways), [ps_photo_collage], [ps_cta]. The untouched "About us" and
+  "Shipping & payment" placeholder pages are filled with them.
 
 = 1.3.2 =
 * Product URLs: "m³" / "m²" in a name give "m3" / "m2" instead of "m%c2%b3".

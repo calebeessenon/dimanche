@@ -242,11 +242,9 @@ ul.products::after {
 	animation: ps-spin .8s linear infinite;
 }
 
-.ps-card__cta .button.added .ps-icon--plus {
-	transform: rotate(45deg);
-}
-
-.ps-card__cta .added_to_cart {
+.ps-card__cta .added_to_cart,
+form.cart .added_to_cart,
+.ps-sticky-cart .added_to_cart {
 	display: none;
 }
 

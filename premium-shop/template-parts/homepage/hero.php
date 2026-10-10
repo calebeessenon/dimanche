@@ -100,7 +100,24 @@ $premium_shop_title    = premium_shop_text( 'hero_title' );
 			<?php endif; ?>
 		</div>
 
-		<?php if ( 'split' === $premium_shop_layout ) : ?>
+		<?php
+		// No image chosen: the shop's own product photos, floating (instead of the illustration).
+		$premium_shop_collage = ( 'split' === $premium_shop_layout && ! absint( premium_shop_option( 'hero_image' ) ) && function_exists( 'premium_shop_hero_photo_pool' ) && count( premium_shop_hero_photo_pool() ) >= 3 ) ? premium_shop_hero_photos( 3, 3 ) : array();
+		?>
+		<?php if ( $premium_shop_collage ) : ?>
+			<div class="ps-hero__visual ps-hero__visual--photos ps-anim" style="--ps-delay:120ms" aria-hidden="true">
+				<div class="ps-phero__photos ps-phero__photos--3 ps-hero__collage">
+					<?php foreach ( $premium_shop_collage as $premium_shop_i => $premium_shop_photo ) : ?>
+						<figure class="ps-phero__photo ps-phero__photo--<?php echo (int) $premium_shop_i + 1; ?>">
+							<img src="<?php echo esc_url( $premium_shop_photo['src'] ); ?>" alt="" <?php echo 0 === $premium_shop_i ? 'fetchpriority="high"' : 'loading="lazy"'; ?> decoding="async">
+						</figure>
+					<?php endforeach; ?>
+					<span class="ps-phero__ring"></span>
+				</div>
+				<span class="ps-hero__orb ps-hero__orb--1"></span>
+				<span class="ps-hero__orb ps-hero__orb--2"></span>
+			</div>
+		<?php elseif ( 'split' === $premium_shop_layout ) : ?>
 			<div class="ps-hero__visual ps-anim" style="--ps-delay:120ms" aria-hidden="true">
 				<div class="ps-hero__arch">
 					<?php if ( $premium_shop_image_id ) : ?>
