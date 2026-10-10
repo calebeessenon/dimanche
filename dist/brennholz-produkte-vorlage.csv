@@ -1,0 +1,8 @@
+﻿Type,SKU,Parent,Name,Published,Categories,Images,Shipping class,Regular price,Description,Short description,Attribute 1 name,Attribute 1 value(s),Attribute 1 visible,Attribute 1 global,Attribute 2 name,Attribute 2 value(s),Attribute 2 visible,Attribute 2 global,Meta: _ps_species,Meta: _ps_log_length,Meta: _ps_moisture,Meta: _ps_drying,Meta: _ps_unit,Meta: _ps_unit_qty,Meta: _ps_price_per_unit,Meta: _ps_auto_prices,Meta: _ps_disc1_qty,Meta: _ps_disc1_pct,Meta: _ps_disc2_qty,Meta: _ps_disc2_pct,Meta: _ps_origin,Meta: _ps_certificate
+variable,BUCHE-33,,"Buche Kaminholz 33 cm, kammergetrocknet",0,Kaminholz,,spedition,,,,Scheitlänge,33 cm,1,1,Menge,"1 RM, 2 RM, 3 RM, 6 RM",1,1,beech,33,20,kiln,rm,,159,yes,3,5,6,10,Schwarzwald,PEFC
+variation,,BUCHE-33,,1,,,,,,,Scheitlänge,33 cm,,1,Menge,1 RM,,1,,,,,,,,,,,,,,
+variation,,BUCHE-33,,1,,,,,,,Scheitlänge,33 cm,,1,Menge,2 RM,,1,,,,,,,,,,,,,,
+variation,,BUCHE-33,,1,,,,,,,Scheitlänge,33 cm,,1,Menge,3 RM,,1,,,,,,,,,,,,,,
+variation,,BUCHE-33,,1,,,,,,,Scheitlänge,33 cm,,1,Menge,6 RM,,1,,,,,,,,,,,,,,
+simple,EICHE-PAL,,"Eiche Kaminholz 33 cm, Palette 1,8 RM",0,Kaminholz,,spedition,,,,,,,,,,,,oak,33,20,kiln,rm,1.8,149,yes,,,,,,
+simple,ANZ-10,,"Anzündholz, 10-kg-Sack",0,Anzündholz,,,14.90,,,,,,,,,,,spruce,20,,kiln,kg,10,,,,,,,,
