@@ -29,6 +29,10 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_1_4' );
 	}
 
+	if ( '' === $done || version_compare( $done, '1.4.1', '<' ) ) {
+		premium_shop_fill_contact_details();
+	}
+
 	update_option( 'premium_shop_version', PREMIUM_SHOP_VERSION, false );
 }
 add_action( 'admin_init', 'premium_shop_maybe_upgrade' );
@@ -60,4 +64,24 @@ function premium_shop_move_default_widgets() {
 	$sidebars['blog-sidebar'] = array_merge( $sidebars['shop-sidebar'], $blog );
 	$sidebars['shop-sidebar'] = array();
 	update_option( 'sidebars_widgets', $sidebars );
+}
+
+/**
+ * Shop contact details (contact page, footer, contact form recipient):
+ * only empty fields are filled, values entered in the Customizer are kept.
+ */
+function premium_shop_fill_contact_details() {
+	$details = apply_filters(
+		'premium_shop_shop_contact_details',
+		array(
+			'contact_address' => "9 route du Beauregard\n1180 Rolle, Suisse",
+			'contact_phone'   => '+4175731714',
+			'contact_email'   => 'info@mirop-bois.ch',
+		)
+	);
+	foreach ( $details as $key => $value ) {
+		if ( '' === trim( (string) get_theme_mod( 'ps_' . $key, '' ) ) && '' !== $value ) {
+			set_theme_mod( 'ps_' . $key, $value );
+		}
+	}
 }
