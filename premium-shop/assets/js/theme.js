@@ -556,6 +556,51 @@
 	}
 	window.addEventListener('load', watchBlockCart);
 
+	/* Contact form: send without reloading (falls back to a normal POST). */
+	$$('[data-ps-contact-form]').forEach(function (form) {
+		var status = form.parentNode.querySelector('[data-ps-contact-status]');
+		form.addEventListener('submit', function (e) {
+			if (!window.fetch || !window.FormData) { return; }
+			e.preventDefault();
+			if (form.reportValidity && !form.reportValidity()) { return; }
+			var btn = $('button[type="submit"]', form);
+			if (btn) { btn.classList.add('is-loading'); btn.disabled = true; }
+			var show = function (ok, text) {
+				if (!status) { return; }
+				status.innerHTML = '<p class="ps-notice ps-notice--' + (ok ? 'success' : 'error') + '">' + escapeHtml(text) + '</p>';
+				status.scrollIntoView({ block: 'nearest', behavior: S.reducedMotion ? 'auto' : 'smooth' });
+			};
+			fetch(form.getAttribute('action'), { method: 'POST', credentials: 'same-origin', headers: { 'X-Requested-With': 'fetch' }, body: new FormData(form) })
+				.then(function (r) { return r.json(); })
+				.then(function (res) {
+					var text = res && res.data && res.data.message ? res.data.message : (I18N.error || 'Error');
+					show(!!(res && res.success), text);
+					if (res && res.success) {
+						$$('textarea, input[name="ps_phone"], input[name="ps_order"]', form).forEach(function (f) { f.value = ''; });
+						var c = $('input[name="ps_consent"]', form);
+						if (c) { c.checked = false; }
+					}
+				})
+				.catch(function () { show(false, I18N.error || 'Error'); })
+				.then(function () { if (btn) { btn.classList.remove('is-loading'); btn.disabled = false; } });
+		});
+	});
+
+	/* Compact language menu: close when tapping outside or pressing Escape. */
+	doc.addEventListener('click', function (e) {
+		$$('[data-ps-lang-mini][open]').forEach(function (d) {
+			if (!d.contains(e.target)) { d.removeAttribute('open'); }
+		});
+	});
+	doc.addEventListener('keydown', function (e) {
+		if (e.key !== 'Escape') { return; }
+		$$('[data-ps-lang-mini][open]').forEach(function (d) {
+			d.removeAttribute('open');
+			var s = $('summary', d);
+			if (s) { s.focus(); }
+		});
+	});
+
 	/**
 	 * Add to cart through WooCommerce's own AJAX endpoint.
 	 *

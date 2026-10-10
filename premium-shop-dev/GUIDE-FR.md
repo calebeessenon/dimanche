@@ -293,3 +293,42 @@ oublié, inscription), widgets WooCommerce, blocs WooCommerce dans une page, mod
 Customizer et aperçu en direct, outils PHPCS (sécurité, i18n, PHP 7.4+) et Theme Check.
 
 Corrections : voir readme.txt → Changelog 1.2.0.
+
+
+## 13. Version 1.3.0 — multilingue produits, contact, suivi de commande
+
+### Textes des produits en plusieurs langues (sans extension)
+- Fiche produit → onglet **Übersetzungen / Traductions** : nom, description courte et description pour
+  chaque langue du sélecteur (DE, FR, ES, EN). Champ vide = texte principal du produit.
+- Les noms de catégories se traduisent dans Produits → Catégories → modifier (champs « Name — Français »…).
+  Les catégories courantes (Bois de chauffage, Bûches compressées, Granulés et pellets…) sont pré-remplies.
+- Import CSV : colonnes `Meta: _ps_name_fr`, `Meta: _ps_short_fr`, `Meta: _ps_desc_fr` (idem `_en`, `_es`).
+- `dist/warmeholz-produits-multilingue.csv` : les 89 produits, textes principaux en allemand,
+  traductions FR (originales), EN et ES. Fabriqué par `premium-shop-dev/catalog-i18n/build-multilingual.py`.
+- Avec WPML / Polylang / TranslatePress, ces champs sont ignorés (traduisez avec l'extension).
+
+### Import CSV plus robuste
+- Les colonnes d'un export WooCommerce en français, allemand ou espagnol sont reconnues quelle que soit
+  la langue de l'administration (WooCommerce seul ne reconnaît que la langue de l'admin et l'anglais).
+- Produits « Import placeholder for … » : bouton « Les mettre à la corbeille » en haut de Produits ;
+  réimporter le même fichier avec « Mettre à jour les produits existants » les répare (nom, prix, URL).
+- Essence, longueur, stères, kg, séchage et humidité sont lus dans les noms des produits.
+
+### Page Contact
+- Modèle de page **Contact** : coordonnées (Personnaliser → Contact) + formulaire prêt (nom, e-mail,
+  téléphone, n° de commande, objet, message, consentement RGPD). Anti-spam sans service externe.
+- Les messages sont envoyés à l'e-mail de contact **et** enregistrés dans l'admin (menu « Kontaktanfragen »),
+  supprimés automatiquement après un an.
+
+### Page Suivi de commande (Sendungsverfolgung)
+- Le client saisit n° de commande + e-mail → frise d'état (reçue → en préparation → en route → livrée).
+- Dans chaque commande (admin), encadré **Livraison & suivi** : date de livraison prévue, transporteur,
+  numéro de suivi (lien automatique pour La Poste CH, DHL, DPD, GLS, UPS), note au client.
+  Affiché aussi dans Mon compte et dans les e-mails de commande.
+
+### Mobile
+- Bouton de langue « DE » dans l'en-tête mobile + sélecteur en haut du menu.
+
+À la mise à jour, le thème ajoute automatiquement le formulaire à la page « kontakt », crée la page
+« sendungsverfolgung », l'ajoute au menu Service client et retire les widgets par défaut de WordPress
+de la barre latérale de la boutique.

@@ -161,6 +161,54 @@ function premium_shop_language_switcher( $context = 'header' ) {
 }
 
 /**
+ * Compact language menu for small screens: a "DE" button that opens the list
+ * (native <details>, works without JavaScript).
+ */
+function premium_shop_language_switcher_compact() {
+	$items = premium_shop_language_switcher_items();
+
+	if ( count( $items ) < 2 ) {
+		return;
+	}
+
+	$current = $items[0];
+	foreach ( $items as $item ) {
+		if ( $item['current'] ) {
+			$current = $item;
+			break;
+		}
+	}
+	?>
+	<details class="ps-lang-mini" data-ps-lang-mini>
+		<summary class="ps-lang-mini__toggle">
+			<?php premium_shop_icon( 'globe', array( 'size' => 16 ) ); ?>
+			<span aria-hidden="true"><?php echo esc_html( $current['label'] ); ?></span>
+			<span class="screen-reader-text">
+				<?php
+				/* translators: %s: current language name. */
+				echo esc_html( sprintf( __( 'Language: %s', 'premium-shop' ), $current['name'] ) );
+				?>
+			</span>
+		</summary>
+		<ul class="ps-lang-mini__list">
+			<?php foreach ( $items as $item ) : ?>
+				<li>
+					<a class="ps-lang-mini__link<?php echo $item['current'] ? ' is-current' : ''; ?>"
+						href="<?php echo esc_url( $item['url'] ); ?>"
+						hreflang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
+						lang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
+						<?php echo $item['current'] ? 'aria-current="true"' : ''; ?>>
+						<span class="ps-lang-mini__code" aria-hidden="true"><?php echo esc_html( $item['label'] ); ?></span>
+						<span><?php echo esc_html( $item['name'] ); ?></span>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</details>
+	<?php
+}
+
+/**
  * Social network links.
  */
 function premium_shop_social_links() {

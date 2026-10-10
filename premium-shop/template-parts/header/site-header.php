@@ -23,6 +23,12 @@ defined( 'ABSPATH' ) || exit;
 		</nav>
 
 		<div class="ps-header__actions">
+			<?php if ( premium_shop_option( 'header_languages' ) ) : ?>
+				<div class="ps-header__lang-mini">
+					<?php premium_shop_language_switcher_compact(); ?>
+				</div>
+			<?php endif; ?>
+
 			<?php if ( premium_shop_option( 'header_search' ) ) : ?>
 				<button type="button" class="ps-icon-btn" data-ps-open="ps-search" aria-controls="ps-search" aria-expanded="false">
 					<?php premium_shop_icon( 'search', array( 'size' => 21 ) ); ?>

@@ -281,15 +281,6 @@ function premium_shop_setup_pages() {
 		return premium_shop_translate_in( $text, $locale );
 	};
 
-	$contact_lines = array_filter(
-		array(
-			premium_shop_option( 'company_name' ),
-			premium_shop_option( 'contact_address' ),
-			premium_shop_option( 'contact_phone' ),
-			premium_shop_option( 'contact_email' ),
-		)
-	);
-
 	$pages = array(
 		'ueber-uns'           => array(
 			'title'   => $t( 'About us' ),
@@ -297,9 +288,10 @@ function premium_shop_setup_pages() {
 			'status'  => 'publish',
 		),
 		'kontakt'             => array(
-			'title'   => $t( 'Contact' ),
-			'content' => '<!-- wp:paragraph --><p>' . esc_html( $t( 'We look forward to hearing from you. Our customer service will answer as quickly as possible.' ) ) . '</p><!-- /wp:paragraph -->' . ( $contact_lines ? '<!-- wp:paragraph --><p>' . nl2br( esc_html( implode( "\n", $contact_lines ) ) ) . '</p><!-- /wp:paragraph -->' : '' ),
-			'status'  => 'publish',
+			'title'    => $t( 'Contact' ),
+			'content'  => '<!-- wp:paragraph --><p>' . esc_html( $t( 'We look forward to hearing from you. Our customer service will answer as quickly as possible.' ) ) . '</p><!-- /wp:paragraph -->',
+			'status'   => 'publish',
+			'template' => 'page-templates/template-contact.php',
 		),
 		'wunschliste'         => array(
 			'title'    => $t( 'Wishlist' ),
@@ -307,6 +299,7 @@ function premium_shop_setup_pages() {
 			'status'   => 'publish',
 			'template' => 'page-templates/template-wishlist.php',
 		),
+		'sendungsverfolgung'  => premium_shop_is_wc() ? premium_shop_tracking_page_data( $t ) : null,
 		'versand-und-zahlung' => array(
 			'title'   => $t( 'Shipping & payment' ),
 			'content' => '<!-- wp:paragraph --><p>' . esc_html( $t( 'Describe your shipping countries, delivery times, shipping costs and accepted payment methods here.' ) ) . '</p><!-- /wp:paragraph -->',
@@ -331,7 +324,7 @@ function premium_shop_setup_pages() {
 
 	$ids = array();
 
-	foreach ( $pages as $slug => $page ) {
+	foreach ( array_filter( $pages ) as $slug => $page ) {
 		$existing = get_page_by_path( $slug, OBJECT, 'page' );
 		if ( $existing ) {
 			$ids[ $slug ] = $existing->ID;
@@ -356,8 +349,105 @@ function premium_shop_setup_pages() {
 		}
 	}
 
+	if ( ! empty( $ids['sendungsverfolgung'] ) ) {
+		update_option( 'premium_shop_tracking_page', (int) $ids['sendungsverfolgung'], false );
+	}
+
 	return $ids;
 }
+
+/**
+ * Order tracking page (WooCommerce tracking form).
+ *
+ * @param callable $t Translation in the shop language.
+ * @return array
+ */
+function premium_shop_tracking_page_data( $t ) {
+	return array(
+		'title'   => $t( 'Order tracking' ),
+		'content' => '<!-- wp:paragraph --><p>' . esc_html( $t( 'Where is my order? Enter your order number and e-mail address to see its status, the planned delivery date and the tracking number.' ) ) . '</p><!-- /wp:paragraph --><!-- wp:shortcode -->[woocommerce_order_tracking]<!-- /wp:shortcode -->',
+		'status'  => 'publish',
+	);
+}
+
+/**
+ * Contact page with form and order tracking page, also on existing sites
+ * (theme update): the existing "kontakt" page keeps its text and gets the
+ * contact template; the tracking page is created and added to the
+ * customer service footer menu.
+ */
+function premium_shop_setup_service_pages() {
+	$locale = premium_shop_locale_for( premium_shop_default_language() );
+	$t      = static function ( $text ) use ( $locale ) {
+		return premium_shop_translate_in( $text, $locale );
+	};
+
+	$contact = get_page_by_path( 'kontakt', OBJECT, 'page' );
+	if ( $contact ) {
+		$template = (string) get_post_meta( $contact->ID, '_wp_page_template', true );
+		if ( '' === $template || 'default' === $template ) {
+			update_post_meta( $contact->ID, '_wp_page_template', 'page-templates/template-contact.php' );
+		}
+	} else {
+		$id = wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_title'   => $t( 'Contact' ),
+				'post_name'    => 'kontakt',
+				'post_content' => '<!-- wp:paragraph --><p>' . esc_html( $t( 'We look forward to hearing from you. Our customer service will answer as quickly as possible.' ) ) . '</p><!-- /wp:paragraph -->',
+			)
+		);
+		if ( $id && ! is_wp_error( $id ) ) {
+			update_post_meta( $id, '_wp_page_template', 'page-templates/template-contact.php' );
+		}
+	}
+
+	if ( ! premium_shop_is_wc() ) {
+		return;
+	}
+
+	$tracking = get_page_by_path( 'sendungsverfolgung', OBJECT, 'page' );
+	if ( ! $tracking ) {
+		$data = premium_shop_tracking_page_data( $t );
+		$id   = wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_title'   => $data['title'],
+				'post_name'    => 'sendungsverfolgung',
+				'post_content' => $data['content'],
+			)
+		);
+		$tracking = $id && ! is_wp_error( $id ) ? get_post( $id ) : null;
+	}
+	if ( ! $tracking ) {
+		return;
+	}
+	update_option( 'premium_shop_tracking_page', (int) $tracking->ID, false );
+
+	// Add it to the customer service footer menu when that menu exists.
+	$locations = get_theme_mod( 'nav_menu_locations', array() );
+	$menu_id   = ! empty( $locations['footer_service'] ) ? (int) $locations['footer_service'] : 0;
+	if ( $menu_id && wp_get_nav_menu_object( $menu_id ) ) {
+		foreach ( (array) wp_get_nav_menu_items( $menu_id ) as $item ) {
+			if ( (int) $item->object_id === (int) $tracking->ID ) {
+				return;
+			}
+		}
+		wp_update_nav_menu_item(
+			$menu_id,
+			0,
+			array(
+				'menu-item-object-id' => $tracking->ID,
+				'menu-item-object'    => 'page',
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+			)
+		);
+	}
+}
+add_action( 'premium_shop_upgrade_1_3', 'premium_shop_setup_service_pages' );
 
 /**
  * Create and assign the default menus (never overwrites existing ones).
@@ -418,6 +508,7 @@ function premium_shop_setup_menus() {
 			'items' => array(
 				premium_shop_is_wc() ? $link_item( $t( 'My account' ), wc_get_page_permalink( 'myaccount' ) ) : null,
 				$page_item( 'versand-und-zahlung' ),
+				$page_item( 'sendungsverfolgung' ),
 				$page_item( 'kontakt' ),
 				$page_item( 'ueber-uns' ),
 			),

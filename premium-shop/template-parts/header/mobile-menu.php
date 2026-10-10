@@ -19,6 +19,8 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 
 		<div class="ps-drawer__body">
+			<?php premium_shop_language_switcher( 'drawer' ); ?>
+
 			<?php if ( premium_shop_option( 'header_search' ) ) : ?>
 				<?php get_template_part( 'template-parts/components/search-form', null, array( 'id' => 'ps-mobile-search' ) ); ?>
 			<?php endif; ?>
@@ -57,7 +59,6 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 
 		<div class="ps-drawer__foot">
-			<?php premium_shop_language_switcher( 'drawer' ); ?>
 			<?php premium_shop_social_links(); ?>
 		</div>
 	</div>

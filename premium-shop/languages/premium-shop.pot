@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-09 17:41+0000\n"
-"PO-Revision-Date: 2026-10-09 17:41+0000\n"
+"POT-Creation-Date: 2026-10-10 12:21+0000\n"
+"PO-Revision-Date: 2026-10-10 12:21+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -179,24 +179,28 @@ msgstr ""
 msgid "Shop setup"
 msgstr ""
 
-#: inc/admin/onboarding.php:296 inc/customizer/config.php:581
+#: inc/admin/onboarding.php:287 inc/customizer/config.php:581
 msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
 msgstr ""
 
-#: inc/admin/onboarding.php:296
+#: inc/admin/onboarding.php:287
 msgid "Tell your story here: who you are, what drives you and why your customers can trust you."
 msgstr ""
 
-#: inc/admin/onboarding.php:301
-msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
-msgstr ""
-
-#: inc/admin/onboarding.php:312
+#: inc/admin/onboarding.php:305
 msgid "Describe your shipping countries, delivery times, shipping costs and accepted payment methods here."
 msgstr ""
 
-#: inc/admin/onboarding.php:317 inc/admin/onboarding.php:322 inc/admin/onboarding.php:327
+#: inc/admin/onboarding.php:310 inc/admin/onboarding.php:315 inc/admin/onboarding.php:320
 msgid "Please complete this page with your legally required company information before publishing."
+msgstr ""
+
+#: inc/admin/onboarding.php:367
+msgid "Order tracking"
+msgstr ""
+
+#: inc/admin/onboarding.php:368
+msgid "Where is my order? Enter your order number and e-mail address to see its status, the planned delivery date and the tracking number."
 msgstr ""
 
 #: inc/admin/onboarding.php:50
@@ -226,6 +230,140 @@ msgstr ""
 #. translators:%s: menu item title.
 #: inc/class-premium-shop-walker-nav.php:79
 msgid "Show submenu for %s"
+msgstr ""
+
+#: inc/contact.php:111 inc/contact.php:285 inc/contact.php:392
+msgid "Name"
+msgstr ""
+
+#: inc/contact.php:119 inc/contact.php:289 inc/contact.php:351 inc/contact.php:394
+msgid "Phone"
+msgstr ""
+
+#: inc/contact.php:119 inc/contact.php:123
+msgid "(optional)"
+msgstr ""
+
+#: inc/contact.php:123 inc/contact.php:292 inc/contact.php:352 inc/contact.php:395
+msgid "Order number"
+msgstr ""
+
+#: inc/contact.php:127 inc/contact.php:294 inc/contact.php:396
+msgid "Subject"
+msgstr ""
+
+#: inc/contact.php:135 inc/contact.php:349
+msgid "Message"
+msgstr ""
+
+#. translators:%s: link to the privacy policy.
+#: inc/contact.php:148
+msgid "I agree that my details are used to answer my request. More in the %s."
+msgstr ""
+
+#: inc/contact.php:152
+msgid "I agree that my details are used to answer my request."
+msgstr ""
+
+#: inc/contact.php:161
+msgid "Send message"
+msgstr ""
+
+#: inc/contact.php:189
+msgid "Please fill in your name, a valid e-mail address and your message (at least 10 characters)."
+msgstr ""
+
+#: inc/contact.php:190
+msgid "Please confirm that we may use your details to answer your request."
+msgstr ""
+
+#: inc/contact.php:191
+msgid "You have sent several messages in a short time. Please try again later or call us."
+msgstr ""
+
+#: inc/contact.php:192
+msgid "The form has expired. Please reload the page and try again."
+msgstr ""
+
+#: inc/contact.php:194 inc/enqueue.php:94 inc/newsletter.php:119
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: inc/contact.php:26 inc/contact.php:28
+msgid "Contact messages"
+msgstr ""
+
+#: inc/contact.php:27 inc/contact.php:29 inc/contact.php:416
+msgid "Contact message"
+msgstr ""
+
+#: inc/contact.php:295 inc/contact.php:397 inc/newsletter.php:274 inc/template-tags.php:143
+msgid "Language"
+msgstr ""
+
+#: inc/contact.php:30
+msgid "Search messages"
+msgstr ""
+
+#. translators:1: site name, 2: subject.
+#: inc/contact.php:302
+msgid "[%1$s] Contact request: %2$s"
+msgstr ""
+
+#: inc/contact.php:31
+msgid "No messages yet."
+msgstr ""
+
+#: inc/contact.php:353 inc/newsletter.php:275
+msgid "Date"
+msgstr ""
+
+#: inc/contact.php:369
+msgid "E-mail could not be sent — answer from here."
+msgstr ""
+
+#: inc/contact.php:408
+msgid "Reply by e-mail"
+msgstr ""
+
+#: inc/contact.php:431 inc/customizer/config.php:388
+msgid "Address"
+msgstr ""
+
+#: inc/contact.php:437 inc/newsletter.php:272 inc/customizer/config.php:390
+msgid "Email"
+msgstr ""
+
+#: inc/contact.php:440
+msgid "Write to us on WhatsApp"
+msgstr ""
+
+#: inc/contact.php:443 inc/customizer/config.php:391
+msgid "Opening hours"
+msgstr ""
+
+#: inc/contact.php:58
+msgid "General question"
+msgstr ""
+
+#: inc/contact.php:59
+msgid "My order / delivery"
+msgstr ""
+
+#: inc/contact.php:60
+msgid "Product advice"
+msgstr ""
+
+#: inc/contact.php:61
+msgid "Quote for a large quantity"
+msgstr ""
+
+#: inc/contact.php:62
+msgid "Other"
+msgstr ""
+
+#: inc/contact.php:91 inc/contact.php:216
+msgid "Thank you! Your message has been sent. We will get back to you as soon as possible."
 msgstr ""
 
 #: inc/customizer/class-premium-shop-sortable-control.php:49
@@ -756,18 +894,6 @@ msgstr ""
 msgid "Short description (footer)"
 msgstr ""
 
-#: inc/customizer/config.php:388
-msgid "Address"
-msgstr ""
-
-#: inc/customizer/config.php:389
-msgid "Phone"
-msgstr ""
-
-#: inc/customizer/config.php:391
-msgid "Opening hours"
-msgstr ""
-
 #: inc/customizer/config.php:392
 msgid "WhatsApp number (international format)"
 msgstr ""
@@ -1170,10 +1296,6 @@ msgstr ""
 
 #: inc/enqueue.php:92
 msgid "Your wishlist is empty."
-msgstr ""
-
-#: inc/enqueue.php:94 inc/newsletter.php:119
-msgid "Something went wrong. Please try again."
 msgstr ""
 
 #: inc/enqueue.php:95
@@ -1886,20 +2008,8 @@ msgstr ""
 msgid "No subscribers yet."
 msgstr ""
 
-#: inc/newsletter.php:272 inc/customizer/config.php:390
-msgid "Email"
-msgstr ""
-
 #: inc/newsletter.php:273 inc/firewood/price-tool.php:101
 msgid "Status"
-msgstr ""
-
-#: inc/newsletter.php:274 inc/template-tags.php:143
-msgid "Language"
-msgstr ""
-
-#: inc/newsletter.php:275
-msgid "Date"
 msgstr ""
 
 #: inc/newsletter.php:288
@@ -1914,7 +2024,7 @@ msgstr ""
 msgid "Export confirmed subscribers (CSV)"
 msgstr ""
 
-#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/admin/onboarding.php:66 inc/admin/onboarding.php:233
+#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:340 inc/admin/onboarding.php:66
 msgid "You are not allowed to do this."
 msgstr ""
 
@@ -1946,15 +2056,15 @@ msgstr ""
 msgid "Optional widgets displayed as an additional footer column."
 msgstr ""
 
-#: inc/setup.php:43 inc/admin/onboarding.php:408
+#: inc/setup.php:43 inc/admin/onboarding.php:498
 msgid "Footer — Shop"
 msgstr ""
 
-#: inc/setup.php:44 inc/admin/onboarding.php:417
+#: inc/setup.php:44 inc/admin/onboarding.php:507
 msgid "Footer — Customer service"
 msgstr ""
 
-#: inc/setup.php:45 inc/admin/onboarding.php:426
+#: inc/setup.php:45 inc/admin/onboarding.php:517
 msgid "Footer — Legal"
 msgstr ""
 
@@ -1978,103 +2088,108 @@ msgstr ""
 msgid "Footer — extra column"
 msgstr ""
 
-#: inc/template-tags.php:106 inc/template-tags.php:417 inc/admin/onboarding.php:402 inc/admin/onboarding.php:413
+#: inc/template-tags.php:106 inc/template-tags.php:465 inc/admin/onboarding.php:492 inc/admin/onboarding.php:503
 msgid "Offers"
 msgstr ""
 
-#: inc/template-tags.php:115 inc/admin/onboarding.php:295
+#: inc/template-tags.php:115 inc/admin/onboarding.php:286
 msgid "About us"
 msgstr ""
 
-#: inc/template-tags.php:189 inc/customizer/config.php:398
+#. translators:%s: current language name.
+#: inc/template-tags.php:189
+msgid "Language: %s"
+msgstr ""
+
+#: inc/template-tags.php:237 inc/customizer/config.php:398
 msgid "Social networks"
 msgstr ""
 
 #. translators:%s: social network name.
-#: inc/template-tags.php:197
+#: inc/template-tags.php:245
 msgid "%s (opens in a new tab)"
 msgstr ""
 
-#: inc/template-tags.php:224
+#: inc/template-tags.php:272
 msgid "Invoice"
 msgstr ""
 
-#: inc/template-tags.php:234
+#: inc/template-tags.php:282
 msgid "Accepted payment methods"
 msgstr ""
 
-#: inc/template-tags.php:255
+#: inc/template-tags.php:303
 msgid "View all"
 msgstr ""
 
-#: inc/template-tags.php:295 inc/template-tags.php:300 inc/template-tags.php:311 inc/woocommerce/setup.php:83
+#: inc/template-tags.php:343 inc/template-tags.php:348 inc/template-tags.php:359 inc/woocommerce/setup.php:83
 msgid "Breadcrumb"
 msgstr ""
 
 #. translators:%s: search query.
-#: inc/template-tags.php:326
+#: inc/template-tags.php:374
 msgid "Search results for “%s”"
 msgstr ""
 
-#: inc/template-tags.php:329
+#: inc/template-tags.php:377
 msgid "Page not found"
 msgstr ""
 
 #. translators:%s: author name.
-#: inc/template-tags.php:349
+#: inc/template-tags.php:397
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:360 inc/woocommerce/setup.php:139
+#: inc/template-tags.php:408 inc/woocommerce/setup.php:139
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:361 inc/woocommerce/setup.php:140
+#: inc/template-tags.php:409 inc/woocommerce/setup.php:140
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:415 inc/admin/onboarding.php:411 inc/customizer/config.php:27 inc/customizer/config.php:553
+#: inc/template-tags.php:463 inc/admin/onboarding.php:501 inc/customizer/config.php:27 inc/customizer/config.php:553
 msgid "New arrivals"
 msgstr ""
 
-#: inc/template-tags.php:416 inc/admin/onboarding.php:412 inc/customizer/config.php:29 inc/customizer/config.php:555
+#: inc/template-tags.php:464 inc/admin/onboarding.php:502 inc/customizer/config.php:29 inc/customizer/config.php:555
 msgid "Bestsellers"
 msgstr ""
 
-#: inc/template-tags.php:437
+#: inc/template-tags.php:485
 msgid "Track my orders"
 msgstr ""
 
-#: inc/template-tags.php:442 inc/admin/onboarding.php:311
+#: inc/template-tags.php:490 inc/admin/onboarding.php:304
 msgid "Shipping & payment"
 msgstr ""
 
-#: inc/template-tags.php:446 inc/customizer/config.php:37
+#: inc/template-tags.php:494 inc/customizer/config.php:37
 msgid "FAQ"
 msgstr ""
 
-#: inc/template-tags.php:454 inc/admin/onboarding.php:316
+#: inc/template-tags.php:502 inc/admin/onboarding.php:309
 msgid "Legal notice"
 msgstr ""
 
-#: inc/template-tags.php:455 inc/admin/onboarding.php:321
+#: inc/template-tags.php:503 inc/admin/onboarding.php:314
 msgid "Terms & conditions"
 msgstr ""
 
-#: inc/template-tags.php:456 inc/admin/onboarding.php:326
+#: inc/template-tags.php:504 inc/admin/onboarding.php:319
 msgid "Right of withdrawal"
 msgstr ""
 
-#: inc/template-tags.php:466
+#: inc/template-tags.php:514
 msgid "Privacy policy"
 msgstr ""
 
 #. translators:1: year, 2: company name.
-#: inc/template-tags.php:485
+#: inc/template-tags.php:533
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: inc/template-tags.php:83 inc/template-tags.php:312 inc/admin/onboarding.php:399
+#: inc/template-tags.php:83 inc/template-tags.php:360 inc/admin/onboarding.php:489
 msgid "Home"
 msgstr ""
 
@@ -2179,6 +2294,113 @@ msgstr ""
 msgid "Hide this list"
 msgstr ""
 
+#. translators:%d: number of products.
+#: inc/woocommerce/import-mapping.php:324
+msgid "%d product comes from an incomplete import (“Import placeholder for …”): it has no name and no price, so it cannot be bought."
+msgid_plural "%d products come from an incomplete import (“Import placeholder for …”): they have no name and no price, so they cannot be bought."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce/import-mapping.php:327
+msgid "Move them to the trash, then import your file again (Products → Import). Or import the same file again with “Update existing products” checked: they get their name, prices and categories back."
+msgstr ""
+
+#: inc/woocommerce/import-mapping.php:328
+msgid "Move these products to the trash?"
+msgstr ""
+
+#: inc/woocommerce/import-mapping.php:328
+msgid "Move them to the trash"
+msgstr ""
+
+#. translators:%d: number of products.
+#: inc/woocommerce/import-mapping.php:367
+msgid "%d product moved to the trash."
+msgid_plural "%d products moved to the trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce/order-tracking.php:106 inc/woocommerce/order-tracking.php:235 inc/woocommerce/order-tracking.php:278
+msgid "Planned delivery date"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:110
+msgid "Carrier"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:112
+msgid "— None —"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:119 inc/woocommerce/order-tracking.php:243 inc/woocommerce/order-tracking.php:281
+msgid "Tracking number"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:123
+msgid "Tracking link (only for “Other carrier”)"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:127
+msgid "Note for the customer (e.g. delivery time window)"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:130
+msgid "Shown to the customer on the order tracking page, in their account and in the order e-mails."
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:184
+msgid "Order received"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:185
+msgid "Waiting for payment"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:185
+msgid "In preparation"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:186
+msgid "Delivery scheduled"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:186
+msgid "On its way"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:187
+msgid "Delivered"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:211
+msgid "Order status"
+msgstr ""
+
+#. translators:%s: order status, e.g. Cancelled.
+#: inc/woocommerce/order-tracking.php:216
+msgid "This order is %s. Please contact us if you have any questions."
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:247 inc/woocommerce/order-tracking.php:294
+msgid "Track my parcel"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:28
+msgid "Our own delivery"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:288 inc/woocommerce/order-tracking.php:292 inc/woocommerce/single-product.php:283
+msgid "Delivery"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:34
+msgid "Other carrier"
+msgstr ""
+
+#: inc/woocommerce/order-tracking.php:88
+msgid "Delivery & tracking"
+msgstr ""
+
 #: inc/woocommerce/product-card.php:113
 msgid "Currently unavailable"
 msgstr ""
@@ -2228,6 +2450,43 @@ msgstr ""
 
 #: inc/woocommerce/product-card.php:90
 msgid "New"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:380
+msgid "Translations"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:398
+msgid "A translation plugin (WPML, Polylang, TranslatePress) is active or the language switcher is turned off: translate your products with the plugin."
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:400
+msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main product text."
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:408
+msgid "Product name"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:415
+msgid "Short description"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:423
+msgid "Description"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:427
+msgid "HTML allowed (paragraphs, lists, tables…)."
+msgstr ""
+
+#. translators:%s: language name.
+#: inc/woocommerce/product-translations.php:472
+msgid "Name — %s"
+msgstr ""
+
+#: inc/woocommerce/product-translations.php:482
+msgid "Name shown to visitors who chose this language. Leave empty to show the main name."
 msgstr ""
 
 #. translators:%s: remaining amount.
@@ -2368,10 +2627,6 @@ msgstr ""
 msgid "Add to wishlist"
 msgstr ""
 
-#: inc/woocommerce/single-product.php:283
-msgid "Delivery"
-msgstr ""
-
 #. translators:%s: amount.
 #: inc/woocommerce/single-product.php:289
 msgid "Free shipping from %s."
@@ -2406,6 +2661,18 @@ msgstr ""
 msgid "Journal"
 msgstr ""
 
+#: page-templates/template-contact.php:31 inc/admin/onboarding.php:292 inc/admin/onboarding.php:398
+msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
+msgstr ""
+
+#: page-templates/template-contact.php:39
+msgid "Where is my order? Track it here"
+msgstr ""
+
+#: page-templates/template-contact.php:46
+msgid "Send us a message"
+msgstr ""
+
 #: page-templates/template-wishlist.php:33 inc/enqueue.php:93
 msgid "Loading…"
 msgstr ""
@@ -2422,7 +2689,7 @@ msgstr ""
 msgid "Discover products"
 msgstr ""
 
-#: page.php:42 single.php:41 inc/template-tags.php:362
+#: page.php:42 single.php:41 inc/template-tags.php:410
 msgid "Page"
 msgstr ""
 
@@ -2541,7 +2808,7 @@ msgstr ""
 msgid "Leave this field empty"
 msgstr ""
 
-#: template-parts/components/newsletter-form.php:33
+#: template-parts/components/newsletter-form.php:33 inc/contact.php:115 inc/contact.php:286 inc/contact.php:350
 msgid "Email address"
 msgstr ""
 
@@ -2559,7 +2826,7 @@ msgid "I agree to receive the newsletter and accept the %s. I can unsubscribe at
 msgstr ""
 
 #. translators:%s: privacy policy link.
-#: template-parts/components/newsletter-form.php:48
+#: template-parts/components/newsletter-form.php:48 inc/contact.php:149
 msgid "privacy policy"
 msgstr ""
 
@@ -2571,7 +2838,7 @@ msgstr ""
 msgid "Search products"
 msgstr ""
 
-#: template-parts/components/search-form.php:23 template-parts/components/search-form.php:49 template-parts/header/search-overlay.php:19 template-parts/header/site-header.php:29
+#: template-parts/components/search-form.php:23 template-parts/components/search-form.php:49 template-parts/header/search-overlay.php:19 template-parts/header/site-header.php:35
 msgid "Search"
 msgstr ""
 
@@ -2607,7 +2874,7 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:400
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:91 inc/admin/onboarding.php:490
 msgid "Shop"
 msgstr ""
 
@@ -2615,7 +2882,7 @@ msgstr ""
 msgid "Customer service"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:450 inc/admin/onboarding.php:300
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:123 inc/template-tags.php:498 inc/admin/onboarding.php:291
 msgid "Contact"
 msgstr ""
 
@@ -2647,19 +2914,19 @@ msgstr ""
 msgid "Close menu"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:26 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:397
+#: template-parts/header/mobile-menu.php:28 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:487
 msgid "Main menu"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:34 template-parts/header/site-header.php:42 inc/template-tags.php:436 inc/woocommerce/account.php:100
+#: template-parts/header/mobile-menu.php:36 template-parts/header/site-header.php:48 inc/template-tags.php:484 inc/woocommerce/account.php:100
 msgid "My account"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:34
+#: template-parts/header/mobile-menu.php:36
 msgid "Sign in / Register"
 msgstr ""
 
-#: template-parts/header/mobile-menu.php:44 template-parts/header/site-header.php:53 inc/admin/onboarding.php:305 inc/customizer/config.php:350
+#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:297 inc/customizer/config.php:350
 msgid "Wishlist"
 msgstr ""
 
@@ -2683,11 +2950,11 @@ msgstr ""
 msgid "Open menu"
 msgstr ""
 
-#: template-parts/header/site-header.php:42
+#: template-parts/header/site-header.php:48
 msgid "Sign in"
 msgstr ""
 
-#: template-parts/header/site-header.php:61 inc/template-tags.php:438 inc/woocommerce/cart-checkout.php:27
+#: template-parts/header/site-header.php:67 inc/template-tags.php:486 inc/woocommerce/cart-checkout.php:27
 msgid "Cart"
 msgstr ""
 
@@ -2711,7 +2978,7 @@ msgstr ""
 msgid "Explore"
 msgstr ""
 
-#: template-parts/homepage/categories.php:47 inc/template-tags.php:414 inc/admin/onboarding.php:410
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:462 inc/admin/onboarding.php:500
 msgid "All products"
 msgstr ""
 

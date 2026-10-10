@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,19 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.3.0 =
+* Product texts in several languages without a plugin: "Translations" tab (name, short
+  description, description per language), translated category names, CSV columns
+  "Meta: _ps_name_de" / "_ps_short_de" / "_ps_desc_de"…
+* CSV import: columns of French, German and Spanish WooCommerce exports are recognised
+  whatever the admin language; "Import placeholder" products get a proper URL when updated
+  and can be moved to the trash in one click; firewood data read from product names.
+* Contact page template with a ready-to-use GDPR contact form (messages also saved in the admin).
+* Order tracking page: status timeline, planned delivery date, carrier and tracking number
+  (order screen box), also shown in My account and in the order e-mails.
+* Language switcher in the mobile header and at the top of the mobile menu.
+* WordPress default widgets are moved out of the shop sidebar on existing sites.
 
 = 1.2.0 =
 * Quick view: variable products can be added to the cart (variation form).

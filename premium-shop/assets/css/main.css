@@ -1062,6 +1062,124 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	margin-inline: 6px;
 }
 
+/* Compact language menu (phones & tablets) */
+.ps-header__lang-mini {
+	display: flex;
+	margin-inline-end: 2px;
+}
+
+@media (min-width: 1024px) {
+	.ps-header__lang-mini {
+		display: none;
+	}
+}
+
+/* Small phones: logo next to the menu button so it keeps its full width. */
+@media (max-width: 479px) {
+	.ps-header__inner {
+		grid-template-columns: auto minmax(0, 1fr) auto;
+	}
+
+	.ps-header__brand {
+		justify-content: flex-start;
+	}
+
+	.ps-lang-mini__toggle {
+		padding: 0 9px;
+	}
+
+	.ps-lang-mini__toggle .ps-icon {
+		display: none;
+	}
+}
+
+.ps-lang-mini {
+	position: relative;
+}
+
+.ps-lang-mini__toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	height: 36px;
+	padding: 0 10px;
+	border: 1px solid var(--ps-border);
+	border-radius: 999px;
+	background: var(--ps-surface);
+	color: var(--ps-text);
+	font-size: .76rem;
+	font-weight: 700;
+	letter-spacing: .06em;
+	list-style: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.ps-lang-mini__toggle::-webkit-details-marker {
+	display: none;
+}
+
+.ps-lang-mini[open] .ps-lang-mini__toggle {
+	border-color: var(--ps-primary);
+}
+
+.ps-lang-mini__list {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	z-index: 120;
+	min-width: 170px;
+	margin: 0;
+	padding: 6px;
+	list-style: none;
+	border: 1px solid var(--ps-border);
+	border-radius: var(--ps-radius-sm);
+	background: var(--ps-surface);
+	box-shadow: var(--ps-shadow-md);
+}
+
+.ps-lang-mini__link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-height: 44px;
+	padding: 0 10px;
+	border-radius: 8px;
+	color: var(--ps-text);
+	font-size: .92rem;
+	text-decoration: none;
+}
+
+.ps-lang-mini__link:hover,
+.ps-lang-mini__link:focus-visible {
+	background: var(--ps-soft);
+}
+
+.ps-lang-mini__link.is-current {
+	font-weight: 600;
+}
+
+.ps-lang-mini__code {
+	display: grid;
+	place-items: center;
+	width: 30px;
+	height: 24px;
+	border-radius: 999px;
+	background: var(--ps-soft);
+	font-size: .7rem;
+	font-weight: 700;
+	letter-spacing: .06em;
+}
+
+.ps-lang-mini__link.is-current .ps-lang-mini__code {
+	background: var(--ps-primary);
+	color: var(--ps-on-primary);
+}
+
+.ps-drawer__body > .ps-lang--drawer {
+	margin-bottom: 16px;
+}
+
 .ps-lang--drawer .ps-lang__list {
 	display: inline-flex;
 }
@@ -4157,4 +4275,208 @@ body:not(.ps-animations) .ps-hero__ring {
 
 .ps-faq__a p {
 	margin: 0;
+}
+
+/* 30 Contact page ---------------------------------------------------- */
+.ps-contact {
+	display: grid;
+	gap: clamp(32px, 5vw, 72px);
+	padding-bottom: var(--ps-section);
+}
+
+@media (min-width: 900px) {
+	.ps-contact {
+		grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+		align-items: start;
+	}
+}
+
+.ps-contact__lead {
+	margin-top: 0;
+	font-size: 1.08rem;
+	line-height: 1.7;
+	color: var(--ps-text-muted);
+}
+
+.ps-contact__info .ps-entry-content {
+	max-width: none;
+}
+
+.ps-contact__form {
+	padding: clamp(22px, 4vw, 40px);
+	border: 1px solid var(--ps-border);
+	border-radius: var(--ps-radius-card);
+	background: var(--ps-surface);
+}
+
+.ps-contact__title {
+	margin: 0 0 20px;
+	font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+}
+
+.ps-contact-details {
+	display: grid;
+	gap: 14px;
+	margin: 28px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ps-contact-details__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+}
+
+.ps-contact-details__icon {
+	display: grid;
+	flex: none;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: var(--ps-accent-soft, var(--ps-soft));
+	color: var(--ps-accent);
+}
+
+.ps-contact-details__label {
+	display: block;
+	font-size: .74rem;
+	font-weight: 600;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--ps-text-muted);
+}
+
+.ps-contact-details__value {
+	display: block;
+	margin-top: 2px;
+	line-height: 1.55;
+	overflow-wrap: anywhere;
+}
+
+.ps-contact-details__value a {
+	text-decoration: none;
+}
+
+.ps-contact__tracking {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 28px;
+	padding: 12px 16px;
+	border: 1px solid var(--ps-border);
+	border-radius: 999px;
+	background: var(--ps-surface);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.ps-contact__tracking:hover {
+	border-color: var(--ps-primary);
+}
+
+.ps-contact-form__grid {
+	display: grid;
+	gap: 0 16px;
+}
+
+@media (min-width: 600px) {
+	.ps-contact-form__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.ps-field--full {
+		grid-column: 1 / -1;
+	}
+}
+
+.ps-field {
+	margin: 0 0 16px;
+}
+
+.ps-field label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: .88rem;
+	font-weight: 600;
+}
+
+.ps-field input,
+.ps-field select,
+.ps-field textarea {
+	width: 100%;
+}
+
+.ps-field__optional {
+	font-weight: 400;
+	color: var(--ps-text-muted);
+}
+
+.ps-field .required {
+	color: var(--ps-sale);
+}
+
+.ps-field--check label {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: .86rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--ps-text-muted);
+}
+
+.ps-field--check input {
+	flex: none;
+	width: 18px;
+	height: 18px;
+	margin-top: 2px;
+}
+
+.ps-contact-form__hp {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.ps-contact-form__submit {
+	width: 100%;
+}
+
+@media (min-width: 600px) {
+	.ps-contact-form__submit {
+		width: auto;
+	}
+}
+
+.ps-contact-form__submit.is-loading {
+	opacity: .7;
+	pointer-events: none;
+}
+
+.ps-notice {
+	margin: 0 0 18px;
+	padding: 14px 16px;
+	border-radius: var(--ps-radius-sm);
+	border: 1px solid var(--ps-border);
+	background: var(--ps-soft);
+	line-height: 1.55;
+}
+
+.ps-notice--success {
+	border-color: color-mix(in srgb, var(--ps-success) 40%, transparent);
+	background: color-mix(in srgb, var(--ps-success) 10%, var(--ps-surface));
+}
+
+.ps-notice--error {
+	border-color: color-mix(in srgb, var(--ps-sale) 40%, transparent);
+	background: color-mix(in srgb, var(--ps-sale) 8%, var(--ps-surface));
+}
+
+.ps-field input:user-invalid,
+.ps-field textarea:user-invalid {
+	border-color: var(--ps-sale);
 }
