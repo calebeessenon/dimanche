@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.7.1 =
+* Language switcher redesigned on mobile: slim pill with a round flag and chevron,
+  compact dropdown (small text, flags, check mark on the current language, soft
+  opening animation); flags in the mobile menu switcher too.
 
 = 1.7.0 =
 * Everything in the visitor's language: menu items, page titles (header, browser

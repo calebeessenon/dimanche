@@ -150,6 +150,11 @@ function premium_shop_language_switcher( $context = 'header' ) {
 						lang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
 						title="<?php echo esc_attr( $item['name'] ); ?>"
 						<?php echo $item['current'] ? 'aria-current="true"' : ''; ?>>
+						<?php
+						if ( 'drawer' === $context ) {
+							echo premium_shop_flag( $item['code'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG.
+						}
+						?>
 						<span aria-hidden="true"><?php echo esc_html( $item['label'] ); ?></span>
 						<span class="screen-reader-text"><?php echo esc_html( $item['name'] ); ?></span>
 					</a>
@@ -181,8 +186,9 @@ function premium_shop_language_switcher_compact() {
 	?>
 	<details class="ps-lang-mini" data-ps-lang-mini>
 		<summary class="ps-lang-mini__toggle">
-			<?php premium_shop_icon( 'globe', array( 'size' => 16 ) ); ?>
-			<span aria-hidden="true"><?php echo esc_html( $current['label'] ); ?></span>
+			<?php echo premium_shop_flag( $current['code'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
+			<span class="ps-lang-mini__current" aria-hidden="true"><?php echo esc_html( $current['label'] ); ?></span>
+			<svg class="ps-lang-mini__chevron" viewBox="0 0 10 6" width="9" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 			<span class="screen-reader-text">
 				<?php
 				/* translators: %s: current language name. */
@@ -191,15 +197,16 @@ function premium_shop_language_switcher_compact() {
 			</span>
 		</summary>
 		<ul class="ps-lang-mini__list">
-			<?php foreach ( $items as $item ) : ?>
-				<li>
+			<?php foreach ( $items as $i => $item ) : ?>
+				<li style="--i:<?php echo (int) $i; ?>">
 					<a class="ps-lang-mini__link<?php echo $item['current'] ? ' is-current' : ''; ?>"
 						href="<?php echo esc_url( $item['url'] ); ?>"
 						hreflang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
 						lang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
 						<?php echo $item['current'] ? 'aria-current="true"' : ''; ?>>
+						<?php echo premium_shop_flag( $item['code'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
+						<span class="ps-lang-mini__name"><?php echo esc_html( $item['name'] ); ?></span>
 						<span class="ps-lang-mini__code" aria-hidden="true"><?php echo esc_html( $item['label'] ); ?></span>
-						<span><?php echo esc_html( $item['name'] ); ?></span>
 					</a>
 				</li>
 			<?php endforeach; ?>
@@ -601,4 +608,30 @@ function premium_shop_cart_count() {
  */
 function premium_shop_is_minimal_checkout() {
 	return premium_shop_is_wc() && premium_shop_option( 'minimal_checkout' ) && is_checkout() && ! is_wc_endpoint_url( 'order-received' );
+}
+
+/**
+ * Small round flag for a language (inline SVG, no request).
+ *
+ * @param string $code Language code (de, fr, es, en, it, pt, nl, pl).
+ * @return string
+ */
+function premium_shop_flag( $code ) {
+	$flags = array(
+		'de' => '<rect width="24" height="8" fill="#000"/><rect y="8" width="24" height="8" fill="#dd0000"/><rect y="16" width="24" height="8" fill="#ffce00"/>',
+		'fr' => '<rect width="8" height="24" fill="#002395"/><rect x="8" width="8" height="24" fill="#fff"/><rect x="16" width="8" height="24" fill="#ed2939"/>',
+		'es' => '<rect width="24" height="24" fill="#aa151b"/><rect y="6" width="24" height="12" fill="#f1bf00"/>',
+		'it' => '<rect width="8" height="24" fill="#009246"/><rect x="8" width="8" height="24" fill="#fff"/><rect x="16" width="8" height="24" fill="#ce2b37"/>',
+		'nl' => '<rect width="24" height="8" fill="#ae1c28"/><rect y="8" width="24" height="8" fill="#fff"/><rect y="16" width="24" height="8" fill="#21468b"/>',
+		'pl' => '<rect width="24" height="12" fill="#fff"/><rect y="12" width="24" height="12" fill="#dc143c"/>',
+		'pt' => '<rect width="24" height="24" fill="#ff0000"/><rect width="10" height="24" fill="#006600"/><circle cx="10" cy="12" r="4" fill="#ffcc00"/>',
+		'en' => '<rect width="24" height="24" fill="#012169"/><path d="M0 0l24 24M24 0L0 24" stroke="#fff" stroke-width="5"/><path d="M0 0l24 24M24 0L0 24" stroke="#c8102e" stroke-width="2"/><path d="M12 0v24M0 12h24" stroke="#fff" stroke-width="7"/><path d="M12 0v24M0 12h24" stroke="#c8102e" stroke-width="4"/>',
+	);
+	static $n = 0;
+	++$n;
+	$code = strtolower( substr( (string) $code, 0, 2 ) );
+	if ( ! isset( $flags[ $code ] ) ) {
+		return '<span class="ps-flag ps-flag--none" aria-hidden="true"></span>';
+	}
+	return '<svg class="ps-flag" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><defs><clipPath id="ps-flag-' . $code . '-' . $n . '"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#ps-flag-' . $code . '-' . $n . ')">' . $flags[ $code ] . '</g></svg>';
 }
