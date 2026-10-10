@@ -332,3 +332,14 @@ Corrections : voir readme.txt → Changelog 1.2.0.
 À la mise à jour, le thème ajoute automatiquement le formulaire à la page « kontakt », crée la page
 « sendungsverfolgung », l'ajoute au menu Service client et retire les widgets par défaut de WordPress
 de la barre latérale de la boutique.
+
+## 14. Version 1.3.1 — import Excel et produits sans prix
+
+- **Produits → Tous les produits** : un encadré jaune liste les produits publiés
+  **sans prix**. WooCommerce n'affiche jamais de bouton « In den Warenkorb »
+  pour un produit sans prix : cliquez sur chaque nom pour saisir le prix.
+- **Produits → Importer** : dès que vous choisissez le fichier, le thème
+  détecte le séparateur (`;` pour un fichier enregistré par Excel) et
+  l'encodage Windows-1252, et les règle tout seul dans les options avancées.
+- Les prix écrits « 189,00 », « 1 250,50 » ou « 1'250.50 » sont lus
+  correctement (sans le thème, WooCommerce lit « 189,00 » comme 18 900).

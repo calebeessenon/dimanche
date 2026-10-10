@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:21+0000\n"
-"PO-Revision-Date: 2026-10-10 12:21+0000\n"
+"POT-Creation-Date: 2026-10-10 12:56+0000\n"
+"PO-Revision-Date: 2026-10-10 12:56+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -2319,6 +2319,47 @@ msgid "%d product moved to the trash."
 msgid_plural "%d products moved to the trash."
 msgstr[0] ""
 msgstr[1] ""
+
+#. translators:%d: number of products.
+#: inc/woocommerce/import-mapping.php:427
+msgid "%d published product has no price: WooCommerce shows no “Add to cart” button for it."
+msgid_plural "%d published products have no price: WooCommerce shows no “Add to cart” button for them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce/import-mapping.php:430
+msgid "Enter a regular price (General tab, or in each variation for variable products). After a CSV import, check that the price column was assigned to “Regular price” in the mapping step."
+msgstr ""
+
+#. translators:%d: number of products not listed.
+#: inc/woocommerce/import-mapping.php:440
+msgid "… and %d more."
+msgid_plural "… and %d more."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators:%s: delimiter name.
+#: inc/woocommerce/import-mapping.php:461
+msgid "Delimiter detected: %s. It has been set in the advanced options."
+msgstr ""
+
+#. translators:%s: delimiter name.
+#: inc/woocommerce/import-mapping.php:462
+msgid "The file is not UTF-8 (probably saved by Excel): the encoding has been set to Windows-1252."
+msgstr ""
+
+#. translators:%s: delimiter name.
+#: inc/woocommerce/import-mapping.php:463
+msgid "This file is separated by tabs, which the WooCommerce importer cannot read. Save it again as CSV (comma or semicolon) and choose it again."
+msgstr ""
+
+#: inc/woocommerce/import-mapping.php:465
+msgid "semicolon (;)"
+msgstr ""
+
+#: inc/woocommerce/import-mapping.php:466
+msgid "vertical bar (|)"
+msgstr ""
 
 #: inc/woocommerce/order-tracking.php:106 inc/woocommerce/order-tracking.php:235 inc/woocommerce/order-tracking.php:278
 msgid "Planned delivery date"

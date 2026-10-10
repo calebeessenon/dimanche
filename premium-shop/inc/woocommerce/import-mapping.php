@@ -368,3 +368,262 @@ function premium_shop_import_trashed_notice() {
 	) . '</p></div>';
 }
 add_action( 'admin_notices', 'premium_shop_import_trashed_notice' );
+
+/**
+ * Published products without a price (WooCommerce shows no "Add to cart" button for them).
+ *
+ * Grouped and external products are left out: they have no price of their own.
+ *
+ * @param int $limit Max products returned.
+ * @return array{total:int,items:array<int,string>} Total and ID => title of the first ones.
+ */
+function premium_shop_import_unpriced_products( $limit = 10 ) {
+	global $wpdb;
+
+	$where = "p.post_type = 'product' AND p.post_status = 'publish'
+		AND p.post_title NOT LIKE 'Import placeholder for %'
+		AND NOT EXISTS ( SELECT 1 FROM {$wpdb->postmeta} pm WHERE pm.post_id = p.ID AND pm.meta_key = '_price' AND pm.meta_value <> '' )
+		AND NOT EXISTS (
+			SELECT 1 FROM {$wpdb->term_relationships} tr
+			INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+			INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
+			WHERE tr.object_id = p.ID AND tt.taxonomy = 'product_type' AND t.slug IN ('grouped','external')
+		)";
+
+	// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$total = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} p WHERE {$where}" );
+	$rows  = $total ? $wpdb->get_results( $wpdb->prepare( "SELECT p.ID, p.post_title FROM {$wpdb->posts} p WHERE {$where} ORDER BY p.post_title ASC LIMIT %d", $limit ) ) : array();
+	// phpcs:enable
+
+	$items = array();
+	foreach ( $rows as $row ) {
+		$items[ (int) $row->ID ] = $row->post_title;
+	}
+
+	return array(
+		'total' => $total,
+		'items' => $items,
+	);
+}
+
+/**
+ * Notice on the products screen listing the products without a price.
+ */
+function premium_shop_import_unpriced_notice() {
+	$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+	if ( ! $screen || 'edit-product' !== $screen->id || ! current_user_can( 'edit_products' ) ) {
+		return;
+	}
+
+	$found = premium_shop_import_unpriced_products();
+	if ( ! $found['total'] ) {
+		return;
+	}
+	?>
+	<div class="notice notice-warning">
+		<p><strong>
+			<?php
+			/* translators: %d: number of products. */
+			echo esc_html( sprintf( _n( '%d published product has no price: WooCommerce shows no “Add to cart” button for it.', '%d published products have no price: WooCommerce shows no “Add to cart” button for them.', $found['total'], 'premium-shop' ), $found['total'] ) );
+			?>
+		</strong></p>
+		<p><?php esc_html_e( 'Enter a regular price (General tab, or in each variation for variable products). After a CSV import, check that the price column was assigned to “Regular price” in the mapping step.', 'premium-shop' ); ?></p>
+		<ul style="list-style:disc;margin-left:1.5em">
+			<?php foreach ( $found['items'] as $id => $title ) : ?>
+				<li><a href="<?php echo esc_url( get_edit_post_link( $id ) ); ?>"><?php echo esc_html( '' !== $title ? $title : '#' . $id ); ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<?php if ( $found['total'] > count( $found['items'] ) ) : ?>
+			<p>
+				<?php
+				/* translators: %d: number of products not listed. */
+				echo esc_html( sprintf( _n( '… and %d more.', '… and %d more.', $found['total'] - count( $found['items'] ), 'premium-shop' ), $found['total'] - count( $found['items'] ) ) );
+				?>
+			</p>
+		<?php endif; ?>
+	</div>
+	<?php
+}
+add_action( 'admin_notices', 'premium_shop_import_unpriced_notice' );
+
+/**
+ * Product importer: detect the CSV delimiter (Excel often saves with ";")
+ * and the character encoding as soon as a file is chosen.
+ */
+function premium_shop_import_detect_delimiter_script() {
+	$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+	if ( ! $screen || 'product_page_product_importer' !== $screen->id ) {
+		return;
+	}
+
+	$messages = array(
+		/* translators: %s: delimiter name. */
+		'delimiter' => __( 'Delimiter detected: %s. It has been set in the advanced options.', 'premium-shop' ),
+		'encoding'  => __( 'The file is not UTF-8 (probably saved by Excel): the encoding has been set to Windows-1252.', 'premium-shop' ),
+		'tab'       => __( 'This file is separated by tabs, which the WooCommerce importer cannot read. Save it again as CSV (comma or semicolon) and choose it again.', 'premium-shop' ),
+		'names'     => array(
+			';' => __( 'semicolon (;)', 'premium-shop' ),
+			'|' => __( 'vertical bar (|)', 'premium-shop' ),
+		),
+	);
+	?>
+	<script>
+	( function () {
+		var input = document.getElementById( 'upload' );
+		var form = input && input.form;
+		var field = form && form.querySelector( 'input[name="delimiter"]' );
+		if ( ! input || ! field || ! window.FileReader ) {
+			return;
+		}
+		var l10n = <?php echo wp_json_encode( $messages ); ?>;
+		var note = document.createElement( 'p' );
+		note.className = 'description ps-import-detect';
+		note.setAttribute( 'role', 'status' );
+		input.parentNode.appendChild( note );
+
+		function firstLine( text ) {
+			var quoted = false, i, c;
+			text = text.replace( /^﻿/, '' );
+			for ( i = 0; i < text.length; i++ ) {
+				c = text.charAt( i );
+				if ( '"' === c ) {
+					quoted = ! quoted;
+				} else if ( ! quoted && ( '\n' === c || '\r' === c ) ) {
+					return text.slice( 0, i );
+				}
+			}
+			return text;
+		}
+
+		function detect( line ) {
+			var best = ',', max = 0, quoted = false, counts = { ',': 0, ';': 0, '\t': 0, '|': 0 }, i, c;
+			for ( i = 0; i < line.length; i++ ) {
+				c = line.charAt( i );
+				if ( '"' === c ) {
+					quoted = ! quoted;
+				} else if ( ! quoted && Object.prototype.hasOwnProperty.call( counts, c ) ) {
+					counts[ c ]++;
+				}
+			}
+			Object.keys( counts ).forEach( function ( d ) {
+				if ( counts[ d ] > max ) {
+					max = counts[ d ];
+					best = d;
+				}
+			} );
+			return best;
+		}
+
+		input.addEventListener( 'change', function () {
+			var file = input.files && input.files[0];
+			note.textContent = '';
+			if ( ! file ) {
+				return;
+			}
+			var reader = new FileReader();
+			reader.onload = function () {
+				var bytes = new Uint8Array( reader.result ), text, messages = [], delimiter;
+				try {
+					text = new TextDecoder( 'utf-8', { fatal: true } ).decode( bytes );
+				} catch ( e ) {
+					// The last multibyte character may be cut by the slice: retry without the end.
+					try {
+						text = new TextDecoder( 'utf-8', { fatal: true } ).decode( bytes.subarray( 0, Math.max( 0, bytes.length - 4 ) ) );
+					} catch ( e2 ) {
+						text = new TextDecoder( 'windows-1252' ).decode( bytes );
+						var encoding = form.querySelector( 'select[name="character_encoding"]' );
+						if ( encoding && '' === encoding.value ) {
+							Array.prototype.some.call( encoding.options, function ( option ) {
+								if ( 'windows-1252' === option.value.toLowerCase() || 'windows-1252' === option.text.toLowerCase() ) {
+									encoding.value = option.value || option.text;
+									messages.push( l10n.encoding );
+									return true;
+								}
+								return false;
+							} );
+						}
+					}
+				}
+				delimiter = detect( firstLine( text ) );
+				if ( '\t' === delimiter ) {
+					messages.unshift( l10n.tab );
+				} else if ( ',' !== delimiter && ( '' === field.value || ',' === field.value ) ) {
+					field.value = delimiter;
+					messages.unshift( l10n.delimiter.replace( '%s', l10n.names[ delimiter ] ) );
+				} else if ( ',' === delimiter && field.value && ',' !== field.value && field.dataset.psAuto ) {
+					field.value = '';
+				}
+				if ( ',' !== delimiter && '\t' !== delimiter ) {
+					field.dataset.psAuto = '1';
+				}
+				note.textContent = messages.join( ' ' );
+			};
+			reader.readAsArrayBuffer( file.slice( 0, 65536 ) );
+		} );
+	}() );
+	</script>
+	<?php
+}
+add_action( 'admin_footer', 'premium_shop_import_detect_delimiter_script' );
+
+/**
+ * Read a number written the French / German / Swiss way ("189,00", "1 250,50",
+ * "1'250.50", "CHF 89.-") as a dot-decimal string.
+ *
+ * WooCommerce reads "189,00" as 18900 when the shop's decimal separator is ".".
+ *
+ * @param mixed $value Raw CSV value.
+ * @return string
+ */
+function premium_shop_import_parse_number( $value ) {
+	$value = trim( wp_strip_all_tags( (string) $value ) );
+	if ( '' === $value ) {
+		return '';
+	}
+
+	$value = preg_replace( '/^\'(?=-)/', '', $value ); // Escaped leading "-" from WooCommerce exports.
+	$value = preg_replace( '/[.,]-+$/', '', $value ); // "89.-" / "89,--".
+	$value = preg_replace( '/[^0-9.,\-]/u', '', $value ); // Currency, spaces, ' and ’ thousand marks.
+
+	$comma = strrpos( $value, ',' );
+	$dot   = strrpos( $value, '.' );
+	if ( false !== $comma && false !== $dot ) {
+		// Both: the last one is the decimal separator.
+		$decimal  = $comma > $dot ? ',' : '.';
+		$thousand = ',' === $decimal ? '.' : ',';
+		$value    = str_replace( array( $thousand, $decimal ), array( '', '.' ), $value );
+	} elseif ( false !== $comma ) {
+		// Comma only: "1,250" / "12,500,000" are thousands, "189,00" / "8,5" decimals.
+		$value = preg_match( '/^-?\d{1,3}(?:,\d{3})+$/', $value ) && ',' === wc_get_price_thousand_separator()
+			? str_replace( ',', '', $value )
+			: str_replace( ',', '.', $value );
+	} elseif ( false !== $dot && substr_count( $value, '.' ) > 1 ) {
+		// "1.250.000" (dot thousands).
+		$value = str_replace( '.', '', $value );
+	}
+
+	return is_numeric( $value ) ? wc_format_decimal( $value ) : '';
+}
+
+/**
+ * Use that reader for prices, weight and dimensions in the product importer.
+ *
+ * @param array                        $callbacks One callback per mapped column.
+ * @param WC_Product_CSV_Importer|null $importer  Importer.
+ * @return array
+ */
+function premium_shop_import_number_callbacks( $callbacks, $importer = null ) {
+	if ( ! $importer || ! method_exists( $importer, 'get_mapped_keys' ) ) {
+		return $callbacks;
+	}
+
+	$fields = array( 'price', 'regular_price', 'sale_price', 'weight', 'length', 'width', 'height' );
+	foreach ( array_values( $importer->get_mapped_keys() ) as $i => $key ) {
+		if ( isset( $callbacks[ $i ] ) && in_array( $key, $fields, true ) ) {
+			$callbacks[ $i ] = 'premium_shop_import_parse_number';
+		}
+	}
+
+	return $callbacks;
+}
+add_filter( 'woocommerce_product_importer_formatting_callbacks', 'premium_shop_import_number_callbacks', 10, 2 );

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.3.1 =
+* Products screen: warning listing the published products without a price (WooCommerce
+  shows no "Add to cart" button for them), with edit links.
+* Product importer: the CSV delimiter (";" from Excel) and a non-UTF-8 encoding are
+  detected as soon as the file is chosen.
+* Product importer: prices, weight and dimensions written "189,00", "1 250,50" or
+  "1'250.50" are read correctly (WooCommerce read "189,00" as 18900).
 
 = 1.3.0 =
 * Product texts in several languages without a plugin: "Translations" tab (name, short
