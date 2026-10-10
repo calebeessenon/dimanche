@@ -12,9 +12,16 @@ defined( 'ABSPATH' ) || exit;
  */
 function premium_shop_maybe_upgrade() {
 	$done = (string) get_option( 'premium_shop_version', '' );
-	if ( PREMIUM_SHOP_VERSION === $done || ! current_user_can( 'edit_theme_options' ) ) {
+	if ( PREMIUM_SHOP_VERSION === $done ) {
 		return;
 	}
+	// Runs on the first request after an update (visitor or administrator):
+	// uploading a theme runs the previous version's code, so waiting for an
+	// administrator to open the dashboard could leave pages untranslated.
+	if ( get_transient( 'premium_shop_upgrading' ) ) {
+		return;
+	}
+	set_transient( 'premium_shop_upgrading', 1, 2 * MINUTE_IN_SECONDS );
 
 	if ( '' === $done || version_compare( $done, '1.3.0', '<' ) ) {
 		premium_shop_move_default_widgets();
@@ -48,9 +55,19 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_1_7' );
 	}
 
+	// Self-healing steps, safe to repeat after every update.
+	premium_shop_replace_foreign_email();
+	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {
+		premium_shop_legal_menu_sync();
+	}
+	if ( function_exists( 'premium_shop_seed_page_translations' ) ) {
+		premium_shop_seed_page_translations();
+	}
+
 	update_option( 'premium_shop_version', PREMIUM_SHOP_VERSION, false );
+	delete_transient( 'premium_shop_upgrading' );
 }
-add_action( 'admin_init', 'premium_shop_maybe_upgrade' );
+add_action( 'wp_loaded', 'premium_shop_maybe_upgrade' );
 
 /**
  * WordPress puts its default widgets (search, recent posts, recent comments,

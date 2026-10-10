@@ -205,8 +205,8 @@ function premium_shop_language_switcher_compact() {
 						lang="<?php echo esc_attr( premium_shop_bcp47( $item['locale'] ) ); ?>"
 						<?php echo $item['current'] ? 'aria-current="true"' : ''; ?>>
 						<?php echo premium_shop_flag( $item['code'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
-						<span class="ps-lang-mini__name"><?php echo esc_html( $item['name'] ); ?></span>
 						<span class="ps-lang-mini__code" aria-hidden="true"><?php echo esc_html( $item['label'] ); ?></span>
+						<span class="screen-reader-text"><?php echo esc_html( $item['name'] ); ?></span>
 					</a>
 				</li>
 			<?php endforeach; ?>

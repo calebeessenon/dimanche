@@ -320,7 +320,7 @@ function premium_shop_page_hero( $override = array() ) {
 					<p class="ps-phero__cta"><a class="ps-btn ps-btn--accent" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'Discover the shop', 'premium-shop' ); ?> <?php premium_shop_icon( 'arrow', array( 'size' => 16 ) ); ?></a></p>
 				<?php elseif ( $hero['steps'] ) : ?>
 					<?php premium_shop_checkout_steps(); ?>
-				<?php elseif ( $hero['chips'] ) : ?>
+				<?php elseif ( $hero['chips'] && ! empty( $hero['show_chips'] ) ) : ?>
 					<ul class="ps-phero__chips">
 						<?php foreach ( premium_shop_page_hero_chips() as $i => $chip ) : ?>
 							<li style="--i:<?php echo (int) $i; ?>"><?php premium_shop_icon( $chip[0], array( 'size' => 16 ) ); ?><span><?php echo esc_html( $chip[1] ); ?></span></li>
@@ -553,15 +553,15 @@ function premium_shop_page_showcase( $variant = 'page' ) {
 	?>
 	<section class="ps-showcase" aria-label="<?php esc_attr_e( 'Discover our products', 'premium-shop' ); ?>">
 		<?php if ( $chips ) : ?>
-			<div class="ps-ticker" aria-hidden="true">
-				<div class="ps-ticker__track">
-					<?php for ( $round = 0; $round < 4; $round++ ) : ?>
-						<?php foreach ( $chips as $chip ) : ?>
-							<span class="ps-ticker__item"><?php premium_shop_icon( $chip[0], array( 'size' => 18 ) ); ?><?php echo esc_html( $chip[1] ); ?></span>
-							<span class="ps-ticker__dot"></span>
-						<?php endforeach; ?>
-					<?php endfor; ?>
-				</div>
+			<div class="ps-trustbar">
+				<ul class="ps-container ps-trustbar__list">
+					<?php foreach ( $chips as $i => $chip ) : ?>
+						<li class="ps-trustbar__item" data-reveal style="--ps-delay:<?php echo (int) $i * 80; ?>ms">
+							<span class="ps-trustbar__icon"><?php premium_shop_icon( $chip[0], array( 'size' => 20 ) ); ?></span>
+							<span class="ps-trustbar__text"><?php echo esc_html( $chip[1] ); ?></span>
+						</li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 		<?php endif; ?>
 

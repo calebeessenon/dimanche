@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,16 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.7.2 =
+* Updates apply on the first visit after uploading the theme (no need to open the
+  dashboard); page translations, footer legal links and contact e-mail are
+  re-checked after every update.
+* Asset URLs carry the upload time: browsers and server caches always load the
+  new styles after an update.
+* Reassurance messages shown once, in a tidy 4-box bar at the bottom of pages
+  (2 x 2 on mobile) instead of chips + a repeating band.
+* Mobile language menu: flag + code only.
 
 = 1.7.1 =
 * Language switcher redesigned on mobile: slim pill with a round flag and chevron,

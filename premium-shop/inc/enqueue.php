@@ -41,7 +41,10 @@ function premium_shop_is_shop_listing() {
  * Enqueue front-end assets.
  */
 function premium_shop_enqueue_assets() {
-	$version = PREMIUM_SHOP_VERSION;
+	// Version + upload time: a new theme upload always gets fresh file URLs,
+	// so browsers and caches never keep an old stylesheet or script.
+	$stamp   = @filemtime( PREMIUM_SHOP_DIR . '/assets/css/main.min.css' ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+	$version = PREMIUM_SHOP_VERSION . ( $stamp ? '.' . $stamp : '' );
 
 	wp_enqueue_style( 'premium-shop', premium_shop_asset( 'css/main', 'css' ), array(), $version );
 	wp_add_inline_style( 'premium-shop', premium_shop_dynamic_css() );

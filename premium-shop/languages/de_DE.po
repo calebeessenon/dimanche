@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 17:32+0000\n"
-"PO-Revision-Date: 2026-10-10 17:32+0000\n"
+"POT-Creation-Date: 2026-10-10 17:42+0000\n"
+"PO-Revision-Date: 2026-10-10 17:42+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -270,7 +270,7 @@ msgstr "Sie haben in kurzer Zeit mehrere Nachrichten gesendet. Bitte versuchen S
 msgid "The form has expired. Please reload the page and try again."
 msgstr "Das Formular ist abgelaufen. Bitte laden Sie die Seite neu und versuchen Sie es erneut."
 
-#: inc/contact.php:194 inc/enqueue.php:97 inc/newsletter.php:119
+#: inc/contact.php:194 inc/enqueue.php:100 inc/newsletter.php:119
 msgid "Something went wrong. Please try again."
 msgstr "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
 
@@ -1419,45 +1419,45 @@ msgstr "Premium Shop – Theme-Optionen"
 msgid "Logo and favicon: Site Identity. Menus: Menus. Everything else about the design and content of the shop is here."
 msgstr "Logo und Favicon: Website-Informationen. Menüs: Menüs. Alles andere zu Design und Inhalten des Shops finden Sie hier."
 
-#: inc/enqueue.php:85
+#: inc/enqueue.php:101
+msgid "Results updated"
+msgstr "Ergebnisse aktualisiert"
+
+#: inc/enqueue.php:88
 msgid "Searching…"
 msgstr "Suche läuft …"
 
-#: inc/enqueue.php:86
+#: inc/enqueue.php:89
 msgid "No products found."
 msgstr "Keine Produkte gefunden."
 
-#: inc/enqueue.php:87
+#: inc/enqueue.php:90
 msgid "View all results"
 msgstr "Alle Ergebnisse anzeigen"
 
-#: inc/enqueue.php:90
+#: inc/enqueue.php:93
 msgid "Added to your cart"
 msgstr "Zum Warenkorb hinzugefügt"
 
-#: inc/enqueue.php:91
+#: inc/enqueue.php:94
 msgid "Added"
 msgstr "Hinzugefügt"
 
-#: inc/enqueue.php:92
+#: inc/enqueue.php:95
 msgid "View cart"
 msgstr "Zum Warenkorb"
 
-#: inc/enqueue.php:93
+#: inc/enqueue.php:96
 msgid "Added to your wishlist"
 msgstr "Zur Wunschliste hinzugefügt"
 
-#: inc/enqueue.php:94
+#: inc/enqueue.php:97
 msgid "Removed from your wishlist"
 msgstr "Von der Wunschliste entfernt"
 
-#: inc/enqueue.php:95
+#: inc/enqueue.php:98
 msgid "Your wishlist is empty."
 msgstr "Ihre Wunschliste ist leer."
-
-#: inc/enqueue.php:98
-msgid "Results updated"
-msgstr "Ergebnisse aktualisiert"
 
 #: inc/firewood/calculator.php:111
 msgid "Checking…"
@@ -2960,7 +2960,7 @@ msgstr "Wo ist meine Bestellung? Hier verfolgen"
 msgid "Send us a message"
 msgstr "Schreiben Sie uns"
 
-#: page-templates/template-wishlist.php:37 inc/enqueue.php:96
+#: page-templates/template-wishlist.php:37 inc/enqueue.php:99
 msgid "Loading…"
 msgstr "Wird geladen …"
 
@@ -2980,7 +2980,7 @@ msgstr "Produkte entdecken"
 msgid "Page"
 msgstr "Seite"
 
-#: search.php:41 inc/enqueue.php:88
+#: search.php:41 inc/enqueue.php:91
 msgid "Products"
 msgstr "Produkte"
 
@@ -3328,7 +3328,7 @@ msgstr "Mit %d von 5 bewertet"
 msgid "Quick view"
 msgstr "Schnellansicht"
 
-#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:99
+#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:102
 msgid "Close"
 msgstr "Schließen"
 
@@ -3340,7 +3340,7 @@ msgstr "Details ansehen"
 msgid "Choose options"
 msgstr "Optionen wählen"
 
-#: woocommerce/archive-product.php:63 inc/enqueue.php:89 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
+#: woocommerce/archive-product.php:63 inc/enqueue.php:92 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
 msgid "Categories"
 msgstr "Kategorien"
 
