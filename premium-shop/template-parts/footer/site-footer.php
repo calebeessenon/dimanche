@@ -29,7 +29,7 @@ $premium_shop_wa      = preg_replace( '/[^0-9]/', '', (string) premium_shop_opti
 
 	<div class="ps-container ps-footer__main">
 		<div class="ps-footer__col ps-footer__col--brand">
-			<div class="ps-footer__logo"><?php premium_shop_logo(); ?></div>
+			<div class="ps-footer__logo"><?php premium_shop_footer_logo(); ?></div>
 			<p class="ps-footer__about"><?php echo esc_html( premium_shop_text( 'company_about' ) ); ?></p>
 			<?php premium_shop_social_links(); ?>
 		</div>

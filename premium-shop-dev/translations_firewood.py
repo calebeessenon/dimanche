@@ -374,4 +374,6 @@ T = [
 ('Next slide', 'Nächste Folie', 'Diapositive suivante', 'Diapositiva siguiente'),
 ('Link preview image (WhatsApp, Facebook…)', 'Vorschaubild für geteilte Links (WhatsApp, Facebook…)', 'Image d’aperçu des liens (WhatsApp, Facebook…)', 'Imagen de vista previa de enlaces (WhatsApp, Facebook…)'),
 ('Shown when your site link is shared. Recommended: 1200 × 630 px.', 'Wird angezeigt, wenn der Link Ihrer Website geteilt wird. Empfohlen: 1200 × 630 px.', 'Affichée quand le lien de votre site est partagé. Recommandé : 1200 × 630 px.', 'Se muestra al compartir el enlace de su sitio. Recomendado: 1200 × 630 px.'),
+('Footer logo (light version for the dark footer)', 'Footer-Logo (helle Version für den dunklen Footer)', 'Logo du pied de page (version claire pour le pied de page foncé)', 'Logo del pie de página (versión clara para el pie oscuro)'),
+('Optional. Without it, your logo is shown on a light card.', 'Optional. Ohne dieses Logo wird Ihr Logo auf einer hellen Karte angezeigt.', 'Facultatif. Sans lui, votre logo est affiché sur une carte claire.', 'Opcional. Sin él, su logo se muestra sobre una tarjeta clara.'),
 ]

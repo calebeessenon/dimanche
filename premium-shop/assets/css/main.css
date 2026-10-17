@@ -3221,9 +3221,29 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	font-size: 1.8rem;
 }
 
-.ps-footer__logo .custom-logo {
-	filter: brightness(0) invert(1);
-	opacity: .95;
+.ps-footer__logo-card {
+	display: inline-flex;
+	padding: 10px 16px;
+	border-radius: 14px;
+	background: #fbf8f3;
+	box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .6);
+}
+
+.ps-footer__logo-card .custom-logo-link {
+	display: inline-flex;
+}
+
+.ps-footer__logo .ps-footer__logo-card .custom-logo {
+	max-width: 230px;
+	max-height: 56px;
+}
+
+.ps-footer__logo-img {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 240px;
+	max-height: 64px;
 }
 
 .ps-footer__about {

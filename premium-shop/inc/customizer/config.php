@@ -414,6 +414,7 @@ function premium_shop_customizer_config() {
 	$sections['ps_footer'] = array(
 		'title'  => __( 'Footer', 'premium-shop' ),
 		'fields' => array(
+			'footer_logo'      => array( 'type' => 'image', 'default' => 0, 'label' => __( 'Footer logo (light version for the dark footer)', 'premium-shop' ), 'description' => __( 'Optional. Without it, your logo is shown on a light card.', 'premium-shop' ) ),
 			'footer_copyright' => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Copyright text', 'premium-shop' ), 'description' => __( 'Use {year} and {company}. Empty = automatic.', 'premium-shop' ) ),
 			'footer_payments'  => array( 'type' => 'text', 'default' => 'visa,mastercard,paypal,klarna,applepay,googlepay,sepa', 'label' => __( 'Payment methods shown', 'premium-shop' ), 'description' => __( 'Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, twint, postfinance, invoice, prepayment', 'premium-shop' ) ),
 			'back_to_top'      => array( 'type' => 'checkbox', 'default' => true, 'label' => __( '"Back to top" button', 'premium-shop' ) ),

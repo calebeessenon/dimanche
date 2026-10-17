@@ -23,6 +23,29 @@ function premium_shop_logo() {
 }
 
 /**
+ * Footer logo: the light version chosen in the Customizer, else the main
+ * logo on a light card (a coloured logo stays readable on the dark footer).
+ */
+function premium_shop_footer_logo() {
+	$light = absint( premium_shop_option( 'footer_logo' ) );
+	if ( $light ) {
+		?>
+		<a class="ps-footer__logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php echo wp_get_attachment_image( $light, 'medium', false, array( 'class' => 'ps-footer__logo-img', 'alt' => get_bloginfo( 'name' ), 'loading' => 'lazy' ) ); ?>
+		</a>
+		<?php
+		return;
+	}
+	if ( has_custom_logo() ) {
+		echo '<span class="ps-footer__logo-card">';
+		the_custom_logo();
+		echo '</span>';
+		return;
+	}
+	premium_shop_logo();
+}
+
+/**
  * Primary navigation (with automatic fallback when no menu is assigned).
  *
  * @param string $context desktop|mobile.
