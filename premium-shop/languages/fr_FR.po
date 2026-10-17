@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 17:51+0000\n"
-"PO-Revision-Date: 2026-10-17 17:51+0000\n"
+"POT-Creation-Date: 2026-10-17 18:15+0000\n"
+"PO-Revision-Date: 2026-10-17 18:15+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -356,7 +356,7 @@ msgid "Delivery time"
 msgstr "Délai de livraison"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:382
 msgid "Free shipping"
 msgstr "Livraison gratuite"
 
@@ -2148,19 +2148,19 @@ msgstr "Diapositive précédente"
 msgid "Next slide"
 msgstr "Diapositive suivante"
 
-#: inc/i18n-content.php:297
+#: inc/i18n-content.php:303
 msgid "incl. VAT"
 msgstr "TTC"
 
-#: inc/i18n-content.php:298
+#: inc/i18n-content.php:304
 msgid "excl. VAT"
 msgstr "HT"
 
-#: inc/i18n-content.php:299
+#: inc/i18n-content.php:305
 msgid "plus shipping"
 msgstr "hors frais de livraison"
 
-#: inc/i18n-content.php:300
+#: inc/i18n-content.php:306
 msgid "incl. VAT, plus shipping"
 msgstr "TTC, hors frais de livraison"
 
@@ -2396,11 +2396,11 @@ msgstr "Réseaux sociaux"
 msgid "%s (opens in a new tab)"
 msgstr "%s (s’ouvre dans un nouvel onglet)"
 
-#: inc/template-tags.php:338 inc/woocommerce/order-language.php:381
+#: inc/template-tags.php:338 inc/woocommerce/order-language.php:393
 msgid "Invoice"
 msgstr "Facture"
 
-#: inc/template-tags.php:339 inc/woocommerce/order-language.php:380
+#: inc/template-tags.php:339 inc/woocommerce/order-language.php:392
 msgid "Prepayment"
 msgstr "Paiement anticipé"
 
@@ -2669,6 +2669,50 @@ msgstr "Retrait sur place"
 #: inc/woocommerce/order-language.php:379
 msgid "Delivery by truck"
 msgstr "Livraison par camion"
+
+#: inc/woocommerce/order-language.php:380
+msgid "Express delivery"
+msgstr "Livraison express"
+
+#: inc/woocommerce/order-language.php:381
+msgid "Standard delivery"
+msgstr "Livraison standard"
+
+#: inc/woocommerce/order-language.php:383
+msgid "Free delivery"
+msgstr "Livraison offerte"
+
+#: inc/woocommerce/order-language.php:384
+msgid "Flat rate"
+msgstr "Forfait"
+
+#: inc/woocommerce/order-language.php:385
+msgid "Local pickup"
+msgstr "Retrait local"
+
+#: inc/woocommerce/order-language.php:386
+msgid "Pickup at the depot"
+msgstr "Retrait au dépôt"
+
+#: inc/woocommerce/order-language.php:387
+msgid "Delivery with crane truck"
+msgstr "Livraison par camion-grue"
+
+#: inc/woocommerce/order-language.php:388
+msgid "Delivery on pallet"
+msgstr "Livraison sur palette"
+
+#: inc/woocommerce/order-language.php:389
+msgid "Bank transfer"
+msgstr "Virement bancaire"
+
+#: inc/woocommerce/order-language.php:390
+msgid "Cash on delivery"
+msgstr "Paiement à la livraison"
+
+#: inc/woocommerce/order-language.php:391
+msgid "Payment on pickup"
+msgstr "Paiement au retrait"
 
 #: inc/woocommerce/order-tracking.php:105
 msgid "Delivery & tracking"

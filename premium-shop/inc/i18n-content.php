@@ -49,27 +49,31 @@ function premium_shop_i18n_reverse_map() {
 	if ( null !== $map ) {
 		return $map;
 	}
-	$map    = array();
-	$locale = premium_shop_locale_for( premium_shop_default_language() );
-	if ( 0 === strpos( $locale, 'en_' ) ) {
-		return $map;
-	}
-	$file = PREMIUM_SHOP_DIR . '/languages/' . $locale . '.mo';
-	if ( ! is_readable( $file ) ) {
-		return $map;
-	}
-	$mo = new MO();
-	if ( ! $mo->import_from_file( $file ) ) {
-		return $map;
-	}
-	foreach ( $mo->entries as $entry ) {
-		if ( empty( $entry->translations[0] ) || $entry->is_plural || false !== strpos( $entry->singular, '%' ) ) {
+	$map = array();
+	// Shop language first, then the other languages: a label typed in any
+	// of them (e.g. "Livraison express" on a German shop) is recognised.
+	$codes = array_unique( array_merge( array( premium_shop_default_language() ), array_keys( premium_shop_languages() ) ) );
+	foreach ( $codes as $code ) {
+		$locale = premium_shop_locale_for( $code );
+		$file   = PREMIUM_SHOP_DIR . '/languages/' . $locale . '.mo';
+		if ( 0 === strpos( $locale, 'en_' ) || ! is_readable( $file ) ) {
 			continue;
 		}
-		$key = premium_shop_i18n_key( $entry->translations[0] );
-		// Keep the first (shortest-context) source for a given translation.
-		if ( '' !== $key && ! isset( $map[ $key ] ) ) {
-			$map[ $key ] = $entry->singular;
+		$mo = new MO();
+		if ( ! $mo->import_from_file( $file ) ) {
+			continue;
+		}
+		foreach ( $mo->entries as $entry ) {
+			if ( empty( $entry->translations[0] ) || $entry->is_plural || false !== strpos( $entry->singular, '%' ) ) {
+				continue;
+			}
+			foreach ( array( $entry->translations[0], $entry->singular ) as $text ) {
+				$key = premium_shop_i18n_key( $text );
+				// Keep the first (shop-language) source for a given text.
+				if ( '' !== $key && ! isset( $map[ $key ] ) ) {
+					$map[ $key ] = $entry->singular;
+				}
+			}
 		}
 	}
 	return $map;
@@ -94,10 +98,12 @@ function premium_shop_i18n_key( $text ) {
  * @return string Translated label, or the original when unknown.
  */
 function premium_shop_i18n_label( $text ) {
-	$lang = premium_shop_i18n_target();
-	if ( '' === $lang || '' === trim( (string) $text ) ) {
+	if ( '' === trim( (string) $text ) ) {
 		return $text;
 	}
+	// Shop language too: a label typed in another language is brought back to it.
+	$lang = premium_shop_i18n_target();
+	$lang = '' !== $lang ? $lang : premium_shop_default_language();
 	if ( false !== strpos( $text, '[:' ) && function_exists( 'premium_shop_pick_language_block' ) ) {
 		return premium_shop_pick_language_block( $text );
 	}

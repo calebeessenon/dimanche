@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 17:51+0000\n"
-"PO-Revision-Date: 2026-10-17 17:51+0000\n"
+"POT-Creation-Date: 2026-10-17 18:15+0000\n"
+"PO-Revision-Date: 2026-10-17 18:15+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -355,7 +355,7 @@ msgid "Delivery time"
 msgstr ""
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:382
 msgid "Free shipping"
 msgstr ""
 
@@ -2147,19 +2147,19 @@ msgstr ""
 msgid "Next slide"
 msgstr ""
 
-#: inc/i18n-content.php:297
+#: inc/i18n-content.php:303
 msgid "incl. VAT"
 msgstr ""
 
-#: inc/i18n-content.php:298
+#: inc/i18n-content.php:304
 msgid "excl. VAT"
 msgstr ""
 
-#: inc/i18n-content.php:299
+#: inc/i18n-content.php:305
 msgid "plus shipping"
 msgstr ""
 
-#: inc/i18n-content.php:300
+#: inc/i18n-content.php:306
 msgid "incl. VAT, plus shipping"
 msgstr ""
 
@@ -2395,11 +2395,11 @@ msgstr ""
 msgid "%s (opens in a new tab)"
 msgstr ""
 
-#: inc/template-tags.php:338 inc/woocommerce/order-language.php:381
+#: inc/template-tags.php:338 inc/woocommerce/order-language.php:393
 msgid "Invoice"
 msgstr ""
 
-#: inc/template-tags.php:339 inc/woocommerce/order-language.php:380
+#: inc/template-tags.php:339 inc/woocommerce/order-language.php:392
 msgid "Prepayment"
 msgstr ""
 
@@ -2667,6 +2667,50 @@ msgstr ""
 
 #: inc/woocommerce/order-language.php:379
 msgid "Delivery by truck"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:380
+msgid "Express delivery"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:381
+msgid "Standard delivery"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:383
+msgid "Free delivery"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:384
+msgid "Flat rate"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:385
+msgid "Local pickup"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:386
+msgid "Pickup at the depot"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:387
+msgid "Delivery with crane truck"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:388
+msgid "Delivery on pallet"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:389
+msgid "Bank transfer"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:390
+msgid "Cash on delivery"
+msgstr ""
+
+#: inc/woocommerce/order-language.php:391
+msgid "Payment on pickup"
 msgstr ""
 
 #: inc/woocommerce/order-tracking.php:105

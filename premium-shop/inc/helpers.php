@@ -101,7 +101,7 @@ function premium_shop_pick_language_block( $value ) {
 		return $value;
 	}
 
-	$current = premium_shop_current_language();
+	$current = ! empty( $GLOBALS['premium_shop_switched_language'] ) ? $GLOBALS['premium_shop_switched_language'] : premium_shop_current_language();
 	if ( isset( $blocks[ $current ] ) ) {
 		return $blocks[ $current ];
 	}

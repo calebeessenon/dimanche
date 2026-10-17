@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,13 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.4 =
+* Shipping / payment names and menu labels are recognised whatever language they
+  were typed in (e.g. "Livraison express" on a German shop) and shown in the
+  visitor's language. More common names in the catalogue (express, standard,
+  free delivery, flat rate, local pickup, crane truck, pallet, bank transfer,
+  cash on delivery…).
 
 = 1.9.3 =
 * Footer logo: no more white box. The logo is shown on a light card, or use the
