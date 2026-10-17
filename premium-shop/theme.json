@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "primary", "name": "Primary", "color": "var(--ps-primary, #16181d)" },
+				{ "slug": "accent", "name": "Accent", "color": "var(--ps-accent, #8f602b)" },
+				{ "slug": "background", "name": "Background", "color": "var(--ps-bg, #fbf9f5)" },
+				{ "slug": "soft", "name": "Soft", "color": "var(--ps-soft, #f2ede5)" },
+				{ "slug": "surface", "name": "Surface", "color": "var(--ps-surface, #ffffff)" },
+				{ "slug": "text", "name": "Text", "color": "var(--ps-text, #1b1d22)" },
+				{ "slug": "muted", "name": "Muted text", "color": "var(--ps-text-muted, #5f626b)" },
+				{ "slug": "sale", "name": "Sale", "color": "var(--ps-sale, #b3261e)" }
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "0.875rem" },
+				{ "slug": "medium", "name": "Medium", "size": "1.05rem" },
+				{ "slug": "large", "name": "Large", "size": "1.35rem", "fluid": { "min": "1.2rem", "max": "1.35rem" } },
+				{ "slug": "x-large", "name": "Extra large", "size": "2.2rem", "fluid": { "min": "1.7rem", "max": "2.2rem" } },
+				{ "slug": "huge", "name": "Huge", "size": "3.6rem", "fluid": { "min": "2.4rem", "max": "3.6rem" } }
+			],
+			"fontFamilies": [
+				{ "slug": "heading", "name": "Heading", "fontFamily": "var(--ps-font-heading, Georgia, serif)" },
+				{ "slug": "body", "name": "Body", "fontFamily": "var(--ps-font-body, sans-serif)" }
+			]
+		},
+		"spacing": {
+			"units": [ "px", "rem", "em", "%", "vw", "vh" ]
+		}
+	}
+}

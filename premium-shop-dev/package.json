@@ -1,0 +1,11 @@
+{
+  "name": "premium-shop-dev",
+  "private": true,
+  "description": "Build tools for the Premium Shop WordPress theme (not shipped in the theme zip).",
+  "scripts": {
+    "build": "bash build.sh"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
