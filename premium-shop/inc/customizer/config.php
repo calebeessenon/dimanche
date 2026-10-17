@@ -219,6 +219,7 @@ function premium_shop_customizer_config() {
 				),
 			),
 			'hero_image'           => array( 'type' => 'image', 'default' => 0, 'label' => __( 'Hero image', 'premium-shop' ), 'description' => __( 'Recommended: 1400 × 1600 px (split) or 2400 × 1200 px (full width). Without image, a featured product image or an abstract artwork is used.', 'premium-shop' ) ),
+			'share_image'          => array( 'type' => 'image', 'default' => 0, 'label' => __( 'Link preview image (WhatsApp, Facebook…)', 'premium-shop' ), 'description' => __( 'Shown when your site link is shared. Recommended: 1200 × 630 px.', 'premium-shop' ) ),
 			'hero_eyebrow'         => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Small line above the title', 'premium-shop' ), 'description' => $text_hint ),
 			'hero_title'           => array( 'type' => 'textarea', 'default' => '', 'translatable' => true, 'label' => __( 'Title', 'premium-shop' ) ),
 			'hero_subtitle'        => array( 'type' => 'textarea', 'default' => '', 'translatable' => true, 'label' => __( 'Subtitle', 'premium-shop' ) ),

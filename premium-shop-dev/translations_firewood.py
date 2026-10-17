@@ -372,4 +372,6 @@ T = [
 ('slide', 'Folie', 'diapositive', 'diapositiva'),
 ('Previous slide', 'Vorherige Folie', 'Diapositive précédente', 'Diapositiva anterior'),
 ('Next slide', 'Nächste Folie', 'Diapositive suivante', 'Diapositiva siguiente'),
+('Link preview image (WhatsApp, Facebook…)', 'Vorschaubild für geteilte Links (WhatsApp, Facebook…)', 'Image d’aperçu des liens (WhatsApp, Facebook…)', 'Imagen de vista previa de enlaces (WhatsApp, Facebook…)'),
+('Shown when your site link is shared. Recommended: 1200 × 630 px.', 'Wird angezeigt, wenn der Link Ihrer Website geteilt wird. Empfohlen: 1200 × 630 px.', 'Affichée quand le lien de votre site est partagé. Recommandé : 1200 × 630 px.', 'Se muestra al compartir el enlace de su sitio. Recomendado: 1200 × 630 px.'),
 ]

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.2 =
+* Link previews (WhatsApp, Facebook, LinkedIn, X): Open Graph title, description
+  and image (product / page photo, else a bundled share image or the one chosen
+  in Customizer → Homepage hero → Link preview image). Skipped when an SEO
+  plugin is active.
+* Homepage description and title no longer repeat the shop name when the slogan
+  is empty or equal to it.
 
 = 1.9.1 =
 * Stylesheets and scripts are also served under a name that changes with their
