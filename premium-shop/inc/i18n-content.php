@@ -306,3 +306,29 @@ function premium_shop_i18n_setting_strings() {
 		__( 'incl. VAT, plus shipping', 'premium-shop' ),
 	);
 }
+
+/**
+ * Site slogan in the visitor's language: "[:de]…[:fr]…" versions, the
+ * catalogue, else the (translated) small line of the homepage hero.
+ *
+ * @param string $value Slogan.
+ * @return string
+ */
+function premium_shop_i18n_slogan( $value ) {
+	if ( is_admin() || is_customize_preview() || '' === trim( (string) $value ) ) {
+		return $value;
+	}
+	if ( false !== strpos( $value, '[:' ) && function_exists( 'premium_shop_pick_language_block' ) ) {
+		return premium_shop_pick_language_block( $value );
+	}
+	if ( '' === premium_shop_i18n_target() ) {
+		return $value;
+	}
+	$translated = premium_shop_i18n_label( $value );
+	if ( $translated !== $value ) {
+		return $translated;
+	}
+	$eyebrow = premium_shop_text( 'hero_eyebrow' );
+	return $eyebrow ? $eyebrow : $value;
+}
+add_filter( 'option_blogdescription', 'premium_shop_i18n_slogan', 20 );
