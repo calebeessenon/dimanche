@@ -354,6 +354,35 @@ function premium_shop_translate_shipping_rates( $rates ) {
 add_filter( 'woocommerce_package_rates', 'premium_shop_translate_shipping_rates', 99 );
 
 /**
+ * Shipping rates are kept in the customer session: when the visitor changes
+ * language, the label is translated again when it is read (cart, checkout,
+ * block checkout / Store API, order).
+ *
+ * @param string $label Label.
+ * @return string
+ */
+function premium_shop_translate_rate_label( $label ) {
+	return function_exists( 'premium_shop_i18n_label' ) && is_string( $label ) ? premium_shop_i18n_label( $label ) : $label;
+}
+add_filter( 'woocommerce_shipping_rate_label', 'premium_shop_translate_rate_label', 20 );
+
+/**
+ * The language is part of the shipping package, so the rates are worked out
+ * again (and stored in the right language) after a language change.
+ *
+ * @param array $packages Packages.
+ * @return array
+ */
+function premium_shop_shipping_packages_language( $packages ) {
+	$lang = function_exists( 'premium_shop_current_language' ) ? premium_shop_current_language() : '';
+	foreach ( $packages as $i => $package ) {
+		$packages[ $i ]['ps_language'] = $lang;
+	}
+	return $packages;
+}
+add_filter( 'woocommerce_cart_shipping_packages', 'premium_shop_shipping_packages_language', 20 );
+
+/**
  * Tax rate names and payment method titles/descriptions.
  *
  * @param string $text Text.
@@ -365,6 +394,49 @@ function premium_shop_translate_setting_label( $text ) {
 add_filter( 'woocommerce_rate_label', 'premium_shop_translate_setting_label', 20 );
 add_filter( 'woocommerce_gateway_title', 'premium_shop_translate_setting_label', 20 );
 add_filter( 'woocommerce_gateway_description', 'premium_shop_translate_setting_label', 20 );
+
+/**
+ * Payment and shipping method settings read directly (block checkout, Store
+ * API, e-mails): title, description and instructions in the visitor's
+ * language. Front end only, so the settings screens keep what you typed.
+ *
+ * @param array $settings Settings.
+ * @return array
+ */
+function premium_shop_translate_method_settings( $settings ) {
+	static $busy = false;
+	if ( $busy || ! is_array( $settings ) || is_admin() || ! function_exists( 'premium_shop_i18n_label' ) ) {
+		return $settings;
+	}
+	$busy = true;
+	foreach ( array( 'title', 'description', 'instructions' ) as $key ) {
+		if ( isset( $settings[ $key ] ) && is_string( $settings[ $key ] ) && '' !== $settings[ $key ] ) {
+			$settings[ $key ] = premium_shop_i18n_label( $settings[ $key ] );
+		}
+	}
+	$busy = false;
+	return $settings;
+}
+
+/**
+ * Apply the above to every WooCommerce payment / shipping method setting
+ * (filters registered once, for the options that exist).
+ */
+function premium_shop_register_method_settings_filters() {
+	if ( is_admin() ) {
+		return;
+	}
+	$names = array( 'woocommerce_bacs_settings', 'woocommerce_cheque_settings', 'woocommerce_cod_settings' );
+	foreach ( array_keys( wp_load_alloptions() ) as $name ) {
+		if ( 0 === strpos( $name, 'woocommerce_' ) && '_settings' === substr( $name, -9 ) ) {
+			$names[] = $name;
+		}
+	}
+	foreach ( array_unique( $names ) as $name ) {
+		add_filter( 'option_' . $name, 'premium_shop_translate_method_settings', 20 );
+	}
+}
+add_action( 'init', 'premium_shop_register_method_settings_filters', 0 );
 
 /**
  * Common names typed in WooCommerce settings, kept in the catalogue.
@@ -387,6 +459,9 @@ function premium_shop_order_language_strings() {
 		__( 'Delivery with crane truck', 'premium-shop' ),
 		__( 'Delivery on pallet', 'premium-shop' ),
 		__( 'Bank transfer', 'premium-shop' ),
+		__( 'Direct bank transfer', 'premium-shop' ),
+		__( 'Check payments', 'premium-shop' ),
+		__( 'Wire transfer', 'premium-shop' ),
 		__( 'Cash on delivery', 'premium-shop' ),
 		__( 'Payment on pickup', 'premium-shop' ),
 		__( 'Prepayment', 'premium-shop' ),

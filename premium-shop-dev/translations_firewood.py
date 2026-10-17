@@ -387,4 +387,7 @@ T = [
 ('Bank transfer', 'Banküberweisung', 'Virement bancaire', 'Transferencia bancaria'),
 ('Cash on delivery', 'Nachnahme', 'Paiement à la livraison', 'Pago contra reembolso'),
 ('Payment on pickup', 'Zahlung bei Abholung', 'Paiement au retrait', 'Pago al recoger'),
+('Direct bank transfer', 'Direkte Banküberweisung', 'Virement bancaire direct', 'Transferencia bancaria directa'),
+('Check payments', 'Scheckzahlungen', 'Paiement par chèque', 'Pago con cheque'),
+('Wire transfer', 'Überweisung', 'Virement', 'Transferencia'),
 ]

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,13 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.6 =
+* Fix: shipping method names stayed in the first language seen (rates kept in
+  the customer session). They are now translated when read and recalculated
+  after a language change — classic and block cart / checkout.
+* Payment method names, descriptions and instructions are translated in the
+  block checkout too (Überweisung → Virement, Nachnahme → Paiement à la livraison…).
 
 = 1.9.5 =
 * Site slogan (title, link previews) in the visitor's language: "[:de]…[:fr]…"
