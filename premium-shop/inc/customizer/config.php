@@ -227,6 +227,7 @@ function premium_shop_customizer_config() {
 			'hero_button2_text'    => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Second button text', 'premium-shop' ) ),
 			'hero_button2_url'     => array( 'type' => 'url', 'default' => '', 'label' => __( 'Second button link (empty = offers)', 'premium-shop' ) ),
 			'hero_overlay'         => array( 'type' => 'number', 'default' => 35, 'min' => 0, 'max' => 90, 'label' => __( 'Image overlay darkness (%) — full-width layout', 'premium-shop' ) ),
+			'hero_slider'          => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Hero carousel: add slides for current offers and main categories', 'premium-shop' ) ),
 			'hero_badges'          => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show shipping & returns badges', 'premium-shop' ) ),
 		),
 	);
@@ -413,7 +414,7 @@ function premium_shop_customizer_config() {
 		'title'  => __( 'Footer', 'premium-shop' ),
 		'fields' => array(
 			'footer_copyright' => array( 'type' => 'text', 'default' => '', 'translatable' => true, 'label' => __( 'Copyright text', 'premium-shop' ), 'description' => __( 'Use {year} and {company}. Empty = automatic.', 'premium-shop' ) ),
-			'footer_payments'  => array( 'type' => 'text', 'default' => 'visa,mastercard,paypal,klarna,applepay,googlepay,sepa', 'label' => __( 'Payment methods shown', 'premium-shop' ), 'description' => __( 'Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, invoice', 'premium-shop' ) ),
+			'footer_payments'  => array( 'type' => 'text', 'default' => 'visa,mastercard,paypal,klarna,applepay,googlepay,sepa', 'label' => __( 'Payment methods shown', 'premium-shop' ), 'description' => __( 'Comma-separated: visa, mastercard, amex, paypal, klarna, applepay, googlepay, sepa, sofort, giropay, bancontact, ideal, twint, postfinance, invoice, prepayment', 'premium-shop' ) ),
 			'back_to_top'      => array( 'type' => 'checkbox', 'default' => true, 'label' => __( '"Back to top" button', 'premium-shop' ) ),
 		),
 	);

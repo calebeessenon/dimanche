@@ -415,3 +415,19 @@ de la barre latérale de la boutique.
 - Noms de modes de livraison / taxes / paiement saisis en allemand
   (« Spedition », « MwSt. », « Vorkasse »…) : traduits automatiquement ; pour
   un nom personnalisé, écrivez « [:de]Spedition[:fr]Transporteur[:en]Freight[:es]Transporte ».
+
+## 20. Version 1.9.0 — carrousels, ruban de photos, logos de paiement
+
+- Accueil : après le grand bandeau, des diapositives automatiques défilent
+  (promotions en cours + vos catégories principales, avec les photos de leurs
+  produits). Points de progression, flèches, glisser du doigt sur mobile,
+  pause au survol. Désactivable : Personnaliser → Premium Shop → Bandeau
+  d'accueil → « Carrousel d'accueil ».
+- Les rangées de produits de l'accueil avancent seules, une carte à la fois,
+  avec une petite barre de progression.
+- Bas des pages (contact, suivi de commande, à propos…) : plus de fiches
+  produits, mais un ruban de petites photos horizontales sur deux lignes
+  qui glissent en sens inverse ; chaque photo mène à son produit.
+- Pied de page : moyens de paiement en petits logos. Liste réglable dans
+  Personnaliser → Pied de page → « Moyens de paiement affichés », par
+  exemple : `twint,postfinance,visa,mastercard,invoice,prepayment`.

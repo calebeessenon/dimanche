@@ -260,23 +260,60 @@ function premium_shop_social_links() {
 }
 
 /**
- * Payment method badges (text-based, no third-party logos to license).
+ * Small payment logo (inline SVG, 50 × 32), drawn by the theme.
+ *
+ * @param string $method Method key.
+ * @param string $label  Readable name.
+ * @return string SVG markup ('' when the method has no logo).
+ */
+function premium_shop_payment_logo( $method, $label ) {
+	$font = 'font-family="Helvetica,Arial,sans-serif" font-weight="700" text-anchor="middle"';
+	$art  = array(
+		'visa'        => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="25" y="21" ' . $font . ' font-size="14" font-style="italic" fill="#1a1f71" letter-spacing="-.5">VISA</text><rect x="9" y="24" width="32" height="2" rx="1" fill="#f7b600"/>',
+		'mastercard'  => '<rect width="50" height="32" rx="5" fill="#fff"/><circle cx="20" cy="16" r="9" fill="#eb001b"/><circle cx="30" cy="16" r="9" fill="#f79e1b"/><path d="M25 8.5a9 9 0 0 1 0 15 9 9 0 0 1 0-15z" fill="#ff5f00"/>',
+		'amex'        => '<rect width="50" height="32" rx="5" fill="#016fd0"/><text x="25" y="20" ' . $font . ' font-size="10.5" fill="#fff" letter-spacing=".5">AMEX</text>',
+		'paypal'      => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="25" y="20.5" ' . $font . ' font-size="11.5" font-style="italic"><tspan fill="#003087">Pay</tspan><tspan fill="#009cde">Pal</tspan></text>',
+		'klarna'      => '<rect width="50" height="32" rx="5" fill="#ffb3c7"/><text x="25" y="20.5" ' . $font . ' font-size="11.5" fill="#17120f">Klarna.</text>',
+		'applepay'    => '<rect width="50" height="32" rx="5" fill="#000"/><path fill="#fff" d="M15.6 12.3c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2zm.9 1.4c-1.4-.1-2.6.8-3.2.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2.1.8-1.2 1.1-2.3 1.1-2.4 0 0-2.2-.9-2.2-3.4 0-2.1 1.7-3.1 1.8-3.2-1-1.5-2.5-1.6-3-1.6z"/><text x="32" y="21" ' . $font . ' font-size="11" fill="#fff">Pay</text>',
+		'googlepay'   => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="15" y="21" ' . $font . ' font-size="13"><tspan fill="#4285f4">G</tspan></text><text x="31" y="21" ' . $font . ' font-size="11" fill="#5f6368">Pay</text>',
+		'sepa'        => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="23" y="20.5" ' . $font . ' font-size="11.5" font-style="italic" fill="#10298e">SEPA</text><path d="M38 11l4 5-4 5" fill="none" stroke="#ffbe00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+		'sofort'      => '<rect width="50" height="32" rx="5" fill="#ef809f"/><text x="25" y="20" ' . $font . ' font-size="10.5" fill="#fff">SOFORT</text>',
+		'giropay'     => '<rect width="50" height="32" rx="5" fill="#000268"/><text x="25" y="20" ' . $font . ' font-size="10" fill="#fff">giropay</text>',
+		'bancontact'  => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="25" y="19.5" ' . $font . ' font-size="7.6" fill="#005498">Bancontact</text>',
+		'ideal'       => '<rect width="50" height="32" rx="5" fill="#fff"/><text x="25" y="21" ' . $font . ' font-size="12" fill="#cc0066">iDEAL</text>',
+		'twint'       => '<rect width="50" height="32" rx="5" fill="#000"/><text x="25" y="20" ' . $font . ' font-size="10.5" fill="#fff" letter-spacing=".4">TWINT</text>',
+		'postfinance' => '<rect width="50" height="32" rx="5" fill="#ffcc00"/><text x="25" y="15" ' . $font . ' font-size="7.4" fill="#000">Post</text><text x="25" y="23.5" ' . $font . ' font-size="7.4" fill="#000">Finance</text>',
+		'invoice'     => '<rect width="50" height="32" rx="5" fill="#fff"/><path d="M19 7h9l5 5v13H19z" fill="#f4efe9" stroke="#8a5a36" stroke-width="1.6" stroke-linejoin="round"/><path d="M28 7v5h5M22.5 16.5h7M22.5 20h7" fill="none" stroke="#8a5a36" stroke-width="1.6" stroke-linecap="round"/>',
+		'prepayment'  => '<rect width="50" height="32" rx="5" fill="#fff"/><path d="M15 13l10-5 10 5zM17 14.5v7M22 14.5v7M28 14.5v7M33 14.5v7M14.5 23.5h21" fill="none" stroke="#8a5a36" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+	);
+	if ( ! isset( $art[ $method ] ) ) {
+		return '';
+	}
+	return '<svg class="ps-payments__logo" viewBox="0 0 50 32" width="50" height="32" role="img" aria-label="' . esc_attr( $label ) . '" focusable="false">' . $art[ $method ] . '</svg>';
+}
+
+/**
+ * Payment method badges: small logos drawn by the theme (methods without a
+ * logo show their name).
  */
 function premium_shop_payment_badges() {
 	$labels = array(
-		'visa'       => 'VISA',
-		'mastercard' => 'Mastercard',
-		'amex'       => 'AMEX',
-		'paypal'     => 'PayPal',
-		'klarna'     => 'Klarna',
-		'applepay'   => 'Apple Pay',
-		'googlepay'  => 'Google Pay',
-		'sepa'       => 'SEPA',
-		'sofort'     => 'Sofort',
-		'giropay'    => 'giropay',
-		'bancontact' => 'Bancontact',
-		'ideal'      => 'iDEAL',
-		'invoice'    => __( 'Invoice', 'premium-shop' ),
+		'visa'        => 'Visa',
+		'mastercard'  => 'Mastercard',
+		'amex'        => 'American Express',
+		'paypal'      => 'PayPal',
+		'klarna'      => 'Klarna',
+		'applepay'    => 'Apple Pay',
+		'googlepay'   => 'Google Pay',
+		'sepa'        => 'SEPA',
+		'sofort'      => 'Sofort',
+		'giropay'     => 'giropay',
+		'bancontact'  => 'Bancontact',
+		'ideal'       => 'iDEAL',
+		'twint'       => 'TWINT',
+		'postfinance' => 'PostFinance',
+		'invoice'     => __( 'Invoice', 'premium-shop' ),
+		'prepayment'  => __( 'Prepayment', 'premium-shop' ),
 	);
 
 	$methods = array_filter( array_map( 'trim', explode( ',', strtolower( (string) premium_shop_option( 'footer_payments' ) ) ) ) );
@@ -285,10 +322,27 @@ function premium_shop_payment_badges() {
 	if ( ! $methods ) {
 		return;
 	}
+	$svg_tags = array(
+		'svg'   => array( 'class' => true, 'viewbox' => true, 'width' => true, 'height' => true, 'role' => true, 'aria-label' => true, 'focusable' => true ),
+		'rect'  => array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true, 'fill' => true ),
+		'circle' => array( 'cx' => true, 'cy' => true, 'r' => true, 'fill' => true ),
+		'path'  => array( 'd' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true ),
+		'text'  => array( 'x' => true, 'y' => true, 'font-family' => true, 'font-weight' => true, 'font-size' => true, 'font-style' => true, 'text-anchor' => true, 'fill' => true, 'letter-spacing' => true ),
+		'tspan' => array( 'fill' => true ),
+	);
 	?>
 	<ul class="ps-payments" aria-label="<?php esc_attr_e( 'Accepted payment methods', 'premium-shop' ); ?>">
-		<?php foreach ( $methods as $method ) : ?>
-			<li class="ps-payments__item ps-payments__item--<?php echo esc_attr( $method ); ?>"><?php echo esc_html( $labels[ $method ] ); ?></li>
+		<?php foreach ( $methods as $i => $method ) : ?>
+			<?php $logo = premium_shop_payment_logo( $method, $labels[ $method ] ); ?>
+			<li class="ps-payments__item ps-payments__item--<?php echo esc_attr( $method ); ?><?php echo $logo ? ' ps-payments__item--logo' : ''; ?>" title="<?php echo esc_attr( $labels[ $method ] ); ?>" style="--ps-i:<?php echo (int) $i; ?>">
+				<?php
+				if ( $logo ) {
+					echo wp_kses( $logo, $svg_tags );
+				} else {
+					echo esc_html( $labels[ $method ] );
+				}
+				?>
+			</li>
 		<?php endforeach; ?>
 	</ul>
 	<?php

@@ -535,21 +535,65 @@ add_action(
 );
 
 /**
- * Bottom of the page: a scrolling band of reassurance messages and a
- * carousel of products moving gently from right to left (pauses on hover).
+ * Photos of the bottom-of-page ribbon: the shop's product photos (each
+ * linking to its product), completed by the bundled ambience photos.
  *
- * @param string $variant Page variant (no carousel on the checkout).
+ * @return array[] Each: html (img tag), url.
+ */
+function premium_shop_photo_ribbon_items() {
+	$items = array();
+	if ( premium_shop_is_wc() ) {
+		foreach ( premium_shop_showcase_product_ids() as $id ) {
+			$thumb = (int) get_post_thumbnail_id( $id );
+			if ( ! $thumb ) {
+				continue;
+			}
+			$items[] = array(
+				'html' => wp_get_attachment_image(
+					$thumb,
+					'woocommerce_thumbnail',
+					false,
+					array(
+						'loading'  => 'lazy',
+						'decoding' => 'async',
+						'alt'      => get_the_title( $id ),
+					)
+				),
+				'url'  => get_permalink( $id ),
+			);
+		}
+	}
+	if ( 'firewood' === premium_shop_preset() ) {
+		$shop = premium_shop_shop_url();
+		foreach ( array( 'buche', 'eiche', 'birke', 'mischholz', 'esche', 'hainbuche', 'anzuendholz', 'briketts' ) as $i => $name ) {
+			$photo = array(
+				'html' => '<img src="' . esc_url( PREMIUM_SHOP_URI . '/assets/images/firewood/' . $name . '.jpg' ) . '" alt="" loading="lazy" decoding="async">',
+				'url'  => $shop,
+			);
+			// Interleave with the product photos.
+			array_splice( $items, min( count( $items ), $i * 2 + 1 ), 0, array( $photo ) );
+		}
+	}
+	return array_slice( apply_filters( 'premium_shop_photo_ribbon_items', $items ), 0, 20 );
+}
+
+/**
+ * Bottom of the page: the reassurance bar and a ribbon of small photos
+ * gliding gently sideways (two rows in opposite directions, pauses on hover).
+ *
+ * @param string $variant Page variant (no photos on the checkout).
  */
 function premium_shop_page_showcase( $variant = 'page' ) {
 	if ( ! premium_shop_page_hero_enabled() || ! apply_filters( 'premium_shop_page_showcase', true, $variant ) ) {
 		return;
 	}
 
-	$chips = premium_shop_page_hero_chips();
-	$ids   = in_array( $variant, array( 'checkout' ), true ) ? array() : premium_shop_showcase_product_ids();
-	if ( count( $ids ) < 4 ) {
-		$ids = array();
+	$chips  = premium_shop_page_hero_chips();
+	$photos = in_array( $variant, array( 'checkout' ), true ) ? array() : premium_shop_photo_ribbon_items();
+	if ( count( $photos ) < 5 ) {
+		$photos = array();
 	}
+	$rows = count( $photos ) >= 10 ? array_chunk( $photos, (int) ceil( count( $photos ) / 2 ) ) : array( $photos );
 	?>
 	<section class="ps-showcase" aria-label="<?php esc_attr_e( 'Discover our products', 'premium-shop' ); ?>">
 		<?php if ( $chips ) : ?>
@@ -565,73 +609,24 @@ function premium_shop_page_showcase( $variant = 'page' ) {
 			</div>
 		<?php endif; ?>
 
-		<?php if ( $ids ) : ?>
-			<div class="ps-showcase__inner">
-				<div class="ps-container ps-showcase__head" data-reveal>
-					<div>
-						<p class="ps-eyebrow"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
-						<h2 class="ps-showcase__title"><?php esc_html_e( 'Discover our products', 'premium-shop' ); ?></h2>
+		<?php if ( $photos ) : ?>
+			<div class="ps-ribbon">
+				<?php foreach ( $rows as $r => $row ) : ?>
+					<div class="ps-ribbon__row<?php echo 1 === $r ? ' ps-ribbon__row--reverse' : ''; ?>">
+						<div class="ps-ribbon__track" style="--ps-ribbon-time:<?php echo (int) max( 30, count( $row ) * 6 ); ?>s">
+							<?php for ( $round = 0; $round < 2; $round++ ) : ?>
+								<?php foreach ( $row as $i => $photo ) : ?>
+									<a class="ps-ribbon__photo" href="<?php echo esc_url( $photo['url'] ); ?>" style="--ps-tilt:<?php echo esc_attr( ( 0 === $i % 2 ? '-' : '' ) . ( 1 + $i % 3 ) * 0.6 ); ?>deg"<?php echo 1 === $round ? ' tabindex="-1" aria-hidden="true"' : ''; ?>>
+										<?php echo wp_kses_post( $photo['html'] ); ?>
+									</a>
+								<?php endforeach; ?>
+							<?php endfor; ?>
+						</div>
 					</div>
-					<a class="ps-btn ps-btn--ghost" href="<?php echo esc_url( premium_shop_shop_url() ); ?>"><?php esc_html_e( 'View all products', 'premium-shop' ); ?> <?php premium_shop_icon( 'arrow', array( 'size' => 16 ) ); ?></a>
-				</div>
-				<div class="ps-marquee" data-ps-marquee>
-					<div class="ps-marquee__track">
-						<?php
-						for ( $round = 0; $round < 2; $round++ ) {
-							foreach ( $ids as $id ) {
-								$product = wc_get_product( $id );
-								if ( ! $product ) {
-									continue;
-								}
-								premium_shop_showcase_card( $product, 1 === $round );
-							}
-						}
-						?>
-					</div>
-				</div>
+				<?php endforeach; ?>
+				<a class="ps-ribbon__more" href="<?php echo esc_url( premium_shop_shop_url() ); ?>"><?php esc_html_e( 'View all products', 'premium-shop' ); ?> <?php premium_shop_icon( 'arrow', array( 'size' => 16 ) ); ?></a>
 			</div>
 		<?php endif; ?>
 	</section>
-	<?php
-}
-
-/**
- * One product card of the carousel.
- *
- * @param WC_Product $product Product.
- * @param bool       $clone   Second copy used for the seamless loop (hidden from assistive technologies).
- */
-function premium_shop_showcase_card( $product, $clone = false ) {
-	$link    = $product->get_permalink();
-	$tab     = $clone ? ' tabindex="-1"' : '';
-	$can_add = $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually();
-	?>
-	<article class="ps-mcard"<?php echo $clone ? ' aria-hidden="true"' : ''; ?>>
-		<a class="ps-mcard__media" href="<?php echo esc_url( $link ); ?>"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-			<?php
-			echo wp_kses_post(
-				$product->get_image(
-					'woocommerce_thumbnail',
-					array(
-						'loading' => 'lazy',
-						'class'   => 'ps-mcard__img',
-					)
-				)
-			);
-			?>
-			<?php if ( $product->is_on_sale() ) : ?>
-				<span class="ps-mcard__badge"><?php esc_html_e( 'Sale', 'premium-shop' ); ?></span>
-			<?php endif; ?>
-		</a>
-		<div class="ps-mcard__body">
-			<a class="ps-mcard__name" href="<?php echo esc_url( $link ); ?>"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $product->get_name() ); ?></a>
-			<span class="ps-mcard__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
-			<?php if ( $can_add ) : ?>
-				<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" data-product_id="<?php echo (int) $product->get_id(); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" class="ps-btn ps-btn--accent ps-mcard__btn button add_to_cart_button ajax_add_to_cart" rel="nofollow"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php premium_shop_icon( 'bag', array( 'size' => 16 ) ); ?><span><?php echo esc_html( $product->add_to_cart_text() ); ?></span></a>
-			<?php else : ?>
-				<a href="<?php echo esc_url( $link ); ?>" class="ps-btn ps-btn--ghost ps-mcard__btn"<?php echo $tab; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><span><?php esc_html_e( 'View product', 'premium-shop' ); ?></span></a>
-			<?php endif; ?>
-		</div>
-	</article>
 	<?php
 }

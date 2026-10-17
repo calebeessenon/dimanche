@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.8.0
+Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,18 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.0 =
+* Homepage hero carousel: after the main hero, automatic slides for the current
+  offers and the main categories, each with photos of its own products (soft
+  crossfade, animated texts, progress dots, arrows, swipe, pauses on hover;
+  no autoplay with reduced motion). Customizer → Homepage hero → Hero carousel.
+* Product rails on the homepage glide one card at a time and show a progress line.
+* Bottom of pages: the product cards are replaced by a ribbon of small landscape
+  photos gliding in two rows (product photos linking to their product, plus
+  ambience photos).
+* Footer: payment methods shown as small logos (Visa, Mastercard, PayPal, Klarna,
+  TWINT, PostFinance, invoice, prepayment…).
 
 = 1.8.0 =
 * Order language: the visitor's language is saved on the order (classic and block

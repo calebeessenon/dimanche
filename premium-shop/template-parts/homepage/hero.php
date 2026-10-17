@@ -38,8 +38,13 @@ $premium_shop_overlay  = absint( premium_shop_option( 'hero_overlay' ) ) / 100;
 $premium_shop_days     = absint( premium_shop_option( 'returns_days' ) );
 $premium_shop_free     = premium_shop_free_shipping_threshold();
 $premium_shop_title    = premium_shop_text( 'hero_title' );
+$premium_shop_slides   = ( 'split' === $premium_shop_layout && function_exists( 'premium_shop_hero_extra_slides' ) ) ? premium_shop_hero_extra_slides() : array();
+$premium_shop_total    = count( $premium_shop_slides ) + 1;
 ?>
-<section class="ps-hero ps-hero--<?php echo esc_attr( $premium_shop_layout ); ?>" aria-labelledby="ps-hero-title">
+<?php if ( $premium_shop_slides ) : ?>
+<div class="ps-hero-slider" data-ps-slider aria-roledescription="carousel" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+<?php endif; ?>
+<section class="ps-hero ps-hero--<?php echo esc_attr( $premium_shop_layout ); ?><?php echo $premium_shop_slides ? ' ps-hero-slide is-active' : ''; ?>" aria-labelledby="ps-hero-title">
 	<?php if ( 'cover' === $premium_shop_layout ) : ?>
 		<div class="ps-hero__bg">
 			<?php
@@ -148,3 +153,12 @@ $premium_shop_title    = premium_shop_text( 'hero_title' );
 		<?php endif; ?>
 	</div>
 </section>
+<?php if ( $premium_shop_slides ) : ?>
+	<?php
+	foreach ( $premium_shop_slides as $premium_shop_i => $premium_shop_slide ) {
+		premium_shop_hero_slide( $premium_shop_slide, $premium_shop_i + 1, $premium_shop_total );
+	}
+	premium_shop_hero_slider_controls( $premium_shop_total );
+	?>
+</div>
+<?php endif; ?>
