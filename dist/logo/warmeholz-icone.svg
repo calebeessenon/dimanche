@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><defs>
+  <linearGradient id="wh-fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b44a"/><stop offset=".55" stop-color="#e0742a"/><stop offset="1" stop-color="#a4501a"/></linearGradient>
+  <linearGradient id="wh-in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1c7"/><stop offset="1" stop-color="#ffc35c"/></linearGradient>
+</defs>
+<rect width="120" height="120" rx="30" fill="#1f3a2c"/>
+<g transform="rotate(-13 60 93)"><rect x="27" y="87" width="66" height="13" rx="6.5" fill="#8a5a36"/><circle cx="86.5" cy="93.5" r="6.5" fill="#e3b77f"/><circle cx="86.5" cy="93.5" r="3.6" fill="none" stroke="#a87445" stroke-width="1.3"/></g>
+<g transform="rotate(13 60 93)"><rect x="27" y="87" width="66" height="13" rx="6.5" fill="#6f4628"/><circle cx="33.5" cy="93.5" r="6.5" fill="#d9a86e"/><circle cx="33.5" cy="93.5" r="3.6" fill="none" stroke="#a87445" stroke-width="1.3"/></g>
+<path fill="url(#wh-fl)" d="M60 14C67 31 86 41 86 62C86 77 74.5 88 60 88C45.5 88 34 77 34 62C34 49 42.5 42 47 31C49.5 40 53.5 44.5 58 45.5C55.5 35 56 24 60 14Z"/>
+<path fill="url(#wh-in)" d="M61 47C65 56 74 60 74 71C74 79.5 67.8 85 60.5 85C53 85 47 79.5 47 72C47 65 52 61.5 54.5 55.5C56.5 60 59 61 61 60C60 56 60 51.5 61 47Z"/></svg>
