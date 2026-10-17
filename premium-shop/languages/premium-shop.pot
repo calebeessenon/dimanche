@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 14:08+0000\n"
-"PO-Revision-Date: 2026-10-17 14:08+0000\n"
+"POT-Creation-Date: 2026-10-17 16:50+0000\n"
+"PO-Revision-Date: 2026-10-17 16:50+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "MIME-Version: 1.0\n"
@@ -269,7 +269,7 @@ msgstr ""
 msgid "The form has expired. Please reload the page and try again."
 msgstr ""
 
-#: inc/contact.php:194 inc/enqueue.php:100 inc/newsletter.php:119
+#: inc/contact.php:194 inc/enqueue.php:112 inc/newsletter.php:119
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -1422,44 +1422,44 @@ msgstr ""
 msgid "Logo and favicon: Site Identity. Menus: Menus. Everything else about the design and content of the shop is here."
 msgstr ""
 
-#: inc/enqueue.php:101
-msgid "Results updated"
-msgstr ""
-
-#: inc/enqueue.php:88
+#: inc/enqueue.php:100
 msgid "Searching…"
 msgstr ""
 
-#: inc/enqueue.php:89
+#: inc/enqueue.php:101
 msgid "No products found."
 msgstr ""
 
-#: inc/enqueue.php:90
+#: inc/enqueue.php:102
 msgid "View all results"
 msgstr ""
 
-#: inc/enqueue.php:93
+#: inc/enqueue.php:105
 msgid "Added to your cart"
 msgstr ""
 
-#: inc/enqueue.php:94
+#: inc/enqueue.php:106
 msgid "Added"
 msgstr ""
 
-#: inc/enqueue.php:95
+#: inc/enqueue.php:107
 msgid "View cart"
 msgstr ""
 
-#: inc/enqueue.php:96
+#: inc/enqueue.php:108
 msgid "Added to your wishlist"
 msgstr ""
 
-#: inc/enqueue.php:97
+#: inc/enqueue.php:109
 msgid "Removed from your wishlist"
 msgstr ""
 
-#: inc/enqueue.php:98
+#: inc/enqueue.php:110
 msgid "Your wishlist is empty."
+msgstr ""
+
+#: inc/enqueue.php:113
+msgid "Results updated"
 msgstr ""
 
 #: inc/firewood/calculator.php:111
@@ -3014,7 +3014,7 @@ msgstr ""
 msgid "Send us a message"
 msgstr ""
 
-#: page-templates/template-wishlist.php:37 inc/enqueue.php:99
+#: page-templates/template-wishlist.php:37 inc/enqueue.php:111
 msgid "Loading…"
 msgstr ""
 
@@ -3034,7 +3034,7 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: search.php:41 inc/enqueue.php:91
+#: search.php:41 inc/enqueue.php:103
 msgid "Products"
 msgstr ""
 
@@ -3382,7 +3382,7 @@ msgstr ""
 msgid "Quick view"
 msgstr ""
 
-#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:102
+#: template-parts/products/quick-view-modal.php:19 inc/enqueue.php:114
 msgid "Close"
 msgstr ""
 
@@ -3394,7 +3394,7 @@ msgstr ""
 msgid "Choose options"
 msgstr ""
 
-#: woocommerce/archive-product.php:63 inc/enqueue.php:92 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
+#: woocommerce/archive-product.php:63 inc/enqueue.php:104 inc/template-tags.php:99 inc/woocommerce/shop-filters.php:260
 msgid "Categories"
 msgstr ""
 

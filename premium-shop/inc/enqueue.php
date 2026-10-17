@@ -21,6 +21,18 @@ function premium_shop_asset( $path, $ext ) {
 		$min = '';
 	}
 
+	// Copy whose name changes with its content (assets/build): server caches
+	// that ignore "?ver=" (e.g. Varnish at the host) can never serve an old file.
+	static $manifest = null;
+	if ( null === $manifest ) {
+		$file     = PREMIUM_SHOP_DIR . '/assets/build/manifest.php';
+		$manifest = is_readable( $file ) ? (array) include $file : array();
+	}
+	$key = $path . '.' . $ext;
+	if ( $min && isset( $manifest[ $key ] ) && file_exists( PREMIUM_SHOP_DIR . '/assets/build/' . $manifest[ $key ] ) ) {
+		return PREMIUM_SHOP_URI . '/assets/build/' . $manifest[ $key ];
+	}
+
 	return PREMIUM_SHOP_URI . '/assets/' . $path . $min . '.' . $ext;
 }
 
