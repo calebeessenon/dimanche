@@ -389,7 +389,86 @@ add_filter( 'woocommerce_cart_shipping_packages', 'premium_shop_shipping_package
  * @return string
  */
 function premium_shop_translate_setting_label( $text ) {
-	return function_exists( 'premium_shop_i18n_label' ) && is_string( $text ) ? premium_shop_i18n_label( $text ) : $text;
+	return function_exists( 'premium_shop_i18n_label' ) && is_string( $text ) ? premium_shop_translate_wc_text( $text ) : $text;
+}
+
+/**
+ * Translate a text typed in the WooCommerce settings: theme catalogue first,
+ * then WooCommerce's own texts (e.g. the default bank transfer description
+ * saved in French, German or Spanish).
+ *
+ * @param string $text Text.
+ * @return string
+ */
+function premium_shop_translate_wc_text( $text ) {
+	$translated = premium_shop_i18n_label( $text );
+	if ( $translated !== $text || '' === trim( $text ) || false !== strpos( $text, '[:' ) ) {
+		return $translated;
+	}
+	$lang = premium_shop_i18n_target();
+	$lang = '' !== $lang ? $lang : premium_shop_default_language();
+	$key  = 'ps_wct_' . md5( $lang . '|' . $text );
+	$hit  = get_transient( $key );
+	if ( false === $hit ) {
+		$hit = premium_shop_wc_catalogue_translate( $text, $lang );
+		set_transient( $key, $hit, WEEK_IN_SECONDS );
+	}
+	return '' !== $hit ? $hit : $text;
+}
+
+/**
+ * Look a text up in the WooCommerce language files (any language) and
+ * return its version in another language ('' when unknown).
+ *
+ * @param string $text Text.
+ * @param string $lang Target language code.
+ * @return string
+ */
+function premium_shop_wc_catalogue_translate( $text, $lang ) {
+	static $files = array();
+	$load = static function ( $locale ) use ( &$files ) {
+		if ( ! isset( $files[ $locale ] ) ) {
+			$files[ $locale ] = false;
+			$file             = WP_LANG_DIR . '/plugins/woocommerce-' . $locale . '.mo';
+			if ( is_readable( $file ) ) {
+				$mo = new MO();
+				if ( $mo->import_from_file( $file ) ) {
+					$files[ $locale ] = $mo;
+				}
+			}
+		}
+		return $files[ $locale ];
+	};
+	$needle = premium_shop_i18n_key( $text );
+	$source = '';
+	foreach ( array_keys( premium_shop_languages() ) as $code ) {
+		$locale = premium_shop_locale_for( $code );
+		if ( 0 === strpos( $locale, 'en_' ) ) {
+			continue;
+		}
+		$mo = $load( $locale );
+		if ( ! $mo ) {
+			continue;
+		}
+		foreach ( $mo->entries as $entry ) {
+			if ( $entry->is_plural || empty( $entry->translations[0] ) ) {
+				continue;
+			}
+			if ( premium_shop_i18n_key( $entry->translations[0] ) === $needle || premium_shop_i18n_key( $entry->singular ) === $needle ) {
+				$source = $entry->singular;
+				break 2;
+			}
+		}
+	}
+	if ( '' === $source ) {
+		return '';
+	}
+	$target = premium_shop_locale_for( $lang );
+	if ( 0 === strpos( $target, 'en_' ) ) {
+		return $source;
+	}
+	$mo = $load( $target );
+	return $mo ? (string) $mo->translate( $source ) : '';
 }
 add_filter( 'woocommerce_rate_label', 'premium_shop_translate_setting_label', 20 );
 add_filter( 'woocommerce_gateway_title', 'premium_shop_translate_setting_label', 20 );
@@ -411,7 +490,7 @@ function premium_shop_translate_method_settings( $settings ) {
 	$busy = true;
 	foreach ( array( 'title', 'description', 'instructions' ) as $key ) {
 		if ( isset( $settings[ $key ] ) && is_string( $settings[ $key ] ) && '' !== $settings[ $key ] ) {
-			$settings[ $key ] = premium_shop_i18n_label( $settings[ $key ] );
+			$settings[ $key ] = premium_shop_translate_wc_text( $settings[ $key ] );
 		}
 	}
 	$busy = false;

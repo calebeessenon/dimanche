@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.6
+Stable tag: 1.9.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.7 =
+* Payment method descriptions and instructions saved with WooCommerce's default
+  text in any language (e.g. the bank transfer text in French) are shown in the
+  visitor's language, using WooCommerce's own translations.
 
 = 1.9.6 =
 * Fix: shipping method names stayed in the first language seen (rates kept in
