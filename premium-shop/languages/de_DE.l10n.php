@@ -508,7 +508,7 @@ return array(
 		'Plan ahead' => 'Vorausplanen',
 		'Planned delivery date' => 'Geplanter Liefertermin',
 		'Please accept the privacy conditions.' => 'Bitte akzeptieren Sie die Datenschutzbestimmungen.',
-		'Please choose' => 'Bitte wählen',
+		'Please choose' => 'Bitte auswählen',
 		'Please complete this page with your legally required company information before publishing.' => 'Bitte vervollständigen Sie diese Seite vor der Veröffentlichung mit Ihren gesetzlich vorgeschriebenen Unternehmensangaben.',
 		'Please confirm that we may use your details to answer your request.' => 'Bitte bestätigen Sie, dass wir Ihre Angaben zur Beantwortung Ihrer Anfrage verwenden dürfen.',
 		'Please confirm your subscription to %s' => 'Bitte bestätigen Sie Ihre Anmeldung bei %s',

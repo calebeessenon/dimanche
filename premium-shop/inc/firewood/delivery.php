@@ -186,12 +186,13 @@ function premium_shop_register_truck_field() {
 
 	woocommerce_register_additional_checkout_field(
 		array(
-			'id'       => 'premium-shop/truck-access',
-			'label'    => __( 'Is the unloading point accessible for a truck?', 'premium-shop' ),
-			'location' => 'order',
-			'type'     => 'select',
-			'required' => false,
-			'options'  => $options,
+			'id'          => 'premium-shop/truck-access',
+			'label'       => __( 'Is the unloading point accessible for a truck?', 'premium-shop' ),
+			'location'    => 'order',
+			'type'        => 'select',
+			'required'    => false,
+			'placeholder' => __( 'Please choose', 'premium-shop' ),
+			'options'     => $options,
 		)
 	);
 }

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-25 13:39+0000\n"
-"PO-Revision-Date: 2026-10-25 13:39+0000\n"
+"POT-Creation-Date: 2026-10-26 16:01+0000\n"
+"PO-Revision-Date: 2026-10-26 16:01+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -1524,15 +1524,15 @@ msgstr "Nein – bitte kontaktieren Sie mich"
 msgid "I am not sure"
 msgstr "Ich bin nicht sicher"
 
-#: inc/firewood/delivery.php:190 inc/firewood/delivery.php:213
+#: inc/firewood/delivery.php:190 inc/firewood/delivery.php:214
 msgid "Is the unloading point accessible for a truck?"
 msgstr "Ist die Abladestelle für einen LKW erreichbar?"
 
-#: inc/firewood/delivery.php:216
+#: inc/firewood/delivery.php:194 inc/firewood/delivery.php:217
 msgid "Please choose"
-msgstr "Bitte wählen"
+msgstr "Bitte auswählen"
 
-#: inc/firewood/delivery.php:261 inc/firewood/delivery.php:279
+#: inc/firewood/delivery.php:262 inc/firewood/delivery.php:280
 msgid "Truck access"
 msgstr "LKW-Zufahrt"
 

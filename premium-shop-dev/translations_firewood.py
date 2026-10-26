@@ -390,4 +390,5 @@ T = [
 ('Direct bank transfer', 'Direkte Banküberweisung', 'Virement bancaire direct', 'Transferencia bancaria directa'),
 ('Check payments', 'Scheckzahlungen', 'Paiement par chèque', 'Pago con cheque'),
 ('Wire transfer', 'Überweisung', 'Virement', 'Transferencia'),
+('Please choose', 'Bitte auswählen', 'Veuillez choisir', 'Elija una opción'),
 ]

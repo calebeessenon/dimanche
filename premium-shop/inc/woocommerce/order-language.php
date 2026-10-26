@@ -547,3 +547,35 @@ function premium_shop_order_language_strings() {
 		__( 'Invoice', 'premium-shop' ),
 	);
 }
+
+/**
+ * Texts saved inside the cart / checkout blocks when the page was created
+ * (e.g. "Dein Warenkorb ist gerade leer!", "Neu im Shop"): shown in the
+ * visitor's language through WooCommerce's own translations.
+ *
+ * @param string $html  Block HTML.
+ * @param array  $block Block.
+ * @return string
+ */
+function premium_shop_translate_wc_block_texts( $html, $block ) {
+	if ( is_admin() || '' === premium_shop_i18n_target() || empty( $block['blockName'] ) ) {
+		return $html;
+	}
+	$names = array( 'woocommerce/empty-cart-block', 'woocommerce/empty-mini-cart-contents-block', 'woocommerce/filled-cart-block', 'woocommerce/cart-cross-sells-block', 'woocommerce/proceed-to-checkout-block' );
+	if ( ! in_array( $block['blockName'], $names, true ) ) {
+		return $html;
+	}
+	return preg_replace_callback(
+		'/>([^<>]*[[:alpha:]][^<>]*)</u',
+		static function ( $m ) {
+			$text = trim( html_entity_decode( $m[1], ENT_QUOTES, 'UTF-8' ) );
+			if ( mb_strlen( $text ) < 3 ) {
+				return $m[0];
+			}
+			$translated = premium_shop_translate_wc_text( $text );
+			return $translated === $text ? $m[0] : '>' . esc_html( $translated ) . '<';
+		},
+		$html
+	);
+}
+add_filter( 'render_block', 'premium_shop_translate_wc_block_texts', 20, 2 );
