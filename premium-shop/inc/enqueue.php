@@ -166,6 +166,12 @@ function premium_shop_preload_fonts() {
 	if ( 'fraunces' === premium_shop_option( 'font_heading' ) ) {
 		$fonts[] = 'fraunces-var-latin.woff2';
 	}
+	if ( 'cambria' === premium_shop_option( 'font_body' ) ) {
+		$fonts[] = 'caladea-400.woff2';
+	}
+	if ( 'cambria' === premium_shop_option( 'font_heading' ) ) {
+		$fonts[] = 'caladea-700.woff2';
+	}
 	if ( 'inter' === premium_shop_option( 'font_body' ) || 'inter' === premium_shop_option( 'font_heading' ) ) {
 		$fonts[] = 'inter-var-latin.woff2';
 	}

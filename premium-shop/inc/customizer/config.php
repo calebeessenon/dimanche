@@ -109,6 +109,7 @@ function premium_shop_customizer_config() {
 				'default' => 'fraunces',
 				'label'   => __( 'Heading font', 'premium-shop' ),
 				'choices' => array(
+					'cambria'      => 'Cambria (serif, classic)',
 					'fraunces'     => 'Fraunces (serif, elegant)',
 					'inter'        => 'Inter (sans-serif, modern)',
 					'system-serif' => __( 'System serif (no download)', 'premium-shop' ),
@@ -120,6 +121,7 @@ function premium_shop_customizer_config() {
 				'default' => 'inter',
 				'label'   => __( 'Body font', 'premium-shop' ),
 				'choices' => array(
+					'cambria'      => 'Cambria',
 					'inter'        => 'Inter',
 					'system-sans'  => __( 'System sans-serif (no download)', 'premium-shop' ),
 					'system-serif' => __( 'System serif (no download)', 'premium-shop' ),

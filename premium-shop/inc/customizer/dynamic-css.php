@@ -66,6 +66,7 @@ function premium_shop_contrast_color( $hex ) {
  */
 function premium_shop_font_stack( $key ) {
 	$stacks = array(
+		'cambria'      => 'Cambria, "Caladea", Georgia, "Times New Roman", serif',
 		'fraunces'     => '"Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif',
 		'inter'        => '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
 		'system-serif' => '"Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif',
@@ -97,6 +98,9 @@ function premium_shop_dynamic_css() {
 	$vars['--ps-on-accent']  = premium_shop_contrast_color( premium_shop_option( 'color_accent' ) );
 	$vars['--ps-font-heading'] = premium_shop_font_stack( premium_shop_option( 'font_heading' ) );
 	$vars['--ps-font-body']    = premium_shop_font_stack( premium_shop_option( 'font_body' ) );
+	if ( 'cambria' === premium_shop_option( 'font_heading' ) ) {
+		$vars['--ps-heading-weight'] = '700';
+	}
 	$vars['--ps-font-size']    = absint( premium_shop_option( 'font_size_base' ) ) . 'px';
 	$vars['--ps-heading-weight'] = absint( premium_shop_option( 'heading_weight' ) );
 

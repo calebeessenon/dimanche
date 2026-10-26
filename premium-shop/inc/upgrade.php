@@ -55,6 +55,12 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_1_7' );
 	}
 
+	if ( '' !== $done && version_compare( $done, '1.9.9', '<' ) ) {
+		// The shop chose Cambria for the whole site.
+		set_theme_mod( 'ps_font_heading', 'cambria' );
+		set_theme_mod( 'ps_font_body', 'cambria' );
+	}
+
 	// Self-healing steps, safe to repeat after every update.
 	premium_shop_replace_foreign_email();
 	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {

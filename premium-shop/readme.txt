@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.8
+Stable tag: 1.9.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,12 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 1.9.9 =
+* New font choice "Cambria" for headings and text (Customizer → Typography),
+  applied to the whole site on update. Uses Cambria when installed on the
+  visitor's device, else the bundled Caladea (free font with the same design
+  and proportions, SIL OFL), so every phone and computer sees the same look.
 
 = 1.9.8 =
 * Texts saved inside the cart blocks when the page was created ("Dein Warenkorb
