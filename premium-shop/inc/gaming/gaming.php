@@ -20,14 +20,14 @@ function premium_shop_gaming_overrides() {
 		array(
 			'color_primary'           => '#7c5cff',
 			'color_accent'            => '#00d4ff',
-			'color_background'        => '#07080f',
-			'color_surface'           => '#10121f',
-			'color_soft'              => '#161a2c',
-			'color_text'              => '#eef0ff',
-			'color_text_muted'        => '#a3a8c7',
-			'color_border'            => '#24283f',
-			'color_footer_bg'         => '#05060c',
-			'color_footer_text'       => '#d9dcf5',
+			'color_background'        => '#161b3d',
+			'color_surface'           => '#1f2552',
+			'color_soft'              => '#283070',
+			'color_text'              => '#f6f7ff',
+			'color_text_muted'        => '#c5cbef',
+			'color_border'            => '#3a4282',
+			'color_footer_bg'         => '#11152f',
+			'color_footer_text'       => '#e6e8ff',
 			'color_promo_bg'          => '#7c5cff',
 			'color_promo_text'        => '#ffffff',
 			'heading_weight'          => '700',
@@ -61,7 +61,8 @@ function premium_shop_gaming_overrides() {
  * @return array
  */
 function premium_shop_gaming_fallbacks() {
-	return array(
+	$festive = premium_shop_gaming_festive() ? premium_shop_gaming_festive_texts() : array();
+	return $festive + array(
 		'promo_text'           => implode(
 			"\n",
 			array(
@@ -296,7 +297,7 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
  * @return string[] URLs.
  */
 function premium_shop_gaming_stage_images() {
-	$files = array( 'console-tower.jpg', 'nintendo-hybrid.jpg', 'gpu-triple-rgb.jpg', 'gamepad.jpg' );
+	$files = array( 'console-tower.jpg', 'nintendo-hybrid.jpg', 'gpu-triple-rgb.jpg', premium_shop_gaming_festive() ? 'gifts.jpg' : 'gamepad.jpg' );
 	$urls  = array();
 	foreach ( $files as $file ) {
 		$urls[] = PREMIUM_SHOP_URI . '/assets/images/gaming/' . $file;
@@ -346,7 +347,103 @@ function premium_shop_gaming_assets() {
 		array(
 			'endsIn' => __( 'Ends in', 'premium-shop' ),
 			'units'  => array( __( 'days', 'premium-shop' ), __( 'hrs', 'premium-shop' ), __( 'min', 'premium-shop' ), __( 'sec', 'premium-shop' ) ),
+			'merry'  => __( 'Happy holidays!', 'premium-shop' ),
 		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'premium_shop_gaming_assets', 20 );
+
+/**
+ * Holiday season mode (gaming style): festive texts, garland, snow,
+ * gift finder, Christmas countdown and confetti.
+ *
+ * @return bool
+ */
+function premium_shop_gaming_festive() {
+	return 'gaming' === premium_shop_preset() && (bool) premium_shop_option( 'gaming_festive' );
+}
+
+/**
+ * Holiday texts (replace the regular defaults while the mode is on).
+ *
+ * @return array
+ */
+function premium_shop_gaming_festive_texts() {
+	return array(
+		'promo_text'           => implode(
+			"\n",
+			array(
+				__( 'Holiday deals: up to 20% off consoles and graphics cards', 'premium-shop' ),
+				__( 'Order by 20 December — delivered before Christmas', 'premium-shop' ),
+				__( 'Free gift message with every order', 'premium-shop' ),
+			)
+		),
+		'hero_eyebrow'         => __( 'Holiday deals are here', 'premium-shop' ),
+		'hero_title'           => __( 'The gifts every gamer is dreaming of', 'premium-shop' ),
+		'hero_subtitle'        => __( 'Nintendo Switch, PlayStation 5, graphics cards and accessories at holiday prices — wrapped with care and delivered before Christmas.', 'premium-shop' ),
+		'hero_button_text'     => __( 'Find the perfect gift', 'premium-shop' ),
+		'hero_button2_text'    => __( 'Holiday deals', 'premium-shop' ),
+		'title_bestsellers'    => __( 'Top gift ideas', 'premium-shop' ),
+		'title_sale'           => __( 'Holiday deals', 'premium-shop' ),
+		'title_new'            => __( 'New for the holidays', 'premium-shop' ),
+		'campaign_eyebrow'     => __( 'End-of-year sale', 'premium-shop' ),
+		'campaign_title'       => __( 'Holiday graphics card deals', 'premium-shop' ),
+		'campaign_text'        => __( 'The perfect gift for PC gamers: selected graphics cards at special prices until the end of the year, while stocks last.', 'premium-shop' ),
+		'campaign_button_text' => __( 'Unwrap the deals', 'premium-shop' ),
+		'benefit_1_title'      => __( 'Delivered before Christmas', 'premium-shop' ),
+		'benefit_1_text'       => __( 'Order by 20 December', 'premium-shop' ),
+		'benefit_3_title'      => __( 'Extended returns', 'premium-shop' ),
+		'benefit_3_text'       => __( 'Gifts can be exchanged until 15 January', 'premium-shop' ),
+		'newsletter_title'     => __( 'Holiday deals straight to your inbox', 'premium-shop' ),
+		'newsletter_text'      => __( 'Flash deals, restocks and last-minute gift ideas until New Year. Unsubscribe at any time.', 'premium-shop' ),
+	);
+}
+
+/**
+ * Body class of the holiday mode.
+ *
+ * @param string[] $classes Classes.
+ * @return string[]
+ */
+function premium_shop_gaming_festive_body_class( $classes ) {
+	if ( premium_shop_gaming_festive() ) {
+		$classes[] = 'ps-festive';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'premium_shop_gaming_festive_body_class' );
+
+/**
+ * Holiday garland across the top of the page and the snow switch.
+ */
+function premium_shop_gaming_festive_markup() {
+	if ( ! premium_shop_gaming_festive() ) {
+		return;
+	}
+	echo '<div class="g-garland" aria-hidden="true">';
+	for ( $i = 0; $i < 36; $i++ ) {
+		echo '<i></i>';
+	}
+	echo '</div>';
+	printf(
+		'<button type="button" class="g-snow-toggle" data-g-snow-toggle aria-pressed="true" title="%1$s"><span aria-hidden="true">❄</span><span class="screen-reader-text">%1$s</span></button>',
+		esc_attr__( 'Snow on / off', 'premium-shop' )
+	);
+}
+add_action( 'wp_body_open', 'premium_shop_gaming_festive_markup', 5 );
+
+/**
+ * Gift finder sections after the hero while the holiday mode is on.
+ *
+ * @param string[] $sections Sections.
+ * @return string[]
+ */
+function premium_shop_gaming_festive_sections( $sections ) {
+	if ( ! premium_shop_gaming_festive() ) {
+		return $sections;
+	}
+	$at = array_search( 'hero-gaming', $sections, true );
+	array_splice( $sections, false === $at ? 0 : $at + 1, 0, 'gaming-gifts' );
+	return $sections;
+}
+add_filter( 'premium_shop_home_sections', 'premium_shop_gaming_festive_sections', 20 );

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,16 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.2.0 =
+* Gaming style: lighter, friendlier midnight-indigo palette and lighter
+  product illustrations.
+* Holiday season mode (Customizer → Style preset → "holiday season mode", on by
+  default): festive texts in 4 languages, blinking garland, snowfall with an
+  on/off switch, holiday tag and gift boxes in the hero, "Gift ideas for every
+  budget" finder, live countdown to Christmas, ornaments on product cards,
+  confetti when adding to the cart, sparkle trail, jingling cart icon, snowy
+  footer. Reduced-motion friendly.
 
 = 2.1.0 =
 * "Gaming & tech" style redesigned with its own identity: dark neon palette,

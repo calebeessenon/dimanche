@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 13:38+0000\n"
-"PO-Revision-Date: 2026-11-01 13:38+0000\n"
+"POT-Creation-Date: 2026-11-01 17:14+0000\n"
+"PO-Revision-Date: 2026-11-01 17:14+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -52,7 +52,7 @@ msgstr "Kundenlieblinge"
 msgid "Just arrived"
 msgstr "Gerade eingetroffen"
 
-#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:571
+#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:572
 msgid "Limited time"
 msgstr "Nur für kurze Zeit"
 
@@ -411,7 +411,7 @@ msgstr "Shop entdecken"
 msgid "Contact us"
 msgstr "Kontaktieren Sie uns"
 
-#: inc/content-sections.php:231 inc/customizer/config.php:589
+#: inc/content-sections.php:231 inc/customizer/config.php:590
 msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
 msgstr "Sorgfältig ausgewählte Produkte, ehrliche Beratung und schnelle Lieferung. Wir sind vor und nach Ihrem Kauf für Sie da."
 
@@ -1128,90 +1128,94 @@ msgid "General shop \"Maison\" (editorial)"
 msgstr "Allgemeiner Shop „Maison“ (editorial)"
 
 #: inc/customizer/config.php:443
+msgid "Gaming style: holiday season mode (garland, snow, gift ideas, Christmas countdown, festive texts)"
+msgstr "Gaming-Stil: Festtagsmodus (Lichterkette, Schnee, Geschenkideen, Weihnachts-Countdown, festliche Texte)"
+
+#: inc/customizer/config.php:444
 msgid "Show the unit price (e.g. price per stacked m³)"
 msgstr "Grundpreis anzeigen (z. B. Preis pro RM)"
 
-#: inc/customizer/config.php:443
+#: inc/customizer/config.php:444
 msgid "Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume."
 msgstr "In Deutschland für nach Volumen verkaufte Waren Pflicht (PAngV). Wird automatisch aus dem Produktvolumen berechnet."
 
-#: inc/customizer/config.php:444
+#: inc/customizer/config.php:445
 msgid "Show key data (length, moisture, drying) on product cards"
 msgstr "Eckdaten (Länge, Feuchte, Trocknung) auf Produktkarten zeigen"
 
-#: inc/customizer/config.php:445
+#: inc/customizer/config.php:446
 msgid "Postcode delivery check (product page, cart, homepage)"
 msgstr "Lieferprüfung per PLZ (Produktseite, Warenkorb, Startseite)"
 
-#: inc/customizer/config.php:445
+#: inc/customizer/config.php:446
 msgid "Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone."
 msgstr "Nutzt Ihre WooCommerce-Versandzonen: Tragen Sie in jeder Zone die Postleitzahlen ein (z. B. 10*, 12345, 80000...89999)."
 
-#: inc/customizer/config.php:446
+#: inc/customizer/config.php:447
 msgid "Message when delivery is possible"
 msgstr "Meldung, wenn Lieferung möglich ist"
 
-#: inc/customizer/config.php:447
+#: inc/customizer/config.php:448
 msgid "Message when the postcode is not served"
 msgstr "Meldung, wenn die PLZ nicht beliefert wird"
 
-#: inc/customizer/config.php:448
+#: inc/customizer/config.php:449
 msgid "Delivery information (shown under the check)"
 msgstr "Lieferhinweise (unter der Prüfung angezeigt)"
 
-#: inc/customizer/config.php:449
+#: inc/customizer/config.php:450
 msgid "Ask at checkout whether the unloading point is accessible for a truck"
 msgstr "An der Kasse fragen, ob die Abladestelle für einen LKW erreichbar ist"
 
-#: inc/customizer/config.php:450
+#: inc/customizer/config.php:451
 msgid "Show the firewood calculator on product pages"
 msgstr "Brennholzrechner auf Produktseiten anzeigen"
 
-#: inc/customizer/config.php:451
+#: inc/customizer/config.php:452
 msgid "FAQ (one question per line: Question :: Answer)"
 msgstr "FAQ (eine Frage pro Zeile: Frage :: Antwort)"
 
-#: inc/customizer/config.php:451
+#: inc/customizer/config.php:452
 msgid "Empty = built-in firewood FAQ, translated automatically."
 msgstr "Leer = integrierte Brennholz-FAQ, automatisch übersetzt."
 
-#: inc/customizer/config.php:452
+#: inc/customizer/config.php:453
 msgid "FAQ — title"
 msgstr "FAQ – Titel"
 
-#: inc/customizer/config.php:453
+#: inc/customizer/config.php:454
 msgid "Calculator — title"
 msgstr "Rechner – Titel"
 
-#: inc/customizer/config.php:459
+#: inc/customizer/config.php:460
 msgid "Languages"
 msgstr "Sprachen"
 
-#: inc/customizer/config.php:460
+#: inc/customizer/config.php:461
 msgid "With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant."
 msgstr "Ist WPML, Polylang oder TranslatePress aktiv, verwaltet das Plugin die Sprachen und der Umschalter nutzt es automatisch. Andernfalls ändert der integrierte Umschalter die Oberflächensprache (Texte von Theme, WordPress und WooCommerce). Installieren Sie die Sprachpakete unter Einstellungen → Allgemein oder mit dem Einrichtungsassistenten."
 
-#: inc/customizer/config.php:465
+#: inc/customizer/config.php:466
 msgid "Mode"
 msgstr "Modus"
 
-#: inc/customizer/config.php:467
+#: inc/customizer/config.php:468
 msgid "Automatic (plugin if available, otherwise built-in)"
 msgstr "Automatisch (Plugin falls vorhanden, sonst integriert)"
 
-#: inc/customizer/config.php:468
+#: inc/customizer/config.php:469
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: inc/customizer/config.php:474
+#: inc/customizer/config.php:475
 msgid "Default language (first visit)"
 msgstr "Standardsprache (erster Besuch)"
 
-#: inc/customizer/config.php:477
+#: inc/customizer/config.php:478
 msgid "Languages offered (codes, in order)"
 msgstr "Angebotene Sprachen (Codes, in Reihenfolge)"
 
-#: inc/customizer/config.php:477
+#: inc/customizer/config.php:478
 msgid "Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it"
 msgstr "Verfügbare Codes: de, fr, es, en, it, pt, nl, pl. Beispiel: de,fr,es,en,it"
 
@@ -1247,119 +1251,119 @@ msgstr "Stern"
 msgid "Clock"
 msgstr "Uhr"
 
-#: inc/customizer/config.php:552
+#: inc/customizer/config.php:553
 msgid "Secure payment with SSL encryption"
 msgstr "Sichere Zahlung mit SSL-Verschlüsselung"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:555
+#: inc/customizer/config.php:556
 msgid "%d days to change your mind"
 msgstr "%d Tage Bedenkzeit"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:555
+#: inc/customizer/config.php:556
 msgid "Simple returns"
 msgstr "Einfache Rückgabe"
-
-#: inc/customizer/config.php:559
-msgid "Shop by category"
-msgstr "Nach Kategorie shoppen"
 
 #: inc/customizer/config.php:56
 msgid "Lock"
 msgstr "Schloss"
 
-#: inc/customizer/config.php:564
+#: inc/customizer/config.php:560
+msgid "Shop by category"
+msgstr "Nach Kategorie shoppen"
+
+#: inc/customizer/config.php:565
 msgid "What our customers say"
 msgstr "Das sagen unsere Kunden"
 
-#: inc/customizer/config.php:565
+#: inc/customizer/config.php:566
 msgid "Our brands"
 msgstr "Unsere Marken"
 
-#: inc/customizer/config.php:566
+#: inc/customizer/config.php:567
 msgid "The new collection"
 msgstr "Die neue Kollektion"
 
-#: inc/customizer/config.php:567
+#: inc/customizer/config.php:568
 msgid "Timeless pieces, carefully selected for you"
 msgstr "Zeitlose Stücke, sorgfältig für Sie ausgewählt"
 
-#: inc/customizer/config.php:568
+#: inc/customizer/config.php:569
 msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
 msgstr "Entdecken Sie hochwertige Produkte, faire Preise und einen Service, der an jedes Detail denkt – schnell zu Ihnen nach Hause geliefert."
-
-#: inc/customizer/config.php:569 inc/gaming/gaming.php:76
-msgid "Shop now"
-msgstr "Jetzt einkaufen"
 
 #: inc/customizer/config.php:57
 msgid "Box"
 msgstr "Paket"
 
-#: inc/customizer/config.php:570
+#: inc/customizer/config.php:570 inc/gaming/gaming.php:77
+msgid "Shop now"
+msgstr "Jetzt einkaufen"
+
+#: inc/customizer/config.php:571
 msgid "Discover offers"
 msgstr "Angebote entdecken"
 
-#: inc/customizer/config.php:572
+#: inc/customizer/config.php:573
 msgid "The season’s offers"
 msgstr "Die Angebote der Saison"
 
-#: inc/customizer/config.php:573
+#: inc/customizer/config.php:574
 msgid "Selected favourites at reduced prices — only while stocks last."
 msgstr "Ausgewählte Lieblingsstücke zu reduzierten Preisen – nur solange der Vorrat reicht."
 
-#: inc/customizer/config.php:574 inc/firewood/presets.php:119
+#: inc/customizer/config.php:575 inc/firewood/presets.php:119
 msgid "View offers"
 msgstr "Angebote ansehen"
 
-#: inc/customizer/config.php:575
+#: inc/customizer/config.php:576
 msgid "Fast shipping"
 msgstr "Schneller Versand"
 
 #. translators:%s: amount.
-#: inc/customizer/config.php:577
+#: inc/customizer/config.php:578
 msgid "Free from %s"
 msgstr "Kostenlos ab %s"
 
 #. translators:%s: amount.
-#: inc/customizer/config.php:577
+#: inc/customizer/config.php:578
 msgid "Dispatched within 24 hours"
 msgstr "Versand innerhalb von 24 Stunden"
-
-#: inc/customizer/config.php:579
-msgid "Encrypted & trusted methods"
-msgstr "Verschlüsselt & vertrauenswürdig"
 
 #: inc/customizer/config.php:58
 msgid "Flame"
 msgstr "Flamme"
 
 #: inc/customizer/config.php:580
+msgid "Encrypted & trusted methods"
+msgstr "Verschlüsselt & vertrauenswürdig"
+
+#: inc/customizer/config.php:581
 msgid "Easy returns"
 msgstr "Einfache Rückgabe"
 
-#: inc/customizer/config.php:583
+#: inc/customizer/config.php:584
 msgid "Personal help, quick answers"
 msgstr "Persönliche Hilfe, schnelle Antworten"
 
-#: inc/customizer/config.php:584
+#: inc/customizer/config.php:585
 msgid "Stay in the loop"
 msgstr "Bleiben Sie auf dem Laufenden"
 
-#: inc/customizer/config.php:585
+#: inc/customizer/config.php:586
 msgid "New arrivals, exclusive offers and inspiration — straight to your inbox. Unsubscribe at any time."
 msgstr "Neuheiten, exklusive Angebote und Inspiration – direkt in Ihr Postfach. Jederzeit abbestellbar."
 
-#: inc/customizer/config.php:586
+#: inc/customizer/config.php:587
 msgid "Delivery in 2–4 business days"
 msgstr "Lieferung in 2–4 Werktagen"
 
-#: inc/customizer/config.php:587
+#: inc/customizer/config.php:588
 msgid "2-year warranty"
 msgstr "2 Jahre Garantie"
 
-#: inc/customizer/config.php:588
+#: inc/customizer/config.php:589
 msgid "Secure, encrypted payment"
 msgstr "Sichere, verschlüsselte Zahlung"
 
@@ -2125,293 +2129,369 @@ msgstr "Kiefer entzündet sich schnell – perfekt zum Anfeuern."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "Fichte entzündet sich schnell – perfekt zum Anfeuern."
 
-#: inc/gaming/gaming.php:114
+#: inc/gaming/gaming.php:100 inc/firewood/presets.php:133
+msgid "Frequently asked questions"
+msgstr "Häufige Fragen"
+
+#: inc/gaming/gaming.php:115
 msgid "Are your products original?"
 msgstr "Sind Ihre Produkte original?"
 
-#: inc/gaming/gaming.php:114
+#: inc/gaming/gaming.php:115
 msgid "Yes. All consoles, graphics cards and accessories come from official distribution channels, are new and sealed, and include the full manufacturer warranty."
 msgstr "Ja. Alle Konsolen, Grafikkarten und Zubehörteile stammen aus offiziellen Vertriebskanälen, sind neu und versiegelt und haben die volle Herstellergarantie."
 
-#: inc/gaming/gaming.php:115
+#: inc/gaming/gaming.php:116
 msgid "How fast do you deliver?"
 msgstr "Wie schnell liefern Sie?"
 
-#: inc/gaming/gaming.php:115
+#: inc/gaming/gaming.php:116
 msgid "Orders placed before 3 pm on business days leave our warehouse the same day. Delivery usually takes 1–3 business days, with tracking."
 msgstr "Bestellungen, die an Werktagen bis 15 Uhr eingehen, verlassen unser Lager am selben Tag. Die Lieferung dauert in der Regel 1–3 Werktage, mit Sendungsverfolgung."
 
-#: inc/gaming/gaming.php:116
+#: inc/gaming/gaming.php:117
 msgid "Which graphics card suits my PC?"
 msgstr "Welche Grafikkarte passt zu meinem PC?"
 
-#: inc/gaming/gaming.php:116
+#: inc/gaming/gaming.php:117
 msgid "Check the length of the card, your power supply (wattage and connectors) and your screen resolution. Send us your configuration — we gladly recommend the right model."
 msgstr "Prüfen Sie die Länge der Karte, Ihr Netzteil (Leistung und Anschlüsse) und Ihre Bildschirmauflösung. Senden Sie uns Ihre Konfiguration – wir empfehlen Ihnen gerne das passende Modell."
 
-#: inc/gaming/gaming.php:117
+#: inc/gaming/gaming.php:118
 msgid "Can I return a product?"
 msgstr "Kann ich ein Produkt zurückgeben?"
 
-#: inc/gaming/gaming.php:117
+#: inc/gaming/gaming.php:118
 msgid "You can return unused products in their original packaging within 14 days. Defective products are repaired or replaced under warranty."
 msgstr "Unbenutzte Produkte in Originalverpackung können Sie innerhalb von 14 Tagen zurückgeben. Defekte Produkte werden im Rahmen der Garantie repariert oder ersetzt."
 
-#: inc/gaming/gaming.php:118
+#: inc/gaming/gaming.php:119
 msgid "Which payment methods do you accept?"
 msgstr "Welche Zahlungsarten akzeptieren Sie?"
 
-#: inc/gaming/gaming.php:118
+#: inc/gaming/gaming.php:119
 msgid "TWINT, credit and debit cards, PayPal, Apple Pay, Google Pay and bank transfer — all payments are encrypted."
 msgstr "TWINT, Kredit- und Debitkarten, PayPal, Apple Pay, Google Pay und Banküberweisung – alle Zahlungen sind verschlüsselt."
 
-#: inc/gaming/gaming.php:119
+#: inc/gaming/gaming.php:120
 msgid "Do consoles work with games from other regions?"
 msgstr "Funktionieren die Konsolen mit Spielen aus anderen Regionen?"
 
-#: inc/gaming/gaming.php:119
+#: inc/gaming/gaming.php:120
 msgid "Current Nintendo and PlayStation consoles play games from all regions. Online services and some content may depend on your account region."
 msgstr "Aktuelle Nintendo- und PlayStation-Konsolen spielen Spiele aus allen Regionen. Online-Dienste und manche Inhalte können von der Region Ihres Kontos abhängen."
 
-#: inc/gaming/gaming.php:132
+#: inc/gaming/gaming.php:133
 msgid "New, sealed products with the full manufacturer warranty."
 msgstr "Neue, versiegelte Produkte mit voller Herstellergarantie."
 
-#: inc/gaming/gaming.php:175
+#: inc/gaming/gaming.php:176
 msgid "Nintendo"
 msgstr "Nintendo"
 
-#: inc/gaming/gaming.php:176
+#: inc/gaming/gaming.php:177
 msgid "PlayStation 5"
 msgstr "PlayStation 5"
 
-#: inc/gaming/gaming.php:179
+#: inc/gaming/gaming.php:180
 msgid "Nintendo Switch consoles, controllers and games — play at home and on the go."
 msgstr "Nintendo-Switch-Konsolen, Controller und Spiele – zu Hause und unterwegs spielen."
 
-#: inc/gaming/gaming.php:180
+#: inc/gaming/gaming.php:181
 msgid "PlayStation 5 consoles and DualSense controllers for next-generation gaming."
 msgstr "PlayStation-5-Konsolen und DualSense-Controller für Gaming der neuen Generation."
 
-#: inc/gaming/gaming.php:181
+#: inc/gaming/gaming.php:182
 msgid "Graphics cards for gaming, streaming and creative work — from Full HD to 4K."
 msgstr "Grafikkarten für Gaming, Streaming und kreative Arbeit – von Full HD bis 4K."
 
-#: inc/gaming/gaming.php:182
+#: inc/gaming/gaming.php:183
 msgid "Headsets, controllers and everything else that makes gaming better."
 msgstr "Headsets, Controller und alles, was Gaming besser macht."
 
-#: inc/gaming/gaming.php:183
+#: inc/gaming/gaming.php:184
 msgid "Nintendo Switch 2 console"
 msgstr "Nintendo Switch 2 Konsole"
 
-#: inc/gaming/gaming.php:184
+#: inc/gaming/gaming.php:185
 msgid "Nintendo Switch OLED console – neon edition"
 msgstr "Nintendo Switch OLED Konsole – Neon-Edition"
 
-#: inc/gaming/gaming.php:185
+#: inc/gaming/gaming.php:186
 msgid "Nintendo Switch Lite – turquoise"
 msgstr "Nintendo Switch Lite – Türkis"
 
-#: inc/gaming/gaming.php:186
+#: inc/gaming/gaming.php:187
 msgid "PlayStation 5 console"
 msgstr "PlayStation 5 Konsole"
 
-#: inc/gaming/gaming.php:187
+#: inc/gaming/gaming.php:188
 msgid "PlayStation 5 Pro console"
 msgstr "PlayStation 5 Pro Konsole"
 
-#: inc/gaming/gaming.php:188
+#: inc/gaming/gaming.php:189
 msgid "DualSense wireless controller – white"
 msgstr "DualSense Wireless-Controller – Weiss"
 
-#: inc/gaming/gaming.php:189
+#: inc/gaming/gaming.php:190
 msgid "DualSense wireless controller – midnight black"
 msgstr "DualSense Wireless-Controller – Midnight Black"
 
-#: inc/gaming/gaming.php:190
+#: inc/gaming/gaming.php:191
 msgid "GeForce RTX 5070 graphics card, 12 GB"
 msgstr "Grafikkarte GeForce RTX 5070, 12 GB"
 
-#: inc/gaming/gaming.php:191
+#: inc/gaming/gaming.php:192
 msgid "GeForce RTX 5080 graphics card, 16 GB"
 msgstr "Grafikkarte GeForce RTX 5080, 16 GB"
 
-#: inc/gaming/gaming.php:192
+#: inc/gaming/gaming.php:193
 msgid "Radeon RX 9070 XT graphics card, 16 GB"
 msgstr "Grafikkarte Radeon RX 9070 XT, 16 GB"
 
-#: inc/gaming/gaming.php:193
+#: inc/gaming/gaming.php:194
 msgid "Wireless gaming headset"
 msgstr "Kabelloses Gaming-Headset"
 
-#: inc/gaming/gaming.php:194
+#: inc/gaming/gaming.php:195
 msgid "Game bundle – 3 bestsellers of your choice"
 msgstr "Spiele-Bundle – 3 Bestseller nach Wahl"
 
-#: inc/gaming/gaming.php:195
+#: inc/gaming/gaming.php:196
 msgid "The new hybrid console: bigger screen, more power — play on the TV or on the go."
 msgstr "Die neue Hybridkonsole: grösserer Bildschirm, mehr Leistung – am Fernseher oder unterwegs spielen."
 
-#: inc/gaming/gaming.php:196
+#: inc/gaming/gaming.php:197
 msgid "7-inch OLED screen, stand and dock included."
 msgstr "7-Zoll-OLED-Bildschirm, Standfuss und Dock inklusive."
 
-#: inc/gaming/gaming.php:197
+#: inc/gaming/gaming.php:198
 msgid "Compact and light, made for gaming on the go."
 msgstr "Kompakt und leicht – gemacht für unterwegs."
 
-#: inc/gaming/gaming.php:198
+#: inc/gaming/gaming.php:199
 msgid "Ultra-fast SSD, 4K gaming and haptic feedback with the DualSense controller."
 msgstr "Ultraschnelle SSD, 4K-Gaming und haptisches Feedback mit dem DualSense-Controller."
 
-#: inc/gaming/gaming.php:199
+#: inc/gaming/gaming.php:200
 msgid "More graphics power, 2 TB SSD — for the best picture quality."
 msgstr "Mehr Grafikleistung, 2-TB-SSD – für die beste Bildqualität."
 
-#: inc/gaming/gaming.php:200
+#: inc/gaming/gaming.php:201
 msgid "Haptic feedback and adaptive triggers."
 msgstr "Haptisches Feedback und adaptive Trigger."
 
-#: inc/gaming/gaming.php:201
+#: inc/gaming/gaming.php:202
 msgid "Smooth 1440p gaming with ray tracing and DLSS."
 msgstr "Flüssiges 1440p-Gaming mit Raytracing und DLSS."
 
-#: inc/gaming/gaming.php:202
+#: inc/gaming/gaming.php:203
 msgid "High-end 4K gaming, triple-fan cooling and RGB lighting."
 msgstr "High-End-4K-Gaming, Dreifach-Lüfter-Kühlung und RGB-Beleuchtung."
 
-#: inc/gaming/gaming.php:203
+#: inc/gaming/gaming.php:204
 msgid "Excellent value for 1440p and 4K, quiet dual-fan design."
 msgstr "Hervorragendes Preis-Leistungs-Verhältnis für 1440p und 4K, leises Dual-Lüfter-Design."
 
-#: inc/gaming/gaming.php:204
+#: inc/gaming/gaming.php:205
 msgid "3D audio, noise-cancelling microphone, 30 hours of battery life."
 msgstr "3D-Audio, Mikrofon mit Geräuschunterdrückung, 30 Stunden Akkulaufzeit."
 
-#: inc/gaming/gaming.php:205
+#: inc/gaming/gaming.php:206
 msgid "Pick three top titles for your console and save."
 msgstr "Wählen Sie drei Top-Titel für Ihre Konsole und sparen Sie."
 
-#: inc/gaming/gaming.php:347
+#: inc/gaming/gaming.php:348
 msgid "Ends in"
 msgstr "Endet in"
 
-#: inc/gaming/gaming.php:348
-msgid "hrs"
-msgstr "Std."
+#: inc/gaming/gaming.php:350
+msgid "Happy holidays!"
+msgstr "Frohe Festtage!"
 
-#: inc/gaming/gaming.php:348
-msgid "min"
-msgstr "Min."
+#: inc/gaming/gaming.php:376
+msgid "Holiday deals: up to 20% off consoles and graphics cards"
+msgstr "Festtagsangebote: bis zu 20 % auf Konsolen und Grafikkarten"
 
-#: inc/gaming/gaming.php:348
-msgid "sec"
-msgstr "Sek."
+#: inc/gaming/gaming.php:377
+msgid "Order by 20 December — delivered before Christmas"
+msgstr "Bis 20. Dezember bestellen – vor Weihnachten geliefert"
 
-#: inc/gaming/gaming.php:68
+#: inc/gaming/gaming.php:378
+msgid "Free gift message with every order"
+msgstr "Kostenlose Geschenkbotschaft zu jeder Bestellung"
+
+#: inc/gaming/gaming.php:381
+msgid "Holiday deals are here"
+msgstr "Die Festtagsangebote sind da"
+
+#: inc/gaming/gaming.php:382
+msgid "The gifts every gamer is dreaming of"
+msgstr "Die Geschenke, von denen jeder Gamer träumt"
+
+#: inc/gaming/gaming.php:383
+msgid "Nintendo Switch, PlayStation 5, graphics cards and accessories at holiday prices — wrapped with care and delivered before Christmas."
+msgstr "Nintendo Switch, PlayStation 5, Grafikkarten und Zubehör zu Festtagspreisen – sorgfältig verpackt und vor Weihnachten geliefert."
+
+#: inc/gaming/gaming.php:384
+msgid "Find the perfect gift"
+msgstr "Das perfekte Geschenk finden"
+
+#: inc/gaming/gaming.php:385 inc/gaming/gaming.php:387
+msgid "Holiday deals"
+msgstr "Festtagsangebote"
+
+#: inc/gaming/gaming.php:386
+msgid "Top gift ideas"
+msgstr "Top-Geschenkideen"
+
+#: inc/gaming/gaming.php:388
+msgid "New for the holidays"
+msgstr "Neu zu den Festtagen"
+
+#: inc/gaming/gaming.php:389
+msgid "End-of-year sale"
+msgstr "Jahresend-Sale"
+
+#: inc/gaming/gaming.php:390
+msgid "Holiday graphics card deals"
+msgstr "Grafikkarten-Festtagsangebote"
+
+#: inc/gaming/gaming.php:391
+msgid "The perfect gift for PC gamers: selected graphics cards at special prices until the end of the year, while stocks last."
+msgstr "Das perfekte Geschenk für PC-Gamer: ausgewählte Grafikkarten zu Sonderpreisen bis Jahresende, solange der Vorrat reicht."
+
+#: inc/gaming/gaming.php:392
+msgid "Unwrap the deals"
+msgstr "Angebote auspacken"
+
+#: inc/gaming/gaming.php:393
+msgid "Delivered before Christmas"
+msgstr "Vor Weihnachten geliefert"
+
+#: inc/gaming/gaming.php:394
+msgid "Order by 20 December"
+msgstr "Bestellung bis 20. Dezember"
+
+#: inc/gaming/gaming.php:395
+msgid "Extended returns"
+msgstr "Verlängerte Rückgabe"
+
+#: inc/gaming/gaming.php:396
+msgid "Gifts can be exchanged until 15 January"
+msgstr "Geschenke können bis 15. Januar umgetauscht werden"
+
+#: inc/gaming/gaming.php:397
+msgid "Holiday deals straight to your inbox"
+msgstr "Festtagsangebote direkt in Ihr Postfach"
+
+#: inc/gaming/gaming.php:398
+msgid "Flash deals, restocks and last-minute gift ideas until New Year. Unsubscribe at any time."
+msgstr "Blitzangebote, Nachlieferungen und Last-Minute-Geschenkideen bis Neujahr. Abmeldung jederzeit möglich."
+
+#: inc/gaming/gaming.php:430
+msgid "Snow on / off"
+msgstr "Schnee an / aus"
+
+#: inc/gaming/gaming.php:69
 msgid "Original products with manufacturer warranty"
 msgstr "Originalprodukte mit Herstellergarantie"
 
-#: inc/gaming/gaming.php:69
+#: inc/gaming/gaming.php:70
 msgid "Ordered before 3 pm, shipped the same day"
 msgstr "Bis 15 Uhr bestellt, am selben Tag verschickt"
 
-#: inc/gaming/gaming.php:70
+#: inc/gaming/gaming.php:71
 msgid "Pay with TWINT, card or invoice"
 msgstr "Bezahlen mit TWINT, Karte oder Rechnung"
 
-#: inc/gaming/gaming.php:73
+#: inc/gaming/gaming.php:74
 msgid "Consoles · graphics cards · accessories"
 msgstr "Konsolen · Grafikkarten · Zubehör"
 
-#: inc/gaming/gaming.php:74
+#: inc/gaming/gaming.php:75
 msgid "Next-level gaming, delivered fast"
 msgstr "Gaming auf dem nächsten Level – schnell geliefert"
 
-#: inc/gaming/gaming.php:75
+#: inc/gaming/gaming.php:76
 msgid "Nintendo Switch, PlayStation 5 and the latest graphics cards — original products, fair prices and express delivery."
 msgstr "Nintendo Switch, PlayStation 5 und die neuesten Grafikkarten – Originalprodukte, faire Preise und Expresslieferung."
 
-#: inc/gaming/gaming.php:77
+#: inc/gaming/gaming.php:78
 msgid "Current deals"
 msgstr "Aktuelle Angebote"
 
-#: inc/gaming/gaming.php:78
+#: inc/gaming/gaming.php:79
 msgid "Shop by platform"
 msgstr "Nach Plattform einkaufen"
 
-#: inc/gaming/gaming.php:81
+#: inc/gaming/gaming.php:82
 msgid "Deals"
 msgstr "Angebote"
 
-#: inc/gaming/gaming.php:82
+#: inc/gaming/gaming.php:83
 msgid "Level up"
 msgstr "Level up"
 
-#: inc/gaming/gaming.php:83
+#: inc/gaming/gaming.php:84
 msgid "Graphics card week"
 msgstr "Grafikkarten-Woche"
 
-#: inc/gaming/gaming.php:84
+#: inc/gaming/gaming.php:85
 msgid "More frames, less money: selected graphics cards at special prices while stocks last."
 msgstr "Mehr FPS, weniger Geld: ausgewählte Grafikkarten zu Sonderpreisen, solange der Vorrat reicht."
 
-#: inc/gaming/gaming.php:85
+#: inc/gaming/gaming.php:86
 msgid "See the deals"
 msgstr "Zu den Angeboten"
 
-#: inc/gaming/gaming.php:86
+#: inc/gaming/gaming.php:87
 msgid "Express shipping"
 msgstr "Expressversand"
 
-#: inc/gaming/gaming.php:87
+#: inc/gaming/gaming.php:88
 msgid "Ordered before 3 pm, shipped today"
 msgstr "Bis 15 Uhr bestellt, heute verschickt"
 
-#: inc/gaming/gaming.php:89
+#: inc/gaming/gaming.php:90
 msgid "With manufacturer warranty"
 msgstr "Mit Herstellergarantie"
 
-#: inc/gaming/gaming.php:90
+#: inc/gaming/gaming.php:91
 msgid "14-day returns"
 msgstr "14 Tage Rückgaberecht"
 
-#: inc/gaming/gaming.php:91
+#: inc/gaming/gaming.php:92
 msgid "Simple and free of charge"
 msgstr "Einfach und kostenlos"
 
-#: inc/gaming/gaming.php:92
+#: inc/gaming/gaming.php:93
 msgid "Gamer support"
 msgstr "Gamer-Support"
 
-#: inc/gaming/gaming.php:93
+#: inc/gaming/gaming.php:94
 msgid "Advice from real players"
 msgstr "Beratung von echten Gamern"
 
-#: inc/gaming/gaming.php:94
+#: inc/gaming/gaming.php:95
 msgid "Drops & deals first"
 msgstr "Neuheiten & Deals zuerst"
 
-#: inc/gaming/gaming.php:95
+#: inc/gaming/gaming.php:96
 msgid "Be the first to know about new consoles, restocks and limited deals. Unsubscribe at any time."
 msgstr "Erfahren Sie als Erste von neuen Konsolen, Nachlieferungen und limitierten Angeboten. Abmeldung jederzeit möglich."
 
-#: inc/gaming/gaming.php:96
+#: inc/gaming/gaming.php:97
 msgid "Consoles, graphics cards and accessories from official channels — tested, fairly priced and shipped fast."
 msgstr "Konsolen, Grafikkarten und Zubehör aus offiziellen Kanälen – geprüft, fair bepreist und schnell verschickt."
 
-#: inc/gaming/gaming.php:97
+#: inc/gaming/gaming.php:98
 msgid "Delivery within 1–3 business days"
 msgstr "Lieferung in 1–3 Werktagen"
 
-#: inc/gaming/gaming.php:98
+#: inc/gaming/gaming.php:99
 msgid "2-year manufacturer warranty"
 msgstr "2 Jahre Herstellergarantie"
-
-#: inc/gaming/gaming.php:99 inc/firewood/presets.php:133
-msgid "Frequently asked questions"
-msgstr "Häufige Fragen"
 
 #: inc/home-slider.php:173
 msgid "Our range"
@@ -2596,7 +2676,7 @@ msgstr "Ihre Lieblingsprodukte, für später gemerkt."
 msgid "Dry wood, ready to burn"
 msgstr "Trockenes Holz, sofort brennfertig"
 
-#: inc/page-hero.php:259 inc/gaming/gaming.php:88 inc/gaming/gaming.php:132
+#: inc/page-hero.php:259 inc/gaming/gaming.php:89 inc/gaming/gaming.php:133
 msgid "100% original"
 msgstr "100 % original"
 
@@ -2734,11 +2814,11 @@ msgstr "Vorherige Seite"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: inc/template-tags.php:547 inc/admin/onboarding.php:526 inc/customizer/config.php:27 inc/customizer/config.php:561
+#: inc/template-tags.php:547 inc/admin/onboarding.php:526 inc/customizer/config.php:27 inc/customizer/config.php:562
 msgid "New arrivals"
 msgstr "Neuheiten"
 
-#: inc/template-tags.php:548 inc/admin/onboarding.php:527 inc/customizer/config.php:29 inc/customizer/config.php:563
+#: inc/template-tags.php:548 inc/admin/onboarding.php:527 inc/customizer/config.php:29 inc/customizer/config.php:564
 msgid "Bestsellers"
 msgstr "Bestseller"
 
@@ -2844,7 +2924,7 @@ msgstr "Vielen Dank!"
 msgid "Your order has been received. You will receive a confirmation by email shortly."
 msgstr "Ihre Bestellung ist eingegangen. Sie erhalten in Kürze eine Bestätigung per E-Mail."
 
-#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:560
+#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:561
 msgid "Popular products"
 msgstr "Beliebte Produkte"
 
@@ -3584,7 +3664,7 @@ msgstr "Nach oben"
 msgid "Shop"
 msgstr "Shop"
 
-#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:582
+#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:583
 msgid "Customer service"
 msgstr "Kundenservice"
 
@@ -3711,11 +3791,72 @@ msgstr "Geben Sie Ihre Postleitzahl ein und sehen Sie sofort Liefermöglichkeite
 msgid "Good to know"
 msgstr "Gut zu wissen"
 
-#: template-parts/homepage/gaming-marquee.php:14
+#. translators:1: amount, 2: currency.
+#: template-parts/homepage/gaming-gifts.php:15
+msgid "Under %1$s %2$s"
+msgstr "Unter %1$s %2$s"
+
+#. translators:1: amount, 2: currency.
+#: template-parts/homepage/gaming-gifts.php:15
+msgid "Stocking fillers"
+msgstr "Kleine Geschenke"
+
+#. translators:1: amount, 2: currency.
+#: template-parts/homepage/gaming-gifts.php:16
+msgid "Controllers & headsets"
+msgstr "Controller & Headsets"
+
+#: template-parts/homepage/gaming-gifts.php:17 template-parts/homepage/gaming-marquee.php:14
 msgid "Consoles"
 msgstr "Konsolen"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:177
+#. translators:1: amount, 2: currency.
+#: template-parts/homepage/gaming-gifts.php:19
+msgid "%1$s %2$s and more"
+msgstr "%1$s %2$s und mehr"
+
+#. translators:1: amount, 2: currency.
+#: template-parts/homepage/gaming-gifts.php:19
+msgid "The big surprise"
+msgstr "Die grosse Überraschung"
+
+#: template-parts/homepage/gaming-gifts.php:25
+msgid "Gift finder"
+msgstr "Geschenkefinder"
+
+#: template-parts/homepage/gaming-gifts.php:26
+msgid "Gift ideas for every budget"
+msgstr "Geschenkideen für jedes Budget"
+
+#: template-parts/homepage/gaming-gifts.php:40
+msgid "See the gifts"
+msgstr "Geschenke ansehen"
+
+#: template-parts/homepage/gaming-gifts.php:47
+msgid "Christmas is coming"
+msgstr "Weihnachten kommt"
+
+#: template-parts/homepage/gaming-gifts.php:48
+msgid "Order by 20 December for delivery before Christmas."
+msgstr "Bis 20. Dezember bestellen – Lieferung vor Weihnachten."
+
+#: template-parts/homepage/gaming-gifts.php:51 template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:349
+msgid "days"
+msgstr "Tage"
+
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:349
+msgid "hrs"
+msgstr "Std."
+
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:349
+msgid "min"
+msgstr "Min."
+
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:349
+msgid "sec"
+msgstr "Sek."
+
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:178
 msgid "Graphics cards"
 msgstr "Grafikkarten"
 
@@ -3731,7 +3872,7 @@ msgstr "Headsets"
 msgid "Games"
 msgstr "Spiele"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:178
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:179
 msgid "Accessories"
 msgstr "Zubehör"
 
@@ -3755,10 +3896,6 @@ msgstr "Jahre"
 msgid "Warranty"
 msgstr "Garantie"
 
-#: template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:348
-msgid "days"
-msgstr "Tage"
-
 #: template-parts/homepage/hero-gaming.php:23 inc/woocommerce/single-product.php:297
 msgid "Returns"
 msgstr "Rückgabe"
@@ -3767,22 +3904,30 @@ msgstr "Rückgabe"
 msgid "Now in stock:"
 msgstr "Jetzt auf Lager:"
 
-#: template-parts/homepage/hero-gaming.php:77
+#: template-parts/homepage/hero-gaming.php:64
+msgid "Holiday sale"
+msgstr "Festtags-Sale"
+
+#: template-parts/homepage/hero-gaming.php:64
+msgid "up to −20%"
+msgstr "bis −20 %"
+
+#: template-parts/homepage/hero-gaming.php:80
 msgid "Scroll down"
 msgstr "Nach unten scrollen"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:103 inc/customizer/config.php:373 inc/customizer/config.php:578
+#: template-parts/homepage/hero.php:103 inc/customizer/config.php:373 inc/customizer/config.php:579
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:159 inc/customizer/config.php:546
+#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:159 inc/customizer/config.php:547
 msgid "Free shipping from %s"
 msgstr "Kostenloser Versand ab %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:550
+#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:551
 msgid "%d-day free returns"
 msgstr "%d Tage kostenlose Rückgabe"
 

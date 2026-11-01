@@ -289,4 +289,151 @@
 		update();
 		setInterval(update, 1000);
 	});
+
+	/* =============================================================
+	 * Holiday season mode (body.ps-festive).
+	 * =========================================================== */
+	var festive = doc.body.classList.contains('ps-festive');
+
+	function store(key, value) {
+		try {
+			if (value === undefined) { return window.localStorage.getItem(key); }
+			window.localStorage.setItem(key, value);
+		} catch (e) { return null; }
+		return null;
+	}
+
+	/* Snow: soft flakes drifting with the wind, switchable. */
+	if (festive && !reduce) {
+		var snow = doc.createElement('canvas');
+		snow.className = 'g-snow';
+		snow.setAttribute('aria-hidden', 'true');
+		doc.body.appendChild(snow);
+		var sctx = snow.getContext('2d');
+		var flakes = [];
+		var sw = 0;
+		var sh = 0;
+		var sdpr = Math.min(window.devicePixelRatio || 1, 2);
+		var snowing = store('ps_snow') !== 'off';
+		var toggle = doc.querySelector('[data-g-snow-toggle]');
+		var t = 0;
+		function snowSize() {
+			sw = window.innerWidth; sh = window.innerHeight;
+			snow.width = sw * sdpr; snow.height = sh * sdpr;
+			sctx.setTransform(sdpr, 0, 0, sdpr, 0, 0);
+			var n = Math.round(Math.min(140, sw * sh / 11000));
+			flakes = [];
+			for (var i = 0; i < n; i++) {
+				flakes.push({ x: Math.random() * sw, y: Math.random() * sh, r: Math.random() * 2.4 + 0.8, s: Math.random() * 0.8 + 0.4, o: Math.random() * 0.6 + 0.4, p: Math.random() * Math.PI * 2 });
+			}
+		}
+		function snowFrame() {
+			if (!snowing || doc.hidden) { sctx.clearRect(0, 0, sw, sh); return; }
+			t += 0.01;
+			sctx.clearRect(0, 0, sw, sh);
+			for (var i = 0; i < flakes.length; i++) {
+				var f = flakes[i];
+				f.y += f.s;
+				f.x += Math.sin(t + f.p) * 0.6 + 0.2;
+				if (f.y > sh + 5) { f.y = -5; f.x = Math.random() * sw; }
+				if (f.x > sw + 5) { f.x = -5; }
+				sctx.beginPath();
+				sctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+				sctx.fillStyle = 'rgba(255,255,255,' + f.o + ')';
+				sctx.fill();
+			}
+			requestAnimationFrame(snowFrame);
+		}
+		function setSnow(on) {
+			snowing = on;
+			store('ps_snow', on ? 'on' : 'off');
+			if (toggle) { toggle.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+			if (on) { requestAnimationFrame(snowFrame); }
+		}
+		snowSize();
+		window.addEventListener('resize', snowSize);
+		doc.addEventListener('visibilitychange', function () { if (!doc.hidden && snowing) { requestAnimationFrame(snowFrame); } });
+		if (toggle) { toggle.addEventListener('click', function () { setSnow(!snowing); }); }
+		setSnow(snowing);
+	}
+
+	/* Confetti burst when a product goes into the cart. */
+	function confetti(x, y) {
+		if (reduce || !doc.body.animate) { return; }
+		var colors = ['#ff3b5c', '#ffcc4d', '#2ed47a', '#59c8ff', '#8f6bff', '#ffffff'];
+		for (var i = 0; i < 46; i++) {
+			var c = doc.createElement('span');
+			c.className = 'g-confetti';
+			c.style.left = x + 'px';
+			c.style.top = y + 'px';
+			c.style.background = colors[i % colors.length];
+			if (i % 3 === 0) { c.style.borderRadius = '50%'; c.style.width = c.style.height = '8px'; }
+			doc.body.appendChild(c);
+			var angle = Math.random() * Math.PI * 2;
+			var dist = 80 + Math.random() * 160;
+			var dx = Math.cos(angle) * dist;
+			var dy = Math.sin(angle) * dist - 120;
+			var anim = c.animate([
+				{ transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
+				{ transform: 'translate(' + dx + 'px,' + dy + 'px) rotate(' + (Math.random() * 720) + 'deg)', opacity: 1, offset: 0.55 },
+				{ transform: 'translate(' + dx * 1.2 + 'px,' + (dy + 260) + 'px) rotate(' + (Math.random() * 1080) + 'deg)', opacity: 0 }
+			], { duration: 1300 + Math.random() * 700, easing: 'cubic-bezier(.2,.7,.3,1)' });
+			anim.onfinish = (function (el) { return function () { el.remove(); }; })(c);
+		}
+	}
+	if (festive) {
+		doc.addEventListener('click', function (e) {
+			var btn = e.target.closest && e.target.closest('.add_to_cart_button, .single_add_to_cart_button, [data-ps-qv-add], .ps-mcard__btn');
+			if (!btn || btn.classList.contains('disabled')) { return; }
+			var r = btn.getBoundingClientRect();
+			confetti(r.left + r.width / 2, r.top + r.height / 2);
+		}, true);
+	}
+
+	/* Sparkle trail behind the pointer (desktop). */
+	if (festive && !reduce && fine) {
+		var lastSpark = 0;
+		doc.addEventListener('pointermove', function (e) {
+			var now = performance.now();
+			if (now - lastSpark < 45) { return; }
+			lastSpark = now;
+			var sp = doc.createElement('span');
+			sp.className = 'g-spark';
+			sp.style.left = e.clientX + 'px';
+			sp.style.top = e.clientY + 'px';
+			doc.body.appendChild(sp);
+			setTimeout(function () { sp.remove(); }, 820);
+		}, { passive: true });
+	}
+
+	/* Countdown to Christmas Eve. */
+	$$('[data-g-xmas]').forEach(function (box) {
+		var cells = $$('.g-xmas__cell', box);
+		var now = new Date();
+		var target = new Date(now.getFullYear(), 11, 24, 18, 0, 0);
+		if (now > new Date(now.getFullYear(), 11, 26)) { target = new Date(now.getFullYear() + 1, 11, 24, 18, 0, 0); }
+		var last = [];
+		function update() {
+			var s = Math.max(0, Math.floor((target - new Date()) / 1000));
+			if (s === 0) {
+				box.innerHTML = '<p class="g-xmas__title">' + (L10N.merry || '') + '</p>';
+				return;
+			}
+			var parts = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60];
+			parts.forEach(function (v, n) {
+				var txt = (v < 10 ? '0' : '') + v;
+				if (last[n] !== txt && cells[n]) {
+					cells[n].firstChild.textContent = txt;
+					if (!reduce && last[n] !== undefined) {
+						cells[n].classList.remove('is-tick');
+						void cells[n].offsetWidth;
+						cells[n].classList.add('is-tick');
+					}
+					last[n] = txt;
+				}
+			});
+		}
+		update();
+		setInterval(update, 1000);
+	});
 })();

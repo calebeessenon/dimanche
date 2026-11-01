@@ -60,6 +60,9 @@ if ( $premium_shop_days ) {
 		</div>
 
 		<div class="ps-ghero__stage" data-ps-stage aria-hidden="true">
+			<?php if ( premium_shop_gaming_festive() ) : ?>
+				<span class="g-xmas-tag"><span><?php esc_html_e( 'Holiday sale', 'premium-shop' ); ?></span><b><?php esc_html_e( 'up to −20%', 'premium-shop' ); ?></b></span>
+			<?php endif; ?>
 			<span class="ps-ghero__ring ps-ghero__ring--1"></span>
 			<span class="ps-ghero__ring ps-ghero__ring--2"></span>
 			<span class="ps-ghero__floor"></span>

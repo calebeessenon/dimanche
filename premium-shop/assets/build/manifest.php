@@ -10,10 +10,10 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'css/main.css' => 'main.0eed8a9a66.min.css',
 	'css/woocommerce.css' => 'woocommerce.21ab9ccc93.min.css',
-	'css/gaming.css' => 'gaming.4ce8518195.min.css',
+	'css/gaming.css' => 'gaming.11840e9592.min.css',
 	'js/theme.js' => 'theme.9c98cd05de.min.js',
 	'js/shop.js' => 'shop.416097b9c7.min.js',
 	'js/product.js' => 'product.3d8dab133a.min.js',
 	'js/firewood.js' => 'firewood.f28e4a0bb9.min.js',
-	'js/gaming.js' => 'gaming.26fa6770c2.min.js',
+	'js/gaming.js' => 'gaming.303a499d63.min.js',
 );

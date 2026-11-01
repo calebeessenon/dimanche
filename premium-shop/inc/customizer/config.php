@@ -440,6 +440,7 @@ function premium_shop_customizer_config() {
 					'maison'   => __( 'General shop "Maison" (editorial)', 'premium-shop' ),
 				),
 			),
+			'gaming_festive'      => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Gaming style: holiday season mode (garland, snow, gift ideas, Christmas countdown, festive texts)', 'premium-shop' ) ),
 			'fw_unit_price'       => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show the unit price (e.g. price per stacked m³)', 'premium-shop' ), 'description' => __( 'Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume.', 'premium-shop' ) ),
 			'fw_specs_on_cards'   => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Show key data (length, moisture, drying) on product cards', 'premium-shop' ) ),
 			'fw_delivery_check'   => array( 'type' => 'checkbox', 'default' => true, 'label' => __( 'Postcode delivery check (product page, cart, homepage)', 'premium-shop' ), 'description' => __( 'Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone.', 'premium-shop' ) ),
