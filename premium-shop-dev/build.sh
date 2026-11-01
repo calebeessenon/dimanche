@@ -12,10 +12,10 @@ echo "→ Translations (.pot, .po, .mo, .l10n.php)"
 python3 build-languages.py
 
 echo "→ Minifying CSS & JS"
-for f in main woocommerce editor customizer-controls; do
+for f in main woocommerce gaming editor customizer-controls; do
 	npx esbuild "$THEME/assets/css/$f.css" --minify --log-level=warning --outfile="$THEME/assets/css/$f.min.css"
 done
-for f in theme shop product firewood customizer-controls customizer-preview; do
+for f in theme shop product firewood gaming customizer-controls customizer-preview; do
 	npx esbuild "$THEME/assets/js/$f.js" --minify --target=es2017 --log-level=warning --outfile="$THEME/assets/js/$f.min.js"
 done
 
@@ -27,7 +27,7 @@ build = os.path.join(theme, 'assets', 'build')
 shutil.rmtree(build, ignore_errors=True)
 os.makedirs(build)
 entries = []
-for kind, names in (('css', ['main', 'woocommerce']), ('js', ['theme', 'shop', 'product', 'firewood'])):
+for kind, names in (('css', ['main', 'woocommerce', 'gaming']), ('js', ['theme', 'shop', 'product', 'firewood', 'gaming'])):
     for name in names:
         src = os.path.join(theme, 'assets', kind, name + '.min.' + kind)
         if not os.path.exists(src):

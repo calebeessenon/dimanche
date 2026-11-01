@@ -169,6 +169,9 @@ function premium_shop_preload_fonts() {
 	if ( 'cambria' === premium_shop_option( 'font_body' ) ) {
 		$fonts[] = 'caladea-400.woff2';
 	}
+	if ( 'space-grotesk' === premium_shop_option( 'font_heading' ) ) {
+		$fonts[] = 'space-grotesk-var-latin.woff2';
+	}
 	if ( 'cambria' === premium_shop_option( 'font_heading' ) ) {
 		$fonts[] = 'caladea-700.woff2';
 	}

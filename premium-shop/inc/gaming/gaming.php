@@ -18,20 +18,20 @@ function premium_shop_gaming_overrides() {
 	return apply_filters(
 		'premium_shop_gaming_overrides',
 		array(
-			'color_primary'           => '#14112b',
-			'color_accent'            => '#6d4aff',
-			'color_background'        => '#f6f7fb',
-			'color_surface'           => '#ffffff',
-			'color_soft'              => '#eceefe',
-			'color_text'              => '#12131a',
-			'color_text_muted'        => '#5b6070',
-			'color_border'            => '#e2e5f0',
-			'color_footer_bg'         => '#0d0b1f',
-			'color_footer_text'       => '#e8e6ff',
-			'color_promo_bg'          => '#6d4aff',
+			'color_primary'           => '#7c5cff',
+			'color_accent'            => '#00d4ff',
+			'color_background'        => '#07080f',
+			'color_surface'           => '#10121f',
+			'color_soft'              => '#161a2c',
+			'color_text'              => '#eef0ff',
+			'color_text_muted'        => '#a3a8c7',
+			'color_border'            => '#24283f',
+			'color_footer_bg'         => '#05060c',
+			'color_footer_text'       => '#d9dcf5',
+			'color_promo_bg'          => '#7c5cff',
 			'color_promo_text'        => '#ffffff',
 			'heading_weight'          => '700',
-			'font_heading'            => 'inter',
+			'font_heading'            => 'space-grotesk',
 			'font_body'               => 'inter',
 			'home_sections'           => 'hero:1,benefits:1,categories:1,bestsellers:1,campaign:1,new:1,sale:1,testimonials:1,faq:1,newsletter:1,popular:0,brands:0,content:0',
 			'benefit_1_icon'          => 'truck',
@@ -289,3 +289,64 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
 	}
 	return $created;
 }
+
+/**
+ * Pictures floating on the hero stage.
+ *
+ * @return string[] URLs.
+ */
+function premium_shop_gaming_stage_images() {
+	$files = array( 'console-tower.jpg', 'nintendo-hybrid.jpg', 'gpu-triple-rgb.jpg', 'gamepad.jpg' );
+	$urls  = array();
+	foreach ( $files as $file ) {
+		$urls[] = PREMIUM_SHOP_URI . '/assets/images/gaming/' . $file;
+	}
+	return apply_filters( 'premium_shop_gaming_stage_images', $urls );
+}
+
+/**
+ * Homepage of the gaming style: its own hero and the platform band.
+ *
+ * @param string[] $sections Sections.
+ * @return string[]
+ */
+function premium_shop_gaming_home_sections( $sections ) {
+	if ( 'gaming' !== premium_shop_preset() ) {
+		return $sections;
+	}
+	$out = array();
+	foreach ( $sections as $section ) {
+		$out[] = 'hero' === $section ? 'hero-gaming' : $section;
+		if ( 'categories' === $section ) {
+			$out[] = 'gaming-marquee';
+		}
+	}
+	if ( ! in_array( 'gaming-marquee', $out, true ) ) {
+		array_splice( $out, min( 1, count( $out ) ), 0, 'gaming-marquee' );
+	}
+	return $out;
+}
+add_filter( 'premium_shop_home_sections', 'premium_shop_gaming_home_sections' );
+
+/**
+ * Styles and animations of the gaming style.
+ */
+function premium_shop_gaming_assets() {
+	if ( 'gaming' !== premium_shop_preset() ) {
+		return;
+	}
+	$stamp   = @filemtime( PREMIUM_SHOP_DIR . '/assets/css/gaming.css' ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+	$version = PREMIUM_SHOP_VERSION . ( $stamp ? '.' . $stamp : '' );
+	$deps    = premium_shop_is_wc() ? array( 'premium-shop', 'premium-shop-woocommerce' ) : array( 'premium-shop' );
+	wp_enqueue_style( 'premium-shop-gaming', premium_shop_asset( 'css/gaming', 'css' ), $deps, $version );
+	wp_enqueue_script( 'premium-shop-gaming', premium_shop_asset( 'js/gaming', 'js' ), array( 'premium-shop' ), $version, true );
+	wp_localize_script(
+		'premium-shop-gaming',
+		'PremiumShopGaming',
+		array(
+			'endsIn' => __( 'Ends in', 'premium-shop' ),
+			'units'  => array( __( 'days', 'premium-shop' ), __( 'hrs', 'premium-shop' ), __( 'min', 'premium-shop' ), __( 'sec', 'premium-shop' ) ),
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'premium_shop_gaming_assets', 20 );

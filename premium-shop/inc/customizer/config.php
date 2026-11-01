@@ -110,6 +110,7 @@ function premium_shop_customizer_config() {
 				'label'   => __( 'Heading font', 'premium-shop' ),
 				'choices' => array(
 					'cambria'      => 'Cambria (serif, classic)',
+					'space-grotesk' => 'Space Grotesk (tech, modern)',
 					'fraunces'     => 'Fraunces (serif, elegant)',
 					'inter'        => 'Inter (sans-serif, modern)',
 					'system-serif' => __( 'System serif (no download)', 'premium-shop' ),

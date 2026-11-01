@@ -67,6 +67,7 @@ function premium_shop_contrast_color( $hex ) {
 function premium_shop_font_stack( $key ) {
 	$stacks = array(
 		'cambria'      => 'Cambria, "Caladea", Georgia, "Times New Roman", serif',
+		'space-grotesk' => '"Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif',
 		'fraunces'     => '"Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif',
 		'inter'        => '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
 		'system-serif' => '"Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif',

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,18 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.1.0 =
+* "Gaming & tech" style redesigned with its own identity: dark neon palette,
+  Space Grotesk headings, glass surfaces, gradient buttons and neon frames.
+* New gaming homepage hero: interactive particle field, aurora, moving neon
+  grid, rotating platform names (typing effect), animated counters and a 3D
+  stage of floating products following the mouse.
+* Platform marquee band, animated category frames, 3D tilt and shine on product
+  cards, deal countdown in the campaign banner, magnetic buttons, cursor glow,
+  scroll progress bar, blur reveal animations. Everything respects "reduce
+  motion".
+* Product illustrations on a dark neon studio background.
 
 = 2.0.0 =
 * New style preset "Gaming & tech" for consoles (Nintendo, PlayStation 5),
