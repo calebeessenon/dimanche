@@ -138,11 +138,11 @@ function premium_shop_hero_photos( $count = 3, $seed = 0 ) {
 	}
 
 	// Fresh shop without photos: the bundled firewood illustrations.
-	if ( ! $photos && 'firewood' === premium_shop_preset() ) {
-		$files = array( 'buche.jpg', 'box.jpg', 'birke.jpg', 'eiche.jpg', 'briketts.jpg', 'mischholz.jpg' );
+	if ( ! $photos && premium_shop_preset_images() ) {
+		$files = premium_shop_preset_images();
 		for ( $i = 0; $i < $count; $i++ ) {
 			$photos[] = array(
-				'src' => PREMIUM_SHOP_URI . '/assets/images/firewood/' . $files[ ( $seed + $i ) % count( $files ) ],
+				'src' => PREMIUM_SHOP_URI . '/assets/images/' . premium_shop_preset_images_dir() . '/' . $files[ ( $seed + $i ) % count( $files ) ],
 				'alt' => '',
 			);
 		}
@@ -255,6 +255,8 @@ function premium_shop_page_hero_chips() {
 	$chips[] = array( 'support', __( 'Personal advice', 'premium-shop' ) );
 	if ( 'firewood' === premium_shop_preset() ) {
 		$chips[] = array( 'flame', __( 'Dry wood, ready to burn', 'premium-shop' ) );
+	} elseif ( 'gaming' === premium_shop_preset() ) {
+		$chips[] = array( 'shield', __( '100% original', 'premium-shop' ) );
 	}
 	$chips = array_filter(
 		$chips,
@@ -563,11 +565,11 @@ function premium_shop_photo_ribbon_items() {
 			);
 		}
 	}
-	if ( 'firewood' === premium_shop_preset() ) {
+	if ( premium_shop_preset_images() ) {
 		$shop = premium_shop_shop_url();
-		foreach ( array( 'buche', 'eiche', 'birke', 'mischholz', 'esche', 'hainbuche', 'anzuendholz', 'briketts' ) as $i => $name ) {
+		foreach ( array_slice( premium_shop_preset_images(), 0, 8 ) as $i => $name ) {
 			$photo = array(
-				'html' => '<img src="' . esc_url( PREMIUM_SHOP_URI . '/assets/images/firewood/' . $name . '.jpg' ) . '" alt="" loading="lazy" decoding="async">',
+				'html' => '<img src="' . esc_url( PREMIUM_SHOP_URI . '/assets/images/' . premium_shop_preset_images_dir() . '/' . $name ) . '" alt="" loading="lazy" decoding="async">',
 				'url'  => $shop,
 			);
 			// Interleave with the product photos.

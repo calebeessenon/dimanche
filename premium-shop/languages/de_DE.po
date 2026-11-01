@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-26 19:37+0000\n"
-"PO-Revision-Date: 2026-10-26 19:37+0000\n"
+"POT-Creation-Date: 2026-11-01 12:47+0000\n"
+"PO-Revision-Date: 2026-11-01 12:47+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -52,7 +52,7 @@ msgstr "Kundenlieblinge"
 msgid "Just arrived"
 msgstr "Gerade eingetroffen"
 
-#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:569
+#: front-page.php:16 inc/class-premium-shop-walker-nav.php:154 inc/customizer/config.php:570
 msgid "Limited time"
 msgstr "Nur für kurze Zeit"
 
@@ -60,119 +60,127 @@ msgstr "Nur für kurze Zeit"
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: inc/admin/onboarding.php:137
+#: inc/admin/onboarding.php:138
 msgid "Create pages"
 msgstr "Seiten erstellen"
 
-#: inc/admin/onboarding.php:138
+#: inc/admin/onboarding.php:139
 msgid "About us, Contact, Wishlist, Shipping & payment — plus drafts of the legal pages (Legal notice, Terms & conditions, Right of withdrawal) to complete."
 msgstr "Über uns, Kontakt, Wunschliste, Versand & Zahlung – sowie Entwürfe der Rechtstexte (Impressum, AGB, Widerrufsbelehrung) zum Vervollständigen."
 
-#: inc/admin/onboarding.php:141
+#: inc/admin/onboarding.php:142
 msgid "Create menus"
 msgstr "Menüs erstellen"
 
-#: inc/admin/onboarding.php:142
+#: inc/admin/onboarding.php:143
 msgid "Main menu with categories mega menu, footer menus and legal menu."
 msgstr "Hauptmenü mit Kategorien-Megamenü, Footer-Menüs und Rechtliches-Menü."
 
-#: inc/admin/onboarding.php:145
+#: inc/admin/onboarding.php:146
 msgid "Install languages DE / FR / ES"
 msgstr "Sprachen DE / FR / ES installieren"
 
-#: inc/admin/onboarding.php:146
+#: inc/admin/onboarding.php:147
 msgid "Downloads the WordPress and WooCommerce translations and sets German as the site language."
 msgstr "Lädt die Übersetzungen von WordPress und WooCommerce herunter und setzt Deutsch als Website-Sprache."
 
-#: inc/admin/onboarding.php:149
+#: inc/admin/onboarding.php:150
 msgid "Create the sample firewood catalogue"
 msgstr "Brennholz-Musterkatalog anlegen"
 
-#: inc/admin/onboarding.php:150
+#: inc/admin/onboarding.php:151
 msgid "Categories with images, attributes \"Log length\" and \"Quantity\", a \"Freight\" shipping class and 8 ready products (beech, oak, birch, ash, hardwood mix in 25/33/50 cm and 1–6 RM, kindling, briquettes, box) with automatic prices, data sheets and descriptions. Created as drafts: check prices, add your photos, publish."
 msgstr "Kategorien mit Bildern, Eigenschaften „Scheitlänge“ und „Menge“, Versandklasse „Spedition“ und 8 fertige Produkte (Buche, Eiche, Birke, Esche, Hartholz-Mix in 25/33/50 cm und 1–6 RM, Anzündholz, Briketts, Box) mit automatischen Preisen, Datenblättern und Beschreibungen. Als Entwürfe angelegt: Preise prüfen, eigene Fotos hinzufügen, veröffentlichen."
 
-#: inc/admin/onboarding.php:153
+#: inc/admin/onboarding.php:154
+msgid "Create the sample gaming catalogue"
+msgstr "Gaming-Beispielkatalog erstellen"
+
+#: inc/admin/onboarding.php:155
+msgid "Switches the shop to the \"Gaming & tech\" style and creates 4 categories (Nintendo, PlayStation 5, Graphics cards, Accessories) and 12 products with images, prices and texts in every language. Created as drafts unless you tick \"Publish immediately\"."
+msgstr "Stellt den Shop auf den Stil „Gaming & Tech“ um und legt 4 Kategorien (Nintendo, PlayStation 5, Grafikkarten, Zubehör) sowie 12 Produkte mit Bildern, Preisen und Texten in allen Sprachen an. Als Entwürfe angelegt, ausser Sie aktivieren „Sofort veröffentlichen“."
+
+#: inc/admin/onboarding.php:158
 msgid "Optimize product images"
 msgstr "Produktbilder optimieren"
 
-#: inc/admin/onboarding.php:154
+#: inc/admin/onboarding.php:159
 msgid "Portrait 4:5 product thumbnails (600 px) — the ideal format for this design."
 msgstr "Produkt-Vorschaubilder im Hochformat 4:5 (600 px) – das ideale Format für dieses Design."
 
-#: inc/admin/onboarding.php:159
+#: inc/admin/onboarding.php:164
 msgid "Premium Shop — setup assistant"
 msgstr "Premium Shop – Einrichtungsassistent"
 
-#: inc/admin/onboarding.php:160
+#: inc/admin/onboarding.php:165
 msgid "Each step is optional and can be run again at any time. Existing pages and menus are never overwritten."
 msgstr "Jeder Schritt ist optional und kann jederzeit erneut ausgeführt werden. Bestehende Seiten und Menüs werden nie überschrieben."
 
-#: inc/admin/onboarding.php:163
+#: inc/admin/onboarding.php:168
 msgid "Done!"
 msgstr "Erledigt!"
 
-#: inc/admin/onboarding.php:169
+#: inc/admin/onboarding.php:174
 msgid "WooCommerce is not active. Install and activate it to use the shop features."
 msgstr "WooCommerce ist nicht aktiv. Installieren und aktivieren Sie es, um die Shop-Funktionen zu nutzen."
 
-#: inc/admin/onboarding.php:170
+#: inc/admin/onboarding.php:175
 msgid "Install WooCommerce"
 msgstr "WooCommerce installieren"
 
-#: inc/admin/onboarding.php:179
+#: inc/admin/onboarding.php:184
 msgid "Logo & favicon"
 msgstr "Logo & Favicon"
 
-#: inc/admin/onboarding.php:179
+#: inc/admin/onboarding.php:184
 msgid "Upload your logo and site icon."
 msgstr "Laden Sie Ihr Logo und Website-Icon hoch."
 
-#: inc/admin/onboarding.php:180
+#: inc/admin/onboarding.php:185
 msgid "Open"
 msgstr "Öffnen"
 
-#: inc/admin/onboarding.php:193
+#: inc/admin/onboarding.php:198
 msgid "Publish immediately"
 msgstr "Sofort veröffentlichen"
 
-#: inc/admin/onboarding.php:196
+#: inc/admin/onboarding.php:201
 msgid "Set German as site language"
 msgstr "Deutsch als Website-Sprache festlegen"
 
-#: inc/admin/onboarding.php:198
+#: inc/admin/onboarding.php:203
 msgid "Run"
 msgstr "Ausführen"
 
-#: inc/admin/onboarding.php:206
+#: inc/admin/onboarding.php:211
 msgid "Design, texts & homepage"
 msgstr "Design, Texte & Startseite"
 
-#: inc/admin/onboarding.php:206
+#: inc/admin/onboarding.php:211
 msgid "Colors, fonts, hero, sections, announcement bar, contact details, social networks."
 msgstr "Farben, Schriften, Hero, Sektionen, Hinweisleiste, Kontaktdaten, soziale Netzwerke."
 
-#: inc/admin/onboarding.php:207
+#: inc/admin/onboarding.php:212
 msgid "Customize"
 msgstr "Anpassen"
 
-#: inc/admin/onboarding.php:212
+#: inc/admin/onboarding.php:217
 msgid "Products, payments & shipping"
 msgstr "Produkte, Zahlung & Versand"
 
-#: inc/admin/onboarding.php:212
+#: inc/admin/onboarding.php:217
 msgid "Add categories and products, then configure payments and shipping zones in WooCommerce."
 msgstr "Legen Sie Kategorien und Produkte an und konfigurieren Sie anschließend Zahlungsarten und Versandzonen in WooCommerce."
 
-#: inc/admin/onboarding.php:214
+#: inc/admin/onboarding.php:219
 msgid "Add product"
 msgstr "Produkt hinzufügen"
 
-#: inc/admin/onboarding.php:215
+#: inc/admin/onboarding.php:220
 msgid "Payments"
 msgstr "Zahlungen"
 
-#: inc/admin/onboarding.php:216
+#: inc/admin/onboarding.php:221
 msgid "Shipping"
 msgstr "Versand"
 
@@ -180,11 +188,11 @@ msgstr "Versand"
 msgid "Shop setup"
 msgstr "Shop-Einrichtung"
 
-#: inc/admin/onboarding.php:357 inc/admin/onboarding.php:362 inc/admin/onboarding.php:367
+#: inc/admin/onboarding.php:368 inc/admin/onboarding.php:373 inc/admin/onboarding.php:378
 msgid "Please complete this page with your legally required company information before publishing."
 msgstr "Bitte vervollständigen Sie diese Seite vor der Veröffentlichung mit Ihren gesetzlich vorgeschriebenen Unternehmensangaben."
 
-#: inc/admin/onboarding.php:382
+#: inc/admin/onboarding.php:393
 msgid "Where is my order? Enter your order number and e-mail address to see its status, the planned delivery date and the tracking number."
 msgstr "Wo ist meine Bestellung? Geben Sie Ihre Bestellnummer und E-Mail-Adresse ein, um den Status, den geplanten Liefertermin und die Sendungsnummer zu sehen."
 
@@ -365,7 +373,7 @@ msgstr "Kostenloser Versand"
 msgid "From %s order value"
 msgstr "Ab %s Bestellwert"
 
-#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:381
+#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:392
 msgid "Order tracking"
 msgstr "Sendungsverfolgung"
 
@@ -399,7 +407,7 @@ msgstr "Bereit, unsere Produkte zu entdecken?"
 msgid "Order online in a few clicks, or ask us for advice."
 msgstr "Bestellen Sie online mit wenigen Klicks oder lassen Sie sich von uns beraten."
 
-#: inc/content-sections.php:202 inc/page-hero.php:320
+#: inc/content-sections.php:202 inc/page-hero.php:322
 msgid "Discover the shop"
 msgstr "Shop entdecken"
 
@@ -407,7 +415,7 @@ msgstr "Shop entdecken"
 msgid "Contact us"
 msgstr "Kontaktieren Sie uns"
 
-#: inc/content-sections.php:231 inc/customizer/config.php:587
+#: inc/content-sections.php:231 inc/customizer/config.php:588
 msgid "Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase."
 msgstr "Sorgfältig ausgewählte Produkte, ehrliche Beratung und schnelle Lieferung. Wir sind vor und nach Ihrem Kauf für Sie da."
 
@@ -418,6 +426,10 @@ msgstr "Unsere Geschichte"
 #: inc/content-sections.php:234
 msgid "Warmth, simply delivered: we supply firewood, wood briquettes and pellets of reliable quality, carefully dried and delivered to your door."
 msgstr "Wärme, einfach geliefert: Wir liefern Brennholz, Holzbriketts und Pellets in verlässlicher Qualität, sorgfältig getrocknet und bis vor Ihre Tür."
+
+#: inc/content-sections.php:234
+msgid "Gamers serving gamers: we sell consoles, graphics cards and accessories from official channels and ship them fast."
+msgstr "Von Gamern für Gamer: Wir verkaufen Konsolen, Grafikkarten und Zubehör aus offiziellen Kanälen und liefern schnell."
 
 #: inc/content-sections.php:234
 msgid "We select every product with care and deliver it quickly to your door."
@@ -471,7 +483,7 @@ msgstr "Sorgfältig ausgewählt"
 msgid "Products we know and recommend."
 msgstr "Produkte, die wir kennen und empfehlen."
 
-#: inc/content-sections.php:80 inc/firewood/presets.php:92
+#: inc/content-sections.php:80 inc/firewood/presets.php:122
 msgid "Delivered to your door"
 msgstr "Bis vor Ihre Tür"
 
@@ -483,7 +495,7 @@ msgstr "Faire Preise"
 msgid "Clear prices including VAT, no hidden costs."
 msgstr "Klare Preise inkl. MwSt., keine versteckten Kosten."
 
-#: inc/content-sections.php:82 inc/page-hero.php:255 inc/firewood/presets.php:96
+#: inc/content-sections.php:82 inc/page-hero.php:255 inc/firewood/presets.php:126
 msgid "Personal advice"
 msgstr "Persönliche Beratung"
 
@@ -1116,94 +1128,98 @@ msgid "Firewood & stove wood (warm, natural)"
 msgstr "Brennholz & Kaminholz (warm, natürlich)"
 
 #: inc/customizer/config.php:438
+msgid "Gaming & tech: consoles, graphics cards (modern, vivid)"
+msgstr "Gaming & Tech: Konsolen, Grafikkarten (modern, lebendig)"
+
+#: inc/customizer/config.php:439
 msgid "General shop \"Maison\" (editorial)"
 msgstr "Allgemeiner Shop „Maison“ (editorial)"
 
-#: inc/customizer/config.php:441
+#: inc/customizer/config.php:442
 msgid "Show the unit price (e.g. price per stacked m³)"
 msgstr "Grundpreis anzeigen (z. B. Preis pro RM)"
 
-#: inc/customizer/config.php:441
+#: inc/customizer/config.php:442
 msgid "Required in Germany for goods sold by volume (PAngV). Calculated automatically from the product volume."
 msgstr "In Deutschland für nach Volumen verkaufte Waren Pflicht (PAngV). Wird automatisch aus dem Produktvolumen berechnet."
 
-#: inc/customizer/config.php:442
+#: inc/customizer/config.php:443
 msgid "Show key data (length, moisture, drying) on product cards"
 msgstr "Eckdaten (Länge, Feuchte, Trocknung) auf Produktkarten zeigen"
 
-#: inc/customizer/config.php:443
+#: inc/customizer/config.php:444
 msgid "Postcode delivery check (product page, cart, homepage)"
 msgstr "Lieferprüfung per PLZ (Produktseite, Warenkorb, Startseite)"
 
-#: inc/customizer/config.php:443
+#: inc/customizer/config.php:444
 msgid "Uses your WooCommerce shipping zones: add postcodes (e.g. 10*, 12345, 80000...89999) to each zone."
 msgstr "Nutzt Ihre WooCommerce-Versandzonen: Tragen Sie in jeder Zone die Postleitzahlen ein (z. B. 10*, 12345, 80000...89999)."
 
-#: inc/customizer/config.php:444
+#: inc/customizer/config.php:445
 msgid "Message when delivery is possible"
 msgstr "Meldung, wenn Lieferung möglich ist"
 
-#: inc/customizer/config.php:445
+#: inc/customizer/config.php:446
 msgid "Message when the postcode is not served"
 msgstr "Meldung, wenn die PLZ nicht beliefert wird"
 
-#: inc/customizer/config.php:446
+#: inc/customizer/config.php:447
 msgid "Delivery information (shown under the check)"
 msgstr "Lieferhinweise (unter der Prüfung angezeigt)"
 
-#: inc/customizer/config.php:447
+#: inc/customizer/config.php:448
 msgid "Ask at checkout whether the unloading point is accessible for a truck"
 msgstr "An der Kasse fragen, ob die Abladestelle für einen LKW erreichbar ist"
 
-#: inc/customizer/config.php:448
+#: inc/customizer/config.php:449
 msgid "Show the firewood calculator on product pages"
 msgstr "Brennholzrechner auf Produktseiten anzeigen"
 
-#: inc/customizer/config.php:449
+#: inc/customizer/config.php:450
 msgid "FAQ (one question per line: Question :: Answer)"
 msgstr "FAQ (eine Frage pro Zeile: Frage :: Antwort)"
 
-#: inc/customizer/config.php:449
+#: inc/customizer/config.php:450
 msgid "Empty = built-in firewood FAQ, translated automatically."
 msgstr "Leer = integrierte Brennholz-FAQ, automatisch übersetzt."
 
-#: inc/customizer/config.php:450
+#: inc/customizer/config.php:451
 msgid "FAQ — title"
 msgstr "FAQ – Titel"
 
-#: inc/customizer/config.php:451
+#: inc/customizer/config.php:452
 msgid "Calculator — title"
 msgstr "Rechner – Titel"
 
-#: inc/customizer/config.php:457
+#: inc/customizer/config.php:458
 msgid "Languages"
 msgstr "Sprachen"
 
-#: inc/customizer/config.php:458
+#: inc/customizer/config.php:459
 msgid "With WPML, Polylang or TranslatePress active, the plugin manages languages and the switcher uses it automatically. Otherwise, the built-in switcher changes the interface language (theme, WordPress and WooCommerce texts). Install the language packs in Settings → General or with the setup assistant."
 msgstr "Ist WPML, Polylang oder TranslatePress aktiv, verwaltet das Plugin die Sprachen und der Umschalter nutzt es automatisch. Andernfalls ändert der integrierte Umschalter die Oberflächensprache (Texte von Theme, WordPress und WooCommerce). Installieren Sie die Sprachpakete unter Einstellungen → Allgemein oder mit dem Einrichtungsassistenten."
 
-#: inc/customizer/config.php:463
+#: inc/customizer/config.php:464
 msgid "Mode"
 msgstr "Modus"
 
-#: inc/customizer/config.php:465
+#: inc/customizer/config.php:466
 msgid "Automatic (plugin if available, otherwise built-in)"
 msgstr "Automatisch (Plugin falls vorhanden, sonst integriert)"
 
-#: inc/customizer/config.php:466
+#: inc/customizer/config.php:467
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: inc/customizer/config.php:472
+#: inc/customizer/config.php:473
 msgid "Default language (first visit)"
 msgstr "Standardsprache (erster Besuch)"
 
-#: inc/customizer/config.php:475
+#: inc/customizer/config.php:476
 msgid "Languages offered (codes, in order)"
 msgstr "Angebotene Sprachen (Codes, in Reihenfolge)"
 
-#: inc/customizer/config.php:475
+#: inc/customizer/config.php:476
 msgid "Available codes: de, fr, es, en, it, pt, nl, pl. Example: de,fr,es,en,it"
 msgstr "Verfügbare Codes: de, fr, es, en, it, pt, nl, pl. Beispiel: de,fr,es,en,it"
 
@@ -1239,21 +1255,21 @@ msgstr "Stern"
 msgid "Clock"
 msgstr "Uhr"
 
-#: inc/customizer/config.php:550
+#: inc/customizer/config.php:551
 msgid "Secure payment with SSL encryption"
 msgstr "Sichere Zahlung mit SSL-Verschlüsselung"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:553
+#: inc/customizer/config.php:554
 msgid "%d days to change your mind"
 msgstr "%d Tage Bedenkzeit"
 
 #. translators:%d: number of days.
-#: inc/customizer/config.php:553
+#: inc/customizer/config.php:554
 msgid "Simple returns"
 msgstr "Einfache Rückgabe"
 
-#: inc/customizer/config.php:557
+#: inc/customizer/config.php:558
 msgid "Shop by category"
 msgstr "Nach Kategorie shoppen"
 
@@ -1261,31 +1277,31 @@ msgstr "Nach Kategorie shoppen"
 msgid "Lock"
 msgstr "Schloss"
 
-#: inc/customizer/config.php:562
+#: inc/customizer/config.php:563
 msgid "What our customers say"
 msgstr "Das sagen unsere Kunden"
 
-#: inc/customizer/config.php:563
+#: inc/customizer/config.php:564
 msgid "Our brands"
 msgstr "Unsere Marken"
 
-#: inc/customizer/config.php:564
+#: inc/customizer/config.php:565
 msgid "The new collection"
 msgstr "Die neue Kollektion"
 
-#: inc/customizer/config.php:565
+#: inc/customizer/config.php:566
 msgid "Timeless pieces, carefully selected for you"
 msgstr "Zeitlose Stücke, sorgfältig für Sie ausgewählt"
 
-#: inc/customizer/config.php:566
+#: inc/customizer/config.php:567
 msgid "Discover quality products, fair prices and a service that takes care of every detail — delivered quickly to your door."
 msgstr "Entdecken Sie hochwertige Produkte, faire Preise und einen Service, der an jedes Detail denkt – schnell zu Ihnen nach Hause geliefert."
 
-#: inc/customizer/config.php:567
+#: inc/customizer/config.php:568 inc/gaming/gaming.php:76
 msgid "Shop now"
 msgstr "Jetzt einkaufen"
 
-#: inc/customizer/config.php:568
+#: inc/customizer/config.php:569
 msgid "Discover offers"
 msgstr "Angebote entdecken"
 
@@ -1293,37 +1309,37 @@ msgstr "Angebote entdecken"
 msgid "Box"
 msgstr "Paket"
 
-#: inc/customizer/config.php:570
+#: inc/customizer/config.php:571
 msgid "The season’s offers"
 msgstr "Die Angebote der Saison"
 
-#: inc/customizer/config.php:571
+#: inc/customizer/config.php:572
 msgid "Selected favourites at reduced prices — only while stocks last."
 msgstr "Ausgewählte Lieblingsstücke zu reduzierten Preisen – nur solange der Vorrat reicht."
 
-#: inc/customizer/config.php:572 inc/firewood/presets.php:89
+#: inc/customizer/config.php:573 inc/firewood/presets.php:119
 msgid "View offers"
 msgstr "Angebote ansehen"
 
-#: inc/customizer/config.php:573
+#: inc/customizer/config.php:574
 msgid "Fast shipping"
 msgstr "Schneller Versand"
 
 #. translators:%s: amount.
-#: inc/customizer/config.php:575
+#: inc/customizer/config.php:576
 msgid "Free from %s"
 msgstr "Kostenlos ab %s"
 
 #. translators:%s: amount.
-#: inc/customizer/config.php:575
+#: inc/customizer/config.php:576
 msgid "Dispatched within 24 hours"
 msgstr "Versand innerhalb von 24 Stunden"
 
-#: inc/customizer/config.php:577
+#: inc/customizer/config.php:578
 msgid "Encrypted & trusted methods"
 msgstr "Verschlüsselt & vertrauenswürdig"
 
-#: inc/customizer/config.php:578
+#: inc/customizer/config.php:579
 msgid "Easy returns"
 msgstr "Einfache Rückgabe"
 
@@ -1331,27 +1347,27 @@ msgstr "Einfache Rückgabe"
 msgid "Flame"
 msgstr "Flamme"
 
-#: inc/customizer/config.php:581
+#: inc/customizer/config.php:582
 msgid "Personal help, quick answers"
 msgstr "Persönliche Hilfe, schnelle Antworten"
 
-#: inc/customizer/config.php:582
+#: inc/customizer/config.php:583
 msgid "Stay in the loop"
 msgstr "Bleiben Sie auf dem Laufenden"
 
-#: inc/customizer/config.php:583
+#: inc/customizer/config.php:584
 msgid "New arrivals, exclusive offers and inspiration — straight to your inbox. Unsubscribe at any time."
 msgstr "Neuheiten, exklusive Angebote und Inspiration – direkt in Ihr Postfach. Jederzeit abbestellbar."
 
-#: inc/customizer/config.php:584
+#: inc/customizer/config.php:585
 msgid "Delivery in 2–4 business days"
 msgstr "Lieferung in 2–4 Werktagen"
 
-#: inc/customizer/config.php:585
+#: inc/customizer/config.php:586
 msgid "2-year warranty"
 msgstr "2 Jahre Garantie"
 
-#: inc/customizer/config.php:586
+#: inc/customizer/config.php:587
 msgid "Secure, encrypted payment"
 msgstr "Sichere, verschlüsselte Zahlung"
 
@@ -1609,15 +1625,15 @@ msgstr "Buchenholz-Briketts, 10-kg-Paket"
 msgid "Beech firewood box, approx. 30 litres"
 msgstr "Buche Kaminholz-Box, ca. 30 Liter"
 
-#: inc/firewood/demo-catalog.php:69 inc/firewood/demo-catalog.php:230 inc/firewood/product-data.php:436
+#: inc/firewood/demo-catalog.php:69 inc/firewood/demo-catalog.php:231 inc/firewood/product-data.php:436
 msgid "Log length"
 msgstr "Scheitlänge"
 
-#: inc/firewood/demo-catalog.php:71 inc/firewood/demo-catalog.php:195
+#: inc/firewood/demo-catalog.php:71 inc/firewood/demo-catalog.php:196
 msgid "Freight"
 msgstr "Spedition"
 
-#: inc/firewood/demo-catalog.php:72 inc/firewood/demo-catalog.php:195
+#: inc/firewood/demo-catalog.php:72 inc/firewood/demo-catalog.php:196
 msgid "Delivery by truck (pallets, crates, loose)."
 msgstr "Lieferung per LKW (Paletten, Gitterboxen, lose)."
 
@@ -1669,121 +1685,117 @@ msgstr "Welche Holzart soll ich wählen?"
 msgid "Beech and oak give long-lasting embers and a high heat output, birch lights easily and burns with a beautiful flame, and hardwood mixes are ideal for everyday heating."
 msgstr "Buche und Eiche sorgen für lang anhaltende Glut und hohe Heizleistung, Birke entzündet sich leicht und brennt mit schönem Flammenbild, und Hartholz-Mischungen sind ideal zum täglichen Heizen."
 
-#: inc/firewood/presets.php:100
-msgid "Firewood from sustainable regional forestry — carefully dried, split and delivered to your door."
-msgstr "Brennholz aus nachhaltiger, regionaler Forstwirtschaft – sorgfältig getrocknet, gespalten und bis vor Ihre Tür geliefert."
-
-#: inc/firewood/presets.php:101
-msgid "Delivery within 3–10 business days"
-msgstr "Lieferung innerhalb von 3–10 Werktagen"
-
-#: inc/firewood/presets.php:102
-msgid "Moisture guarantee: below 20%"
-msgstr "Feuchte-Garantie: unter 20 %"
-
 #: inc/firewood/presets.php:103
-msgid "Frequently asked questions"
-msgstr "Häufige Fragen"
-
-#: inc/firewood/presets.php:104
-msgid "How much firewood do I need?"
-msgstr "Wie viel Brennholz brauche ich?"
-
-#: inc/firewood/presets.php:105
-msgid "Good news — we deliver to your area!"
-msgstr "Gute Nachricht – wir liefern zu Ihnen!"
-
-#: inc/firewood/presets.php:106
-msgid "Unfortunately we do not deliver to this postcode yet. Contact us — we will gladly find a solution."
-msgstr "Leider liefern wir (noch) nicht in dieses PLZ-Gebiet. Kontaktieren Sie uns – wir finden gerne eine Lösung."
-
-#: inc/firewood/presets.php:107
-msgid "Delivery by truck to the kerbside. Please make sure the unloading point is accessible for a truck. We will call you to arrange the delivery date."
-msgstr "Lieferung per LKW frei Bordsteinkante. Bitte stellen Sie sicher, dass die Abladestelle für einen LKW erreichbar ist. Wir rufen Sie an, um den Liefertermin abzustimmen."
-
-#: inc/firewood/presets.php:73
 msgid "Kiln-dried firewood — residual moisture below 20%"
 msgstr "Kammergetrocknetes Kaminholz – Restfeuchte unter 20 %"
 
-#: inc/firewood/presets.php:74
+#: inc/firewood/presets.php:104
 msgid "Delivery by truck — check your postcode now"
 msgstr "Lieferung per LKW – jetzt Postleitzahl prüfen"
 
-#: inc/firewood/presets.php:75
+#: inc/firewood/presets.php:105
 msgid "Fair prices per stacked cubic metre"
 msgstr "Faire Preise pro Raummeter"
 
-#: inc/firewood/presets.php:78
+#: inc/firewood/presets.php:108
 msgid "Firewood from regional forests"
 msgstr "Brennholz aus regionalen Wäldern"
 
-#: inc/firewood/presets.php:79
+#: inc/firewood/presets.php:109
 msgid "Dry firewood, delivered to your door"
 msgstr "Trockenes Kaminholz, bis vor Ihre Tür geliefert"
 
-#: inc/firewood/presets.php:80
+#: inc/firewood/presets.php:110
 msgid "Kiln-dried beech, oak and birch with less than 20% residual moisture — split, ready for your stove and delivered by truck."
 msgstr "Kammergetrocknete Buche, Eiche und Birke mit unter 20 % Restfeuchte – gespalten, ofenfertig und per LKW geliefert."
 
-#: inc/firewood/presets.php:82
+#: inc/firewood/presets.php:112
 msgid "Calculate my needs"
 msgstr "Bedarf berechnen"
 
-#: inc/firewood/presets.php:83
+#: inc/firewood/presets.php:113
 msgid "Our firewood"
 msgstr "Unser Brennholz"
 
-#: inc/firewood/presets.php:84
+#: inc/firewood/presets.php:114
 msgid "Most ordered"
 msgstr "Am häufigsten bestellt"
 
-#: inc/firewood/presets.php:85
+#: inc/firewood/presets.php:115
 msgid "Current offers"
 msgstr "Aktuelle Angebote"
 
-#: inc/firewood/presets.php:86
+#: inc/firewood/presets.php:116
 msgid "Stock up early"
 msgstr "Rechtzeitig vorsorgen"
 
-#: inc/firewood/presets.php:87
+#: inc/firewood/presets.php:117
 msgid "Pre-season prices"
 msgstr "Vorsaison-Preise"
 
-#: inc/firewood/presets.php:88
+#: inc/firewood/presets.php:118
 msgid "Order now, store your wood dry and enjoy a warm home when the cold season starts."
 msgstr "Jetzt bestellen, trocken einlagern und zu Beginn der kalten Jahreszeit ein warmes Zuhause genießen."
 
-#: inc/firewood/presets.php:90 inc/firewood/product-data.php:74
+#: inc/firewood/presets.php:120 inc/firewood/product-data.php:74
 msgid "Kiln-dried"
 msgstr "Kammergetrocknet"
 
-#: inc/firewood/presets.php:91
+#: inc/firewood/presets.php:121
 msgid "Residual moisture below 20%"
 msgstr "Restfeuchte unter 20 %"
 
-#: inc/firewood/presets.php:93
+#: inc/firewood/presets.php:123
 msgid "By truck, on pallets or loose"
 msgstr "Per LKW, auf Paletten oder lose"
 
-#: inc/firewood/presets.php:94
+#: inc/firewood/presets.php:124
 msgid "Honest quantities"
 msgstr "Ehrliche Mengen"
 
-#: inc/firewood/presets.php:95
+#: inc/firewood/presets.php:125
 msgid "Clear price per stacked cubic metre"
 msgstr "Klarer Preis pro Raummeter"
 
-#: inc/firewood/presets.php:97
+#: inc/firewood/presets.php:127
 msgid "We help you choose the right wood"
 msgstr "Wir helfen Ihnen bei der Holzwahl"
 
-#: inc/firewood/presets.php:98
+#: inc/firewood/presets.php:128
 msgid "Season & price news"
 msgstr "Saison- & Preis-News"
 
-#: inc/firewood/presets.php:99
+#: inc/firewood/presets.php:129
 msgid "Be the first to know about pre-season prices and delivery dates. Unsubscribe at any time."
 msgstr "Erfahren Sie als Erste von Vorsaison-Preisen und Lieferterminen. Jederzeit abbestellbar."
+
+#: inc/firewood/presets.php:130
+msgid "Firewood from sustainable regional forestry — carefully dried, split and delivered to your door."
+msgstr "Brennholz aus nachhaltiger, regionaler Forstwirtschaft – sorgfältig getrocknet, gespalten und bis vor Ihre Tür geliefert."
+
+#: inc/firewood/presets.php:131
+msgid "Delivery within 3–10 business days"
+msgstr "Lieferung innerhalb von 3–10 Werktagen"
+
+#: inc/firewood/presets.php:132
+msgid "Moisture guarantee: below 20%"
+msgstr "Feuchte-Garantie: unter 20 %"
+
+#: inc/firewood/presets.php:134
+msgid "How much firewood do I need?"
+msgstr "Wie viel Brennholz brauche ich?"
+
+#: inc/firewood/presets.php:135
+msgid "Good news — we deliver to your area!"
+msgstr "Gute Nachricht – wir liefern zu Ihnen!"
+
+#: inc/firewood/presets.php:136
+msgid "Unfortunately we do not deliver to this postcode yet. Contact us — we will gladly find a solution."
+msgstr "Leider liefern wir (noch) nicht in dieses PLZ-Gebiet. Kontaktieren Sie uns – wir finden gerne eine Lösung."
+
+#: inc/firewood/presets.php:137
+msgid "Delivery by truck to the kerbside. Please make sure the unloading point is accessible for a truck. We will call you to arrange the delivery date."
+msgstr "Lieferung per LKW frei Bordsteinkante. Bitte stellen Sie sicher, dass die Abladestelle für einen LKW erreichbar ist. Wir rufen Sie an, um den Liefertermin abzustimmen."
 
 #: inc/firewood/price-tool.php:100
 msgid "Product"
@@ -2121,6 +2133,286 @@ msgstr "Kiefer entzündet sich schnell – perfekt zum Anfeuern."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "Fichte entzündet sich schnell – perfekt zum Anfeuern."
 
+#: inc/gaming/gaming.php:114
+msgid "Are your products original?"
+msgstr "Sind Ihre Produkte original?"
+
+#: inc/gaming/gaming.php:114
+msgid "Yes. All consoles, graphics cards and accessories come from official distribution channels, are new and sealed, and include the full manufacturer warranty."
+msgstr "Ja. Alle Konsolen, Grafikkarten und Zubehörteile stammen aus offiziellen Vertriebskanälen, sind neu und versiegelt und haben die volle Herstellergarantie."
+
+#: inc/gaming/gaming.php:115
+msgid "How fast do you deliver?"
+msgstr "Wie schnell liefern Sie?"
+
+#: inc/gaming/gaming.php:115
+msgid "Orders placed before 3 pm on business days leave our warehouse the same day. Delivery usually takes 1–3 business days, with tracking."
+msgstr "Bestellungen, die an Werktagen bis 15 Uhr eingehen, verlassen unser Lager am selben Tag. Die Lieferung dauert in der Regel 1–3 Werktage, mit Sendungsverfolgung."
+
+#: inc/gaming/gaming.php:116
+msgid "Which graphics card suits my PC?"
+msgstr "Welche Grafikkarte passt zu meinem PC?"
+
+#: inc/gaming/gaming.php:116
+msgid "Check the length of the card, your power supply (wattage and connectors) and your screen resolution. Send us your configuration — we gladly recommend the right model."
+msgstr "Prüfen Sie die Länge der Karte, Ihr Netzteil (Leistung und Anschlüsse) und Ihre Bildschirmauflösung. Senden Sie uns Ihre Konfiguration – wir empfehlen Ihnen gerne das passende Modell."
+
+#: inc/gaming/gaming.php:117
+msgid "Can I return a product?"
+msgstr "Kann ich ein Produkt zurückgeben?"
+
+#: inc/gaming/gaming.php:117
+msgid "You can return unused products in their original packaging within 14 days. Defective products are repaired or replaced under warranty."
+msgstr "Unbenutzte Produkte in Originalverpackung können Sie innerhalb von 14 Tagen zurückgeben. Defekte Produkte werden im Rahmen der Garantie repariert oder ersetzt."
+
+#: inc/gaming/gaming.php:118
+msgid "Which payment methods do you accept?"
+msgstr "Welche Zahlungsarten akzeptieren Sie?"
+
+#: inc/gaming/gaming.php:118
+msgid "TWINT, credit and debit cards, PayPal, Apple Pay, Google Pay and bank transfer — all payments are encrypted."
+msgstr "TWINT, Kredit- und Debitkarten, PayPal, Apple Pay, Google Pay und Banküberweisung – alle Zahlungen sind verschlüsselt."
+
+#: inc/gaming/gaming.php:119
+msgid "Do consoles work with games from other regions?"
+msgstr "Funktionieren die Konsolen mit Spielen aus anderen Regionen?"
+
+#: inc/gaming/gaming.php:119
+msgid "Current Nintendo and PlayStation consoles play games from all regions. Online services and some content may depend on your account region."
+msgstr "Aktuelle Nintendo- und PlayStation-Konsolen spielen Spiele aus allen Regionen. Online-Dienste und manche Inhalte können von der Region Ihres Kontos abhängen."
+
+#: inc/gaming/gaming.php:132
+msgid "New, sealed products with the full manufacturer warranty."
+msgstr "Neue, versiegelte Produkte mit voller Herstellergarantie."
+
+#: inc/gaming/gaming.php:175
+msgid "Nintendo"
+msgstr "Nintendo"
+
+#: inc/gaming/gaming.php:176
+msgid "PlayStation 5"
+msgstr "PlayStation 5"
+
+#: inc/gaming/gaming.php:177
+msgid "Graphics cards"
+msgstr "Grafikkarten"
+
+#: inc/gaming/gaming.php:178
+msgid "Accessories"
+msgstr "Zubehör"
+
+#: inc/gaming/gaming.php:179
+msgid "Nintendo Switch consoles, controllers and games — play at home and on the go."
+msgstr "Nintendo-Switch-Konsolen, Controller und Spiele – zu Hause und unterwegs spielen."
+
+#: inc/gaming/gaming.php:180
+msgid "PlayStation 5 consoles and DualSense controllers for next-generation gaming."
+msgstr "PlayStation-5-Konsolen und DualSense-Controller für Gaming der neuen Generation."
+
+#: inc/gaming/gaming.php:181
+msgid "Graphics cards for gaming, streaming and creative work — from Full HD to 4K."
+msgstr "Grafikkarten für Gaming, Streaming und kreative Arbeit – von Full HD bis 4K."
+
+#: inc/gaming/gaming.php:182
+msgid "Headsets, controllers and everything else that makes gaming better."
+msgstr "Headsets, Controller und alles, was Gaming besser macht."
+
+#: inc/gaming/gaming.php:183
+msgid "Nintendo Switch 2 console"
+msgstr "Nintendo Switch 2 Konsole"
+
+#: inc/gaming/gaming.php:184
+msgid "Nintendo Switch OLED console – neon edition"
+msgstr "Nintendo Switch OLED Konsole – Neon-Edition"
+
+#: inc/gaming/gaming.php:185
+msgid "Nintendo Switch Lite – turquoise"
+msgstr "Nintendo Switch Lite – Türkis"
+
+#: inc/gaming/gaming.php:186
+msgid "PlayStation 5 console"
+msgstr "PlayStation 5 Konsole"
+
+#: inc/gaming/gaming.php:187
+msgid "PlayStation 5 Pro console"
+msgstr "PlayStation 5 Pro Konsole"
+
+#: inc/gaming/gaming.php:188
+msgid "DualSense wireless controller – white"
+msgstr "DualSense Wireless-Controller – Weiss"
+
+#: inc/gaming/gaming.php:189
+msgid "DualSense wireless controller – midnight black"
+msgstr "DualSense Wireless-Controller – Midnight Black"
+
+#: inc/gaming/gaming.php:190
+msgid "GeForce RTX 5070 graphics card, 12 GB"
+msgstr "Grafikkarte GeForce RTX 5070, 12 GB"
+
+#: inc/gaming/gaming.php:191
+msgid "GeForce RTX 5080 graphics card, 16 GB"
+msgstr "Grafikkarte GeForce RTX 5080, 16 GB"
+
+#: inc/gaming/gaming.php:192
+msgid "Radeon RX 9070 XT graphics card, 16 GB"
+msgstr "Grafikkarte Radeon RX 9070 XT, 16 GB"
+
+#: inc/gaming/gaming.php:193
+msgid "Wireless gaming headset"
+msgstr "Kabelloses Gaming-Headset"
+
+#: inc/gaming/gaming.php:194
+msgid "Game bundle – 3 bestsellers of your choice"
+msgstr "Spiele-Bundle – 3 Bestseller nach Wahl"
+
+#: inc/gaming/gaming.php:195
+msgid "The new hybrid console: bigger screen, more power — play on the TV or on the go."
+msgstr "Die neue Hybridkonsole: grösserer Bildschirm, mehr Leistung – am Fernseher oder unterwegs spielen."
+
+#: inc/gaming/gaming.php:196
+msgid "7-inch OLED screen, stand and dock included."
+msgstr "7-Zoll-OLED-Bildschirm, Standfuss und Dock inklusive."
+
+#: inc/gaming/gaming.php:197
+msgid "Compact and light, made for gaming on the go."
+msgstr "Kompakt und leicht – gemacht für unterwegs."
+
+#: inc/gaming/gaming.php:198
+msgid "Ultra-fast SSD, 4K gaming and haptic feedback with the DualSense controller."
+msgstr "Ultraschnelle SSD, 4K-Gaming und haptisches Feedback mit dem DualSense-Controller."
+
+#: inc/gaming/gaming.php:199
+msgid "More graphics power, 2 TB SSD — for the best picture quality."
+msgstr "Mehr Grafikleistung, 2-TB-SSD – für die beste Bildqualität."
+
+#: inc/gaming/gaming.php:200
+msgid "Haptic feedback and adaptive triggers."
+msgstr "Haptisches Feedback und adaptive Trigger."
+
+#: inc/gaming/gaming.php:201
+msgid "Smooth 1440p gaming with ray tracing and DLSS."
+msgstr "Flüssiges 1440p-Gaming mit Raytracing und DLSS."
+
+#: inc/gaming/gaming.php:202
+msgid "High-end 4K gaming, triple-fan cooling and RGB lighting."
+msgstr "High-End-4K-Gaming, Dreifach-Lüfter-Kühlung und RGB-Beleuchtung."
+
+#: inc/gaming/gaming.php:203
+msgid "Excellent value for 1440p and 4K, quiet dual-fan design."
+msgstr "Hervorragendes Preis-Leistungs-Verhältnis für 1440p und 4K, leises Dual-Lüfter-Design."
+
+#: inc/gaming/gaming.php:204
+msgid "3D audio, noise-cancelling microphone, 30 hours of battery life."
+msgstr "3D-Audio, Mikrofon mit Geräuschunterdrückung, 30 Stunden Akkulaufzeit."
+
+#: inc/gaming/gaming.php:205
+msgid "Pick three top titles for your console and save."
+msgstr "Wählen Sie drei Top-Titel für Ihre Konsole und sparen Sie."
+
+#: inc/gaming/gaming.php:68
+msgid "Original products with manufacturer warranty"
+msgstr "Originalprodukte mit Herstellergarantie"
+
+#: inc/gaming/gaming.php:69
+msgid "Ordered before 3 pm, shipped the same day"
+msgstr "Bis 15 Uhr bestellt, am selben Tag verschickt"
+
+#: inc/gaming/gaming.php:70
+msgid "Pay with TWINT, card or invoice"
+msgstr "Bezahlen mit TWINT, Karte oder Rechnung"
+
+#: inc/gaming/gaming.php:73
+msgid "Consoles · graphics cards · accessories"
+msgstr "Konsolen · Grafikkarten · Zubehör"
+
+#: inc/gaming/gaming.php:74
+msgid "Next-level gaming, delivered fast"
+msgstr "Gaming auf dem nächsten Level – schnell geliefert"
+
+#: inc/gaming/gaming.php:75
+msgid "Nintendo Switch, PlayStation 5 and the latest graphics cards — original products, fair prices and express delivery."
+msgstr "Nintendo Switch, PlayStation 5 und die neuesten Grafikkarten – Originalprodukte, faire Preise und Expresslieferung."
+
+#: inc/gaming/gaming.php:77
+msgid "Current deals"
+msgstr "Aktuelle Angebote"
+
+#: inc/gaming/gaming.php:78
+msgid "Shop by platform"
+msgstr "Nach Plattform einkaufen"
+
+#: inc/gaming/gaming.php:81
+msgid "Deals"
+msgstr "Angebote"
+
+#: inc/gaming/gaming.php:82
+msgid "Level up"
+msgstr "Level up"
+
+#: inc/gaming/gaming.php:83
+msgid "Graphics card week"
+msgstr "Grafikkarten-Woche"
+
+#: inc/gaming/gaming.php:84
+msgid "More frames, less money: selected graphics cards at special prices while stocks last."
+msgstr "Mehr FPS, weniger Geld: ausgewählte Grafikkarten zu Sonderpreisen, solange der Vorrat reicht."
+
+#: inc/gaming/gaming.php:85
+msgid "See the deals"
+msgstr "Zu den Angeboten"
+
+#: inc/gaming/gaming.php:86
+msgid "Express shipping"
+msgstr "Expressversand"
+
+#: inc/gaming/gaming.php:87
+msgid "Ordered before 3 pm, shipped today"
+msgstr "Bis 15 Uhr bestellt, heute verschickt"
+
+#: inc/gaming/gaming.php:89
+msgid "With manufacturer warranty"
+msgstr "Mit Herstellergarantie"
+
+#: inc/gaming/gaming.php:90
+msgid "14-day returns"
+msgstr "14 Tage Rückgaberecht"
+
+#: inc/gaming/gaming.php:91
+msgid "Simple and free of charge"
+msgstr "Einfach und kostenlos"
+
+#: inc/gaming/gaming.php:92
+msgid "Gamer support"
+msgstr "Gamer-Support"
+
+#: inc/gaming/gaming.php:93
+msgid "Advice from real players"
+msgstr "Beratung von echten Gamern"
+
+#: inc/gaming/gaming.php:94
+msgid "Drops & deals first"
+msgstr "Neuheiten & Deals zuerst"
+
+#: inc/gaming/gaming.php:95
+msgid "Be the first to know about new consoles, restocks and limited deals. Unsubscribe at any time."
+msgstr "Erfahren Sie als Erste von neuen Konsolen, Nachlieferungen und limitierten Angeboten. Abmeldung jederzeit möglich."
+
+#: inc/gaming/gaming.php:96
+msgid "Consoles, graphics cards and accessories from official channels — tested, fairly priced and shipped fast."
+msgstr "Konsolen, Grafikkarten und Zubehör aus offiziellen Kanälen – geprüft, fair bepreist und schnell verschickt."
+
+#: inc/gaming/gaming.php:97
+msgid "Delivery within 1–3 business days"
+msgstr "Lieferung in 1–3 Werktagen"
+
+#: inc/gaming/gaming.php:98
+msgid "2-year manufacturer warranty"
+msgstr "2 Jahre Herstellergarantie"
+
+#: inc/gaming/gaming.php:99 inc/firewood/presets.php:133
+msgid "Frequently asked questions"
+msgstr "Häufige Fragen"
+
 #: inc/home-slider.php:173
 msgid "Our range"
 msgstr "Unser Sortiment"
@@ -2304,29 +2596,33 @@ msgstr "Ihre Lieblingsprodukte, für später gemerkt."
 msgid "Dry wood, ready to burn"
 msgstr "Trockenes Holz, sofort brennfertig"
 
-#: inc/page-hero.php:374
+#: inc/page-hero.php:259 inc/gaming/gaming.php:88 inc/gaming/gaming.php:132
+msgid "100% original"
+msgstr "100 % original"
+
+#: inc/page-hero.php:376
 msgid "Your payment could not be completed"
 msgstr "Ihre Zahlung konnte nicht abgeschlossen werden"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:377 inc/woocommerce/cart-checkout.php:194
+#: inc/page-hero.php:379 inc/woocommerce/cart-checkout.php:194
 msgid "Thank you, %s!"
 msgstr "Vielen Dank, %s!"
 
-#: inc/page-hero.php:379
+#: inc/page-hero.php:381
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
 
 #. translators:1: order number, 2: e-mail address.
-#: inc/page-hero.php:387
+#: inc/page-hero.php:389
 msgid "Your order #%1$s has been received. A confirmation is on its way to %2$s."
 msgstr "Ihre Bestellung #%1$s ist eingegangen. Eine Bestätigung ist unterwegs an %2$s."
 
-#: inc/page-hero.php:598
+#: inc/page-hero.php:600
 msgid "Discover our products"
 msgstr "Entdecken Sie unsere Produkte"
 
-#: inc/page-hero.php:627
+#: inc/page-hero.php:629
 msgid "View all products"
 msgstr "Alle Produkte ansehen"
 
@@ -2338,15 +2634,15 @@ msgstr "Die Anmeldedaten sind nicht korrekt."
 msgid "Optional widgets displayed as an additional footer column."
 msgstr "Optionale Widgets als zusätzliche Footer-Spalte."
 
-#: inc/setup.php:43 inc/admin/onboarding.php:512
+#: inc/setup.php:43 inc/admin/onboarding.php:523
 msgid "Footer — Shop"
 msgstr "Footer – Shop"
 
-#: inc/setup.php:44 inc/admin/onboarding.php:521
+#: inc/setup.php:44 inc/admin/onboarding.php:532
 msgid "Footer — Customer service"
 msgstr "Footer – Kundenservice"
 
-#: inc/setup.php:45 inc/admin/onboarding.php:531
+#: inc/setup.php:45 inc/admin/onboarding.php:542
 msgid "Footer — Legal"
 msgstr "Footer – Rechtliches"
 
@@ -2370,15 +2666,15 @@ msgstr "Optionale Widgets unter den integrierten Shop-Filtern."
 msgid "Footer — extra column"
 msgstr "Footer – zusätzliche Spalte"
 
-#: inc/template-tags.php:106 inc/template-tags.php:444 inc/admin/onboarding.php:503
+#: inc/template-tags.php:106 inc/template-tags.php:444 inc/admin/onboarding.php:514
 msgid "Home"
 msgstr "Startseite"
 
-#: inc/template-tags.php:129 inc/template-tags.php:549 inc/admin/onboarding.php:506 inc/admin/onboarding.php:517
+#: inc/template-tags.php:129 inc/template-tags.php:549 inc/admin/onboarding.php:517 inc/admin/onboarding.php:528
 msgid "Offers"
 msgstr "Angebote"
 
-#: inc/template-tags.php:138 inc/admin/onboarding.php:333
+#: inc/template-tags.php:138 inc/admin/onboarding.php:344
 msgid "About us"
 msgstr "Über uns"
 
@@ -2438,11 +2734,11 @@ msgstr "Vorherige Seite"
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: inc/template-tags.php:547 inc/admin/onboarding.php:515 inc/customizer/config.php:27 inc/customizer/config.php:559
+#: inc/template-tags.php:547 inc/admin/onboarding.php:526 inc/customizer/config.php:27 inc/customizer/config.php:560
 msgid "New arrivals"
 msgstr "Neuheiten"
 
-#: inc/template-tags.php:548 inc/admin/onboarding.php:516 inc/customizer/config.php:29 inc/customizer/config.php:561
+#: inc/template-tags.php:548 inc/admin/onboarding.php:527 inc/customizer/config.php:29 inc/customizer/config.php:562
 msgid "Bestsellers"
 msgstr "Bestseller"
 
@@ -2450,7 +2746,7 @@ msgstr "Bestseller"
 msgid "Track my orders"
 msgstr "Meine Bestellungen verfolgen"
 
-#: inc/template-tags.php:574 inc/admin/onboarding.php:351
+#: inc/template-tags.php:574 inc/admin/onboarding.php:362
 msgid "Shipping & payment"
 msgstr "Versand & Zahlung"
 
@@ -2458,15 +2754,15 @@ msgstr "Versand & Zahlung"
 msgid "FAQ"
 msgstr "FAQ"
 
-#: inc/template-tags.php:586 inc/admin/onboarding.php:356
+#: inc/template-tags.php:586 inc/admin/onboarding.php:367
 msgid "Legal notice"
 msgstr "Impressum"
 
-#: inc/template-tags.php:587 inc/admin/onboarding.php:361
+#: inc/template-tags.php:587 inc/admin/onboarding.php:372
 msgid "Terms & conditions"
 msgstr "AGB"
 
-#: inc/template-tags.php:588 inc/admin/onboarding.php:366
+#: inc/template-tags.php:588 inc/admin/onboarding.php:377
 msgid "Right of withdrawal"
 msgstr "Widerrufsbelehrung"
 
@@ -2548,7 +2844,7 @@ msgstr "Vielen Dank!"
 msgid "Your order has been received. You will receive a confirmation by email shortly."
 msgstr "Ihre Bestellung ist eingegangen. Sie erhalten in Kürze eine Bestätigung per E-Mail."
 
-#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:558
+#: inc/woocommerce/cart-checkout.php:213 inc/customizer/config.php:25 inc/customizer/config.php:559
 msgid "Popular products"
 msgstr "Beliebte Produkte"
 
@@ -3075,7 +3371,7 @@ msgstr "Video ansehen"
 msgid "Journal"
 msgstr "Journal"
 
-#: page-templates/template-contact.php:35 inc/admin/onboarding.php:339 inc/admin/onboarding.php:412
+#: page-templates/template-contact.php:35 inc/admin/onboarding.php:350 inc/admin/onboarding.php:423
 msgid "We look forward to hearing from you. Our customer service will answer as quickly as possible."
 msgstr "Wir freuen uns auf Ihre Nachricht. Unser Kundenservice antwortet Ihnen so schnell wie möglich."
 
@@ -3171,7 +3467,7 @@ msgstr "RM pro Saison"
 msgid "Indicative values for air-dry wood (< 20% moisture) and a stove efficiency of about 78%. Actual consumption depends on insulation, stove and habits."
 msgstr "Richtwerte für lufttrockenes Holz (< 20 % Restfeuchte) und einen Ofenwirkungsgrad von ca. 78 %. Der tatsächliche Verbrauch hängt von Dämmung, Ofen und Heizgewohnheiten ab."
 
-#: template-parts/components/firewood-calculator.php:48 inc/firewood/presets.php:81
+#: template-parts/components/firewood-calculator.php:48 inc/firewood/presets.php:111
 msgid "Order firewood"
 msgstr "Brennholz bestellen"
 
@@ -3179,7 +3475,7 @@ msgstr "Brennholz bestellen"
 msgid "Unit converter"
 msgstr "Einheiten-Umrechner"
 
-#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:231
+#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:232
 msgid "Quantity"
 msgstr "Menge"
 
@@ -3288,15 +3584,15 @@ msgstr "Rechtliches"
 msgid "Back to top"
 msgstr "Nach oben"
 
-#: template-parts/footer/site-footer.php:37 inc/template-tags.php:114 inc/admin/onboarding.php:504
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:114 inc/admin/onboarding.php:515
 msgid "Shop"
 msgstr "Shop"
 
-#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:580
+#: template-parts/footer/site-footer.php:38 inc/customizer/config.php:581
 msgid "Customer service"
 msgstr "Kundenservice"
 
-#: template-parts/footer/site-footer.php:42 inc/template-tags.php:146 inc/template-tags.php:582 inc/admin/onboarding.php:338
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:146 inc/template-tags.php:582 inc/admin/onboarding.php:349
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -3328,7 +3624,7 @@ msgstr "Menü"
 msgid "Close menu"
 msgstr "Menü schließen"
 
-#: template-parts/header/mobile-menu.php:28 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:501
+#: template-parts/header/mobile-menu.php:28 template-parts/header/site-header.php:21 inc/setup.php:42 inc/admin/onboarding.php:512
 msgid "Main menu"
 msgstr "Hauptmenü"
 
@@ -3340,7 +3636,7 @@ msgstr "Mein Konto"
 msgid "Sign in / Register"
 msgstr "Anmelden / Registrieren"
 
-#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:344 inc/customizer/config.php:355
+#: template-parts/header/mobile-menu.php:46 template-parts/header/site-header.php:59 inc/admin/onboarding.php:355 inc/customizer/config.php:355
 msgid "Wishlist"
 msgstr "Wunschliste"
 
@@ -3392,7 +3688,7 @@ msgstr "Ermitteln Sie in Sekunden Ihren Brennholzbedarf für die Saison und rech
 msgid "Explore"
 msgstr "Entdecken"
 
-#: template-parts/homepage/categories.php:47 inc/template-tags.php:546 inc/admin/onboarding.php:514
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:546 inc/admin/onboarding.php:525
 msgid "All products"
 msgstr "Alle Produkte"
 
@@ -3420,17 +3716,17 @@ msgid "Good to know"
 msgstr "Gut zu wissen"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:103 inc/customizer/config.php:372 inc/customizer/config.php:576
+#: template-parts/homepage/hero.php:103 inc/customizer/config.php:372 inc/customizer/config.php:577
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:159 inc/customizer/config.php:544
+#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:159 inc/customizer/config.php:545
 msgid "Free shipping from %s"
 msgstr "Kostenloser Versand ab %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:548
+#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:549
 msgid "%d-day free returns"
 msgstr "%d Tage kostenlose Rückgabe"
 

@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 $premium_shop_layout   = premium_shop_option( 'hero_layout' );
 $premium_shop_image_id = absint( premium_shop_option( 'hero_image' ) );
 
-$premium_shop_bundled = ( ! $premium_shop_image_id && 'firewood' === premium_shop_preset() ) ? PREMIUM_SHOP_URI . '/assets/images/firewood/hero.jpg' : '';
+$premium_shop_bundled = ( ! $premium_shop_image_id && premium_shop_preset_images_dir() ) ? PREMIUM_SHOP_URI . '/assets/images/' . premium_shop_preset_images_dir() . '/hero.jpg' : '';
 
 if ( ! $premium_shop_image_id && ! $premium_shop_bundled && premium_shop_is_wc() ) {
 	$premium_shop_featured = wc_get_featured_product_ids();

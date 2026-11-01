@@ -76,11 +76,12 @@ function premium_shop_fw_catalogue_i18n() {
 /**
  * Import a bundled image into the media library (once).
  *
- * @param string $file  File name in assets/images/firewood.
+ * @param string $file  File name in assets/images/{folder}.
  * @param string $title Title / alt text.
+ * @param string $dir   Folder: firewood|gaming.
  * @return int Attachment ID (0 on failure).
  */
-function premium_shop_fw_import_image( $file, $title ) {
+function premium_shop_fw_import_image( $file, $title, $dir = 'firewood' ) {
 	$existing = get_posts(
 		array(
 			'post_type'      => 'attachment',
@@ -95,7 +96,7 @@ function premium_shop_fw_import_image( $file, $title ) {
 		return (int) $existing[0];
 	}
 
-	$source = PREMIUM_SHOP_DIR . '/assets/images/firewood/' . basename( $file );
+	$source = PREMIUM_SHOP_DIR . '/assets/images/' . sanitize_key( $dir ) . '/' . basename( $file );
 	if ( ! is_readable( $source ) ) {
 		return 0;
 	}

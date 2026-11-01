@@ -11,11 +11,38 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Active preset.
  *
- * @return string firewood|maison
+ * @return string firewood|gaming|maison
  */
 function premium_shop_preset() {
-	$preset = get_theme_mod( 'ps_preset', 'firewood' );
-	return in_array( $preset, array( 'firewood', 'maison' ), true ) ? $preset : 'firewood';
+	$presets = array( 'firewood', 'gaming', 'maison' );
+	$default = in_array( PREMIUM_SHOP_DEFAULT_PRESET, $presets, true ) ? PREMIUM_SHOP_DEFAULT_PRESET : 'firewood';
+	$preset  = get_theme_mod( 'ps_preset', $default );
+	return in_array( $preset, $presets, true ) ? $preset : $default;
+}
+
+/**
+ * Folder of the bundled images of the active preset ('' when none).
+ *
+ * @return string firewood|gaming|''
+ */
+function premium_shop_preset_images_dir() {
+	$preset = premium_shop_preset();
+	return in_array( $preset, array( 'firewood', 'gaming' ), true ) ? $preset : '';
+}
+
+/**
+ * Bundled illustrations of the active preset (file names).
+ *
+ * @return string[]
+ */
+function premium_shop_preset_images() {
+	switch ( premium_shop_preset() ) {
+		case 'firewood':
+			return array( 'buche.jpg', 'eiche.jpg', 'birke.jpg', 'mischholz.jpg', 'esche.jpg', 'hainbuche.jpg', 'anzuendholz.jpg', 'briketts.jpg', 'box.jpg' );
+		case 'gaming':
+			return array( 'nintendo-hybrid.jpg', 'console-tower.jpg', 'gpu-triple.jpg', 'gamepad.jpg', 'nintendo-lite.jpg', 'gpu-dual-white.jpg', 'headset.jpg', 'gamepad-dark.jpg', 'games.jpg' );
+	}
+	return array();
 }
 
 /**
@@ -24,6 +51,9 @@ function premium_shop_preset() {
  * @return array
  */
 function premium_shop_preset_overrides() {
+	if ( 'gaming' === premium_shop_preset() ) {
+		return premium_shop_gaming_overrides();
+	}
 	if ( 'firewood' !== premium_shop_preset() ) {
 		return array();
 	}

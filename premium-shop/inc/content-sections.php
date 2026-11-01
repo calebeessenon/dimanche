@@ -231,7 +231,7 @@ function premium_shop_about_page_content( $t ) {
 	return $p( $t( 'Carefully selected products, honest advice and fast delivery. We are here for you before and after your purchase.' ), 'ps-lead' )
 		. '<!-- wp:columns {"verticalAlignment":"center","className":"ps-story"} --><div class="wp-block-columns are-vertically-aligned-center ps-story"><!-- wp:column {"verticalAlignment":"center"} --><div class="wp-block-column is-vertically-aligned-center">'
 		. $h( $t( 'Our story' ) )
-		. $p( $firewood ? $t( 'Warmth, simply delivered: we supply firewood, wood briquettes and pellets of reliable quality, carefully dried and delivered to your door.' ) : $t( 'We select every product with care and deliver it quickly to your door.' ) )
+		. $p( $firewood ? $t( 'Warmth, simply delivered: we supply firewood, wood briquettes and pellets of reliable quality, carefully dried and delivered to your door.' ) : ( 'gaming' === premium_shop_preset() ? $t( 'Gamers serving gamers: we sell consoles, graphics cards and accessories from official channels and ship them fast.' ) : $t( 'We select every product with care and deliver it quickly to your door.' ) ) )
 		. $p( $t( 'We believe in honest advice, transparent prices and a service that does not stop after the purchase. Write to us or call us: a real person answers.' ) )
 		. '</div><!-- /wp:column --><!-- wp:column {"verticalAlignment":"center"} --><div class="wp-block-column is-vertically-aligned-center">' . $s( 'ps_photo_collage' ) . '</div><!-- /wp:column --></div><!-- /wp:columns -->'
 		. $h( $t( 'Why shop with us?' ) )

@@ -109,6 +109,10 @@ function premium_shop_move_default_widgets() {
  * only empty fields are filled, values entered in the Customizer are kept.
  */
 function premium_shop_fill_contact_details() {
+	// Contact details of the Warmeholz shop: only on that site.
+	if ( false === strpos( (string) wp_parse_url( home_url(), PHP_URL_HOST ), 'warmeholz' ) && ! has_filter( 'premium_shop_shop_contact_details' ) ) {
+		return;
+	}
 	$details = apply_filters(
 		'premium_shop_shop_contact_details',
 		array(

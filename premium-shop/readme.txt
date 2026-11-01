@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 1.9.9
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,18 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.0.0 =
+* New style preset "Gaming & tech" for consoles (Nintendo, PlayStation 5),
+  graphics cards and accessories: vivid violet/neon colors, neon page headers,
+  modern Inter typography, gaming texts and FAQ in DE/FR/ES/EN, firewood tools
+  switched off.
+* Bundled original illustrations (hybrid and handheld consoles, console tower,
+  controllers, graphics cards, headset, games, hero, share image).
+* Setup assistant: "Create the sample gaming catalogue" — 4 categories and 12
+  products with images, prices (incl. deals) and texts in every language.
+* Separate package premium-shop-gaming.zip with the gaming style by default.
+* The Warmeholz contact details are only filled in on warmeholz.ch.
 
 = 1.9.9 =
 * New font choice "Cambria" for headings and text (Customizer → Typography),

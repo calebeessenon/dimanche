@@ -430,11 +430,12 @@ function premium_shop_customizer_config() {
 		'fields'      => array(
 			'preset'              => array(
 				'type'        => 'select',
-				'default'     => 'firewood',
+				'default'     => PREMIUM_SHOP_DEFAULT_PRESET,
 				'label'       => __( 'Style preset', 'premium-shop' ),
 				'description' => __( 'Sets colors, homepage sections and default texts. Your own changes always take priority.', 'premium-shop' ),
 				'choices'     => array(
 					'firewood' => __( 'Firewood & stove wood (warm, natural)', 'premium-shop' ),
+					'gaming'   => __( 'Gaming & tech: consoles, graphics cards (modern, vivid)', 'premium-shop' ),
 					'maison'   => __( 'General shop "Maison" (editorial)', 'premium-shop' ),
 				),
 			),
@@ -591,6 +592,8 @@ function premium_shop_text_fallbacks() {
 
 	if ( 'firewood' === premium_shop_preset() ) {
 		$fallbacks = array_merge( $fallbacks, premium_shop_firewood_fallbacks() );
+	} elseif ( 'gaming' === premium_shop_preset() && function_exists( 'premium_shop_gaming_fallbacks' ) ) {
+		$fallbacks = array_merge( $fallbacks, premium_shop_gaming_fallbacks() );
 	}
 
 	return apply_filters( 'premium_shop_text_fallbacks', $fallbacks );

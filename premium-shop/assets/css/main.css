@@ -6211,3 +6211,50 @@ p.ps-hero__title {
 	background: var(--ps-accent);
 	transition: transform .35s var(--ps-ease-out), width .35s var(--ps-ease-out);
 }
+
+/* 42 Preset "gaming": neon page headers and a few vivid touches ------ */
+.ps-preset-gaming .ps-phero--banner {
+	--ps-hero-bg: url("../images/bg-gaming.jpg");
+	background:
+		linear-gradient(90deg, rgba(10, 9, 28, .9) 0%, rgba(10, 9, 28, .6) 50%, rgba(10, 9, 28, .15) 100%),
+		var(--ps-hero-bg) center / cover no-repeat,
+		#0d0b1f;
+}
+
+@media (max-width: 767px) {
+	.ps-preset-gaming .ps-phero--banner {
+		--ps-hero-bg: url("../images/bg-gaming-sm.jpg");
+		background:
+			linear-gradient(180deg, rgba(10, 9, 28, .78), rgba(10, 9, 28, .55)),
+			var(--ps-hero-bg) center / cover no-repeat,
+			#0d0b1f;
+	}
+}
+
+.ps-preset-gaming .ps-hero--split {
+	background:
+		radial-gradient(900px 480px at 100% 0%, color-mix(in srgb, var(--ps-accent) 16%, transparent), transparent 60%),
+		radial-gradient(700px 420px at 0% 100%, rgba(0, 212, 255, .1), transparent 60%),
+		var(--ps-bg);
+}
+
+.ps-preset-gaming .ps-hero__orb--2 {
+	background: #00d4ff;
+}
+
+.ps-preset-gaming .ps-trustbar {
+	background: linear-gradient(90deg, #14112b, #2a1d6b);
+}
+
+.ps-preset-gaming .ps-trustbar__icon {
+	color: #8ff1ff;
+}
+
+.ps-preset-gaming .ps-phero--banner .ps-phero__eyebrow {
+	color: #b7f3ff;
+}
+
+.ps-preset-gaming .ps-phero--banner .ps-phero__chips .ps-icon,
+.ps-preset-gaming .ps-ticker__item .ps-icon {
+	color: #8ff1ff;
+}

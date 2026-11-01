@@ -10,9 +10,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '1.9.9' );
+define( 'PREMIUM_SHOP_VERSION', '2.0.0' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
+if ( ! defined( 'PREMIUM_SHOP_DEFAULT_PRESET' ) ) {
+	define( 'PREMIUM_SHOP_DEFAULT_PRESET', 'firewood' );
+}
 
 $premium_shop_includes = array(
 	'inc/helpers.php',
@@ -31,6 +34,7 @@ $premium_shop_includes = array(
 	'inc/seo.php',
 	'inc/admin/onboarding.php',
 	'inc/firewood/presets.php',
+	'inc/gaming/gaming.php',
 	'inc/firewood/faq.php',
 	'inc/firewood/calculator.php',
 	'inc/contact.php',

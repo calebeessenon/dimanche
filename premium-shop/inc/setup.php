@@ -114,6 +114,7 @@ add_action( 'widgets_init', 'premium_shop_widgets_init' );
  */
 function premium_shop_body_classes( $classes ) {
 	$classes[] = 'ps-theme';
+	$classes[] = 'ps-preset-' . sanitize_html_class( premium_shop_preset() );
 	$classes[] = 'ps-buttons-' . sanitize_html_class( premium_shop_option( 'button_style' ) );
 	$classes[] = 'ps-header-' . sanitize_html_class( premium_shop_option( 'header_layout' ) );
 

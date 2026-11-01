@@ -48,3 +48,14 @@ mkdir -p "$DIST"
 rm -f "$DIST/premium-shop.zip"
 (cd "$THEME/.." && zip -qr "$DIST/premium-shop.zip" premium-shop -x '*.DS_Store' -x '*/node_modules/*')
 ls -lh "$DIST/premium-shop.zip"
+
+echo "→ Gaming edition (same theme, \"Gaming & tech\" style by default)"
+TMP="$(mktemp -d)"
+cp -r "$THEME" "$TMP/premium-shop-gaming"
+sed -i "s/define( 'PREMIUM_SHOP_DEFAULT_PRESET', 'firewood' );/define( 'PREMIUM_SHOP_DEFAULT_PRESET', 'gaming' );/" "$TMP/premium-shop-gaming/functions.php"
+sed -i "s/^Theme Name:        Premium Shop$/Theme Name:        Premium Shop Gaming/" "$TMP/premium-shop-gaming/style.css"
+grep -q "'PREMIUM_SHOP_DEFAULT_PRESET', 'gaming'" "$TMP/premium-shop-gaming/functions.php"
+rm -f "$DIST/premium-shop-gaming.zip"
+(cd "$TMP" && zip -qr "$DIST/premium-shop-gaming.zip" premium-shop-gaming -x '*.DS_Store' -x '*/node_modules/*')
+rm -r "$TMP"
+ls -lh "$DIST/premium-shop-gaming.zip"

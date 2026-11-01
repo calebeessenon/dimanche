@@ -143,8 +143,9 @@ function premium_shop_share_image() {
 	if ( $custom ) {
 		return (string) wp_get_attachment_image_url( $custom, 'large' );
 	}
-	if ( 'firewood' === premium_shop_preset() && file_exists( PREMIUM_SHOP_DIR . '/assets/images/firewood/share.jpg' ) ) {
-		return PREMIUM_SHOP_URI . '/assets/images/firewood/share.jpg';
+	$dir = premium_shop_preset_images_dir();
+	if ( $dir && file_exists( PREMIUM_SHOP_DIR . '/assets/images/' . $dir . '/share.jpg' ) ) {
+		return PREMIUM_SHOP_URI . '/assets/images/' . $dir . '/share.jpg';
 	}
 	$hero = absint( premium_shop_option( 'hero_image' ) );
 	if ( $hero ) {
