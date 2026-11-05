@@ -238,6 +238,10 @@ function premium_shop_builtin_bootstrap() {
 			setcookie( 'ps_lang', $lang, time() + YEAR_IN_SECONDS, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, is_ssl(), true );
 			$_COOKIE['ps_lang'] = $lang;
 		}
+		// Readable marker: the language was chosen, browser detection must not override it.
+		if ( ! isset( $_COOKIE['ps_lc'] ) ) {
+			setcookie( 'ps_lc', '1', time() + YEAR_IN_SECONDS, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, is_ssl(), false );
+		}
 	}
 
 	$locale   = premium_shop_locale_for( $lang );
@@ -437,3 +441,54 @@ add_action(
 function premium_shop_bcp47( $locale ) {
 	return str_replace( '_', '-', $locale );
 }
+
+/**
+ * First visit: show the site in the visitor's browser language.
+ *
+ * Runs in the browser (page caches serve the same HTML to everyone): when no
+ * language was chosen yet, the first supported language of the browser is
+ * picked (English for unsupported ones, when offered) and the page reloads
+ * once in that language. The choice is then remembered; the language switcher
+ * always wins.
+ */
+function premium_shop_browser_language_script() {
+	if ( is_admin() || ! premium_shop_builtin_applies() || ! apply_filters( 'premium_shop_browser_language', true ) ) {
+		return;
+	}
+	$codes = array_keys( premium_shop_languages() );
+	if ( count( $codes ) < 2 ) {
+		return;
+	}
+	$config = array(
+		'codes'    => array_values( $codes ),
+		'default'  => premium_shop_default_language(),
+		'fallback' => in_array( 'en', $codes, true ) ? 'en' : premium_shop_default_language(),
+		'current'  => premium_shop_current_language(),
+		'secure'   => is_ssl(),
+	);
+	?>
+<script id="ps-browser-language">
+(function (c) {
+	try {
+		if (/(^|; )ps_lc=/.test(document.cookie) || /[?&]lang=/.test(location.search) || /bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) { return; }
+		var mark = 'ps_lc=1;path=/;max-age=31536000;samesite=lax' + (c.secure ? ';secure' : '');
+		if (c.current !== c.default) { document.cookie = mark; return; }
+		var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+		var pick = '';
+		for (var i = 0; i < langs.length && !pick; i++) {
+			var code = String(langs[i] || '').slice(0, 2).toLowerCase();
+			if (c.codes.indexOf(code) > -1) { pick = code; }
+		}
+		pick = pick || c.fallback;
+		document.cookie = mark;
+		if (pick !== c.current) {
+			var url = new URL(location.href);
+			url.searchParams.set('lang', pick);
+			location.replace(url.toString());
+		}
+	} catch (e) {}
+})(<?php echo wp_json_encode( $config ); ?>);
+</script>
+	<?php
+}
+add_action( 'wp_head', 'premium_shop_browser_language_script', 0 );
