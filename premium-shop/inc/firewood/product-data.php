@@ -762,19 +762,28 @@ function premium_shop_fw_t( $text ) {
 }
 
 /**
- * Fill empty description / short description from the firewood data.
+ * Generated description and short description of a firewood product.
  *
- * @param WC_Product $product Product (not saved yet).
+ * @param WC_Product $product Product.
+ * @param string     $locale  Locale of the texts (default: the shop language).
+ * @return array|null array( 'desc' => HTML, 'short' => HTML ), null without a known species.
  */
-function premium_shop_fw_auto_texts( $product ) {
+function premium_shop_fw_generated_texts( $product, $locale = '' ) {
 	$species_key = (string) $product->get_meta( '_ps_species' );
 	$species     = premium_shop_fw_species();
 	if ( ! isset( $species[ $species_key ] ) ) {
-		return;
+		return null;
 	}
 
-	$t       = 'premium_shop_fw_t';
+	$locale  = $locale ? $locale : premium_shop_locale_for( premium_shop_default_language() );
+	$t       = static function ( $text ) use ( $locale ) {
+		return premium_shop_translate_in( $text, $locale );
+	};
 	$name    = $t( premium_shop_fw_species_english( $species_key ) );
+	if ( preg_match( '/^(fr|es)_/', $locale ) ) {
+		// Common noun inside the sentence: "Bois de chauffage en hêtre", "Leña de haya".
+		$name = function_exists( 'mb_strtolower' ) ? mb_strtolower( $name, 'UTF-8' ) : strtolower( $name );
+	}
 	$length  = (string) $product->get_meta( '_ps_log_length' );
 	$moist   = (string) $product->get_meta( '_ps_moisture' );
 	$drying  = (string) $product->get_meta( '_ps_drying' );
@@ -821,17 +830,35 @@ function premium_shop_fw_auto_texts( $product ) {
 	}
 	$facts[] = $t( 'Tip: store your wood dry and well ventilated, ideally under a roof.' );
 
+	$html = '';
+	foreach ( $paragraphs as $paragraph ) {
+		$html .= '<p>' . esc_html( $paragraph ) . "</p>\n";
+	}
+	$html .= '<p>' . esc_html( implode( ' ', $facts ) ) . '</p>';
+
+	return array(
+		'desc'  => $html,
+		'short' => '<p>' . esc_html( $intro ) . '</p>',
+	);
+}
+
+/**
+ * Fill empty description / short description from the firewood data.
+ *
+ * @param WC_Product $product Product (not saved yet).
+ */
+function premium_shop_fw_auto_texts( $product ) {
+	$texts = premium_shop_fw_generated_texts( $product );
+	if ( ! $texts ) {
+		return;
+	}
+
 	if ( '' === trim( $product->get_description() ) ) {
-		$html = '';
-		foreach ( $paragraphs as $paragraph ) {
-			$html .= '<p>' . esc_html( $paragraph ) . "</p>\n";
-		}
-		$html .= '<p>' . esc_html( implode( ' ', $facts ) ) . '</p>';
-		$product->set_description( $html );
+		$product->set_description( $texts['desc'] );
 	}
 
 	if ( '' === trim( $product->get_short_description() ) ) {
-		$product->set_short_description( '<p>' . esc_html( $intro ) . '</p>' );
+		$product->set_short_description( $texts['short'] );
 	}
 }
 

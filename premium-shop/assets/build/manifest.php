@@ -9,8 +9,8 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'css/main.css' => 'main.0eed8a9a66.min.css',
-	'css/woocommerce.css' => 'woocommerce.21ab9ccc93.min.css',
-	'css/gaming.css' => 'gaming.11840e9592.min.css',
+	'css/woocommerce.css' => 'woocommerce.ab9a3594be.min.css',
+	'css/gaming.css' => 'gaming.a6ac6f41bb.min.css',
 	'js/theme.js' => 'theme.9c98cd05de.min.js',
 	'js/shop.js' => 'shop.416097b9c7.min.js',
 	'js/product.js' => 'product.3d8dab133a.min.js',

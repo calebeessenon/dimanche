@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-05 20:01+0000\n"
-"PO-Revision-Date: 2026-11-05 20:01+0000\n"
+"POT-Creation-Date: 2026-11-05 20:34+0000\n"
+"PO-Revision-Date: 2026-11-05 20:34+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -360,7 +360,7 @@ msgid "Delivery time"
 msgstr "Lieferzeit"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117 inc/woocommerce/order-language.php:533
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:540
 msgid "Free shipping"
 msgstr "Kostenloser Versand"
 
@@ -369,7 +369,7 @@ msgstr "Kostenloser Versand"
 msgid "From %s order value"
 msgstr "Ab %s Bestellwert"
 
-#: inc/content-sections.php:120 inc/page-hero.php:213 inc/admin/onboarding.php:392
+#: inc/content-sections.php:120 inc/page-hero.php:218 inc/admin/onboarding.php:392
 msgid "Order tracking"
 msgstr "Sendungsverfolgung"
 
@@ -378,7 +378,7 @@ msgid "Status, delivery date and tracking number online."
 msgstr "Status, Liefertermin und Sendungsnummer online."
 
 #. translators:%s: amount.
-#: inc/content-sections.php:136 inc/firewood/product-data.php:921
+#: inc/content-sections.php:136 inc/firewood/product-data.php:948
 msgid "from %s"
 msgstr "ab %s"
 
@@ -403,7 +403,7 @@ msgstr "Bereit, unsere Produkte zu entdecken?"
 msgid "Order online in a few clicks, or ask us for advice."
 msgstr "Bestellen Sie online mit wenigen Klicks oder lassen Sie sich von uns beraten."
 
-#: inc/content-sections.php:202 inc/page-hero.php:322
+#: inc/content-sections.php:202 inc/page-hero.php:327
 msgid "Discover the shop"
 msgstr "Shop entdecken"
 
@@ -491,7 +491,7 @@ msgstr "Faire Preise"
 msgid "Clear prices including VAT, no hidden costs."
 msgstr "Klare Preise inkl. MwSt., keine versteckten Kosten."
 
-#: inc/content-sections.php:82 inc/page-hero.php:255 inc/firewood/presets.php:126
+#: inc/content-sections.php:82 inc/page-hero.php:260 inc/firewood/presets.php:126
 msgid "Personal advice"
 msgstr "Persönliche Beratung"
 
@@ -1536,15 +1536,15 @@ msgstr "Nein – bitte kontaktieren Sie mich"
 msgid "I am not sure"
 msgstr "Ich bin nicht sicher"
 
-#: inc/firewood/delivery.php:190 inc/firewood/delivery.php:214
+#: inc/firewood/delivery.php:190 inc/firewood/delivery.php:236
 msgid "Is the unloading point accessible for a truck?"
 msgstr "Ist die Abladestelle für einen LKW erreichbar?"
 
-#: inc/firewood/delivery.php:194 inc/firewood/delivery.php:217
+#: inc/firewood/delivery.php:194 inc/firewood/delivery.php:239
 msgid "Please choose"
 msgstr "Bitte auswählen"
 
-#: inc/firewood/delivery.php:262 inc/firewood/delivery.php:280
+#: inc/firewood/delivery.php:284 inc/firewood/delivery.php:302
 msgid "Truck access"
 msgstr "LKW-Zufahrt"
 
@@ -1621,7 +1621,7 @@ msgstr "Buchenholz-Briketts, 10-kg-Paket"
 msgid "Beech firewood box, approx. 30 litres"
 msgstr "Buche Kaminholz-Box, ca. 30 Liter"
 
-#: inc/firewood/demo-catalog.php:69 inc/firewood/demo-catalog.php:231 inc/firewood/product-data.php:436
+#: inc/firewood/demo-catalog.php:69 inc/firewood/demo-catalog.php:379 inc/firewood/demo-catalog.php:231 inc/firewood/product-data.php:436
 msgid "Log length"
 msgstr "Scheitlänge"
 
@@ -2044,88 +2044,88 @@ msgid "Freshly cut (for self-drying)"
 msgstr "Frisch geschlagen (zum Selbsttrocknen)"
 
 #. translators:1: wood species, 2: drying method, 3: log length.
-#: inc/firewood/product-data.php:793
+#: inc/firewood/product-data.php:802
 msgid "%1$s firewood, %2$s and split to a log length of %3$s — ready for your stove or fireplace."
 msgstr "%1$s-Kaminholz, %2$s und auf %3$s Scheitlänge gespalten – fertig für Ihren Ofen oder Kamin."
 
 #. translators:1: wood species, 2: drying method.
-#: inc/firewood/product-data.php:801
+#: inc/firewood/product-data.php:810
 msgid "%1$s firewood, %2$s and split — ready for your stove or fireplace."
 msgstr "%1$s-Kaminholz, %2$s und gespalten – fertig für Ihren Ofen oder Kamin."
 
 #. translators:%s: percent.
-#: inc/firewood/product-data.php:810
+#: inc/firewood/product-data.php:819
 msgid "Residual moisture below %s%%: dry wood burns cleanly, gives more heat and protects your stove and chimney."
 msgstr "Restfeuchte unter %s %%: Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
 
 #. translators:%s: percent.
-#: inc/firewood/product-data.php:811
+#: inc/firewood/product-data.php:820
 msgid "Dry wood burns cleanly, gives more heat and protects your stove and chimney."
 msgstr "Trockenes Holz verbrennt sauber, liefert mehr Wärme und schont Ofen und Schornstein."
 
 #. translators:%s: origin.
-#: inc/firewood/product-data.php:816
+#: inc/firewood/product-data.php:825
 msgid "Origin: %s."
 msgstr "Herkunft: %s."
 
 #. translators:%s: certificate.
-#: inc/firewood/product-data.php:820
+#: inc/firewood/product-data.php:829
 msgid "Certified: %s."
 msgstr "Zertifiziert: %s."
 
-#: inc/firewood/product-data.php:822
+#: inc/firewood/product-data.php:831
 msgid "Tip: store your wood dry and well ventilated, ideally under a roof."
 msgstr "Tipp: Lagern Sie Ihr Holz trocken und gut belüftet, idealerweise überdacht."
 
-#: inc/firewood/product-data.php:888
+#: inc/firewood/product-data.php:915
 msgid "kiln-dried"
 msgstr "kammergetrocknet"
 
-#: inc/firewood/product-data.php:889
+#: inc/firewood/product-data.php:916
 msgid "naturally air-dried"
 msgstr "natürlich luftgetrocknet"
 
-#: inc/firewood/product-data.php:890
+#: inc/firewood/product-data.php:917
 msgid "freshly cut"
 msgstr "frisch geschlagen"
 
-#: inc/firewood/product-data.php:891
+#: inc/firewood/product-data.php:918
 msgid "carefully dried"
 msgstr "sorgfältig getrocknet"
 
-#: inc/firewood/product-data.php:892
+#: inc/firewood/product-data.php:919
 msgid "Beech is the classic: long, even embers and a cosy, calm flame."
 msgstr "Buche ist der Klassiker: lange, gleichmäßige Glut und ein gemütliches, ruhiges Flammenbild."
 
-#: inc/firewood/product-data.php:893
+#: inc/firewood/product-data.php:920
 msgid "Oak burns slowly and produces long-lasting embers — ideal for long evenings."
 msgstr "Eiche brennt langsam und bildet lang anhaltende Glut – ideal für lange Abende."
 
-#: inc/firewood/product-data.php:894
+#: inc/firewood/product-data.php:921
 msgid "Ash offers a high heat output and burns calmly with a beautiful flame."
 msgstr "Esche liefert eine hohe Heizleistung und brennt ruhig mit schönem Flammenbild."
 
-#: inc/firewood/product-data.php:895
+#: inc/firewood/product-data.php:922
 msgid "Birch lights easily, burns with a bright flame and hardly sparks."
 msgstr "Birke entzündet sich leicht, brennt mit heller Flamme und funkt kaum."
 
-#: inc/firewood/product-data.php:896
+#: inc/firewood/product-data.php:923
 msgid "Hornbeam has one of the highest energy contents of all native woods."
 msgstr "Hainbuche hat einen der höchsten Heizwerte aller heimischen Hölzer."
 
-#: inc/firewood/product-data.php:897
+#: inc/firewood/product-data.php:924
 msgid "A balanced mix of hardwoods for reliable everyday heating."
 msgstr "Eine ausgewogene Hartholz-Mischung für zuverlässiges Heizen im Alltag."
 
-#: inc/firewood/product-data.php:898
+#: inc/firewood/product-data.php:925
 msgid "Alder burns evenly with little sparking and a pleasant smell."
 msgstr "Erle brennt gleichmäßig, funkt kaum und duftet angenehm."
 
-#: inc/firewood/product-data.php:899
+#: inc/firewood/product-data.php:926
 msgid "Pine lights quickly — perfect for getting the fire started."
 msgstr "Kiefer entzündet sich schnell – perfekt zum Anfeuern."
 
-#: inc/firewood/product-data.php:900
+#: inc/firewood/product-data.php:927
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "Fichte entzündet sich schnell – perfekt zum Anfeuern."
 
@@ -2546,87 +2546,87 @@ msgstr "Bitte akzeptieren Sie die Datenschutzbestimmungen."
 msgid "Too many attempts. Please try again later."
 msgstr "Zu viele Versuche. Bitte versuchen Sie es später erneut."
 
-#: inc/page-hero.php:179
+#: inc/page-hero.php:184
 msgid "Almost there: check your selection, and the warmth is on its way."
 msgstr "Fast geschafft: Prüfen Sie Ihre Auswahl – und die Wärme ist unterwegs."
 
-#: inc/page-hero.php:179
+#: inc/page-hero.php:184
 msgid "Your cart is still empty. Let yourself be inspired by our products."
 msgstr "Ihr Warenkorb ist noch leer. Lassen Sie sich von unseren Produkten inspirieren."
 
-#: inc/page-hero.php:190
+#: inc/page-hero.php:195
 msgid "Just a few details and your order is on its way."
 msgstr "Nur noch wenige Angaben, und Ihre Bestellung ist unterwegs."
 
-#: inc/page-hero.php:201
+#: inc/page-hero.php:206
 msgid "Customer account"
 msgstr "Kundenkonto"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:203
+#: inc/page-hero.php:208
 msgid "Hello, %s"
 msgstr "Hallo %s"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:204
+#: inc/page-hero.php:209
 msgid "Good to see you again. Here you will find your orders, addresses and account details."
 msgstr "Schön, dass Sie wieder da sind. Hier finden Sie Ihre Bestellungen, Adressen und Kontodaten."
 
-#: inc/page-hero.php:204
+#: inc/page-hero.php:209
 msgid "Sign in to follow your orders, order again in one click and save your addresses."
 msgstr "Melden Sie sich an, um Ihre Bestellungen zu verfolgen, mit einem Klick nachzubestellen und Ihre Adressen zu speichern."
 
-#: inc/page-hero.php:214
+#: inc/page-hero.php:219
 msgid "Where is my wood? Follow your delivery step by step."
 msgstr "Wo ist mein Holz? Verfolgen Sie Ihre Lieferung Schritt für Schritt."
 
-#: inc/page-hero.php:224
+#: inc/page-hero.php:229
 msgid "We are here for you"
 msgstr "Wir sind für Sie da"
 
-#: inc/page-hero.php:225
+#: inc/page-hero.php:230
 msgid "A question about our products, a delivery or an order? Write to us, we answer quickly."
 msgstr "Eine Frage zu unseren Produkten, einer Lieferung oder einer Bestellung? Schreiben Sie uns, wir antworten schnell."
 
-#: inc/page-hero.php:234
+#: inc/page-hero.php:239
 msgid "Your favourites"
 msgstr "Ihre Favoriten"
 
-#: inc/page-hero.php:235
+#: inc/page-hero.php:240
 msgid "The products you love, kept for later."
 msgstr "Ihre Lieblingsprodukte, für später gemerkt."
 
-#: inc/page-hero.php:257
+#: inc/page-hero.php:262
 msgid "Dry wood, ready to burn"
 msgstr "Trockenes Holz, sofort brennfertig"
 
-#: inc/page-hero.php:259 inc/gaming/gaming.php:90 inc/gaming/gaming.php:136
+#: inc/page-hero.php:264 inc/gaming/gaming.php:90 inc/gaming/gaming.php:136
 msgid "100% original"
 msgstr "100 % original"
 
-#: inc/page-hero.php:376
+#: inc/page-hero.php:381
 msgid "Your payment could not be completed"
 msgstr "Ihre Zahlung konnte nicht abgeschlossen werden"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:379 inc/woocommerce/cart-checkout.php:194
+#: inc/page-hero.php:384 inc/woocommerce/cart-checkout.php:194
 msgid "Thank you, %s!"
 msgstr "Vielen Dank, %s!"
 
-#: inc/page-hero.php:381
+#: inc/page-hero.php:386
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
 
 #. translators:1: order number, 2: e-mail address.
-#: inc/page-hero.php:389
+#: inc/page-hero.php:394
 msgid "Your order #%1$s has been received. A confirmation is on its way to %2$s."
 msgstr "Ihre Bestellung #%1$s ist eingegangen. Eine Bestätigung ist unterwegs an %2$s."
 
-#: inc/page-hero.php:600
+#: inc/page-hero.php:605
 msgid "Discover our products"
 msgstr "Entdecken Sie unsere Produkte"
 
-#: inc/page-hero.php:629
+#: inc/page-hero.php:634
 msgid "View all products"
 msgstr "Alle Produkte ansehen"
 
@@ -2696,11 +2696,11 @@ msgstr "Soziale Netzwerke"
 msgid "%s (opens in a new tab)"
 msgstr "%s (öffnet in neuem Tab)"
 
-#: inc/template-tags.php:338 inc/woocommerce/order-language.php:547
+#: inc/template-tags.php:338 inc/woocommerce/order-language.php:554
 msgid "Invoice"
 msgstr "Rechnung"
 
-#: inc/template-tags.php:339 inc/woocommerce/order-language.php:546
+#: inc/template-tags.php:339 inc/woocommerce/order-language.php:553
 msgid "Prepayment"
 msgstr "Vorkasse"
 
@@ -2946,83 +2946,83 @@ msgstr "Semikolon (;)"
 msgid "vertical bar (|)"
 msgstr "senkrechter Strich (|)"
 
-#: inc/woocommerce/order-language.php:301
+#: inc/woocommerce/order-language.php:308
 msgid "Customer language (e-mails, invoice)"
 msgstr "Kundensprache (E-Mails, Rechnung)"
 
-#: inc/woocommerce/order-language.php:303
+#: inc/woocommerce/order-language.php:310
 msgid "Shop language"
 msgstr "Shopsprache"
 
-#: inc/woocommerce/order-language.php:527
+#: inc/woocommerce/order-language.php:534
 msgid "VAT"
 msgstr "MwSt."
 
-#: inc/woocommerce/order-language.php:528
+#: inc/woocommerce/order-language.php:535
 msgid "Freight forwarding"
 msgstr "Spedition"
 
-#: inc/woocommerce/order-language.php:529
+#: inc/woocommerce/order-language.php:536
 msgid "Pickup"
 msgstr "Abholung"
 
-#: inc/woocommerce/order-language.php:530
+#: inc/woocommerce/order-language.php:537
 msgid "Delivery by truck"
 msgstr "Lieferung per LKW"
 
-#: inc/woocommerce/order-language.php:531
+#: inc/woocommerce/order-language.php:538
 msgid "Express delivery"
 msgstr "Expresslieferung"
 
-#: inc/woocommerce/order-language.php:532
+#: inc/woocommerce/order-language.php:539
 msgid "Standard delivery"
 msgstr "Standardlieferung"
 
-#: inc/woocommerce/order-language.php:534
+#: inc/woocommerce/order-language.php:541
 msgid "Free delivery"
 msgstr "Kostenlose Lieferung"
 
-#: inc/woocommerce/order-language.php:535
+#: inc/woocommerce/order-language.php:542
 msgid "Flat rate"
 msgstr "Pauschale"
 
-#: inc/woocommerce/order-language.php:536
+#: inc/woocommerce/order-language.php:543
 msgid "Local pickup"
 msgstr "Abholung vor Ort"
 
-#: inc/woocommerce/order-language.php:537
+#: inc/woocommerce/order-language.php:544
 msgid "Pickup at the depot"
 msgstr "Abholung im Lager"
 
-#: inc/woocommerce/order-language.php:538
+#: inc/woocommerce/order-language.php:545
 msgid "Delivery with crane truck"
 msgstr "Lieferung mit Kranwagen"
 
-#: inc/woocommerce/order-language.php:539
+#: inc/woocommerce/order-language.php:546
 msgid "Delivery on pallet"
 msgstr "Lieferung auf Palette"
 
-#: inc/woocommerce/order-language.php:540
+#: inc/woocommerce/order-language.php:547
 msgid "Bank transfer"
 msgstr "Banküberweisung"
 
-#: inc/woocommerce/order-language.php:541
+#: inc/woocommerce/order-language.php:548
 msgid "Direct bank transfer"
 msgstr "Direkte Banküberweisung"
 
-#: inc/woocommerce/order-language.php:542
+#: inc/woocommerce/order-language.php:549
 msgid "Check payments"
 msgstr "Scheckzahlungen"
 
-#: inc/woocommerce/order-language.php:543
+#: inc/woocommerce/order-language.php:550
 msgid "Wire transfer"
 msgstr "Überweisung"
 
-#: inc/woocommerce/order-language.php:544
+#: inc/woocommerce/order-language.php:551
 msgid "Cash on delivery"
 msgstr "Nachnahme"
 
-#: inc/woocommerce/order-language.php:545
+#: inc/woocommerce/order-language.php:552
 msgid "Payment on pickup"
 msgstr "Zahlung bei Abholung"
 
@@ -3154,56 +3154,56 @@ msgstr "Sale"
 msgid "New"
 msgstr "Neu"
 
-#: inc/woocommerce/product-translations.php:389 inc/woocommerce/product-translations.php:539
+#: inc/woocommerce/product-translations.php:404 inc/woocommerce/product-translations.php:554
 msgid "Translations"
 msgstr "Übersetzungen"
 
-#: inc/woocommerce/product-translations.php:407
+#: inc/woocommerce/product-translations.php:422
 msgid "A translation plugin (WPML, Polylang, TranslatePress) is active or the language switcher is turned off: translate your products with the plugin."
 msgstr "Ein Übersetzungs-Plugin (WPML, Polylang, TranslatePress) ist aktiv oder der Sprachumschalter ist ausgeschaltet: Übersetzen Sie Ihre Produkte mit dem Plugin."
 
-#: inc/woocommerce/product-translations.php:409
+#: inc/woocommerce/product-translations.php:424
 msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main product text."
 msgstr "Text für Besucher, die oben auf der Seite diese Sprache gewählt haben. Lassen Sie ein Feld leer, um den Haupttext des Produkts anzuzeigen."
 
-#: inc/woocommerce/product-translations.php:417
+#: inc/woocommerce/product-translations.php:432
 msgid "Product name"
 msgstr "Produktname"
 
-#: inc/woocommerce/product-translations.php:424
+#: inc/woocommerce/product-translations.php:439
 msgid "Short description"
 msgstr "Kurzbeschreibung"
 
-#: inc/woocommerce/product-translations.php:432
+#: inc/woocommerce/product-translations.php:447
 msgid "Description"
 msgstr "Beschreibung"
 
-#: inc/woocommerce/product-translations.php:436
+#: inc/woocommerce/product-translations.php:451
 msgid "HTML allowed (paragraphs, lists, tables…)."
 msgstr "HTML erlaubt (Absätze, Listen, Tabellen …)."
 
 #. translators:%s: language name.
-#: inc/woocommerce/product-translations.php:481
+#: inc/woocommerce/product-translations.php:496
 msgid "Name — %s"
 msgstr "Name – %s"
 
-#: inc/woocommerce/product-translations.php:491
+#: inc/woocommerce/product-translations.php:506
 msgid "Name shown to visitors who chose this language. Leave empty to show the main name."
 msgstr "Name für Besucher, die diese Sprache gewählt haben. Leer lassen, um den Hauptnamen anzuzeigen."
 
-#: inc/woocommerce/product-translations.php:551
+#: inc/woocommerce/product-translations.php:566
 msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main text."
 msgstr "Text für Besucher, die oben auf der Seite diese Sprache gewählt haben. Lassen Sie ein Feld leer, um den Haupttext anzuzeigen."
 
-#: inc/woocommerce/product-translations.php:551
+#: inc/woocommerce/product-translations.php:566
 msgid "HTML and blocks are allowed."
 msgstr "HTML und Blöcke sind erlaubt."
 
-#: inc/woocommerce/product-translations.php:561 inc/customizer/config.php:227 inc/customizer/config.php:245 inc/customizer/config.php:313
+#: inc/woocommerce/product-translations.php:576 inc/customizer/config.php:227 inc/customizer/config.php:245 inc/customizer/config.php:313
 msgid "Title"
 msgstr "Titel"
 
-#: inc/woocommerce/product-translations.php:568 inc/customizer/config.php:91 inc/customizer/config.php:246 inc/customizer/config.php:314
+#: inc/woocommerce/product-translations.php:583 inc/customizer/config.php:91 inc/customizer/config.php:246 inc/customizer/config.php:314
 msgid "Text"
 msgstr "Text"
 
@@ -3475,7 +3475,7 @@ msgstr "Brennholz bestellen"
 msgid "Unit converter"
 msgstr "Einheiten-Umrechner"
 
-#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:232
+#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:379 inc/firewood/demo-catalog.php:232
 msgid "Quantity"
 msgstr "Menge"
 
@@ -3600,7 +3600,7 @@ msgstr "Kontakt"
 msgid "Add your contact details in the Customizer"
 msgstr "Fügen Sie Ihre Kontaktdaten im Customizer hinzu"
 
-#: template-parts/header/cart-drawer.php:20 inc/page-hero.php:178
+#: template-parts/header/cart-drawer.php:20 inc/page-hero.php:183
 msgid "Your cart"
 msgstr "Ihr Warenkorb"
 
@@ -3612,7 +3612,7 @@ msgstr "Warenkorb schließen"
 msgid "Back to cart"
 msgstr "Zurück zum Warenkorb"
 
-#: template-parts/header/header-checkout.php:21 inc/page-hero.php:189
+#: template-parts/header/header-checkout.php:21 inc/page-hero.php:194
 msgid "Secure checkout"
 msgstr "Sichere Kasse"
 

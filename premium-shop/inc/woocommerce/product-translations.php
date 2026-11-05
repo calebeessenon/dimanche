@@ -37,6 +37,12 @@ function premium_shop_pt_fields() {
  */
 function premium_shop_pt_language() {
 	static $lang = null;
+	// E-mails sent in another language (order language, shop language for the
+	// shop's own e-mails) show the product names in that language.
+	if ( ! empty( $GLOBALS['premium_shop_switched_language'] ) ) {
+		$switched = (string) $GLOBALS['premium_shop_switched_language'];
+		return function_exists( 'premium_shop_default_language' ) && premium_shop_default_language() === $switched ? '' : $switched;
+	}
 	if ( null !== $lang ) {
 		return $lang;
 	}
@@ -246,7 +252,16 @@ add_filter( 'posts_search', 'premium_shop_pt_search', 20, 2 );
  * @return string[]
  */
 function premium_shop_pt_taxonomies() {
-	return apply_filters( 'premium_shop_pt_taxonomies', array( 'product_cat', 'product_tag' ) );
+	static $attributes = null;
+	$taxonomies = array( 'product_cat', 'product_tag' );
+	// Attribute terms (e.g. "1 RM" → "1 stère") translated by the sample catalogue.
+	if ( null === $attributes && function_exists( 'wc_get_attribute_taxonomy_names' ) && did_action( 'woocommerce_after_register_taxonomy' ) ) {
+		$attributes = wc_get_attribute_taxonomy_names();
+	}
+	if ( $attributes ) {
+		$taxonomies = array_merge( $taxonomies, $attributes );
+	}
+	return apply_filters( 'premium_shop_pt_taxonomies', $taxonomies );
 }
 
 /**

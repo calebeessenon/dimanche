@@ -238,9 +238,11 @@ function premium_shop_builtin_bootstrap() {
 			setcookie( 'ps_lang', $lang, time() + YEAR_IN_SECONDS, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, is_ssl(), true );
 			$_COOKIE['ps_lang'] = $lang;
 		}
-		// Readable marker: the language was chosen, browser detection must not override it.
-		if ( ! isset( $_COOKIE['ps_lc'] ) ) {
-			setcookie( 'ps_lc', '1', time() + YEAR_IN_SECONDS, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, is_ssl(), false );
+		// Readable copy of the choice: browser detection must not override it,
+		// and pages served from a cache (same HTML for everyone) follow it.
+		$chosen = isset( $_COOKIE['ps_lc'] ) ? sanitize_key( wp_unslash( $_COOKIE['ps_lc'] ) ) : '';
+		if ( $chosen !== $lang ) {
+			setcookie( 'ps_lc', $lang, time() + YEAR_IN_SECONDS, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, is_ssl(), false );
 		}
 	}
 
@@ -448,8 +450,9 @@ function premium_shop_bcp47( $locale ) {
  * Runs in the browser (page caches serve the same HTML to everyone): when no
  * language was chosen yet, the first supported language of the browser is
  * picked (English for unsupported ones, when offered) and the page reloads
- * once in that language. The choice is then remembered; the language switcher
- * always wins.
+ * once in that language. The choice is then remembered in the readable
+ * "ps_lc" cookie, so a cached page in another language is reloaded once in
+ * the chosen one; the language switcher (?lang=) always wins.
  */
 function premium_shop_browser_language_script() {
 	if ( is_admin() || ! premium_shop_builtin_applies() || ! apply_filters( 'premium_shop_browser_language', true ) ) {
@@ -470,9 +473,18 @@ function premium_shop_browser_language_script() {
 <script id="ps-browser-language">
 (function (c) {
 	try {
-		if (/(^|; )ps_lc=/.test(document.cookie) || /[?&]lang=/.test(location.search) || /bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) { return; }
-		var mark = 'ps_lc=1;path=/;max-age=31536000;samesite=lax' + (c.secure ? ';secure' : '');
-		if (c.current !== c.default) { document.cookie = mark; return; }
+		if (/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) { return; }
+		var remember = function (code) { document.cookie = 'ps_lc=' + code + ';path=/;max-age=31536000;samesite=lax' + (c.secure ? ';secure' : ''); };
+		var go = function (code) { var url = new URL(location.href); url.searchParams.set('lang', code); location.replace(url.toString()); };
+		var asked = /[?&]lang=([a-z]{2})/.exec(location.search);
+		if (asked) { if (c.codes.indexOf(asked[1]) > -1) { remember(asked[1]); } return; }
+		var chosen = /(?:^|; )ps_lc=([^;]*)/.exec(document.cookie);
+		if (chosen) {
+			// A page cache may serve this page in another language than the chosen one.
+			if (c.codes.indexOf(chosen[1]) > -1 && chosen[1] !== c.current) { go(chosen[1]); }
+			return;
+		}
+		if (c.current !== c.default) { remember(c.current); return; }
 		var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
 		var pick = '';
 		for (var i = 0; i < langs.length && !pick; i++) {
@@ -480,12 +492,8 @@ function premium_shop_browser_language_script() {
 			if (c.codes.indexOf(code) > -1) { pick = code; }
 		}
 		pick = pick || c.fallback;
-		document.cookie = mark;
-		if (pick !== c.current) {
-			var url = new URL(location.href);
-			url.searchParams.set('lang', pick);
-			location.replace(url.toString());
-		}
+		remember(pick);
+		if (pick !== c.current) { go(pick); }
 	} catch (e) {}
 })(<?php echo wp_json_encode( $config ); ?>);
 </script>

@@ -581,6 +581,11 @@ function premium_shop_setup_menus() {
 	}
 
 	set_theme_mod( 'nav_menu_locations', $locations );
+
+	// Terms of use and other legal pages that are already published.
+	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {
+		premium_shop_legal_menu_sync();
+	}
 }
 
 /**

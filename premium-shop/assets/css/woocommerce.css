@@ -1523,11 +1523,13 @@ form.cart {
 form.cart .single_add_to_cart_button {
 	flex: 1 1 150px;
 	min-height: 54px;
+	white-space: nowrap; /* "Ajouter au panier", "Añadir al carrito": move to the next line instead of wrapping */
 }
 
 form.cart .ps-buy-now {
 	flex: 1 1 100%;
 	min-height: 54px;
+	white-space: nowrap;
 }
 
 @media (min-width: 600px) {
@@ -1940,11 +1942,13 @@ table.variations select {
 .woocommerce-variation-add-to-cart .single_add_to_cart_button {
 	flex: 1 1 150px;
 	min-height: 54px;
+	white-space: nowrap; /* "Ajouter au panier", "Añadir al carrito": move to the next line instead of wrapping */
 }
 
 .woocommerce-variation-add-to-cart .ps-buy-now {
 	flex: 1 1 100%;
 	min-height: 54px;
+	white-space: nowrap;
 }
 
 @media (min-width: 600px) {

@@ -332,3 +332,27 @@ function premium_shop_i18n_slogan( $value ) {
 	return $eyebrow ? $eyebrow : $value;
 }
 add_filter( 'option_blogdescription', 'premium_shop_i18n_slogan', 20 );
+
+/**
+ * Date format in the visitor's (or e-mail's) language when the site keeps
+ * one of WordPress' standard formats: "5 novembre 2026", "5 de noviembre de
+ * 2026", "November 5, 2026", "5. November 2026" instead of the format of the
+ * shop language ("novembre 5, 2026").
+ *
+ * @param string $format Date format.
+ * @return string
+ */
+function premium_shop_i18n_date_format( $format ) {
+	$formats = array(
+		'de' => 'j. F Y',
+		'fr' => 'j F Y',
+		'es' => 'j \d\e F \d\e Y',
+		'en' => 'F j, Y',
+	);
+	if ( ! in_array( $format, $formats, true ) || ( is_admin() && ! wp_doing_ajax() && empty( $GLOBALS['premium_shop_switched_language'] ) ) ) {
+		return $format;
+	}
+	$lang = premium_shop_i18n_target();
+	return '' !== $lang && isset( $formats[ $lang ] ) ? $formats[ $lang ] : $format;
+}
+add_filter( 'option_date_format', 'premium_shop_i18n_date_format', 20 );

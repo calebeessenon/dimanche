@@ -111,6 +111,7 @@ function premium_shop_switch_language( $lang ) {
 	$GLOBALS['premium_shop_locale_switched'] = (bool) switch_to_locale( $locale );
 	premium_shop_load_translations( $locale );
 	$GLOBALS['premium_shop_switched_language'] = $lang;
+	do_action( 'premium_shop_language_switched', $lang );
 	return true;
 }
 
@@ -145,6 +146,7 @@ function premium_shop_restore_language() {
 	}
 	unset( $GLOBALS['premium_shop_locale_switched'] );
 	premium_shop_load_translations( determine_locale() );
+	do_action( 'premium_shop_language_switched', '' );
 }
 
 /**
@@ -189,7 +191,12 @@ function premium_shop_email_switch_language( $recipient, $object = null, $email 
 	if ( premium_shop_switch_language( $lang ) ) {
 		premium_shop_email_switched( $email, true );
 		// WooCommerce keeps the default subject/heading of the first e-mail
-		// sent in its settings cache: reload them for this language.
+		// sent in its settings cache, and the default texts (e.g. "additional
+		// content") in its form fields, built in the visitor's language:
+		// rebuild both for this language.
+		if ( method_exists( $email, 'init_form_fields' ) ) {
+			$email->init_form_fields();
+		}
 		$email->init_settings();
 	}
 	return $recipient;
@@ -579,3 +586,44 @@ function premium_shop_translate_wc_block_texts( $html, $block ) {
 	);
 }
 add_filter( 'render_block', 'premium_shop_translate_wc_block_texts', 20, 2 );
+
+/**
+ * E-mails in another language than the one of the checkout (the shop's
+ * "new order" e-mail for an order placed in French, or a French e-mail sent
+ * from the German dashboard): product names and the payment method, stored on
+ * the order in the checkout language, are shown in the e-mail's language.
+ *
+ * @param string             $name Item name (may contain a link).
+ * @param WC_Order_Item|null $item Order item.
+ * @return string
+ */
+function premium_shop_email_item_name( $name, $item = null ) {
+	if ( empty( $GLOBALS['premium_shop_switched_language'] ) || ! $item instanceof WC_Order_Item_Product ) {
+		return $name;
+	}
+	$product = $item->get_product();
+	if ( ! $product ) {
+		return $name;
+	}
+	$stored     = $item->get_name();
+	$translated = $product->get_name();
+	if ( '' === $stored || '' === $translated || $stored === $translated ) {
+		return $name;
+	}
+	return str_replace( esc_html( $stored ), esc_html( $translated ), str_replace( $stored, $translated, $name ) );
+}
+add_filter( 'woocommerce_order_item_name', 'premium_shop_email_item_name', 20, 2 );
+
+/**
+ * Payment method title of an order in the e-mail's language.
+ *
+ * @param string $title Title stored on the order.
+ * @return string
+ */
+function premium_shop_email_payment_title( $title ) {
+	if ( empty( $GLOBALS['premium_shop_switched_language'] ) || ! is_string( $title ) || '' === $title ) {
+		return $title;
+	}
+	return premium_shop_translate_setting_label( $title );
+}
+add_filter( 'woocommerce_order_get_payment_method_title', 'premium_shop_email_payment_title', 20 );

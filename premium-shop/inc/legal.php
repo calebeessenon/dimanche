@@ -254,3 +254,23 @@ function premium_shop_legal_menu_sync() {
 	}
 }
 add_action( 'premium_shop_upgrade_1_6_1', 'premium_shop_legal_menu_sync' );
+
+/**
+ * Link a legal page in the footer as soon as it is published (the legal
+ * notice, terms and withdrawal pages are created as drafts to be completed).
+ *
+ * @param string  $new_status New status.
+ * @param string  $old_status Old status.
+ * @param WP_Post $post       Page.
+ */
+function premium_shop_legal_menu_on_publish( $new_status, $old_status, $post ) {
+	if ( 'publish' !== $new_status || 'publish' === $old_status || 'page' !== $post->post_type ) {
+		return;
+	}
+	$legal = in_array( $post->post_name, array( 'impressum', 'agb', 'widerrufsbelehrung', 'nutzungsbedingungen' ), true )
+		|| (int) get_option( 'wp_page_for_privacy_policy' ) === (int) $post->ID;
+	if ( $legal ) {
+		premium_shop_legal_menu_sync();
+	}
+}
+add_action( 'transition_post_status', 'premium_shop_legal_menu_on_publish', 10, 3 );

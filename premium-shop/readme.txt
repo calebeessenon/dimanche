@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,24 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.1 =
+* First visit in the browser's language (FR, ES, EN; other languages fall back
+  to English): one reload at most, never for search engines, the language
+  switcher always wins. The choice now also works behind page caches that
+  serve the same page to everyone (remembered in the "ps_lc" cookie).
+* E-mails: the shop's German "new order" e-mail for an order placed in another
+  language shows the product names, payment method, truck question and
+  WooCommerce's default texts in German; dates follow the visitor's language
+  ("5 novembre 2026").
+* Sample firewood catalogue: product names, descriptions, quantities ("1 stère")
+  and filter names are now created in every language.
+* Footer "Legal" menu: terms of use added by the setup assistant, and legal
+  pages are linked as soon as they are published.
+* Product page: "Add to cart" / "Buy now" no longer break over two lines in
+  French and Spanish.
+* Gaming style: no horizontal scroll caused by the tilted marquee; no PHP
+  notice during the CSV product import.
 
 = 2.3.0 =
 * Gaming catalogue rewritten for the holiday season: 26 products (PlayStation 5

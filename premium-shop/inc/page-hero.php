@@ -67,10 +67,15 @@ function premium_shop_hero_photo_pool() {
 /**
  * Forget the cached photos when products change.
  *
- * @param int $post_id Post ID.
+ * @param int|WC_Product $post_id Post ID (or the product object passed by the CSV importer).
  */
 function premium_shop_hero_flush_pool( $post_id = 0 ) {
-	if ( ! $post_id || 'product' === get_post_type( $post_id ) ) {
+	if ( is_object( $post_id ) ) {
+		// woocommerce_product_import_inserted_product_object passes the product.
+		delete_transient( 'premium_shop_hero_pool' );
+		return;
+	}
+	if ( ! $post_id || 'product' === get_post_type( (int) $post_id ) ) {
 		delete_transient( 'premium_shop_hero_pool' );
 	}
 }

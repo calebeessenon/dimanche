@@ -231,6 +231,22 @@ function premium_shop_fw_create_catalogue( $publish = false ) {
 	list( $length_attr_id, $length_tax ) = premium_shop_fw_attribute( $t( 'Log length' ), $length_terms );
 	list( $qty_attr_id, $qty_tax )       = premium_shop_fw_attribute( $t( 'Quantity' ), $qty_terms );
 
+	// Quantity terms ("1 RM") in the other languages ("1 stère", "1 stacked m³"…).
+	if ( $qty_tax ) {
+		foreach ( array_keys( premium_shop_languages() ) as $code ) {
+			if ( premium_shop_default_language() === $code ) {
+				continue;
+			}
+			$unit_in = premium_shop_translate_in( 'stacked m³', premium_shop_locale_for( $code ) );
+			foreach ( $data['quantities'] as $qty ) {
+				$term = get_term_by( 'name', number_format_i18n( $qty ) . ' ' . $unit, $qty_tax );
+				if ( $term ) {
+					update_term_meta( $term->term_id, '_ps_name_' . $code, number_format_i18n( $qty ) . ' ' . $unit_in );
+				}
+			}
+		}
+	}
+
 	$created = 0;
 
 	foreach ( $data['products'] as $def ) {
@@ -291,6 +307,7 @@ function premium_shop_fw_create_catalogue( $publish = false ) {
 		$product->update_meta_data( '_ps_drying', 'kiln' );
 
 		premium_shop_fw_auto_texts( $product );
+		premium_shop_fw_catalogue_translations( $product, $def['name'] );
 		$product_id = $product->save();
 
 		if ( $product->is_type( 'variable' ) && $length_tax && $qty_tax ) {
@@ -324,6 +341,47 @@ function premium_shop_fw_create_catalogue( $publish = false ) {
 
 	return $created;
 }
+
+/**
+ * Names and texts of a sample product in the other languages of the shop.
+ *
+ * @param WC_Product $product Product (not saved yet).
+ * @param string     $name    English source name.
+ */
+function premium_shop_fw_catalogue_translations( $product, $name ) {
+	foreach ( array_keys( premium_shop_languages() ) as $code ) {
+		if ( premium_shop_default_language() === $code ) {
+			continue;
+		}
+		$locale = premium_shop_locale_for( $code );
+		$product->update_meta_data( '_ps_name_' . $code, premium_shop_translate_in( $name, $locale ) );
+		$texts = premium_shop_fw_generated_texts( $product, $locale );
+		if ( $texts ) {
+			$product->update_meta_data( '_ps_short_' . $code, $texts['short'] );
+			$product->update_meta_data( '_ps_desc_' . $code, $texts['desc'] );
+		}
+	}
+}
+
+/**
+ * Attribute names of the sample catalogue ("Log length", "Quantity") in the
+ * visitor's language: they are stored in the shop language.
+ *
+ * @param string $label Attribute label.
+ * @return string
+ */
+function premium_shop_fw_attribute_label( $label ) {
+	if ( ! function_exists( 'premium_shop_builtin_applies' ) || ! premium_shop_builtin_applies() || premium_shop_current_language() === premium_shop_default_language() ) {
+		return $label;
+	}
+	foreach ( array( 'Log length', 'Quantity' ) as $source ) {
+		if ( premium_shop_fw_t( $source ) === $label ) {
+			return 'Log length' === $source ? __( 'Log length', 'premium-shop' ) : __( 'Quantity', 'premium-shop' );
+		}
+	}
+	return $label;
+}
+add_filter( 'woocommerce_attribute_label', 'premium_shop_fw_attribute_label' );
 
 /**
  * Unit label in the shop's default language.

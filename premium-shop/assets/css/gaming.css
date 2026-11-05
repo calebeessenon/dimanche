@@ -642,6 +642,11 @@
 	overflow: hidden;
 }
 
+/* The tilted marquee is wider than the screen: clip it (no horizontal scroll). */
+.ps-preset-gaming .ps-main {
+	overflow-x: clip;
+}
+
 .ps-gmarquee__track {
 	display: flex;
 	align-items: center;

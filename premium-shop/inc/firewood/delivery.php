@@ -199,6 +199,28 @@ function premium_shop_register_truck_field() {
 add_action( 'woocommerce_init', 'premium_shop_register_truck_field' );
 
 /**
+ * E-mails sent in another language than the visitor's (the shop's German
+ * "new order" e-mail for an order placed in French): register the field again
+ * so that its question and answer are shown in the e-mail's language.
+ */
+function premium_shop_relabel_truck_field() {
+	if ( ! did_action( 'woocommerce_init' ) || ! class_exists( 'Automattic\\WooCommerce\\Blocks\\Package' ) || ! class_exists( 'Automattic\\WooCommerce\\Blocks\\Domain\\Services\\CheckoutFields' ) ) {
+		return;
+	}
+	try {
+		$controller = \Automattic\WooCommerce\Blocks\Package::container()->get( \Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields::class );
+	} catch ( \Exception $e ) {
+		return;
+	}
+	if ( ! is_object( $controller ) || ! method_exists( $controller, 'deregister_checkout_field' ) ) {
+		return;
+	}
+	$controller->deregister_checkout_field( 'premium-shop/truck-access' );
+	premium_shop_register_truck_field();
+}
+add_action( 'premium_shop_language_switched', 'premium_shop_relabel_truck_field' );
+
+/**
  * Classic checkout: add the field to the order notes group.
  *
  * @param array $fields Checkout fields.
