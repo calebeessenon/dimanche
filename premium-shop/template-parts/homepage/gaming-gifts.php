@@ -12,11 +12,11 @@ $premium_shop_shop   = premium_shop_shop_url();
 $premium_shop_symbol = premium_shop_is_wc() ? html_entity_decode( get_woocommerce_currency_symbol(), ENT_QUOTES, 'UTF-8' ) : '';
 $premium_shop_ranges = array(
 	/* translators: 1: amount, 2: currency. */
-	array( 0, 100, sprintf( __( 'Under %1$s %2$s', 'premium-shop' ), '100', $premium_shop_symbol ), __( 'Stocking fillers', 'premium-shop' ), 'g-gift--red' ),
-	array( 100, 300, sprintf( '100 – 300 %s', $premium_shop_symbol ), __( 'Controllers & headsets', 'premium-shop' ), 'g-gift--green' ),
-	array( 300, 600, sprintf( '300 – 600 %s', $premium_shop_symbol ), __( 'Consoles', 'premium-shop' ), 'g-gift--violet' ),
+	array( 0, 100, sprintf( __( 'Under %1$s %2$s', 'premium-shop' ), '100', $premium_shop_symbol ), __( 'Gift cards, games, mini speakers', 'premium-shop' ), 'g-gift--red' ),
+	array( 100, 300, sprintf( '100 – 300 %s', $premium_shop_symbol ), __( 'Controllers, JBL speakers, headsets', 'premium-shop' ), 'g-gift--green' ),
+	array( 300, 600, sprintf( '300 – 600 %s', $premium_shop_symbol ), __( 'PS5 Slim, Nintendo Switch', 'premium-shop' ), 'g-gift--violet' ),
 	/* translators: 1: amount, 2: currency. */
-	array( 600, 0, sprintf( __( '%1$s %2$s and more', 'premium-shop' ), '600', $premium_shop_symbol ), __( 'The big surprise', 'premium-shop' ), 'g-gift--gold' ),
+	array( 600, 0, sprintf( __( '%1$s %2$s and more', 'premium-shop' ), '600', $premium_shop_symbol ), __( 'PS5 Pro, graphics cards', 'premium-shop' ), 'g-gift--gold' ),
 );
 ?>
 <section class="ps-section g-gifts" aria-labelledby="g-gifts-title">

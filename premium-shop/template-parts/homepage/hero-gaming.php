@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $premium_shop_btn_url  = premium_shop_option( 'hero_button_url' ) ? premium_shop_option( 'hero_button_url' ) : premium_shop_shop_url();
 $premium_shop_btn2_url = premium_shop_option( 'hero_button2_url' ) ? premium_shop_option( 'hero_button2_url' ) : add_query_arg( 'on_sale', '1', premium_shop_shop_url() );
 $premium_shop_btn2     = premium_shop_text( 'hero_button2_text' );
-$premium_shop_words    = apply_filters( 'premium_shop_gaming_hero_words', array( 'Nintendo Switch 2', 'PlayStation 5', 'GeForce RTX', 'Radeon RX' ) );
+$premium_shop_words    = apply_filters( 'premium_shop_gaming_hero_words', array( 'PlayStation 5 Slim', 'Nintendo Switch 2', 'DualSense', 'JBL Flip 6', 'GeForce RTX' ) );
 $premium_shop_stage    = premium_shop_gaming_stage_images();
 $premium_shop_days     = absint( premium_shop_option( 'returns_days' ) );
 $premium_shop_stats    = array(

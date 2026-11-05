@@ -10,8 +10,8 @@ defined( 'ABSPATH' ) || exit;
 $premium_shop_rows = apply_filters(
 	'premium_shop_gaming_marquee',
 	array(
-		array( 'Nintendo Switch 2', 'PlayStation 5', 'GeForce RTX', 'Radeon RX', 'DualSense', 'Switch OLED' ),
-		array( __( 'Consoles', 'premium-shop' ), __( 'Graphics cards', 'premium-shop' ), __( 'Controllers', 'premium-shop' ), __( 'Headsets', 'premium-shop' ), __( 'Games', 'premium-shop' ), __( 'Accessories', 'premium-shop' ) ),
+		array( 'PlayStation 5 Slim', 'Nintendo Switch 2', 'DualSense', 'JBL Flip 6', 'Mario Kart World', 'GeForce RTX' ),
+		array( __( 'Consoles', 'premium-shop' ), __( 'Controllers', 'premium-shop' ), __( 'Speakers', 'premium-shop' ), __( 'Gift cards', 'premium-shop' ), __( 'Games', 'premium-shop' ), __( 'Graphics cards', 'premium-shop' ) ),
 	)
 );
 ?>

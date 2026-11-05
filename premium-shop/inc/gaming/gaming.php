@@ -77,6 +77,7 @@ function premium_shop_gaming_fallbacks() {
 		'hero_button_text'     => __( 'Shop now', 'premium-shop' ),
 		'hero_button2_text'    => __( 'Current deals', 'premium-shop' ),
 		'title_categories'     => __( 'Shop by platform', 'premium-shop' ),
+		'company_about'        => __( 'Consoles, controllers, speakers and graphics cards from official channels — fair prices, honest advice and fast delivery in Switzerland.', 'premium-shop' ),
 		'title_bestsellers'    => __( 'Bestsellers', 'premium-shop' ),
 		'title_new'            => __( 'New arrivals', 'premium-shop' ),
 		'title_sale'           => __( 'Deals', 'premium-shop' ),
@@ -94,7 +95,6 @@ function premium_shop_gaming_fallbacks() {
 		'benefit_4_text'       => __( 'Advice from real players', 'premium-shop' ),
 		'newsletter_title'     => __( 'Drops & deals first', 'premium-shop' ),
 		'newsletter_text'      => __( 'Be the first to know about new consoles, restocks and limited deals. Unsubscribe at any time.', 'premium-shop' ),
-		'company_about'        => __( 'Consoles, graphics cards and accessories from official channels — tested, fairly priced and shipped fast.', 'premium-shop' ),
 		'delivery_time'        => __( 'Delivery within 1–3 business days', 'premium-shop' ),
 		'warranty_text'        => __( '2-year manufacturer warranty', 'premium-shop' ),
 		'title_faq'            => __( 'Frequently asked questions', 'premium-shop' ),
@@ -117,6 +117,9 @@ function premium_shop_gaming_faq( $items ) {
 		array( __( 'Which graphics card suits my PC?', 'premium-shop' ), __( 'Check the length of the card, your power supply (wattage and connectors) and your screen resolution. Send us your configuration — we gladly recommend the right model.', 'premium-shop' ) ),
 		array( __( 'Can I return a product?', 'premium-shop' ), __( 'You can return unused products in their original packaging within 14 days. Defective products are repaired or replaced under warranty.', 'premium-shop' ) ),
 		array( __( 'Which payment methods do you accept?', 'premium-shop' ), __( 'TWINT, credit and debit cards, PayPal, Apple Pay, Google Pay and bank transfer — all payments are encrypted.', 'premium-shop' ) ),
+		array( __( 'Which console should I give a child?', 'premium-shop' ), __( 'For children and families, Nintendo Switch 2 or Switch Lite are ideal: robust, easy to use and with parental controls. Teenagers usually prefer the PlayStation 5 Slim. Not sure? Write to us — we gladly advise you.', 'premium-shop' ) ),
+		array( __( 'Can I give a gift card?', 'premium-shop' ), __( 'Yes: PlayStation Store and Nintendo eShop gift cards are the perfect last-minute present — the recipient chooses their own games. They work with accounts set to Switzerland.', 'premium-shop' ) ),
+		array( __( 'Can you wrap my order as a gift?', 'premium-shop' ), __( 'Add a note to your order with your gift message: we include it free of charge, and the invoice is not put in the parcel on request.', 'premium-shop' ) ),
 		array( __( 'Do consoles work with games from other regions?', 'premium-shop' ), __( 'Current Nintendo and PlayStation consoles play games from all regions. Online services and some content may depend on your account region.', 'premium-shop' ) ),
 	);
 }
@@ -137,79 +140,39 @@ function premium_shop_gaming_features( $items ) {
 add_filter( 'premium_shop_features_items', 'premium_shop_gaming_features' );
 
 /**
- * Sample catalogue.
+ * Sample catalogue (consoles, controllers, speakers, graphics cards, games
+ * and gift cards), with texts in every language — see catalogue-data.php.
  *
  * @return array
  */
 function premium_shop_gaming_catalogue() {
-	return array(
-		'categories' => array(
-			'nintendo'    => array( 'Nintendo', 'nintendo-hybrid.jpg', 'Nintendo Switch consoles, controllers and games — play at home and on the go.' ),
-			'playstation' => array( 'PlayStation 5', 'console-tower.jpg', 'PlayStation 5 consoles and DualSense controllers for next-generation gaming.' ),
-			'gpu'         => array( 'Graphics cards', 'gpu-triple.jpg', 'Graphics cards for gaming, streaming and creative work — from Full HD to 4K.' ),
-			'accessories' => array( 'Accessories', 'headset.jpg', 'Headsets, controllers and everything else that makes gaming better.' ),
-		),
-		'products'   => array(
-			array( 'sku' => 'GM-NSW2', 'name' => 'Nintendo Switch 2 console', 'short' => 'The new hybrid console: bigger screen, more power — play on the TV or on the go.', 'cat' => 'nintendo', 'image' => 'nintendo-hybrid.jpg', 'price' => 499 ),
-			array( 'sku' => 'GM-NSW-OLED', 'name' => 'Nintendo Switch OLED console – neon edition', 'short' => '7-inch OLED screen, stand and dock included.', 'cat' => 'nintendo', 'image' => 'nintendo-hybrid-alt.jpg', 'price' => 349, 'sale' => 319 ),
-			array( 'sku' => 'GM-NSW-LITE', 'name' => 'Nintendo Switch Lite – turquoise', 'short' => 'Compact and light, made for gaming on the go.', 'cat' => 'nintendo', 'image' => 'nintendo-lite.jpg', 'price' => 219 ),
-			array( 'sku' => 'GM-PS5', 'name' => 'PlayStation 5 console', 'short' => 'Ultra-fast SSD, 4K gaming and haptic feedback with the DualSense controller.', 'cat' => 'playstation', 'image' => 'console-tower.jpg', 'price' => 549 ),
-			array( 'sku' => 'GM-PS5-PRO', 'name' => 'PlayStation 5 Pro console', 'short' => 'More graphics power, 2 TB SSD — for the best picture quality.', 'cat' => 'playstation', 'image' => 'console-tower.jpg', 'price' => 799 ),
-			array( 'sku' => 'GM-PS5-PAD-W', 'name' => 'DualSense wireless controller – white', 'short' => 'Haptic feedback and adaptive triggers.', 'cat' => 'playstation', 'image' => 'gamepad.jpg', 'price' => 74.9 ),
-			array( 'sku' => 'GM-PS5-PAD-B', 'name' => 'DualSense wireless controller – midnight black', 'short' => 'Haptic feedback and adaptive triggers.', 'cat' => 'playstation', 'image' => 'gamepad-dark.jpg', 'price' => 74.9, 'sale' => 64.9 ),
-			array( 'sku' => 'GM-RTX5070', 'name' => 'GeForce RTX 5070 graphics card, 12 GB', 'short' => 'Smooth 1440p gaming with ray tracing and DLSS.', 'cat' => 'gpu', 'image' => 'gpu-triple.jpg', 'price' => 599 ),
-			array( 'sku' => 'GM-RTX5080', 'name' => 'GeForce RTX 5080 graphics card, 16 GB', 'short' => 'High-end 4K gaming, triple-fan cooling and RGB lighting.', 'cat' => 'gpu', 'image' => 'gpu-triple-rgb.jpg', 'price' => 1199, 'sale' => 1099 ),
-			array( 'sku' => 'GM-RX9070XT', 'name' => 'Radeon RX 9070 XT graphics card, 16 GB', 'short' => 'Excellent value for 1440p and 4K, quiet dual-fan design.', 'cat' => 'gpu', 'image' => 'gpu-dual-white.jpg', 'price' => 699 ),
-			array( 'sku' => 'GM-HEADSET', 'name' => 'Wireless gaming headset', 'short' => '3D audio, noise-cancelling microphone, 30 hours of battery life.', 'cat' => 'accessories', 'image' => 'headset.jpg', 'price' => 129 ),
-			array( 'sku' => 'GM-GAMES', 'name' => 'Game bundle – 3 bestsellers of your choice', 'short' => 'Pick three top titles for your console and save.', 'cat' => 'accessories', 'image' => 'games.jpg', 'price' => 159, 'sale' => 139 ),
-		),
-	);
+	static $data = null;
+	if ( null === $data ) {
+		$data = include __DIR__ . '/catalogue-data.php';
+	}
+	return apply_filters( 'premium_shop_gaming_catalogue', $data );
 }
 
 /**
- * Source strings of the catalogue (only for the translation tools).
+ * Text of the catalogue in a language (falls back to English, then German).
  *
- * @return array
+ * @param array  $texts Texts by language code.
+ * @param string $code  Language code.
+ * @return string
  */
-function premium_shop_gaming_catalogue_i18n() {
-	return array(
-		__( 'Nintendo', 'premium-shop' ),
-		__( 'PlayStation 5', 'premium-shop' ),
-		__( 'Graphics cards', 'premium-shop' ),
-		__( 'Accessories', 'premium-shop' ),
-		__( 'Nintendo Switch consoles, controllers and games — play at home and on the go.', 'premium-shop' ),
-		__( 'PlayStation 5 consoles and DualSense controllers for next-generation gaming.', 'premium-shop' ),
-		__( 'Graphics cards for gaming, streaming and creative work — from Full HD to 4K.', 'premium-shop' ),
-		__( 'Headsets, controllers and everything else that makes gaming better.', 'premium-shop' ),
-		__( 'Nintendo Switch 2 console', 'premium-shop' ),
-		__( 'Nintendo Switch OLED console – neon edition', 'premium-shop' ),
-		__( 'Nintendo Switch Lite – turquoise', 'premium-shop' ),
-		__( 'PlayStation 5 console', 'premium-shop' ),
-		__( 'PlayStation 5 Pro console', 'premium-shop' ),
-		__( 'DualSense wireless controller – white', 'premium-shop' ),
-		__( 'DualSense wireless controller – midnight black', 'premium-shop' ),
-		__( 'GeForce RTX 5070 graphics card, 12 GB', 'premium-shop' ),
-		__( 'GeForce RTX 5080 graphics card, 16 GB', 'premium-shop' ),
-		__( 'Radeon RX 9070 XT graphics card, 16 GB', 'premium-shop' ),
-		__( 'Wireless gaming headset', 'premium-shop' ),
-		__( 'Game bundle – 3 bestsellers of your choice', 'premium-shop' ),
-		__( 'The new hybrid console: bigger screen, more power — play on the TV or on the go.', 'premium-shop' ),
-		__( '7-inch OLED screen, stand and dock included.', 'premium-shop' ),
-		__( 'Compact and light, made for gaming on the go.', 'premium-shop' ),
-		__( 'Ultra-fast SSD, 4K gaming and haptic feedback with the DualSense controller.', 'premium-shop' ),
-		__( 'More graphics power, 2 TB SSD — for the best picture quality.', 'premium-shop' ),
-		__( 'Haptic feedback and adaptive triggers.', 'premium-shop' ),
-		__( 'Smooth 1440p gaming with ray tracing and DLSS.', 'premium-shop' ),
-		__( 'High-end 4K gaming, triple-fan cooling and RGB lighting.', 'premium-shop' ),
-		__( 'Excellent value for 1440p and 4K, quiet dual-fan design.', 'premium-shop' ),
-		__( '3D audio, noise-cancelling microphone, 30 hours of battery life.', 'premium-shop' ),
-		__( 'Pick three top titles for your console and save.', 'premium-shop' ),
-	);
+function premium_shop_gaming_pick( $texts, $code ) {
+	foreach ( array( $code, 'en', 'de' ) as $try ) {
+		if ( ! empty( $texts[ $try ] ) ) {
+			return $texts[ $try ];
+		}
+	}
+	return '';
 }
 
 /**
- * Create the sample gaming catalogue (categories with images, 12 products,
- * names and short descriptions in every enabled language).
+ * Create the sample gaming catalogue: categories with images and every
+ * product with photo, prices (incl. holiday deals) and texts in every
+ * enabled language.
  *
  * @param bool $publish Publish immediately (else drafts).
  * @return int Number of products created.
@@ -220,31 +183,29 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
 	}
 	$data    = premium_shop_gaming_catalogue();
 	$default = premium_shop_default_language();
-	$tr      = static function ( $text, $code ) {
-		$locale = premium_shop_locale_for( $code );
-		return 0 === strpos( $locale, 'en_' ) ? $text : premium_shop_translate_in( $text, $locale );
-	};
+	$codes   = array_keys( premium_shop_languages() );
 
 	$cats  = array();
 	$order = 0;
 	foreach ( $data['categories'] as $key => $cat ) {
-		$name = $tr( $cat[0], $default );
+		$name = premium_shop_gaming_pick( $cat['name'], $default );
 		$term = term_exists( $name, 'product_cat' );
 		if ( ! $term ) {
-			$term = wp_insert_term( $name, 'product_cat', array( 'description' => $tr( $cat[2], $default ) ) );
+			$term = wp_insert_term( $name, 'product_cat', array( 'description' => premium_shop_gaming_pick( $cat['desc'], $default ) ) );
 		}
 		if ( is_wp_error( $term ) ) {
 			continue;
 		}
 		$cats[ $key ] = (int) $term['term_id'];
 		update_term_meta( $cats[ $key ], 'order', $order++ );
-		foreach ( array_keys( premium_shop_languages() ) as $code ) {
+		foreach ( $codes as $code ) {
 			if ( $code !== $default ) {
-				update_term_meta( $cats[ $key ], '_ps_name_' . $code, $tr( $cat[0], $code ) );
+				update_term_meta( $cats[ $key ], '_ps_name_' . $code, premium_shop_gaming_pick( $cat['name'], $code ) );
+				update_term_meta( $cats[ $key ], '_ps_desc_' . $code, premium_shop_gaming_pick( $cat['desc'], $code ) );
 			}
 		}
 		if ( ! get_term_meta( $cats[ $key ], 'thumbnail_id', true ) ) {
-			$image = premium_shop_fw_import_image( $cat[1], $name, 'gaming' );
+			$image = premium_shop_fw_import_image( $cat['img'], $name, 'gaming' );
 			if ( $image ) {
 				update_term_meta( $cats[ $key ], 'thumbnail_id', $image );
 			}
@@ -256,28 +217,31 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
 		if ( wc_get_product_id_by_sku( $def['sku'] ) ) {
 			continue;
 		}
-		$name    = $tr( $def['name'], $default );
+		$name    = premium_shop_gaming_pick( $def['name'], $default );
 		$product = new WC_Product_Simple();
 		$product->set_name( $name );
 		$product->set_sku( $def['sku'] );
 		$product->set_status( $publish ? 'publish' : 'draft' );
 		$product->set_catalog_visibility( 'visible' );
+		$product->set_featured( ! empty( $def['featured'] ) );
 		$product->set_regular_price( (string) $def['price'] );
-		if ( ! empty( $def['sale'] ) ) {
+		if ( '' !== (string) $def['sale'] ) {
 			$product->set_sale_price( (string) $def['sale'] );
 		}
-		$product->set_short_description( $tr( $def['short'], $default ) );
+		$product->set_short_description( premium_shop_gaming_pick( $def['short'], $default ) );
+		$product->set_description( premium_shop_gaming_pick( $def['desc'], $default ) );
 		$product->set_manage_stock( false );
 		$product->set_stock_status( 'instock' );
 		$product->set_category_ids( isset( $cats[ $def['cat'] ] ) ? array( $cats[ $def['cat'] ] ) : array() );
-		$image = premium_shop_fw_import_image( $def['image'], $name, 'gaming' );
+		$image = premium_shop_fw_import_image( $def['img'], $name, 'gaming' );
 		if ( $image ) {
 			$product->set_image_id( $image );
 		}
-		foreach ( array_keys( premium_shop_languages() ) as $code ) {
+		foreach ( $codes as $code ) {
 			if ( $code !== $default ) {
-				$product->update_meta_data( '_ps_name_' . $code, $tr( $def['name'], $code ) );
-				$product->update_meta_data( '_ps_short_' . $code, $tr( $def['short'], $code ) );
+				$product->update_meta_data( '_ps_name_' . $code, premium_shop_gaming_pick( $def['name'], $code ) );
+				$product->update_meta_data( '_ps_short_' . $code, premium_shop_gaming_pick( $def['short'], $code ) );
+				$product->update_meta_data( '_ps_desc_' . $code, premium_shop_gaming_pick( $def['desc'], $code ) );
 			}
 		}
 		$product->save();
@@ -297,7 +261,7 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
  * @return string[] URLs.
  */
 function premium_shop_gaming_stage_images() {
-	$files = array( 'console-tower.jpg', 'nintendo-hybrid.jpg', 'gpu-triple-rgb.jpg', premium_shop_gaming_festive() ? 'gifts.jpg' : 'gamepad.jpg' );
+	$files = array( 'ps5-slim.jpg', 'switch2.jpg', 'speaker-red.jpg', premium_shop_gaming_festive() ? 'gifts.jpg' : 'dualsense-white.jpg' );
 	$urls  = array();
 	foreach ( $files as $file ) {
 		$urls[] = PREMIUM_SHOP_URI . '/assets/images/gaming/' . $file;
@@ -380,15 +344,15 @@ function premium_shop_gaming_festive_texts() {
 		),
 		'hero_eyebrow'         => __( 'Holiday deals are here', 'premium-shop' ),
 		'hero_title'           => __( 'The gifts every gamer is dreaming of', 'premium-shop' ),
-		'hero_subtitle'        => __( 'Nintendo Switch, PlayStation 5, graphics cards and accessories at holiday prices — wrapped with care and delivered before Christmas.', 'premium-shop' ),
+		'hero_subtitle'        => __( 'PlayStation 5 Slim, Nintendo Switch 2, DualSense controllers and JBL speakers at holiday prices — original products, wrapped with care and delivered before Christmas.', 'premium-shop' ),
 		'hero_button_text'     => __( 'Find the perfect gift', 'premium-shop' ),
 		'hero_button2_text'    => __( 'Holiday deals', 'premium-shop' ),
 		'title_bestsellers'    => __( 'Top gift ideas', 'premium-shop' ),
 		'title_sale'           => __( 'Holiday deals', 'premium-shop' ),
 		'title_new'            => __( 'New for the holidays', 'premium-shop' ),
 		'campaign_eyebrow'     => __( 'End-of-year sale', 'premium-shop' ),
-		'campaign_title'       => __( 'Holiday graphics card deals', 'premium-shop' ),
-		'campaign_text'        => __( 'The perfect gift for PC gamers: selected graphics cards at special prices until the end of the year, while stocks last.', 'premium-shop' ),
+		'campaign_title'       => __( 'PS5 Slim at its holiday price', 'premium-shop' ),
+		'campaign_text'        => __( 'The most wanted gift of the year: save up to CHF 50 on the PlayStation 5 Slim and up to CHF 30 on JBL speakers, while stocks last.', 'premium-shop' ),
 		'campaign_button_text' => __( 'Unwrap the deals', 'premium-shop' ),
 		'benefit_1_title'      => __( 'Delivered before Christmas', 'premium-shop' ),
 		'benefit_1_text'       => __( 'Order by 20 December', 'premium-shop' ),
@@ -447,3 +411,20 @@ function premium_shop_gaming_festive_sections( $sections ) {
 	return $sections;
 }
 add_filter( 'premium_shop_home_sections', 'premium_shop_gaming_festive_sections', 20 );
+
+/**
+ * Category names of the gaming CSV, kept in the catalogue so that they are
+ * shown in the visitor's language.
+ *
+ * @return string[]
+ */
+function premium_shop_gaming_category_strings() {
+	return array(
+		__( 'Controllers', 'premium-shop' ),
+		__( 'Audio & speakers', 'premium-shop' ),
+		__( 'Games & gift cards', 'premium-shop' ),
+		__( 'Graphics cards', 'premium-shop' ),
+		__( 'Gift idea', 'premium-shop' ),
+		__( 'Accessories', 'premium-shop' ),
+	);
+}

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,18 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.0 =
+* Gaming catalogue rewritten for the holiday season: 26 products (PlayStation 5
+  Slim / Pro / Portal, DualSense colours and Edge, Nintendo Switch 2, bundle,
+  OLED, Lite, Pro Controller, Joy-Con 2, JBL Flip 6 / Go 4 speakers, headset,
+  gift cards, games, graphics cards) in 6 categories, with full descriptions in
+  DE/FR/EN/ES and holiday prices; 22 new original illustrations.
+* Ready-to-import CSV (dist/gaming-produits-import.csv): image column uses the
+  file names of the theme's illustrations, resolved automatically on import.
+* New gaming copy: hero words, platform band, gift finder, holiday campaign,
+  about text and three new FAQ answers (gift for a child, gift cards, gift
+  message).
 
 = 2.2.0 =
 * Gaming style: lighter, friendlier midnight-indigo palette and lighter

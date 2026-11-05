@@ -117,7 +117,7 @@ function premium_shop_setup_status() {
 		'languages'   => ! array_diff( array( 'de_DE', 'fr_FR', 'es_ES' ), $installed ),
 		'images'      => premium_shop_is_wc() && 'custom' === get_option( 'woocommerce_thumbnail_cropping' ),
 		'firewood'    => premium_shop_is_wc() && function_exists( 'wc_get_product_id_by_sku' ) && (bool) wc_get_product_id_by_sku( 'FW-BEECH' ),
-		'gaming'      => premium_shop_is_wc() && function_exists( 'wc_get_product_id_by_sku' ) && (bool) wc_get_product_id_by_sku( 'GM-PS5' ),
+		'gaming'      => premium_shop_is_wc() && function_exists( 'wc_get_product_id_by_sku' ) && (bool) wc_get_product_id_by_sku( 'GM-PS5-SLIM-STD' ),
 	);
 }
 
@@ -152,7 +152,7 @@ function premium_shop_setup_page() {
 		),
 		'gaming'    => array(
 			'title' => __( 'Create the sample gaming catalogue', 'premium-shop' ),
-			'desc'  => __( 'Switches the shop to the "Gaming & tech" style and creates 4 categories (Nintendo, PlayStation 5, Graphics cards, Accessories) and 12 products with images, prices and texts in every language. Created as drafts unless you tick "Publish immediately".', 'premium-shop' ),
+			'desc'  => __( 'Switches the shop to the "Gaming & tech" style and creates 6 categories (PlayStation 5, Nintendo Switch, controllers, audio & speakers, graphics cards, games & gift cards) and 26 products with images, prices, holiday deals and descriptions in every language. Created as drafts unless you tick "Publish immediately".', 'premium-shop' ),
 		),
 		'images'    => array(
 			'title' => __( 'Optimize product images', 'premium-shop' ),

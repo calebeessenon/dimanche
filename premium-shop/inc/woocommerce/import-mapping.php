@@ -654,3 +654,50 @@ function premium_shop_import_number_callbacks( $callbacks, $importer = null ) {
 	return $callbacks;
 }
 add_filter( 'woocommerce_product_importer_formatting_callbacks', 'premium_shop_import_number_callbacks', 10, 2 );
+
+/**
+ * Product images given by their bare file name in a CSV ("ps5-slim.jpg"):
+ * use the illustration bundled with the theme (assets/images/gaming or
+ * firewood), so the file imports on any domain without uploading it first.
+ *
+ * @param string $value Images column (comma-separated).
+ * @return string
+ */
+function premium_shop_import_bundled_images( $value ) {
+	$items = array_map( 'trim', explode( ',', (string) $value ) );
+	foreach ( $items as $i => $item ) {
+		if ( '' === $item || false !== strpos( $item, '/' ) || ! preg_match( '/^[a-z0-9._-]+\.(jpe?g|png|webp)$/i', $item ) ) {
+			continue;
+		}
+		foreach ( array( 'gaming', 'firewood' ) as $dir ) {
+			if ( is_readable( PREMIUM_SHOP_DIR . '/assets/images/' . $dir . '/' . $item ) ) {
+				$items[ $i ] = PREMIUM_SHOP_URI . '/assets/images/' . $dir . '/' . $item;
+				break;
+			}
+		}
+	}
+	return implode( ', ', $items );
+}
+
+/**
+ * Hook the above in front of WooCommerce's own image column reader.
+ *
+ * @param array                        $callbacks One callback per mapped column.
+ * @param WC_Product_CSV_Importer|null $importer  Importer.
+ * @return array
+ */
+function premium_shop_import_image_callbacks( $callbacks, $importer = null ) {
+	if ( ! $importer || ! method_exists( $importer, 'get_mapped_keys' ) ) {
+		return $callbacks;
+	}
+	foreach ( array_values( $importer->get_mapped_keys() ) as $i => $key ) {
+		if ( 'images' === $key && isset( $callbacks[ $i ] ) && is_callable( $callbacks[ $i ] ) ) {
+			$original        = $callbacks[ $i ];
+			$callbacks[ $i ] = static function ( $value ) use ( $original ) {
+				return call_user_func( $original, premium_shop_import_bundled_images( $value ) );
+			};
+		}
+	}
+	return $callbacks;
+}
+add_filter( 'woocommerce_product_importer_formatting_callbacks', 'premium_shop_import_image_callbacks', 11, 2 );
