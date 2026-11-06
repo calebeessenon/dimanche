@@ -1,0 +1,50 @@
+<wpml-config>
+	<!-- Customizer texts of Premium Shop, translatable with WPML String Translation. -->
+	<admin-texts>
+		<key name="theme_mods_premium-shop">
+			<key name="ps_promo_text" />
+			<key name="ps_title_categories" />
+			<key name="ps_title_popular" />
+			<key name="ps_title_new" />
+			<key name="ps_title_sale" />
+			<key name="ps_title_bestsellers" />
+			<key name="ps_title_testimonials" />
+			<key name="ps_title_brands" />
+			<key name="ps_hero_eyebrow" />
+			<key name="ps_hero_title" />
+			<key name="ps_hero_subtitle" />
+			<key name="ps_hero_button_text" />
+			<key name="ps_hero_button_url" />
+			<key name="ps_hero_button2_text" />
+			<key name="ps_hero_button2_url" />
+			<key name="ps_campaign_eyebrow" />
+			<key name="ps_campaign_title" />
+			<key name="ps_campaign_text" />
+			<key name="ps_campaign_button_text" />
+			<key name="ps_campaign_button_url" />
+			<key name="ps_benefit_1_title" />
+			<key name="ps_benefit_1_text" />
+			<key name="ps_benefit_2_title" />
+			<key name="ps_benefit_2_text" />
+			<key name="ps_benefit_3_title" />
+			<key name="ps_benefit_3_text" />
+			<key name="ps_benefit_4_title" />
+			<key name="ps_benefit_4_text" />
+			<key name="ps_testimonial_1_quote" />
+			<key name="ps_testimonial_1_meta" />
+			<key name="ps_testimonial_2_quote" />
+			<key name="ps_testimonial_2_meta" />
+			<key name="ps_testimonial_3_quote" />
+			<key name="ps_testimonial_3_meta" />
+			<key name="ps_newsletter_title" />
+			<key name="ps_newsletter_text" />
+			<key name="ps_delivery_time" />
+			<key name="ps_warranty_text" />
+			<key name="ps_payment_text" />
+			<key name="ps_shipping_tab" />
+			<key name="ps_company_about" />
+			<key name="ps_contact_hours" />
+			<key name="ps_footer_copyright" />
+		</key>
+	</admin-texts>
+</wpml-config>
