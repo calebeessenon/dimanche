@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.5
+Stable tag: 2.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,12 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.6 =
+* WooCommerce buttons and texts ("Add to cart", "Sale!", cart, checkout,
+  account…) in the visitor's language even when WooCommerce's language pack
+  is missing on the site; the missing language packs are also downloaded in
+  the background after the update.
 
 = 2.3.5 =
 * Gaming edition, holiday mode: the garland of lights at the top of the page

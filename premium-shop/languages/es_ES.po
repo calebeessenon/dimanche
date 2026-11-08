@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 08:20+0000\n"
-"PO-Revision-Date: 2026-11-08 08:20+0000\n"
+"POT-Creation-Date: 2026-11-08 09:14+0000\n"
+"PO-Revision-Date: 2026-11-08 09:14+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: es_ES\n"
@@ -221,7 +221,7 @@ msgstr "Ver las rebajas"
 msgid "Show submenu for %s"
 msgstr "Mostrar el submenú de %s"
 
-#: inc/contact.php:111 inc/contact.php:285 inc/contact.php:392
+#: inc/contact.php:111 inc/contact.php:285 inc/contact.php:392 inc/woocommerce/wc-fallback-strings.php:97
 msgid "Name"
 msgstr "Nombre"
 
@@ -229,7 +229,7 @@ msgstr "Nombre"
 msgid "Phone"
 msgstr "Teléfono"
 
-#: inc/contact.php:119 inc/contact.php:123
+#: inc/contact.php:119 inc/contact.php:123 inc/woocommerce/wc-fallback-strings.php:113
 msgid "(optional)"
 msgstr "(opcional)"
 
@@ -319,7 +319,7 @@ msgstr "Responder por correo"
 msgid "Address"
 msgstr "Dirección"
 
-#: inc/contact.php:437 inc/newsletter.php:272 inc/customizer/config.php:396
+#: inc/contact.php:437 inc/newsletter.php:272 inc/woocommerce/wc-fallback-strings.php:98 inc/customizer/config.php:396
 msgid "Email"
 msgstr "Correo electrónico"
 
@@ -360,7 +360,7 @@ msgid "Delivery time"
 msgstr "Plazo de entrega"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117 inc/woocommerce/order-language.php:540
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:540 inc/woocommerce/wc-fallback-strings.php:99
 msgid "Free shipping"
 msgstr "Envío gratuito"
 
@@ -1055,10 +1055,6 @@ msgstr "Mostrar «También te puede gustar» en el carrito"
 msgid "Company & contact"
 msgstr "Empresa y contacto"
 
-#: inc/customizer/config.php:392
-msgid "Company name"
-msgstr "Nombre de la empresa"
-
 #: inc/customizer/config.php:393
 msgid "Short description (footer)"
 msgstr "Descripción breve (pie de página)"
@@ -1471,7 +1467,7 @@ msgstr "Añadido a tu carrito"
 msgid "Added"
 msgstr "Añadido"
 
-#: inc/enqueue.php:107
+#: inc/enqueue.php:107 inc/woocommerce/wc-fallback-strings.php:24
 msgid "View cart"
 msgstr "Ver carrito"
 
@@ -1792,10 +1788,6 @@ msgstr "Lamentablemente aún no entregamos en este código postal. Contáctanos 
 #: inc/firewood/presets.php:137
 msgid "Delivery by truck to the kerbside. Please make sure the unloading point is accessible for a truck. We will call you to arrange the delivery date."
 msgstr "Entrega en camión a pie de calle. Asegúrate de que el punto de descarga sea accesible para un camión. Te llamaremos para acordar la fecha de entrega."
-
-#: inc/firewood/price-tool.php:100
-msgid "Product"
-msgstr "Producto"
 
 #: inc/firewood/price-tool.php:102 inc/firewood/product-data.php:449 inc/firewood/product-data.php:554
 msgid "Sales unit"
@@ -2831,7 +2823,7 @@ msgstr "Pago cifrado SSL"
 msgid "Personal customer service"
 msgstr "Atención al cliente personalizada"
 
-#: inc/woocommerce/cart-checkout.php:178
+#: inc/woocommerce/cart-checkout.php:178 inc/woocommerce/wc-fallback-strings.php:108
 msgid "Have a coupon?"
 msgstr "¿Tienes un cupón?"
 
@@ -2852,7 +2844,7 @@ msgstr "Hemos recibido tu pedido. En breve recibirás una confirmación por corr
 msgid "Popular products"
 msgstr "Productos populares"
 
-#: inc/woocommerce/cart-checkout.php:28
+#: inc/woocommerce/cart-checkout.php:28 inc/woocommerce/wc-fallback-strings.php:32
 msgid "Checkout"
 msgstr "Pago"
 
@@ -2982,11 +2974,11 @@ msgstr "Entrega estándar"
 msgid "Free delivery"
 msgstr "Entrega gratuita"
 
-#: inc/woocommerce/order-language.php:542
+#: inc/woocommerce/order-language.php:542 inc/woocommerce/wc-fallback-strings.php:100
 msgid "Flat rate"
 msgstr "Tarifa plana"
 
-#: inc/woocommerce/order-language.php:543
+#: inc/woocommerce/order-language.php:543 inc/woocommerce/wc-fallback-strings.php:101
 msgid "Local pickup"
 msgstr "Recogida local"
 
@@ -3107,7 +3099,7 @@ msgstr "Otro transportista"
 msgid "Currently unavailable"
 msgstr "No disponible actualmente"
 
-#: inc/woocommerce/product-card.php:118
+#: inc/woocommerce/product-card.php:118 inc/woocommerce/wc-fallback-strings.php:28
 msgid "Available on backorder"
 msgstr "Disponible bajo pedido"
 
@@ -3118,7 +3110,7 @@ msgid_plural "Only %d left"
 msgstr[0] "Solo queda %d"
 msgstr[1] "Solo quedan %d"
 
-#: inc/woocommerce/product-card.php:131
+#: inc/woocommerce/product-card.php:131 inc/woocommerce/wc-fallback-strings.php:26
 msgid "In stock"
 msgstr "En stock"
 
@@ -3166,7 +3158,7 @@ msgstr "Hay un plugin de traducción activo (WPML, Polylang, TranslatePress) o e
 msgid "Text shown to visitors who chose this language at the top of the page. Leave a field empty to show the main product text."
 msgstr "Texto que verán los visitantes que eligieron este idioma en la parte superior de la página. Deje un campo vacío para mostrar el texto principal del producto."
 
-#: inc/woocommerce/product-translations.php:432
+#: inc/woocommerce/product-translations.php:432 inc/woocommerce/wc-fallback-strings.php:109
 msgid "Product name"
 msgstr "Nombre del producto"
 
@@ -3174,7 +3166,7 @@ msgstr "Nombre del producto"
 msgid "Short description"
 msgstr "Descripción corta"
 
-#: inc/woocommerce/product-translations.php:447
+#: inc/woocommerce/product-translations.php:447 inc/woocommerce/wc-fallback-strings.php:49
 msgid "Description"
 msgstr "Descripción"
 
@@ -3249,7 +3241,7 @@ msgstr "Aplicar filtros"
 msgid "Reset all"
 msgstr "Restablecer todo"
 
-#: inc/woocommerce/shop-filters.php:304
+#: inc/woocommerce/shop-filters.php:304 inc/woocommerce/wc-fallback-strings.php:43
 msgid "Price"
 msgstr "Precio"
 
@@ -3359,13 +3351,301 @@ msgstr "Puedes devolver tu pedido en un plazo de %d días tras la entrega."
 msgid "All shipping & payment information"
 msgstr "Toda la información de envío y pago"
 
-#: inc/woocommerce/single-product.php:354
+#: inc/woocommerce/single-product.php:354 inc/woocommerce/wc-fallback-strings.php:20
 msgid "Add to cart"
 msgstr "Añadir al carrito"
 
 #: inc/woocommerce/single-product.php:48
 msgid "Watch the video"
 msgstr "Ver el vídeo"
+
+#: inc/woocommerce/wc-fallback-strings.php:102
+msgid "Calculate shipping"
+msgstr "Calcular envío"
+
+#: inc/woocommerce/wc-fallback-strings.php:103
+msgid "Update"
+msgstr "Actualizar"
+
+#: inc/woocommerce/wc-fallback-strings.php:104
+msgid "Search products&hellip;"
+msgstr "Buscar productos&hellip;"
+
+#: inc/woocommerce/wc-fallback-strings.php:105
+msgid "No products were found matching your selection."
+msgstr "No se han encontrado productos que concuerden con la selección."
+
+#: inc/woocommerce/wc-fallback-strings.php:106
+msgid "Showing the single result"
+msgstr "Mostrando el único resultado"
+
+#: inc/woocommerce/wc-fallback-strings.php:107
+msgid "Choose an option"
+msgstr "Elige una opción"
+
+#: inc/woocommerce/wc-fallback-strings.php:110
+msgid "Unit price"
+msgstr "Precio unitario"
+
+#: inc/woocommerce/wc-fallback-strings.php:111
+msgid "Continue shopping"
+msgstr "Seguir comprando"
+
+#: inc/woocommerce/wc-fallback-strings.php:112
+msgid "Undo?"
+msgstr "¿Deshacer?"
+
+#: inc/woocommerce/wc-fallback-strings.php:114
+msgid "Pay"
+msgstr "Pagar"
+
+#: inc/woocommerce/wc-fallback-strings.php:21
+msgid "Select options"
+msgstr "Seleccionar opciones"
+
+#: inc/woocommerce/wc-fallback-strings.php:23
+msgid "View products"
+msgstr "Ver productos"
+
+#: inc/woocommerce/wc-fallback-strings.php:25
+msgid "Sale!"
+msgstr "¡Oferta!"
+
+#: inc/woocommerce/wc-fallback-strings.php:27
+msgid "Out of stock"
+msgstr "Agotado"
+
+#: inc/woocommerce/wc-fallback-strings.php:29
+msgid "Proceed to checkout"
+msgstr "Finalizar compra"
+
+#: inc/woocommerce/wc-fallback-strings.php:30
+msgid "Place order"
+msgstr "Realizar el pedido"
+
+#: inc/woocommerce/wc-fallback-strings.php:33
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: inc/woocommerce/wc-fallback-strings.php:34
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#: inc/woocommerce/wc-fallback-strings.php:35
+msgid "Total"
+msgstr "Total"
+
+#: inc/woocommerce/wc-fallback-strings.php:37
+msgid "Cart totals"
+msgstr "Totales del carrito"
+
+#: inc/woocommerce/wc-fallback-strings.php:38
+msgid "Update cart"
+msgstr "Actualizar carrito"
+
+#: inc/woocommerce/wc-fallback-strings.php:39
+msgid "Apply coupon"
+msgstr "Aplicar cupón"
+
+#: inc/woocommerce/wc-fallback-strings.php:40
+msgid "Coupon code"
+msgstr "Código de cupón"
+
+#: inc/woocommerce/wc-fallback-strings.php:42 inc/firewood/price-tool.php:100
+msgid "Product"
+msgstr "Producto"
+
+#: inc/woocommerce/wc-fallback-strings.php:44
+msgid "Remove this item"
+msgstr "Eliminar este artículo"
+
+#: inc/woocommerce/wc-fallback-strings.php:45
+msgid "Your cart is currently empty."
+msgstr "Tu carrito está vacío."
+
+#: inc/woocommerce/wc-fallback-strings.php:46
+msgid "Return to shop"
+msgstr "Volver a la tienda"
+
+#: inc/woocommerce/wc-fallback-strings.php:47
+msgid "Billing details"
+msgstr "Detalles de facturación"
+
+#: inc/woocommerce/wc-fallback-strings.php:48
+msgid "Additional information"
+msgstr "Información adicional"
+
+#: inc/woocommerce/wc-fallback-strings.php:50
+msgid "Related products"
+msgstr "Productos relacionados"
+
+#: inc/woocommerce/wc-fallback-strings.php:51
+msgid "Order notes"
+msgstr "Notas del pedido"
+
+#: inc/woocommerce/wc-fallback-strings.php:52
+msgid "Your order"
+msgstr "Tu pedido"
+
+#: inc/woocommerce/wc-fallback-strings.php:53
+msgid "Click here to enter your code"
+msgstr "Haz clic aquí para introducir tu código"
+
+#: inc/woocommerce/wc-fallback-strings.php:54
+msgid "Default sorting"
+msgstr "Orden predeterminado"
+
+#: inc/woocommerce/wc-fallback-strings.php:55
+msgid "Sort by popularity"
+msgstr "Ordenar por popularidad"
+
+#: inc/woocommerce/wc-fallback-strings.php:56
+msgid "Sort by average rating"
+msgstr "Ordenar por puntuación media"
+
+#: inc/woocommerce/wc-fallback-strings.php:57
+msgid "Sort by latest"
+msgstr "Ordenar por los últimos"
+
+#: inc/woocommerce/wc-fallback-strings.php:58
+msgid "Sort by price: low to high"
+msgstr "Ordenar por precio: bajo a alto"
+
+#: inc/woocommerce/wc-fallback-strings.php:59
+msgid "Sort by price: high to low"
+msgstr "Ordenar por precio: alto a bajo"
+
+#: inc/woocommerce/wc-fallback-strings.php:60
+msgid "Clear"
+msgstr "Limpiar"
+
+#: inc/woocommerce/wc-fallback-strings.php:61
+msgid "Category:"
+msgstr "Categoría:"
+
+#: inc/woocommerce/wc-fallback-strings.php:62
+msgid "SKU:"
+msgstr "SKU:"
+
+#: inc/woocommerce/wc-fallback-strings.php:63
+msgid "First name"
+msgstr "Nombre"
+
+#: inc/woocommerce/wc-fallback-strings.php:64
+msgid "Last name"
+msgstr "Apellidos"
+
+#: inc/woocommerce/wc-fallback-strings.php:65 inc/customizer/config.php:392
+msgid "Company name"
+msgstr "Nombre de la empresa"
+
+#: inc/woocommerce/wc-fallback-strings.php:66
+msgid "Country / Region"
+msgstr "País / Región"
+
+#: inc/woocommerce/wc-fallback-strings.php:67
+msgid "Street address"
+msgstr "Dirección de la calle"
+
+#: inc/woocommerce/wc-fallback-strings.php:68
+msgid "Postcode / ZIP"
+msgstr "Código postal"
+
+#: inc/woocommerce/wc-fallback-strings.php:69
+msgid "Town / City"
+msgstr "Localidad / Ciudad"
+
+#: inc/woocommerce/wc-fallback-strings.php:72
+msgid "Ship to a different address?"
+msgstr "¿Enviar a una dirección diferente?"
+
+#: inc/woocommerce/wc-fallback-strings.php:73
+msgid "Create an account?"
+msgstr "¿Crear una cuenta?"
+
+#: inc/woocommerce/wc-fallback-strings.php:74
+msgid "Thank you. Your order has been received."
+msgstr "Gracias. Tu pedido ha sido recibido."
+
+#: inc/woocommerce/wc-fallback-strings.php:75
+msgid "Order number:"
+msgstr "Número del pedido:"
+
+#: inc/woocommerce/wc-fallback-strings.php:76
+msgid "Date:"
+msgstr "Fecha:"
+
+#: inc/woocommerce/wc-fallback-strings.php:77
+msgid "Payment method:"
+msgstr "Método de pago:"
+
+#: inc/woocommerce/wc-fallback-strings.php:78
+msgid "Order details"
+msgstr "Detalles del pedido"
+
+#: inc/woocommerce/wc-fallback-strings.php:80
+msgid "Login"
+msgstr "Acceder"
+
+#: inc/woocommerce/wc-fallback-strings.php:81
+msgid "Register"
+msgstr "Registrarse"
+
+#: inc/woocommerce/wc-fallback-strings.php:82
+msgid "Username or email address"
+msgstr "Nombre de usuario o correo electrónico"
+
+#: inc/woocommerce/wc-fallback-strings.php:83
+msgid "Password"
+msgstr "Contraseña"
+
+#: inc/woocommerce/wc-fallback-strings.php:84
+msgid "Remember me"
+msgstr "Recuérdame"
+
+#: inc/woocommerce/wc-fallback-strings.php:85
+msgid "Log in"
+msgstr "Acceder"
+
+#: inc/woocommerce/wc-fallback-strings.php:86
+msgid "Lost your password?"
+msgstr "¿Olvidaste la contraseña?"
+
+#: inc/woocommerce/wc-fallback-strings.php:87
+msgid "Dashboard"
+msgstr "Escritorio"
+
+#: inc/woocommerce/wc-fallback-strings.php:88
+msgid "Orders"
+msgstr "Pedidos"
+
+#: inc/woocommerce/wc-fallback-strings.php:89
+msgid "Addresses"
+msgstr "Direcciones"
+
+#: inc/woocommerce/wc-fallback-strings.php:90
+msgid "Account details"
+msgstr "Detalles de la cuenta"
+
+#: inc/woocommerce/wc-fallback-strings.php:91
+msgid "Log out"
+msgstr "Salir"
+
+#: inc/woocommerce/wc-fallback-strings.php:93
+msgid "There are no reviews yet."
+msgstr "No hay valoraciones aún."
+
+#: inc/woocommerce/wc-fallback-strings.php:94
+msgid "Your review"
+msgstr "Tu valoración"
+
+#: inc/woocommerce/wc-fallback-strings.php:95
+msgid "Your rating"
+msgstr "Tu puntuación"
+
+#: inc/woocommerce/wc-fallback-strings.php:96
+msgid "Submit"
+msgstr "Enviar"
 
 #: index.php:15
 msgid "Journal"
@@ -3475,7 +3755,7 @@ msgstr "Pedir leña"
 msgid "Unit converter"
 msgstr "Conversor de unidades"
 
-#: template-parts/components/firewood-calculator.php:56 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:379 inc/firewood/demo-catalog.php:232
+#: template-parts/components/firewood-calculator.php:56 inc/woocommerce/wc-fallback-strings.php:41 inc/firewood/demo-catalog.php:70 inc/firewood/demo-catalog.php:379
 msgid "Quantity"
 msgstr "Cantidad"
 
@@ -3572,7 +3852,7 @@ msgstr "Ningún resultado coincide con tu búsqueda. Prueba con otras palabras."
 msgid "There is no content here yet."
 msgstr "Todavía no hay contenido aquí."
 
-#: template-parts/content/content.php:21 inc/accessibility.php:37
+#: template-parts/content/content.php:21 inc/accessibility.php:37 inc/woocommerce/wc-fallback-strings.php:22
 msgid "Read more"
 msgstr "Leer más"
 
@@ -3664,7 +3944,7 @@ msgstr "Abrir el menú"
 msgid "Sign in"
 msgstr "Iniciar sesión"
 
-#: template-parts/header/site-header.php:67 inc/template-tags.php:579 inc/woocommerce/cart-checkout.php:27
+#: template-parts/header/site-header.php:67 inc/template-tags.php:579 inc/woocommerce/cart-checkout.php:27 inc/woocommerce/wc-fallback-strings.php:31
 msgid "Cart"
 msgstr "Carrito"
 
@@ -3808,7 +4088,7 @@ msgstr "Tarjetas gráficas"
 msgid "h"
 msgstr "h"
 
-#: template-parts/homepage/hero-gaming.php:18 inc/admin/onboarding.php:221
+#: template-parts/homepage/hero-gaming.php:18 inc/woocommerce/wc-fallback-strings.php:36 inc/admin/onboarding.php:221
 msgid "Shipping"
 msgstr "Envío"
 
@@ -3863,7 +4143,7 @@ msgstr "Devoluciones gratuitas en %d días"
 msgid "Verified purchase"
 msgstr "Compra verificada"
 
-#: template-parts/homepage/testimonials.php:79
+#: template-parts/homepage/testimonials.php:79 inc/woocommerce/wc-fallback-strings.php:92
 msgid "Reviews"
 msgstr "Opiniones"
 

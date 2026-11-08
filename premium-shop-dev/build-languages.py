@@ -7,6 +7,9 @@ mp = importlib.util.module_from_spec(spec); spec.loader.exec_module(mp)
 from translations import T, TC
 from translations_firewood import T as T_FW
 T = T + T_FW
+from wc_fallback import W
+_known = {r[0] for r in T}
+T = T + [r for r in W if r[0] not in _known]
 
 LANGS = {'de_DE': 1, 'fr_FR': 2, 'es_ES': 3}
 PLURAL = {'de_DE': 'nplurals=2; plural=(n != 1);', 'fr_FR': 'nplurals=2; plural=(n > 1);', 'es_ES': 'nplurals=2; plural=(n != 1);'}

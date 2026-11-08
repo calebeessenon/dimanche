@@ -627,3 +627,51 @@ function premium_shop_email_payment_title( $title ) {
 	return premium_shop_translate_setting_label( $title );
 }
 add_filter( 'woocommerce_order_get_payment_method_title', 'premium_shop_email_payment_title', 20 );
+
+/**
+ * WooCommerce texts in the visitor's language even when WooCommerce's
+ * language pack for it is missing: the theme's own translation is used
+ * ("In den Warenkorb" instead of "Add to cart").
+ *
+ * @param string $translation Translated text.
+ * @param string $text        Original text.
+ * @return string
+ */
+function premium_shop_wc_gettext_fallback( $translation, $text ) {
+	static $keys = null;
+	if ( $translation !== $text ) {
+		return $translation;
+	}
+	if ( null === $keys ) {
+		$keys = array_fill_keys( array_keys( premium_shop_wc_fallback_strings() ), true );
+	}
+	return isset( $keys[ $text ] ) ? translate( $text, 'premium-shop' ) : $translation; // phpcs:ignore WordPress.WP.I18n
+}
+add_filter( 'gettext_woocommerce', 'premium_shop_wc_gettext_fallback', 10, 2 );
+
+/**
+ * Download the missing WordPress and WooCommerce language packs (in the
+ * background, after a theme update).
+ */
+function premium_shop_install_language_packs() {
+	if ( ! function_exists( 'premium_shop_setup_languages' ) ) {
+		$file = PREMIUM_SHOP_DIR . '/inc/admin/onboarding.php';
+		if ( is_readable( $file ) ) {
+			require_once $file;
+		}
+	}
+	if ( function_exists( 'premium_shop_setup_languages' ) ) {
+		premium_shop_setup_languages( false );
+	}
+}
+add_action( 'premium_shop_install_language_packs', 'premium_shop_install_language_packs' );
+
+/**
+ * Theme update: schedule the language pack download.
+ */
+function premium_shop_schedule_language_packs() {
+	if ( ! wp_next_scheduled( 'premium_shop_install_language_packs' ) ) {
+		wp_schedule_single_event( time() + 30, 'premium_shop_install_language_packs' );
+	}
+}
+add_action( 'premium_shop_upgrade_2_3_6', 'premium_shop_schedule_language_packs' );
