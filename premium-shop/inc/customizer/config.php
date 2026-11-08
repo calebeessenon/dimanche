@@ -394,6 +394,7 @@ function premium_shop_customizer_config() {
 		'title'  => __( 'Company & contact', 'premium-shop' ),
 		'fields' => array(
 			'company_name'  => array( 'type' => 'text', 'default' => '', 'label' => __( 'Company name', 'premium-shop' ) ),
+			'company_uid'   => array( 'type' => 'text', 'default' => '', 'label' => __( 'Company ID (UID / VAT number)', 'premium-shop' ), 'description' => __( 'Shown in the footer, legal notice, terms and privacy policy. Example: CHE-123.456.789', 'premium-shop' ) ),
 			'company_about' => array( 'type' => 'textarea', 'default' => '', 'translatable' => true, 'label' => __( 'Short description (footer)', 'premium-shop' ), 'description' => $text_hint ),
 			'contact_address' => array( 'type' => 'textarea', 'default' => '', 'label' => __( 'Address', 'premium-shop' ) ),
 			'contact_phone' => array( 'type' => 'text', 'default' => '', 'label' => __( 'Phone', 'premium-shop' ) ),

@@ -56,6 +56,8 @@ function premium_shop_policy_lang() {
 function premium_shop_policy_label( $key, $lang = '' ) {
 	$lang  = '' !== $lang ? $lang : premium_shop_policy_lang();
 	$texts = array(
+		'imprint_title'  => array( 'de' => 'Impressum', 'fr' => 'Mentions légales', 'en' => 'Legal notice', 'es' => 'Aviso legal' ),
+		'sales_title'    => array( 'de' => 'AGB', 'fr' => 'Conditions générales de vente', 'en' => 'Terms and conditions of sale', 'es' => 'Condiciones generales de venta' ),
 		'returns_title'  => array( 'de' => 'Rückgabe & Erstattung', 'fr' => 'Retours & remboursements', 'en' => 'Returns & refunds', 'es' => 'Devoluciones y reembolsos' ),
 		'shipping_title' => array( 'de' => 'Versand & Zahlung', 'fr' => 'Livraison & paiement', 'en' => 'Shipping & payment', 'es' => 'Envío y pago' ),
 		'link_shipping'  => array( 'de' => 'Lieferung: Fristen & Versandkosten', 'fr' => 'Livraison : délais & frais', 'en' => 'Delivery: times & costs', 'es' => 'Envío: plazos y gastos' ),
@@ -169,6 +171,12 @@ function premium_shop_policy_html( $doc, $lang = '' ) {
 	$phone   = trim( (string) premium_shop_option( 'contact_phone' ) );
 	$tel     = '' !== $phone ? '<a href="tel:' . esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ) . '">' . esc_html( $phone ) . '</a>' : '';
 	$lines   = array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) premium_shop_option( 'contact_address' ) ) ) ) );
+	$uid     = trim( (string) premium_shop_option( 'company_uid' ) );
+	$city    = '';
+	$city_ln = (string) end( $lines );
+	if ( '' !== $city_ln ) {
+		$city = trim( strtok( (string) preg_replace( '/^\s*[A-Z]{0,2}-?\d{4,5}\s+/', '', $city_ln ), ',' ) );
+	}
 	$days    = absint( premium_shop_option( 'returns_days' ) );
 	$days    = $days ? $days : 14;
 
@@ -176,6 +184,9 @@ function premium_shop_policy_html( $doc, $lang = '' ) {
 		$html,
 		array(
 			'{days}'        => (string) $days,
+			'{uid_line}'    => '' !== $uid ? '<br>' . esc_html( ( 'fr' === $lang ? 'IDE : ' : 'UID: ' ) . $uid ) : '',
+			'{uid}'         => esc_html( $uid ),
+			'{address_inline}' => esc_html( implode( ', ', $lines ) ),
 			'{company}'     => esc_html( $company ),
 			'{address}'     => implode( '<br>', array_map( 'esc_html', $lines ) ),
 			'{email}'       => esc_html( $email ),
@@ -183,6 +194,11 @@ function premium_shop_policy_html( $doc, $lang = '' ) {
 			'{phone_line}'  => '' !== $tel ? '<br>' . esc_html( premium_shop_policy_label( 'phone_label', $lang ) ) . ( 'fr' === $lang ? ' : ' : ': ' ) . $tel : '',
 			'{returns_url}' => esc_url( premium_shop_returns_url() ? premium_shop_returns_url() : home_url( '/' ) ),
 			'{fees}'        => 'delivery' === $doc ? premium_shop_policy_fees_table( $lang ) : '',
+			'{shop_name}'   => esc_html( get_bloginfo( 'name' ) ),
+			'{site_url}'    => esc_url( home_url( '/' ) ),
+			'{shipping_url}' => esc_url( premium_shop_shipping_url() ? premium_shop_shipping_url() : home_url( '/' ) ),
+			'{privacy_url}' => esc_url( get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ),
+			'{city}'        => esc_html( $city ),
 		)
 	);
 	$html = str_replace( array( '<br><br>', '<table class="ps-policy-table">', '</table>' . "\n" ), array( '<br>', '<div class="ps-zones"><table class="ps-zones__table ps-policy-table">', '</table></div>' . "\n" ), $html );
@@ -237,6 +253,26 @@ function premium_shop_delivery_terms_shortcode() {
 	return premium_shop_policy_html( 'delivery' );
 }
 add_shortcode( 'ps_delivery_terms', 'premium_shop_delivery_terms_shortcode' );
+
+/**
+ * [ps_legal_notice] Legal notice (Impressum).
+ *
+ * @return string
+ */
+function premium_shop_legal_notice_shortcode() {
+	return premium_shop_policy_html( 'imprint' );
+}
+add_shortcode( 'ps_legal_notice', 'premium_shop_legal_notice_shortcode' );
+
+/**
+ * [ps_terms_of_sale] General terms and conditions of sale.
+ *
+ * @return string
+ */
+function premium_shop_terms_of_sale_shortcode() {
+	return premium_shop_policy_html( 'sales' );
+}
+add_shortcode( 'ps_terms_of_sale', 'premium_shop_terms_of_sale_shortcode' );
 
 /**
  * [ps_returns_policy] Returns & refund policy.
@@ -461,3 +497,117 @@ function premium_shop_policy_footer_links( $links, $location ) {
 	return $links;
 }
 add_filter( 'premium_shop_footer_fallback_links', 'premium_shop_policy_footer_links', 10, 2 );
+
+/**
+ * Legal notice (Impressum) and terms of sale (AGB) pages: filled with the
+ * theme's texts when they do not exist yet or still hold the setup
+ * assistant's placeholder ("Please complete this page…"). A page you wrote
+ * yourself is never touched.
+ */
+function premium_shop_company_pages_install() {
+	if ( ! premium_shop_policies_active() ) {
+		return;
+	}
+	$default = function_exists( 'premium_shop_default_language' ) ? premium_shop_default_language() : 'de';
+	$default = in_array( $default, array( 'de', 'fr', 'en', 'es' ), true ) ? $default : 'en';
+	$pages   = array(
+		'impressum' => array( 'imprint_title', '[ps_legal_notice]' ),
+		'agb'       => array( 'sales_title', '[ps_terms_of_sale]' ),
+	);
+	$placeholders = array();
+	foreach ( array( 'de_DE', 'fr_FR', 'en_US', 'es_ES' ) as $locale ) {
+		$text = function_exists( 'premium_shop_translate_in' ) ? premium_shop_translate_in( 'Please complete this page with your legally required company information before publishing.', $locale ) : '';
+		if ( '' !== $text ) {
+			$placeholders[] = $text;
+		}
+	}
+	$placeholders[] = 'Please complete this page with your legally required company information before publishing.';
+
+	foreach ( $pages as $slug => $page ) {
+		$content = '<!-- wp:shortcode -->' . $page[1] . '<!-- /wp:shortcode -->';
+		$post    = get_page_by_path( $slug, OBJECT, 'page' );
+		if ( $post && 'trash' !== $post->post_status ) {
+			$plain = trim( wp_strip_all_tags( $post->post_content ) );
+			$empty = '' === $plain;
+			foreach ( $placeholders as $text ) {
+				$empty = $empty || $plain === $text;
+			}
+			if ( ! $empty && false === strpos( $post->post_content, $page[1] ) ) {
+				continue; // Written by hand.
+			}
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => $post->ID,
+						'post_content' => $content,
+						'post_status'  => 'publish',
+					)
+				)
+			);
+			$id = (int) $post->ID;
+		} else {
+			$id = wp_insert_post(
+				wp_slash(
+					array(
+						'post_type'    => 'page',
+						'post_status'  => 'publish',
+						'post_name'    => $slug,
+						'post_title'   => premium_shop_policy_label( $page[0], $default ),
+						'post_content' => $content,
+					)
+				),
+				true
+			);
+			if ( is_wp_error( $id ) || ! $id ) {
+				continue;
+			}
+		}
+		foreach ( array( 'de', 'fr', 'en', 'es' ) as $lang ) {
+			if ( $lang !== $default ) {
+				update_post_meta( $id, '_ps_name_' . $lang, premium_shop_policy_label( $page[0], $lang ) );
+			}
+			delete_post_meta( $id, '_ps_desc_' . $lang ); // The shortcode follows the visitor's language.
+		}
+	}
+	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {
+		premium_shop_legal_menu_sync();
+	}
+}
+add_action( 'after_switch_theme', 'premium_shop_company_pages_install', 25 );
+
+/**
+ * Gaming edition 2.3.16: NeoPlay is run by Retroverse AG. Contact details
+ * still holding the former defaults (NeoPlay, Rolle) follow the new ones,
+ * and the legal pages are updated.
+ */
+function premium_shop_company_update() {
+	if ( ! premium_shop_policies_active() ) {
+		return;
+	}
+	$old = array(
+		'company' => (string) get_theme_mod( 'ps_company_name', '' ),
+		'address' => (string) get_theme_mod( 'ps_contact_address', '' ),
+	);
+	if ( in_array( strtolower( trim( $old['company'] ) ), array( 'neoplay', '' ), true ) ) {
+		remove_theme_mod( 'ps_company_name' );
+	}
+	if ( false !== stripos( $old['address'], 'Beauregard' ) || false !== stripos( $old['address'], 'Rolle' ) ) {
+		remove_theme_mod( 'ps_contact_address' );
+	}
+	$company = trim( (string) premium_shop_option( 'company_name' ) );
+	$lines   = array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) premium_shop_option( 'contact_address' ) ) ) ) );
+	// Pages edited by hand: replace the former details.
+	$map = array(
+		'9 route du Beauregard' => isset( $lines[0] ) ? $lines[0] : '',
+		'1180 Rolle, Suisse'    => isset( $lines[1] ) ? $lines[1] : '',
+		'NeoPlay ('             => '' !== $company ? $company . ' (' : '',
+	);
+	if ( '' !== $company ) {
+		$map['<strong>NeoPlay</strong>'] = '<strong>' . esc_html( $company ) . '</strong>';
+	}
+	if ( function_exists( 'premium_shop_legal_refresh' ) ) {
+		premium_shop_legal_refresh( $map );
+	}
+	premium_shop_company_pages_install();
+}
+add_action( 'premium_shop_upgrade_2_3_16', 'premium_shop_company_update' );

@@ -542,4 +542,7 @@ T = [
 ('Previous image', 'Vorheriges Bild', 'Image précédente', 'Imagen anterior'),
 ('Next image', 'Nächstes Bild', 'Image suivante', 'Imagen siguiente'),
 ('Website', 'Website', 'Site web', 'Sitio web'),
+('UID: %s', 'UID: %s', 'IDE : %s', 'UID: %s'),
+('Company ID (UID / VAT number)', 'Unternehmens-Identifikationsnummer (UID / MWST-Nr.)', 'Numéro IDE (IDE / n° TVA)', 'Número de identificación (UID / IVA)'),
+('Shown in the footer, legal notice, terms and privacy policy. Example: CHE-123.456.789', 'Wird in der Fusszeile, im Impressum, in den AGB und in der Datenschutzerklärung angezeigt. Beispiel: CHE-123.456.789', 'Affiché dans le pied de page, les mentions légales, les CGV et la politique de confidentialité. Exemple : CHE-123.456.789', 'Se muestra en el pie de página, el aviso legal, las condiciones y la política de privacidad. Ejemplo: CHE-123.456.789'),
 ]

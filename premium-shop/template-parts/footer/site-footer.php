@@ -9,6 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $premium_shop_company = premium_shop_option( 'company_name' );
 $premium_shop_address = premium_shop_option( 'contact_address' );
+$premium_shop_uid     = trim( (string) premium_shop_option( 'company_uid' ) );
 $premium_shop_phone   = premium_shop_option( 'contact_phone' );
 $premium_shop_email   = premium_shop_option( 'contact_email' );
 $premium_shop_hours   = premium_shop_text( 'contact_hours' );
@@ -43,6 +44,9 @@ $premium_shop_wa      = preg_replace( '/[^0-9]/', '', (string) premium_shop_opti
 			<address class="ps-footer__contact">
 				<?php if ( $premium_shop_company ) : ?>
 					<strong><?php echo esc_html( $premium_shop_company ); ?></strong>
+				<?php endif; ?>
+				<?php if ( $premium_shop_uid ) : ?>
+					<span class="ps-footer__uid"><?php echo esc_html( sprintf( /* translators: %s: company ID number (UID). */ __( 'UID: %s', 'premium-shop' ), $premium_shop_uid ) ); ?></span>
 				<?php endif; ?>
 				<?php if ( $premium_shop_address ) : ?>
 					<span class="ps-footer__contact-line"><?php premium_shop_icon( 'pin', array( 'size' => 16 ) ); ?><span><?php echo nl2br( esc_html( $premium_shop_address ) ); ?></span></span>

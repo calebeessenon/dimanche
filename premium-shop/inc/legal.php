@@ -60,7 +60,9 @@ function premium_shop_legal_content( $doc, $lang ) {
 	$email   = is_email( $email ) ? $email : get_option( 'admin_email' );
 	$phone   = trim( (string) premium_shop_option( 'contact_phone' ) );
 	$lines   = array_values( array_filter( array_map( 'trim', preg_split( '/\R/', (string) premium_shop_option( 'contact_address' ) ) ) ) );
-	$city    = '';
+	$uid       = trim( (string) premium_shop_option( 'company_uid' ) );
+	$uid_label = 'fr' === $lang ? 'IDE' : 'UID';
+	$city      = '';
 	if ( $lines ) {
 		$last = preg_replace( '/^\s*[A-Z]{0,2}-?\d{4,5}\s+/', '', end( $lines ) );
 		$city = trim( strtok( (string) $last, ',' ) );
@@ -97,6 +99,8 @@ function premium_shop_legal_content( $doc, $lang ) {
 			'{address}'           => implode( '<br>', array_map( 'esc_html', $lines ) ),
 			'{address_inline}'    => esc_html( implode( ', ', $lines ) ),
 			'{email}'             => esc_html( $email ),
+			'{uid_line}'          => '' !== $uid ? '<br>' . esc_html( $uid_label . ( 'fr' === $lang ? ' : ' : ': ' ) . $uid ) : '',
+			'{company_line}'      => esc_html( implode( ', ', array_filter( array_merge( array( $company ), $lines, '' !== $uid ? array( $uid_label . ' ' . $uid ) : array() ) ) ) ) . ' – ',
 			'{phone_line}'        => '' !== $phone ? '<br>' . esc_html( $label[0] ) . ( 'fr' === $lang ? ' : ' : ': ' ) . '<a href="tel:' . esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ) . '">' . esc_html( $phone ) . '</a>' : '',
 			'{city}'              => esc_html( '' !== $city ? $city : $company ),
 			'{date}'              => esc_html( $date ),

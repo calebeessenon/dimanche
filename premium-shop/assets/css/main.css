@@ -3336,6 +3336,14 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	gap: 11px;
 }
 
+.ps-footer__uid {
+	display: block;
+	margin: -4px 0 4px;
+	font-size: .85rem;
+	opacity: .8;
+	letter-spacing: .02em;
+}
+
 .ps-footer__contact strong {
 	color: var(--ps-footer-text);
 }

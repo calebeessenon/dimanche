@@ -45,11 +45,12 @@ function premium_shop_gaming_overrides() {
 			'free_shipping_threshold' => 0,
 			'returns_days'            => 14,
 			'footer_payments'         => 'twint,postfinance,visa,mastercard,paypal,applepay,googlepay',
-			// NeoPlay contact details (same address and phone as the Rolle shop).
-			'contact_address'         => "9 route du Beauregard\n1180 Rolle, Suisse",
+			// NeoPlay is run by Retroverse AG.
+			'contact_address'         => "Käsereistrasse 2\n4543 Deitingen, Schweiz",
 			'contact_phone'           => '+4175731714',
 			'contact_email'           => 'info@neoplay.ch',
-			'company_name'            => 'NeoPlay',
+			'company_name'            => 'Retroverse AG',
+			'company_uid'             => 'CHE-305.783.003',
 			// Firewood tools off.
 			'fw_unit_price'           => false,
 			'fw_specs_on_cards'       => false,
