@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.8
+Stable tag: 2.3.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,15 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.9 =
+* Gaming catalogue: 4 pictures per product (main picture, close-up, second
+  view, data sheet with package dimensions, weight and EAN barcode), GTIN,
+  shipping weight, package dimensions, brand and technical attributes, and
+  a technical data table in every description (DE/FR/EN/ES). The CSV and the
+  sample catalogue both include them.
+* Product attributes of the gaming catalogue are shown in the visitor's
+  language.
 
 = 2.3.8 =
 * Gaming edition: no firewood features left. The "Firewood" product data tab,

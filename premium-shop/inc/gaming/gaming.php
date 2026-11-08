@@ -242,6 +242,7 @@ function premium_shop_gaming_create_catalogue( $publish = false ) {
 		if ( $image ) {
 			$product->set_image_id( $image );
 		}
+		premium_shop_gaming_apply_specs( $product, $def, $name );
 		foreach ( $codes as $code ) {
 			if ( $code !== $default ) {
 				$product->update_meta_data( '_ps_name_' . $code, premium_shop_gaming_pick( $def['name'], $code ) );
@@ -512,3 +513,159 @@ function premium_shop_gaming_known_terms( $terms ) {
 	);
 }
 add_filter( 'premium_shop_pt_known_terms', 'premium_shop_gaming_known_terms' );
+
+/**
+ * Sample catalogue: gallery, weight, package dimensions, GTIN, brand and
+ * attributes of a product.
+ *
+ * @param WC_Product $product Product (not saved yet).
+ * @param array      $def     Catalogue entry.
+ * @param string     $name    Product name.
+ */
+function premium_shop_gaming_apply_specs( $product, $def, $name ) {
+	if ( ! empty( $def['gallery'] ) ) {
+		$ids = array();
+		foreach ( $def['gallery'] as $file ) {
+			$id = premium_shop_fw_import_image( $file, $name, 'gaming' );
+			if ( $id ) {
+				$ids[] = $id;
+			}
+		}
+		$product->set_gallery_image_ids( $ids );
+	}
+	if ( ! empty( $def['weight'] ) ) {
+		$product->set_weight( (string) $def['weight'] );
+	}
+	if ( ! empty( $def['dims'] ) && 3 === count( $def['dims'] ) ) {
+		$product->set_length( (string) $def['dims'][0] );
+		$product->set_width( (string) $def['dims'][1] );
+		$product->set_height( (string) $def['dims'][2] );
+	}
+	if ( ! empty( $def['gtin'] ) && method_exists( $product, 'set_global_unique_id' ) ) {
+		try {
+			$product->set_global_unique_id( (string) $def['gtin'] );
+		} catch ( Exception $e ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement -- duplicate code: keep the product without it.
+		}
+	}
+	if ( ! empty( $def['attrs'] ) && class_exists( 'WC_Product_Attribute' ) ) {
+		$default    = premium_shop_default_language();
+		$attributes = array();
+		foreach ( $def['attrs'] as $i => $attr ) {
+			$item = new WC_Product_Attribute();
+			$item->set_name( premium_shop_gaming_pick( $attr['name'], $default ) );
+			$item->set_options( array_map( 'trim', preg_split( '/,\s+/', premium_shop_gaming_pick( $attr['value'], $default ) ) ) );
+			$item->set_position( $i );
+			$item->set_visible( true );
+			$item->set_variation( false );
+			$attributes[] = $item;
+		}
+		$product->set_attributes( $attributes );
+	}
+	if ( ! empty( $def['brand'] ) && taxonomy_exists( 'product_brand' ) ) {
+		$term = term_exists( $def['brand'], 'product_brand' );
+		if ( ! $term ) {
+			$term = wp_insert_term( $def['brand'], 'product_brand' );
+		}
+		if ( ! is_wp_error( $term ) ) {
+			$product->save();
+			wp_set_object_terms( $product->get_id(), array( (int) $term['term_id'] ), 'product_brand' );
+		}
+	}
+}
+
+/**
+ * Attribute names and values of the gaming catalogue in every language:
+ * German text => array( language => text ).
+ *
+ * @return array
+ */
+function premium_shop_gaming_attr_map() {
+	static $map = null;
+	if ( null !== $map ) {
+		return $map;
+	}
+	$map  = array();
+	$data = premium_shop_gaming_catalogue();
+	foreach ( (array) ( isset( $data['products'] ) ? $data['products'] : array() ) as $def ) {
+		foreach ( (array) ( isset( $def['attrs'] ) ? $def['attrs'] : array() ) as $attr ) {
+			foreach ( array( 'name', 'value' ) as $part ) {
+				$set = $attr[ $part ];
+				if ( empty( $set['de'] ) ) {
+					continue;
+				}
+				$map[ $set['de'] ] = $set;
+				// Values are imported as separate terms ("Konsole", "HDMI-Kabel"…).
+				$pieces = array();
+				foreach ( $set as $lang => $text ) {
+					$pieces[ $lang ] = preg_split( '/,\s+/', (string) $text );
+				}
+				$count = count( $pieces['de'] );
+				if ( $count > 1 ) {
+					$same = true;
+					foreach ( $pieces as $list ) {
+						$same = $same && count( $list ) === $count;
+					}
+					if ( $same ) {
+						foreach ( $pieces['de'] as $i => $piece ) {
+							$map[ $piece ] = array_combine( array_keys( $pieces ), array_column( $pieces, $i ) );
+						}
+					}
+				}
+			}
+		}
+	}
+	return $map;
+}
+
+/**
+ * Text of the gaming catalogue's attributes in the visitor's language.
+ *
+ * @param string $text German text.
+ * @return string
+ */
+function premium_shop_gaming_attr_text( $text ) {
+	if ( ! premium_shop_is_gaming() || ! function_exists( 'premium_shop_current_language' ) ) {
+		return $text;
+	}
+	$lang = premium_shop_current_language();
+	if ( 'de' === $lang ) {
+		return $text;
+	}
+	$map = premium_shop_gaming_attr_map();
+	$key = trim( wp_strip_all_tags( (string) $text ) );
+	if ( isset( $map[ $key ] ) ) {
+		return isset( $map[ $key ][ $lang ] ) ? $map[ $key ][ $lang ] : ( isset( $map[ $key ]['en'] ) ? $map[ $key ]['en'] : $text );
+	}
+	return $text;
+}
+
+/**
+ * Attribute names ("Farbe" → "Couleur").
+ *
+ * @param string $label Label.
+ * @return string
+ */
+function premium_shop_gaming_attr_label( $label ) {
+	return premium_shop_gaming_attr_text( $label );
+}
+add_filter( 'woocommerce_attribute_label', 'premium_shop_gaming_attr_label', 20 );
+
+/**
+ * Attribute values in the "Additional information" tab.
+ *
+ * @param string               $html      Formatted values.
+ * @param WC_Product_Attribute $attribute Attribute.
+ * @param string[]             $values    Values.
+ * @return string
+ */
+function premium_shop_gaming_attr_values( $html, $attribute, $values ) {
+	if ( ! premium_shop_is_gaming() || ! is_array( $values ) || ! $values || ( $attribute instanceof WC_Product_Attribute && $attribute->is_taxonomy() ) ) {
+		return $html;
+	}
+	$whole = premium_shop_gaming_attr_text( implode( ', ', $values ) );
+	if ( $whole !== implode( ', ', $values ) ) {
+		return wpautop( esc_html( $whole ) );
+	}
+	return wpautop( esc_html( implode( ', ', array_map( 'premium_shop_gaming_attr_text', $values ) ) ) );
+}
+add_filter( 'woocommerce_attribute', 'premium_shop_gaming_attr_values', 20, 3 );

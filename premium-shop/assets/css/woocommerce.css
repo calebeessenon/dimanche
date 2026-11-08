@@ -4225,3 +4225,37 @@ form.track_order input.input-text {
 .ps-order-delivery__note {
 	color: var(--ps-text-muted);
 }
+
+/* Technical data table in product descriptions. */
+.ps-specs {
+	width: 100%;
+	margin: 12px 0 24px;
+	border-collapse: collapse;
+	font-size: .95rem;
+}
+
+.ps-specs th,
+.ps-specs td {
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--ps-border);
+	text-align: left;
+	vertical-align: top;
+}
+
+.ps-specs th {
+	width: 38%;
+	color: var(--ps-muted);
+	font-weight: 600;
+}
+
+.ps-specs tr:nth-child(odd) {
+	background: color-mix(in srgb, var(--ps-soft) 55%, transparent);
+}
+
+@media (max-width: 600px) {
+	.ps-specs th,
+	.ps-specs td {
+		padding: 8px 10px;
+		font-size: .9rem;
+	}
+}

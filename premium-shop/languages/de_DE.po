@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 09:44+0000\n"
-"PO-Revision-Date: 2026-11-08 09:44+0000\n"
+"POT-Creation-Date: 2026-11-08 10:02+0000\n"
+"PO-Revision-Date: 2026-11-08 10:02+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -2221,123 +2221,123 @@ msgstr "Aktuelle Nintendo- und PlayStation-Konsolen spielen Spiele aus allen Reg
 msgid "New, sealed products with the full manufacturer warranty."
 msgstr "Neue, versiegelte Produkte mit voller Herstellergarantie."
 
-#: inc/gaming/gaming.php:317
+#: inc/gaming/gaming.php:318
 msgid "Ends in"
 msgstr "Endet in"
 
-#: inc/gaming/gaming.php:319
+#: inc/gaming/gaming.php:320
 msgid "Happy holidays!"
 msgstr "Frohe Festtage!"
 
-#: inc/gaming/gaming.php:345
+#: inc/gaming/gaming.php:346
 msgid "Holiday deals: up to 20% off consoles and graphics cards"
 msgstr "Festtagsangebote: bis zu 20 % auf Konsolen und Grafikkarten"
 
-#: inc/gaming/gaming.php:346
+#: inc/gaming/gaming.php:347
 msgid "Order by 20 December — delivered before Christmas"
 msgstr "Bis 20. Dezember bestellen – vor Weihnachten geliefert"
 
-#: inc/gaming/gaming.php:347
+#: inc/gaming/gaming.php:348
 msgid "Free gift message with every order"
 msgstr "Kostenlose Geschenkbotschaft zu jeder Bestellung"
 
-#: inc/gaming/gaming.php:350
+#: inc/gaming/gaming.php:351
 msgid "Holiday deals are here"
 msgstr "Die Festtagsangebote sind da"
 
-#: inc/gaming/gaming.php:351
+#: inc/gaming/gaming.php:352
 msgid "The gifts every gamer is dreaming of"
 msgstr "Die Geschenke, von denen jeder Gamer träumt"
 
-#: inc/gaming/gaming.php:352
+#: inc/gaming/gaming.php:353
 msgid "PlayStation 5 Slim, Nintendo Switch 2, DualSense controllers and JBL speakers at holiday prices — original products, wrapped with care and delivered before Christmas."
 msgstr "PlayStation 5 Slim, Nintendo Switch 2, DualSense-Controller und JBL-Lautsprecher zu Festtagspreisen – Originalprodukte, sorgfältig verpackt und vor Weihnachten geliefert."
 
-#: inc/gaming/gaming.php:353
+#: inc/gaming/gaming.php:354
 msgid "Find the perfect gift"
 msgstr "Das perfekte Geschenk finden"
 
-#: inc/gaming/gaming.php:354 inc/gaming/gaming.php:356
+#: inc/gaming/gaming.php:355 inc/gaming/gaming.php:357
 msgid "Holiday deals"
 msgstr "Festtagsangebote"
 
-#: inc/gaming/gaming.php:355
+#: inc/gaming/gaming.php:356
 msgid "Top gift ideas"
 msgstr "Top-Geschenkideen"
 
-#: inc/gaming/gaming.php:357
+#: inc/gaming/gaming.php:358
 msgid "New for the holidays"
 msgstr "Neu zu den Festtagen"
 
-#: inc/gaming/gaming.php:358
+#: inc/gaming/gaming.php:359
 msgid "End-of-year sale"
 msgstr "Jahresend-Sale"
 
-#: inc/gaming/gaming.php:359
+#: inc/gaming/gaming.php:360
 msgid "PS5 Slim at its holiday price"
 msgstr "Die PS5 Slim zum Festtagspreis"
 
-#: inc/gaming/gaming.php:360
+#: inc/gaming/gaming.php:361
 msgid "The most wanted gift of the year: save up to CHF 50 on the PlayStation 5 Slim and up to CHF 30 on JBL speakers, while stocks last."
 msgstr "Das meistgewünschte Geschenk des Jahres: Sparen Sie bis zu CHF 50 auf die PlayStation 5 Slim und bis zu CHF 30 auf JBL-Lautsprecher, solange der Vorrat reicht."
 
-#: inc/gaming/gaming.php:361
+#: inc/gaming/gaming.php:362
 msgid "Unwrap the deals"
 msgstr "Angebote auspacken"
 
-#: inc/gaming/gaming.php:362
+#: inc/gaming/gaming.php:363
 msgid "Delivered before Christmas"
 msgstr "Vor Weihnachten geliefert"
 
-#: inc/gaming/gaming.php:363
+#: inc/gaming/gaming.php:364
 msgid "Order by 20 December"
 msgstr "Bestellung bis 20. Dezember"
 
-#: inc/gaming/gaming.php:364
+#: inc/gaming/gaming.php:365
 msgid "Extended returns"
 msgstr "Verlängerte Rückgabe"
 
-#: inc/gaming/gaming.php:365
+#: inc/gaming/gaming.php:366
 msgid "Gifts can be exchanged until 15 January"
 msgstr "Geschenke können bis 15. Januar umgetauscht werden"
 
-#: inc/gaming/gaming.php:366
+#: inc/gaming/gaming.php:367
 msgid "Holiday deals straight to your inbox"
 msgstr "Festtagsangebote direkt in Ihr Postfach"
 
-#: inc/gaming/gaming.php:367
+#: inc/gaming/gaming.php:368
 msgid "Flash deals, restocks and last-minute gift ideas until New Year. Unsubscribe at any time."
 msgstr "Blitzangebote, Nachlieferungen und Last-Minute-Geschenkideen bis Neujahr. Abmeldung jederzeit möglich."
 
-#: inc/gaming/gaming.php:399
+#: inc/gaming/gaming.php:400
 msgid "Snow on / off"
 msgstr "Schnee an / aus"
 
-#: inc/gaming/gaming.php:429
+#: inc/gaming/gaming.php:430
 msgid "Audio & speakers"
 msgstr "Audio & Lautsprecher"
 
-#: inc/gaming/gaming.php:430
+#: inc/gaming/gaming.php:431
 msgid "Games & gift cards"
 msgstr "Spiele & Guthaben"
 
-#: inc/gaming/gaming.php:432
+#: inc/gaming/gaming.php:433
 msgid "Gift idea"
 msgstr "Geschenkidee"
 
-#: inc/gaming/gaming.php:433
+#: inc/gaming/gaming.php:434
 msgid "Accessories"
 msgstr "Zubehör"
 
-#: inc/gaming/gaming.php:479
+#: inc/gaming/gaming.php:480
 msgid "Shop style & FAQ"
 msgstr "Shop-Stil & FAQ"
 
-#: inc/gaming/gaming.php:480
+#: inc/gaming/gaming.php:481
 msgid "Style of the shop, holiday season mode and questions & answers."
 msgstr "Stil des Shops, Festtagsmodus und Fragen & Antworten."
 
-#: inc/gaming/gaming.php:488
+#: inc/gaming/gaming.php:489
 msgid "Empty = built-in FAQ, translated automatically."
 msgstr "Leer = integrierte FAQ, automatisch übersetzt."
 
@@ -4060,19 +4060,19 @@ msgstr "Weihnachten kommt"
 msgid "Order by 20 December for delivery before Christmas."
 msgstr "Bis 20. Dezember bestellen – Lieferung vor Weihnachten."
 
-#: template-parts/homepage/gaming-gifts.php:51 template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:318
+#: template-parts/homepage/gaming-gifts.php:51 template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:319
 msgid "days"
 msgstr "Tage"
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:318
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:319
 msgid "hrs"
 msgstr "Std."
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:318
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:319
 msgid "min"
 msgstr "Min."
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:318
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:319
 msgid "sec"
 msgstr "Sek."
 
@@ -4080,7 +4080,7 @@ msgstr "Sek."
 msgid "Consoles"
 msgstr "Konsolen"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:428
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:429
 msgid "Controllers"
 msgstr "Controller"
 
@@ -4096,7 +4096,7 @@ msgstr "Geschenkkarten"
 msgid "Games"
 msgstr "Spiele"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:431
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:432
 msgid "Graphics cards"
 msgstr "Grafikkarten"
 
