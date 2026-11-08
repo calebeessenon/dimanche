@@ -433,3 +433,33 @@ function premium_shop_gaming_category_strings() {
 		__( 'Accessories', 'premium-shop' ),
 	);
 }
+
+/**
+ * NeoPlay logo (white, for the dark header and footer) while no logo is
+ * chosen in Customizer → Site Identity.
+ *
+ * @param string $url Logo URL.
+ * @return string
+ */
+function premium_shop_gaming_builtin_logo( $url ) {
+	if ( 'gaming' !== premium_shop_preset() ) {
+		return $url;
+	}
+	return PREMIUM_SHOP_URI . '/assets/images/gaming/neoplay-logo-blanc.svg';
+}
+add_filter( 'premium_shop_builtin_logo', 'premium_shop_gaming_builtin_logo' );
+
+/**
+ * NeoPlay browser icon while no site icon is chosen in Customizer → Site
+ * Identity.
+ */
+function premium_shop_gaming_favicon() {
+	if ( 'gaming' !== premium_shop_preset() || has_site_icon() ) {
+		return;
+	}
+	$base = PREMIUM_SHOP_URI . '/assets/images/gaming/';
+	echo '<link rel="icon" href="' . esc_url( $base . 'neoplay-icone.svg' ) . '" type="image/svg+xml">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $base . 'neoplay-icone-32.png' ) . '" sizes="32x32" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $base . 'neoplay-icone-180.png' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'premium_shop_gaming_favicon', 5 );

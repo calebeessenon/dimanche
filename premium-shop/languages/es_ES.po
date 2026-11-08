@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 07:47+0000\n"
-"PO-Revision-Date: 2026-11-08 07:47+0000\n"
+"POT-Creation-Date: 2026-11-08 08:09+0000\n"
+"PO-Revision-Date: 2026-11-08 08:09+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: es_ES\n"
@@ -286,7 +286,7 @@ msgstr "Mensajes de contacto"
 msgid "Contact message"
 msgstr "Mensaje de contacto"
 
-#: inc/contact.php:295 inc/contact.php:397 inc/newsletter.php:274 inc/template-tags.php:166
+#: inc/contact.php:295 inc/contact.php:397 inc/newsletter.php:274 inc/template-tags.php:175
 msgid "Language"
 msgstr "Idioma"
 
@@ -2670,116 +2670,116 @@ msgstr "Widgets opcionales mostrados bajo los filtros integrados."
 msgid "Footer — extra column"
 msgstr "Pie de página — columna adicional"
 
-#: inc/template-tags.php:106 inc/template-tags.php:444 inc/admin/onboarding.php:514
+#: inc/template-tags.php:115 inc/template-tags.php:453 inc/admin/onboarding.php:514
 msgid "Home"
 msgstr "Inicio"
 
-#: inc/template-tags.php:129 inc/template-tags.php:549 inc/admin/onboarding.php:517 inc/admin/onboarding.php:528
+#: inc/template-tags.php:138 inc/template-tags.php:558 inc/admin/onboarding.php:517 inc/admin/onboarding.php:528
 msgid "Offers"
 msgstr "Ofertas"
 
-#: inc/template-tags.php:138 inc/admin/onboarding.php:344
+#: inc/template-tags.php:147 inc/admin/onboarding.php:344
 msgid "About us"
 msgstr "Sobre nosotros"
 
 #. translators:%s: current language name.
-#: inc/template-tags.php:218
+#: inc/template-tags.php:227
 msgid "Language: %s"
 msgstr "Idioma: %s"
 
-#: inc/template-tags.php:267 inc/customizer/config.php:404
+#: inc/template-tags.php:276 inc/customizer/config.php:404
 msgid "Social networks"
 msgstr "Redes sociales"
 
 #. translators:%s: social network name.
-#: inc/template-tags.php:275
+#: inc/template-tags.php:284
 msgid "%s (opens in a new tab)"
 msgstr "%s (se abre en una nueva pestaña)"
 
-#: inc/template-tags.php:338 inc/woocommerce/order-language.php:554
+#: inc/template-tags.php:347 inc/woocommerce/order-language.php:554
 msgid "Invoice"
 msgstr "Factura"
 
-#: inc/template-tags.php:339 inc/woocommerce/order-language.php:553
+#: inc/template-tags.php:348 inc/woocommerce/order-language.php:553
 msgid "Prepayment"
 msgstr "Pago por adelantado"
 
-#: inc/template-tags.php:357
+#: inc/template-tags.php:366
 msgid "Accepted payment methods"
 msgstr "Métodos de pago aceptados"
 
-#: inc/template-tags.php:387
+#: inc/template-tags.php:396
 msgid "View all"
 msgstr "Ver todo"
 
-#: inc/template-tags.php:427 inc/template-tags.php:432 inc/template-tags.php:443 inc/woocommerce/setup.php:83
+#: inc/template-tags.php:436 inc/template-tags.php:441 inc/template-tags.php:452 inc/woocommerce/setup.php:83
 msgid "Breadcrumb"
 msgstr "Ruta de navegación"
 
 #. translators:%s: search query.
-#: inc/template-tags.php:458
+#: inc/template-tags.php:467
 msgid "Search results for “%s”"
 msgstr "Resultados de búsqueda de «%s»"
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:470
 msgid "Page not found"
 msgstr "Página no encontrada"
 
 #. translators:%s: author name.
-#: inc/template-tags.php:481
+#: inc/template-tags.php:490
 msgid "by %s"
 msgstr "por %s"
 
-#: inc/template-tags.php:492 inc/woocommerce/setup.php:139
+#: inc/template-tags.php:501 inc/woocommerce/setup.php:139
 msgid "Previous page"
 msgstr "Página anterior"
 
-#: inc/template-tags.php:493 inc/woocommerce/setup.php:140
+#: inc/template-tags.php:502 inc/woocommerce/setup.php:140
 msgid "Next page"
 msgstr "Página siguiente"
 
-#: inc/template-tags.php:547 inc/admin/onboarding.php:526 inc/customizer/config.php:27 inc/customizer/config.php:562
+#: inc/template-tags.php:556 inc/admin/onboarding.php:526 inc/customizer/config.php:27 inc/customizer/config.php:562
 msgid "New arrivals"
 msgstr "Novedades"
 
-#: inc/template-tags.php:548 inc/admin/onboarding.php:527 inc/customizer/config.php:29 inc/customizer/config.php:564
+#: inc/template-tags.php:557 inc/admin/onboarding.php:527 inc/customizer/config.php:29 inc/customizer/config.php:564
 msgid "Bestsellers"
 msgstr "Más vendidos"
 
-#: inc/template-tags.php:569
+#: inc/template-tags.php:578
 msgid "Track my orders"
 msgstr "Seguir mis pedidos"
 
-#: inc/template-tags.php:574 inc/admin/onboarding.php:362
+#: inc/template-tags.php:583 inc/admin/onboarding.php:362
 msgid "Shipping & payment"
 msgstr "Envío y pago"
 
-#: inc/template-tags.php:578 inc/customizer/config.php:37
+#: inc/template-tags.php:587 inc/customizer/config.php:37
 msgid "FAQ"
 msgstr "Preguntas frecuentes"
 
-#: inc/template-tags.php:586 inc/admin/onboarding.php:367
+#: inc/template-tags.php:595 inc/admin/onboarding.php:367
 msgid "Legal notice"
 msgstr "Aviso legal"
 
-#: inc/template-tags.php:587 inc/admin/onboarding.php:372
+#: inc/template-tags.php:596 inc/admin/onboarding.php:372
 msgid "Terms & conditions"
 msgstr "Condiciones generales"
 
-#: inc/template-tags.php:588 inc/admin/onboarding.php:377
+#: inc/template-tags.php:597 inc/admin/onboarding.php:377
 msgid "Right of withdrawal"
 msgstr "Derecho de desistimiento"
 
-#: inc/template-tags.php:589
+#: inc/template-tags.php:598
 msgid "Terms of use"
 msgstr "Condiciones de uso"
 
-#: inc/template-tags.php:599
+#: inc/template-tags.php:608
 msgid "Privacy policy"
 msgstr "Política de privacidad"
 
 #. translators:1: year, 2: company name.
-#: inc/template-tags.php:618
+#: inc/template-tags.php:627
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. Todos los derechos reservados."
 
@@ -3399,7 +3399,7 @@ msgstr "Toca el corazón de cualquier producto para guardarlo aquí para más ta
 msgid "Discover products"
 msgstr "Descubrir productos"
 
-#: page.php:54 single.php:41 inc/template-tags.php:494
+#: page.php:54 single.php:41 inc/template-tags.php:503
 msgid "Page"
 msgstr "Página"
 
@@ -3584,7 +3584,7 @@ msgstr "Legal"
 msgid "Back to top"
 msgstr "Volver arriba"
 
-#: template-parts/footer/site-footer.php:37 inc/template-tags.php:114 inc/admin/onboarding.php:515
+#: template-parts/footer/site-footer.php:37 inc/template-tags.php:123 inc/admin/onboarding.php:515
 msgid "Shop"
 msgstr "Tienda"
 
@@ -3592,7 +3592,7 @@ msgstr "Tienda"
 msgid "Customer service"
 msgstr "Atención al cliente"
 
-#: template-parts/footer/site-footer.php:42 inc/template-tags.php:146 inc/template-tags.php:582 inc/admin/onboarding.php:349
+#: template-parts/footer/site-footer.php:42 inc/template-tags.php:155 inc/template-tags.php:591 inc/admin/onboarding.php:349
 msgid "Contact"
 msgstr "Contacto"
 
@@ -3628,7 +3628,7 @@ msgstr "Cerrar el menú"
 msgid "Main menu"
 msgstr "Menú principal"
 
-#: template-parts/header/mobile-menu.php:36 template-parts/header/site-header.php:48 inc/template-tags.php:568 inc/woocommerce/account.php:100
+#: template-parts/header/mobile-menu.php:36 template-parts/header/site-header.php:48 inc/template-tags.php:577 inc/woocommerce/account.php:100
 msgid "My account"
 msgstr "Mi cuenta"
 
@@ -3664,7 +3664,7 @@ msgstr "Abrir el menú"
 msgid "Sign in"
 msgstr "Iniciar sesión"
 
-#: template-parts/header/site-header.php:67 inc/template-tags.php:570 inc/woocommerce/cart-checkout.php:27
+#: template-parts/header/site-header.php:67 inc/template-tags.php:579 inc/woocommerce/cart-checkout.php:27
 msgid "Cart"
 msgstr "Carrito"
 
@@ -3688,7 +3688,7 @@ msgstr "Calcula en segundos la leña que necesitas para la temporada y convierte
 msgid "Explore"
 msgstr "Explorar"
 
-#: template-parts/homepage/categories.php:47 inc/template-tags.php:546 inc/admin/onboarding.php:525
+#: template-parts/homepage/categories.php:47 inc/template-tags.php:555 inc/admin/onboarding.php:525
 msgid "All products"
 msgstr "Todos los productos"
 
@@ -3892,7 +3892,7 @@ msgstr "Ver detalles"
 msgid "Choose options"
 msgstr "Elegir opciones"
 
-#: woocommerce/archive-product.php:63 inc/enqueue.php:104 inc/template-tags.php:122 inc/woocommerce/shop-filters.php:260
+#: woocommerce/archive-product.php:63 inc/enqueue.php:104 inc/template-tags.php:131 inc/woocommerce/shop-filters.php:260
 msgid "Categories"
 msgstr "Categorías"
 

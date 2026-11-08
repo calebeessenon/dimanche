@@ -15,6 +15,15 @@ function premium_shop_logo() {
 		the_custom_logo();
 		return;
 	}
+	$builtin = (string) apply_filters( 'premium_shop_builtin_logo', '' );
+	if ( '' !== $builtin ) {
+		?>
+		<a class="custom-logo-link ps-logo-builtin" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img class="custom-logo" src="<?php echo esc_url( $builtin ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="380" height="128" decoding="async">
+		</a>
+		<?php
+		return;
+	}
 	?>
 	<a class="ps-logo-text" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php bloginfo( 'name' ); ?>

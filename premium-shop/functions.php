@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '2.3.3' );
+define( 'PREMIUM_SHOP_VERSION', '2.3.4' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 if ( ! defined( 'PREMIUM_SHOP_DEFAULT_PRESET' ) ) {
