@@ -6267,3 +6267,68 @@ p.ps-hero__title {
 .ps-preset-gaming .ps-ticker__item .ps-icon {
 	color: #8ff1ff;
 }
+
+/* Delivery terms and returns & refund policy ---------------------------- */
+.ps-policy h2 {
+	margin-top: clamp(28px, 4vw, 44px);
+}
+
+.ps-policy .ps-zones {
+	margin-bottom: 18px;
+}
+
+.ps-policy ol,
+.ps-policy ul {
+	padding-left: 1.3em;
+}
+
+.ps-policy li + li {
+	margin-top: 6px;
+}
+
+.ps-policy-table td:first-child {
+	font-weight: 600;
+}
+
+.ps-policy-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 18px;
+	margin: 14px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: .92rem;
+}
+
+.ps-policy-links a {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	color: var(--ps-primary);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.ps-policy-links a:hover {
+	text-decoration-thickness: 2px;
+}
+
+.ps-policy-links--cart,
+.ps-policy-links--checkout,
+.ps-policy-links--block {
+	justify-content: center;
+	margin: 16px 0;
+}
+
+.ps-preset-gaming .ps-policy-links a {
+	color: #9fe8ff;
+}
+
+@media (max-width: 600px) {
+	.ps-policy-table th,
+	.ps-policy-table td {
+		padding: 10px 10px;
+		font-size: .9rem;
+	}
+}

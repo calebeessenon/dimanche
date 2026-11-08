@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '2.3.6' );
+define( 'PREMIUM_SHOP_VERSION', '2.3.7' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 if ( ! defined( 'PREMIUM_SHOP_DEFAULT_PRESET' ) ) {
@@ -42,6 +42,7 @@ $premium_shop_includes = array(
 	'inc/home-slider.php',
 	'inc/content-sections.php',
 	'inc/legal.php',
+	'inc/policies.php',
 	'inc/i18n-content.php',
 	'inc/upgrade.php',
 );
