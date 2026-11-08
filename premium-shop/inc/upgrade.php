@@ -61,6 +61,10 @@ function premium_shop_maybe_upgrade() {
 		set_theme_mod( 'ps_font_body', 'cambria' );
 	}
 
+	if ( '' !== $done && version_compare( $done, '2.3.3', '<' ) ) {
+		do_action( 'premium_shop_upgrade_2_3_3' );
+	}
+
 	// Self-healing steps, safe to repeat after every update.
 	premium_shop_replace_foreign_email();
 	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {

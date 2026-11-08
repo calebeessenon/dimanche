@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.3 =
+* Privacy policy and terms of use follow the contact details (company,
+  address, e-mail, phone, city) in every language: updated with the theme and
+  after each Customizer save. Pages edited by hand keep their text; only the
+  old e-mail address, phone number and company name are replaced.
+* Gaming edition: company name NeoPlay by default; contact details copied from
+  the firewood shop (warmeholz e-mail) are replaced by info@neoplay.ch.
 
 = 2.3.2 =
 * Gaming edition (NeoPlay): contact details filled in by default: 9 route du

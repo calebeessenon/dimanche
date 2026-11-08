@@ -274,3 +274,226 @@ function premium_shop_legal_menu_on_publish( $new_status, $old_status, $post ) {
 	}
 }
 add_action( 'transition_post_status', 'premium_shop_legal_menu_on_publish', 10, 3 );
+
+/**
+ * Block-level pieces (paragraphs, headings, lists) of a legal text, as plain
+ * text, in order.
+ *
+ * @param string $html HTML or block markup.
+ * @return string[]
+ */
+function premium_shop_legal_pieces( $html ) {
+	preg_match_all( '#<(p|h2|h3|ul)\b[^>]*>.*?</\1>#s', (string) $html, $matches );
+	$out = array();
+	foreach ( $matches[0] as $piece ) {
+		$text  = html_entity_decode( wp_strip_all_tags( $piece ), ENT_QUOTES, 'UTF-8' );
+		$out[] = trim( preg_replace( '/\s+/u', ' ', $text ) );
+	}
+	return $out;
+}
+
+/**
+ * New text for a legal page written by the theme, with the current contact
+ * details.
+ *
+ * The stored text is compared with the theme's text block by block: when the
+ * only differences are in the blocks that hold contact details (company,
+ * address, e-mail, phone, city, date), the page was not edited by hand and is
+ * rewritten. A page edited by hand is left alone (null).
+ *
+ * @param string $content Stored text.
+ * @param string $doc     privacy|terms.
+ * @param string $lang    Language of the stored text, '' to detect it.
+ * @return array|null array( new text, language ) or null; new text is '' when nothing changed.
+ */
+function premium_shop_legal_refreshed( $content, $doc, $lang = '' ) {
+	$current = premium_shop_legal_pieces( $content );
+	if ( ! $current ) {
+		return null;
+	}
+	foreach ( $lang ? array( $lang ) : array( 'de', 'fr', 'en', 'es' ) as $code ) {
+		$file = PREMIUM_SHOP_DIR . '/inc/legal/' . $doc . '-' . $code . '.html';
+		if ( ! is_readable( $file ) ) {
+			continue;
+		}
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- local theme file.
+		preg_match_all( '#<(p|h2|h3|ul)\b[^>]*>.*?</\1>#s', (string) file_get_contents( $file ), $tpl );
+		$fresh_html = premium_shop_legal_content( $doc, $code );
+		$fresh      = premium_shop_legal_pieces( $fresh_html );
+		if ( count( $fresh ) !== count( $current ) || count( $tpl[0] ) !== count( $current ) ) {
+			continue;
+		}
+		$ok      = true;
+		$changed = false;
+		foreach ( $current as $i => $text ) {
+			if ( $text === $fresh[ $i ] ) {
+				continue;
+			}
+			if ( false === strpos( $tpl[0][ $i ], '{' ) ) {
+				$ok = false; // A block without contact details was changed by hand.
+				break;
+			}
+			// Only the "last updated" date differs: nothing to update.
+			if ( preg_match_all( '/\{[a-z_]+\}/', $tpl[0][ $i ], $ph ) && array( '{date}' ) === array_values( array_unique( $ph[0] ) ) ) {
+				continue;
+			}
+			$changed = true;
+		}
+		if ( $ok ) {
+			return array( $changed ? $fresh_html : '', $code );
+		}
+	}
+	return null;
+}
+
+/**
+ * Legal pages written by the theme (privacy policy, terms of use).
+ *
+ * @return array page ID => privacy|terms
+ */
+function premium_shop_legal_pages() {
+	$pages = array();
+	$ids   = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => 'any',
+			'posts_per_page' => 20,
+			'fields'         => 'ids',
+			'meta_key'       => '_ps_legal_doc', // phpcs:ignore WordPress.DB.SlowDBQuery
+		)
+	);
+	foreach ( $ids as $id ) {
+		$pages[ (int) $id ] = (string) get_post_meta( $id, '_ps_legal_doc', true );
+	}
+	$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
+	if ( $privacy && ! isset( $pages[ $privacy ] ) && get_post( $privacy ) ) {
+		$pages[ $privacy ] = 'privacy';
+	}
+	foreach ( premium_shop_legal_docs() as $doc => $data ) {
+		$page = get_page_by_path( $data['slug'], OBJECT, 'page' );
+		if ( $page && ! isset( $pages[ $page->ID ] ) ) {
+			$pages[ (int) $page->ID ] = $doc;
+		}
+	}
+	return array_filter(
+		$pages,
+		static function ( $doc ) {
+			return in_array( $doc, array( 'privacy', 'terms' ), true );
+		}
+	);
+}
+
+/**
+ * Put the current contact details (company, address, e-mail, phone, city)
+ * into the privacy policy and the terms of use, in every language.
+ *
+ * Pages written by the theme are rewritten; in pages edited by hand the old
+ * e-mail address and phone number given in $replace are swapped for the new
+ * ones, the rest of the text is kept.
+ *
+ * @param array $replace Old value => new value, for pages edited by hand.
+ */
+function premium_shop_legal_refresh( $replace = array() ) {
+	$replace = array_filter(
+		(array) $replace,
+		static function ( $new, $old ) {
+			return '' !== trim( (string) $old ) && '' !== trim( (string) $new ) && $old !== $new;
+		},
+		ARRAY_FILTER_USE_BOTH
+	);
+
+	foreach ( premium_shop_legal_pages() as $id => $doc ) {
+		$post = get_post( $id );
+		if ( ! $post || 'trash' === $post->post_status ) {
+			continue;
+		}
+
+		$result = premium_shop_legal_refreshed( $post->post_content, $doc );
+		$new    = null;
+		if ( $result ) {
+			$new = $result[0];
+		} elseif ( $replace ) {
+			$new = strtr( $post->post_content, $replace );
+			$new = $new === $post->post_content ? '' : $new;
+		}
+		if ( $new ) {
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => $id,
+						'post_content' => $new,
+					)
+				)
+			);
+		}
+		update_post_meta( $id, '_ps_legal_doc', $doc );
+
+		foreach ( array( 'de', 'fr', 'en', 'es' ) as $lang ) {
+			$meta = (string) get_post_meta( $id, '_ps_desc_' . $lang, true );
+			if ( '' === $meta ) {
+				continue;
+			}
+			$result = premium_shop_legal_refreshed( $meta, $doc, $lang );
+			if ( $result ) {
+				$new = $result[0];
+			} else {
+				$new = $replace ? strtr( $meta, $replace ) : '';
+				$new = $new === $meta ? '' : $new;
+			}
+			if ( $new ) {
+				update_post_meta( $id, '_ps_desc_' . $lang, wp_slash( $new ) );
+			}
+		}
+	}
+}
+
+/**
+ * Contact details before a Customizer save (to replace them in pages edited
+ * by hand).
+ */
+function premium_shop_legal_remember_contact() {
+	$GLOBALS['premium_shop_old_contact'] = array(
+		'email'   => trim( (string) premium_shop_option( 'contact_email' ) ),
+		'phone'   => trim( (string) premium_shop_option( 'contact_phone' ) ),
+		'company' => trim( (string) premium_shop_option( 'company_name' ) ),
+	);
+}
+add_action( 'customize_save', 'premium_shop_legal_remember_contact' );
+
+/**
+ * After a Customizer save: the legal pages follow the new contact details.
+ */
+function premium_shop_legal_refresh_after_save() {
+	$old = isset( $GLOBALS['premium_shop_old_contact'] ) ? $GLOBALS['premium_shop_old_contact'] : array();
+	$map = array();
+	foreach ( array( 'email' => 'contact_email', 'phone' => 'contact_phone', 'company' => 'company_name' ) as $k => $key ) {
+		if ( ! empty( $old[ $k ] ) ) {
+			$map[ $old[ $k ] ] = trim( (string) premium_shop_option( $key ) );
+		}
+	}
+	premium_shop_legal_refresh( $map );
+}
+add_action( 'customize_save_after', 'premium_shop_legal_refresh_after_save' );
+
+/**
+ * Theme update: legal pages with the current contact details. On the gaming
+ * edition, contact details copied from the firewood shop are replaced.
+ */
+function premium_shop_legal_refresh_on_upgrade() {
+	$map = array();
+	if ( function_exists( 'premium_shop_preset' ) && 'gaming' === premium_shop_preset() ) {
+		$email = strtolower( trim( (string) get_theme_mod( 'ps_contact_email', '' ) ) );
+		if ( false !== strpos( $email, 'warmeholz' ) || false !== strpos( $email, 'mirop-bois' ) ) {
+			remove_theme_mod( 'ps_contact_email' ); // Back to info@neoplay.ch.
+		}
+		if ( false !== stripos( (string) get_theme_mod( 'ps_company_name', '' ), 'warmeholz' ) ) {
+			remove_theme_mod( 'ps_company_name' );
+		}
+		$new = trim( (string) premium_shop_option( 'contact_email' ) );
+		foreach ( array( 'info@warmeholz.ch', 'info@mirop-bois.ch', (string) get_option( 'admin_email' ) ) as $old ) {
+			$map[ $old ] = $new;
+		}
+	}
+	premium_shop_legal_refresh( $map );
+}
+add_action( 'premium_shop_upgrade_2_3_3', 'premium_shop_legal_refresh_on_upgrade' );

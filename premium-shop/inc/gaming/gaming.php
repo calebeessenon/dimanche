@@ -49,6 +49,7 @@ function premium_shop_gaming_overrides() {
 			'contact_address'         => "9 route du Beauregard\n1180 Rolle, Suisse",
 			'contact_phone'           => '+4175731714',
 			'contact_email'           => 'info@neoplay.ch',
+			'company_name'            => 'NeoPlay',
 			// Firewood tools off.
 			'fw_unit_price'           => false,
 			'fw_specs_on_cards'       => false,
