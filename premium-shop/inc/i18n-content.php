@@ -125,12 +125,138 @@ function premium_shop_i18n_label( $text ) {
  */
 function premium_shop_i18n_page_title( $page_id, $title ) {
 	$lang = premium_shop_i18n_target();
-	if ( '' === $lang ) {
-		return $title;
+	if ( '' !== $lang ) {
+		$own = trim( (string) get_post_meta( $page_id, '_ps_name_' . $lang, true ) );
+		if ( '' !== $own ) {
+			return $own;
+		}
 	}
-	$own = trim( (string) get_post_meta( $page_id, '_ps_name_' . $lang, true ) );
-	return '' !== $own ? $own : premium_shop_i18n_label( $title );
+	// Shop, cart, checkout, account… created by WooCommerce / WordPress in
+	// the language WordPress was installed in ("Validation de la commande"
+	// on a German shop): shown in the visitor's language.
+	$system = premium_shop_system_page_title( (int) $page_id, $title, '' !== $lang ? $lang : premium_shop_default_language() );
+	if ( '' !== $system ) {
+		return $system;
+	}
+	return premium_shop_i18n_label( $title );
 }
+
+/**
+ * Default titles of the pages created by WooCommerce and WordPress, in every
+ * language WordPress or WooCommerce may have used when creating them.
+ *
+ * @return array role => array( 'de' => …, 'fr' => …, 'en' => …, 'es' => …, 'other' => string[] )
+ */
+function premium_shop_system_page_titles() {
+	return array(
+		'shop'      => array( 'de' => 'Shop', 'fr' => 'Boutique', 'en' => 'Shop', 'es' => 'Tienda', 'other' => array( 'Produkte', 'Magasin', 'Products', 'Productos' ) ),
+		'cart'      => array( 'de' => 'Warenkorb', 'fr' => 'Panier', 'en' => 'Cart', 'es' => 'Carrito', 'other' => array( 'Basket', 'Cesta' ) ),
+		'checkout'  => array( 'de' => 'Kasse', 'fr' => 'Commande', 'en' => 'Checkout', 'es' => 'Finalizar compra', 'other' => array( 'Validation de la commande', 'Paiement', 'Commander', 'Caisse', 'Bestellung', 'Zur Kasse', 'Pago', 'Finalizar pedido' ) ),
+		'myaccount' => array( 'de' => 'Mein Konto', 'fr' => 'Mon compte', 'en' => 'My account', 'es' => 'Mi cuenta', 'other' => array( 'My Account', 'Kundenkonto' ) ),
+		'refund'    => array( 'de' => 'Rückerstattung und Rückgaben', 'fr' => 'Politique de remboursement et de retour', 'en' => 'Refund and Returns Policy', 'es' => 'Política de reembolso y devoluciones', 'other' => array( 'Rückerstattungs- und Rückgaberichtlinie', 'Politique de remboursements et de retours' ) ),
+		'privacy'   => array( 'de' => 'Datenschutzerklärung', 'fr' => 'Politique de confidentialité', 'en' => 'Privacy policy', 'es' => 'Política de privacidad', 'other' => array( 'Privacy Policy', 'Datenschutz' ) ),
+		'terms'     => array( 'de' => 'AGB', 'fr' => 'Conditions générales de vente', 'en' => 'Terms and conditions', 'es' => 'Términos y condiciones', 'other' => array( 'Allgemeine Geschäftsbedingungen', 'CGV', 'Terms & conditions' ) ),
+	);
+}
+
+/**
+ * Role of a page created by WooCommerce / WordPress ('' for other pages).
+ *
+ * @param int $page_id Page ID.
+ * @return string
+ */
+function premium_shop_system_page_role( $page_id ) {
+	static $roles = null;
+	if ( null === $roles ) {
+		$roles = array();
+		if ( function_exists( 'wc_get_page_id' ) ) {
+			foreach ( array( 'shop', 'cart', 'checkout', 'myaccount', 'terms' ) as $role ) {
+				$id = (int) wc_get_page_id( $role );
+				if ( $id > 0 ) {
+					$roles[ $id ] = $role;
+				}
+			}
+			$refund = (int) get_option( 'woocommerce_refund_returns_page_id' );
+			if ( $refund && ! isset( $roles[ $refund ] ) && 'rueckgabe-und-erstattung' !== get_post_field( 'post_name', $refund ) ) {
+				$roles[ $refund ] = 'refund';
+			}
+		}
+		$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
+		if ( $privacy && ! isset( $roles[ $privacy ] ) ) {
+			$roles[ $privacy ] = 'privacy';
+		}
+	}
+	return isset( $roles[ $page_id ] ) ? $roles[ $page_id ] : '';
+}
+
+/**
+ * Title of a WooCommerce / WordPress page in a language, when its stored
+ * title is still one of the default titles (a title you chose is kept).
+ *
+ * @param int    $page_id Page ID.
+ * @param string $title   Stored or current title.
+ * @param string $lang    Language code.
+ * @return string '' when the page is not concerned.
+ */
+function premium_shop_system_page_title( $page_id, $title, $lang ) {
+	$role = premium_shop_system_page_role( $page_id );
+	if ( '' === $role ) {
+		return '';
+	}
+	$set   = premium_shop_system_page_titles()[ $role ];
+	$known = array_merge( array( $set['de'], $set['fr'], $set['en'], $set['es'] ), $set['other'] );
+	$key   = premium_shop_i18n_key( wp_strip_all_tags( html_entity_decode( (string) $title, ENT_QUOTES, 'UTF-8' ) ) );
+	foreach ( $known as $candidate ) {
+		if ( premium_shop_i18n_key( $candidate ) === $key ) {
+			return isset( $set[ $lang ] ) ? $set[ $lang ] : $set['en'];
+		}
+	}
+	return '';
+}
+
+/**
+ * Theme update: store the WooCommerce / WordPress page titles in the shop
+ * language and their translations (also seen in the admin, menus, e-mails).
+ */
+function premium_shop_fix_system_page_titles() {
+	$default = premium_shop_default_language();
+	$ids = array();
+	if ( function_exists( 'wc_get_page_id' ) ) {
+		foreach ( array( 'shop', 'cart', 'checkout', 'myaccount', 'terms' ) as $role ) {
+			$ids[] = (int) wc_get_page_id( $role );
+		}
+		$ids[] = (int) get_option( 'woocommerce_refund_returns_page_id' );
+	}
+	$ids[] = (int) get_option( 'wp_page_for_privacy_policy' );
+	foreach ( array_unique( array_filter( $ids ) ) as $id ) {
+		$post = get_post( $id );
+		if ( ! $post || 'page' !== $post->post_type ) {
+			continue;
+		}
+		$title = premium_shop_system_page_title( $id, $post->post_title, $default );
+		if ( '' === $title ) {
+			continue;
+		}
+		if ( $title !== $post->post_title ) {
+			wp_update_post(
+				array(
+					'ID'         => $id,
+					'post_title' => $title,
+				)
+			);
+		}
+		foreach ( array( 'de', 'fr', 'en', 'es' ) as $lang ) {
+			if ( $lang === $default ) {
+				continue;
+			}
+			$current = trim( (string) get_post_meta( $id, '_ps_name_' . $lang, true ) );
+			if ( '' === $current || '' !== premium_shop_system_page_title( $id, $current, $lang ) ) {
+				update_post_meta( $id, '_ps_name_' . $lang, premium_shop_system_page_title( $id, $title, $lang ) );
+			}
+		}
+	}
+}
+add_action( 'premium_shop_upgrade_2_3_12', 'premium_shop_fix_system_page_titles' );
 
 /**
  * Page titles (front end).
@@ -361,3 +487,30 @@ function premium_shop_i18n_date_format( $format ) {
 	return '' !== $lang && isset( $formats[ $lang ] ) ? $formats[ $lang ] : $format;
 }
 add_filter( 'option_date_format', 'premium_shop_i18n_date_format', 20 );
+
+/**
+ * WooCommerce's default product category ("Non classé" on a site installed
+ * in French) in the visitor's language.
+ *
+ * @param WP_Term $term     Term.
+ * @param string  $taxonomy Taxonomy.
+ * @return WP_Term
+ */
+function premium_shop_i18n_default_category( $term, $taxonomy ) {
+	if ( 'product_cat' !== $taxonomy || ! $term instanceof WP_Term || is_admin() || (int) get_option( 'default_product_cat' ) !== (int) $term->term_id ) {
+		return $term;
+	}
+	$names = array( 'de' => 'Unkategorisiert', 'fr' => 'Non classé', 'en' => 'Uncategorized', 'es' => 'Sin categorizar' );
+	$key   = premium_shop_i18n_key( $term->name );
+	foreach ( $names as $name ) {
+		if ( premium_shop_i18n_key( $name ) === $key ) {
+			$lang       = premium_shop_i18n_target();
+			$lang       = '' !== $lang ? $lang : premium_shop_default_language();
+			$term       = clone $term;
+			$term->name = isset( $names[ $lang ] ) ? $names[ $lang ] : $names['en'];
+			break;
+		}
+	}
+	return $term;
+}
+add_filter( 'get_term', 'premium_shop_i18n_default_category', 20, 2 );

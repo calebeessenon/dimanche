@@ -78,6 +78,7 @@ function premium_shop_maybe_upgrade() {
 	}
 
 	// Self-healing steps, safe to repeat after every update.
+	do_action( 'premium_shop_upgrade_2_3_12' );
 	premium_shop_replace_foreign_email();
 	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {
 		premium_shop_legal_menu_sync();

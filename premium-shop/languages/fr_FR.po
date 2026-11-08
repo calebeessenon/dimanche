@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 11:05+0000\n"
-"PO-Revision-Date: 2026-11-08 11:05+0000\n"
+"POT-Creation-Date: 2026-11-08 11:35+0000\n"
+"PO-Revision-Date: 2026-11-08 11:35+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -2448,19 +2448,19 @@ msgstr "Diapositive précédente"
 msgid "Next slide"
 msgstr "Diapositive suivante"
 
-#: inc/i18n-content.php:303
+#: inc/i18n-content.php:429
 msgid "incl. VAT"
 msgstr "TTC"
 
-#: inc/i18n-content.php:304
+#: inc/i18n-content.php:430
 msgid "excl. VAT"
 msgstr "HT"
 
-#: inc/i18n-content.php:305
+#: inc/i18n-content.php:431
 msgid "plus shipping"
 msgstr "hors frais de livraison"
 
-#: inc/i18n-content.php:306
+#: inc/i18n-content.php:432
 msgid "incl. VAT, plus shipping"
 msgstr "TTC, hors frais de livraison"
 
