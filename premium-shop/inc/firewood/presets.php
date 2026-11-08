@@ -21,6 +21,15 @@ function premium_shop_preset() {
 }
 
 /**
+ * Whether the shop uses the "Gaming & tech" edition (no firewood features).
+ *
+ * @return bool
+ */
+function premium_shop_is_gaming() {
+	return 'gaming' === premium_shop_preset();
+}
+
+/**
  * Folder of the bundled images of the active preset ('' when none).
  *
  * @return string firewood|gaming|''

@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  * @return array id => label
  */
 function premium_shop_home_section_labels() {
-	return array(
+	$labels = array(
 		'hero'         => __( 'Hero', 'premium-shop' ),
 		'categories'   => __( 'Categories', 'premium-shop' ),
 		'popular'      => __( 'Popular products', 'premium-shop' ),
@@ -36,6 +36,10 @@ function premium_shop_home_section_labels() {
 		'delivery'     => __( 'Delivery check (postcode)', 'premium-shop' ),
 		'faq'          => __( 'FAQ', 'premium-shop' ),
 	);
+	if ( function_exists( 'premium_shop_is_gaming' ) && premium_shop_is_gaming() ) {
+		unset( $labels['calculator'], $labels['delivery'] );
+	}
+	return $labels;
 }
 
 /**

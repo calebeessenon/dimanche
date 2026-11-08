@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.7
+Stable tag: 2.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,14 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.8 =
+* Gaming edition: no firewood features left. The "Firewood" product data tab,
+  the firewood price tool, the postcode check, the truck question at
+  checkout and the firewood calculator are no longer loaded; the Customizer
+  section becomes "Shop style & FAQ" without firewood settings; the setup
+  assistant no longer offers the firewood catalogue; the order tracking page
+  no longer mentions wood.
 
 = 2.3.7 =
 * Gaming edition: "Returns & refunds" page (DE/FR/EN/ES) with precise time

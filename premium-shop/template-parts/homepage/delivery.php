@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! premium_shop_is_wc() || ! premium_shop_option( 'fw_delivery_check' ) ) {
+if ( ! premium_shop_is_wc() || ! premium_shop_option( 'fw_delivery_check' ) || ! function_exists( 'premium_shop_delivery_check' ) ) {
 	return;
 }
 ?>

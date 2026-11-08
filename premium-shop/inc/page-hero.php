@@ -216,8 +216,8 @@ function premium_shop_page_hero_context() {
 			array(
 				'variant'  => 'tracking',
 				'eyebrow'  => __( 'Order tracking', 'premium-shop' ),
-				'subtitle' => __( 'Where is my wood? Follow your delivery step by step.', 'premium-shop' ),
-				'art'      => 'truck',
+				'subtitle' => premium_shop_is_gaming() ? __( 'Where is my order? Follow your delivery step by step.', 'premium-shop' ) : __( 'Where is my wood? Follow your delivery step by step.', 'premium-shop' ),
+				'art'      => premium_shop_is_gaming() ? '' : 'truck',
 				'icon'     => 'truck',
 			)
 		);

@@ -159,6 +159,9 @@ function premium_shop_setup_page() {
 			'desc'  => __( 'Portrait 4:5 product thumbnails (600 px) — the ideal format for this design.', 'premium-shop' ),
 		),
 	);
+	if ( premium_shop_is_gaming() ) {
+		unset( $steps['firewood'] );
+	}
 	?>
 	<div class="wrap ps-setup">
 		<h1><?php esc_html_e( 'Premium Shop — setup assistant', 'premium-shop' ); ?></h1>
@@ -253,7 +256,7 @@ function premium_shop_run_setup_step() {
 			}
 			break;
 		case 'firewood':
-			if ( premium_shop_is_wc() && current_user_can( 'manage_woocommerce' ) && function_exists( 'premium_shop_fw_create_catalogue' ) ) {
+			if ( premium_shop_is_wc() && current_user_can( 'manage_woocommerce' ) && function_exists( 'premium_shop_fw_create_catalogue' ) && function_exists( 'premium_shop_fw_t' ) && ! premium_shop_is_gaming() ) {
 				premium_shop_fw_create_catalogue( ! empty( $_POST['publish'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Checked above.
 				set_theme_mod( 'ps_preset', 'firewood' );
 			}

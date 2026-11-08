@@ -371,7 +371,7 @@ function premium_shop_fw_catalogue_translations( $product, $name ) {
  * @return string
  */
 function premium_shop_fw_attribute_label( $label ) {
-	if ( ! function_exists( 'premium_shop_builtin_applies' ) || ! premium_shop_builtin_applies() || premium_shop_current_language() === premium_shop_default_language() ) {
+	if ( ! function_exists( 'premium_shop_fw_t' ) || ! function_exists( 'premium_shop_builtin_applies' ) || ! premium_shop_builtin_applies() || premium_shop_current_language() === premium_shop_default_language() ) {
 		return $label;
 	}
 	foreach ( array( 'Log length', 'Quantity' ) as $source ) {
@@ -395,5 +395,5 @@ function premium_shop_fw_unit_label_in_shop_language( $unit ) {
 		'srm' => 'loose m³',
 		'fm'  => 'solid m³',
 	);
-	return isset( $source[ $unit ] ) ? premium_shop_fw_t( $source[ $unit ] ) : $unit;
+	return isset( $source[ $unit ] ) && function_exists( 'premium_shop_fw_t' ) ? premium_shop_fw_t( $source[ $unit ] ) : $unit;
 }

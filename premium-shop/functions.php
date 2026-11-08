@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PREMIUM_SHOP_VERSION', '2.3.7' );
+define( 'PREMIUM_SHOP_VERSION', '2.3.8' );
 define( 'PREMIUM_SHOP_DIR', get_template_directory() );
 define( 'PREMIUM_SHOP_URI', get_template_directory_uri() );
 if ( ! defined( 'PREMIUM_SHOP_DEFAULT_PRESET' ) ) {
@@ -73,8 +73,20 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 }
 
+// Firewood-only modules (product data tab, price tool, postcode check, truck
+// question, calculator): not loaded in the "Gaming & tech" edition.
+$premium_shop_firewood_only = array(
+	'inc/firewood/calculator.php',
+	'inc/firewood/product-data.php',
+	'inc/firewood/price-tool.php',
+	'inc/firewood/delivery.php',
+);
+
 foreach ( $premium_shop_includes as $premium_shop_file ) {
+	if ( in_array( $premium_shop_file, $premium_shop_firewood_only, true ) && function_exists( 'premium_shop_is_gaming' ) && premium_shop_is_gaming() ) {
+		continue;
+	}
 	require_once PREMIUM_SHOP_DIR . '/' . $premium_shop_file;
 }
 
-unset( $premium_shop_includes, $premium_shop_file );
+unset( $premium_shop_includes, $premium_shop_file, $premium_shop_firewood_only );

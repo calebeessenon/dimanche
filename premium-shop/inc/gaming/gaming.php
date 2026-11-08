@@ -463,3 +463,52 @@ function premium_shop_gaming_favicon() {
 	echo '<link rel="apple-touch-icon" href="' . esc_url( $base . 'neoplay-icone-180.png' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'premium_shop_gaming_favicon', 5 );
+
+/**
+ * Customizer of the gaming edition: no firewood settings. The "Firewood
+ * shop" section keeps only the style, the holiday mode and the FAQ.
+ *
+ * @param array $sections Customizer sections.
+ * @return array
+ */
+function premium_shop_gaming_customizer( $sections ) {
+	if ( ! premium_shop_is_gaming() || empty( $sections['ps_firewood'] ) ) {
+		return $sections;
+	}
+	$section                = $sections['ps_firewood'];
+	$section['title']       = __( 'Shop style & FAQ', 'premium-shop' );
+	$section['description'] = __( 'Style of the shop, holiday season mode and questions & answers.', 'premium-shop' );
+	foreach ( array_keys( $section['fields'] ) as $key ) {
+		if ( 0 === strpos( $key, 'fw_' ) && 'fw_faq' !== $key || 'title_calculator' === $key ) {
+			unset( $section['fields'][ $key ] );
+		}
+	}
+	unset( $section['fields']['preset']['choices']['firewood'] );
+	if ( isset( $section['fields']['fw_faq'] ) ) {
+		$section['fields']['fw_faq']['description'] = __( 'Empty = built-in FAQ, translated automatically.', 'premium-shop' );
+	}
+	$sections['ps_firewood'] = $section;
+	return $sections;
+}
+add_filter( 'premium_shop_customizer_config', 'premium_shop_gaming_customizer' );
+
+/**
+ * Category translations offered when editing a category: no firewood names.
+ *
+ * @param array $terms Known names.
+ * @return array
+ */
+function premium_shop_gaming_known_terms( $terms ) {
+	if ( ! premium_shop_is_gaming() ) {
+		return $terms;
+	}
+	return array_values(
+		array_filter(
+			$terms,
+			static function ( $term ) {
+				return ! preg_match( '/wood|pellet|kindling|firewood|briquette|log/i', (string) ( isset( $term['en'] ) ? $term['en'] : '' ) );
+			}
+		)
+	);
+}
+add_filter( 'premium_shop_pt_known_terms', 'premium_shop_gaming_known_terms' );

@@ -6,6 +6,10 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+if ( ! function_exists( 'premium_shop_firewood_calculator' ) ) {
+	return;
+}
 ?>
 <section class="ps-section ps-calc-section" id="ps-calculator" aria-labelledby="ps-calculator-title">
 	<div class="ps-container">
