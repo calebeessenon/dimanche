@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.12
+Stable tag: 2.3.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,27 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.13 =
+* Site installed in another language than the shop's (e.g. French, then
+  switched to German): every text WordPress and WooCommerce saved in that
+  language is now shown, and stored, in the shop language.
+* Titles of WooCommerce's refund policy page as the language packs really
+  write them ("Politique en matière de remboursements et de retours",
+  "Richtlinie für Erstattungen und Rückgaben"…), read from the installed
+  language packs; also the leftover draft in the page list.
+* Payment and shipping method texts ("Virement bancaire", "Livraison
+  gratuite"…) and the privacy texts under the checkout and registration
+  forms: rewritten in the shop language on update, and shown in the visitor's
+  language (classic checkout, account page). Texts you typed are kept.
+* Default categories ("Non classé") of products and posts renamed in the shop
+  language (same address) and shown in the visitor's language.
+* WordPress' untouched example page and first post ("Page d'exemple",
+  "Bonjour tout le monde !") taken offline (draft).
+* Breadcrumbs of the account sub-pages ("Mein Konto / Mot de passe perdu"),
+  meta descriptions of translated pages and products, and the cart block
+  heading saved by WooCommerce ("Vous serez peut-être intéressé par…") in the
+  visitor's language.
 
 = 2.3.12 =
 * Pages created by WooCommerce and WordPress (shop, cart, checkout, my

@@ -433,6 +433,12 @@ function premium_shop_translate_wc_text( $text ) {
  */
 function premium_shop_wc_catalogue_translate( $text, $lang ) {
 	static $files = array();
+	// Saved from a text with a placeholder: "… décrites dans notre [privacy_policy]."
+	// is "… described in our %s." in the language files.
+	if ( preg_match( '/\[(privacy_policy|terms)\]/', $text, $placeholder ) && false === strpos( $text, '%' ) ) {
+		$hit = premium_shop_wc_catalogue_translate( str_replace( $placeholder[0], '%s', $text ), $lang );
+		return '' !== $hit && 1 === substr_count( $hit, '%s' ) ? str_replace( '%s', $placeholder[0], $hit ) : '';
+	}
 	$load = static function ( $locale ) use ( &$files ) {
 		if ( ! isset( $files[ $locale ] ) ) {
 			$files[ $locale ] = false;
@@ -525,6 +531,25 @@ function premium_shop_register_method_settings_filters() {
 add_action( 'init', 'premium_shop_register_method_settings_filters', 0 );
 
 /**
+ * Texts WooCommerce saved in its settings in the language WordPress was
+ * installed in (privacy texts under the checkout and registration forms,
+ * store notice): shown in the visitor's language. Front end only.
+ *
+ * @param mixed $value Option value.
+ * @return mixed
+ */
+function premium_shop_translate_wc_option_text( $value ) {
+	if ( ! is_string( $value ) || '' === trim( $value ) || ( is_admin() && ! wp_doing_ajax() ) || ! function_exists( 'premium_shop_i18n_label' ) ) {
+		return $value;
+	}
+	return premium_shop_translate_wc_text( $value );
+}
+foreach ( array( 'woocommerce_checkout_privacy_policy_text', 'woocommerce_registration_privacy_policy_text', 'woocommerce_checkout_terms_and_conditions_checkbox_text', 'woocommerce_demo_store_notice' ) as $premium_shop_wc_option ) {
+	add_filter( 'option_' . $premium_shop_wc_option, 'premium_shop_translate_wc_option_text', 20 );
+}
+unset( $premium_shop_wc_option );
+
+/**
  * Common names typed in WooCommerce settings, kept in the catalogue.
  *
  * @return string[]
@@ -557,15 +582,18 @@ function premium_shop_order_language_strings() {
 
 /**
  * Texts saved inside the cart / checkout blocks when the page was created
- * (e.g. "Dein Warenkorb ist gerade leer!", "Neu im Shop"): shown in the
- * visitor's language through WooCommerce's own translations.
+ * (e.g. "Dein Warenkorb ist gerade leer!", "Neu im Shop", "Vous serez
+ * peut-être intéressé par…"): shown in the visitor's language through
+ * WooCommerce's own translations.
  *
  * @param string $html  Block HTML.
  * @param array  $block Block.
  * @return string
  */
 function premium_shop_translate_wc_block_texts( $html, $block ) {
-	if ( is_admin() || '' === premium_shop_i18n_target() || empty( $block['blockName'] ) ) {
+	// Shop language too: the blocks were saved in the language WordPress was
+	// installed in ("Vous serez peut-être intéressé par…" on a German shop).
+	if ( is_admin() || empty( $block['blockName'] ) ) {
 		return $html;
 	}
 	$names = array( 'woocommerce/empty-cart-block', 'woocommerce/empty-mini-cart-contents-block', 'woocommerce/filled-cart-block', 'woocommerce/cart-cross-sells-block', 'woocommerce/proceed-to-checkout-block' );

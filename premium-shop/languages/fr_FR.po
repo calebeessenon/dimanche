@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 11:35+0000\n"
-"PO-Revision-Date: 2026-11-08 11:35+0000\n"
+"POT-Creation-Date: 2026-11-08 12:06+0000\n"
+"PO-Revision-Date: 2026-11-08 12:06+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -221,6 +221,10 @@ msgstr "Voir les promotions"
 msgid "Show submenu for %s"
 msgstr "Afficher le sous-menu de %s"
 
+#: inc/contact.php:105
+msgid "Website"
+msgstr "Site web"
+
 #: inc/contact.php:111 inc/contact.php:285 inc/contact.php:392 inc/woocommerce/wc-fallback-strings.php:97
 msgid "Name"
 msgstr "Nom"
@@ -360,7 +364,7 @@ msgid "Delivery time"
 msgstr "Délai de livraison"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117 inc/woocommerce/order-language.php:540 inc/woocommerce/wc-fallback-strings.php:99
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:565 inc/woocommerce/wc-fallback-strings.php:99
 msgid "Free shipping"
 msgstr "Livraison gratuite"
 
@@ -2448,19 +2452,19 @@ msgstr "Diapositive précédente"
 msgid "Next slide"
 msgstr "Diapositive suivante"
 
-#: inc/i18n-content.php:429
+#: inc/i18n-content.php:737
 msgid "incl. VAT"
 msgstr "TTC"
 
-#: inc/i18n-content.php:430
+#: inc/i18n-content.php:738
 msgid "excl. VAT"
 msgstr "HT"
 
-#: inc/i18n-content.php:431
+#: inc/i18n-content.php:739
 msgid "plus shipping"
 msgstr "hors frais de livraison"
 
-#: inc/i18n-content.php:432
+#: inc/i18n-content.php:740
 msgid "incl. VAT, plus shipping"
 msgstr "TTC, hors frais de livraison"
 
@@ -2708,11 +2712,11 @@ msgstr "Réseaux sociaux"
 msgid "%s (opens in a new tab)"
 msgstr "%s (s’ouvre dans un nouvel onglet)"
 
-#: inc/template-tags.php:347 inc/woocommerce/order-language.php:554
+#: inc/template-tags.php:347 inc/woocommerce/order-language.php:579
 msgid "Invoice"
 msgstr "Facture"
 
-#: inc/template-tags.php:348 inc/woocommerce/order-language.php:553
+#: inc/template-tags.php:348 inc/woocommerce/order-language.php:578
 msgid "Prepayment"
 msgstr "Paiement anticipé"
 
@@ -2966,75 +2970,75 @@ msgstr "Langue du client (e-mails, facture)"
 msgid "Shop language"
 msgstr "Langue de la boutique"
 
-#: inc/woocommerce/order-language.php:534
+#: inc/woocommerce/order-language.php:559
 msgid "VAT"
 msgstr "TVA"
 
-#: inc/woocommerce/order-language.php:535
+#: inc/woocommerce/order-language.php:560
 msgid "Freight forwarding"
 msgstr "Transporteur"
 
-#: inc/woocommerce/order-language.php:536
+#: inc/woocommerce/order-language.php:561
 msgid "Pickup"
 msgstr "Retrait sur place"
 
-#: inc/woocommerce/order-language.php:537
+#: inc/woocommerce/order-language.php:562
 msgid "Delivery by truck"
 msgstr "Livraison par camion"
 
-#: inc/woocommerce/order-language.php:538
+#: inc/woocommerce/order-language.php:563
 msgid "Express delivery"
 msgstr "Livraison express"
 
-#: inc/woocommerce/order-language.php:539
+#: inc/woocommerce/order-language.php:564
 msgid "Standard delivery"
 msgstr "Livraison standard"
 
-#: inc/woocommerce/order-language.php:541
+#: inc/woocommerce/order-language.php:566
 msgid "Free delivery"
 msgstr "Livraison offerte"
 
-#: inc/woocommerce/order-language.php:542 inc/woocommerce/wc-fallback-strings.php:100
+#: inc/woocommerce/order-language.php:567 inc/woocommerce/wc-fallback-strings.php:100
 msgid "Flat rate"
 msgstr "Forfait"
 
-#: inc/woocommerce/order-language.php:543 inc/woocommerce/wc-fallback-strings.php:101
+#: inc/woocommerce/order-language.php:568 inc/woocommerce/wc-fallback-strings.php:101
 msgid "Local pickup"
 msgstr "Retrait local"
 
-#: inc/woocommerce/order-language.php:544
+#: inc/woocommerce/order-language.php:569
 msgid "Pickup at the depot"
 msgstr "Retrait au dépôt"
 
-#: inc/woocommerce/order-language.php:545
+#: inc/woocommerce/order-language.php:570
 msgid "Delivery with crane truck"
 msgstr "Livraison par camion-grue"
 
-#: inc/woocommerce/order-language.php:546
+#: inc/woocommerce/order-language.php:571
 msgid "Delivery on pallet"
 msgstr "Livraison sur palette"
 
-#: inc/woocommerce/order-language.php:547
+#: inc/woocommerce/order-language.php:572
 msgid "Bank transfer"
 msgstr "Virement bancaire"
 
-#: inc/woocommerce/order-language.php:548
+#: inc/woocommerce/order-language.php:573
 msgid "Direct bank transfer"
 msgstr "Virement bancaire direct"
 
-#: inc/woocommerce/order-language.php:549
+#: inc/woocommerce/order-language.php:574
 msgid "Check payments"
 msgstr "Paiement par chèque"
 
-#: inc/woocommerce/order-language.php:550
+#: inc/woocommerce/order-language.php:575
 msgid "Wire transfer"
 msgstr "Virement"
 
-#: inc/woocommerce/order-language.php:551
+#: inc/woocommerce/order-language.php:576
 msgid "Cash on delivery"
 msgstr "Paiement à la livraison"
 
-#: inc/woocommerce/order-language.php:552
+#: inc/woocommerce/order-language.php:577
 msgid "Payment on pickup"
 msgstr "Paiement au retrait"
 
@@ -3367,7 +3371,15 @@ msgstr "Vous pouvez retourner votre commande dans les %d jours suivant la livrai
 msgid "All shipping & payment information"
 msgstr "Toutes les informations livraison & paiement"
 
-#: inc/woocommerce/single-product.php:371 inc/woocommerce/wc-fallback-strings.php:20
+#: inc/woocommerce/single-product.php:346
+msgid "Previous image"
+msgstr "Image précédente"
+
+#: inc/woocommerce/single-product.php:347
+msgid "Next image"
+msgstr "Image suivante"
+
+#: inc/woocommerce/single-product.php:374 inc/woocommerce/wc-fallback-strings.php:20
 msgid "Add to cart"
 msgstr "Ajouter au panier"
 
@@ -4188,7 +4200,7 @@ msgstr "Fermer"
 msgid "View details"
 msgstr "Voir les détails"
 
-#: template-parts/products/quick-view.php:99 inc/woocommerce/single-product.php:371
+#: template-parts/products/quick-view.php:99 inc/woocommerce/single-product.php:374
 msgid "Choose options"
 msgstr "Choisir les options"
 

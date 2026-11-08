@@ -77,6 +77,10 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_2_3_10' );
 	}
 
+	if ( '' === $done || version_compare( $done, '2.3.13', '<' ) ) {
+		do_action( 'premium_shop_upgrade_2_3_13' );
+	}
+
 	// Self-healing steps, safe to repeat after every update.
 	do_action( 'premium_shop_upgrade_2_3_12' );
 	premium_shop_replace_foreign_email();

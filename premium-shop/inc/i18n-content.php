@@ -148,15 +148,126 @@ function premium_shop_i18n_page_title( $page_id, $title ) {
  * @return array role => array( 'de' => …, 'fr' => …, 'en' => …, 'es' => …, 'other' => string[] )
  */
 function premium_shop_system_page_titles() {
-	return array(
+	static $titles = null;
+	if ( null !== $titles ) {
+		return $titles;
+	}
+	$titles = array(
 		'shop'      => array( 'de' => 'Shop', 'fr' => 'Boutique', 'en' => 'Shop', 'es' => 'Tienda', 'other' => array( 'Produkte', 'Magasin', 'Products', 'Productos' ) ),
 		'cart'      => array( 'de' => 'Warenkorb', 'fr' => 'Panier', 'en' => 'Cart', 'es' => 'Carrito', 'other' => array( 'Basket', 'Cesta' ) ),
-		'checkout'  => array( 'de' => 'Kasse', 'fr' => 'Commande', 'en' => 'Checkout', 'es' => 'Finalizar compra', 'other' => array( 'Validation de la commande', 'Paiement', 'Commander', 'Caisse', 'Bestellung', 'Zur Kasse', 'Pago', 'Finalizar pedido' ) ),
+		'checkout'  => array( 'de' => 'Kasse', 'fr' => 'Commande', 'en' => 'Checkout', 'es' => 'Finalizar compra', 'other' => array( 'Validation de la commande', 'Validation de commande', 'Paiement', 'Commander', 'Caisse', 'Bestellung', 'Zur Kasse', 'Pago', 'Finalizar pedido' ) ),
 		'myaccount' => array( 'de' => 'Mein Konto', 'fr' => 'Mon compte', 'en' => 'My account', 'es' => 'Mi cuenta', 'other' => array( 'My Account', 'Kundenkonto' ) ),
-		'refund'    => array( 'de' => 'Rückerstattung und Rückgaben', 'fr' => 'Politique de remboursement et de retour', 'en' => 'Refund and Returns Policy', 'es' => 'Política de reembolso y devoluciones', 'other' => array( 'Rückerstattungs- und Rückgaberichtlinie', 'Politique de remboursements et de retours' ) ),
+		'refund'    => array( 'de' => 'Rückerstattung und Rückgaben', 'fr' => 'Politique de remboursement et de retour', 'en' => 'Refund and Returns Policy', 'es' => 'Política de reembolso y devoluciones', 'other' => array( 'Rückerstattungs- und Rückgaberichtlinie', 'Richtlinie für Erstattungen und Rückgaben', 'Politique de remboursements et de retours', 'Politique en matière de remboursements et de retours', 'Política de devoluciones y reembolsos' ) ),
 		'privacy'   => array( 'de' => 'Datenschutzerklärung', 'fr' => 'Politique de confidentialité', 'en' => 'Privacy policy', 'es' => 'Política de privacidad', 'other' => array( 'Privacy Policy', 'Datenschutz' ) ),
 		'terms'     => array( 'de' => 'AGB', 'fr' => 'Conditions générales de vente', 'en' => 'Terms and conditions', 'es' => 'Términos y condiciones', 'other' => array( 'Allgemeine Geschäftsbedingungen', 'CGV', 'Terms & conditions' ) ),
 	);
+	// Titles WooCommerce / WordPress actually used, read from the language
+	// packs installed on the site (they change between versions, and the site
+	// may have been installed in yet another language, e.g. Italian).
+	foreach ( premium_shop_installed_default_texts() as $role => $versions ) {
+		if ( isset( $titles[ $role ] ) ) {
+			$titles[ $role ]['other'] = array_values( array_unique( array_merge( $titles[ $role ]['other'], array_values( $versions ) ) ) );
+		}
+	}
+	return $titles;
+}
+
+/**
+ * Texts WordPress and WooCommerce write into the database when they are
+ * installed (page titles, example content, default categories), in every
+ * language whose language pack is installed: role => array( code => text ).
+ * Cached; refreshed after language packs are updated.
+ *
+ * @return array
+ */
+function premium_shop_installed_default_texts() {
+	static $texts = null;
+	if ( null !== $texts ) {
+		return $texts;
+	}
+	$texts = get_transient( 'premium_shop_default_texts' );
+	if ( is_array( $texts ) ) {
+		return $texts;
+	}
+	// role => array( language file, context, English text ).
+	$sources = array(
+		'shop'        => array( 'woocommerce', 'Page title', 'Shop' ),
+		'cart'        => array( 'woocommerce', 'Page title', 'Cart' ),
+		'checkout'    => array( 'woocommerce', 'Page title', 'Checkout' ),
+		'myaccount'   => array( 'woocommerce', 'Page title', 'My account' ),
+		'refund'      => array( 'woocommerce', 'Page title', 'Refund and Returns Policy' ),
+		'product_cat' => array( 'woocommerce', 'Default category slug', 'Uncategorized' ),
+		'privacy'     => array( 'core', null, 'Privacy Policy' ),
+		'category'    => array( 'core', null, 'Uncategorized' ),
+		'sample'      => array( 'admin', null, 'Sample Page' ),
+		'hello'       => array( 'admin', null, 'Hello world!' ),
+	);
+	$texts = array();
+	foreach ( $sources as $role => $source ) {
+		$texts[ $role ] = array( 'en' => $source[2] );
+	}
+	foreach ( premium_shop_language_registry() as $code => $language ) {
+		$locale = $language['locale'];
+		if ( 0 === strpos( $locale, 'en_' ) ) {
+			continue;
+		}
+		$files = array(
+			'woocommerce' => WP_LANG_DIR . '/plugins/woocommerce-' . $locale . '.mo',
+			'core'        => WP_LANG_DIR . '/' . $locale . '.mo',
+			'admin'       => WP_LANG_DIR . '/admin-' . $locale . '.mo',
+		);
+		$catalogs = array();
+		foreach ( $sources as $role => $source ) {
+			if ( ! isset( $catalogs[ $source[0] ] ) ) {
+				$catalogs[ $source[0] ] = false;
+				if ( is_readable( $files[ $source[0] ] ) ) {
+					$mo = new MO();
+					if ( $mo->import_from_file( $files[ $source[0] ] ) ) {
+						$catalogs[ $source[0] ] = $mo;
+					}
+				}
+			}
+			if ( $catalogs[ $source[0] ] ) {
+				$translation = (string) $catalogs[ $source[0] ]->translate( $source[2], $source[1] );
+				if ( '' !== $translation && $translation !== $source[2] ) {
+					$texts[ $role ][ $code ] = $translation;
+				}
+			}
+		}
+	}
+	set_transient( 'premium_shop_default_texts', $texts, WEEK_IN_SECONDS );
+	return $texts;
+}
+
+/**
+ * Language packs updated: read the default texts again.
+ */
+function premium_shop_forget_default_texts() {
+	delete_transient( 'premium_shop_default_texts' );
+}
+add_action( 'upgrader_process_complete', 'premium_shop_forget_default_texts' );
+
+/**
+ * Text in a given language, for a text WordPress / WooCommerce wrote when it
+ * was installed: the shop's version ($names), else the installed language
+ * pack's, else English.
+ *
+ * @param string $role  Role in premium_shop_installed_default_texts().
+ * @param array  $names Preferred versions (code => text).
+ * @param string $text  Stored text.
+ * @param string $lang  Wanted language.
+ * @return string '' when $text is not one of the default texts.
+ */
+function premium_shop_default_text_in( $role, $names, $text, $lang ) {
+	$all      = premium_shop_installed_default_texts();
+	$versions = isset( $all[ $role ] ) ? array_merge( $all[ $role ], $names ) : $names;
+	$key      = premium_shop_i18n_key( $text );
+	foreach ( array_merge( array_values( $names ), isset( $all[ $role ] ) ? array_values( $all[ $role ] ) : array() ) as $candidate ) {
+		if ( premium_shop_i18n_key( $candidate ) === $key ) {
+			return isset( $versions[ $lang ] ) ? $versions[ $lang ] : ( isset( $versions['en'] ) ? $versions['en'] : $text );
+		}
+	}
+	return '';
 }
 
 /**
@@ -198,8 +309,8 @@ function premium_shop_system_page_role( $page_id ) {
  * @param string $lang    Language code.
  * @return string '' when the page is not concerned.
  */
-function premium_shop_system_page_title( $page_id, $title, $lang ) {
-	$role = premium_shop_system_page_role( $page_id );
+function premium_shop_system_page_title( $page_id, $title, $lang, $role = '' ) {
+	$role = '' !== $role ? $role : premium_shop_system_page_role( $page_id );
 	if ( '' === $role ) {
 		return '';
 	}
@@ -219,21 +330,40 @@ function premium_shop_system_page_title( $page_id, $title, $lang ) {
  * language and their translations (also seen in the admin, menus, e-mails).
  */
 function premium_shop_fix_system_page_titles() {
+	delete_transient( 'premium_shop_default_texts' );
 	$default = premium_shop_default_language();
-	$ids = array();
+	$ids     = array();
 	if ( function_exists( 'wc_get_page_id' ) ) {
 		foreach ( array( 'shop', 'cart', 'checkout', 'myaccount', 'terms' ) as $role ) {
-			$ids[] = (int) wc_get_page_id( $role );
+			$ids[ (int) wc_get_page_id( $role ) ] = '';
 		}
-		$ids[] = (int) get_option( 'woocommerce_refund_returns_page_id' );
+		$ids[ (int) get_option( 'woocommerce_refund_returns_page_id' ) ] = '';
 	}
-	$ids[] = (int) get_option( 'wp_page_for_privacy_policy' );
-	foreach ( array_unique( array_filter( $ids ) ) as $id ) {
+	$ids[ (int) get_option( 'wp_page_for_privacy_policy' ) ] = '';
+	// WooCommerce's refund policy draft left over when the theme's returns
+	// page took its place ("Politique en matière de remboursements et de
+	// retours" in the page list of a German shop).
+	$refund = premium_shop_system_page_titles()['refund'];
+	$titles = array_map( 'esc_html', array_unique( array_merge( array( $refund['de'], $refund['fr'], $refund['en'], $refund['es'] ), $refund['other'] ) ) );
+	global $wpdb;
+	$found = $wpdb->get_col( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$wpdb->prepare(
+			"SELECT ID FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status IN ( 'publish', 'draft', 'pending', 'private' ) AND post_title IN ( " . implode( ', ', array_fill( 0, count( $titles ), '%s' ) ) . ' ) LIMIT 20', // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			$titles
+		)
+	);
+	foreach ( array_map( 'intval', $found ) as $id ) {
+		if ( ! isset( $ids[ $id ] ) && 'rueckgabe-und-erstattung' !== get_post_field( 'post_name', $id ) ) {
+			$ids[ $id ] = 'refund';
+		}
+	}
+	unset( $ids[0] );
+	foreach ( $ids as $id => $role ) {
 		$post = get_post( $id );
 		if ( ! $post || 'page' !== $post->post_type ) {
 			continue;
 		}
-		$title = premium_shop_system_page_title( $id, $post->post_title, $default );
+		$title = premium_shop_system_page_title( $id, $post->post_title, $default, $role );
 		if ( '' === $title ) {
 			continue;
 		}
@@ -250,13 +380,167 @@ function premium_shop_fix_system_page_titles() {
 				continue;
 			}
 			$current = trim( (string) get_post_meta( $id, '_ps_name_' . $lang, true ) );
-			if ( '' === $current || '' !== premium_shop_system_page_title( $id, $current, $lang ) ) {
-				update_post_meta( $id, '_ps_name_' . $lang, premium_shop_system_page_title( $id, $title, $lang ) );
+			if ( '' === $current || '' !== premium_shop_system_page_title( $id, $current, $lang, $role ) ) {
+				update_post_meta( $id, '_ps_name_' . $lang, premium_shop_system_page_title( $id, $title, $lang, $role ) );
 			}
 		}
 	}
 }
 add_action( 'premium_shop_upgrade_2_3_12', 'premium_shop_fix_system_page_titles' );
+
+/**
+ * Default names of the categories WordPress and WooCommerce create.
+ *
+ * @param string $taxonomy category|product_cat.
+ * @return array code => name.
+ */
+function premium_shop_default_category_names( $taxonomy ) {
+	if ( 'category' === $taxonomy ) {
+		return array( 'de' => 'Allgemein', 'fr' => 'Non classé', 'en' => 'Uncategorized', 'es' => 'Sin categoría' );
+	}
+	return array( 'de' => 'Unkategorisiert', 'fr' => 'Non classé', 'en' => 'Uncategorized', 'es' => 'Sin categorizar' );
+}
+
+/**
+ * A text WordPress / WooCommerce saved in the language the site was
+ * installed in, in another language: theme catalogue, then WooCommerce's own
+ * translations ('' when the text is not known, e.g. typed by you).
+ *
+ * @param string $text Text.
+ * @param string $lang Language code.
+ * @return string
+ */
+function premium_shop_known_text_in( $text, $lang ) {
+	if ( '' === trim( (string) $text ) || false !== strpos( $text, '[:' ) ) {
+		return '';
+	}
+	$map = premium_shop_i18n_reverse_map();
+	$key = premium_shop_i18n_key( $text );
+	if ( isset( $map[ $key ] ) ) {
+		return 'en' === $lang ? $map[ $key ] : premium_shop_translate_in( $map[ $key ], premium_shop_locale_for( $lang ) );
+	}
+	return function_exists( 'premium_shop_wc_catalogue_translate' ) ? premium_shop_wc_catalogue_translate( $text, $lang ) : '';
+}
+
+/**
+ * WooCommerce texts saved in its settings when WooCommerce was installed or a
+ * method was added (payment method titles and descriptions, "Livraison
+ * gratuite", the privacy texts of the checkout and the registration form…):
+ * rewritten in the shop language. Texts you typed yourself are kept.
+ */
+function premium_shop_fix_wc_settings_language() {
+	global $wpdb;
+	// Lookups cached by an earlier version (texts it could not translate).
+	$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '\\_transient\\_ps\\_wct\\_%' OR option_name LIKE '\\_transient\\_timeout\\_ps\\_wct\\_%'" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	wp_cache_delete( 'alloptions', 'options' );
+	$default = premium_shop_default_language();
+	$texts   = array( 'woocommerce_checkout_privacy_policy_text', 'woocommerce_registration_privacy_policy_text', 'woocommerce_checkout_terms_and_conditions_checkbox_text', 'woocommerce_demo_store_notice' );
+	// Raw values: the front end reads them translated into the visitor's language.
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	$rows = $wpdb->get_results( "SELECT option_name, option_value FROM {$wpdb->options} WHERE option_name IN ( '" . implode( "', '", $texts ) . "' ) OR ( option_name LIKE 'woocommerce\\_%\\_settings' )" );
+	foreach ( $rows as $row ) {
+		$value   = maybe_unserialize( $row->option_value );
+		$changed = false;
+		if ( is_string( $value ) && in_array( $row->option_name, $texts, true ) ) {
+			$new = premium_shop_known_text_in( $value, $default );
+			if ( '' !== $new && $new !== $value ) {
+				$value   = $new;
+				$changed = true;
+			}
+		} elseif ( is_array( $value ) ) {
+			foreach ( array( 'title', 'description', 'instructions' ) as $field ) {
+				if ( empty( $value[ $field ] ) || ! is_string( $value[ $field ] ) ) {
+					continue;
+				}
+				$new = premium_shop_known_text_in( $value[ $field ], $default );
+				if ( '' !== $new && $new !== $value[ $field ] ) {
+					$value[ $field ] = $new;
+					$changed         = true;
+				}
+			}
+		}
+		if ( $changed ) {
+			// Written directly: update_option() compares with the translated
+			// value and could skip the change.
+			$wpdb->update( $wpdb->options, array( 'option_value' => maybe_serialize( $value ) ), array( 'option_name' => $row->option_name ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			wp_cache_delete( $row->option_name, 'options' );
+			wp_cache_delete( 'alloptions', 'options' );
+			wp_cache_delete( 'notoptions', 'options' );
+		}
+	}
+}
+add_action( 'premium_shop_upgrade_2_3_13', 'premium_shop_fix_wc_settings_language' );
+
+/**
+ * Example content and default categories WordPress / WooCommerce created in
+ * the language the site was installed in:
+ *
+ * - "Non classé" categories (posts and products) renamed in the shop language
+ *   (the address stays the same);
+ * - WordPress' untouched example page and first post ("Page d'exemple",
+ *   "Bonjour tout le monde !", a mechanic who wants to be an actor…) taken
+ *   offline (draft, title in the shop language): they are not part of a shop.
+ *   Edited or later republished, they are left alone.
+ */
+function premium_shop_fix_install_language_content() {
+	global $wpdb;
+	delete_transient( 'premium_shop_default_texts' );
+	$default = premium_shop_default_language();
+	$all     = premium_shop_installed_default_texts();
+
+	foreach ( array( 'category' => 'default_category', 'product_cat' => 'default_product_cat' ) as $taxonomy => $option ) {
+		$term_id = (int) get_option( $option );
+		// Stored name (get_term() gives it in the visitor's language).
+		$raw = (string) $wpdb->get_var( $wpdb->prepare( "SELECT t.name FROM {$wpdb->terms} t INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_id = t.term_id WHERE t.term_id = %d AND tt.taxonomy = %s", $term_id, $taxonomy ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		if ( '' === $raw ) {
+			continue;
+		}
+		$name = premium_shop_default_text_in( $taxonomy, premium_shop_default_category_names( $taxonomy ), html_entity_decode( $raw, ENT_QUOTES, 'UTF-8' ), $default );
+		if ( '' !== $name && premium_shop_i18n_key( $name ) !== premium_shop_i18n_key( $raw ) ) {
+			wp_update_term( $term_id, $taxonomy, array( 'name' => $name ) );
+		}
+	}
+
+	$examples = array(
+		'sample' => array(
+			'type'  => 'page',
+			'names' => array( 'de' => 'Beispielseite', 'fr' => 'Page d’exemple', 'en' => 'Sample Page', 'es' => 'Página de ejemplo' ),
+		),
+		'hello'  => array(
+			'type'  => 'post',
+			'names' => array( 'de' => 'Hallo Welt!', 'fr' => 'Bonjour tout le monde !', 'en' => 'Hello world!', 'es' => '¡Hola, mundo!' ),
+		),
+	);
+	foreach ( $examples as $role => $example ) {
+		$titles = array_unique( array_merge( array_values( $example['names'] ), isset( $all[ $role ] ) ? array_values( $all[ $role ] ) : array() ) );
+		$posts  = get_posts(
+			array(
+				'post_type'        => $example['type'],
+				'post_status'      => 'publish',
+				'numberposts'      => 5,
+				'orderby'          => 'ID',
+				'order'            => 'ASC',
+				'suppress_filters' => true,
+			)
+		);
+		foreach ( $posts as $post ) {
+			// Only WordPress' own example: one of its default titles, never edited.
+			if ( ! in_array( html_entity_decode( $post->post_title, ENT_QUOTES, 'UTF-8' ), $titles, true ) || $post->post_modified_gmt !== $post->post_date_gmt ) {
+				continue;
+			}
+			$title = premium_shop_default_text_in( $role, $example['names'], $post->post_title, $default );
+			wp_update_post(
+				array(
+					'ID'          => $post->ID,
+					'post_status' => 'draft',
+					'post_title'  => '' !== $title ? $title : $post->post_title,
+					'post_name'   => $post->post_name,
+				)
+			);
+		}
+	}
+}
+add_action( 'premium_shop_upgrade_2_3_13', 'premium_shop_fix_install_language_content' );
 
 /**
  * Page titles (front end).
@@ -320,6 +604,30 @@ function premium_shop_i18n_menu_items( $items ) {
 	return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'premium_shop_i18n_menu_items', 20 );
+
+/**
+ * Breadcrumbs: WooCommerce prints the stored title of the account page on
+ * its sub-pages ("Mein Konto / Mot de passe perdu" in French).
+ *
+ * @param array $crumbs Crumbs (text, URL).
+ * @return array
+ */
+function premium_shop_i18n_breadcrumb( $crumbs ) {
+	if ( is_admin() || ! is_array( $crumbs ) ) {
+		return $crumbs;
+	}
+	foreach ( $crumbs as $i => $crumb ) {
+		if ( empty( $crumb[1] ) || ! is_string( $crumb[0] ) ) {
+			continue;
+		}
+		$id = url_to_postid( $crumb[1] );
+		if ( $id && 'page' === get_post_type( $id ) && premium_shop_i18n_key( $crumb[0] ) === premium_shop_i18n_key( get_post_field( 'post_title', $id ) ) ) {
+			$crumbs[ $i ][0] = premium_shop_i18n_page_title( $id, $crumb[0] );
+		}
+	}
+	return $crumbs;
+}
+add_filter( 'woocommerce_get_breadcrumb', 'premium_shop_i18n_breadcrumb', 20 );
 
 /**
  * Product category names without their own translation (e.g. "Zubehör")
@@ -489,27 +797,27 @@ function premium_shop_i18n_date_format( $format ) {
 add_filter( 'option_date_format', 'premium_shop_i18n_date_format', 20 );
 
 /**
- * WooCommerce's default product category ("Non classé" on a site installed
- * in French) in the visitor's language.
+ * Default categories ("Non classé" on a site installed in French: products
+ * and posts) in the visitor's language.
  *
  * @param WP_Term $term     Term.
  * @param string  $taxonomy Taxonomy.
  * @return WP_Term
  */
 function premium_shop_i18n_default_category( $term, $taxonomy ) {
-	if ( 'product_cat' !== $taxonomy || ! $term instanceof WP_Term || is_admin() || (int) get_option( 'default_product_cat' ) !== (int) $term->term_id ) {
+	$options = array(
+		'product_cat' => 'default_product_cat',
+		'category'    => 'default_category',
+	);
+	if ( ! isset( $options[ $taxonomy ] ) || ! $term instanceof WP_Term || is_admin() || (int) get_option( $options[ $taxonomy ] ) !== (int) $term->term_id ) {
 		return $term;
 	}
-	$names = array( 'de' => 'Unkategorisiert', 'fr' => 'Non classé', 'en' => 'Uncategorized', 'es' => 'Sin categorizar' );
-	$key   = premium_shop_i18n_key( $term->name );
-	foreach ( $names as $name ) {
-		if ( premium_shop_i18n_key( $name ) === $key ) {
-			$lang       = premium_shop_i18n_target();
-			$lang       = '' !== $lang ? $lang : premium_shop_default_language();
-			$term       = clone $term;
-			$term->name = isset( $names[ $lang ] ) ? $names[ $lang ] : $names['en'];
-			break;
-		}
+	$lang = premium_shop_i18n_target();
+	$lang = '' !== $lang ? $lang : premium_shop_default_language();
+	$name = premium_shop_default_text_in( $taxonomy, premium_shop_default_category_names( $taxonomy ), html_entity_decode( $term->name, ENT_QUOTES, 'UTF-8' ), $lang );
+	if ( '' !== $name ) {
+		$term       = clone $term;
+		$term->name = $name;
 	}
 	return $term;
 }

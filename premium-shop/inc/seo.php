@@ -59,8 +59,22 @@ function premium_shop_page_description() {
 			$description = premium_shop_text( 'hero_subtitle' );
 		}
 	} elseif ( is_singular() ) {
-		$post        = get_queried_object();
-		$description = has_excerpt( $post ) ? get_the_excerpt( $post ) : wp_trim_words( wp_strip_all_tags( strip_shortcodes( $post->post_content ) ), 28, '…' );
+		$post = get_queried_object();
+		// Translated texts of products and pages (Translations box), else the
+		// stored ones.
+		$short   = function_exists( 'premium_shop_pt_get' ) ? premium_shop_pt_get( $post->ID, 'short' ) : '';
+		$content = function_exists( 'premium_shop_pt_get' ) ? premium_shop_pt_get( $post->ID, 'desc' ) : '';
+		$content = '' !== $content ? $content : $post->post_content;
+		if ( '' !== $short ) {
+			$description = $short;
+		} elseif ( has_excerpt( $post ) ) {
+			$description = get_the_excerpt( $post );
+		} elseif ( function_exists( 'premium_shop_system_page_role' ) && in_array( premium_shop_system_page_role( $post->ID ), array( 'cart', 'checkout', 'myaccount' ), true ) ) {
+			// Only WooCommerce blocks there, saved in the install language.
+			$description = '';
+		} else {
+			$description = wp_trim_words( wp_strip_all_tags( strip_shortcodes( $content ) ), 28, '…' );
+		}
 	} elseif ( is_tax() || is_category() || is_tag() ) {
 		$description = term_description();
 	} elseif ( function_exists( 'is_shop' ) && is_shop() ) {

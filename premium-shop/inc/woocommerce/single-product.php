@@ -342,6 +342,9 @@ function premium_shop_gallery_options( $options ) {
 	$options['directionNav'] = true;
 	$options['controlNav']   = 'thumbnails';
 	$options['animationSpeed'] = 450;
+	// Arrow labels (Flexslider writes "Previous" / "Next" in English).
+	$options['prevText'] = __( 'Previous image', 'premium-shop' );
+	$options['nextText'] = __( 'Next image', 'premium-shop' );
 	return $options;
 }
 add_filter( 'woocommerce_single_product_carousel_options', 'premium_shop_gallery_options' );

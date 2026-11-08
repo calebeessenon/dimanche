@@ -102,7 +102,7 @@ function premium_shop_contact_form() {
 			<?php wp_nonce_field( 'premium_shop_contact', 'ps_contact_nonce' ); ?>
 
 			<div class="ps-contact-form__hp" aria-hidden="true">
-				<label for="<?php echo esc_attr( $uid ); ?>-website">Website</label>
+				<label for="<?php echo esc_attr( $uid ); ?>-website"><?php esc_html_e( 'Website', 'premium-shop' ); ?></label>
 				<input type="text" id="<?php echo esc_attr( $uid ); ?>-website" name="ps_website" tabindex="-1" autocomplete="off">
 			</div>
 

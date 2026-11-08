@@ -539,4 +539,7 @@ T = [
 ('Shop style & FAQ', 'Shop-Stil & FAQ', 'Style de la boutique & FAQ', 'Estilo de la tienda y FAQ'),
 ('Style of the shop, holiday season mode and questions & answers.', 'Stil des Shops, Festtagsmodus und Fragen & Antworten.', 'Style de la boutique, mode fêtes de fin d’année et questions-réponses.', 'Estilo de la tienda, modo navideño y preguntas frecuentes.'),
 ('Empty = built-in FAQ, translated automatically.', 'Leer = integrierte FAQ, automatisch übersetzt.', 'Vide = FAQ intégrée, traduite automatiquement.', 'Vacío = FAQ integrada, traducida automáticamente.'),
+('Previous image', 'Vorheriges Bild', 'Image précédente', 'Imagen anterior'),
+('Next image', 'Nächstes Bild', 'Image suivante', 'Imagen siguiente'),
+('Website', 'Website', 'Site web', 'Sitio web'),
 ]
