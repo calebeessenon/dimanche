@@ -1185,6 +1185,40 @@
 .g-garland i:nth-child(4n + 4) { background: #59c8ff; box-shadow: 0 2px 12px 2px #59c8ff; animation-delay: -1.05s; }
 .g-garland i:nth-child(odd) { top: 9px; }
 
+.admin-bar .g-garland {
+	top: var(--wp-admin--admin-bar--height, 32px);
+}
+
+@media (max-width: 782px) {
+	.admin-bar .g-garland {
+		top: 46px;
+	}
+}
+
+@media (max-width: 600px) {
+	/* The admin bar scrolls away on phones: the garland goes with it. */
+	.admin-bar .g-garland {
+		position: absolute;
+	}
+}
+
+/* Computers set to "no animations" (Windows: Animation effects off): the
+   bulbs still glow and fade slowly instead of staying frozen. */
+@media (prefers-reduced-motion: reduce) {
+	.ps-preset-gaming .g-garland i {
+		animation: g-bulb-soft 3.2s ease-in-out infinite alternate !important;
+	}
+
+	.ps-preset-gaming .g-garland i:nth-child(even) {
+		animation-delay: -1.6s !important;
+	}
+}
+
+@keyframes g-bulb-soft {
+	from { opacity: 1; }
+	to { opacity: .55; }
+}
+
 @keyframes g-bulb {
 	from { opacity: 1; filter: brightness(1.2); }
 	to { opacity: .35; filter: brightness(.7); box-shadow: none; }

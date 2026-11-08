@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.4
+Stable tag: 2.3.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.5 =
+* Gaming edition, holiday mode: the garland of lights at the top of the page
+  is no longer hidden behind the WordPress admin bar on computers (logged-in
+  visitors), and still glows softly on computers set to reduce animations.
 
 = 2.3.4 =
 * Gaming edition: NeoPlay logo (white, header and footer) and browser icon
