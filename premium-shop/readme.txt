@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.15
+Stable tag: 2.3.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,15 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.16 =
+* Gaming edition: NeoPlay is run by Retroverse AG, Käsereistrasse 2,
+  4543 Deitingen, UID CHE-305.783.003. New Customizer field "Company ID
+  (UID / VAT number)" shown in the footer, privacy policy, terms of use,
+  returns page, legal notice and terms of sale.
+* Legal notice (Impressum) and terms of sale (AGB) written in DE/FR/EN/ES,
+  installed in place of the setup assistant's empty drafts and linked in the
+  footer; former NeoPlay / Rolle details updated on the existing pages.
 
 = 2.3.15 =
 * Cart (blocks): the 2.3.14 layout now really applies. WooCommerce's own
