@@ -21,7 +21,7 @@ MAX_ATTR = max(len(s[3]) for s in SPECS.values())
 
 def gallery(p):
     sku = p['sku'].lower()
-    return [p['img']] + [f'{sku}-{n}.jpg' for n in (2, 3, 4)]
+    return [p['img']] + [f'{sku}-view-{n}.jpg' for n in (2, 3, 4)] + [f'{sku}-specs.jpg']
 
 
 def spec_rows(p, lang):

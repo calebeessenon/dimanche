@@ -2,11 +2,10 @@
 
 python3 gallery.py IMAGES_DIR HTML_OUT_DIR
 
-For every product it writes three HTML pages (rendered to JPEG by
-gallery-render.js) based on the product's main picture:
-  <sku>-2  close-up with a key spec
-  <sku>-3  second view (mirrored, other light)
-  <sku>-4  data sheet: package dimensions, weight, brand, EAN-13 barcode
+For every product it writes the data sheet picture <sku>-specs (rendered to JPEG
+by gallery-render.js): package dimensions, weight, brand, EAN-13 barcode.
+The other views (<sku>-view-2 to -4: back, profile/edge, 3/4…) are drawn by
+views.py.
 All texts are language-neutral (units and numbers only).
 """
 import base64
@@ -129,8 +128,8 @@ for index, p in enumerate(PRODUCTS):
 <div style="position:absolute; right:56px; bottom:48px; padding:14px 16px 8px; background:#fff; border-radius:14px">{barcode}</div>
 <div style="position:absolute; left:60px; bottom:60px; font-size:22px; color:#8f97cf; letter-spacing:.12em">{p["sku"]}</div>''')
 
-    for n, html in ((2, html2), (3, html3), (4, html4)):
-        with open(os.path.join(OUT, f'{sku}-{n}.html'), 'w', encoding='utf-8') as f:
+    for n, html in ((5, html4),):
+        with open(os.path.join(OUT, f'{sku}-specs.html'), 'w', encoding='utf-8') as f:
             f.write(html)
         done += 1
 print(done, 'pages')

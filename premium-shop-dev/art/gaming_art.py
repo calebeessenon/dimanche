@@ -6,7 +6,6 @@ Render to JPG with render.js (Playwright).
 import os
 import sys
 
-OUT = sys.argv[1]
 
 
 def studio(hue='#7c5cff', w=1000, h=1000):
@@ -250,8 +249,10 @@ FILES = {
     'game-adventure': game_box('#7c3aed', '#f0abfc', '#9b5de5', 'g3'),
 }
 
-os.makedirs(OUT, exist_ok=True)
-for name, body in FILES.items():
-    with open(f'{OUT}/{name}.svg', 'w') as f:
-        f.write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">{body}</svg>')
-print(len(FILES))
+if __name__ == '__main__':
+    OUT = sys.argv[1]
+    os.makedirs(OUT, exist_ok=True)
+    for name, body in FILES.items():
+        with open(f'{OUT}/{name}.svg', 'w') as f:
+            f.write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">{body}</svg>')
+    print(len(FILES))

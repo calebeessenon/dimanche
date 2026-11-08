@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.10
+Stable tag: 2.3.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,13 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.11 =
+* Gaming catalogue: real product views instead of repeated pictures. Each
+  product has 5 pictures: front, back, profile or edge (ports, triggers,
+  thickness), a 3/4, TV-mode, packaging or open-case view depending on the
+  product, and the data sheet with dimensions, weight and EAN barcode.
+  New file names, so a CSV re-import replaces the old gallery.
 
 = 2.3.10 =
 * Product CSV import: the "GTIN, UPC, EAN, or ISBN" and "Brands" columns are
