@@ -8,12 +8,12 @@
 defined( 'ABSPATH' ) || exit;
 
 return array(
-	'css/main.css' => 'main.d4ece176b2.min.css',
-	'css/woocommerce.css' => 'woocommerce.836d593687.min.css',
-	'css/gaming.css' => 'gaming.29fe69c01a.min.css',
+	'css/main.css' => 'main.852c25eb52.min.css',
+	'css/woocommerce.css' => 'woocommerce.275ec28e5b.min.css',
+	'css/gaming.css' => 'gaming.7a9089fb9c.min.css',
 	'js/theme.js' => 'theme.9c98cd05de.min.js',
 	'js/shop.js' => 'shop.416097b9c7.min.js',
 	'js/product.js' => 'product.3d8dab133a.min.js',
 	'js/firewood.js' => 'firewood.f28e4a0bb9.min.js',
-	'js/gaming.js' => 'gaming.303a499d63.min.js',
+	'js/gaming.js' => 'gaming.887e4ae51b.min.js',
 );

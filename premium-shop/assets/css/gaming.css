@@ -478,7 +478,7 @@
 .ps-ghero__stats li > span {
 	display: block;
 	margin-top: 4px;
-	font-size: .72rem;
+	font-size: .75rem;
 	letter-spacing: .08em;
 	text-transform: uppercase;
 	color: #8f95b8;
@@ -949,7 +949,7 @@
 .g-countdown__cell small {
 	display: block;
 	margin-top: 4px;
-	font-size: .65rem;
+	font-size: .75rem;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 	color: #8f95b8;
@@ -1145,10 +1145,12 @@
 }
 
 /* Garland of blinking bulbs along the top. */
+/* Scrolls away with the page: fixed, it hung over the sticky header's
+   buttons and over the drawers' titles. */
 .g-garland {
-	position: fixed;
+	position: absolute;
 	inset: 0 0 auto;
-	z-index: 1001;
+	z-index: 999;
 	display: flex;
 	justify-content: space-between;
 	height: 26px;
@@ -1298,6 +1300,49 @@
 	opacity: .55;
 }
 
+/* No announcement bar above the header (checkout, bar closed): the header
+   steps down by the garland's height so the bulbs do not hang on the logo. */
+.ps-festive .ps-header--checkout,
+.ps-festive .ps-promo.is-hidden + .ps-header {
+	margin-top: 22px;
+}
+
+/* Footer copy of the switch (screens narrower than 1520px). */
+.g-snow-toggle.g-snow-toggle--inline {
+	position: static;
+	display: none;
+	align-self: flex-start;
+	width: auto;
+	min-height: 40px;
+	padding: 0 16px;
+	border-radius: 999px;
+	font-size: .82rem;
+	gap: 8px;
+	grid-auto-flow: column;
+	box-shadow: none;
+}
+
+.g-snow-toggle.g-snow-toggle--inline:hover {
+	transform: none;
+}
+
+.g-snow-toggle--inline[aria-pressed="false"] {
+	opacity: .75;
+}
+
+/* The floating button sits in the left gutter. Below 1520px that gutter is
+   narrower than the button, which then covered fields, buttons, the sticky
+   bars and the footer text: the switch moves to the footer instead. */
+@media (max-width: 1519px) {
+	.g-snow-toggle {
+		display: none;
+	}
+
+	.g-snow-toggle.g-snow-toggle--inline {
+		display: inline-grid;
+	}
+}
+
 /* Hero holiday tag + santa hat touch. */
 .g-xmas-tag {
 	position: absolute;
@@ -1321,7 +1366,7 @@
 
 .g-xmas-tag span {
 	display: block;
-	font-size: .7rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .1em;
 	text-transform: uppercase;
@@ -1592,7 +1637,7 @@
 .g-xmas__cell small {
 	display: block;
 	margin-top: 5px;
-	font-size: .66rem;
+	font-size: .75rem;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
@@ -1631,6 +1676,14 @@
 		radial-gradient(circle at 50% 70%, var(--x-green) 0 9px, transparent 10px),
 		linear-gradient(var(--x-gold), var(--x-gold)) 50% 0 / 2px 26px no-repeat;
 	animation-delay: -2s;
+}
+
+/* Two cards per row on phones: no free spot between the badges and the
+   wishlist / quick view buttons, the ornament hid the "NOUVEAU" badge. */
+@media (max-width: 599px) {
+	.ps-festive .ps-card::after {
+		display: none;
+	}
 }
 
 @keyframes g-swing {
@@ -1723,6 +1776,7 @@
 	}
 
 	.g-xmas-tag {
+		left: 0;
 		width: 112px;
 		height: 112px;
 		padding: 10px;
@@ -1742,14 +1796,12 @@
 		min-width: 0;
 	}
 
-	.g-snow-toggle {
-		bottom: 84px;
-	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.g-snow,
-	.g-snow-toggle {
+	.g-snow-toggle,
+	.g-snow-toggle.g-snow-toggle--inline {
 		display: none;
 	}
 }

@@ -104,6 +104,12 @@ $premium_shop_wa      = preg_replace( '/[^0-9]/', '', (string) premium_shop_opti
 			}
 			?>
 			<?php premium_shop_payment_badges(); ?>
+			<?php
+			/**
+			 * Fires at the end of the footer bottom bar (copyright, legal links, payment badges).
+			 */
+			do_action( 'premium_shop_footer_bottom' );
+			?>
 		</div>
 	</div>
 

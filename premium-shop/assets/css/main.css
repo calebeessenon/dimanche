@@ -319,7 +319,7 @@ pre {
 	gap: .6em;
 	margin: 0 0 .9rem;
 	font-family: var(--ps-font-body);
-	font-size: .74rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .16em;
 	text-transform: uppercase;
@@ -585,7 +585,7 @@ input[type="submit"],
 	background: var(--ps-accent);
 	color: var(--ps-on-accent);
 	font-family: var(--ps-font-body);
-	font-size: .68rem;
+	font-size: .75rem;
 	font-weight: 700;
 	line-height: 1;
 	box-shadow: 0 0 0 2px var(--ps-bg);
@@ -871,8 +871,8 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	top: 50%;
 	display: grid;
 	place-items: center;
-	width: 32px;
-	height: 32px;
+	width: 40px;
+	height: 40px;
 	padding: 0;
 	border: 0;
 	border-radius: 50%;
@@ -1087,7 +1087,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	height: 28px;
 	padding: 0 8px;
 	border-radius: 999px;
-	font-size: .72rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .08em;
 	text-decoration: none;
@@ -1131,8 +1131,31 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	}
 
 	.ps-lang-mini__toggle {
-		height: 32px;
+		height: 40px;
 		padding: 0 8px 0 5px;
+	}
+
+	/* The logo shrinks to its column instead of sliding under the
+	   language switch (320px phones). */
+	.ps-header__brand .custom-logo-link {
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	.ps-header__brand .custom-logo {
+		max-width: 100%;
+	}
+}
+
+/* 320px phones: the language switch drops its chevron to leave the logo
+   room. */
+@media (max-width: 359px) {
+	.ps-lang-mini__chevron {
+		display: none;
+	}
+
+	.ps-lang-mini__toggle {
+		gap: 4px;
 	}
 }
 
@@ -1153,14 +1176,14 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
-	height: 34px;
+	height: 40px;
 	padding: 0 9px 0 6px;
 	border: 1px solid var(--ps-border);
 	border-radius: 999px;
 	background: color-mix(in srgb, var(--ps-surface) 85%, transparent);
 	backdrop-filter: blur(8px);
 	color: var(--ps-text);
-	font-size: .7rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .08em;
 	list-style: none;
@@ -1265,7 +1288,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 
 .ps-lang-mini__code {
 	flex: 1;
-	font-size: .7rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .1em;
 }
@@ -1308,7 +1331,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	height: 32px;
 	padding: 0 11px 0 6px;
 	border-radius: 999px;
-	font-size: .68rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .08em;
 	transition: background .2s var(--ps-ease), color .2s var(--ps-ease);
@@ -1432,12 +1455,14 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	color: var(--ps-text);
 }
 
+/* 40px touch area (touch laptops, tablets in landscape) drawn as the same
+   small chevron; the negative margins keep the menu row height. */
 .ps-nav__toggle {
 	display: grid;
 	place-items: center;
-	width: 22px;
-	height: 22px;
-	margin-inline-start: -4px;
+	width: 40px;
+	height: 40px;
+	margin: -9px -9px -9px -4px;
 	padding: 0;
 	border: 0;
 	border-radius: 50%;
@@ -1630,7 +1655,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 }
 
 .ps-mega__promo-eyebrow {
-	font-size: .72rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .16em;
 	text-transform: uppercase;
@@ -2067,7 +2092,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 
 .ps-live-results__label {
 	margin: 6px 10px 6px;
-	font-size: .7rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .14em;
 	text-transform: uppercase;
@@ -3303,7 +3328,7 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 	margin: 0 0 18px;
 	color: var(--ps-footer-text);
 	font-family: var(--ps-font-body);
-	font-size: .74rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .16em;
 	text-transform: uppercase;
@@ -3553,6 +3578,24 @@ figcaption { font-size: .875rem; color: var(--ps-text-muted); margin-top: .6em; 
 
 body.single-product .ps-back-top {
 	bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+/* Phones: the floating arrow sat on the end of full-width buttons
+   (log in, send, place order) whenever they reached the bottom of the
+   screen; the sticky header already gives a way back up. */
+@media (max-width: 767px) {
+	.ps-back-top {
+		display: none;
+	}
+}
+
+/* Cart and checkout on tablets: WooCommerce's sticky "Proceed to checkout"
+   bar covers the corner where the arrow sits. */
+@media (max-width: 1023px) {
+	.woocommerce-cart .ps-back-top,
+	.woocommerce-checkout .ps-back-top {
+		display: none;
+	}
 }
 
 @media (min-width: 1024px) {
@@ -3975,12 +4018,15 @@ body.single-product .ps-back-top {
 	font-weight: 500;
 	transform: translate(-50%, 20px);
 	opacity: 0;
+	/* Hidden, it must not swallow taps meant for the buttons under it. */
+	pointer-events: none;
 	transition: opacity .3s var(--ps-ease), transform .45s var(--ps-ease-out);
 }
 
 .ps-toast.is-visible {
 	opacity: 1;
 	transform: translate(-50%, 0);
+	pointer-events: auto;
 }
 
 .ps-toast a {
@@ -4540,7 +4586,7 @@ body:not(.ps-animations) .ps-hero__ring {
 
 .ps-contact-details__label {
 	display: block;
-	font-size: .74rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .1em;
 	text-transform: uppercase;

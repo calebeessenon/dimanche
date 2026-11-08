@@ -404,6 +404,21 @@ function premium_shop_gaming_festive_markup() {
 add_action( 'wp_body_open', 'premium_shop_gaming_festive_markup', 5 );
 
 /**
+ * Snow switch in the footer bottom bar: below 1520px it replaces the
+ * floating button, which would sit on top of the content.
+ */
+function premium_shop_gaming_festive_footer_toggle() {
+	if ( ! premium_shop_gaming_festive() ) {
+		return;
+	}
+	printf(
+		'<button type="button" class="g-snow-toggle g-snow-toggle--inline" data-g-snow-toggle aria-pressed="true"><span aria-hidden="true">❄</span> %1$s</button>',
+		esc_html__( 'Snow on / off', 'premium-shop' )
+	);
+}
+add_action( 'premium_shop_footer_bottom', 'premium_shop_gaming_festive_footer_toggle' );
+
+/**
  * Gift finder sections after the hero while the holiday mode is on.
  *
  * @param string[] $sections Sections.

@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.14
+Stable tag: 2.3.15
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,38 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.15 =
+* Cart (blocks): the 2.3.14 layout now really applies. WooCommerce's own
+  phone rules were stronger, so the line total still sat on top of the
+  product name; it now has its own line under the product, with the
+  "You save" badge next to it.
+* Checkout (blocks), order summary: the line total and savings badge go
+  under the product, so the product name is no longer one word per line.
+* My account (dashboard, orders, order, addresses): the pages were about
+  1000 px wide on phones and cut off on the right; the account menu now
+  wraps.
+* Classic cart: no longer wider than the screen on phones and tablets
+  (totals, shipping calculator, cart table at 768 px); on desktop the
+  coupon / "Update cart" row no longer crushes the cart table.
+* Classic checkout and account addresses: no longer wider than a 320 px
+  screen with long German labels.
+* Snow switch: below 1520 px it moves to the footer instead of floating
+  over fields, buttons, the sticky add-to-cart bar and the menu.
+* Holiday garland: scrolls away with the page instead of hanging over the
+  sticky header and the open menu, cart and quick view.
+* Hidden toast messages no longer block taps on the buttons under them;
+  the back-to-top arrow is hidden on phones (and on the cart / checkout on
+  tablets), where it covered the end of full-width buttons.
+* Product page tabs wrap on phones instead of running off-screen; quick
+  view "Add to cart" no longer cut off; card buttons and names no longer
+  cut ("Ajouter a…"); the card ornament no longer hides the "New" badge.
+* Sticky add-to-cart bar: product name on two lines on narrow phones.
+* Header on 320 px phones: the logo no longer slides under the language
+  switch.
+* Touch targets of at least 40 px (quantity, remove, language switch,
+  announcement close, view switch, order buttons, menu chevrons) and
+  texts of at least 12 px (labels, badges, cart and checkout details).
 
 = 2.3.14 =
 * Cart (blocks) on phones: the line total and the "You save" badge no longer

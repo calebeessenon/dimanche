@@ -123,7 +123,7 @@ ul.products::after {
 	border-radius: 999px;
 	background: var(--ps-surface);
 	color: var(--ps-text);
-	font-size: .72rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .04em;
 	box-shadow: var(--ps-shadow-sm);
@@ -139,7 +139,7 @@ ul.products::after {
 	color: var(--ps-on-primary);
 	text-transform: uppercase;
 	letter-spacing: .1em;
-	font-size: .66rem;
+	font-size: .75rem;
 }
 
 .ps-badge--soldout {
@@ -309,10 +309,23 @@ form.cart .added_to_cart,
 	box-shadow: none;
 }
 
+/* The label wraps on two lines in narrow cards instead of "Ajouter a…". */
 .ps-card__cta--static .ps-card__cart-label {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	min-width: 0;
+	line-height: 1.2;
+	text-align: center;
+	white-space: normal;
+}
+
+/* 320-374px phones: the label gets the icon's room (two lines, not three). */
+@media (max-width: 374px) {
+	.ps-card__cta--static .ps-card__cart > svg {
+		display: none;
+	}
+
+	.ps-card__cta--static .button {
+		padding-inline: .6em;
+	}
 }
 
 ul.products.is-list .ps-card__cta--static {
@@ -328,7 +341,7 @@ ul.products.is-list .ps-card__cta--static {
 
 .ps-card__cat {
 	margin: 0;
-	font-size: .7rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .12em;
 	text-transform: uppercase;
@@ -344,9 +357,20 @@ ul.products .ps-card__title {
 	line-height: 1.35;
 	letter-spacing: 0;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+
+/* Phones: two narrow cards per row, product names shown in full (they were
+   cut after two lines: "Mario Kart World (Nintendo Swit…"). */
+@media (max-width: 767px) {
+	.ps-card__title,
+	ul.products .ps-card__title {
+		display: block;
+		-webkit-line-clamp: unset;
+		overflow: visible;
+	}
 }
 
 .ps-card__title a {
@@ -739,8 +763,11 @@ p.no-comments {
 		background: transparent;
 	}
 
+	/* 10px on both sides: the category links reach 10px out of their column
+	   for their hover background, which made the sticky sidebar scroll
+	   sideways and cut that background on the left. */
 	.ps-drawer--desktop-static .ps-drawer__body {
-		padding: 0 6px 0 0;
+		padding: 0 10px;
 		overflow: visible;
 	}
 
@@ -1127,8 +1154,8 @@ p.no-comments {
 }
 
 .ps-view-switch .ps-icon-btn {
-	width: 34px;
-	height: 34px;
+	width: 40px;
+	height: 40px;
 	color: var(--ps-text-muted);
 }
 
@@ -1698,6 +1725,43 @@ form.cart > .stock,
 	transform: scaleX(1);
 }
 
+/* Phones and tablets: the four tabs did not fit ("Zusätzliche
+   Informationen", "Versand & Rückgabe") and the last ones sat off-screen in
+   a scroller without scrollbar. They wrap as chips instead. */
+@media (max-width: 1023px) {
+	.woocommerce-tabs ul.tabs {
+		flex-wrap: wrap;
+		gap: 8px;
+		overflow: visible;
+		border-bottom: 0;
+	}
+
+	.woocommerce-tabs ul.tabs li {
+		flex: 1 1 auto;
+	}
+
+	.woocommerce-tabs ul.tabs li a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 44px;
+		padding: 8px 14px;
+		border: 1px solid var(--ps-border);
+		border-radius: 999px;
+		text-align: center;
+		white-space: normal;
+	}
+
+	.woocommerce-tabs ul.tabs li a::after {
+		display: none;
+	}
+
+	.woocommerce-tabs ul.tabs li.active a {
+		border-color: var(--ps-primary);
+		background: color-mix(in srgb, var(--ps-primary) 14%, transparent);
+	}
+}
+
 .woocommerce-Tabs-panel {
 	max-width: 860px;
 	line-height: 1.75;
@@ -2007,7 +2071,7 @@ table.variations select {
 	grid-template-areas: "img name" "img qty";
 	column-gap: 14px;
 	align-items: start;
-	padding: 16px 32px 16px 0;
+	padding: 16px 40px 16px 0;
 	border-bottom: 1px solid var(--ps-border);
 	font-size: .92rem;
 }
@@ -2058,12 +2122,12 @@ table.variations select {
 
 .woocommerce-mini-cart-item .remove {
 	position: absolute;
-	top: 14px;
-	right: 0;
+	top: 8px;
+	right: -6px;
 	display: grid;
 	place-items: center;
-	width: 28px;
-	height: 28px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	color: var(--ps-text-muted);
 	font-size: 1.2rem;
@@ -2185,8 +2249,11 @@ table.variations select {
 	padding-bottom: calc(var(--ps-section) / 2);
 }
 
+/* minmax(0, 1fr): the implicit `auto` column grew to the width of the cart
+   table and pushed the classic cart past the right edge on phones. */
 .woocommerce-cart .woocommerce {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 28px;
 }
 
@@ -2221,7 +2288,7 @@ table.shop_table {
 
 table.shop_table th {
 	padding: 12px 10px;
-	font-size: .74rem;
+	font-size: .75rem;
 	font-weight: 600;
 	letter-spacing: .12em;
 	text-transform: uppercase;
@@ -2262,8 +2329,8 @@ table.cart .product-name .variation dd p {
 table.cart .product-remove a {
 	display: grid;
 	place-items: center;
-	width: 32px;
-	height: 32px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	color: var(--ps-text-muted);
 	font-size: 1.3rem;
@@ -2299,25 +2366,40 @@ table.cart td.actions > .button {
 	--ps-btn-border: var(--ps-border-strong);
 }
 
+/* Tablets and up: coupon on the left, "Update cart" on the right. The cell
+   stays a table cell: as a flex box it lost its colspan, squeezed into the
+   first column and crushed the whole cart (desktop) or pushed it past the
+   screen (tablets). */
 @media (min-width: 768px) {
 	table.cart td.actions {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 16px;
+		text-align: end;
 	}
 
 	table.cart td.actions .coupon {
+		display: inline-flex;
+		flex-wrap: nowrap;
+		float: left;
 		margin: 0;
 	}
 
 	table.cart td.actions .coupon .input-text {
+		flex: 0 1 220px;
 		width: 220px;
+	}
+
+	table.cart td.actions > .button {
+		width: auto;
 	}
 }
 
 /* Responsive table → cards */
 @media (max-width: 767px) {
+	table.shop_table_responsive,
+	table.shop_table_responsive tbody {
+		display: block;
+		width: 100%;
+	}
+
 	table.shop_table_responsive thead {
 		display: none;
 	}
@@ -2344,6 +2426,17 @@ table.cart td.actions > .button {
 		text-transform: uppercase;
 		color: var(--ps-text-muted);
 		text-align: start;
+	}
+
+	/* Shipping row: label, method list, destination and the shipping
+	   calculator link stacked; side by side they ran past the screen. */
+	table.shop_table_responsive tbody tr.woocommerce-shipping-totals td {
+		display: block;
+	}
+
+	table.shop_table_responsive tbody tr.woocommerce-shipping-totals td::before {
+		display: block;
+		margin-bottom: 8px;
 	}
 
 	table.shop_table_responsive tbody td.actions::before,
@@ -2432,6 +2525,44 @@ table.cart td.actions > .button {
 	padding-top: 18px;
 	font-size: 1.15rem;
 	font-weight: 700;
+}
+
+/* Phones: the totals keep their two columns (label | amount). As stacked
+   cards every row showed its label twice ("Sous-total" / "SOUS-TOTAL"). */
+@media (max-width: 767px) {
+	.cart_totals table.shop_table_responsive tbody tr {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 4px 12px;
+		border-bottom: 1px solid var(--ps-border);
+	}
+
+	.cart_totals table.shop_table_responsive tbody th,
+	.cart_totals table.shop_table_responsive tbody td {
+		display: block;
+		border-bottom: 0;
+	}
+
+	.cart_totals table.shop_table_responsive tbody td {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	.cart_totals table.shop_table_responsive tbody td::before,
+	.cart_totals table.shop_table_responsive tbody tr.woocommerce-shipping-totals td::before {
+		display: none;
+	}
+
+	.cart_totals table.shop_table_responsive tbody tr.woocommerce-shipping-totals td {
+		flex-basis: 100%;
+		padding-top: 0;
+	}
+
+	.cart_totals table.shop_table_responsive tbody tr.order-total {
+		border-bottom: 0;
+	}
 }
 
 .cart_totals .order-total .includes_tax {
@@ -2561,8 +2692,11 @@ table.cart td.actions > .button {
 	}
 }
 
+/* minmax(0, 1fr): with an implicit `auto` column, long German labels made
+   the classic checkout wider than a 320px screen. */
 form.checkout {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 28px;
 }
 
@@ -2717,6 +2851,11 @@ form.checkout > .woocommerce-NoticeGroup {
 .woocommerce-checkout-review-order-table td {
 	padding: 12px 0;
 	font-size: .92rem;
+	overflow-wrap: anywhere; /* long German names on 320px phones */
+}
+
+.woocommerce-checkout-review-order-table .woocommerce-shipping-methods label {
+	white-space: normal;
 }
 
 .woocommerce-checkout-review-order-table thead {
@@ -2918,18 +3057,23 @@ ul.woocommerce-order-overview li strong {
 
 .woocommerce-columns--addresses {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 20px;
 }
 
 @media (min-width: 768px) {
 	.woocommerce-columns--addresses {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	}
 }
 
 /* 13 My account ----------------------------------------------------- */
+/* One column that never grows past the screen: with an implicit `auto`
+   column the grid took the width of the unwrapped account menu (1000 px+)
+   and the account pages were cut off on phones. */
 .woocommerce-account .ps-wc-page__content > .woocommerce {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 28px;
 }
 
@@ -2992,6 +3136,19 @@ ul.woocommerce-order-overview li strong {
 
 .woocommerce-MyAccount-navigation ul::-webkit-scrollbar {
 	display: none;
+}
+
+/* Phones and tablets: the menu entries wrap instead of running off-screen. */
+@media (max-width: 1023px) {
+	.woocommerce-MyAccount-navigation ul {
+		flex-wrap: wrap;
+		gap: 8px;
+		overflow: visible;
+	}
+
+	.woocommerce-MyAccount-navigation li a {
+		min-height: 42px;
+	}
 }
 
 .woocommerce-MyAccount-navigation li a {
@@ -3144,7 +3301,7 @@ ul.woocommerce-order-overview li strong {
 
 .woocommerce-orders-table .button,
 .woocommerce-table--order-downloads .button {
-	min-height: 38px;
+	min-height: 40px;
 	padding: .45em .9em;
 	font-size: .82rem;
 	margin: 2px;
@@ -3152,12 +3309,13 @@ ul.woocommerce-order-overview li strong {
 
 .woocommerce-Addresses {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 20px;
 }
 
 @media (min-width: 768px) {
 	.woocommerce-Addresses {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	}
 }
 
@@ -3168,11 +3326,14 @@ ul.woocommerce-order-overview li strong {
 	background: var(--ps-surface);
 }
 
+/* Wraps: "Rechnungsadresse" + "Rechnungsadresse bearbeiten" did not fit
+   side by side on phones. */
 .woocommerce-Address-title {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	gap: 10px;
+	gap: 6px 10px;
 }
 
 .woocommerce-Address-title h2 {
@@ -3363,13 +3524,15 @@ ul.woocommerce-order-overview li strong {
 	margin-top: auto;
 }
 
+/* Wraps like the product page form: kept on one line, the button label was
+   cut ("Ajouter au pan") in the narrow quick view on phones. */
 .ps-qv__form {
 	margin: 0;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 
-.ps-qv__form .single_add_to_cart_button {
-	flex: 1;
+form.cart.ps-qv__form .single_add_to_cart_button {
+	flex: 1 0 auto;
 }
 
 .ps-sticky-cart {
@@ -3433,9 +3596,37 @@ ul.woocommerce-order-overview li strong {
 	font-size: .86rem;
 }
 
+/* Narrow phones: two lines for the name ("Play…" on one line at 320px),
+   the crossed-out price makes room for them. */
+@media (max-width: 479px) {
+	.ps-sticky-cart__name {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		line-height: 1.25;
+		white-space: normal;
+	}
+
+	.ps-sticky-cart__price del {
+		display: none;
+	}
+
+	.ps-sticky-cart .ps-btn {
+		padding-inline: 14px;
+	}
+}
+
 .ps-sticky-cart .ps-btn {
 	min-height: 46px;
 	flex-shrink: 0;
+}
+
+/* Room under the footer for the sticky add-to-cart bar, so it never sits
+   on the last buttons and links of the page. */
+@media (max-width: 1023px) {
+	body.single-product {
+		padding-bottom: calc(100px + env(safe-area-inset-bottom));
+	}
 }
 
 @media (min-width: 1024px) {
@@ -3500,6 +3691,26 @@ ul.woocommerce-order-overview li strong {
 .wc-block-components-sale-badge,
 .wc-block-components-product-badge {
 	border-radius: 999px !important;
+}
+
+/* WooCommerce sets these at .875em of an already small size (11px and
+   less): kept at 12px at least. */
+.wc-block-cart .wc-block-cart-item__prices,
+.wc-block-cart .wc-block-components-product-metadata,
+.wc-block-components-order-summary-item .wc-block-cart-item__prices,
+.wc-block-components-order-summary-item .wc-block-components-product-metadata,
+.wc-block-components-sale-badge,
+.wc-block-components-product-badge {
+	font-size: .875rem !important;
+}
+
+.wc-block-components-product-metadata p,
+.wc-block-components-product-metadata__description,
+.wc-block-components-product-price__regular,
+.wc-block-components-address-card,
+.wc-block-components-totals-shipping__via,
+.wc-block-components-order-summary-item__quantity {
+	font-size: max(12px, 1em) !important;
 }
 
 .wc-block-components-radio-control--highlight-checked .wc-block-components-radio-control-accordion-option--checked-option-highlighted,
@@ -3757,7 +3968,7 @@ ul.woocommerce-order-overview li strong {
 	padding: 3px 9px;
 	border-radius: 999px;
 	background: var(--ps-soft);
-	font-size: .72rem;
+	font-size: .75rem;
 	font-weight: 600;
 	color: var(--ps-text);
 }
@@ -4273,81 +4484,146 @@ form.track_order input.input-text {
 	}
 }
 
-/* Block cart on phones: image on the left, name / price / quantity / line
-   total stacked on the right, nothing wider than the screen. */
-@media (max-width: 700px) {
-	.wc-block-cart .wc-block-cart-items,
-	.wc-block-cart .wc-block-cart-items tbody {
-		display: block;
-		width: 100%;
-		max-width: 100%;
-	}
+/* Block cart on phones: image on the left; name, price, description and
+   quantity on the right; the line total and its sale badge on their own line
+   below, so nothing is wider than the screen. WooCommerce switches its cart
+   to `.is-mobile` / `.is-small` by the width of the cart itself and places
+   the line total in a third grid column with
+   `.is-mobile table.wc-block-cart-items .wc-block-cart-items__row …`; the
+   selectors below are one step more specific so they win whatever the
+   stylesheet order. */
+.wc-block-cart.is-mobile table.wc-block-cart-items,
+.wc-block-cart.is-small table.wc-block-cart-items,
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody,
+.wc-block-cart.is-small table.wc-block-cart-items tbody {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+}
 
-	.wc-block-cart .wc-block-cart-items thead {
-		display: none;
-	}
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody .wc-block-cart-items__row,
+.wc-block-cart.is-small table.wc-block-cart-items tbody .wc-block-cart-items__row {
+	grid-template-columns: 72px minmax(0, 1fr);
+	column-gap: 14px;
+	row-gap: 10px;
+	width: 100%;
+}
 
-	.wc-block-cart .wc-block-cart-items .wc-block-cart-items__row {
-		display: grid !important;
-		grid-template-columns: 72px minmax(0, 1fr);
-		column-gap: 14px;
-		row-gap: 6px;
-		width: 100%;
-		padding: 16px 0;
-	}
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__image,
+.wc-block-cart.is-small table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__image {
+	grid-column: 1;
+	grid-row: 1 / span 2;
+	width: 72px;
+	padding: 0;
+}
 
-	.wc-block-cart .wc-block-cart-items .wc-block-cart-item__image {
-		grid-column: 1;
-		grid-row: 1 / span 2;
-		width: 72px;
-		padding: 0;
-	}
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody .wc-block-cart-item__image img,
+.wc-block-cart.is-small table.wc-block-cart-items tbody .wc-block-cart-item__image img {
+	width: 72px;
+	height: auto;
+}
 
-	.wc-block-cart .wc-block-cart-items .wc-block-cart-item__image img {
-		width: 72px;
-		height: auto;
-	}
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__product,
+.wc-block-cart.is-small table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__product {
+	grid-column: 2;
+	grid-row: 1;
+	min-width: 0;
+	padding: 0;
+}
 
-	.wc-block-cart .wc-block-cart-items .wc-block-cart-item__product {
-		grid-column: 2;
-		grid-row: 1;
-		min-width: 0;
-		padding: 0;
-	}
+.wc-block-cart.is-mobile table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__total,
+.wc-block-cart.is-small table.wc-block-cart-items tbody .wc-block-cart-items__row .wc-block-cart-item__total {
+	display: block;
+	grid-column: 2;
+	grid-row: 2;
+	min-width: 0;
+	padding: 10px 0 0;
+	border-top: 1px dashed var(--ps-border);
+	text-align: left;
+}
 
-	.wc-block-cart .wc-block-cart-items .wc-block-cart-item__total {
-		grid-column: 2;
-		grid-row: 2;
-		min-width: 0;
-		padding: 0;
-		text-align: left;
-	}
+.wc-block-cart.is-mobile .wc-block-cart-item__total-price-and-sale-badge-wrapper,
+.wc-block-cart.is-small .wc-block-cart-item__total-price-and-sale-badge-wrapper {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 6px 10px;
+}
 
-	.wc-block-cart .wc-block-cart-item__total-price-and-sale-badge-wrapper {
-		align-items: flex-start;
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 6px 10px;
-	}
+.wc-block-cart.is-mobile .wc-block-cart-item__total .wc-block-components-product-price,
+.wc-block-cart.is-small .wc-block-cart-item__total .wc-block-components-product-price {
+	font-weight: 700;
+}
 
-	.wc-block-cart .wc-block-components-product-name,
-	.wc-block-cart .wc-block-components-product-metadata {
-		overflow-wrap: anywhere;
-	}
+.wc-block-cart.is-mobile .wc-block-cart-item__total .wc-block-components-sale-badge,
+.wc-block-cart.is-small .wc-block-cart-item__total .wc-block-components-sale-badge {
+	margin: 0;
+	white-space: normal;
+}
 
-	.wc-block-cart .wc-block-cart-item__quantity {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-	}
+.wc-block-cart .wc-block-components-product-name,
+.wc-block-cart .wc-block-components-product-metadata {
+	overflow-wrap: anywhere;
+}
 
-	.wc-block-cart .wc-block-components-quantity-selector {
-		width: auto;
-		max-width: 150px;
-		margin: 0;
-	}
+.wc-block-cart.is-mobile .wc-block-cart-item__quantity,
+.wc-block-cart.is-small .wc-block-cart-item__quantity {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
 
-	.wc-block-cart .wc-block-components-sale-badge {
-		white-space: normal;
-	}
+.wc-block-cart.is-mobile .wc-block-components-quantity-selector,
+.wc-block-cart.is-small .wc-block-components-quantity-selector {
+	width: auto;
+	max-width: 150px;
+	margin: 0;
+}
+
+/* Block cart: quantity and remove buttons big enough for a finger. */
+.wc-block-cart table.wc-block-cart-items .wc-block-components-quantity-selector .wc-block-components-quantity-selector__button {
+	min-width: 40px;
+}
+
+.wc-block-cart table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link {
+	display: inline-grid;
+	place-items: center;
+	width: 40px;
+	height: 40px;
+	background-position: center;
+}
+
+/* Block checkout order summary: the line total and its sale badge go on
+   their own line under the product, so the product name keeps the full
+   width of the (narrow) summary column instead of one word per line. */
+.wc-block-components-order-summary .wc-block-components-order-summary-item {
+	flex-wrap: wrap;
+}
+
+.wc-block-components-order-summary .wc-block-components-order-summary-item .wc-block-components-order-summary-item__description {
+	flex: 1 1 0;
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.wc-block-components-order-summary .wc-block-components-order-summary-item .wc-block-components-order-summary-item__total-price {
+	flex: 1 0 100%;
+	margin: 8px 0 0;
+	padding-left: 72px;
+	text-align: left;
+}
+
+.wc-block-components-order-summary .wc-block-components-order-summary-item .wc-block-cart-item__total-price-and-sale-badge-wrapper {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 6px 10px;
+}
+
+.wc-block-components-order-summary .wc-block-components-order-summary-item .wc-block-components-sale-badge {
+	margin: 0;
+	white-space: normal;
 }

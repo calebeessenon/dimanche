@@ -315,7 +315,7 @@
 		var sh = 0;
 		var sdpr = Math.min(window.devicePixelRatio || 1, 2);
 		var snowing = store('ps_snow') !== 'off';
-		var toggle = doc.querySelector('[data-g-snow-toggle]');
+		var toggles = Array.prototype.slice.call(doc.querySelectorAll('[data-g-snow-toggle]'));
 		var t = 0;
 		function snowSize() {
 			sw = window.innerWidth; sh = window.innerHeight;
@@ -347,13 +347,13 @@
 		function setSnow(on) {
 			snowing = on;
 			store('ps_snow', on ? 'on' : 'off');
-			if (toggle) { toggle.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+			toggles.forEach(function (t) { t.setAttribute('aria-pressed', on ? 'true' : 'false'); });
 			if (on) { requestAnimationFrame(snowFrame); }
 		}
 		snowSize();
 		window.addEventListener('resize', snowSize);
 		doc.addEventListener('visibilitychange', function () { if (!doc.hidden && snowing) { requestAnimationFrame(snowFrame); } });
-		if (toggle) { toggle.addEventListener('click', function () { setSnow(!snowing); }); }
+		toggles.forEach(function (t) { t.addEventListener('click', function () { setSnow(!snowing); }); });
 		setSnow(snowing);
 	}
 

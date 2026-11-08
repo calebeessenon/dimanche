@@ -20,6 +20,9 @@ defined( 'ABSPATH' ) || exit;
 			echo '</ul></nav>';
 		}
 		premium_shop_payment_badges();
+
+		/** This action is documented in template-parts/footer/site-footer.php */
+		do_action( 'premium_shop_footer_bottom' );
 		?>
 	</div>
 </footer>
