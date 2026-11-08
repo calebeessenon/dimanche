@@ -69,6 +69,7 @@ return array(
 		'All shipping & payment information' => 'Toutes les informations livraison & paiement',
 		'Almost done! Please check your inbox to confirm your subscription.' => 'Presque terminé ! Consultez votre boîte mail pour confirmer votre inscription.',
 		'Almost there: check your selection, and the warmth is on its way.' => 'Vous y êtes presque : vérifiez votre sélection, et la chaleur est en route.',
+		'Almost there: check your selection, and your order will soon be on its way.' => 'Vous y êtes presque : vérifiez votre sélection, et votre commande sera bientôt en route.',
 		'Also show the form in the footer' => 'Afficher aussi le formulaire dans le pied de page',
 		'Always visible, under the price' => 'Toujours visible, sous le prix',
 		'Announcement bar background' => 'Fond du bandeau d’annonce',

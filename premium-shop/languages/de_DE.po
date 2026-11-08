@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 10:02+0000\n"
-"PO-Revision-Date: 2026-11-08 10:02+0000\n"
+"POT-Creation-Date: 2026-11-08 10:30+0000\n"
+"PO-Revision-Date: 2026-11-08 10:30+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: de_DE\n"
@@ -369,7 +369,7 @@ msgstr "Kostenloser Versand"
 msgid "From %s order value"
 msgstr "Ab %s Bestellwert"
 
-#: inc/content-sections.php:120 inc/page-hero.php:218 inc/admin/onboarding.php:395
+#: inc/content-sections.php:120 inc/page-hero.php:220 inc/admin/onboarding.php:395
 msgid "Order tracking"
 msgstr "Sendungsverfolgung"
 
@@ -403,7 +403,7 @@ msgstr "Bereit, unsere Produkte zu entdecken?"
 msgid "Order online in a few clicks, or ask us for advice."
 msgstr "Bestellen Sie online mit wenigen Klicks oder lassen Sie sich von uns beraten."
 
-#: inc/content-sections.php:202 inc/page-hero.php:327
+#: inc/content-sections.php:202 inc/page-hero.php:329
 msgid "Discover the shop"
 msgstr "Shop entdecken"
 
@@ -447,11 +447,11 @@ msgstr "Von Ihrer Bestellung bis zur Lieferung an Ihre Tür: Hier finden Sie all
 msgid "How it works"
 msgstr "So funktioniert’s"
 
-#: inc/content-sections.php:262 inc/woocommerce/order-tracking.php:305 inc/woocommerce/order-tracking.php:309 inc/woocommerce/single-product.php:283
+#: inc/content-sections.php:262 inc/woocommerce/order-tracking.php:305 inc/woocommerce/order-tracking.php:309 inc/woocommerce/single-product.php:300
 msgid "Delivery"
 msgstr "Lieferung"
 
-#: inc/content-sections.php:264 inc/woocommerce/single-product.php:308
+#: inc/content-sections.php:264 inc/woocommerce/single-product.php:325
 msgid "Payment"
 msgstr "Zahlung"
 
@@ -491,7 +491,7 @@ msgstr "Faire Preise"
 msgid "Clear prices including VAT, no hidden costs."
 msgstr "Klare Preise inkl. MwSt., keine versteckten Kosten."
 
-#: inc/content-sections.php:82 inc/page-hero.php:260 inc/firewood/presets.php:135
+#: inc/content-sections.php:82 inc/page-hero.php:262 inc/firewood/presets.php:135
 msgid "Personal advice"
 msgstr "Persönliche Beratung"
 
@@ -2526,7 +2526,7 @@ msgstr "Bestätigung ausstehend"
 msgid "Export confirmed subscribers (CSV)"
 msgstr "Bestätigte Abonnenten exportieren (CSV)"
 
-#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:367 inc/admin/onboarding.php:66
+#: inc/newsletter.php:315 inc/woocommerce/import-images.php:147 inc/woocommerce/import-mapping.php:373 inc/admin/onboarding.php:66
 msgid "You are not allowed to do this."
 msgstr "Dazu sind Sie nicht berechtigt."
 
@@ -2550,91 +2550,95 @@ msgstr "Bitte akzeptieren Sie die Datenschutzbestimmungen."
 msgid "Too many attempts. Please try again later."
 msgstr "Zu viele Versuche. Bitte versuchen Sie es später erneut."
 
-#: inc/page-hero.php:184
+#: inc/page-hero.php:185
 msgid "Almost there: check your selection, and the warmth is on its way."
 msgstr "Fast geschafft: Prüfen Sie Ihre Auswahl – und die Wärme ist unterwegs."
 
-#: inc/page-hero.php:184
+#: inc/page-hero.php:185
+msgid "Almost there: check your selection, and your order will soon be on its way."
+msgstr "Fast geschafft: Prüfen Sie Ihre Auswahl – und Ihre Bestellung ist bald unterwegs."
+
+#: inc/page-hero.php:186
 msgid "Your cart is still empty. Let yourself be inspired by our products."
 msgstr "Ihr Warenkorb ist noch leer. Lassen Sie sich von unseren Produkten inspirieren."
 
-#: inc/page-hero.php:195
+#: inc/page-hero.php:197
 msgid "Just a few details and your order is on its way."
 msgstr "Nur noch wenige Angaben, und Ihre Bestellung ist unterwegs."
 
-#: inc/page-hero.php:206
+#: inc/page-hero.php:208
 msgid "Customer account"
 msgstr "Kundenkonto"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:208
+#: inc/page-hero.php:210
 msgid "Hello, %s"
 msgstr "Hallo %s"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:209
+#: inc/page-hero.php:211
 msgid "Good to see you again. Here you will find your orders, addresses and account details."
 msgstr "Schön, dass Sie wieder da sind. Hier finden Sie Ihre Bestellungen, Adressen und Kontodaten."
 
-#: inc/page-hero.php:209
+#: inc/page-hero.php:211
 msgid "Sign in to follow your orders, order again in one click and save your addresses."
 msgstr "Melden Sie sich an, um Ihre Bestellungen zu verfolgen, mit einem Klick nachzubestellen und Ihre Adressen zu speichern."
 
-#: inc/page-hero.php:219
+#: inc/page-hero.php:221
 msgid "Where is my order? Follow your delivery step by step."
 msgstr "Wo ist meine Bestellung? Verfolgen Sie Ihre Lieferung Schritt für Schritt."
 
-#: inc/page-hero.php:219
+#: inc/page-hero.php:221
 msgid "Where is my wood? Follow your delivery step by step."
 msgstr "Wo ist mein Holz? Verfolgen Sie Ihre Lieferung Schritt für Schritt."
 
-#: inc/page-hero.php:229
+#: inc/page-hero.php:231
 msgid "We are here for you"
 msgstr "Wir sind für Sie da"
 
-#: inc/page-hero.php:230
+#: inc/page-hero.php:232
 msgid "A question about our products, a delivery or an order? Write to us, we answer quickly."
 msgstr "Eine Frage zu unseren Produkten, einer Lieferung oder einer Bestellung? Schreiben Sie uns, wir antworten schnell."
 
-#: inc/page-hero.php:239
+#: inc/page-hero.php:241
 msgid "Your favourites"
 msgstr "Ihre Favoriten"
 
-#: inc/page-hero.php:240
+#: inc/page-hero.php:242
 msgid "The products you love, kept for later."
 msgstr "Ihre Lieblingsprodukte, für später gemerkt."
 
-#: inc/page-hero.php:262
+#: inc/page-hero.php:264
 msgid "Dry wood, ready to burn"
 msgstr "Trockenes Holz, sofort brennfertig"
 
-#: inc/page-hero.php:264 inc/gaming/gaming.php:95 inc/gaming/gaming.php:141
+#: inc/page-hero.php:266 inc/gaming/gaming.php:95 inc/gaming/gaming.php:141
 msgid "100% original"
 msgstr "100 % original"
 
-#: inc/page-hero.php:381
+#: inc/page-hero.php:383
 msgid "Your payment could not be completed"
 msgstr "Ihre Zahlung konnte nicht abgeschlossen werden"
 
 #. translators:%s: customer first name.
-#: inc/page-hero.php:384 inc/woocommerce/cart-checkout.php:194
+#: inc/page-hero.php:386 inc/woocommerce/cart-checkout.php:194
 msgid "Thank you, %s!"
 msgstr "Vielen Dank, %s!"
 
-#: inc/page-hero.php:386
+#: inc/page-hero.php:388
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
 
 #. translators:1: order number, 2: e-mail address.
-#: inc/page-hero.php:394
+#: inc/page-hero.php:396
 msgid "Your order #%1$s has been received. A confirmation is on its way to %2$s."
 msgstr "Ihre Bestellung #%1$s ist eingegangen. Eine Bestätigung ist unterwegs an %2$s."
 
-#: inc/page-hero.php:605
+#: inc/page-hero.php:607
 msgid "Discover our products"
 msgstr "Entdecken Sie unsere Produkte"
 
-#: inc/page-hero.php:634
+#: inc/page-hero.php:636
 msgid "View all products"
 msgstr "Alle Produkte ansehen"
 
@@ -2888,69 +2892,69 @@ msgid "Hide this list"
 msgstr "Diese Liste ausblenden"
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:351
+#: inc/woocommerce/import-mapping.php:357
 msgid "%d product comes from an incomplete import (“Import placeholder for …”): it has no name and no price, so it cannot be bought."
 msgid_plural "%d products come from an incomplete import (“Import placeholder for …”): they have no name and no price, so they cannot be bought."
 msgstr[0] "%d Produkt stammt aus einem unvollständigen Import („Import placeholder for …“): Es hat keinen Namen und keinen Preis und kann daher nicht gekauft werden."
 msgstr[1] "%d Produkte stammen aus einem unvollständigen Import („Import placeholder for …“): Sie haben keinen Namen und keinen Preis und können daher nicht gekauft werden."
 
-#: inc/woocommerce/import-mapping.php:354
+#: inc/woocommerce/import-mapping.php:360
 msgid "Move them to the trash, then import your file again (Products → Import). Or import the same file again with “Update existing products” checked: they get their name, prices and categories back."
 msgstr "Verschieben Sie sie in den Papierkorb und importieren Sie Ihre Datei erneut (Produkte → Importieren). Oder importieren Sie dieselbe Datei noch einmal mit aktivierter Option „Vorhandene Produkte aktualisieren“: Dann erhalten sie ihren Namen, ihre Preise und Kategorien zurück."
 
-#: inc/woocommerce/import-mapping.php:355
+#: inc/woocommerce/import-mapping.php:361
 msgid "Move these products to the trash?"
 msgstr "Diese Produkte in den Papierkorb verschieben?"
 
-#: inc/woocommerce/import-mapping.php:355
+#: inc/woocommerce/import-mapping.php:361
 msgid "Move them to the trash"
 msgstr "In den Papierkorb verschieben"
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:394
+#: inc/woocommerce/import-mapping.php:400
 msgid "%d product moved to the trash."
 msgid_plural "%d products moved to the trash."
 msgstr[0] "%d Produkt in den Papierkorb verschoben."
 msgstr[1] "%d Produkte in den Papierkorb verschoben."
 
 #. translators:%d: number of products.
-#: inc/woocommerce/import-mapping.php:454
+#: inc/woocommerce/import-mapping.php:460
 msgid "%d published product has no price: WooCommerce shows no “Add to cart” button for it."
 msgid_plural "%d published products have no price: WooCommerce shows no “Add to cart” button for them."
 msgstr[0] "%d veröffentlichtes Produkt hat keinen Preis: WooCommerce zeigt dafür keinen „In den Warenkorb“-Button an."
 msgstr[1] "%d veröffentlichte Produkte haben keinen Preis: WooCommerce zeigt dafür keinen „In den Warenkorb“-Button an."
 
-#: inc/woocommerce/import-mapping.php:457
+#: inc/woocommerce/import-mapping.php:463
 msgid "Enter a regular price (General tab, or in each variation for variable products). After a CSV import, check that the price column was assigned to “Regular price” in the mapping step."
 msgstr "Geben Sie einen regulären Preis ein (Reiter Allgemein bzw. in jeder Variante bei variablen Produkten). Prüfen Sie nach einem CSV-Import, dass die Preisspalte im Zuordnungsschritt „Regulärer Preis“ zugewiesen wurde."
 
 #. translators:%d: number of products not listed.
-#: inc/woocommerce/import-mapping.php:467
+#: inc/woocommerce/import-mapping.php:473
 msgid "… and %d more."
 msgid_plural "… and %d more."
 msgstr[0] "… und %d weiteres."
 msgstr[1] "… und %d weitere."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:488
+#: inc/woocommerce/import-mapping.php:494
 msgid "Delimiter detected: %s. It has been set in the advanced options."
 msgstr "Trennzeichen erkannt: %s. Es wurde in den erweiterten Optionen eingetragen."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:489
+#: inc/woocommerce/import-mapping.php:495
 msgid "The file is not UTF-8 (probably saved by Excel): the encoding has been set to Windows-1252."
 msgstr "Die Datei ist nicht UTF-8 (vermutlich mit Excel gespeichert): Die Zeichenkodierung wurde auf Windows-1252 gesetzt."
 
 #. translators:%s: delimiter name.
-#: inc/woocommerce/import-mapping.php:490
+#: inc/woocommerce/import-mapping.php:496
 msgid "This file is separated by tabs, which the WooCommerce importer cannot read. Save it again as CSV (comma or semicolon) and choose it again."
 msgstr "Diese Datei ist durch Tabulatoren getrennt, was der WooCommerce-Importer nicht lesen kann. Speichern Sie sie erneut als CSV (Komma oder Semikolon) und wählen Sie sie nochmals aus."
 
-#: inc/woocommerce/import-mapping.php:492
+#: inc/woocommerce/import-mapping.php:498
 msgid "semicolon (;)"
 msgstr "Semikolon (;)"
 
-#: inc/woocommerce/import-mapping.php:493
+#: inc/woocommerce/import-mapping.php:499
 msgid "vertical bar (|)"
 msgstr "senkrechter Strich (|)"
 
@@ -3324,54 +3328,54 @@ msgstr "Aktive Filter"
 msgid "Remove filter"
 msgstr "Filter entfernen"
 
-#: inc/woocommerce/single-product.php:134
+#: inc/woocommerce/single-product.php:151
 msgid "Item no.:"
 msgstr "Art.-Nr.:"
 
-#: inc/woocommerce/single-product.php:162
+#: inc/woocommerce/single-product.php:179
 msgid "Instant access"
 msgstr "Sofortiger Zugriff"
 
-#: inc/woocommerce/single-product.php:162
+#: inc/woocommerce/single-product.php:179
 msgid "Available right after payment"
 msgstr "Direkt nach der Zahlung verfügbar"
 
 #. translators:%d: number of days.
-#: inc/woocommerce/single-product.php:167
+#: inc/woocommerce/single-product.php:184
 msgid "Simple and hassle-free"
 msgstr "Einfach und unkompliziert"
 
-#: inc/woocommerce/single-product.php:221
+#: inc/woocommerce/single-product.php:238
 msgid "Buy now"
 msgstr "Jetzt kaufen"
 
-#: inc/woocommerce/single-product.php:253 inc/woocommerce/single-product.php:269
+#: inc/woocommerce/single-product.php:270 inc/woocommerce/single-product.php:286
 msgid "Shipping & returns"
 msgstr "Versand & Rückgabe"
 
-#: inc/woocommerce/single-product.php:26
-msgid "Add to wishlist"
-msgstr "Zur Wunschliste hinzufügen"
-
 #. translators:%s: amount.
-#: inc/woocommerce/single-product.php:289
+#: inc/woocommerce/single-product.php:306
 msgid "Free shipping from %s."
 msgstr "Kostenloser Versand ab %s."
 
 #. translators:%d: number of days.
-#: inc/woocommerce/single-product.php:301
+#: inc/woocommerce/single-product.php:318
 msgid "You can return your order within %d days of delivery."
 msgstr "Sie können Ihre Bestellung innerhalb von %d Tagen nach Erhalt zurücksenden."
 
-#: inc/woocommerce/single-product.php:313
+#: inc/woocommerce/single-product.php:330
 msgid "All shipping & payment information"
 msgstr "Alle Infos zu Versand & Zahlung"
 
-#: inc/woocommerce/single-product.php:354 inc/woocommerce/wc-fallback-strings.php:20
+#: inc/woocommerce/single-product.php:371 inc/woocommerce/wc-fallback-strings.php:20
 msgid "Add to cart"
 msgstr "In den Warenkorb"
 
-#: inc/woocommerce/single-product.php:48
+#: inc/woocommerce/single-product.php:43
+msgid "Add to wishlist"
+msgstr "Zur Wunschliste hinzufügen"
+
+#: inc/woocommerce/single-product.php:65
 msgid "Watch the video"
 msgstr "Video ansehen"
 
@@ -3908,7 +3912,7 @@ msgstr "Warenkorb schließen"
 msgid "Back to cart"
 msgstr "Zurück zum Warenkorb"
 
-#: template-parts/header/header-checkout.php:21 inc/page-hero.php:194
+#: template-parts/header/header-checkout.php:21 inc/page-hero.php:196
 msgid "Secure checkout"
 msgstr "Sichere Kasse"
 
@@ -4120,7 +4124,7 @@ msgstr "Jahre"
 msgid "Warranty"
 msgstr "Garantie"
 
-#: template-parts/homepage/hero-gaming.php:23 inc/woocommerce/single-product.php:297
+#: template-parts/homepage/hero-gaming.php:23 inc/woocommerce/single-product.php:314
 msgid "Returns"
 msgstr "Rückgabe"
 
@@ -4146,12 +4150,12 @@ msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
 #. translators:%s: amount.
-#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:159 inc/customizer/config.php:551
+#: template-parts/homepage/hero.php:91 inc/woocommerce/single-product.php:176 inc/customizer/config.php:551
 msgid "Free shipping from %s"
 msgstr "Kostenloser Versand ab %s"
 
 #. translators:%d: number of days.
-#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:167 inc/customizer/config.php:555
+#: template-parts/homepage/hero.php:99 inc/woocommerce/cart-checkout.php:163 inc/woocommerce/single-product.php:184 inc/customizer/config.php:555
 msgid "%d-day free returns"
 msgstr "%d Tage kostenlose Rückgabe"
 
@@ -4184,7 +4188,7 @@ msgstr "Schließen"
 msgid "View details"
 msgstr "Details ansehen"
 
-#: template-parts/products/quick-view.php:99 inc/woocommerce/single-product.php:354
+#: template-parts/products/quick-view.php:99 inc/woocommerce/single-product.php:371
 msgid "Choose options"
 msgstr "Optionen wählen"
 

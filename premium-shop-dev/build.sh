@@ -54,6 +54,8 @@ TMP="$(mktemp -d)"
 cp -r "$THEME" "$TMP/premium-shop-gaming"
 sed -i "s/define( 'PREMIUM_SHOP_DEFAULT_PRESET', 'firewood' );/define( 'PREMIUM_SHOP_DEFAULT_PRESET', 'gaming' );/" "$TMP/premium-shop-gaming/functions.php"
 sed -i "s/^Theme Name:        Premium Shop$/Theme Name:        Premium Shop Gaming/" "$TMP/premium-shop-gaming/style.css"
+sed -i "s/^Description:       .*$/Description:       A premium, conversion-focused WooCommerce theme for gaming \& tech shops (NeoPlay) — dark neon \"Gaming \& tech\" style, holiday season mode, gift finder, sample catalogue of consoles, controllers, audio and graphics cards with photos, prices and technical data, delivery terms and returns policy. German-first and fully translatable (DE, FR, ES, EN included), compatible with WPML, Polylang and TranslatePress, with a built-in lightweight language switcher. Live product search, AJAX shop filters, quick view, wishlist, mini-cart drawer, buy-now button, free-shipping progress bar and a fully customizable homepage — all without page builders or heavy libraries./" "$TMP/premium-shop-gaming/style.css"
+! grep -qi "firewood" "$TMP/premium-shop-gaming/style.css"
 grep -q "'PREMIUM_SHOP_DEFAULT_PRESET', 'gaming'" "$TMP/premium-shop-gaming/functions.php"
 rm -f "$DIST/premium-shop-gaming.zip"
 (cd "$TMP" && zip -qr "$DIST/premium-shop-gaming.zip" premium-shop-gaming -x '*.DS_Store' -x '*/node_modules/*')

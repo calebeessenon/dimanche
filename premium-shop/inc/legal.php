@@ -72,20 +72,35 @@ function premium_shop_legal_content( $doc, $lang ) {
 		'es' => array( 'Teléfono', array( 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' ) ),
 	);
 	$label = isset( $labels[ $lang ] ) ? $labels[ $lang ] : $labels['en'];
+	// Example of small differences between photo and product, per shop type.
+	$examples = function_exists( 'premium_shop_is_gaming' ) && premium_shop_is_gaming()
+		? array(
+			'de' => 'z. B. bei Farbe, Verpackung oder Zubehör je nach Lieferserie des Herstellers',
+			'fr' => 'par exemple de couleur, d’emballage ou d’accessoires selon la série de livraison du fabricant',
+			'en' => 'for example in the colour, packaging or accessories depending on the manufacturer’s production batch',
+			'es' => 'por ejemplo, en el color, el embalaje o los accesorios según la serie de fabricación',
+		)
+		: array(
+			'de' => 'z. B. bei Farbe oder Aussehen des Holzes als Naturprodukt',
+			'fr' => 'par exemple de couleur ou d’aspect du bois, produit naturel',
+			'en' => 'for example in the colour or appearance of wood, a natural product',
+			'es' => 'por ejemplo, en el color o aspecto de la madera, producto natural',
+		);
 	$month = (int) wp_date( 'n' );
 	$date  = ( 'es' === $lang ? $label[1][ $month - 1 ] . ' de ' : $label[1][ $month - 1 ] . ' ' ) . wp_date( 'Y' );
 
 	$html = strtr(
 		$html,
 		array(
-			'{site_url}'       => esc_url( home_url( '/' ) ),
-			'{company}'        => esc_html( $company ),
-			'{address}'        => implode( '<br>', array_map( 'esc_html', $lines ) ),
-			'{address_inline}' => esc_html( implode( ', ', $lines ) ),
-			'{email}'          => esc_html( $email ),
-			'{phone_line}'     => '' !== $phone ? '<br>' . esc_html( $label[0] ) . ( 'fr' === $lang ? ' : ' : ': ' ) . '<a href="tel:' . esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ) . '">' . esc_html( $phone ) . '</a>' : '',
-			'{city}'           => esc_html( '' !== $city ? $city : $company ),
-			'{date}'           => esc_html( $date ),
+			'{site_url}'          => esc_url( home_url( '/' ) ),
+			'{company}'           => esc_html( $company ),
+			'{address}'           => implode( '<br>', array_map( 'esc_html', $lines ) ),
+			'{address_inline}'    => esc_html( implode( ', ', $lines ) ),
+			'{email}'             => esc_html( $email ),
+			'{phone_line}'        => '' !== $phone ? '<br>' . esc_html( $label[0] ) . ( 'fr' === $lang ? ' : ' : ': ' ) . '<a href="tel:' . esc_attr( preg_replace( '/[^\d+]/', '', $phone ) ) . '">' . esc_html( $phone ) . '</a>' : '',
+			'{city}'              => esc_html( '' !== $city ? $city : $company ),
+			'{date}'              => esc_html( $date ),
+			'{variation_example}' => esc_html( isset( $examples[ $lang ] ) ? $examples[ $lang ] : $examples['en'] ),
 		)
 	);
 	// No address entered: drop the empty separators.
@@ -497,3 +512,5 @@ function premium_shop_legal_refresh_on_upgrade() {
 	premium_shop_legal_refresh( $map );
 }
 add_action( 'premium_shop_upgrade_2_3_3', 'premium_shop_legal_refresh_on_upgrade' );
+// 2.3.10: terms of use without the firewood example on the gaming edition.
+add_action( 'premium_shop_upgrade_2_3_10', 'premium_shop_legal_refresh_on_upgrade' );

@@ -1240,8 +1240,21 @@ p.no-comments {
 	grid-column: 1 / -1;
 }
 
+/* Gallery + summary: the sticky summary stays within this block and no
+   longer slides over the tabs and related products below. */
+.single-product div.product .ps-product-top {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 32px;
+	min-width: 0;
+}
+
 @media (min-width: 1024px) {
 	.single-product div.product {
+		row-gap: 40px;
+	}
+
+	.single-product div.product .ps-product-top {
 		grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
 		gap: 40px clamp(40px, 5vw, 80px);
 		align-items: start;

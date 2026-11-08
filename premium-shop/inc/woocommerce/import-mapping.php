@@ -72,7 +72,13 @@ function premium_shop_import_localized_columns() {
 		'product_url'        => array( 'URL externe', 'Externe URL', 'URL externa' ),
 		'button_text'        => array( 'Libellé du bouton', 'Texte du bouton', 'Button-Text', 'Texto del botón' ),
 		'menu_order'         => array( 'Position', 'Posición' ),
+		// WooCommerce does not map these two by itself: its exports write them
+		// in the shop language and it only knows "Brands" in the admin language.
+		'global_unique_id'   => array( 'GTIN, UPC, EAN, or ISBN', 'GTIN, UPC, EAN oder ISBN', 'GTIN, UPC, EAN ou ISBN', 'GTIN, UPC, EAN o ISBN', 'GTIN', 'EAN', 'GTIN / EAN' ),
 	);
+	if ( taxonomy_exists( 'product_brand' ) ) {
+		$columns['brand_ids'] = array( 'Brands', 'Marken', 'Marques', 'Marcas', 'Brand', 'Marke', 'Marque', 'Marca' );
+	}
 
 	$map = array();
 	foreach ( $columns as $field => $titles ) {

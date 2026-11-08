@@ -12,6 +12,23 @@ defined( 'ABSPATH' ) || exit;
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
 /**
+ * Wrap gallery and summary: the sticky summary must not slide over the tabs
+ * and related products that follow.
+ */
+function premium_shop_product_top_open() {
+	echo '<div class="ps-product-top">';
+}
+add_action( 'woocommerce_before_single_product_summary', 'premium_shop_product_top_open', 1 );
+
+/**
+ * Close the gallery + summary wrapper.
+ */
+function premium_shop_product_top_close() {
+	echo '</div>';
+}
+add_action( 'woocommerce_after_single_product_summary', 'premium_shop_product_top_close', 1 );
+
+/**
  * Open the media column (badges + gallery + video).
  */
 function premium_shop_product_media_open() {

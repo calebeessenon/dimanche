@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.9
+Stable tag: 2.3.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,23 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.10 =
+* Product CSV import: the "GTIN, UPC, EAN, or ISBN" and "Brands" columns are
+  now mapped automatically (WooCommerce left them unmapped, so GTIN and brand
+  were lost when importing the gaming CSV), in English, German, French and
+  Spanish.
+* Gaming edition: no firewood wording left in the cart ("the warmth is on its
+  way"), in the terms of use (example "appearance of wood, a natural
+  product"; existing pages are updated) or in the theme description shown
+  under Appearance > Themes.
+* Dates in the shop language follow it too ("8. November 2026" instead of
+  "November 8, 2026" on a site installed in English and switched to German),
+  on the site and in e-mails.
+* Customizer preview no longer reloaded in the browser's language.
+* Product page (desktop): the sticky summary column no longer slides over
+  the tabs ("Additional information") and related products when it is
+  taller than the gallery.
 
 = 2.3.9 =
 * Gaming catalogue: 4 pictures per product (main picture, close-up, second

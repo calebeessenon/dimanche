@@ -73,6 +73,10 @@ function premium_shop_maybe_upgrade() {
 		do_action( 'premium_shop_upgrade_2_3_7' );
 	}
 
+	if ( '' !== $done && version_compare( $done, '2.3.10', '<' ) ) {
+		do_action( 'premium_shop_upgrade_2_3_10' );
+	}
+
 	// Self-healing steps, safe to repeat after every update.
 	premium_shop_replace_foreign_email();
 	if ( function_exists( 'premium_shop_legal_menu_sync' ) ) {

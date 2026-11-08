@@ -301,6 +301,7 @@ T = [
 ('A question about our products, a delivery or an order? Write to us, we answer quickly.', 'Eine Frage zu unseren Produkten, einer Lieferung oder einer Bestellung? Schreiben Sie uns, wir antworten schnell.', 'Une question sur nos produits, une livraison ou une commande ? Écrivez-nous, nous répondons rapidement.', '¿Una pregunta sobre nuestros productos, una entrega o un pedido? Escríbanos, respondemos rápido.'),
 ('Added', 'Hinzugefügt', 'Ajouté', 'Añadido'),
 ('Almost there: check your selection, and the warmth is on its way.', 'Fast geschafft: Prüfen Sie Ihre Auswahl – und die Wärme ist unterwegs.', 'Vous y êtes presque : vérifiez votre sélection, et la chaleur est en route.', 'Ya casi está: revise su selección y el calor estará en camino.'),
+('Almost there: check your selection, and your order will soon be on its way.', 'Fast geschafft: Prüfen Sie Ihre Auswahl – und Ihre Bestellung ist bald unterwegs.', 'Vous y êtes presque : vérifiez votre sélection, et votre commande sera bientôt en route.', 'Ya casi está: revise su selección y su pedido pronto estará en camino.'),
 ('Carefully selected', 'Sorgfältig ausgewählt', 'Soigneusement sélectionnés', 'Cuidadosamente seleccionados'),
 ('Clear prices including VAT, no hidden costs.', 'Klare Preise inkl. MwSt., keine versteckten Kosten.', 'Des prix clairs TVA incluse, sans frais cachés.', 'Precios claros con IVA incluido, sin costes ocultos.'),
 ('Contact us', 'Kontaktieren Sie uns', 'Contactez-nous', 'Contáctenos'),

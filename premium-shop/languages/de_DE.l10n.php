@@ -69,6 +69,7 @@ return array(
 		'All shipping & payment information' => 'Alle Infos zu Versand & Zahlung',
 		'Almost done! Please check your inbox to confirm your subscription.' => 'Fast geschafft! Bitte prüfen Sie Ihr Postfach, um Ihre Anmeldung zu bestätigen.',
 		'Almost there: check your selection, and the warmth is on its way.' => 'Fast geschafft: Prüfen Sie Ihre Auswahl – und die Wärme ist unterwegs.',
+		'Almost there: check your selection, and your order will soon be on its way.' => 'Fast geschafft: Prüfen Sie Ihre Auswahl – und Ihre Bestellung ist bald unterwegs.',
 		'Also show the form in the footer' => 'Formular auch im Footer anzeigen',
 		'Always visible, under the price' => 'Immer sichtbar, unter dem Preis',
 		'Announcement bar background' => 'Hintergrund der Hinweisleiste',

@@ -181,7 +181,9 @@ function premium_shop_page_hero_context() {
 			array(
 				'variant'  => 'cart',
 				'eyebrow'  => __( 'Your cart', 'premium-shop' ),
-				'subtitle' => WC()->cart && ! WC()->cart->is_empty() ? __( 'Almost there: check your selection, and the warmth is on its way.', 'premium-shop' ) : __( 'Your cart is still empty. Let yourself be inspired by our products.', 'premium-shop' ),
+				'subtitle' => WC()->cart && ! WC()->cart->is_empty()
+					? ( 'firewood' === premium_shop_preset() ? __( 'Almost there: check your selection, and the warmth is on its way.', 'premium-shop' ) : __( 'Almost there: check your selection, and your order will soon be on its way.', 'premium-shop' ) )
+					: __( 'Your cart is still empty. Let yourself be inspired by our products.', 'premium-shop' ),
 				'steps'    => true,
 				'icon'     => 'bag',
 			)

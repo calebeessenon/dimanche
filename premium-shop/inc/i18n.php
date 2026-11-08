@@ -455,7 +455,7 @@ function premium_shop_bcp47( $locale ) {
  * the chosen one; the language switcher (?lang=) always wins.
  */
 function premium_shop_browser_language_script() {
-	if ( is_admin() || ! premium_shop_builtin_applies() || ! apply_filters( 'premium_shop_browser_language', true ) ) {
+	if ( is_admin() || is_customize_preview() || ! premium_shop_builtin_applies() || ! apply_filters( 'premium_shop_browser_language', true ) ) {
 		return;
 	}
 	$codes = array_keys( premium_shop_languages() );

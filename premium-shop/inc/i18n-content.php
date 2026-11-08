@@ -337,7 +337,7 @@ add_filter( 'option_blogdescription', 'premium_shop_i18n_slogan', 20 );
  * Date format in the visitor's (or e-mail's) language when the site keeps
  * one of WordPress' standard formats: "5 novembre 2026", "5 de noviembre de
  * 2026", "November 5, 2026", "5. November 2026" instead of the format of the
- * shop language ("novembre 5, 2026").
+ * shop language ("novembre 5, 2026"), shop language included.
  *
  * @param string $format Date format.
  * @return string
@@ -353,6 +353,11 @@ function premium_shop_i18n_date_format( $format ) {
 		return $format;
 	}
 	$lang = premium_shop_i18n_target();
+	if ( '' === $lang && ( ! empty( $GLOBALS['premium_shop_switched_language'] ) || ( function_exists( 'premium_shop_builtin_applies' ) && premium_shop_builtin_applies() ) ) ) {
+		// Shop language too: a site installed in English and then switched to
+		// German (setup assistant) keeps "F j, Y" ("November 5, 2026").
+		$lang = premium_shop_default_language();
+	}
 	return '' !== $lang && isset( $formats[ $lang ] ) ? $formats[ $lang ] : $format;
 }
 add_filter( 'option_date_format', 'premium_shop_i18n_date_format', 20 );
