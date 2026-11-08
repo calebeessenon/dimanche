@@ -6332,3 +6332,58 @@ p.ps-hero__title {
 		font-size: .9rem;
 	}
 }
+
+/* Policy tables on phones: one card per row, each cell with its column title. */
+@media (max-width: 600px) {
+	.ps-policy .ps-zones {
+		overflow: visible;
+		border: 0;
+		background: none;
+	}
+
+	.ps-policy-table,
+	.ps-policy-table tbody,
+	.ps-policy-table tr,
+	.ps-policy-table td {
+		display: block;
+		width: 100%;
+	}
+
+	.ps-policy-table thead {
+		display: none;
+	}
+
+	.ps-policy-table tr {
+		margin: 0 0 12px;
+		border: 1px solid var(--ps-border);
+		border-radius: var(--ps-radius-lg, 14px);
+		background: var(--ps-surface);
+		overflow: hidden;
+	}
+
+	.ps-policy-table td {
+		padding: 8px 14px;
+		border-bottom: 1px solid var(--ps-border);
+	}
+
+	.ps-policy-table td:empty {
+		display: none;
+	}
+
+	.ps-policy-table td:first-child {
+		background: var(--ps-soft);
+	}
+
+	.ps-policy-table td[data-label]::before {
+		content: attr(data-label);
+		display: block;
+		font-size: .75rem;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		opacity: .7;
+	}
+
+	.ps-policy-table tr td:last-child {
+		border-bottom: 0;
+	}
+}

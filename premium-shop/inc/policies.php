@@ -187,7 +187,45 @@ function premium_shop_policy_html( $doc, $lang = '' ) {
 	);
 	$html = str_replace( array( '<br><br>', '<table class="ps-policy-table">', '</table>' . "\n" ), array( '<br>', '<div class="ps-zones"><table class="ps-zones__table ps-policy-table">', '</table></div>' . "\n" ), $html );
 
+	$html = premium_shop_policy_table_labels( $html );
+
 	return '<div class="ps-policy ps-policy--' . esc_attr( $doc ) . '">' . $html . '</div>';
+}
+
+/**
+ * Give each cell of the policy tables its column title (data-label), shown
+ * above the value when the table is stacked on phones.
+ *
+ * @param string $html HTML.
+ * @return string
+ */
+function premium_shop_policy_table_labels( $html ) {
+	return (string) preg_replace_callback(
+		'#<table class="ps-zones__table ps-policy-table">(.*?)</table>#s',
+		static function ( $m ) {
+			preg_match( '#<thead>.*?</thead>#s', $m[1], $head );
+			preg_match_all( '#<th>(.*?)</th>#s', isset( $head[0] ) ? $head[0] : '', $ths );
+			$labels = array_map( 'wp_strip_all_tags', $ths[1] );
+			$body   = preg_replace_callback(
+				'#<tr>(.*?)</tr>#s',
+				static function ( $row ) use ( $labels ) {
+					$i = 0;
+					return '<tr>' . preg_replace_callback(
+						'#<td>#',
+						static function () use ( $labels, &$i ) {
+							$label = isset( $labels[ $i ] ) ? $labels[ $i ] : '';
+							$i++;
+							return '' !== $label ? '<td data-label="' . esc_attr( $label ) . '">' : '<td>';
+						},
+						$row[1]
+					) . '</tr>';
+				},
+				preg_replace( '#<thead>.*?</thead>#s', '', $m[1] )
+			);
+			return '<table class="ps-zones__table ps-policy-table">' . ( isset( $head[0] ) ? $head[0] : '' ) . $body . '</table>';
+		},
+		$html
+	);
 }
 
 /**

@@ -93,7 +93,7 @@ Un texte de moyen de paiement saisi à la main (par exemple « Bitte überweisen
 
 ## 4. Reste à faire (non bloquant)
 
-- **Tableaux des pages livraison et retours sur mobile (390 px)** : ils sont plus larges que l'écran (jusqu'à 510 px pour 356 px). Ils défilent horizontalement dans leur cadre, sans débordement de la page, mais la dernière colonne est d'abord coupée. Une mise en page empilée sur mobile serait plus lisible.
+- ~~Tableaux des pages livraison et retours trop larges sur mobile (390 px)~~ → **corrigé après l’audit** : sur téléphone, chaque ligne devient une carte avec le titre de colonne au-dessus de chaque valeur (largeur 358 px, plus aucun défilement).
 - **Poids affiché « 4.6 kg »** (point décimal) : il suit le séparateur décimal des prix de WooCommerce (« . » en Suisse). Le tableau technique écrit « 4,6 kg ». C'est cohérent avec les réglages CHF, à harmoniser seulement si vous le souhaitez.
 - **GTIN** : ce sont des codes internes GS1 « 20… ». Remplacez-les par les EAN du fabricant avant Google Shopping ou une place de marché.
 - **Coordonnées bancaires (IBAN)** à renseigner dans WooCommerce → Réglages → Paiements → Virement.
