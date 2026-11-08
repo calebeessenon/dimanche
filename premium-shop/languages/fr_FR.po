@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-05 20:34+0000\n"
-"PO-Revision-Date: 2026-11-05 20:34+0000\n"
+"POT-Creation-Date: 2026-11-08 07:39+0000\n"
+"PO-Revision-Date: 2026-11-08 07:39+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -1297,7 +1297,7 @@ msgstr "Découvrez des produits de qualité, des prix justes et un service atten
 msgid "Box"
 msgstr "Colis"
 
-#: inc/customizer/config.php:570 inc/gaming/gaming.php:77
+#: inc/customizer/config.php:570 inc/gaming/gaming.php:81
 msgid "Shop now"
 msgstr "Acheter maintenant"
 
@@ -2129,293 +2129,293 @@ msgstr "Le pin s’allume vite — parfait pour démarrer le feu."
 msgid "Spruce lights quickly — perfect for getting the fire started."
 msgstr "L’épicéa s’allume vite — parfait pour démarrer le feu."
 
-#: inc/gaming/gaming.php:100 inc/firewood/presets.php:133
-msgid "Frequently asked questions"
-msgstr "Questions fréquentes"
-
-#: inc/gaming/gaming.php:115
-msgid "Are your products original?"
-msgstr "Vos produits sont-ils originaux ?"
-
-#: inc/gaming/gaming.php:115
-msgid "Yes. All consoles, graphics cards and accessories come from official distribution channels, are new and sealed, and include the full manufacturer warranty."
-msgstr "Oui. Toutes les consoles, cartes graphiques et accessoires proviennent des circuits de distribution officiels, sont neufs, scellés et couverts par la garantie constructeur complète."
-
-#: inc/gaming/gaming.php:116
-msgid "How fast do you deliver?"
-msgstr "En combien de temps livrez-vous ?"
-
-#: inc/gaming/gaming.php:116
-msgid "Orders placed before 3 pm on business days leave our warehouse the same day. Delivery usually takes 1–3 business days, with tracking."
-msgstr "Les commandes passées avant 15 h les jours ouvrés quittent notre entrepôt le jour même. La livraison prend généralement 1 à 3 jours ouvrés, avec suivi."
-
-#: inc/gaming/gaming.php:117
-msgid "Which graphics card suits my PC?"
-msgstr "Quelle carte graphique pour mon PC ?"
-
-#: inc/gaming/gaming.php:117
-msgid "Check the length of the card, your power supply (wattage and connectors) and your screen resolution. Send us your configuration — we gladly recommend the right model."
-msgstr "Vérifiez la longueur de la carte, votre alimentation (puissance et connecteurs) et la résolution de votre écran. Envoyez-nous votre configuration : nous vous conseillons volontiers le bon modèle."
-
-#: inc/gaming/gaming.php:118
-msgid "Can I return a product?"
-msgstr "Puis-je retourner un produit ?"
-
-#: inc/gaming/gaming.php:118
-msgid "You can return unused products in their original packaging within 14 days. Defective products are repaired or replaced under warranty."
-msgstr "Vous pouvez retourner les produits non utilisés dans leur emballage d’origine sous 14 jours. Les produits défectueux sont réparés ou remplacés sous garantie."
-
-#: inc/gaming/gaming.php:119
-msgid "Which payment methods do you accept?"
-msgstr "Quels moyens de paiement acceptez-vous ?"
-
-#: inc/gaming/gaming.php:119
-msgid "TWINT, credit and debit cards, PayPal, Apple Pay, Google Pay and bank transfer — all payments are encrypted."
-msgstr "TWINT, cartes de crédit et de débit, PayPal, Apple Pay, Google Pay et virement bancaire : tous les paiements sont chiffrés."
-
-#: inc/gaming/gaming.php:120
-msgid "Which console should I give a child?"
-msgstr "Quelle console offrir à un enfant ?"
-
-#: inc/gaming/gaming.php:120
-msgid "For children and families, Nintendo Switch 2 or Switch Lite are ideal: robust, easy to use and with parental controls. Teenagers usually prefer the PlayStation 5 Slim. Not sure? Write to us — we gladly advise you."
-msgstr "Pour les enfants et les familles, la Nintendo Switch 2 ou la Switch Lite sont idéales : robustes, simples et avec contrôle parental. Les ados préfèrent souvent la PlayStation 5 Slim. Vous hésitez ? Écrivez-nous, nous vous conseillons volontiers."
-
-#: inc/gaming/gaming.php:121
-msgid "Can I give a gift card?"
-msgstr "Puis-je offrir une carte cadeau ?"
-
-#: inc/gaming/gaming.php:121
-msgid "Yes: PlayStation Store and Nintendo eShop gift cards are the perfect last-minute present — the recipient chooses their own games. They work with accounts set to Switzerland."
-msgstr "Oui : les cartes PlayStation Store et Nintendo eShop sont le cadeau de dernière minute parfait, la personne choisit elle-même ses jeux. Elles fonctionnent avec les comptes de la région Suisse."
-
-#: inc/gaming/gaming.php:122
-msgid "Can you wrap my order as a gift?"
-msgstr "Pouvez-vous préparer ma commande comme un cadeau ?"
-
-#: inc/gaming/gaming.php:122
-msgid "Add a note to your order with your gift message: we include it free of charge, and the invoice is not put in the parcel on request."
-msgstr "Ajoutez votre message cadeau dans la note de commande : nous le joignons gratuitement et, sur demande, la facture n’est pas mise dans le colis."
-
-#: inc/gaming/gaming.php:123
-msgid "Do consoles work with games from other regions?"
-msgstr "Les consoles fonctionnent-elles avec des jeux d’autres régions ?"
-
-#: inc/gaming/gaming.php:123
-msgid "Current Nintendo and PlayStation consoles play games from all regions. Online services and some content may depend on your account region."
-msgstr "Les consoles Nintendo et PlayStation actuelles lisent les jeux de toutes les régions. Les services en ligne et certains contenus peuvent dépendre de la région de votre compte."
-
-#: inc/gaming/gaming.php:136
-msgid "New, sealed products with the full manufacturer warranty."
-msgstr "Produits neufs, sous blister, avec la garantie constructeur complète."
-
-#: inc/gaming/gaming.php:312
-msgid "Ends in"
-msgstr "Se termine dans"
-
-#: inc/gaming/gaming.php:314
-msgid "Happy holidays!"
-msgstr "Joyeuses fêtes !"
-
-#: inc/gaming/gaming.php:340
-msgid "Holiday deals: up to 20% off consoles and graphics cards"
-msgstr "Offres des fêtes : jusqu’à −20 % sur les consoles et cartes graphiques"
-
-#: inc/gaming/gaming.php:341
-msgid "Order by 20 December — delivered before Christmas"
-msgstr "Commandez avant le 20 décembre : livré avant Noël"
-
-#: inc/gaming/gaming.php:342
-msgid "Free gift message with every order"
-msgstr "Message cadeau offert avec chaque commande"
-
-#: inc/gaming/gaming.php:345
-msgid "Holiday deals are here"
-msgstr "Les offres des fêtes sont là"
-
-#: inc/gaming/gaming.php:346
-msgid "The gifts every gamer is dreaming of"
-msgstr "Les cadeaux dont rêvent tous les gamers"
-
-#: inc/gaming/gaming.php:347
-msgid "PlayStation 5 Slim, Nintendo Switch 2, DualSense controllers and JBL speakers at holiday prices — original products, wrapped with care and delivered before Christmas."
-msgstr "PlayStation 5 Slim, Nintendo Switch 2, manettes DualSense et enceintes JBL à prix de fête : produits originaux, emballés avec soin et livrés avant Noël."
-
-#: inc/gaming/gaming.php:348
-msgid "Find the perfect gift"
-msgstr "Trouver le cadeau parfait"
-
-#: inc/gaming/gaming.php:349 inc/gaming/gaming.php:351
-msgid "Holiday deals"
-msgstr "Offres des fêtes"
-
-#: inc/gaming/gaming.php:350
-msgid "Top gift ideas"
-msgstr "Idées cadeaux les plus populaires"
-
-#: inc/gaming/gaming.php:352
-msgid "New for the holidays"
-msgstr "Nouveautés pour les fêtes"
-
-#: inc/gaming/gaming.php:353
-msgid "End-of-year sale"
-msgstr "Soldes de fin d’année"
-
-#: inc/gaming/gaming.php:354
-msgid "PS5 Slim at its holiday price"
-msgstr "La PS5 Slim à prix de fête"
-
-#: inc/gaming/gaming.php:355
-msgid "The most wanted gift of the year: save up to CHF 50 on the PlayStation 5 Slim and up to CHF 30 on JBL speakers, while stocks last."
-msgstr "Le cadeau le plus demandé de l’année : jusqu’à CHF 50 d’économie sur la PlayStation 5 Slim et jusqu’à CHF 30 sur les enceintes JBL, dans la limite des stocks."
-
-#: inc/gaming/gaming.php:356
-msgid "Unwrap the deals"
-msgstr "Découvrir les offres"
-
-#: inc/gaming/gaming.php:357
-msgid "Delivered before Christmas"
-msgstr "Livré avant Noël"
-
-#: inc/gaming/gaming.php:358
-msgid "Order by 20 December"
-msgstr "Commandez avant le 20 décembre"
-
-#: inc/gaming/gaming.php:359
-msgid "Extended returns"
-msgstr "Retours prolongés"
-
-#: inc/gaming/gaming.php:360
-msgid "Gifts can be exchanged until 15 January"
-msgstr "Cadeaux échangeables jusqu’au 15 janvier"
-
-#: inc/gaming/gaming.php:361
-msgid "Holiday deals straight to your inbox"
-msgstr "Les offres des fêtes dans votre boîte mail"
-
-#: inc/gaming/gaming.php:362
-msgid "Flash deals, restocks and last-minute gift ideas until New Year. Unsubscribe at any time."
-msgstr "Ventes flash, réassorts et idées cadeaux de dernière minute jusqu’au Nouvel An. Désinscription à tout moment."
-
-#: inc/gaming/gaming.php:394
-msgid "Snow on / off"
-msgstr "Neige activée / désactivée"
-
-#: inc/gaming/gaming.php:424
-msgid "Audio & speakers"
-msgstr "Audio & enceintes"
-
-#: inc/gaming/gaming.php:425
-msgid "Games & gift cards"
-msgstr "Jeux & cartes cadeaux"
-
-#: inc/gaming/gaming.php:427
-msgid "Gift idea"
-msgstr "Idée cadeau"
-
-#: inc/gaming/gaming.php:428
-msgid "Accessories"
-msgstr "Accessoires"
-
-#: inc/gaming/gaming.php:69
-msgid "Original products with manufacturer warranty"
-msgstr "Produits originaux avec garantie constructeur"
-
-#: inc/gaming/gaming.php:70
-msgid "Ordered before 3 pm, shipped the same day"
-msgstr "Commandé avant 15 h, expédié le jour même"
-
-#: inc/gaming/gaming.php:71
-msgid "Pay with TWINT, card or invoice"
-msgstr "Payez par TWINT, carte ou facture"
-
-#: inc/gaming/gaming.php:74
-msgid "Consoles · graphics cards · accessories"
-msgstr "Consoles · cartes graphiques · accessoires"
-
-#: inc/gaming/gaming.php:75
-msgid "Next-level gaming, delivered fast"
-msgstr "Le jeu nouvelle génération, livré rapidement"
-
-#: inc/gaming/gaming.php:76
-msgid "Nintendo Switch, PlayStation 5 and the latest graphics cards — original products, fair prices and express delivery."
-msgstr "Nintendo Switch, PlayStation 5 et les dernières cartes graphiques : produits originaux, prix justes et livraison express."
-
-#: inc/gaming/gaming.php:78
-msgid "Current deals"
-msgstr "Offres du moment"
-
-#: inc/gaming/gaming.php:79
-msgid "Shop by platform"
-msgstr "Acheter par plateforme"
-
-#: inc/gaming/gaming.php:80
-msgid "Consoles, controllers, speakers and graphics cards from official channels — fair prices, honest advice and fast delivery in Switzerland."
-msgstr "Consoles, manettes, enceintes et cartes graphiques issues des circuits officiels : prix justes, conseils honnêtes et livraison rapide en Suisse."
-
-#: inc/gaming/gaming.php:83
-msgid "Deals"
-msgstr "Bons plans"
-
-#: inc/gaming/gaming.php:84
-msgid "Level up"
-msgstr "Passez au niveau supérieur"
-
-#: inc/gaming/gaming.php:85
-msgid "Graphics card week"
-msgstr "Semaine des cartes graphiques"
-
-#: inc/gaming/gaming.php:86
-msgid "More frames, less money: selected graphics cards at special prices while stocks last."
-msgstr "Plus d’images par seconde, moins cher : une sélection de cartes graphiques à prix spéciaux, dans la limite des stocks."
-
-#: inc/gaming/gaming.php:87
-msgid "See the deals"
-msgstr "Voir les offres"
-
-#: inc/gaming/gaming.php:88
-msgid "Express shipping"
-msgstr "Expédition express"
-
-#: inc/gaming/gaming.php:89
-msgid "Ordered before 3 pm, shipped today"
-msgstr "Commandé avant 15 h, expédié aujourd’hui"
-
-#: inc/gaming/gaming.php:91
-msgid "With manufacturer warranty"
-msgstr "Avec garantie constructeur"
-
-#: inc/gaming/gaming.php:92
-msgid "14-day returns"
-msgstr "Retour sous 14 jours"
-
-#: inc/gaming/gaming.php:93
-msgid "Simple and free of charge"
-msgstr "Simple et gratuit"
-
-#: inc/gaming/gaming.php:94
-msgid "Gamer support"
-msgstr "Support par des joueurs"
-
-#: inc/gaming/gaming.php:95
-msgid "Advice from real players"
-msgstr "Des conseils de vrais joueurs"
-
-#: inc/gaming/gaming.php:96
+#: inc/gaming/gaming.php:100
 msgid "Drops & deals first"
 msgstr "Nouveautés et bons plans en avant-première"
 
-#: inc/gaming/gaming.php:97
+#: inc/gaming/gaming.php:101
 msgid "Be the first to know about new consoles, restocks and limited deals. Unsubscribe at any time."
 msgstr "Soyez le premier informé des nouvelles consoles, des réassorts et des offres limitées. Désinscription à tout moment."
 
-#: inc/gaming/gaming.php:98
+#: inc/gaming/gaming.php:102
 msgid "Delivery within 1–3 business days"
 msgstr "Livraison sous 1 à 3 jours ouvrés"
 
-#: inc/gaming/gaming.php:99
+#: inc/gaming/gaming.php:103
 msgid "2-year manufacturer warranty"
 msgstr "Garantie constructeur de 2 ans"
+
+#: inc/gaming/gaming.php:104 inc/firewood/presets.php:133
+msgid "Frequently asked questions"
+msgstr "Questions fréquentes"
+
+#: inc/gaming/gaming.php:119
+msgid "Are your products original?"
+msgstr "Vos produits sont-ils originaux ?"
+
+#: inc/gaming/gaming.php:119
+msgid "Yes. All consoles, graphics cards and accessories come from official distribution channels, are new and sealed, and include the full manufacturer warranty."
+msgstr "Oui. Toutes les consoles, cartes graphiques et accessoires proviennent des circuits de distribution officiels, sont neufs, scellés et couverts par la garantie constructeur complète."
+
+#: inc/gaming/gaming.php:120
+msgid "How fast do you deliver?"
+msgstr "En combien de temps livrez-vous ?"
+
+#: inc/gaming/gaming.php:120
+msgid "Orders placed before 3 pm on business days leave our warehouse the same day. Delivery usually takes 1–3 business days, with tracking."
+msgstr "Les commandes passées avant 15 h les jours ouvrés quittent notre entrepôt le jour même. La livraison prend généralement 1 à 3 jours ouvrés, avec suivi."
+
+#: inc/gaming/gaming.php:121
+msgid "Which graphics card suits my PC?"
+msgstr "Quelle carte graphique pour mon PC ?"
+
+#: inc/gaming/gaming.php:121
+msgid "Check the length of the card, your power supply (wattage and connectors) and your screen resolution. Send us your configuration — we gladly recommend the right model."
+msgstr "Vérifiez la longueur de la carte, votre alimentation (puissance et connecteurs) et la résolution de votre écran. Envoyez-nous votre configuration : nous vous conseillons volontiers le bon modèle."
+
+#: inc/gaming/gaming.php:122
+msgid "Can I return a product?"
+msgstr "Puis-je retourner un produit ?"
+
+#: inc/gaming/gaming.php:122
+msgid "You can return unused products in their original packaging within 14 days. Defective products are repaired or replaced under warranty."
+msgstr "Vous pouvez retourner les produits non utilisés dans leur emballage d’origine sous 14 jours. Les produits défectueux sont réparés ou remplacés sous garantie."
+
+#: inc/gaming/gaming.php:123
+msgid "Which payment methods do you accept?"
+msgstr "Quels moyens de paiement acceptez-vous ?"
+
+#: inc/gaming/gaming.php:123
+msgid "TWINT, credit and debit cards, PayPal, Apple Pay, Google Pay and bank transfer — all payments are encrypted."
+msgstr "TWINT, cartes de crédit et de débit, PayPal, Apple Pay, Google Pay et virement bancaire : tous les paiements sont chiffrés."
+
+#: inc/gaming/gaming.php:124
+msgid "Which console should I give a child?"
+msgstr "Quelle console offrir à un enfant ?"
+
+#: inc/gaming/gaming.php:124
+msgid "For children and families, Nintendo Switch 2 or Switch Lite are ideal: robust, easy to use and with parental controls. Teenagers usually prefer the PlayStation 5 Slim. Not sure? Write to us — we gladly advise you."
+msgstr "Pour les enfants et les familles, la Nintendo Switch 2 ou la Switch Lite sont idéales : robustes, simples et avec contrôle parental. Les ados préfèrent souvent la PlayStation 5 Slim. Vous hésitez ? Écrivez-nous, nous vous conseillons volontiers."
+
+#: inc/gaming/gaming.php:125
+msgid "Can I give a gift card?"
+msgstr "Puis-je offrir une carte cadeau ?"
+
+#: inc/gaming/gaming.php:125
+msgid "Yes: PlayStation Store and Nintendo eShop gift cards are the perfect last-minute present — the recipient chooses their own games. They work with accounts set to Switzerland."
+msgstr "Oui : les cartes PlayStation Store et Nintendo eShop sont le cadeau de dernière minute parfait, la personne choisit elle-même ses jeux. Elles fonctionnent avec les comptes de la région Suisse."
+
+#: inc/gaming/gaming.php:126
+msgid "Can you wrap my order as a gift?"
+msgstr "Pouvez-vous préparer ma commande comme un cadeau ?"
+
+#: inc/gaming/gaming.php:126
+msgid "Add a note to your order with your gift message: we include it free of charge, and the invoice is not put in the parcel on request."
+msgstr "Ajoutez votre message cadeau dans la note de commande : nous le joignons gratuitement et, sur demande, la facture n’est pas mise dans le colis."
+
+#: inc/gaming/gaming.php:127
+msgid "Do consoles work with games from other regions?"
+msgstr "Les consoles fonctionnent-elles avec des jeux d’autres régions ?"
+
+#: inc/gaming/gaming.php:127
+msgid "Current Nintendo and PlayStation consoles play games from all regions. Online services and some content may depend on your account region."
+msgstr "Les consoles Nintendo et PlayStation actuelles lisent les jeux de toutes les régions. Les services en ligne et certains contenus peuvent dépendre de la région de votre compte."
+
+#: inc/gaming/gaming.php:140
+msgid "New, sealed products with the full manufacturer warranty."
+msgstr "Produits neufs, sous blister, avec la garantie constructeur complète."
+
+#: inc/gaming/gaming.php:316
+msgid "Ends in"
+msgstr "Se termine dans"
+
+#: inc/gaming/gaming.php:318
+msgid "Happy holidays!"
+msgstr "Joyeuses fêtes !"
+
+#: inc/gaming/gaming.php:344
+msgid "Holiday deals: up to 20% off consoles and graphics cards"
+msgstr "Offres des fêtes : jusqu’à −20 % sur les consoles et cartes graphiques"
+
+#: inc/gaming/gaming.php:345
+msgid "Order by 20 December — delivered before Christmas"
+msgstr "Commandez avant le 20 décembre : livré avant Noël"
+
+#: inc/gaming/gaming.php:346
+msgid "Free gift message with every order"
+msgstr "Message cadeau offert avec chaque commande"
+
+#: inc/gaming/gaming.php:349
+msgid "Holiday deals are here"
+msgstr "Les offres des fêtes sont là"
+
+#: inc/gaming/gaming.php:350
+msgid "The gifts every gamer is dreaming of"
+msgstr "Les cadeaux dont rêvent tous les gamers"
+
+#: inc/gaming/gaming.php:351
+msgid "PlayStation 5 Slim, Nintendo Switch 2, DualSense controllers and JBL speakers at holiday prices — original products, wrapped with care and delivered before Christmas."
+msgstr "PlayStation 5 Slim, Nintendo Switch 2, manettes DualSense et enceintes JBL à prix de fête : produits originaux, emballés avec soin et livrés avant Noël."
+
+#: inc/gaming/gaming.php:352
+msgid "Find the perfect gift"
+msgstr "Trouver le cadeau parfait"
+
+#: inc/gaming/gaming.php:353 inc/gaming/gaming.php:355
+msgid "Holiday deals"
+msgstr "Offres des fêtes"
+
+#: inc/gaming/gaming.php:354
+msgid "Top gift ideas"
+msgstr "Idées cadeaux les plus populaires"
+
+#: inc/gaming/gaming.php:356
+msgid "New for the holidays"
+msgstr "Nouveautés pour les fêtes"
+
+#: inc/gaming/gaming.php:357
+msgid "End-of-year sale"
+msgstr "Soldes de fin d’année"
+
+#: inc/gaming/gaming.php:358
+msgid "PS5 Slim at its holiday price"
+msgstr "La PS5 Slim à prix de fête"
+
+#: inc/gaming/gaming.php:359
+msgid "The most wanted gift of the year: save up to CHF 50 on the PlayStation 5 Slim and up to CHF 30 on JBL speakers, while stocks last."
+msgstr "Le cadeau le plus demandé de l’année : jusqu’à CHF 50 d’économie sur la PlayStation 5 Slim et jusqu’à CHF 30 sur les enceintes JBL, dans la limite des stocks."
+
+#: inc/gaming/gaming.php:360
+msgid "Unwrap the deals"
+msgstr "Découvrir les offres"
+
+#: inc/gaming/gaming.php:361
+msgid "Delivered before Christmas"
+msgstr "Livré avant Noël"
+
+#: inc/gaming/gaming.php:362
+msgid "Order by 20 December"
+msgstr "Commandez avant le 20 décembre"
+
+#: inc/gaming/gaming.php:363
+msgid "Extended returns"
+msgstr "Retours prolongés"
+
+#: inc/gaming/gaming.php:364
+msgid "Gifts can be exchanged until 15 January"
+msgstr "Cadeaux échangeables jusqu’au 15 janvier"
+
+#: inc/gaming/gaming.php:365
+msgid "Holiday deals straight to your inbox"
+msgstr "Les offres des fêtes dans votre boîte mail"
+
+#: inc/gaming/gaming.php:366
+msgid "Flash deals, restocks and last-minute gift ideas until New Year. Unsubscribe at any time."
+msgstr "Ventes flash, réassorts et idées cadeaux de dernière minute jusqu’au Nouvel An. Désinscription à tout moment."
+
+#: inc/gaming/gaming.php:398
+msgid "Snow on / off"
+msgstr "Neige activée / désactivée"
+
+#: inc/gaming/gaming.php:428
+msgid "Audio & speakers"
+msgstr "Audio & enceintes"
+
+#: inc/gaming/gaming.php:429
+msgid "Games & gift cards"
+msgstr "Jeux & cartes cadeaux"
+
+#: inc/gaming/gaming.php:431
+msgid "Gift idea"
+msgstr "Idée cadeau"
+
+#: inc/gaming/gaming.php:432
+msgid "Accessories"
+msgstr "Accessoires"
+
+#: inc/gaming/gaming.php:73
+msgid "Original products with manufacturer warranty"
+msgstr "Produits originaux avec garantie constructeur"
+
+#: inc/gaming/gaming.php:74
+msgid "Ordered before 3 pm, shipped the same day"
+msgstr "Commandé avant 15 h, expédié le jour même"
+
+#: inc/gaming/gaming.php:75
+msgid "Pay with TWINT, card or invoice"
+msgstr "Payez par TWINT, carte ou facture"
+
+#: inc/gaming/gaming.php:78
+msgid "Consoles · graphics cards · accessories"
+msgstr "Consoles · cartes graphiques · accessoires"
+
+#: inc/gaming/gaming.php:79
+msgid "Next-level gaming, delivered fast"
+msgstr "Le jeu nouvelle génération, livré rapidement"
+
+#: inc/gaming/gaming.php:80
+msgid "Nintendo Switch, PlayStation 5 and the latest graphics cards — original products, fair prices and express delivery."
+msgstr "Nintendo Switch, PlayStation 5 et les dernières cartes graphiques : produits originaux, prix justes et livraison express."
+
+#: inc/gaming/gaming.php:82
+msgid "Current deals"
+msgstr "Offres du moment"
+
+#: inc/gaming/gaming.php:83
+msgid "Shop by platform"
+msgstr "Acheter par plateforme"
+
+#: inc/gaming/gaming.php:84
+msgid "Consoles, controllers, speakers and graphics cards from official channels — fair prices, honest advice and fast delivery in Switzerland."
+msgstr "Consoles, manettes, enceintes et cartes graphiques issues des circuits officiels : prix justes, conseils honnêtes et livraison rapide en Suisse."
+
+#: inc/gaming/gaming.php:87
+msgid "Deals"
+msgstr "Bons plans"
+
+#: inc/gaming/gaming.php:88
+msgid "Level up"
+msgstr "Passez au niveau supérieur"
+
+#: inc/gaming/gaming.php:89
+msgid "Graphics card week"
+msgstr "Semaine des cartes graphiques"
+
+#: inc/gaming/gaming.php:90
+msgid "More frames, less money: selected graphics cards at special prices while stocks last."
+msgstr "Plus d’images par seconde, moins cher : une sélection de cartes graphiques à prix spéciaux, dans la limite des stocks."
+
+#: inc/gaming/gaming.php:91
+msgid "See the deals"
+msgstr "Voir les offres"
+
+#: inc/gaming/gaming.php:92
+msgid "Express shipping"
+msgstr "Expédition express"
+
+#: inc/gaming/gaming.php:93
+msgid "Ordered before 3 pm, shipped today"
+msgstr "Commandé avant 15 h, expédié aujourd’hui"
+
+#: inc/gaming/gaming.php:95
+msgid "With manufacturer warranty"
+msgstr "Avec garantie constructeur"
+
+#: inc/gaming/gaming.php:96
+msgid "14-day returns"
+msgstr "Retour sous 14 jours"
+
+#: inc/gaming/gaming.php:97
+msgid "Simple and free of charge"
+msgstr "Simple et gratuit"
+
+#: inc/gaming/gaming.php:98
+msgid "Gamer support"
+msgstr "Support par des joueurs"
+
+#: inc/gaming/gaming.php:99
+msgid "Advice from real players"
+msgstr "Des conseils de vrais joueurs"
 
 #: inc/home-slider.php:173
 msgid "Our range"
@@ -2600,7 +2600,7 @@ msgstr "Les produits que vous aimez, gardés pour plus tard."
 msgid "Dry wood, ready to burn"
 msgstr "Bois sec, prêt à brûler"
 
-#: inc/page-hero.php:264 inc/gaming/gaming.php:90 inc/gaming/gaming.php:136
+#: inc/page-hero.php:264 inc/gaming/gaming.php:94 inc/gaming/gaming.php:140
 msgid "100% original"
 msgstr "100 % original"
 
@@ -3764,19 +3764,19 @@ msgstr "Noël approche"
 msgid "Order by 20 December for delivery before Christmas."
 msgstr "Commandez avant le 20 décembre pour être livré avant Noël."
 
-#: template-parts/homepage/gaming-gifts.php:51 template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:313
+#: template-parts/homepage/gaming-gifts.php:51 template-parts/homepage/hero-gaming.php:23 inc/gaming/gaming.php:317
 msgid "days"
 msgstr "jours"
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:313
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:317
 msgid "hrs"
 msgstr "h"
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:313
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:317
 msgid "min"
 msgstr "min"
 
-#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:313
+#: template-parts/homepage/gaming-gifts.php:51 inc/gaming/gaming.php:317
 msgid "sec"
 msgstr "s"
 
@@ -3784,7 +3784,7 @@ msgstr "s"
 msgid "Consoles"
 msgstr "Consoles"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:423
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:427
 msgid "Controllers"
 msgstr "Manettes"
 
@@ -3800,7 +3800,7 @@ msgstr "Cartes cadeaux"
 msgid "Games"
 msgstr "Jeux"
 
-#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:426
+#: template-parts/homepage/gaming-marquee.php:14 inc/gaming/gaming.php:430
 msgid "Graphics cards"
 msgstr "Cartes graphiques"
 

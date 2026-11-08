@@ -45,6 +45,10 @@ function premium_shop_gaming_overrides() {
 			'free_shipping_threshold' => 0,
 			'returns_days'            => 14,
 			'footer_payments'         => 'twint,postfinance,visa,mastercard,paypal,applepay,googlepay',
+			// NeoPlay contact details (same address and phone as the Rolle shop).
+			'contact_address'         => "9 route du Beauregard\n1180 Rolle, Suisse",
+			'contact_phone'           => '+4175731714',
+			'contact_email'           => 'info@neoplay.ch',
 			// Firewood tools off.
 			'fw_unit_price'           => false,
 			'fw_specs_on_cards'       => false,
