@@ -174,7 +174,8 @@ function premium_shop_builtin_applies() {
 /**
  * Language chosen by the visitor in built-in mode.
  *
- * Priority: ?lang= parameter → cookie → default language (German).
+ * Priority: ?lang= parameter → "ps_lc" cookie (set by the browser) →
+ * "ps_lang" cookie (set by the server) → default language (German).
  *
  * @return string
  */
@@ -194,10 +195,18 @@ function premium_shop_builtin_language() {
 		if ( isset( $languages[ $requested ] ) ) {
 			$lang = $requested;
 		}
-	} elseif ( isset( $_COOKIE['ps_lang'] ) ) {
-		$cookie = sanitize_key( wp_unslash( $_COOKIE['ps_lang'] ) );
-		if ( isset( $languages[ $cookie ] ) ) {
-			$lang = $cookie;
+	} else {
+		// "ps_lc" is written by the browser on every language choice, so it
+		// also reaches the server when a page cache or CDN served the
+		// ?lang= page without letting the server set "ps_lang". Without it
+		// the cart, checkout and Store API requests fell back to German and
+		// orders, e-mails and invoices were saved in German.
+		foreach ( array( 'ps_lc', 'ps_lang' ) as $name ) {
+			$cookie = isset( $_COOKIE[ $name ] ) ? sanitize_key( wp_unslash( $_COOKIE[ $name ] ) ) : '';
+			if ( isset( $languages[ $cookie ] ) ) {
+				$lang = $cookie;
+				break;
+			}
 		}
 	}
 	// phpcs:enable

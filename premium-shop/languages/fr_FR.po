@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Premium Shop 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-09 20:06+0000\n"
-"PO-Revision-Date: 2026-11-09 20:06+0000\n"
+"POT-Creation-Date: 2026-11-09 20:17+0000\n"
+"PO-Revision-Date: 2026-11-09 20:17+0000\n"
 "Last-Translator: Premium Shop Studio\n"
 "Language-Team: Premium Shop Studio\n"
 "Language: fr_FR\n"
@@ -364,7 +364,7 @@ msgid "Delivery time"
 msgstr "Délai de livraison"
 
 #. translators:%s: amount.
-#: inc/content-sections.php:117 inc/woocommerce/order-language.php:605 inc/woocommerce/wc-fallback-strings.php:99
+#: inc/content-sections.php:117 inc/woocommerce/order-language.php:633 inc/woocommerce/wc-fallback-strings.php:99
 msgid "Free shipping"
 msgstr "Livraison gratuite"
 
@@ -2720,11 +2720,11 @@ msgstr "Réseaux sociaux"
 msgid "%s (opens in a new tab)"
 msgstr "%s (s’ouvre dans un nouvel onglet)"
 
-#: inc/template-tags.php:347 inc/woocommerce/order-language.php:619
+#: inc/template-tags.php:347 inc/woocommerce/order-language.php:647
 msgid "Invoice"
 msgstr "Facture"
 
-#: inc/template-tags.php:348 inc/woocommerce/order-language.php:618
+#: inc/template-tags.php:348 inc/woocommerce/order-language.php:646
 msgid "Prepayment"
 msgstr "Paiement anticipé"
 
@@ -2970,83 +2970,83 @@ msgstr "point-virgule (;)"
 msgid "vertical bar (|)"
 msgstr "barre verticale (|)"
 
-#: inc/woocommerce/order-language.php:348
+#: inc/woocommerce/order-language.php:376
 msgid "Customer language (e-mails, invoice)"
 msgstr "Langue du client (e-mails, facture)"
 
-#: inc/woocommerce/order-language.php:350
+#: inc/woocommerce/order-language.php:378
 msgid "Shop language"
 msgstr "Langue de la boutique"
 
-#: inc/woocommerce/order-language.php:599
+#: inc/woocommerce/order-language.php:627
 msgid "VAT"
 msgstr "TVA"
 
-#: inc/woocommerce/order-language.php:600
+#: inc/woocommerce/order-language.php:628
 msgid "Freight forwarding"
 msgstr "Transporteur"
 
-#: inc/woocommerce/order-language.php:601
+#: inc/woocommerce/order-language.php:629
 msgid "Pickup"
 msgstr "Retrait sur place"
 
-#: inc/woocommerce/order-language.php:602
+#: inc/woocommerce/order-language.php:630
 msgid "Delivery by truck"
 msgstr "Livraison par camion"
 
-#: inc/woocommerce/order-language.php:603
+#: inc/woocommerce/order-language.php:631
 msgid "Express delivery"
 msgstr "Livraison express"
 
-#: inc/woocommerce/order-language.php:604
+#: inc/woocommerce/order-language.php:632
 msgid "Standard delivery"
 msgstr "Livraison standard"
 
-#: inc/woocommerce/order-language.php:606
+#: inc/woocommerce/order-language.php:634
 msgid "Free delivery"
 msgstr "Livraison offerte"
 
-#: inc/woocommerce/order-language.php:607 inc/woocommerce/wc-fallback-strings.php:100
+#: inc/woocommerce/order-language.php:635 inc/woocommerce/wc-fallback-strings.php:100
 msgid "Flat rate"
 msgstr "Forfait"
 
-#: inc/woocommerce/order-language.php:608 inc/woocommerce/wc-fallback-strings.php:101
+#: inc/woocommerce/order-language.php:636 inc/woocommerce/wc-fallback-strings.php:101
 msgid "Local pickup"
 msgstr "Retrait local"
 
-#: inc/woocommerce/order-language.php:609
+#: inc/woocommerce/order-language.php:637
 msgid "Pickup at the depot"
 msgstr "Retrait au dépôt"
 
-#: inc/woocommerce/order-language.php:610
+#: inc/woocommerce/order-language.php:638
 msgid "Delivery with crane truck"
 msgstr "Livraison par camion-grue"
 
-#: inc/woocommerce/order-language.php:611
+#: inc/woocommerce/order-language.php:639
 msgid "Delivery on pallet"
 msgstr "Livraison sur palette"
 
-#: inc/woocommerce/order-language.php:612
+#: inc/woocommerce/order-language.php:640
 msgid "Bank transfer"
 msgstr "Virement bancaire"
 
-#: inc/woocommerce/order-language.php:613
+#: inc/woocommerce/order-language.php:641
 msgid "Direct bank transfer"
 msgstr "Virement bancaire direct"
 
-#: inc/woocommerce/order-language.php:614
+#: inc/woocommerce/order-language.php:642
 msgid "Check payments"
 msgstr "Paiement par chèque"
 
-#: inc/woocommerce/order-language.php:615
+#: inc/woocommerce/order-language.php:643
 msgid "Wire transfer"
 msgstr "Virement"
 
-#: inc/woocommerce/order-language.php:616
+#: inc/woocommerce/order-language.php:644
 msgid "Cash on delivery"
 msgstr "Paiement à la livraison"
 
-#: inc/woocommerce/order-language.php:617
+#: inc/woocommerce/order-language.php:645
 msgid "Payment on pickup"
 msgstr "Paiement au retrait"
 

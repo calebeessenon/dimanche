@@ -47,7 +47,16 @@ function premium_shop_save_order_language( $order ) {
 	if ( ! $order instanceof WC_Order || $order->get_meta( '_ps_language' ) ) {
 		return;
 	}
-	$lang = premium_shop_visitor_language();
+	// The language the cart / checkout page was shown in (kept in the
+	// WooCommerce session, which every cache lets through); else the
+	// language of this request.
+	$lang = '';
+	if ( function_exists( 'WC' ) && WC()->session ) {
+		$lang = (string) WC()->session->get( 'ps_language' );
+	}
+	if ( ! array_key_exists( $lang, premium_shop_languages() ) ) {
+		$lang = premium_shop_visitor_language();
+	}
 	if ( ! $lang ) {
 		return;
 	}
@@ -58,6 +67,25 @@ function premium_shop_save_order_language( $order ) {
 }
 add_action( 'woocommerce_checkout_create_order', 'premium_shop_save_order_language', 5 );
 add_action( 'woocommerce_store_api_checkout_update_order_meta', 'premium_shop_save_order_language', 5 );
+
+/**
+ * Remember the language the cart and checkout are shown in, for the order
+ * placed from them: the checkout request itself (Store API, AJAX) carries
+ * no ?lang= and may reach the server without the language cookie.
+ */
+function premium_shop_remember_checkout_language() {
+	if ( ! function_exists( 'WC' ) || ! WC()->session || ! ( is_cart() || is_checkout() ) ) {
+		return;
+	}
+	if ( function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'order-received' ) ) {
+		return;
+	}
+	$lang = premium_shop_visitor_language();
+	if ( $lang && WC()->session->get( 'ps_language' ) !== $lang ) {
+		WC()->session->set( 'ps_language', $lang );
+	}
+}
+add_action( 'template_redirect', 'premium_shop_remember_checkout_language', 20 );
 
 /**
  * Remember the language of customers who create an account.

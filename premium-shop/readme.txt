@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.18
+Stable tag: 2.3.19
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,15 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.19 =
+* Orders, customer e-mails and PDF invoices in the language the customer
+  shopped in, also behind a page cache or CDN. The server read the language
+  from the "ps_lang" cookie, which a cached page cannot set: the checkout
+  then fell back to German, and a customer shopping in French got German
+  e-mails and a German invoice. The language now also comes from the
+  "ps_lc" cookie written by the browser, and the language the cart and
+  checkout were shown in is kept in the WooCommerce session for the order.
 
 = 2.3.18 =
 * PDF Invoices & Packing Slips for WooCommerce: the invoice attached to
