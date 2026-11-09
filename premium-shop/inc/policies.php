@@ -611,3 +611,49 @@ function premium_shop_company_update() {
 	premium_shop_company_pages_install();
 }
 add_action( 'premium_shop_upgrade_2_3_16', 'premium_shop_company_update' );
+
+/**
+ * Theme update to 2.3.17 (gaming edition): kontakt@neoplay.ch replaces
+ * info@neoplay.ch, in the Customizer and in every page that still shows the
+ * former address (legal pages, Impressum, AGB, shipping, returns, contact,
+ * including pages edited by hand). An address chosen by the shop is kept.
+ */
+function premium_shop_contact_email_update() {
+	if ( ! function_exists( 'premium_shop_preset' ) || 'gaming' !== premium_shop_preset() ) {
+		return;
+	}
+	$old = 'info@neoplay.ch';
+	if ( strtolower( trim( (string) get_theme_mod( 'ps_contact_email', '' ) ) ) === $old ) {
+		remove_theme_mod( 'ps_contact_email' );
+	}
+	$new = trim( (string) premium_shop_option( 'contact_email' ) );
+	if ( '' === $new || strtolower( $new ) === $old ) {
+		return;
+	}
+	if ( function_exists( 'premium_shop_legal_refresh' ) ) {
+		premium_shop_legal_refresh( array( $old => $new ) );
+	}
+
+	global $wpdb;
+	$ids = $wpdb->get_col( // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- One-off update step.
+		$wpdb->prepare(
+			"SELECT ID FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status NOT IN ('trash', 'auto-draft', 'inherit') AND post_content LIKE %s",
+			'%' . $wpdb->esc_like( $old ) . '%'
+		)
+	);
+	foreach ( $ids as $id ) {
+		$content = (string) get_post_field( 'post_content', $id, 'raw' );
+		$updated = str_ireplace( $old, $new, $content );
+		if ( $updated !== $content ) {
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => (int) $id,
+						'post_content' => $updated,
+					)
+				)
+			);
+		}
+	}
+}
+add_action( 'premium_shop_upgrade_2_3_17', 'premium_shop_contact_email_update' );

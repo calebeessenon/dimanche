@@ -48,7 +48,7 @@ function premium_shop_gaming_overrides() {
 			// NeoPlay is run by Retroverse AG.
 			'contact_address'         => "Käsereistrasse 2\n4543 Deitingen, Schweiz",
 			'contact_phone'           => '+4175731714',
-			'contact_email'           => 'info@neoplay.ch',
+			'contact_email'           => 'kontakt@neoplay.ch',
 			'company_name'            => 'Retroverse AG',
 			'company_uid'             => 'CHE-305.783.003',
 			// Firewood tools off.

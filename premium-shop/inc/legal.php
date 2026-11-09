@@ -503,7 +503,7 @@ function premium_shop_legal_refresh_on_upgrade() {
 	if ( function_exists( 'premium_shop_preset' ) && 'gaming' === premium_shop_preset() ) {
 		$email = strtolower( trim( (string) get_theme_mod( 'ps_contact_email', '' ) ) );
 		if ( false !== strpos( $email, 'warmeholz' ) || false !== strpos( $email, 'mirop-bois' ) ) {
-			remove_theme_mod( 'ps_contact_email' ); // Back to info@neoplay.ch.
+			remove_theme_mod( 'ps_contact_email' ); // Back to the gaming default (kontakt@neoplay.ch).
 		}
 		if ( false !== stripos( (string) get_theme_mod( 'ps_company_name', '' ), 'warmeholz' ) ) {
 			remove_theme_mod( 'ps_company_name' );
