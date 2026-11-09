@@ -5,7 +5,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.5
 WC tested up to: 11.2
-Stable tag: 2.3.17
+Stable tag: 2.3.18
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,15 @@ With WPML/Polylang: String Translation ("Premium Shop" group). Without plugin, w
 "[:de]Text[:fr]Texte[:es]Texto[:en]Text" in the field.
 
 == Changelog ==
+
+= 2.3.18 =
+* PDF Invoices & Packing Slips for WooCommerce: the invoice attached to
+  customer e-mails is in the order's language (French, German, Spanish,
+  English) also when the e-mail is sent from the dashboard (order marked
+  as completed, "Send invoice"). The plugin reloaded its translations in
+  the dashboard user's language just before building the attachment, so a
+  French order completed from a German or English dashboard got an
+  English or German invoice.
 
 = 2.3.17 =
 * Gaming edition: contact e-mail kontakt@neoplay.ch instead of

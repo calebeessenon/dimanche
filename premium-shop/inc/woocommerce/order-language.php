@@ -131,7 +131,47 @@ function premium_shop_load_translations( $locale ) {
 	if ( 'en_US' !== $locale ) {
 		load_textdomain( 'premium-shop', PREMIUM_SHOP_DIR . '/languages/' . $locale . '.mo', $locale );
 	}
+	// PDF Invoices & Packing Slips for WooCommerce: invoice titles and labels
+	// ("Facture", "Numéro de commande"…) in the same language.
+	if ( function_exists( 'WPO_WCPDF' ) ) {
+		$domain = 'woocommerce-pdf-invoices-packing-slips';
+		unload_textdomain( $domain, true );
+		if ( 'en_US' !== $locale ) {
+			load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo', $locale );
+			load_textdomain( $domain, WP_LANG_DIR . '/plugins/' . $domain . '-' . $locale . '.mo', $locale );
+		}
+	}
 }
+
+/**
+ * While an e-mail or a document is switched to the customer's language,
+ * plugins that reload their translations use that language too. PDF Invoices
+ * & Packing Slips reloads its own just before building the e-mail
+ * attachment, with the language of the dashboard user: the invoice of a
+ * French order completed from the dashboard came out in that language (or in
+ * English) instead of French.
+ *
+ * @param string $locale Locale.
+ * @return string
+ */
+function premium_shop_switched_plugin_locale( $locale ) {
+	if ( ! empty( $GLOBALS['premium_shop_switched_language'] ) ) {
+		return premium_shop_locale_for( $GLOBALS['premium_shop_switched_language'] );
+	}
+	return $locale;
+}
+add_filter( 'plugin_locale', 'premium_shop_switched_plugin_locale', 99 );
+
+/**
+ * After PDF Invoices & Packing Slips reloaded its translations for an e-mail
+ * attachment: back to the customer's language.
+ */
+function premium_shop_pdf_attachment_language() {
+	if ( ! empty( $GLOBALS['premium_shop_switched_language'] ) ) {
+		premium_shop_load_translations( premium_shop_locale_for( $GLOBALS['premium_shop_switched_language'] ) );
+	}
+}
+add_action( 'wpo_wcpdf_reload_attachment_translations', 'premium_shop_pdf_attachment_language', 99 );
 
 /**
  * Undo premium_shop_switch_language().
