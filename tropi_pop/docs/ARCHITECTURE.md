@@ -52,7 +52,9 @@ tropi_pop/
 │   │   ├── app_services.dart      Accès aux services
 │   │   ├── cloud_sync_service.dart Sauvegarde cloud + scores (Firestore)
 │   │   ├── audio_service.dart
-│   │   └── monetization.dart      Interfaces Ads / Achats (+ versions simulées)
+│   │   ├── monetization.dart      Interfaces Ads / Achats (+ versions simulées)
+│   │   ├── ads/                   AdMob : config, consentement UMP, service, bannière
+│   │   └── iap/                   Achats intégrés (prêts, désactivés)
 │   └── ui/
 │       ├── screens/               splash, accueil, carte, jeu, boutique, paramètres…
 │       └── widgets/               logo, boutons, barre du haut, objectifs
@@ -122,7 +124,7 @@ Ajouter des niveaux : `LevelCatalog.register(LevelDefinition.fromJson(...))`
 
 ```bash
 flutter pub get
-flutter test                         # 33 tests : moteur, sauvegarde, cloud, interface
+flutter test                         # 51 tests : moteur, sauvegarde, cloud, publicité, interface
 flutter analyze
 flutter run                          # sur un téléphone / émulateur
 flutter run -d chrome                # aperçu navigateur

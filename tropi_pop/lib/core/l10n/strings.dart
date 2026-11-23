@@ -97,6 +97,12 @@ class S {
       'cloud_error': 'Indisponible',
       'cloud_none': 'Non disponible sur cette plateforme',
       'player_id': 'Identifiant joueur',
+      'no_ad_available': 'Aucune publicité disponible pour le moment, réessaie plus tard.',
+      'ad_not_completed': 'Publicité interrompue : pas de récompense.',
+      'free_booster_ad': 'Marteau gratuit',
+      'left_today': '{n} restant(s) aujourd\'hui',
+      'ads_privacy': 'Confidentialité publicitaire',
+      'restore_purchases': 'Restaurer mes achats',
     },
     'en': {
       'play': 'Play',
@@ -178,6 +184,12 @@ class S {
       'cloud_error': 'Unavailable',
       'cloud_none': 'Not available on this platform',
       'player_id': 'Player ID',
+      'no_ad_available': 'No ad available right now, please try again later.',
+      'ad_not_completed': 'Ad interrupted: no reward.',
+      'free_booster_ad': 'Free hammer',
+      'left_today': '{n} left today',
+      'ads_privacy': 'Ad privacy options',
+      'restore_purchases': 'Restore purchases',
     },
   };
 }

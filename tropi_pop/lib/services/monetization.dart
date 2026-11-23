@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:material_ui/material_ui.dart';
+
 /// Interfaces de monétisation.
 ///
 /// L'interface du jeu ne dépend QUE de ces abstractions. L'étape 6 fournit
@@ -7,20 +9,36 @@ import 'dart:async';
 /// via `in_app_purchase`) sans modifier les écrans.
 
 /// Publicités.
-abstract class AdsService {
-  /// Prépare les SDK (consentement RGPD/UMP compris à l'étape 6).
+///
+/// Implémentations : [AdMobAdsService] (Android / iOS, `ads/admob_ads_service.dart`)
+/// et [SimulatedAdsService] (web, tests). Les écrans n'utilisent que cette
+/// interface. Notifie ses écouteurs quand la disponibilité change.
+abstract class AdsService extends ChangeNotifier {
+  /// Consentement (UMP) puis initialisation du SDK.
   Future<void> init();
 
-  /// Publicité récompensée. Retourne `true` si la récompense est acquise.
+  /// Publicité récompensée. Retourne `true` UNIQUEMENT si la régie a confirmé
+  /// la récompense (vidéo regardée jusqu'au bout) ; `false` sinon (pas
+  /// d'annonce prête, fermée trop tôt, erreur, affichage déjà en cours).
   Future<bool> showRewarded(String placement);
 
-  /// Interstitiel (respecte un plafond de fréquence).
+  /// Interstitiel à une transition naturelle (fin de partie). Respecte les
+  /// plafonds de fréquence ; ne fait rien si les pubs sont supprimées.
   Future<void> maybeShowInterstitial(String placement);
 
+  /// Une publicité récompensée est-elle prête à être affichée ?
   bool get rewardedAvailable;
 
-  /// Désactive interstitiels et bannières (achat "Sans pub").
+  /// Bannière pour un emplacement non intrusif (widget vide si désactivée).
+  Widget banner(String placement);
+
+  /// Désactive interstitiels et bannières (achat « Sans pub »).
+  /// Les pubs récompensées restent proposées : elles sont volontaires.
   set adsRemoved(bool v);
+
+  /// Faut-il proposer « Options de confidentialité publicitaire » ?
+  Future<bool> privacyOptionsRequired();
+  Future<void> showPrivacyOptions();
 }
 
 /// Produits intégrés (identifiants identiques sur Google Play et App Store).
@@ -71,7 +89,7 @@ abstract class PurchaseService {
 // paiement. En mode debug, la pub récompensée est simulée pour tester le flux.
 // -----------------------------------------------------------------------------
 
-class SimulatedAdsService implements AdsService {
+class SimulatedAdsService extends AdsService {
   /// Fourni par l'interface pour afficher une fausse publicité de test.
   Future<void> Function()? presenter;
   final bool enabled;
@@ -96,13 +114,21 @@ class SimulatedAdsService implements AdsService {
   @override
   Future<void> maybeShowInterstitial(String placement) async {
     if (_removed || !enabled) return;
-    // Plafond : au plus une fois toutes les 3 fins de niveau.
     if (++_interstitialCounter % 3 != 0) return;
     await presenter?.call();
   }
 
   @override
+  Widget banner(String placement) => const SizedBox.shrink();
+
+  @override
   set adsRemoved(bool v) => _removed = v;
+
+  @override
+  Future<bool> privacyOptionsRequired() async => false;
+
+  @override
+  Future<void> showPrivacyOptions() async {}
 }
 
 class UnavailablePurchaseService implements PurchaseService {

@@ -43,12 +43,27 @@ class _TropiPopAppState extends State<TropiPopApp> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     final ads = widget.ads;
     if (ads is SimulatedAdsService) ads.presenter = _showTestAd;
-    ads.adsRemoved = widget.progress.data.noAds;
+    _noAds = widget.progress.data.noAds;
+    ads.adsRemoved = _noAds;
+    widget.progress.addListener(_syncNoAds);
+    // Consentement + SDK après la première image (le formulaire UMP a besoin
+    // d'une interface affichée).
+    WidgetsBinding.instance.addPostFrameCallback((_) => unawaited(widget.ads.init()));
+  }
+
+  bool _noAds = false;
+  void _syncNoAds() {
+    final v = widget.progress.data.noAds;
+    if (v != _noAds) {
+      _noAds = v;
+      widget.ads.adsRemoved = v;
+    }
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    widget.progress.removeListener(_syncNoAds);
     super.dispose();
   }
 

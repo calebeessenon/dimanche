@@ -4,6 +4,7 @@ import 'package:crypto/crypto.dart';
 import 'package:material_ui/material_ui.dart' show ChangeNotifier;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../services/iap/iap_config.dart';
 import 'economy.dart';
 import 'player_data.dart';
 
@@ -223,6 +224,63 @@ class ProgressStore extends ChangeNotifier {
     r.boosters.forEach((k, v) => data.boosters[k] = booster(k) + v);
     await save();
     return r;
+  }
+
+  // --- Achats intégrés ------------------------------------------------------------
+  // Stockés sous des clés locales séparées : le format synchronisé avec
+  // Firebase (PlayerData) n'est pas modifié.
+
+  static const _deliveredKey = 'iap_delivered_v1';
+
+  Set<String> deliveredPurchaseIds() {
+    final raw = _store.read(_deliveredKey);
+    if (raw == null) return {};
+    try {
+      return (jsonDecode(raw) as List).cast<String>().toSet();
+    } catch (_) {
+      return {};
+    }
+  }
+
+  Future<void> markPurchaseDelivered(String purchaseId) async {
+    final ids = deliveredPurchaseIds()..add(purchaseId);
+    await _store.write(_deliveredKey, jsonEncode(ids.toList()));
+  }
+
+  /// Livre le contenu d'un produit acheté ET vérifié.
+  Future<void> deliverPurchase(String productId) async {
+    final r = ProductReward.catalog[productId];
+    if (r == null) return;
+    data.coins += r.coins;
+    r.boosters.forEach((k, v) => data.boosters[k] = booster(k) + v);
+    if (r.removesAds) data.noAds = true;
+    await save();
+  }
+
+  // --- Publicités récompensées : plafond quotidien ------------------------------------
+
+  static const _adRewardsKey = 'ad_rewards_v1';
+
+  Map<String, int> _adCounts() {
+    final raw = _store.read(_adRewardsKey);
+    if (raw == null) return {};
+    try {
+      final j = jsonDecode(raw) as Map<String, dynamic>;
+      if (j['day'] != _dayKey(clock())) return {};
+      return (j['counts'] as Map).map((k, v) => MapEntry('$k', (v as num).toInt()));
+    } catch (_) {
+      return {};
+    }
+  }
+
+  /// Nombre de récompenses publicitaires encore disponibles aujourd'hui.
+  int adRewardsLeft(String kind) => (Economy.adDailyCaps[kind] ?? 0) - (_adCounts()[kind] ?? 0);
+
+  Future<void> countAdReward(String kind) async {
+    final c = _adCounts();
+    c[kind] = (c[kind] ?? 0) + 1;
+    await _store.write(_adRewardsKey, jsonEncode({'day': _dayKey(clock()), 'counts': c}));
+    notifyListeners();
   }
 
   // --- Paramètres -------------------------------------------------------------

@@ -29,6 +29,12 @@ android {
         // flag during build.
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // AdMob : identifiant d'APPLICATION. Par défaut, l'identifiant de TEST
+        // officiel de Google. En production, définir admobAppId dans
+        // android/gradle.properties (ou -PadmobAppId=... en ligne de commande).
+        manifestPlaceholders["admobAppId"] =
+            (project.findProperty("admobAppId") as String?) ?: "ca-app-pub-3940256099942544~3347511713"
     }
 
     buildTypes {

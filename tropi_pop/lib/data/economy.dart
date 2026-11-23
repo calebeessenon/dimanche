@@ -19,6 +19,9 @@ abstract final class Economy {
   static const extraMoves = 5;
   static const adRewardCoins = 25;
 
+  /// Plafonds quotidiens des récompenses publicitaires (préserve l'économie).
+  static const adDailyCaps = {'coins': 5, 'booster': 2, 'life': 3};
+
   static const coinOffers = [
     CoinOffer('hammer', CoinOfferKind.booster, 150, 1),
     CoinOffer('shuffle', CoinOfferKind.booster, 100, 1),

@@ -3,6 +3,10 @@
         android:label="Tropi Pop"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Identifiant d'application AdMob (test Google par défaut, voir android/gradle.properties) -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

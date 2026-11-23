@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tropi_pop/data/economy.dart';
 import 'package:tropi_pop/data/player_data.dart';
 import 'package:tropi_pop/data/progress_store.dart';
+import 'package:tropi_pop/services/monetization.dart';
 
 void main() {
   late DateTime now;
@@ -83,5 +84,30 @@ void main() {
     await p.claimDaily();
     now = now.add(const Duration(days: 3)); // série cassée
     expect(p.dailyIndex, 0);
+  });
+
+  test('achats : livraison du contenu et suivi des achats livrés', () async {
+    final p = open();
+    await p.deliverPurchase(Products.coins1200);
+    expect(p.coins, Economy.startCoins + 1200);
+    await p.deliverPurchase(Products.noAds);
+    expect(p.data.noAds, isTrue);
+    expect(p.deliveredPurchaseIds(), isEmpty);
+    await p.markPurchaseDelivered('GPA.1234');
+    expect(open().deliveredPurchaseIds(), {'GPA.1234'});
+    // Le format synchronisé avec Firebase n'est pas modifié.
+    expect(p.data.toJson().containsKey('iap_delivered_v1'), isFalse);
+  });
+
+  test('pubs récompensées : plafond quotidien, remis à zéro le lendemain', () async {
+    final p = open();
+    final cap = Economy.adDailyCaps['coins']!;
+    for (var i = 0; i < cap; i++) {
+      await p.countAdReward('coins');
+    }
+    expect(p.adRewardsLeft('coins'), 0);
+    expect(p.adRewardsLeft('life'), Economy.adDailyCaps['life']);
+    now = now.add(const Duration(days: 1));
+    expect(p.adRewardsLeft('coins'), cap);
   });
 }

@@ -7,6 +7,7 @@ import '../../game/levels/level_definition.dart';
 import '../../services/app_services.dart';
 import '../widgets/common.dart';
 import '../widgets/objective_chip.dart';
+import '../widgets/rewarded_ad.dart';
 import 'game_screen.dart';
 import 'shop_screen.dart';
 
@@ -88,14 +89,17 @@ void showNoLives(BuildContext context) {
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         const Icon(Icons.heart_broken_rounded, color: AppColors.pink, size: 72),
         const SizedBox(height: 16),
-        if (s.ads.rewardedAvailable)
+        if (s.progress.adRewardsLeft('life') > 0)
           PopButton(
             label: tr('free_life_ad'),
             icon: Icons.ondemand_video_rounded,
             color: AppColors.lagoon,
             onTap: () async {
               Navigator.pop(ctx);
-              if (await s.ads.showRewarded('free_life')) await s.progress.addLives(1);
+              // Récompense accordée uniquement si la pub a été validée.
+              if (await watchRewardedAd(context, placement: 'free_life', capKind: 'life')) {
+                await s.progress.addLives(1);
+              }
             },
           ),
         const SizedBox(height: 12),

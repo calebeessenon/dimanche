@@ -48,72 +48,85 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     final p = AppServices.of(context).progress;
+    final ads = AppServices.of(context).ads;
     return Scaffold(
-      body: Stack(children: [
-        LayoutBuilder(builder: (context, box) {
-          final width = box.maxWidth;
-          final current = p.data.unlockedLevel.clamp(1, LevelCatalog.count);
-          // Défilement inversé : 0 = bas de la carte (niveau 1).
-          _scroll ??= ScrollController(
-            initialScrollOffset: max(0, (current - 1) * spacing + bottomPad - box.maxHeight / 2),
-          );
-          return SingleChildScrollView(
-            controller: _scroll,
-            reverse: true,
-            child: SizedBox(
-              height: _height,
-              width: width,
-              child: ListenableBuilder(
-                listenable: p,
-                builder: (context, _) => Stack(children: [
-                  Positioned.fill(child: CustomPaint(painter: _MapPainter(this, width, p.data.unlockedLevel))),
-                  for (var w = 0; w < LevelCatalog.count ~/ 10; w++)
-                    Positioned(
-                      left: 0,
-                      right: 0,
-                      top: _nodePos(w * 10 + 10, width).dy - spacing * 0.75,
-                      child: Center(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: const Color(0x88000000),
-                            borderRadius: BorderRadius.circular(20),
+      // Bannière : uniquement sur la carte (écran de navigation), jamais en partie.
+      bottomNavigationBar: ListenableBuilder(listenable: ads, builder: (context, _) => ads.banner('map')),
+      body: Stack(
+        children: [
+          LayoutBuilder(
+            builder: (context, box) {
+              final width = box.maxWidth;
+              final current = p.data.unlockedLevel.clamp(1, LevelCatalog.count);
+              // Défilement inversé : 0 = bas de la carte (niveau 1).
+              _scroll ??= ScrollController(
+                initialScrollOffset: max(0, (current - 1) * spacing + bottomPad - box.maxHeight / 2),
+              );
+              return SingleChildScrollView(
+                controller: _scroll,
+                reverse: true,
+                child: SizedBox(
+                  height: _height,
+                  width: width,
+                  child: ListenableBuilder(
+                    listenable: p,
+                    builder: (context, _) => Stack(
+                      children: [
+                        Positioned.fill(child: CustomPaint(painter: _MapPainter(this, width, p.data.unlockedLevel))),
+                        for (var w = 0; w < LevelCatalog.count ~/ 10; w++)
+                          Positioned(
+                            left: 0,
+                            right: 0,
+                            top: _nodePos(w * 10 + 10, width).dy - spacing * 0.75,
+                            child: Center(
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: const Color(0x88000000),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text('${w + 1}. ${tr('world_$w')}', style: AppTheme.title(16)),
+                              ),
+                            ),
                           ),
-                          child: Text('${w + 1}. ${tr('world_$w')}', style: AppTheme.title(16)),
-                        ),
-                      ),
+                        for (var n = 1; n <= LevelCatalog.count; n++)
+                          Positioned(
+                            left: _nodePos(n, width).dx - 34,
+                            top: _nodePos(n, width).dy - 34,
+                            child: _LevelNode(
+                              n: n,
+                              stars: p.starsFor(n),
+                              unlocked: p.isUnlocked(n),
+                              current: n == current,
+                              onTap: () => showLevelStart(context, n),
+                            ),
+                          ),
+                      ],
                     ),
-                  for (var n = 1; n <= LevelCatalog.count; n++)
-                    Positioned(
-                      left: _nodePos(n, width).dx - 34,
-                      top: _nodePos(n, width).dy - 34,
-                      child: _LevelNode(
-                        n: n,
-                        stars: p.starsFor(n),
-                        unlocked: p.isUnlocked(n),
-                        current: n == current,
-                        onTap: () => showLevelStart(context, n),
-                      ),
-                    ),
-                ]),
-              ),
-            ),
-          );
-        }),
-        SafeArea(
-          child: TopBar(
-            leading: GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(color: AppColors.pink, shape: BoxShape.circle, border: Border.all(color: Colors.white, width: 3)),
-                child: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+                  ),
+                ),
+              );
+            },
+          ),
+          SafeArea(
+            child: TopBar(
+              leading: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: AppColors.pink,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 3),
+                  ),
+                  child: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+                ),
               ),
             ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }
@@ -129,13 +142,19 @@ class _MapPainter extends CustomPainter {
     // Bandes de couleur des mondes.
     for (var w = 0; w < LevelCatalog.count ~/ 10; w++) {
       final bottom = w == 0 ? size.height : s._nodePos(w * 10, width).dy - _MapScreenState.spacing / 2;
-      final top = w == LevelCatalog.count ~/ 10 - 1 ? 0.0 : s._nodePos(w * 10 + 10, width).dy - _MapScreenState.spacing / 2;
+      final top = w == LevelCatalog.count ~/ 10 - 1
+          ? 0.0
+          : s._nodePos(w * 10 + 10, width).dy - _MapScreenState.spacing / 2;
       final cols = _MapScreenState.worldColors[w % _MapScreenState.worldColors.length];
       final rect = Rect.fromLTRB(0, top, size.width, bottom);
       canvas.drawRect(
         rect,
         Paint()
-          ..shader = LinearGradient(begin: Alignment.bottomCenter, end: Alignment.topCenter, colors: cols).createShader(rect),
+          ..shader = LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            colors: cols,
+          ).createShader(rect),
       );
       // Décors : petites îles / palmiers stylisés.
       final rnd = Random(w);
@@ -157,19 +176,21 @@ class _MapPainter extends CustomPainter {
       }
     }
     canvas.drawPath(
-        path,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 22
-          ..strokeCap = StrokeCap.round
-          ..color = const Color(0x55000000));
+      path,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 22
+        ..strokeCap = StrokeCap.round
+        ..color = const Color(0x55000000),
+    );
     canvas.drawPath(
-        path,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 14
-          ..strokeCap = StrokeCap.round
-          ..color = AppColors.cream.withValues(alpha: 0.9));
+      path,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 14
+        ..strokeCap = StrokeCap.round
+        ..color = AppColors.cream.withValues(alpha: 0.9),
+    );
   }
 
   @override
@@ -182,7 +203,13 @@ class _LevelNode extends StatefulWidget {
   final bool unlocked;
   final bool current;
   final VoidCallback onTap;
-  const _LevelNode({required this.n, required this.stars, required this.unlocked, required this.current, required this.onTap});
+  const _LevelNode({
+    required this.n,
+    required this.stars,
+    required this.unlocked,
+    required this.current,
+    required this.onTap,
+  });
 
   @override
   State<_LevelNode> createState() => _LevelNodeState();
@@ -232,10 +259,15 @@ class _LevelNodeState extends State<_LevelNode> with SingleTickerProviderStateMi
       child: SizedBox(
         width: 68,
         height: 86,
-        child: Stack(clipBehavior: Clip.none, alignment: Alignment.topCenter, children: [
-          node,
-          if (widget.unlocked && widget.stars > 0) Positioned(bottom: 0, child: StarRow(stars: widget.stars, size: 20)),
-        ]),
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.topCenter,
+          children: [
+            node,
+            if (widget.unlocked && widget.stars > 0)
+              Positioned(bottom: 0, child: StarRow(stars: widget.stars, size: 20)),
+          ],
+        ),
       ),
     );
   }
