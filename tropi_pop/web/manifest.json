@@ -1,0 +1,35 @@
+{
+  "name": "Tropi Pop",
+  "short_name": "Tropi Pop",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#3A1C71",
+  "theme_color": "#FF4F8B",
+  "description": "Jeu de puzzle Match-3 tropical.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
