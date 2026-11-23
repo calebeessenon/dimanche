@@ -7,6 +7,7 @@ import 'core/theme/app_theme.dart';
 import 'data/progress_store.dart';
 import 'services/app_services.dart';
 import 'services/audio_service.dart';
+import 'services/cloud_sync_service.dart';
 import 'services/monetization.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/widgets/common.dart';
@@ -18,6 +19,7 @@ class TropiPopApp extends StatefulWidget {
   final AudioService audio;
   final AdsService ads;
   final PurchaseService purchases;
+  final CloudSyncService? cloud;
   final Widget home;
 
   const TropiPopApp({
@@ -26,6 +28,7 @@ class TropiPopApp extends StatefulWidget {
     required this.audio,
     required this.ads,
     required this.purchases,
+    this.cloud,
     this.home = const SplashScreen(),
   });
 
@@ -53,7 +56,10 @@ class _TropiPopAppState extends State<TropiPopApp> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // Coupe la musique en arrière-plan.
     if (state == AppLifecycleState.paused) unawaited(widget.audio.pauseAll());
-    if (state == AppLifecycleState.resumed) unawaited(widget.audio.resumeAll());
+    if (state == AppLifecycleState.resumed) {
+      unawaited(widget.audio.resumeAll());
+      unawaited(widget.cloud?.syncNow());
+    }
   }
 
   /// Fausse publicité de test (remplacée par AdMob à l'étape 6).
@@ -77,6 +83,7 @@ class _TropiPopAppState extends State<TropiPopApp> with WidgetsBindingObserver {
         audio: widget.audio,
         ads: widget.ads,
         purchases: widget.purchases,
+        cloud: widget.cloud,
         child: MaterialApp(
           navigatorKey: navigatorKey,
           title: 'Tropi Pop',

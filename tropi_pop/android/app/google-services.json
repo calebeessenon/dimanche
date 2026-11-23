@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "998074961132",
+    "project_id": "pitro-pop",
+    "storage_bucket": "pitro-pop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998074961132:android:eae9e105a1de833c8669c9",
+        "android_client_info": {
+          "package_name": "com.pitropop.pitropop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlCXsThnzAILzKvqwE2epIgEYaESPRZGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

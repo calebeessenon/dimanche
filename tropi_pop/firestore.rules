@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Règles de sécurité Firestore — Tropi Pop (projet pitro-pop).
+// Principe : chaque joueur ne peut lire et écrire QUE ses propres données ;
+// les classements sont lisibles par tous les joueurs connectés mais chacun
+// n'écrit que sa propre ligne, avec des valeurs plafonnées.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+    function isInt(v, lo, hi) { return v is int && v >= lo && v <= hi; }
+    function recent() { return request.resource.data.updatedAt == request.time; }
+
+    // Progression complète du joueur (privée).
+    match /players/{uid} {
+      allow read: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['schemaVersion', 'progress', 'unlockedLevel', 'totalStars', 'updatedAt'])
+        && request.resource.data.progress is map
+        && isInt(request.resource.data.unlockedLevel, 1, 1001)
+        && isInt(request.resource.data.totalStars, 0, 3000)
+        && isInt(request.resource.data.progress.coins, 0, 10000000)
+        && recent();
+      allow delete: if isOwner(uid);
+    }
+
+    // Classement général (pseudonyme, étoiles, score cumulé).
+    match /leaderboard/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['name', 'totalStars', 'levelsCompleted', 'totalScore', 'updatedAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() <= 24
+        && isInt(request.resource.data.totalStars, 0, 3000)
+        && isInt(request.resource.data.levelsCompleted, 0, 1000)
+        && isInt(request.resource.data.totalScore, 0, 2000000000)
+        && recent();
+      allow delete: if isOwner(uid);
+    }
+
+    // Meilleur score par niveau : uniquement en hausse.
+    match /levels/{level}/scores/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['name', 'score', 'stars', 'updatedAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() <= 24
+        && isInt(request.resource.data.score, 1, 5000000)
+        && isInt(request.resource.data.stars, 1, 3)
+        && (resource == null || request.resource.data.score > resource.data.score)
+        && recent();
+      allow delete: if isOwner(uid);
+    }
+
+    // Tout le reste est interdit.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -47,8 +47,10 @@ tropi_pop/
 │   │   ├── player_data.dart       Progression sérialisable
 │   │   ├── progress_store.dart    Vies, pièces, boosters, niveaux, récompense du jour
 │   │   └── economy.dart           Paramètres de l'économie virtuelle
+│   ├── firebase_options.dart      Configuration Firebase (pitro-pop)
 │   ├── services/
 │   │   ├── app_services.dart      Accès aux services
+│   │   ├── cloud_sync_service.dart Sauvegarde cloud + scores (Firestore)
 │   │   ├── audio_service.dart
 │   │   └── monetization.dart      Interfaces Ads / Achats (+ versions simulées)
 │   └── ui/
@@ -120,7 +122,7 @@ Ajouter des niveaux : `LevelCatalog.register(LevelDefinition.fromJson(...))`
 
 ```bash
 flutter pub get
-flutter test                         # 26 tests : moteur, sauvegarde, interface
+flutter test                         # 33 tests : moteur, sauvegarde, cloud, interface
 flutter analyze
 flutter run                          # sur un téléphone / émulateur
 flutter run -d chrome                # aperçu navigateur

@@ -1,10 +1,13 @@
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import 'app.dart';
 import 'core/l10n/strings.dart';
 import 'data/progress_store.dart';
+import 'firebase_options.dart';
 import 'services/audio_service.dart';
+import 'services/cloud_sync_service.dart';
 import 'services/monetization.dart';
 
 Future<void> main() async {
@@ -25,5 +28,20 @@ Future<void> main() async {
   await ads.init();
   await purchases.init();
 
-  runApp(TropiPopApp(progress: progress, audio: audio, ads: ads, purchases: purchases));
+  // Firebase (Android / iOS) : sauvegarde cloud et scores. En cas d'échec
+  // (pas de réseau au premier lancement, plateforme non configurée), le jeu
+  // démarre quand même hors ligne.
+  CloudSyncService? cloud;
+  final options = DefaultFirebaseOptions.currentPlatform;
+  if (options != null) {
+    try {
+      await Firebase.initializeApp(options: options);
+      cloud = CloudSyncService(progress);
+      cloud.start(); // en arrière-plan
+    } catch (e) {
+      debugPrint('Firebase indisponible : $e');
+    }
+  }
+
+  runApp(TropiPopApp(progress: progress, audio: audio, ads: ads, purchases: purchases, cloud: cloud));
 }

@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../core/l10n/strings.dart';
 import '../../core/theme/app_theme.dart';
 import '../../services/app_services.dart';
+import '../../services/cloud_sync_service.dart';
 import '../widgets/common.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -72,12 +73,39 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       )),
+              _cloudTile(s.cloud),
               const SizedBox(height: 24),
               Center(child: Text('Tropi Pop v1.0.0', style: AppTheme.title(13, color: Colors.white54))),
             ]),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _cloudTile(CloudSyncService? cloud) {
+    if (cloud == null) {
+      return _tile(Icons.cloud_off_rounded, '${tr('cloud_save')}\n${tr('cloud_none')}', const SizedBox());
+    }
+    return ListenableBuilder(
+      listenable: cloud,
+      builder: (context, _) {
+        final status = switch (cloud.state) {
+          SyncState.synced => tr('cloud_synced'),
+          SyncState.syncing || SyncState.idle => tr('cloud_syncing'),
+          SyncState.offline => tr('cloud_offline'),
+          SyncState.error => tr('cloud_error'),
+        };
+        final id = cloud.uid == null ? '' : '\n${tr('player_id')} : ${CloudSyncService.playerName(cloud.uid!)}';
+        return _tile(
+          cloud.state == SyncState.synced ? Icons.cloud_done_rounded : Icons.cloud_sync_rounded,
+          '${tr('cloud_save')}\n$status$id',
+          IconButton(
+            icon: const Icon(Icons.refresh_rounded, color: Colors.white),
+            onPressed: cloud.state == SyncState.syncing ? null : cloud.syncNow,
+          ),
+        );
+      },
     );
   }
 

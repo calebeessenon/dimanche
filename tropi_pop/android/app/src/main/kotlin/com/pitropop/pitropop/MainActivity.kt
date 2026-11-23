@@ -1,4 +1,4 @@
-package com.tropipop.tropi_pop
+package com.pitropop.pitropop
 
 import io.flutter.embedding.android.FlutterActivity
 

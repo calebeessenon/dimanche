@@ -58,6 +58,7 @@ class _GameScreenState extends State<GameScreen> {
     final s = AppServices.of(context);
     final e = c.engine;
     final reward = await s.progress.completeLevel(widget.levelNumber, e.score, e.stars);
+    unawaited(s.cloud?.submitLevelScore(widget.levelNumber, e.score, e.stars));
     if (!mounted) return;
     await Future<void>.delayed(const Duration(milliseconds: 300));
     if (!mounted) return;

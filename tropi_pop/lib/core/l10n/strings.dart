@@ -90,6 +90,13 @@ class S {
       'ad_test': 'Publicité (test)',
       'locked': 'Verrouillé',
       'lives': 'Vies',
+      'cloud_save': 'Sauvegarde cloud',
+      'cloud_synced': 'Synchronisée',
+      'cloud_syncing': 'Synchronisation…',
+      'cloud_offline': 'Hors ligne (envoi au retour du réseau)',
+      'cloud_error': 'Indisponible',
+      'cloud_none': 'Non disponible sur cette plateforme',
+      'player_id': 'Identifiant joueur',
     },
     'en': {
       'play': 'Play',
@@ -164,6 +171,13 @@ class S {
       'ad_test': 'Advertisement (test)',
       'locked': 'Locked',
       'lives': 'Lives',
+      'cloud_save': 'Cloud save',
+      'cloud_synced': 'Synced',
+      'cloud_syncing': 'Syncing…',
+      'cloud_offline': 'Offline (will upload when back online)',
+      'cloud_error': 'Unavailable',
+      'cloud_none': 'Not available on this platform',
+      'player_id': 'Player ID',
     },
   };
 }
