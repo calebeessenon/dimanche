@@ -173,3 +173,20 @@ acceptable ; pour la production publique, passer d'abord AdMob en production.
 | Pas de bannière / vidéo | normal les premières secondes ; vérifier Internet ; les annonces de test peuvent parfois manquer (« no fill ») |
 | Sauvegarde cloud « Indisponible » | vérifier Authentication anonyme et base Firestore créées (docs/FIREBASE.md) |
 | Première compilation très longue | normal (10-20 min) : téléchargement de Gradle et des bibliothèques |
+
+## 9. Compilation vérifiée (24/11/2026, conteneur Linux, Flutter 3.50.1, JDK 21)
+
+| Commande | Résultat |
+|---|---|
+| `flutter build apk --debug` | ✅ `app-debug.apk` |
+| `flutter build apk --release` | ✅ `app-release.apk` (54,5 Mo, 3 architectures) |
+| `flutter build appbundle --release` | ✅ `app-release.aab` (58,7 Mo) |
+
+Contrôlé dans l'APK : package `com.pitropop.pitropop`, version 1.0.0 (1),
+compileSdk/targetSdk 36, minSdk 24, identifiant AdMob de **test**
+`ca-app-pub-3940256099942544~3347511713`, configuration Firebase `pitro-pop`.
+Ces fichiers sont signés avec la clé de **debug** (aucune clé de publication
+n'existe encore) : l'AAB devra être recompilé sur votre PC après le § 6.
+
+Taille : un APK « universel » contient 3 architectures. Google Play (AAB) ne
+livre que la bonne à chaque téléphone (~20-25 Mo téléchargés).
